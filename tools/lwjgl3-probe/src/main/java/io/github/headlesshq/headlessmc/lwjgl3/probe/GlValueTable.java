@@ -20,8 +20,8 @@ import java.util.stream.Collectors;
  * --constants org.lwjgl.opengl (package whose constants name the parameters)
  * --output /path/to/gl-values.properties
  * </pre>
- * For every parameter, the most precise successful query wins: {@code glGetDoublev}, {@code glGetInteger64v},
- * {@code glGetFloatv}, {@code glGetIntegerv}. Parameters that describe the state of the probe's own objects, like
+ * For every parameter, the most precise successful query wins: {@code glGetDoublev} for values with fractions,
+ * otherwise {@code glGetInteger64v}, {@code glGetFloatv}, {@code glGetIntegerv}. Parameters that describe the state of the probe's own objects, like
  * bindings, are left out.
  */
 public final class GlValueTable {
@@ -81,7 +81,8 @@ public final class GlValueTable {
             for (Map.Entry<String, List<Object>> entry : byQuery.getOrDefault(query, Map.of()).entrySet()) {
                 String name = entry.getKey();
                 Integer pname = values.get(name);
-                if (pname == null || STATE.matcher(name).matches() || lines.containsKey(pname)) {
+                if (pname == null || STATE.matcher(name).matches() || lines.containsKey(pname)
+                    || query.equals(QUERIES.get(0)) && !hasFraction(entry.getValue())) {
                     continue;
                 }
 
@@ -107,6 +108,16 @@ public final class GlValueTable {
         }
 
         System.out.println("Wrote " + lines.size() + " GL values to " + output);
+    }
+
+    private static boolean hasFraction(List<Object> values) {
+        for (Object value : values) {
+            if (value instanceof Double decimal && decimal != Math.rint(decimal)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static String format(Object value) {
