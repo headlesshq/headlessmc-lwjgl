@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * The state of a GLFW window: its callbacks, input modes and close flag.
+ * The state of a GLFW window: its callbacks, input modes, title and close flag.
  */
 public final class GlfwWindow {
     final Map<Integer, Integer> inputModes = new ConcurrentHashMap<>();
@@ -31,6 +31,7 @@ public final class GlfwWindow {
     volatile GLFWFramebufferSizeCallbackI framebufferSize;
     volatile GLFWWindowFocusCallbackI focus;
     volatile GLFWWindowCloseCallbackI close;
+    volatile String title = "";
     volatile boolean shouldClose;
     volatile boolean cursorEntered;
 

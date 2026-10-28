@@ -115,7 +115,7 @@ public final class GlPatches {
 
     @Patch(owner = {GL11C, GL11})
     public static boolean glGetBoolean(int pname) {
-        return GlValues.getInteger(pname) != 0;
+        return GlValues.getDoubles(pname)[0] != 0.0;
     }
 
     @Patch(owner = {GL11C, GL11})
@@ -155,10 +155,8 @@ public final class GlPatches {
 
     @Patch(owner = {GL32C, GL32})
     public static void glGetInteger64v(int pname, long[] params) {
-        double[] values = GlValues.getDoubles(pname);
-        for (int i = 0; i < values.length && i < params.length; i++) {
-            params[i] = Math.round(values[i]);
-        }
+        long[] values = GlValues.getLongs(pname);
+        System.arraycopy(values, 0, params, 0, Math.min(values.length, params.length));
     }
 
     @Patch(owner = {GL32C, GL32})
@@ -168,9 +166,9 @@ public final class GlPatches {
 
     @Patch(owner = {GL32C, GL32})
     public static void glGetInteger64v(int pname, LongBuffer params) {
-        double[] values = GlValues.getDoubles(pname);
+        long[] values = GlValues.getLongs(pname);
         for (int i = 0; i < values.length && params.position() + i < params.limit(); i++) {
-            params.put(params.position() + i, Math.round(values[i]));
+            params.put(params.position() + i, values[i]);
         }
     }
 

@@ -6,37 +6,26 @@ org/lwjgl/glfw/Callbacks keep-constructor=1 void=1
 org/lwjgl/glfw/EventLoop default=2 keep-constructor=1 void=1
     isJavaStartedOnFirstThread()Z default: default
     isMainThread()Z default: default
-org/lwjgl/glfw/GLFW default=72 guarded-static-init=1 handler=41 id=4 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer=3 nio-buffer-empty=1 object=12 struct=2 void=71
+org/lwjgl/glfw/GLFW default=61 guarded-static-init=1 handler=71 id=4 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer-empty=1 object=12 struct=2 void=55
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     glfwExtensionSupported(Ljava/lang/CharSequence;)Z default: default
     glfwExtensionSupported(Ljava/nio/ByteBuffer;)Z default: default
     glfwGetClipboardString(J)Ljava/lang/String; default: default
-    glfwGetCurrentContext()J default: default
     glfwGetError(Lorg/lwjgl/PointerBuffer;)I default: default
-    glfwGetGamepadName(I)Ljava/lang/String; default: default
     glfwGetGamepadState(ILorg/lwjgl/glfw/GLFWGamepadState;)Z default: default
-    glfwGetJoystickGUID(I)Ljava/lang/String; default: default
-    glfwGetJoystickName(I)Ljava/lang/String; default: default
     glfwGetJoystickUserPointer(I)J default: default
     glfwGetKeyName(II)Ljava/lang/String; default: default
-    glfwGetMonitorName(J)Ljava/lang/String; default: default
     glfwGetMonitorUserPointer(J)J default: default
     glfwGetMonitors()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    glfwGetPlatform()I default: default
     glfwGetPreeditCandidate(JI)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    glfwGetPrimaryMonitor()J default: default
     glfwGetProcAddress(Ljava/lang/CharSequence;)J default: default
     glfwGetProcAddress(Ljava/nio/ByteBuffer;)J default: default
-    glfwGetVersionString()Ljava/lang/String; default: default
     glfwGetWindowMonitor(J)J default: default
-    glfwGetWindowOpacity(J)F default: default
-    glfwGetWindowTitle(J)Ljava/lang/String; default: default
     glfwGetWindowUserPointer(J)J default: default
     glfwJoystickIsGamepad(I)Z default: default
     glfwJoystickPresent(I)Z default: default
     glfwPlatformSupported(I)Z default: default
-    glfwRawMouseMotionSupported()Z default: default
     glfwSetDropCallback(JLorg/lwjgl/glfw/GLFWDropCallbackI;)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
     glfwSetErrorCallback(Lorg/lwjgl/glfw/GLFWErrorCallbackI;)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
     glfwSetIMEStatusCallback(JLorg/lwjgl/glfw/GLFWIMEStatusCallbackI;)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback

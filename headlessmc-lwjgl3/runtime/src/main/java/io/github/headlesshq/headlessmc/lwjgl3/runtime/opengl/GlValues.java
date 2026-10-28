@@ -2,6 +2,8 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
 
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Log;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL14;
 import org.lwjgl.opengl.GL46C;
 
 import java.io.IOException;
@@ -17,6 +19,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
+
+import static org.lwjgl.opengl.GL46C.*;
 
 /**
  * The values returned by {@code glGet*} queries, keyed by the name of the GL constant.
@@ -34,6 +38,10 @@ public final class GlValues {
     private static final Set<String> FORCED = new HashSet<>(Arrays.asList(
         "GL_MAJOR_VERSION", "GL_MINOR_VERSION", "GL_NUM_EXTENSIONS", "GL_CONTEXT_PROFILE_MASK", "GL_CONTEXT_FLAGS",
         "GL_VIEWPORT", "GL_SCISSOR_BOX"));
+    private static final Set<Integer> NORMALIZED = new HashSet<>(Arrays.asList(
+        GL_DEPTH_RANGE, GL_DEPTH_CLEAR_VALUE, GL_COLOR_CLEAR_VALUE, GL_BLEND_COLOR, GL11.GL_CURRENT_COLOR,
+        GL11.GL_ACCUM_CLEAR_VALUE, GL11.GL_FOG_COLOR, GL11.GL_LIGHT_MODEL_AMBIENT, GL11.GL_CURRENT_RASTER_COLOR,
+        GL14.GL_CURRENT_SECONDARY_COLOR));
     private static final Map<String, double[]> DEFAULTS = new LinkedHashMap<>();
     private static final Map<Integer, String> NAMES = new HashMap<>();
     private static final Map<Integer, double[]> VALUES = new HashMap<>();
@@ -205,12 +213,21 @@ public final class GlValues {
      */
     public static int[] get(int pname) {
         double[] values = getDoubles(pname);
+        boolean normalized = NORMALIZED.contains(pname);
         int[] result = new int[values.length];
         for (int i = 0; i < values.length; i++) {
-            result[i] = (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Math.round(values[i])));
+            result[i] = (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, toInteger(values[i], normalized)));
         }
 
         return result;
+    }
+
+    /**
+     * Integer queries of normalized values, like {@code GL_DEPTH_RANGE} or {@code GL_COLOR_CLEAR_VALUE}, map
+     * {@code [-1, 1]} linearly onto the integer range, as the OpenGL specification requires.
+     */
+    private static long toInteger(double value, boolean normalized) {
+        return Math.round(normalized ? value * Integer.MAX_VALUE : value);
     }
 
     /**
@@ -240,7 +257,22 @@ public final class GlValues {
     }
 
     public static long getLong(int pname) {
-        return Math.round(getDoubles(pname)[0]);
+        return getLongs(pname)[0];
+    }
+
+    /**
+     * @param pname the GL constant of the queried state.
+     * @return all components of the value as 64 bit integers.
+     */
+    public static long[] getLongs(int pname) {
+        double[] values = getDoubles(pname);
+        boolean normalized = NORMALIZED.contains(pname);
+        long[] result = new long[values.length];
+        for (int i = 0; i < values.length; i++) {
+            result[i] = toInteger(values[i], normalized);
+        }
+
+        return result;
     }
 
     /**

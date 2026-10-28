@@ -9,6 +9,7 @@ import org.objectweb.asm.tree.InsnList;
 import org.objectweb.asm.tree.InsnNode;
 import org.objectweb.asm.tree.LabelNode;
 import org.objectweb.asm.tree.LdcInsnNode;
+import org.objectweb.asm.tree.LocalVariableNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.TryCatchBlockNode;
@@ -80,10 +81,35 @@ public final class ClassPatcher {
         return writer.toByteArray();
     }
 
+    /**
+     * Replaces the body of a method. The local variable entries of {@code this} and the parameters are kept, spanning
+     * the new body, so that parameter names stay available for debugging and tools.
+     */
     private static void replace(MethodNode method, InsnList instructions) {
+        List<LocalVariableNode> parameters = new ArrayList<>();
+        if (method.localVariables != null) {
+            int parameterSlots = Type.getArgumentsAndReturnSizes(method.desc) >> 2;
+            if ((method.access & ACC_STATIC) != 0) {
+                parameterSlots--;
+            }
+
+            LabelNode start = new LabelNode();
+            LabelNode end = new LabelNode();
+            for (LocalVariableNode local : method.localVariables) {
+                if (local.index < parameterSlots && parameters.stream().noneMatch(existing -> existing.index == local.index)) {
+                    parameters.add(new LocalVariableNode(local.name, local.desc, local.signature, start, end, local.index));
+                }
+            }
+
+            if (!parameters.isEmpty()) {
+                instructions.insert(start);
+                instructions.add(end);
+            }
+        }
+
         method.instructions = instructions;
         method.tryCatchBlocks = new ArrayList<>();
-        method.localVariables = null;
+        method.localVariables = parameters.isEmpty() ? null : parameters;
         method.visibleLocalVariableAnnotations = null;
         method.invisibleLocalVariableAnnotations = null;
         method.access &= ~(ACC_NATIVE | ACC_ABSTRACT);

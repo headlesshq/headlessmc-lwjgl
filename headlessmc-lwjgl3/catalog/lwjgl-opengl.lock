@@ -605,7 +605,7 @@ org/lwjgl/opengl/GL$ICDStatic keep-constructor=2 object=2 void=1
     access$200()Lorg/lwjgl/opengl/GLCapabilities; object: new GLCapabilities
     get()Lorg/lwjgl/opengl/GLCapabilities; object: new GLCapabilities
 org/lwjgl/opengl/GL$ICDStatic$WriteOnce guarded-static-init=1 keep-constructor=1
-org/lwjgl/opengl/GL11 default=22 guarded-static-init=1 handler=55 id=2 keep-constructor=1 void=661
+org/lwjgl/opengl/GL11 default=22 guarded-static-init=1 handler=57 id=2 keep-constructor=1 void=659
     glAreTexturesResident(ILjava/nio/ByteBuffer;)Z default: default
     glAreTexturesResident(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Z default: default
     glAreTexturesResident([ILjava/nio/ByteBuffer;)Z default: default
@@ -628,7 +628,7 @@ org/lwjgl/opengl/GL11 default=22 guarded-static-init=1 handler=55 id=2 keep-cons
     glRenderMode(I)I default: default
     nglAreTexturesResident(IJJ)Z default: default
     nglGetString(I)J default: default
-org/lwjgl/opengl/GL11C default=6 guarded-static-init=1 handler=55 id=1 keep-constructor=1 void=99
+org/lwjgl/opengl/GL11C default=6 guarded-static-init=1 handler=57 id=1 keep-constructor=1 void=97
     glGetError()I default: default
     glGetPointer(I)J default: default
     glGetTexParameterf(II)F default: default

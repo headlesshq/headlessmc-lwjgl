@@ -52,7 +52,9 @@ public final class GlfwInputPatches {
 
     @Patch(owner = GLFW)
     public static long glfwCreateWindow(int width, int height, CharSequence title, long monitor, long share) {
-        return createWindow(width, height);
+        long window = createWindow(width, height);
+        GlfwWindows.get(window).title = title == null ? "" : title.toString();
+        return window;
     }
 
     @Patch(owner = GLFW)

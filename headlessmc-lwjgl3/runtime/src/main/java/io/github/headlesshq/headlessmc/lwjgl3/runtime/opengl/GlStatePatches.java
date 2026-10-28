@@ -139,8 +139,19 @@ public final class GlStatePatches {
 
     @Patch(owner = {GL11C, GL11})
     public static void glStencilMask(int mask) {
-        GlState.set(GL_STENCIL_WRITEMASK, mask);
-        GlState.set(GL_STENCIL_BACK_WRITEMASK, mask);
+        GlState.set(GL_STENCIL_WRITEMASK, mask & 0xFF);
+        GlState.set(GL_STENCIL_BACK_WRITEMASK, mask & 0xFF);
+    }
+
+    @Patch(owner = {GL11C, GL11})
+    public static void glDrawBuffer(int buf) {
+        GlState.set(GL_DRAW_BUFFER, buf);
+        GlState.set(GL_DRAW_BUFFER0, buf);
+    }
+
+    @Patch(owner = {GL11C, GL11})
+    public static void glReadBuffer(int src) {
+        GlState.set(GL_READ_BUFFER, src);
     }
 
     @Patch(owner = {GL11C, GL11})

@@ -90,11 +90,15 @@ public final class GlState {
         set(GL_COLOR_WRITEMASK, 1, 1, 1, 1);
         set(GL_COLOR_CLEAR_VALUE, 0, 0, 0, 0);
         set(GL_STENCIL_CLEAR_VALUE, 0);
-        set(GL_STENCIL_WRITEMASK, -1);
-        set(GL_STENCIL_BACK_WRITEMASK, -1);
+        set(GL_STENCIL_WRITEMASK, 255);
+        set(GL_STENCIL_BACK_WRITEMASK, 255);
         set(GL_STENCIL_FUNC, GL_ALWAYS);
         set(GL_STENCIL_REF, 0);
-        set(GL_STENCIL_VALUE_MASK, -1);
+        set(GL_STENCIL_VALUE_MASK, 255);
+        set(GL_STENCIL_BACK_VALUE_MASK, 255);
+        set(GL_DRAW_BUFFER, GL_BACK);
+        set(GL_DRAW_BUFFER0, GL_BACK);
+        set(GL_READ_BUFFER, GL_BACK);
         set(GL_STENCIL_FAIL, GL_KEEP);
         set(GL_STENCIL_PASS_DEPTH_FAIL, GL_KEEP);
         set(GL_STENCIL_PASS_DEPTH_PASS, GL_KEEP);
