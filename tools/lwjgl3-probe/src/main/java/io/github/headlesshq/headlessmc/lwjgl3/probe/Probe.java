@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Records what the real LWJGL returns: runs every {@link Suite} in {@link Worker} processes and writes
- * {@code <output>/<suite>.jsonl}. A call that crashes the JVM or hangs is recorded as {@code crash} or
+ * {@code <output>/<suite>.jsonl.gz}. A call that crashes the JVM or hangs is recorded as {@code crash} or
  * {@code timeout}, and a new worker continues with the next call. After {@value #MAX_FAILURES_PER_METHOD} failures in
  * a row the rest of the method is skipped and recorded as {@code abandoned}.
  * <pre>
@@ -89,7 +89,7 @@ public final class Probe {
     }
 
     private boolean run(String suite) throws IOException, InterruptedException {
-        Path file = output.resolve(suite + ".jsonl");
+        Path file = output.resolve(suite + ".jsonl.gz");
         int method = 0;
         long call = 0;
         int restarts = 0;
@@ -97,7 +97,7 @@ public final class Probe {
         int failures = 0;
         boolean headerWritten = false;
         long start = System.nanoTime();
-        try (BufferedWriter writer = Files.newBufferedWriter(file, StandardCharsets.UTF_8)) {
+        try (BufferedWriter writer = Json.create(file)) {
             while (true) {
                 Process process = start(suite, method, call, restarts);
                 BlockingQueue<String> lines = new LinkedBlockingQueue<>();

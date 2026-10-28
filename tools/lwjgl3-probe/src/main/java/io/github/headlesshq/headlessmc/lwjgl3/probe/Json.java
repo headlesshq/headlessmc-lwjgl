@@ -1,10 +1,22 @@
 package io.github.headlesshq.headlessmc.lwjgl3.probe;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
 
 /**
  * Minimal JSON reader and writer for the recordings.
@@ -87,6 +99,32 @@ final class Json {
         }
 
         builder.append('"');
+    }
+
+    /**
+     * @param file a recording, gzip compressed if its name ends with {@code .gz}.
+     * @return a reader for the lines of the recording.
+     */
+    static BufferedReader open(Path file) throws IOException {
+        InputStream in = Files.newInputStream(file);
+        if (file.toString().endsWith(".gz")) {
+            in = new GZIPInputStream(in, 1 << 16);
+        }
+
+        return new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
+    }
+
+    /**
+     * @param file a recording, gzip compressed if its name ends with {@code .gz}.
+     * @return a writer for the lines of the recording.
+     */
+    static BufferedWriter create(Path file) throws IOException {
+        OutputStream out = Files.newOutputStream(file);
+        if (file.toString().endsWith(".gz")) {
+            out = new GZIPOutputStream(out, 1 << 16);
+        }
+
+        return new BufferedWriter(new OutputStreamWriter(out, StandardCharsets.UTF_8));
     }
 
     static Object read(String json) {

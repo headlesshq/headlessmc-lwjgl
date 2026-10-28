@@ -2,9 +2,13 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
 
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Log;
+import org.lwjgl.opengl.ARBVertexProgram;
+import org.lwjgl.opengl.ATIMeminfo;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL14;
 import org.lwjgl.opengl.GL46C;
+import org.lwjgl.opengl.NVXGPUMemoryInfo;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -41,6 +45,9 @@ public final class GlValues {
     private static final Set<Integer> NORMALIZED = new HashSet<>(Arrays.asList(
         GL_DEPTH_RANGE, GL_DEPTH_CLEAR_VALUE, GL_COLOR_CLEAR_VALUE, GL_BLEND_COLOR, GL11.GL_CURRENT_COLOR,
         GL11.GL_ACCUM_CLEAR_VALUE, GL11.GL_FOG_COLOR, GL11.GL_LIGHT_MODEL_AMBIENT, GL11.GL_CURRENT_RASTER_COLOR,
+        GL11.GL_CURRENT_NORMAL, GL11.GL_MODELVIEW_MATRIX, GL11.GL_PROJECTION_MATRIX, GL11.GL_TEXTURE_MATRIX,
+        GL13.GL_TRANSPOSE_MODELVIEW_MATRIX, GL13.GL_TRANSPOSE_PROJECTION_MATRIX, GL13.GL_TRANSPOSE_TEXTURE_MATRIX,
+        ARBVertexProgram.GL_CURRENT_MATRIX_ARB, ARBVertexProgram.GL_TRANSPOSE_CURRENT_MATRIX_ARB,
         GL14.GL_CURRENT_SECONDARY_COLOR));
     private static final Map<String, double[]> DEFAULTS = new LinkedHashMap<>();
     private static final Map<Integer, String> NAMES = new HashMap<>();
@@ -173,6 +180,15 @@ public final class GlValues {
         put("GL_MAX_EVAL_ORDER", 30);
         put("GL_MAX_PIXEL_MAP_TABLE", 65536);
 
+        put("GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX", 8388608);
+        put("GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX", 8388608);
+        put("GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX", 8388608);
+        put("GL_GPU_MEMORY_INFO_EVICTION_COUNT_NVX", 0);
+        put("GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX", 0);
+        put("GL_VBO_FREE_MEMORY_ATI", 8388608, 8388608, 0, 0);
+        put("GL_TEXTURE_FREE_MEMORY_ATI", 8388608, 8388608, 0, 0);
+        put("GL_RENDERBUFFER_FREE_MEMORY_ATI", 8388608, 8388608, 0, 0);
+
         Map<String, Integer> constants = constants();
         for (Map.Entry<String, Integer> constant : constants.entrySet()) {
             NAMES.putIfAbsent(constant.getValue(), constant.getKey());
@@ -224,10 +240,15 @@ public final class GlValues {
 
     /**
      * Integer queries of normalized values, like {@code GL_DEPTH_RANGE} or {@code GL_COLOR_CLEAR_VALUE}, map
-     * {@code [-1, 1]} linearly onto the integer range, as the OpenGL specification requires.
+     * {@code [-1, 1]} linearly onto the integer range, as the OpenGL specification requires. Other values are rounded
+     * to the nearest integer, halves away from zero, like real drivers do.
      */
     private static long toInteger(double value, boolean normalized) {
-        return Math.round(normalized ? value * Integer.MAX_VALUE : value);
+        if (normalized) {
+            return (long) (value * Integer.MAX_VALUE);
+        }
+
+        return value < 0 ? -Math.round(-value) : Math.round(value);
     }
 
     /**
@@ -386,6 +407,14 @@ public final class GlValues {
         result.putIfAbsent("GL_DEPTH_BITS", 0x0D56);
         result.putIfAbsent("GL_STENCIL_BITS", 0x0D57);
         result.putIfAbsent("GL_MAX_VARYING_FLOATS", 0x8B4B);
+        result.putIfAbsent("GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX", NVXGPUMemoryInfo.GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX);
+        result.putIfAbsent("GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX", NVXGPUMemoryInfo.GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX);
+        result.putIfAbsent("GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX", NVXGPUMemoryInfo.GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX);
+        result.putIfAbsent("GL_GPU_MEMORY_INFO_EVICTION_COUNT_NVX", NVXGPUMemoryInfo.GL_GPU_MEMORY_INFO_EVICTION_COUNT_NVX);
+        result.putIfAbsent("GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX", NVXGPUMemoryInfo.GL_GPU_MEMORY_INFO_EVICTED_MEMORY_NVX);
+        result.putIfAbsent("GL_VBO_FREE_MEMORY_ATI", ATIMeminfo.GL_VBO_FREE_MEMORY_ATI);
+        result.putIfAbsent("GL_TEXTURE_FREE_MEMORY_ATI", ATIMeminfo.GL_TEXTURE_FREE_MEMORY_ATI);
+        result.putIfAbsent("GL_RENDERBUFFER_FREE_MEMORY_ATI", ATIMeminfo.GL_RENDERBUFFER_FREE_MEMORY_ATI);
         return result;
     }
 

@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 /**
  * Generates the default values of the patched {@code glGet*} queries from a {@code glfw-opengl} recording.
  * <pre>
- * --recording /path/to/recordings/name/glfw-opengl.jsonl
+ * --recording /path/to/recordings/name/glfw-opengl.jsonl.gz
  * --constants org.lwjgl.opengl (package whose constants name the parameters)
  * --output /path/to/gl-values.properties
  * </pre>
@@ -55,7 +55,7 @@ public final class GlValueTable {
 
         Map<String, String> header = Map.of();
         Map<String, Map<String, List<Object>>> byQuery = new TreeMap<>();
-        try (BufferedReader reader = Files.newBufferedReader(recording, StandardCharsets.UTF_8)) {
+        try (BufferedReader reader = Json.open(recording)) {
             String line;
             while ((line = reader.readLine()) != null) {
                 Map<String, Object> record = (Map<String, Object>) Json.read(line);

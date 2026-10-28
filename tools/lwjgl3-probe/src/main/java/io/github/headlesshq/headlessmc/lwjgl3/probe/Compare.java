@@ -47,14 +47,14 @@ public final class Compare {
 
         Files.createDirectories(report);
         try (Stream<Path> files = Files.list(real)) {
-            for (Path file : files.filter(f -> f.toString().endsWith(".jsonl")).sorted().toList()) {
+            for (Path file : files.filter(f -> f.toString().endsWith(".jsonl.gz")).sorted().toList()) {
                 Path patchedFile = patched.resolve(file.getFileName());
                 if (!Files.exists(patchedFile)) {
                     System.err.println("No patched recording for " + file.getFileName());
                     continue;
                 }
 
-                String suite = file.getFileName().toString().replace(".jsonl", "");
+                String suite = file.getFileName().toString().replace(".jsonl.gz", "");
                 Map<String, Map<String, Object>> realRecords = read(file, null);
                 compare(suite, realRecords, read(patchedFile, realRecords.keySet()), report.resolve(suite + ".txt"));
             }
@@ -126,7 +126,7 @@ public final class Compare {
      */
     private static Map<String, Map<String, Object>> read(Path file, Set<String> keys) throws IOException {
         Map<String, Map<String, Object>> result = new LinkedHashMap<>();
-        try (BufferedReader reader = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
+        try (BufferedReader reader = Json.open(file)) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith("{\"type\"")) {

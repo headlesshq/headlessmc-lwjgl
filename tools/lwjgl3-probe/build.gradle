@@ -21,7 +21,7 @@ tasks.withType(PublishToMavenRepository).configureEach {
 
 tasks.register('probe', JavaExec) {
     group = 'verification'
-    description = 'Runs the real LWJGL against the local driver and writes recordings/<name>/<suite>.jsonl. ' +
+    description = 'Runs the real LWJGL against the local driver and writes recordings/<name>/<suite>.jsonl.gz. ' +
         'Options: -Pprobe.name=<name> (default: local), -Pprobe.suites=glfw-opengl,openal (default: all), ' +
         '-Pprobe.xvfb (run the workers in xvfb-run), -Pprobe.software (Mesa llvmpipe/lavapipe).'
     classpath = sourceSets.main.runtimeClasspath
@@ -53,7 +53,7 @@ def patchedRecordings = layout.buildDirectory.dir('probe-patched')
 
 def probePatched = tasks.register('probePatched', JavaExec) {
     group = 'verification'
-    description = 'Runs the probe suites against the patched jars, without natives, and writes build/probe-patched/<suite>.jsonl.'
+    description = 'Runs the probe suites against the patched jars, without natives, and writes build/probe-patched/<suite>.jsonl.gz.'
     dependsOn ':headlessmc-lwjgl3:patchLwjgl'
     classpath = sourceSets.main.output + configurations.runtimeClasspath.filter { !it.name.startsWith('lwjgl') } +
         files(patchedDirectory.map { it.asFileTree.matching { include '*.jar' }.files })
@@ -88,7 +88,7 @@ tasks.register('probeCompare', JavaExec) {
 
 tasks.register('glValueTable', JavaExec) {
     group = 'build'
-    description = 'Generates the glGet defaults of the runtime from recordings/<name>/glfw-opengl.jsonl (-Pprobe.name, default: mesa-llvmpipe).'
+    description = 'Generates the glGet defaults of the runtime from recordings/<name>/glfw-opengl.jsonl.gz (-Pprobe.name, default: mesa-llvmpipe).'
     classpath = sourceSets.main.runtimeClasspath
     mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.probe.GlValueTable'
     outputs.upToDateWhen { false }
@@ -96,7 +96,7 @@ tasks.register('glValueTable', JavaExec) {
     def output = project(':headlessmc-lwjgl3-runtime').layout.projectDirectory
         .file('src/main/resources/io/github/headlesshq/headlessmc/lwjgl3/runtime/opengl/gl-values.properties')
     argumentProviders.add({
-        ['--recording', layout.projectDirectory.file("recordings/${name.get()}/glfw-opengl.jsonl").asFile.absolutePath,
+        ['--recording', layout.projectDirectory.file("recordings/${name.get()}/glfw-opengl.jsonl.gz").asFile.absolutePath,
          '--output', output.asFile.absolutePath]
     } as CommandLineArgumentProvider)
 }
