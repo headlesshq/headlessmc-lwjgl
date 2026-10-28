@@ -129,7 +129,7 @@ org/lwjgl/util/vma/VmaAllocateDeviceMemoryFunctionI keep-abstract-interface-meth
     invoke(JIJJ)V void [shim 3.2.2]
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/util/vma/VmaAllocationCreateInfo fluent=15 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 struct=11 struct-member=27
+org/lwjgl/util/vma/VmaAllocationCreateInfo fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/util/vma/VmaAllocationCreateInfo; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/util/vma/VmaAllocationCreateInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaAllocationCreateInfo$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -140,8 +140,8 @@ org/lwjgl/util/vma/VmaAllocationCreateInfo fluent=15 guarded-static-init=1 keep-
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaAllocationCreateInfo; struct [shim 3.3.3]
     set(IIIIIJJ)Lorg/lwjgl/util/vma/VmaAllocationCreateInfo; fluent [shim 3.2.2]
     set(IIIIIJJF)Lorg/lwjgl/util/vma/VmaAllocationCreateInfo; fluent [shim 3.3.3]
-org/lwjgl/util/vma/VmaAllocationCreateInfo$Buffer fluent=13 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=9
-org/lwjgl/util/vma/VmaAllocationInfo fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 nio-buffer=1 nio-buffer-empty=1 struct=11 struct-member=14
+org/lwjgl/util/vma/VmaAllocationCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
+org/lwjgl/util/vma/VmaAllocationInfo guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/util/vma/VmaAllocationInfo; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/util/vma/VmaAllocationInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaAllocationInfo$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -150,12 +150,10 @@ org/lwjgl/util/vma/VmaAllocationInfo fluent=2 guarded-static-init=1 keep-constru
     mallocStack(I)Lorg/lwjgl/util/vma/VmaAllocationInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaAllocationInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaAllocationInfo; struct [shim 3.3.3]
-    pName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/vma/VmaAllocationInfo$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=7
-    pName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/vma/VmaAllocationInfo2 fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=4
-org/lwjgl/util/vma/VmaAllocationInfo2$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
-org/lwjgl/util/vma/VmaAllocatorCreateInfo fluent=18 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 nio-buffer=4 struct=19 struct-member=29
+org/lwjgl/util/vma/VmaAllocationInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/util/vma/VmaAllocationInfo2 guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaAllocationInfo2$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9
+org/lwjgl/util/vma/VmaAllocatorCreateInfo fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct=51 keep-struct-sizeof=1 struct=11 struct-member=5
     callocStack()Lorg/lwjgl/util/vma/VmaAllocatorCreateInfo; struct [shim 3.3.3]
     callocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaAllocatorCreateInfo; struct [shim 3.3.3]
     frameInUseCount()I struct-member [shim 3.2.2]
@@ -172,16 +170,16 @@ org/lwjgl/util/vma/VmaAllocatorCreateInfo fluent=18 guarded-static-init=1 keep-c
     validate(JI)V struct-member [shim 3.2.2]
     FRAMEINUSECOUNT:I [shim 3.2.2]
     PRECORDSETTINGS:I [shim 3.2.2]
-org/lwjgl/util/vma/VmaAllocatorInfo fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
-org/lwjgl/util/vma/VmaAllocatorInfo$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
-org/lwjgl/util/vma/VmaBudget fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=8
+org/lwjgl/util/vma/VmaAllocatorInfo guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaAllocatorInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9
+org/lwjgl/util/vma/VmaBudget guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=4
     allocationBytes()J struct-member [shim 3.3.1]
     blockBytes()J struct-member [shim 3.3.1]
     nallocationBytes(J)J struct-member [shim 3.3.1]
     nblockBytes(J)J struct-member [shim 3.3.1]
     ALLOCATIONBYTES:I [shim 3.3.1]
     BLOCKBYTES:I [shim 3.3.1]
-org/lwjgl/util/vma/VmaBudget$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=4
+org/lwjgl/util/vma/VmaBudget$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9 struct-member=2
     allocationBytes()J struct-member [shim 3.3.1]
     blockBytes()J struct-member [shim 3.3.1]
 org/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction keep-constructor=2 object=4
@@ -194,7 +192,7 @@ org/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction$1 default=1 keep-constru
 org/lwjgl/util/vma/VmaCheckDefragmentationBreakFunctionI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
-org/lwjgl/util/vma/VmaDefragmentationInfo fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 object=2 struct=11 struct-member=22
+org/lwjgl/util/vma/VmaDefragmentationInfo fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=6
     callocStack()Lorg/lwjgl/util/vma/VmaDefragmentationInfo; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/util/vma/VmaDefragmentationInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaDefragmentationInfo$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -211,50 +209,37 @@ org/lwjgl/util/vma/VmaDefragmentationInfo fluent=14 guarded-static-init=1 keep-c
     nmaxAllocationsToMove(JI)V struct-member [shim 3.3.1]
     nmaxBytesToMove(J)J struct-member [shim 3.3.1]
     nmaxBytesToMove(JJ)V struct-member [shim 3.3.1]
-    npfnBreakCallback(J)Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction; object: new VmaCheckDefragmentationBreakFunction
-    pfnBreakCallback()Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction; object: new VmaCheckDefragmentationBreakFunction
     set(IJJI)Lorg/lwjgl/util/vma/VmaDefragmentationInfo; fluent [shim 3.3.2]
     set(JI)Lorg/lwjgl/util/vma/VmaDefragmentationInfo; fluent [shim 3.3.1]
     MAXALLOCATIONSTOMOVE:I [shim 3.3.1]
     MAXBYTESTOMOVE:I [shim 3.3.1]
-org/lwjgl/util/vma/VmaDefragmentationInfo$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 object=1 struct=2 struct-member=7
+org/lwjgl/util/vma/VmaDefragmentationInfo$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=18 struct-member=2
     maxAllocationsToMove()I struct-member [shim 3.3.1]
     maxAllocationsToMove(I)Lorg/lwjgl/util/vma/VmaDefragmentationInfo$Buffer; fluent [shim 3.3.1]
     maxBytesToMove()J struct-member [shim 3.3.1]
     maxBytesToMove(J)Lorg/lwjgl/util/vma/VmaDefragmentationInfo$Buffer; fluent [shim 3.3.1]
-    pfnBreakCallback()Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction; object: new VmaCheckDefragmentationBreakFunction
-org/lwjgl/util/vma/VmaDefragmentationInfo2 shim-class=3.3.1 fluent=13 guarded-static-init=1 keep-constructor=1 keep-struct-sizeof=1 lwjgl-buffer=13 lwjgl-buffer-empty=2 nio-buffer=1 nio-buffer-empty=1 struct=11 struct-member=29
-    pAllocations()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pAllocationsChanged()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    pPools()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+org/lwjgl/util/vma/VmaDefragmentationInfo2 shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct=51 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/util/vma/VmaDefragmentationInfo2$Buffer shim-class=3.3.1 fluent=13 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=2 nio-buffer-empty=1 struct=2 struct-member=8
-    pAllocations()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pAllocationsChanged()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    pPools()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-org/lwjgl/util/vma/VmaDefragmentationMove fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=10
-org/lwjgl/util/vma/VmaDefragmentationMove$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
-org/lwjgl/util/vma/VmaDefragmentationPassInfo shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 struct=7 struct-member=2
-    pMoves()Lorg/lwjgl/util/vma/VmaDefragmentationPassMoveInfo$Buffer; lwjgl-buffer-empty: buffer VmaDefragmentationPassMoveInfo$Buffer(0)
-org/lwjgl/util/vma/VmaDefragmentationPassInfo$Buffer shim-class=3.3.1 fluent=2 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 struct=2 struct-member=1
-    pMoves()Lorg/lwjgl/util/vma/VmaDefragmentationPassMoveInfo$Buffer; lwjgl-buffer-empty: buffer VmaDefragmentationPassMoveInfo$Buffer(0)
-org/lwjgl/util/vma/VmaDefragmentationPassMoveInfo fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 struct=7 struct-member=11
+org/lwjgl/util/vma/VmaDefragmentationInfo2$Buffer shim-class=3.3.1 guarded-static-init=1 keep-constructor=3 keep-struct=26
+org/lwjgl/util/vma/VmaDefragmentationMove guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaDefragmentationMove$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/util/vma/VmaDefragmentationPassInfo shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct=8 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaDefragmentationPassInfo$Buffer shim-class=3.3.1 guarded-static-init=1 keep-constructor=3 keep-struct=6
+org/lwjgl/util/vma/VmaDefragmentationPassMoveInfo guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=6
     allocation()J struct-member [shim 3.3.1]
     memory()J struct-member [shim 3.3.1]
     nallocation(J)J struct-member [shim 3.3.1]
     nmemory(J)J struct-member [shim 3.3.1]
     noffset(J)J struct-member [shim 3.3.1]
     offset()J struct-member [shim 3.3.1]
-    pMoves()Lorg/lwjgl/util/vma/VmaDefragmentationMove$Buffer; lwjgl-buffer-empty: buffer VmaDefragmentationMove$Buffer(0)
     ALLOCATION:I [shim 3.3.1]
     MEMORY:I [shim 3.3.1]
     OFFSET:I [shim 3.3.1]
-org/lwjgl/util/vma/VmaDefragmentationPassMoveInfo$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 struct=2 struct-member=4
+org/lwjgl/util/vma/VmaDefragmentationPassMoveInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10 struct-member=3
     allocation()J struct-member [shim 3.3.1]
     memory()J struct-member [shim 3.3.1]
     offset()J struct-member [shim 3.3.1]
-    pMoves()Lorg/lwjgl/util/vma/VmaDefragmentationMove$Buffer; lwjgl-buffer-empty: buffer VmaDefragmentationMove$Buffer(0)
-org/lwjgl/util/vma/VmaDefragmentationStats fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 struct=11 struct-member=8
+org/lwjgl/util/vma/VmaDefragmentationStats guarded-static-init=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/util/vma/VmaDefragmentationStats; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/util/vma/VmaDefragmentationStats$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaDefragmentationStats$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -263,10 +248,10 @@ org/lwjgl/util/vma/VmaDefragmentationStats fluent=2 guarded-static-init=1 keep-c
     mallocStack(I)Lorg/lwjgl/util/vma/VmaDefragmentationStats$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaDefragmentationStats$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaDefragmentationStats; struct [shim 3.3.3]
-org/lwjgl/util/vma/VmaDefragmentationStats$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
-org/lwjgl/util/vma/VmaDetailedStatistics fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=10
-org/lwjgl/util/vma/VmaDetailedStatistics$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=5
-org/lwjgl/util/vma/VmaDeviceMemoryCallbacks fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 object=4 struct=11 struct-member=5
+org/lwjgl/util/vma/VmaDefragmentationStats$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/util/vma/VmaDetailedStatistics guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaDetailedStatistics$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/util/vma/VmaDeviceMemoryCallbacks fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -275,14 +260,8 @@ org/lwjgl/util/vma/VmaDeviceMemoryCallbacks fluent=8 guarded-static-init=1 keep-
     mallocStack(I)Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks; struct [shim 3.3.3]
-    npfnAllocate(J)Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction; object: new VmaAllocateDeviceMemoryFunction
-    npfnFree(J)Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
-    pfnAllocate()Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction; object: new VmaAllocateDeviceMemoryFunction
-    pfnFree()Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
     set(Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunctionI;Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunctionI;)Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks; fluent [shim 3.2.2]
-org/lwjgl/util/vma/VmaDeviceMemoryCallbacks$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 object=2 struct=2 struct-member=1
-    pfnAllocate()Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction; object: new VmaAllocateDeviceMemoryFunction
-    pfnFree()Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
+org/lwjgl/util/vma/VmaDeviceMemoryCallbacks$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
 org/lwjgl/util/vma/VmaFreeDeviceMemoryFunction keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
     create(Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunctionI;)Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
@@ -295,7 +274,7 @@ org/lwjgl/util/vma/VmaFreeDeviceMemoryFunctionI keep-abstract-interface-method=1
     invoke(JIJJ)V void [shim 3.2.2]
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/util/vma/VmaPoolCreateInfo fluent=36 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 struct=11 struct-member=27
+org/lwjgl/util/vma/VmaPoolCreateInfo fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct=62 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=3
     callocStack()Lorg/lwjgl/util/vma/VmaPoolCreateInfo; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/util/vma/VmaPoolCreateInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaPoolCreateInfo$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -310,43 +289,33 @@ org/lwjgl/util/vma/VmaPoolCreateInfo fluent=36 guarded-static-init=1 keep-constr
     nframeInUseCount(JI)V struct-member [shim 3.2.2]
     set(IIJJJI)Lorg/lwjgl/util/vma/VmaPoolCreateInfo; fluent [shim 3.2.2]
     FRAMEINUSECOUNT:I [shim 3.2.2]
-org/lwjgl/util/vma/VmaPoolCreateInfo$Buffer fluent=35 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=9
+org/lwjgl/util/vma/VmaPoolCreateInfo$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=44 struct-member=1
     frameInUseCount()I struct-member [shim 3.2.2]
     frameInUseCount(I)Lorg/lwjgl/util/vma/VmaPoolCreateInfo$Buffer; fluent [shim 3.2.2]
-org/lwjgl/util/vma/VmaPoolStats shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct-sizeof=1 lwjgl-buffer=11 struct=11 struct-member=12
+org/lwjgl/util/vma/VmaPoolStats shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=2
     nunusedRangeSizeMax(J)J struct-member [shim 3.2.2]
     unusedRangeSizeMax()J struct-member [shim 3.2.2]
     UNUSEDRANGESIZEMAX:I [shim 3.2.2]
-org/lwjgl/util/vma/VmaPoolStats$Buffer shim-class=3.3.1 fluent=2 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/util/vma/VmaPoolStats$Buffer shim-class=3.3.1 guarded-static-init=1 keep-constructor=3 keep-struct=9 struct-member=1
     unusedRangeSizeMax()J struct-member [shim 3.2.2]
-org/lwjgl/util/vma/VmaRecordSettings shim-class=3.3.1 fluent=4 guarded-static-init=1 keep-constructor=1 keep-struct-sizeof=1 lwjgl-buffer=11 nio-buffer=1 nio-buffer-empty=1 struct=11 struct-member=8
-    pFilePath()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/vma/VmaRecordSettings shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/util/vma/VmaRecordSettings$Buffer shim-class=3.3.1 fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=2
-    pFilePath()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/vma/VmaStatInfo shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct-sizeof=1 lwjgl-buffer=11 struct=11 struct-member=22
-org/lwjgl/util/vma/VmaStatInfo$Buffer shim-class=3.3.1 fluent=2 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=11
-org/lwjgl/util/vma/VmaStatistics fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=8
-org/lwjgl/util/vma/VmaStatistics$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
-org/lwjgl/util/vma/VmaStats shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct-sizeof=1 lwjgl-buffer=13 lwjgl-buffer-empty=2 struct=17
-    memoryHeap()Lorg/lwjgl/util/vma/VmaStatInfo$Buffer; lwjgl-buffer-empty: buffer VmaStatInfo$Buffer(0)
-    memoryType()Lorg/lwjgl/util/vma/VmaStatInfo$Buffer; lwjgl-buffer-empty: buffer VmaStatInfo$Buffer(0)
-org/lwjgl/util/vma/VmaStats$Buffer shim-class=3.3.1 fluent=2 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=2 struct=5
-    memoryHeap()Lorg/lwjgl/util/vma/VmaStatInfo$Buffer; lwjgl-buffer-empty: buffer VmaStatInfo$Buffer(0)
-    memoryType()Lorg/lwjgl/util/vma/VmaStatInfo$Buffer; lwjgl-buffer-empty: buffer VmaStatInfo$Buffer(0)
-org/lwjgl/util/vma/VmaTotalStatistics fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=9 lwjgl-buffer-empty=2 struct=13
-    memoryHeap()Lorg/lwjgl/util/vma/VmaDetailedStatistics$Buffer; lwjgl-buffer-empty: buffer VmaDetailedStatistics$Buffer(0)
-    memoryType()Lorg/lwjgl/util/vma/VmaDetailedStatistics$Buffer; lwjgl-buffer-empty: buffer VmaDetailedStatistics$Buffer(0)
-org/lwjgl/util/vma/VmaTotalStatistics$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=2 struct=5
-    memoryHeap()Lorg/lwjgl/util/vma/VmaDetailedStatistics$Buffer; lwjgl-buffer-empty: buffer VmaDetailedStatistics$Buffer(0)
-    memoryType()Lorg/lwjgl/util/vma/VmaDetailedStatistics$Buffer; lwjgl-buffer-empty: buffer VmaDetailedStatistics$Buffer(0)
-org/lwjgl/util/vma/VmaVirtualAllocationCreateInfo fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
-org/lwjgl/util/vma/VmaVirtualAllocationCreateInfo$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
-org/lwjgl/util/vma/VmaVirtualAllocationInfo fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
-org/lwjgl/util/vma/VmaVirtualAllocationInfo$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
-org/lwjgl/util/vma/VmaVirtualBlockCreateInfo fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=7
-org/lwjgl/util/vma/VmaVirtualBlockCreateInfo$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
-org/lwjgl/util/vma/VmaVulkanFunctions fluent=36 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 struct=11 struct-member=86
+org/lwjgl/util/vma/VmaRecordSettings$Buffer shim-class=3.3.1 guarded-static-init=1 keep-constructor=3 keep-struct=9
+org/lwjgl/util/vma/VmaStatInfo shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/util/vma/VmaStatInfo$Buffer shim-class=3.3.1 guarded-static-init=1 keep-constructor=3 keep-struct=15
+org/lwjgl/util/vma/VmaStatistics guarded-static-init=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaStatistics$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/util/vma/VmaStats shim-class=3.3.1 guarded-static-init=1 keep-constructor=1 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/util/vma/VmaStats$Buffer shim-class=3.3.1 guarded-static-init=1 keep-constructor=3 keep-struct=9
+org/lwjgl/util/vma/VmaTotalStatistics guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaTotalStatistics$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=11
+org/lwjgl/util/vma/VmaVirtualAllocationCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaVirtualAllocationCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/util/vma/VmaVirtualAllocationInfo guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaVirtualAllocationInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9
+org/lwjgl/util/vma/VmaVirtualBlockCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/vma/VmaVirtualBlockCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/util/vma/VmaVulkanFunctions fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct=120 keep-struct-sizeof=1 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/util/vma/VmaVulkanFunctions; struct [shim 3.3.3]
     callocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaVulkanFunctions; struct [shim 3.3.3]
     mallocStack()Lorg/lwjgl/util/vma/VmaVulkanFunctions; struct [shim 3.3.3]

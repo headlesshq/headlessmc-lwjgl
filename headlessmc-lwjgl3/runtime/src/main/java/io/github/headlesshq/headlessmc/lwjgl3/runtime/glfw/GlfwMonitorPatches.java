@@ -3,7 +3,9 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime.glfw;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.DummyBuffers;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl3.runtime.StructMemory;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.WindowConfig;
+import org.lwjgl.glfw.GLFWVidMode;
 
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
@@ -12,7 +14,8 @@ import java.nio.IntBuffer;
 import static org.lwjgl.glfw.GLFW.*;
 
 /**
- * Patches for {@code org.lwjgl.glfw.GLFW}: the library version and platform, a single monitor, window position,
+ * Patches for {@code org.lwjgl.glfw.GLFW}: the library version and platform, a single monitor with one video mode,
+ * window position,
  * title and opacity, the current context and the absence of joysticks, with the values a real GLFW on X11 reports.
  */
 public final class GlfwMonitorPatches {
@@ -21,6 +24,10 @@ public final class GlfwMonitorPatches {
     private static final int PLATFORM = Config.getInt("glfw.platform", GLFW_PLATFORM_X11);
     private static final int PHYSICAL_WIDTH_MM = 508;
     private static final int PHYSICAL_HEIGHT_MM = 285;
+
+    private static final ByteBuffer VIDEO_MODE_MEMORY = videoMode();
+    private static final GLFWVidMode VIDEO_MODE = GLFWVidMode.create(StructMemory.address(VIDEO_MODE_MEMORY));
+    private static final GLFWVidMode.Buffer VIDEO_MODES = GLFWVidMode.create(StructMemory.address(VIDEO_MODE_MEMORY), 1);
 
     private static volatile long currentContext;
 
@@ -55,6 +62,31 @@ public final class GlfwMonitorPatches {
     @Patch(owner = GLFW)
     public static long glfwGetPrimaryMonitor() {
         return MONITOR;
+    }
+
+    /**
+     * @return the memory of the only video mode, kept for the lifetime of the application, like GLFW keeps it.
+     */
+    private static ByteBuffer videoMode() {
+        ByteBuffer memory = StructMemory.allocate(GLFWVidMode.SIZEOF);
+        long address = StructMemory.address(memory);
+        StructMemory.putInt(address + GLFWVidMode.WIDTH, WindowConfig.MONITOR_WIDTH);
+        StructMemory.putInt(address + GLFWVidMode.HEIGHT, WindowConfig.MONITOR_HEIGHT);
+        StructMemory.putInt(address + GLFWVidMode.REDBITS, 8);
+        StructMemory.putInt(address + GLFWVidMode.GREENBITS, 8);
+        StructMemory.putInt(address + GLFWVidMode.BLUEBITS, 8);
+        StructMemory.putInt(address + GLFWVidMode.REFRESHRATE, WindowConfig.REFRESH_RATE);
+        return memory;
+    }
+
+    @Patch(owner = GLFW)
+    public static GLFWVidMode glfwGetVideoMode(long monitor) {
+        return VIDEO_MODE;
+    }
+
+    @Patch(owner = GLFW)
+    public static GLFWVidMode.Buffer glfwGetVideoModes(long monitor) {
+        return VIDEO_MODES;
     }
 
     @Patch(owner = GLFW)

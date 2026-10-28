@@ -1491,13 +1491,11 @@ org/lwjgl/opengl/GLXSGIXSwapBarrier default=3 keep-constructor=1 void=1
     glXQueryMaxSwapBarriersSGIX(JI[I)Z default: default
     nglXQueryMaxSwapBarriersSGIX(JIJ)I default: default
 org/lwjgl/opengl/GLXSGIXSwapGroup keep-constructor=1 void=1
-org/lwjgl/opengl/GLXStereoNotifyEventEXT fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=16
-org/lwjgl/opengl/GLXStereoNotifyEventEXT$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=8
+org/lwjgl/opengl/GLXStereoNotifyEventEXT guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1
+org/lwjgl/opengl/GLXStereoNotifyEventEXT$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/opengl/GLXStereoNotifyEventEXT$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/opengl/GLXStereoNotifyEventEXT; struct [shim 3.1.6]
-org/lwjgl/opengl/GPU_DEVICE fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 nio-buffer=2 nio-buffer-empty=2 struct=13 struct-member=8
-    DeviceName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    DeviceString()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/opengl/GPU_DEVICE fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/opengl/GPU_DEVICE; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -1507,9 +1505,7 @@ org/lwjgl/opengl/GPU_DEVICE fluent=3 guarded-static-init=1 keep-constructor=2 ke
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/opengl/GPU_DEVICE; struct [shim 3.3.3]
     rcVirtualScreen(Ljava/util/function/Consumer;)Lorg/lwjgl/opengl/GPU_DEVICE; fluent [shim 3.2.2]
-org/lwjgl/opengl/GPU_DEVICE$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=4 struct-member=4
-    DeviceName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    DeviceString()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/opengl/GPU_DEVICE$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=13 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/opengl/GPU_DEVICE; struct [shim 3.1.6]
     rcVirtualScreen(Ljava/util/function/Consumer;)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; fluent [shim 3.2.2]

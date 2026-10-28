@@ -33,6 +33,8 @@ public final class Rules {
         "org/lwjgl/system/Configuration$"
     );
 
+    private static final Set<String> STRUCT_ALLOCATIONS = Set.of("malloc", "calloc", "create", "mallocStack", "callocStack");
+
     private static final Set<String> STRUCT_LAYOUT_HELPERS = Set.of("addNestedMembers", "align", "getBytes");
 
     private static final Set<String> CUSTOM_BUFFER_BOOKKEEPING = Set.of(
@@ -102,6 +104,7 @@ public final class Rules {
                 ? new Behaviour.Keep() : null),
             rule("keep-struct-sizeof", false, m -> !m.isStatic() && "sizeof".equals(m.name()) && "()I".equals(m.desc())
                 && pool.isAssignable(m.owner().name, STRUCT) ? new Behaviour.Keep() : null),
+            rule("keep-struct", false, m -> isStructCode(m, pool) ? new Behaviour.Keep() : null),
             rule("identity", false, Rules::identity),
             rule("keep-to-string", false, m -> !m.isStatic() && "toString".equals(m.name())
                 && "()Ljava/lang/String;".equals(m.desc()) ? new Behaviour.Keep() : null),
@@ -180,6 +183,33 @@ public final class Rules {
 
     private static boolean isIdType(Type type) {
         return type.getSort() == Type.INT || type.getSort() == Type.LONG;
+    }
+
+    /**
+     * Structs, struct buffers and their base classes are pure Java on top of the {@code MemoryUtil} accessors and
+     * are kept, except for the methods that allocate memory, which return structs with memory from the runtime.
+     */
+    private static boolean isStructCode(MethodInfo method, ClassPool pool) {
+        String owner = method.owner().name;
+        boolean struct = pool.isAssignable(owner, STRUCT) || pool.isAssignable(owner, STRUCT_BUFFER)
+            || owner.startsWith(STRUCT_BUFFER + "$");
+        return struct && !isStructAllocation(method, pool);
+    }
+
+    private static boolean isStructAllocation(MethodInfo method, ClassPool pool) {
+        Type type = method.returnType();
+        if (!method.isStatic() || !STRUCT_ALLOCATIONS.contains(method.name()) || type.getSort() != Type.OBJECT
+            || !pool.isAssignable(type.getInternalName(), STRUCT) && !pool.isAssignable(type.getInternalName(), STRUCT_BUFFER)) {
+            return false;
+        }
+
+        for (Type argument : method.argumentTypes()) {
+            if (argument.getSort() == Type.LONG || "java/nio/ByteBuffer".equals(argument.getInternalName())) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private static Behaviour fluent(MethodInfo method, ClassPool pool) {

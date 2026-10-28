@@ -62,49 +62,22 @@ org/lwjgl/system/jemalloc/ExtentDestroyI default=1 keep-abstract-interface-metho
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentHooks fluent=13 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=9 object=18 struct=11 struct-member=11
-    alloc()Lorg/lwjgl/system/jemalloc/ExtentAlloc; object: new ExtentAlloc
+org/lwjgl/system/jemalloc/ExtentHooks guarded-static-init=1 keep-constructor=2 keep-struct=43 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     calloc(I)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     callocStack()Lorg/lwjgl/system/jemalloc/ExtentHooks; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     callocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jemalloc/ExtentHooks; struct [shim 3.3.3]
-    commit()Lorg/lwjgl/system/jemalloc/ExtentCommit; object: new ExtentCommit
     create(I)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     create(JI)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     createSafe(JI)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
-    dalloc()Lorg/lwjgl/system/jemalloc/ExtentDalloc; object: new ExtentDalloc
-    decommit()Lorg/lwjgl/system/jemalloc/ExtentDecommit; object: new ExtentDecommit
-    destroy()Lorg/lwjgl/system/jemalloc/ExtentDestroy; object: new ExtentDestroy
     malloc(I)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     mallocStack()Lorg/lwjgl/system/jemalloc/ExtentHooks; struct [shim 3.3.3]
     mallocStack(I)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jemalloc/ExtentHooks; struct [shim 3.3.3]
-    merge()Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge
-    nalloc(J)Lorg/lwjgl/system/jemalloc/ExtentAlloc; object: new ExtentAlloc
-    ncommit(J)Lorg/lwjgl/system/jemalloc/ExtentCommit; object: new ExtentCommit
-    ndalloc(J)Lorg/lwjgl/system/jemalloc/ExtentDalloc; object: new ExtentDalloc
-    ndecommit(J)Lorg/lwjgl/system/jemalloc/ExtentDecommit; object: new ExtentDecommit
-    ndestroy(J)Lorg/lwjgl/system/jemalloc/ExtentDestroy; object: new ExtentDestroy
-    nmerge(J)Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge
-    npurge_forced(J)Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    npurge_lazy(J)Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    nsplit(J)Lorg/lwjgl/system/jemalloc/ExtentSplit; object: new ExtentSplit
-    purge_forced()Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    purge_lazy()Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    split()Lorg/lwjgl/system/jemalloc/ExtentSplit; object: new ExtentSplit
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentHooks$Buffer shim-class=3.1.6 fluent=13 keep-buffer-bookkeeping=1 keep-constructor=3 object=9 struct=2
-    alloc()Lorg/lwjgl/system/jemalloc/ExtentAlloc; object: new ExtentAlloc
-    commit()Lorg/lwjgl/system/jemalloc/ExtentCommit; object: new ExtentCommit
-    dalloc()Lorg/lwjgl/system/jemalloc/ExtentDalloc; object: new ExtentDalloc
-    decommit()Lorg/lwjgl/system/jemalloc/ExtentDecommit; object: new ExtentDecommit
-    destroy()Lorg/lwjgl/system/jemalloc/ExtentDestroy; object: new ExtentDestroy
-    merge()Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge
-    purge_forced()Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    purge_lazy()Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    split()Lorg/lwjgl/system/jemalloc/ExtentSplit; object: new ExtentSplit
+org/lwjgl/system/jemalloc/ExtentHooks$Buffer shim-class=3.1.6 keep-buffer-bookkeeping=1 keep-constructor=3 keep-struct=24
 org/lwjgl/system/jemalloc/ExtentMerge keep-constructor=2 object=4
     create(J)Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge
     create(Lorg/lwjgl/system/jemalloc/ExtentMergeI;)Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge

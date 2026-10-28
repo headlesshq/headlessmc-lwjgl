@@ -10,6 +10,16 @@ public final class SystemPatches {
         throw new AssertionError();
     }
 
+    /**
+     * The size of a native pointer, which LWJGL uses for {@code Pointer.POINTER_SIZE} and every struct layout.
+     *
+     * @return 8 on 64 bit JVMs, 4 on 32 bit JVMs.
+     */
+    @Patch(owner = "org/lwjgl/system/MemoryAccessJNI")
+    public static int getPointerSize() {
+        return "32".equals(System.getProperty("sun.arch.data.model")) ? 4 : 8;
+    }
+
     @Patch(owner = "org/lwjgl/system/APIUtil")
     public static PrintStream getDebugStream() {
         return System.err;

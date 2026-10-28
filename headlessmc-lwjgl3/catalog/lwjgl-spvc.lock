@@ -203,14 +203,12 @@ org/lwjgl/util/spvc/Spvc default=195 guarded-static-init=1 interface-proxy=2 kee
     spvc_type_get_storage_class(J)I default: default
     spvc_type_get_vector_size(J)I default: default
 org/lwjgl/util/spvc/Spvc$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/util/spvc/SpvcBufferRange fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=9
-org/lwjgl/util/spvc/SpvcBufferRange$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
-org/lwjgl/util/spvc/SpvcCombinedImageSampler fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=9
-org/lwjgl/util/spvc/SpvcCombinedImageSampler$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
-org/lwjgl/util/spvc/SpvcEntryPoint fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=7
-    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/spvc/SpvcEntryPoint$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=2
-    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/spvc/SpvcBufferRange guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcBufferRange$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/util/spvc/SpvcCombinedImageSampler guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcCombinedImageSampler$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/util/spvc/SpvcEntryPoint guarded-static-init=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcEntryPoint$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=11
 org/lwjgl/util/spvc/SpvcErrorCallback default=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
     create(Lorg/lwjgl/util/spvc/SpvcErrorCallbackI;)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
@@ -221,39 +219,33 @@ org/lwjgl/util/spvc/SpvcErrorCallback$1 keep-constructor=1 void=1
 org/lwjgl/util/spvc/SpvcErrorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
-org/lwjgl/util/spvc/SpvcHLSLResourceBinding fluent=15 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=15 struct-member=13
-org/lwjgl/util/spvc/SpvcHLSLResourceBinding$Buffer fluent=15 guarded-static-init=1 keep-constructor=3 struct=6 struct-member=3
-org/lwjgl/util/spvc/SpvcHLSLResourceBindingMapping fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
-org/lwjgl/util/spvc/SpvcHLSLResourceBindingMapping$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
-org/lwjgl/util/spvc/SpvcHlslRootConstants fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
-org/lwjgl/util/spvc/SpvcHlslRootConstants$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
-org/lwjgl/util/spvc/SpvcHlslVertexAttributeRemap fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=7
-    semantic()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/spvc/SpvcHlslVertexAttributeRemap$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=2
-    semantic()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/spvc/SpvcMslConstexprSampler fluent=19 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=45
-org/lwjgl/util/spvc/SpvcMslConstexprSampler$Buffer fluent=19 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=15
-org/lwjgl/util/spvc/SpvcMslResourceBinding fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=18
-org/lwjgl/util/spvc/SpvcMslResourceBinding$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
-org/lwjgl/util/spvc/SpvcMslResourceBinding2 fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=21
-org/lwjgl/util/spvc/SpvcMslResourceBinding2$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
-org/lwjgl/util/spvc/SpvcMslSamplerYcbcrConversion fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=28
-    swizzle()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-org/lwjgl/util/spvc/SpvcMslSamplerYcbcrConversion$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=9
-    swizzle()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-org/lwjgl/util/spvc/SpvcMslShaderInput fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
-org/lwjgl/util/spvc/SpvcMslShaderInput$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
-org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
-org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
-org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2 fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=15
-org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
-org/lwjgl/util/spvc/SpvcMslVertexAttribute fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=21
-org/lwjgl/util/spvc/SpvcMslVertexAttribute$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
-org/lwjgl/util/spvc/SpvcReflectedBuiltinResource fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=8
-org/lwjgl/util/spvc/SpvcReflectedBuiltinResource$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
-org/lwjgl/util/spvc/SpvcReflectedResource fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=13
-    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/spvc/SpvcReflectedResource$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=4
-    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/spvc/SpvcSpecializationConstant fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
-org/lwjgl/util/spvc/SpvcSpecializationConstant$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/util/spvc/SpvcHLSLResourceBinding guarded-static-init=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcHLSLResourceBinding$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
+org/lwjgl/util/spvc/SpvcHLSLResourceBindingMapping guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcHLSLResourceBindingMapping$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/util/spvc/SpvcHlslRootConstants guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcHlslRootConstants$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/util/spvc/SpvcHlslVertexAttributeRemap guarded-static-init=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcHlslVertexAttributeRemap$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=11
+org/lwjgl/util/spvc/SpvcMslConstexprSampler guarded-static-init=1 keep-constructor=2 keep-struct=68 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcMslConstexprSampler$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=36
+org/lwjgl/util/spvc/SpvcMslResourceBinding guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcMslResourceBinding$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
+org/lwjgl/util/spvc/SpvcMslResourceBinding2 guarded-static-init=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcMslResourceBinding2$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
+org/lwjgl/util/spvc/SpvcMslSamplerYcbcrConversion guarded-static-init=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcMslSamplerYcbcrConversion$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
+org/lwjgl/util/spvc/SpvcMslShaderInput guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcMslShaderInput$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2 guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
+org/lwjgl/util/spvc/SpvcMslVertexAttribute guarded-static-init=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcMslVertexAttribute$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
+org/lwjgl/util/spvc/SpvcReflectedBuiltinResource guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcReflectedBuiltinResource$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=13
+org/lwjgl/util/spvc/SpvcReflectedResource guarded-static-init=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcReflectedResource$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=15
+org/lwjgl/util/spvc/SpvcSpecializationConstant guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/spvc/SpvcSpecializationConstant$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
