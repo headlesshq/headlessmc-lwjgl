@@ -85,3 +85,18 @@ tasks.register('probeCompare', JavaExec) {
          '--report', layout.buildDirectory.dir('reports/probe').get().asFile.absolutePath]
     } as CommandLineArgumentProvider)
 }
+
+tasks.register('glValueTable', JavaExec) {
+    group = 'build'
+    description = 'Generates the glGet defaults of the runtime from recordings/<name>/glfw-opengl.jsonl (-Pprobe.name, default: mesa-llvmpipe).'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.probe.GlValueTable'
+    outputs.upToDateWhen { false }
+    def name = providers.gradleProperty('probe.name').orElse('mesa-llvmpipe')
+    def output = project(':headlessmc-lwjgl3-runtime').layout.projectDirectory
+        .file('src/main/resources/io/github/headlesshq/headlessmc/lwjgl3/runtime/opengl/gl-values.properties')
+    argumentProviders.add({
+        ['--recording', layout.projectDirectory.file("recordings/${name.get()}/glfw-opengl.jsonl").asFile.absolutePath,
+         '--output', output.asFile.absolutePath]
+    } as CommandLineArgumentProvider)
+}

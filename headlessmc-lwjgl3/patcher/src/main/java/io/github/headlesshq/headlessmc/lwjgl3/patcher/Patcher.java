@@ -189,14 +189,16 @@ public final class Patcher {
                 if (!entry.isDirectory() && path.startsWith(SERVICES) && modules.containsKey("lwjgl")) {
                     modules.get("lwjgl").resources.put(path, in.readAllBytes());
                     continue;
-                } else if (entry.isDirectory() || !path.startsWith(RUNTIME_PREFIX) || !path.endsWith(".class")) {
+                } else if (entry.isDirectory() || !path.startsWith(RUNTIME_PREFIX)) {
                     continue;
                 }
 
                 byte[] bytes = in.readAllBytes();
-                ClassNode node = new ClassNode();
-                new ClassReader(bytes).accept(node, ClassReader.SKIP_CODE);
-                result.add(node);
+                if (path.endsWith(".class")) {
+                    ClassNode node = new ClassNode();
+                    new ClassReader(bytes).accept(node, ClassReader.SKIP_CODE);
+                    result.add(node);
+                }
 
                 String pkg = path.substring(0, path.lastIndexOf('/'));
                 String sub = pkg.length() > RUNTIME_PREFIX.length() - 1 ? pkg.substring(RUNTIME_PREFIX.length()) : "";

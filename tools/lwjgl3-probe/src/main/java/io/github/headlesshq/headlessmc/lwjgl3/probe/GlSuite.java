@@ -220,6 +220,11 @@ final class GlSuite extends Suite {
     }
 
     @Override
+    Object nativeCapabilities() {
+        return GL.getCapabilities();
+    }
+
+    @Override
     Set<String> denied() {
         return Set.of(
             "glfwTerminate", "glfwDestroyWindow", "glfwMakeContextCurrent", "glfwSetWindowMonitor",

@@ -80,11 +80,32 @@ abstract class Suite {
     abstract Object capabilities(String internalName);
 
     /**
+     * @return the capabilities whose fields hold the function pointers of the JNI natives of the suite, or
+     * {@code null} if they are not checked.
+     */
+    Object nativeCapabilities() {
+        return null;
+    }
+
+    /**
      * @param target a target.
      * @return the first function pointer of the target that is not available, or {@code null} if all are.
      */
     String unavailableFunction(Target target) {
         for (String function : target.functions) {
+            if (function.startsWith(Target.NATIVE_FUNCTION)) {
+                Object capabilities = nativeCapabilities();
+                String name = function.substring(Target.NATIVE_FUNCTION.length());
+                try {
+                    if (capabilities != null && capabilities.getClass().getField(name).getLong(capabilities) == 0L) {
+                        return function;
+                    }
+                } catch (ReflectiveOperationException ignored) {
+                }
+
+                continue;
+            }
+
             int dot = function.lastIndexOf('.');
             Object capabilities = capabilities(function.substring(0, dot));
             try {

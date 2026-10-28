@@ -100,14 +100,14 @@ public final class GlPatches {
 
     @Patch(owner = {GL11C, GL11})
     public static float glGetFloat(int pname) {
-        return GlValues.getInteger(pname);
+        return (float) GlValues.getDoubles(pname)[0];
     }
 
     @Patch(owner = {GL11C, GL11})
     public static void glGetFloatv(int pname, FloatBuffer params) {
-        int[] values = GlValues.get(pname);
+        double[] values = GlValues.getDoubles(pname);
         for (int i = 0; i < values.length && params.position() + i < params.limit(); i++) {
-            params.put(params.position() + i, values[i]);
+            params.put(params.position() + i, (float) values[i]);
         }
     }
 
@@ -118,14 +118,14 @@ public final class GlPatches {
 
     @Patch(owner = {GL32C, GL32})
     public static long glGetInteger64(int pname) {
-        return GlValues.getInteger(pname);
+        return GlValues.getLong(pname);
     }
 
     @Patch(owner = {GL32C, GL32})
     public static void glGetInteger64v(int pname, LongBuffer params) {
-        int[] values = GlValues.get(pname);
+        double[] values = GlValues.getDoubles(pname);
         for (int i = 0; i < values.length && params.position() + i < params.limit(); i++) {
-            params.put(params.position() + i, values[i]);
+            params.put(params.position() + i, Math.round(values[i]));
         }
     }
 

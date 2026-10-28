@@ -5,25 +5,38 @@ import io.github.headlesshq.headlessmc.lwjgl3.runtime.Log;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.WindowConfig;
 import org.lwjgl.opengl.GL46C;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
 
 /**
  * The values returned by {@code glGet*} queries, keyed by the name of the GL constant.
- * <p>Defaults resemble a desktop OpenGL 4.6 driver. Every value can be overridden with the system property
+ * <p>Defaults are the values recorded from a real driver by the probe ({@value #RECORDED}), completed by values that
+ * resemble a desktop OpenGL 4.6 driver. Every value can be overridden with the system property
  * {@code hmc.lwjgl3.gl.<GL_CONSTANT_NAME>}, e.g. {@code -Dhmc.lwjgl3.gl.GL_MAX_TEXTURE_SIZE=8192}, values with
  * multiple components are comma separated. Queries for unknown parameters return 0 and are reported once.</p>
  */
 public final class GlValues {
-    private static final Map<String, int[]> DEFAULTS = new LinkedHashMap<>();
+    private static final String RECORDED = "gl-values.properties";
+    /**
+     * Values that follow the configuration or the window, the recorded ones are ignored.
+     */
+    private static final Set<String> FORCED = new HashSet<>(Arrays.asList(
+        "GL_MAJOR_VERSION", "GL_MINOR_VERSION", "GL_NUM_EXTENSIONS", "GL_CONTEXT_PROFILE_MASK", "GL_CONTEXT_FLAGS",
+        "GL_VIEWPORT", "GL_SCISSOR_BOX"));
+    private static final Map<String, double[]> DEFAULTS = new LinkedHashMap<>();
     private static final Map<Integer, String> NAMES = new HashMap<>();
-    private static final Map<Integer, int[]> VALUES = new HashMap<>();
+    private static final Map<Integer, double[]> VALUES = new HashMap<>();
 
     static {
         put("GL_MAJOR_VERSION", GlInfo.majorVersion());
@@ -161,7 +174,7 @@ public final class GlValues {
             NAMES.putIfAbsent(constant.getValue(), constant.getKey());
         }
 
-        for (Map.Entry<String, int[]> entry : DEFAULTS.entrySet()) {
+        for (Map.Entry<String, double[]> entry : DEFAULTS.entrySet()) {
             Integer pname = constants.get(entry.getKey());
             if (pname == null) {
                 Log.debug("Unknown GL constant in defaults: " + entry.getKey());
@@ -171,10 +184,17 @@ public final class GlValues {
             VALUES.put(pname, configured(entry.getKey(), entry.getValue()));
         }
 
+        for (Map.Entry<Integer, double[]> entry : recorded().entrySet()) {
+            String name = NAMES.get(entry.getKey());
+            if (name == null || !FORCED.contains(name) && Config.get("gl." + name) == null) {
+                VALUES.put(entry.getKey(), entry.getValue());
+            }
+        }
+
         for (Map.Entry<String, Integer> constant : constants.entrySet()) {
             String override = Config.get("gl." + constant.getKey());
             if (override != null) {
-                VALUES.put(constant.getValue(), parse(constant.getKey(), override, new int[]{0}));
+                VALUES.put(constant.getValue(), parse(constant.getKey(), override, new double[]{0.0}));
             }
         }
     }
@@ -185,16 +205,30 @@ public final class GlValues {
 
     /**
      * @param pname the GL constant of the queried state.
-     * @return all components of the value, an array with a single 0 for unknown parameters.
+     * @return all components of the value rounded to integers, an array with a single 0 for unknown parameters.
      */
     public static int[] get(int pname) {
-        int[] values = VALUES.get(pname);
+        double[] values = getDoubles(pname);
+        int[] result = new int[values.length];
+        for (int i = 0; i < values.length; i++) {
+            result[i] = (int) Math.max(Integer.MIN_VALUE, Math.min(Integer.MAX_VALUE, Math.round(values[i])));
+        }
+
+        return result;
+    }
+
+    /**
+     * @param pname the GL constant of the queried state.
+     * @return all components of the value, an array with a single 0 for unknown parameters.
+     */
+    public static double[] getDoubles(int pname) {
+        double[] values = VALUES.get(pname);
         if (values == null) {
             String name = NAMES.get(pname);
             Log.warnOnce("gl.get:" + pname, "Unknown glGet parameter " + (name == null ? "" : name + " ")
                                                 + "(0x" + Integer.toHexString(pname).toUpperCase() + "), returning 0. "
                                                 + "Configure it with -Dhmc.lwjgl3.gl." + (name == null ? "<name>" : name) + "=<value>");
-            return new int[]{0};
+            return new double[]{0.0};
         }
 
         return values;
@@ -202,6 +236,10 @@ public final class GlValues {
 
     public static int getInteger(int pname) {
         return get(pname)[0];
+    }
+
+    public static long getLong(int pname) {
+        return Math.round(getDoubles(pname)[0]);
     }
 
     /**
@@ -220,20 +258,56 @@ public final class GlValues {
     }
 
     private static void put(String name, int... values) {
-        DEFAULTS.put(name, values);
+        double[] converted = new double[values.length];
+        for (int i = 0; i < values.length; i++) {
+            converted[i] = values[i];
+        }
+
+        DEFAULTS.put(name, converted);
     }
 
-    private static int[] configured(String name, int[] defaultValue) {
+    /**
+     * Reads the values recorded from a real driver by the probe, see {@code tools/lwjgl3-probe}.
+     * The keys are the hexadecimal values of the parameters, since not every parameter has a name in {@code GL46C}.
+     */
+    private static Map<Integer, double[]> recorded() {
+        Map<Integer, double[]> result = new LinkedHashMap<>();
+        Properties properties = new Properties();
+        try (InputStream in = GlValues.class.getResourceAsStream(RECORDED)) {
+            if (in == null) {
+                Log.debug("No recorded GL values found");
+                return result;
+            }
+
+            properties.load(in);
+        } catch (IOException e) {
+            Log.warn("Failed to read the recorded GL values: " + e);
+            return result;
+        }
+
+        for (String name : properties.stringPropertyNames()) {
+            try {
+                result.put(Integer.decode(name), parse(name, properties.getProperty(name), new double[]{0.0}));
+            } catch (NumberFormatException e) {
+                Log.warn("Invalid recorded GL parameter " + name);
+            }
+        }
+
+        return result;
+    }
+
+    private static double[] configured(String name, double[] defaultValue) {
         String value = Config.get("gl." + name);
         return value == null ? defaultValue : parse(name, value, defaultValue);
     }
 
-    private static int[] parse(String name, String value, int[] defaultValue) {
+    private static double[] parse(String name, String value, double[] defaultValue) {
         try {
             String[] parts = value.split(",");
-            int[] result = new int[parts.length];
+            double[] result = new double[parts.length];
             for (int i = 0; i < parts.length; i++) {
-                result[i] = Integer.decode(parts[i].trim());
+                String part = parts[i].trim();
+                result[i] = part.startsWith("0x") || part.startsWith("-0x") ? Long.decode(part) : Double.parseDouble(part);
             }
 
             return result;

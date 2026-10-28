@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -45,6 +46,11 @@ final class Target {
     static final int MAX_COMBINATIONS = 20_000;
     static final int OUT_CAPACITY = 1024;
     static final int OUT_LIMIT = 16;
+    /**
+     * Prefix of {@link #functions} entries for JNI natives that resolve their function pointer in native code, the
+     * rest is the name of the function, which is also the name of its capabilities field.
+     */
+    static final String NATIVE_FUNCTION = "native:";
     private static final Pattern RAW_METHOD = Pattern.compile("n[a-z]+[A-Z0-9].*");
     private static final Set<String> ENUM_PARAMETER_NAMES = Set.of(
         "attrib", "attribute", "hint", "pname", "param", "parameter", "target", "cap", "mode", "type", "format",
@@ -309,11 +315,19 @@ final class Target {
 
     /**
      * Finds the function pointers every method loads from a capabilities object, like
-     * {@code GL.getICD().glGetIntegerv}, directly or through the raw {@code n*} method of the same class.
+     * {@code GL.getICD().glGetIntegerv}, directly or through the raw {@code n*} method of the same class, and the
+     * JNI natives it calls, see {@link #NATIVE_FUNCTION}.
      */
     private static Map<String, Set<String>> functions(ClassNode node) {
         Map<String, Set<String>> direct = new HashMap<>();
         Map<String, Set<String>> calls = new HashMap<>();
+        Set<String> natives = new HashSet<>();
+        for (MethodNode method : node.methods) {
+            if ((method.access & Opcodes.ACC_NATIVE) != 0 && method.name.length() > 1 && method.name.charAt(0) == 'n') {
+                natives.add(method.name + method.desc);
+            }
+        }
+
         for (MethodNode method : node.methods) {
             Set<String> fields = new TreeSet<>();
             Set<String> called = new TreeSet<>();
@@ -323,6 +337,9 @@ final class Target {
                     fields.add(field.owner + "." + field.name);
                 } else if (insn instanceof MethodInsnNode call && call.owner.equals(node.name)) {
                     called.add(call.name + call.desc);
+                    if (natives.contains(call.name + call.desc)) {
+                        fields.add(NATIVE_FUNCTION + call.name.substring(1));
+                    }
                 }
             }
 
@@ -450,6 +467,12 @@ final class Target {
          * @return the values the call wrote, up to the last one that differs from the sentinel.
          */
         static Object written(Object argument) {
+            if (argument instanceof Buffer buffer) {
+                buffer.clear();
+            } else if (argument instanceof PointerBuffer buffer) {
+                buffer.clear();
+            }
+
             List<Object> values = new ArrayList<>();
             if (argument instanceof ByteBuffer buffer) {
                 int count = 0;

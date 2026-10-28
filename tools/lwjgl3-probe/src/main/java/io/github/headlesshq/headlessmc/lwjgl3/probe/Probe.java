@@ -200,6 +200,11 @@ public final class Probe {
         ProcessBuilder builder = new ProcessBuilder(command);
         builder.redirectError(log(suite, restart).toFile());
         builder.environment().put("ALSOFT_DRIVERS", "null");
+        if (xvfb) {
+            builder.environment().remove("WAYLAND_DISPLAY");
+            builder.environment().put("XDG_SESSION_TYPE", "x11");
+        }
+
         if (software) {
             builder.environment().put("LIBGL_ALWAYS_SOFTWARE", "1");
             builder.environment().put("GALLIUM_DRIVER", "llvmpipe");
