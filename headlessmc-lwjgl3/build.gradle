@@ -138,10 +138,15 @@ def testModulePath = tasks.register('testModulePath', JavaExec) {
     group = 'verification'
     description = 'Runs the startup calls with the patched jars as named modules on the module path.'
     dependsOn patchLwjgl
-    classpath = sourceSets.test.runtimeClasspath.filter { !it.absolutePath.startsWith(patchedDirectory.get().asFile.absolutePath) }
+    def apiJar = project(':headlessmc-lwjgl-api').tasks.named('jar').flatMap { it.archiveFile }
+    dependsOn ':headlessmc-lwjgl-api:jar'
+    classpath = sourceSets.test.runtimeClasspath.filter {
+        !it.absolutePath.startsWith(patchedDirectory.get().asFile.absolutePath) && it != apiJar.get().asFile
+    }
     mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.ModulePathCheck'
     jvmArgumentProviders.add({
-        ['--module-path', patchedDirectory.get().asFile.absolutePath, '--add-modules', 'ALL-MODULE-PATH']
+        ['--module-path', patchedDirectory.get().asFile.absolutePath + File.pathSeparator + apiJar.get().asFile.absolutePath,
+         '--add-modules', 'ALL-MODULE-PATH']
     } as CommandLineArgumentProvider)
 }
 

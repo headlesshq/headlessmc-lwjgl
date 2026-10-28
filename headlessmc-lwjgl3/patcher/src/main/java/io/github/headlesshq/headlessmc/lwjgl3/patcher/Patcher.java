@@ -29,6 +29,8 @@ import java.util.regex.Pattern;
  */
 public final class Patcher {
     private static final String RUNTIME_PREFIX = Behaviour.RUNTIME;
+    private static final String SERVICES = "META-INF/services/";
+    private static final String API_MODULE = "io.github.headlesshq.headlessmc.lwjgl.api";
     private static final Pattern DROPPED_RESOURCE = Pattern.compile(
         "META-INF/INDEX\\.LIST|META-INF/[^/]+\\.(SF|RSA|DSA|EC)|META-INF/.+\\.sha1|META-INF/versions/.+");
 
@@ -184,7 +186,10 @@ public final class Patcher {
             JarEntry entry;
             while ((entry = in.getNextJarEntry()) != null) {
                 String path = entry.getName();
-                if (entry.isDirectory() || !path.startsWith(RUNTIME_PREFIX) || !path.endsWith(".class")) {
+                if (!entry.isDirectory() && path.startsWith(SERVICES) && modules.containsKey("lwjgl")) {
+                    modules.get("lwjgl").resources.put(path, in.readAllBytes());
+                    continue;
+                } else if (entry.isDirectory() || !path.startsWith(RUNTIME_PREFIX) || !path.endsWith(".class")) {
                     continue;
                 }
 
@@ -260,7 +265,8 @@ public final class Patcher {
             if (moduleInfo != null) {
                 Set<String> exported = new TreeSet<>(module.runtimePackages);
                 exported.addAll(module.compatPackages);
-                byte[] patched = ModuleInfoPatcher.patch(module.moduleInfos.get(moduleInfo), exported, packages(module));
+                List<String> requires = "lwjgl".equals(module.name) ? List.of(API_MODULE) : List.of();
+                byte[] patched = ModuleInfoPatcher.patch(module.moduleInfos.get(moduleInfo), exported, packages(module), requires);
                 put(out, directories, moduleInfo, patched);
             }
 

@@ -6,7 +6,7 @@ org/lwjgl/glfw/Callbacks keep-constructor=1 void=1
 org/lwjgl/glfw/EventLoop default=2 keep-constructor=1 void=1
     isJavaStartedOnFirstThread()Z default: default
     isMainThread()Z default: default
-org/lwjgl/glfw/GLFW default=78 guarded-static-init=1 handler=8 id=6 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer=3 nio-buffer-empty=1 object=23 struct=2 success=1 void=84
+org/lwjgl/glfw/GLFW default=72 guarded-static-init=1 handler=41 id=4 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer=3 nio-buffer-empty=1 object=12 struct=2 void=71
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     glfwExtensionSupported(Ljava/lang/CharSequence;)Z default: default
@@ -16,24 +16,19 @@ org/lwjgl/glfw/GLFW default=78 guarded-static-init=1 handler=8 id=6 interface-pr
     glfwGetError(Lorg/lwjgl/PointerBuffer;)I default: default
     glfwGetGamepadName(I)Ljava/lang/String; default: default
     glfwGetGamepadState(ILorg/lwjgl/glfw/GLFWGamepadState;)Z default: default
-    glfwGetInputMode(JI)I default: default
     glfwGetJoystickGUID(I)Ljava/lang/String; default: default
     glfwGetJoystickName(I)Ljava/lang/String; default: default
     glfwGetJoystickUserPointer(I)J default: default
-    glfwGetKey(JI)I default: default
     glfwGetKeyName(II)Ljava/lang/String; default: default
-    glfwGetKeyScancode(I)I default: default
     glfwGetMonitorName(J)Ljava/lang/String; default: default
     glfwGetMonitorUserPointer(J)J default: default
     glfwGetMonitors()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    glfwGetMouseButton(JI)I default: default
     glfwGetPlatform()I default: default
     glfwGetPreeditCandidate(JI)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
     glfwGetPrimaryMonitor()J default: default
     glfwGetProcAddress(Ljava/lang/CharSequence;)J default: default
     glfwGetProcAddress(Ljava/nio/ByteBuffer;)J default: default
     glfwGetVersionString()Ljava/lang/String; default: default
-    glfwGetWindowAttrib(JI)I default: default
     glfwGetWindowMonitor(J)J default: default
     glfwGetWindowOpacity(J)F default: default
     glfwGetWindowTitle(J)Ljava/lang/String; default: default
@@ -42,32 +37,20 @@ org/lwjgl/glfw/GLFW default=78 guarded-static-init=1 handler=8 id=6 interface-pr
     glfwJoystickPresent(I)Z default: default
     glfwPlatformSupported(I)Z default: default
     glfwRawMouseMotionSupported()Z default: default
-    glfwSetCharCallback(JLorg/lwjgl/glfw/GLFWCharCallbackI;)Lorg/lwjgl/glfw/GLFWCharCallback; object: new GLFWCharCallback
-    glfwSetCharModsCallback(JLorg/lwjgl/glfw/GLFWCharModsCallbackI;)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
-    glfwSetCursorEnterCallback(JLorg/lwjgl/glfw/GLFWCursorEnterCallbackI;)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
-    glfwSetCursorPosCallback(JLorg/lwjgl/glfw/GLFWCursorPosCallbackI;)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
     glfwSetDropCallback(JLorg/lwjgl/glfw/GLFWDropCallbackI;)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
     glfwSetErrorCallback(Lorg/lwjgl/glfw/GLFWErrorCallbackI;)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
-    glfwSetFramebufferSizeCallback(JLorg/lwjgl/glfw/GLFWFramebufferSizeCallbackI;)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
     glfwSetIMEStatusCallback(JLorg/lwjgl/glfw/GLFWIMEStatusCallbackI;)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback
     glfwSetJoystickCallback(Lorg/lwjgl/glfw/GLFWJoystickCallbackI;)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
-    glfwSetKeyCallback(JLorg/lwjgl/glfw/GLFWKeyCallbackI;)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
     glfwSetMonitorCallback(Lorg/lwjgl/glfw/GLFWMonitorCallbackI;)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
-    glfwSetMouseButtonCallback(JLorg/lwjgl/glfw/GLFWMouseButtonCallbackI;)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
     glfwSetPreeditCallback(JLorg/lwjgl/glfw/GLFWPreeditCallbackI;)Lorg/lwjgl/glfw/GLFWPreeditCallback; object: new GLFWPreeditCallback
     glfwSetPreeditCandidateCallback(JLorg/lwjgl/glfw/GLFWPreeditCandidateCallbackI;)Lorg/lwjgl/glfw/GLFWPreeditCandidateCallback; object: new GLFWPreeditCandidateCallback
-    glfwSetScrollCallback(JLorg/lwjgl/glfw/GLFWScrollCallbackI;)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
-    glfwSetWindowCloseCallback(JLorg/lwjgl/glfw/GLFWWindowCloseCallbackI;)Lorg/lwjgl/glfw/GLFWWindowCloseCallback; object: new GLFWWindowCloseCallback
     glfwSetWindowContentScaleCallback(JLorg/lwjgl/glfw/GLFWWindowContentScaleCallbackI;)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
-    glfwSetWindowFocusCallback(JLorg/lwjgl/glfw/GLFWWindowFocusCallbackI;)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
     glfwSetWindowIconifyCallback(JLorg/lwjgl/glfw/GLFWWindowIconifyCallbackI;)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
     glfwSetWindowMaximizeCallback(JLorg/lwjgl/glfw/GLFWWindowMaximizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
     glfwSetWindowPosCallback(JLorg/lwjgl/glfw/GLFWWindowPosCallbackI;)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
     glfwSetWindowRefreshCallback(JLorg/lwjgl/glfw/GLFWWindowRefreshCallbackI;)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
-    glfwSetWindowSizeCallback(JLorg/lwjgl/glfw/GLFWWindowSizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
     glfwUpdateGamepadMappings(Ljava/lang/CharSequence;)Z default: default [shim 3.2.1]
     glfwUpdateGamepadMappings(Ljava/nio/ByteBuffer;)Z default: default
-    glfwWindowShouldClose(J)Z default: default
     nglfwExtensionSupported(J)I default: default
     nglfwGetClipboardString(J)J default: default
     nglfwGetError(J)I default: default

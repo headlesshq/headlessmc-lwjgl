@@ -2,9 +2,11 @@ package io.github.headlesshq.headlessmc.lwjgl3.patcher;
 
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.ModuleExportNode;
 import org.objectweb.asm.tree.ModuleNode;
+import org.objectweb.asm.tree.ModuleRequireNode;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,9 +57,11 @@ public final class ModuleInfoPatcher {
      * @param exportedPackages the internal names of the packages that have to be exported, e.g. the runtime packages
      *                         embedded into the module.
      * @param existingPackages the internal names of all packages in the patched jar.
+     * @param staticRequires the modules to add as {@code requires static}, e.g. the input API.
      * @return the patched {@code module-info.class}.
      */
-    public static byte[] patch(byte[] bytes, Collection<String> exportedPackages, Set<String> existingPackages) {
+    public static byte[] patch(byte[] bytes, Collection<String> exportedPackages, Set<String> existingPackages,
+                               Collection<String> staticRequires) {
         ClassNode node = new ClassNode();
         new ClassReader(bytes).accept(node, 0);
         ModuleNode module = node.module;
@@ -81,6 +85,16 @@ public final class ModuleInfoPatcher {
 
             if (module.exports.stream().noneMatch(export -> export.packaze.equals(pkg))) {
                 module.exports.add(new ModuleExportNode(pkg, 0, null));
+            }
+        }
+
+        if (module.requires == null) {
+            module.requires = new ArrayList<>();
+        }
+
+        for (String required : staticRequires) {
+            if (module.requires.stream().noneMatch(existing -> existing.module.equals(required))) {
+                module.requires.add(new ModuleRequireNode(required, Opcodes.ACC_STATIC_PHASE, null));
             }
         }
 

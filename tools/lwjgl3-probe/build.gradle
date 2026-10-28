@@ -1,0 +1,87 @@
+description = 'Records what the real, unpatched LWJGL returns, as a reference for the behaviour catalog. Not published.'
+
+dependencies {
+    implementation libs.bundles.lwjgl
+    implementation libs.asm
+    implementation libs.asm.tree
+    libs.bundles.lwjgl.get().each { dependency ->
+        if (dependency.module.name != 'lwjgl-vulkan') {
+            runtimeOnly "${dependency.module.group}:${dependency.module.name}:${libs.versions.lwjgl.get()}:natives-linux"
+        }
+    }
+}
+
+tasks.named('compileJava', JavaCompile) {
+    options.release = 17
+}
+
+tasks.withType(PublishToMavenRepository).configureEach {
+    enabled = false
+}
+
+tasks.register('probe', JavaExec) {
+    group = 'verification'
+    description = 'Runs the real LWJGL against the local driver and writes recordings/<name>/<suite>.jsonl. ' +
+        'Options: -Pprobe.name=<name> (default: local), -Pprobe.suites=glfw-opengl,openal (default: all), ' +
+        '-Pprobe.xvfb (run the workers in xvfb-run), -Pprobe.software (Mesa llvmpipe/lavapipe).'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.probe.Probe'
+    outputs.upToDateWhen { false }
+    def recordings = layout.projectDirectory.dir('recordings')
+    def name = providers.gradleProperty('probe.name').orElse('local')
+    def suites = providers.gradleProperty('probe.suites').orElse('')
+    def xvfb = providers.gradleProperty('probe.xvfb').isPresent()
+    def software = providers.gradleProperty('probe.software').isPresent()
+    argumentProviders.add({
+        def args = ['--output', recordings.dir(name.get()).asFile.absolutePath,
+                    '--logs', layout.buildDirectory.dir('probe-logs').get().asFile.absolutePath]
+        if (!suites.get().isEmpty()) {
+            args += ['--suites', suites.get()]
+        }
+        if (xvfb) {
+            args += ['--xvfb']
+        }
+        if (software) {
+            args += ['--software']
+        }
+        args
+    } as CommandLineArgumentProvider)
+}
+
+def patchedDirectory = project(':headlessmc-lwjgl3').layout.buildDirectory.dir('patched')
+def patchedRecordings = layout.buildDirectory.dir('probe-patched')
+
+def probePatched = tasks.register('probePatched', JavaExec) {
+    group = 'verification'
+    description = 'Runs the probe suites against the patched jars, without natives, and writes build/probe-patched/<suite>.jsonl.'
+    dependsOn ':headlessmc-lwjgl3:patchLwjgl'
+    classpath = sourceSets.main.output + configurations.runtimeClasspath.filter { !it.name.startsWith('lwjgl') } +
+        files(patchedDirectory.map { it.asFileTree.matching { include '*.jar' }.files })
+    mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.probe.Probe'
+    outputs.upToDateWhen { false }
+    def suites = providers.gradleProperty('probe.suites').orElse('')
+    argumentProviders.add({
+        def args = ['--output', patchedRecordings.get().asFile.absolutePath,
+                    '--logs', layout.buildDirectory.dir('probe-patched-logs').get().asFile.absolutePath]
+        if (!suites.get().isEmpty()) {
+            args += ['--suites', suites.get()]
+        }
+        args
+    } as CommandLineArgumentProvider)
+}
+
+tasks.register('probeCompare', JavaExec) {
+    group = 'verification'
+    description = 'Compares recordings/<name> (-Pprobe.name, default: mesa-llvmpipe) with the patched jars, ' +
+        'writes build/reports/probe/<suite>.txt.'
+    dependsOn probePatched
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.probe.Compare'
+    outputs.upToDateWhen { false }
+    def name = providers.gradleProperty('probe.name').orElse('mesa-llvmpipe')
+    argumentProviders.add({
+        ['--real', layout.projectDirectory.dir("recordings/${name.get()}").asFile.absolutePath,
+         '--patched', patchedRecordings.get().asFile.absolutePath,
+         '--report', layout.buildDirectory.dir('reports/probe').get().asFile.absolutePath]
+    } as CommandLineArgumentProvider)
+}

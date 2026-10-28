@@ -3,7 +3,8 @@ package io.github.headlesshq.headlessmc.lwjgl3;
 import org.lwjgl.glfw.GLFW;
 
 /**
- * Runs the {@link StartupTest} calls with the patched jars on the module path, see the {@code testModulePath} task.
+ * Runs the {@link StartupTest} calls and the {@link InputTest} with the patched jars and the API on the module path,
+ * see the {@code testModulePath} task.
  * Uses reflection for the module API, because the tests are compiled for Java 8.
  */
 public final class ModulePathCheck {
@@ -23,6 +24,7 @@ public final class ModulePathCheck {
         test.glfwAndOpenGl();
         test.sdl();
         test.openAl();
+        new InputTest().glfw();
         System.out.println("Patched LWJGL works on the module path as " + module);
     }
 

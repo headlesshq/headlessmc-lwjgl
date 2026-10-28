@@ -1,7 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.glfw;
 
+import io.github.headlesshq.headlessmc.lwjgl3.runtime.Input;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.WindowConfig;
 
 import java.nio.IntBuffer;
 
@@ -60,21 +60,21 @@ public final class GlfwPatches {
 
     private static void putSize(IntBuffer width, IntBuffer height) {
         if (width != null) {
-            width.put(width.position(), WindowConfig.WIDTH);
+            width.put(width.position(), Input.width());
         }
 
         if (height != null) {
-            height.put(height.position(), WindowConfig.HEIGHT);
+            height.put(height.position(), Input.height());
         }
     }
 
     private static void putSize(int[] width, int[] height) {
         if (width != null) {
-            width[0] = WindowConfig.WIDTH;
+            width[0] = Input.width();
         }
 
         if (height != null) {
-            height[0] = WindowConfig.HEIGHT;
+            height[0] = Input.height();
         }
     }
 
