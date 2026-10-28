@@ -14,7 +14,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Adapts a module descriptor to the patched jar: adds and exports the packages of the embedded runtime and removes
+ * Adapts a module descriptor to the patched jar: adds and exports the packages of the embedded runtime and of re-added
+ * classes, and removes
  * every package that no longer exists, e.g. packages that only existed in dropped multi-release classes.
  */
 public final class ModuleInfoPatcher {
@@ -51,11 +52,12 @@ public final class ModuleInfoPatcher {
 
     /**
      * @param bytes the original {@code module-info.class}.
-     * @param runtimePackages the internal names of the runtime packages embedded into the module.
+     * @param exportedPackages the internal names of the packages that have to be exported, e.g. the runtime packages
+     *                         embedded into the module.
      * @param existingPackages the internal names of all packages in the patched jar.
      * @return the patched {@code module-info.class}.
      */
-    public static byte[] patch(byte[] bytes, Collection<String> runtimePackages, Set<String> existingPackages) {
+    public static byte[] patch(byte[] bytes, Collection<String> exportedPackages, Set<String> existingPackages) {
         ClassNode node = new ClassNode();
         new ClassReader(bytes).accept(node, 0);
         ModuleNode module = node.module;
@@ -72,7 +74,7 @@ public final class ModuleInfoPatcher {
             module.packages.removeIf(pkg -> !existingPackages.contains(pkg));
         }
 
-        for (String pkg : runtimePackages) {
+        for (String pkg : exportedPackages) {
             if (module.packages != null && !module.packages.contains(pkg)) {
                 module.packages.add(pkg);
             }

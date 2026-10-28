@@ -27,6 +27,7 @@ org/lwjgl/util/freetype/FTC_Face_Requester$1 default=1 keep-constructor=1
     invoke(JJJJ)I default: default
 org/lwjgl/util/freetype/FTC_Face_RequesterI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FTC_ImageType fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=8
 org/lwjgl/util/freetype/FTC_ImageType$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
 org/lwjgl/util/freetype/FTC_SBit fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=2 struct=2 struct-member=18
@@ -44,6 +45,7 @@ org/lwjgl/util/freetype/FT_Alloc_Func$1 default=1 keep-constructor=1
     invoke(JJ)J default: default
 org/lwjgl/util/freetype/FT_Alloc_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_BBox fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
 org/lwjgl/util/freetype/FT_BBox$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
 org/lwjgl/util/freetype/FT_Bitmap fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=14
@@ -81,6 +83,7 @@ org/lwjgl/util/freetype/FT_DebugHook_Func$1 default=1 keep-constructor=1
     invoke(J)I default: default
 org/lwjgl/util/freetype/FT_DebugHook_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Face fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=4 lwjgl-buffer-empty=2 nio-buffer=2 nio-buffer-empty=2 struct=16 struct-member=37
     available_sizes()Lorg/lwjgl/util/freetype/FT_Bitmap_Size$Buffer; lwjgl-buffer-empty: buffer FT_Bitmap_Size$Buffer(0)
     charmaps()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
@@ -99,6 +102,7 @@ org/lwjgl/util/freetype/FT_Free_Func keep-constructor=2 object=4
 org/lwjgl/util/freetype/FT_Free_Func$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_Free_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Generic fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=2 struct=7 struct-member=5
     finalizer()Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
     nfinalizer(J)Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
@@ -112,6 +116,7 @@ org/lwjgl/util/freetype/FT_Generic_Finalizer keep-constructor=2 object=4
 org/lwjgl/util/freetype/FT_Generic_Finalizer$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_Generic_FinalizerI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Glyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=5
 org/lwjgl/util/freetype/FT_Glyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
 org/lwjgl/util/freetype/FT_GlyphSlot fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 struct=15 struct-member=23
@@ -126,6 +131,7 @@ org/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc keep-constructor=2 obje
 org/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Incremental_Funcs fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=6 struct=7 struct-member=4
     free_glyph_data()Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc; object: new FT_Incremental_FreeGlyphDataFunc
     get_glyph_data()Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc; object: new FT_Incremental_GetGlyphDataFunc
@@ -146,6 +152,7 @@ org/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc$1 default=1 keep-constru
     invoke(JIJ)I default: default
 org/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
     create(Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFuncI;)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
@@ -155,6 +162,7 @@ org/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc$1 default=1 keep-cons
     invoke(JIZJ)I default: default
 org/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Incremental_Interface fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=5
 org/lwjgl/util/freetype/FT_Incremental_Interface$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=1
 org/lwjgl/util/freetype/FT_Incremental_Metrics fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=8
@@ -173,6 +181,7 @@ org/lwjgl/util/freetype/FT_List_Destructor keep-constructor=2 object=4
 org/lwjgl/util/freetype/FT_List_Destructor$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_List_DestructorI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_List_Iterator keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_List_Iterator; object: new FT_List_Iterator
     create(Lorg/lwjgl/util/freetype/FT_List_IteratorI;)Lorg/lwjgl/util/freetype/FT_List_Iterator; object: new FT_List_Iterator
@@ -182,12 +191,23 @@ org/lwjgl/util/freetype/FT_List_Iterator$1 default=1 keep-constructor=1
     invoke(JJ)I default: default
 org/lwjgl/util/freetype/FT_List_IteratorI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_MM_Axis fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 nio-buffer-empty=1 struct=2 struct-member=6
     name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
 org/lwjgl/util/freetype/FT_MM_Axis$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=3
     name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/util/freetype/FT_MM_Var fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=4 lwjgl-buffer-empty=2 struct=2 struct-member=6
+org/lwjgl/util/freetype/FT_MM_Var fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=9 lwjgl-buffer-empty=2 struct=7 struct-member=6
     axis()Lorg/lwjgl/util/freetype/FT_Var_Axis$Buffer; lwjgl-buffer-empty: buffer FT_Var_Axis$Buffer(0)
+    calloc()Lorg/lwjgl/util/freetype/FT_MM_Var; struct [shim 3.3.3]
+    calloc(I)Lorg/lwjgl/util/freetype/FT_MM_Var$Buffer; lwjgl-buffer [shim 3.3.3]
+    calloc(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/freetype/FT_MM_Var$Buffer; lwjgl-buffer [shim 3.3.3]
+    calloc(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/freetype/FT_MM_Var; struct [shim 3.3.3]
+    create()Lorg/lwjgl/util/freetype/FT_MM_Var; struct [shim 3.3.3]
+    create(I)Lorg/lwjgl/util/freetype/FT_MM_Var$Buffer; lwjgl-buffer [shim 3.3.3]
+    malloc()Lorg/lwjgl/util/freetype/FT_MM_Var; struct [shim 3.3.3]
+    malloc(I)Lorg/lwjgl/util/freetype/FT_MM_Var$Buffer; lwjgl-buffer [shim 3.3.3]
+    malloc(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/freetype/FT_MM_Var$Buffer; lwjgl-buffer [shim 3.3.3]
+    malloc(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/freetype/FT_MM_Var; struct [shim 3.3.3]
     namedstyle()Lorg/lwjgl/util/freetype/FT_Var_Named_Style$Buffer; lwjgl-buffer-empty: buffer FT_Var_Named_Style$Buffer(0)
 org/lwjgl/util/freetype/FT_MM_Var$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=2 struct=2 struct-member=3
     axis()Lorg/lwjgl/util/freetype/FT_Var_Axis$Buffer; lwjgl-buffer-empty: buffer FT_Var_Axis$Buffer(0)
@@ -227,6 +247,7 @@ org/lwjgl/util/freetype/FT_Module_Constructor$1 default=1 keep-constructor=1
     invoke(J)I default: default
 org/lwjgl/util/freetype/FT_Module_ConstructorI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Module_Destructor keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
     create(Lorg/lwjgl/util/freetype/FT_Module_DestructorI;)Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
@@ -235,6 +256,7 @@ org/lwjgl/util/freetype/FT_Module_Destructor keep-constructor=2 object=4
 org/lwjgl/util/freetype/FT_Module_Destructor$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_Module_DestructorI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Module_Requester keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
     create(Lorg/lwjgl/util/freetype/FT_Module_RequesterI;)Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
@@ -244,6 +266,7 @@ org/lwjgl/util/freetype/FT_Module_Requester$1 default=1 keep-constructor=1
     invoke(JJ)J default: default
 org/lwjgl/util/freetype/FT_Module_RequesterI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Multi_Master fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 struct=9 struct-member=4
     axis()Lorg/lwjgl/util/freetype/FT_MM_Axis$Buffer; lwjgl-buffer-empty: buffer FT_MM_Axis$Buffer(0)
 org/lwjgl/util/freetype/FT_Multi_Master$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 struct=3 struct-member=2
@@ -277,6 +300,7 @@ org/lwjgl/util/freetype/FT_Outline_ConicToFunc$1 default=1 keep-constructor=1
     invoke(JJJ)I default: default
 org/lwjgl/util/freetype/FT_Outline_ConicToFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Outline_CubicToFunc keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
     create(Lorg/lwjgl/util/freetype/FT_Outline_CubicToFuncI;)Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
@@ -286,6 +310,7 @@ org/lwjgl/util/freetype/FT_Outline_CubicToFunc$1 default=1 keep-constructor=1
     invoke(JJJJ)I default: default
 org/lwjgl/util/freetype/FT_Outline_CubicToFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Outline_Funcs fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=8 struct=7 struct-member=10
     conic_to()Lorg/lwjgl/util/freetype/FT_Outline_ConicToFunc; object: new FT_Outline_ConicToFunc
     cubic_to()Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
@@ -309,6 +334,7 @@ org/lwjgl/util/freetype/FT_Outline_LineToFunc$1 default=1 keep-constructor=1
     invoke(JJ)I default: default
 org/lwjgl/util/freetype/FT_Outline_LineToFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Outline_MoveToFunc keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
     create(Lorg/lwjgl/util/freetype/FT_Outline_MoveToFuncI;)Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
@@ -318,6 +344,7 @@ org/lwjgl/util/freetype/FT_Outline_MoveToFunc$1 default=1 keep-constructor=1
     invoke(JJ)I default: default
 org/lwjgl/util/freetype/FT_Outline_MoveToFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_PaintColrGlyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=2
 org/lwjgl/util/freetype/FT_PaintColrGlyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=1
 org/lwjgl/util/freetype/FT_PaintColrLayers fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4
@@ -366,6 +393,7 @@ org/lwjgl/util/freetype/FT_Raster_DoneFunc keep-constructor=2 object=4
 org/lwjgl/util/freetype/FT_Raster_DoneFunc$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_Raster_DoneFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Raster_Funcs fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=10 struct=7 struct-member=8
     nraster_done(J)Lorg/lwjgl/util/freetype/FT_Raster_DoneFunc; object: new FT_Raster_DoneFunc
     nraster_new(J)Lorg/lwjgl/util/freetype/FT_Raster_NewFunc; object: new FT_Raster_NewFunc
@@ -392,6 +420,7 @@ org/lwjgl/util/freetype/FT_Raster_NewFunc$1 default=1 keep-constructor=1
     invoke(JJ)I default: default
 org/lwjgl/util/freetype/FT_Raster_NewFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Raster_Params fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 object=3 struct=11 struct-member=15
     gray_spans()Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
     nblack_spans(J)Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
@@ -407,6 +436,7 @@ org/lwjgl/util/freetype/FT_Raster_RenderFunc$1 default=1 keep-constructor=1
     invoke(JJ)I default: default
 org/lwjgl/util/freetype/FT_Raster_RenderFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Raster_ResetFunc keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
     create(Lorg/lwjgl/util/freetype/FT_Raster_ResetFuncI;)Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
@@ -415,6 +445,7 @@ org/lwjgl/util/freetype/FT_Raster_ResetFunc keep-constructor=2 object=4
 org/lwjgl/util/freetype/FT_Raster_ResetFunc$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_Raster_ResetFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Raster_SetModeFunc keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
     create(Lorg/lwjgl/util/freetype/FT_Raster_SetModeFuncI;)Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
@@ -424,6 +455,7 @@ org/lwjgl/util/freetype/FT_Raster_SetModeFunc$1 default=1 keep-constructor=1
     invoke(JJJ)I default: default
 org/lwjgl/util/freetype/FT_Raster_SetModeFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Realloc_Func keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
     create(Lorg/lwjgl/util/freetype/FT_Realloc_FuncI;)Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
@@ -433,6 +465,7 @@ org/lwjgl/util/freetype/FT_Realloc_Func$1 default=1 keep-constructor=1
     invoke(JJJJ)J default: default
 org/lwjgl/util/freetype/FT_Realloc_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_SVG_Document fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 nio-buffer-empty=1 struct=8 struct-member=8
     svg_document()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
 org/lwjgl/util/freetype/FT_SVG_Document$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=5 struct-member=4
@@ -463,6 +496,7 @@ org/lwjgl/util/freetype/FT_SpanFunc keep-constructor=2 object=4
 org/lwjgl/util/freetype/FT_SpanFunc$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_SpanFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Stream fluent=13 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=3 nio-buffer-empty=1 object=4 struct=12 struct-member=14
     base()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     close$()Lorg/lwjgl/util/freetype/FT_Stream_CloseFunc; object: new FT_Stream_CloseFunc
@@ -483,6 +517,7 @@ org/lwjgl/util/freetype/FT_Stream_CloseFunc keep-constructor=2 object=4
 org/lwjgl/util/freetype/FT_Stream_CloseFunc$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/FT_Stream_CloseFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_Stream_IoFunc keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
     create(Lorg/lwjgl/util/freetype/FT_Stream_IoFuncI;)Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
@@ -492,6 +527,7 @@ org/lwjgl/util/freetype/FT_Stream_IoFunc$1 default=1 keep-constructor=1
     invoke(JJJJ)J default: default
 org/lwjgl/util/freetype/FT_Stream_IoFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/FT_SvgGlyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 nio-buffer-empty=1 struct=10 struct-member=10
     svg_document()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
 org/lwjgl/util/freetype/FT_SvgGlyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=6 struct-member=5
@@ -862,6 +898,11 @@ org/lwjgl/util/freetype/FreeType default=353 guarded-static-init=1 interface-pro
     nFT_Stroker_ParseOutline(JJZ)I default: default
     nFT_TrueTypeGX_Validate(JIJI)I default: default
     nFT_Vector_Length(J)J default: default
+    FT_FT_LOAD_TARGET_LCD:I [shim 3.3.3]
+    FT_FT_LOAD_TARGET_LCD_V:I [shim 3.3.3]
+    FT_FT_LOAD_TARGET_LIGHT:I [shim 3.3.3]
+    FT_FT_LOAD_TARGET_MONO:I [shim 3.3.3]
+    FT_FT_LOAD_TARGET_NORMAL:I [shim 3.3.3]
 org/lwjgl/util/freetype/FreeType$FT_Bitmap_Blend guarded-static-init=1 keep-constructor=1
 org/lwjgl/util/freetype/FreeType$FT_Get_Paint guarded-static-init=1 keep-constructor=1
 org/lwjgl/util/freetype/FreeType$FT_Palette_Set_Foreground_Color guarded-static-init=1 keep-constructor=1
@@ -906,6 +947,7 @@ org/lwjgl/util/freetype/SVG_Lib_Free_Func keep-constructor=2 object=4
 org/lwjgl/util/freetype/SVG_Lib_Free_Func$1 keep-constructor=1 void=1
 org/lwjgl/util/freetype/SVG_Lib_Free_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/SVG_Lib_Init_Func keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
     create(Lorg/lwjgl/util/freetype/SVG_Lib_Init_FuncI;)Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
@@ -915,6 +957,7 @@ org/lwjgl/util/freetype/SVG_Lib_Init_Func$1 default=1 keep-constructor=1
     invoke(J)I default: default
 org/lwjgl/util/freetype/SVG_Lib_Init_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
     create(Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_FuncI;)Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
@@ -924,6 +967,7 @@ org/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func$1 default=1 keep-constructor=1
     invoke(JZJ)I default: default
 org/lwjgl/util/freetype/SVG_Lib_Preset_Slot_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/SVG_Lib_Render_Func keep-constructor=2 object=4
     create(J)Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
     create(Lorg/lwjgl/util/freetype/SVG_Lib_Render_FuncI;)Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
@@ -933,6 +977,7 @@ org/lwjgl/util/freetype/SVG_Lib_Render_Func$1 default=1 keep-constructor=1
     invoke(JJ)I default: default
 org/lwjgl/util/freetype/SVG_Lib_Render_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/freetype/SVG_RendererHooks fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=8 struct=7 struct-member=5
     free_svg()Lorg/lwjgl/util/freetype/SVG_Lib_Free_Func; object: new SVG_Lib_Free_Func
     init_svg()Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func

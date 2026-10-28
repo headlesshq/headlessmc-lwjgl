@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -51,11 +52,15 @@ public final class Patcher {
             modules.put(input.getKey(), read(input.getKey(), input.getValue()));
         }
 
-        List<ClassNode> runtimeClasses = readRuntime();
         Synthetics synthetics = new Synthetics(pool);
+        ApiUnion union = new ApiUnion(pool, synthetics);
+        addCompatibilityApi(union);
+        errors.addAll(union.errors());
+
+        List<ClassNode> runtimeClasses = readRuntime();
         HandlerIndex handlers = new HandlerIndex(runtimeClasses, pool);
         errors.addAll(handlers.errors());
-        Catalog catalog = new Catalog(Rules.create(handlers, pool, synthetics));
+        Catalog catalog = new Catalog(Rules.create(handlers, pool, synthetics), union);
         ClassPatcher classPatcher = new ClassPatcher(pool, catalog, synthetics);
         Verifier verifier = new Verifier();
 
@@ -84,6 +89,63 @@ public final class Patcher {
         }
 
         return errors;
+    }
+
+    private void addCompatibilityApi(ApiUnion union) throws IOException {
+        List<CompatInput> inputs = new ArrayList<>(options.compat());
+        inputs.sort(Comparator.comparing(CompatInput::version, Patcher::compareVersions).reversed());
+        for (CompatInput input : inputs) {
+            Map<String, List<ClassNode>> added = union.addClasses(input.version(), input.module(), readBaseClasses(input.jar()));
+            for (Map.Entry<String, List<ClassNode>> entry : added.entrySet()) {
+                Module module = modules.get(entry.getKey());
+                if (module == null) {
+                    errors.add("LWJGL " + input.version() + " classes of " + entry.getKey() + " have no matching module");
+                    continue;
+                }
+
+                for (ClassNode node : entry.getValue()) {
+                    module.classes.add(node);
+                    module.compatPackages.add(ApiUnion.packageName(node.name));
+                }
+            }
+        }
+
+        for (CompatInput input : inputs) {
+            union.addMembers(input.version(), readBaseClasses(input.jar()));
+        }
+    }
+
+    private static List<ClassNode> readBaseClasses(Path jar) throws IOException {
+        List<ClassNode> result = new ArrayList<>();
+        try (JarInputStream in = new JarInputStream(Files.newInputStream(jar))) {
+            JarEntry entry;
+            while ((entry = in.getNextJarEntry()) != null) {
+                String path = entry.getName();
+                if (entry.isDirectory() || !path.endsWith(".class") || path.endsWith("module-info.class")
+                    || path.startsWith("META-INF/")) {
+                    continue;
+                }
+
+                ClassNode node = new ClassNode();
+                new ClassReader(in.readAllBytes()).accept(node, 0);
+                result.add(node);
+            }
+        }
+
+        return result;
+    }
+
+    static int compareVersions(String first, String second) {
+        String[] a = first.split("\\.");
+        String[] b = second.split("\\.");
+        for (int i = 0; i < Math.max(a.length, b.length); i++) {
+            int difference = Integer.compare(i < a.length ? Integer.parseInt(a[i]) : 0, i < b.length ? Integer.parseInt(b[i]) : 0);
+            if (difference != 0) {
+                return difference;
+            }
+        }
+
+        return 0;
     }
 
     private Module read(String name, Path jar) throws IOException {
@@ -196,7 +258,9 @@ public final class Patcher {
             Set<String> directories = new LinkedHashSet<>();
             String moduleInfo = ModuleInfoPatcher.select(module.moduleInfos);
             if (moduleInfo != null) {
-                byte[] patched = ModuleInfoPatcher.patch(module.moduleInfos.get(moduleInfo), module.runtimePackages, packages(module));
+                Set<String> exported = new TreeSet<>(module.runtimePackages);
+                exported.addAll(module.compatPackages);
+                byte[] patched = ModuleInfoPatcher.patch(module.moduleInfos.get(moduleInfo), exported, packages(module));
                 put(out, directories, moduleInfo, patched);
             }
 
@@ -256,9 +320,20 @@ public final class Patcher {
      * @param updateLock whether to write the lock files instead of checking them.
      * @param lwjglVersion the version of the input LWJGL jars.
      * @param version the version of headlessmc-lwjgl3.
+     * @param compat the jars of older LWJGL versions whose public API is re-added.
      */
     public record Options(Map<String, Path> inputs, Path runtime, Path output, Path lockDirectory, boolean updateLock,
-                          String lwjglVersion, String version) {
+                          String lwjglVersion, String version, List<CompatInput> compat) {
+    }
+
+    /**
+     * A module jar of an older LWJGL version.
+     *
+     * @param version the LWJGL version, e.g. {@code 3.3.3}.
+     * @param module the module name, e.g. {@code lwjgl-opengl}.
+     * @param jar the jar.
+     */
+    public record CompatInput(String version, String module, Path jar) {
     }
 
     private static final class Module {
@@ -268,6 +343,7 @@ public final class Patcher {
         private final Map<String, byte[]> resources = new LinkedHashMap<>();
         private final Map<String, byte[]> output = new LinkedHashMap<>();
         private final Set<String> runtimePackages = new TreeSet<>();
+        private final Set<String> compatPackages = new TreeSet<>();
         private Manifest manifest;
 
         private Module(String name) {

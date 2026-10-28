@@ -6,7 +6,7 @@ org/lwjgl/glfw/Callbacks keep-constructor=1 void=1
 org/lwjgl/glfw/EventLoop default=2 keep-constructor=1 void=1
     isJavaStartedOnFirstThread()Z default: default
     isMainThread()Z default: default
-org/lwjgl/glfw/GLFW default=77 guarded-static-init=1 handler=8 id=6 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer=3 nio-buffer-empty=1 object=23 struct=2 success=1 void=84
+org/lwjgl/glfw/GLFW default=78 guarded-static-init=1 handler=8 id=6 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer=3 nio-buffer-empty=1 object=23 struct=2 success=1 void=84
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     glfwExtensionSupported(Ljava/lang/CharSequence;)Z default: default
@@ -65,6 +65,7 @@ org/lwjgl/glfw/GLFW default=77 guarded-static-init=1 handler=8 id=6 interface-pr
     glfwSetWindowPosCallback(JLorg/lwjgl/glfw/GLFWWindowPosCallbackI;)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
     glfwSetWindowRefreshCallback(JLorg/lwjgl/glfw/GLFWWindowRefreshCallbackI;)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
     glfwSetWindowSizeCallback(JLorg/lwjgl/glfw/GLFWWindowSizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
+    glfwUpdateGamepadMappings(Ljava/lang/CharSequence;)Z default: default [shim 3.2.1]
     glfwUpdateGamepadMappings(Ljava/nio/ByteBuffer;)Z default: default
     glfwWindowShouldClose(J)Z default: default
     nglfwExtensionSupported(J)I default: default
@@ -121,6 +122,7 @@ org/lwjgl/glfw/GLFWAllocateCallback$1 default=1 keep-constructor=1
     invoke(JJ)J default: default
 org/lwjgl/glfw/GLFWAllocateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/glfw/GLFWAllocator fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=6 struct=7 struct-member=7
     allocate()Lorg/lwjgl/glfw/GLFWAllocateCallback; object: new GLFWAllocateCallback
     deallocate()Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
@@ -138,32 +140,44 @@ org/lwjgl/glfw/GLFWCharCallback fluent=1 keep-constructor=2 object=4
     create(Lorg/lwjgl/glfw/GLFWCharCallbackI;J)Lorg/lwjgl/glfw/GLFWCharCallback; object: new GLFWCharCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWCharCallback; object: new GLFWCharCallback
 org/lwjgl/glfw/GLFWCharCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWCharCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWCharCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWCharModsCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
     create(Lorg/lwjgl/glfw/GLFWCharModsCallbackI;)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
     create(Lorg/lwjgl/glfw/GLFWCharModsCallbackI;J)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
 org/lwjgl/glfw/GLFWCharModsCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWCharModsCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWCharModsCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWCursorEnterCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
     create(Lorg/lwjgl/glfw/GLFWCursorEnterCallbackI;)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
     create(Lorg/lwjgl/glfw/GLFWCursorEnterCallbackI;J)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
 org/lwjgl/glfw/GLFWCursorEnterCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWCursorEnterCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWCursorEnterCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWCursorPosCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
     create(Lorg/lwjgl/glfw/GLFWCursorPosCallbackI;)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
     create(Lorg/lwjgl/glfw/GLFWCursorPosCallbackI;J)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
 org/lwjgl/glfw/GLFWCursorPosCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWCursorPosCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWCursorPosCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWDeallocateCallback keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
     create(Lorg/lwjgl/glfw/GLFWDeallocateCallbackI;)Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
@@ -172,6 +186,7 @@ org/lwjgl/glfw/GLFWDeallocateCallback keep-constructor=2 object=4
 org/lwjgl/glfw/GLFWDeallocateCallback$1 keep-constructor=1 void=1
 org/lwjgl/glfw/GLFWDeallocateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/glfw/GLFWDropCallback default=1 fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
     create(Lorg/lwjgl/glfw/GLFWDropCallbackI;)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
@@ -179,8 +194,11 @@ org/lwjgl/glfw/GLFWDropCallback default=1 fluent=1 keep-constructor=2 object=4
     createSafe(J)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
     getName(JI)Ljava/lang/String; default: default
 org/lwjgl/glfw/GLFWDropCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWDropCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWDropCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWErrorCallback default=1 fluent=1 keep-constructor=2 object=7
     create(J)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
     create(Lorg/lwjgl/glfw/GLFWErrorCallbackI;)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
@@ -194,29 +212,56 @@ org/lwjgl/glfw/GLFWErrorCallback$1 keep-constructor=1 void=1
 org/lwjgl/glfw/GLFWErrorCallback$2 default=1 keep-constructor=1 void=1
     lambda$$0(Ljava/lang/reflect/Field;Ljava/lang/Integer;)Z default: default
 org/lwjgl/glfw/GLFWErrorCallback$3 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWErrorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWErrorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWFramebufferSizeCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
     create(Lorg/lwjgl/glfw/GLFWFramebufferSizeCallbackI;)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
     create(Lorg/lwjgl/glfw/GLFWFramebufferSizeCallbackI;J)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
 org/lwjgl/glfw/GLFWFramebufferSizeCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWFramebufferSizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWFramebufferSizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/glfw/GLFWGamepadState fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 nio-buffer-empty=2 struct=7 struct-member=8
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
+org/lwjgl/glfw/GLFWGamepadState fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 nio-buffer=2 nio-buffer-empty=2 struct=11 struct-member=8
     axes()Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
     buttons()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/glfw/GLFWGamepadState$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=2 struct-member=2
+    callocStack()Lorg/lwjgl/glfw/GLFWGamepadState; struct [shim 3.3.3]
+    callocStack(I)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; lwjgl-buffer [shim 3.3.3]
+    callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; lwjgl-buffer [shim 3.3.3]
+    callocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGamepadState; struct [shim 3.3.3]
+    mallocStack()Lorg/lwjgl/glfw/GLFWGamepadState; struct [shim 3.3.3]
+    mallocStack(I)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; lwjgl-buffer [shim 3.3.3]
+    mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; lwjgl-buffer [shim 3.3.3]
+    mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGamepadState; struct [shim 3.3.3]
+org/lwjgl/glfw/GLFWGamepadState$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=3 struct-member=2
     axes()Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
     buttons()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/glfw/GLFWGammaRamp fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=3 nio-buffer-empty=3 struct=7 struct-member=7
+    newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; fluent [shim 3.1.6]
+    newInstance(J)Lorg/lwjgl/glfw/GLFWGamepadState; struct [shim 3.1.6]
+org/lwjgl/glfw/GLFWGammaRamp fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 nio-buffer=3 nio-buffer-empty=3 struct=11 struct-member=8
     blue()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    callocStack()Lorg/lwjgl/glfw/GLFWGammaRamp; struct [shim 3.3.3]
+    callocStack(I)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; lwjgl-buffer [shim 3.3.3]
+    callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; lwjgl-buffer [shim 3.3.3]
+    callocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGammaRamp; struct [shim 3.3.3]
     green()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    mallocStack()Lorg/lwjgl/glfw/GLFWGammaRamp; struct [shim 3.3.3]
+    mallocStack(I)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; lwjgl-buffer [shim 3.3.3]
+    mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; lwjgl-buffer [shim 3.3.3]
+    mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGammaRamp; struct [shim 3.3.3]
     red()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-org/lwjgl/glfw/GLFWGammaRamp$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=3 struct=2 struct-member=1
+    validate(JI)V struct-member [shim 3.2.2]
+org/lwjgl/glfw/GLFWGammaRamp$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=3 struct=3 struct-member=1
     blue()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
     green()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; fluent [shim 3.1.6]
+    newInstance(J)Lorg/lwjgl/glfw/GLFWGammaRamp; struct [shim 3.1.6]
     red()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
 org/lwjgl/glfw/GLFWIMEStatusCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback
@@ -226,46 +271,70 @@ org/lwjgl/glfw/GLFWIMEStatusCallback fluent=1 keep-constructor=2 object=4
 org/lwjgl/glfw/GLFWIMEStatusCallback$1 keep-constructor=1 void=1
 org/lwjgl/glfw/GLFWIMEStatusCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/glfw/GLFWImage fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=8
-org/lwjgl/glfw/GLFWImage$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=2
+org/lwjgl/glfw/GLFWImage fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 nio-buffer=2 struct=11 struct-member=9
+    callocStack()Lorg/lwjgl/glfw/GLFWImage; struct [shim 3.3.3]
+    callocStack(I)Lorg/lwjgl/glfw/GLFWImage$Buffer; lwjgl-buffer [shim 3.3.3]
+    callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWImage$Buffer; lwjgl-buffer [shim 3.3.3]
+    callocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWImage; struct [shim 3.3.3]
+    mallocStack()Lorg/lwjgl/glfw/GLFWImage; struct [shim 3.3.3]
+    mallocStack(I)Lorg/lwjgl/glfw/GLFWImage$Buffer; lwjgl-buffer [shim 3.3.3]
+    mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWImage$Buffer; lwjgl-buffer [shim 3.3.3]
+    mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWImage; struct [shim 3.3.3]
+    validate(JI)V struct-member [shim 3.2.2]
+org/lwjgl/glfw/GLFWImage$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=3 struct-member=2
+    newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/glfw/GLFWImage$Buffer; fluent [shim 3.1.6]
+    newInstance(J)Lorg/lwjgl/glfw/GLFWImage; struct [shim 3.1.6]
 org/lwjgl/glfw/GLFWJoystickCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
     create(Lorg/lwjgl/glfw/GLFWJoystickCallbackI;)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
     create(Lorg/lwjgl/glfw/GLFWJoystickCallbackI;J)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
 org/lwjgl/glfw/GLFWJoystickCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWJoystickCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWJoystickCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWKeyCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
     create(Lorg/lwjgl/glfw/GLFWKeyCallbackI;)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
     create(Lorg/lwjgl/glfw/GLFWKeyCallbackI;J)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
 org/lwjgl/glfw/GLFWKeyCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWKeyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWKeyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWMonitorCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
     create(Lorg/lwjgl/glfw/GLFWMonitorCallbackI;)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
     create(Lorg/lwjgl/glfw/GLFWMonitorCallbackI;J)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
 org/lwjgl/glfw/GLFWMonitorCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWMonitorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWMonitorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWMouseButtonCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
     create(Lorg/lwjgl/glfw/GLFWMouseButtonCallbackI;)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
     create(Lorg/lwjgl/glfw/GLFWMouseButtonCallbackI;J)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
 org/lwjgl/glfw/GLFWMouseButtonCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWMouseButtonCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWMouseButtonCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWNativeCocoa default=3 keep-constructor=1
     glfwGetCocoaMonitor(J)I default: default
     glfwGetCocoaView(J)J default: default
     glfwGetCocoaWindow(J)J default: default
 org/lwjgl/glfw/GLFWNativeCocoa$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/glfw/GLFWNativeEGL default=6 keep-constructor=1 void=4
+org/lwjgl/glfw/GLFWNativeEGL default=7 keep-constructor=1 void=4
+    glfwGetEGLConfig(J)J default: default [shim 3.3.3]
     glfwGetEGLConfig(JLorg/lwjgl/PointerBuffer;)Z default: default
     glfwGetEGLContext(J)J default: default
     glfwGetEGLDisplay()J default: default
@@ -273,14 +342,17 @@ org/lwjgl/glfw/GLFWNativeEGL default=6 keep-constructor=1 void=4
     nglfwGetEGLConfig(JJ)I default: default
     override(Ljava/lang/String;Ljava/lang/String;)Z default: default
 org/lwjgl/glfw/GLFWNativeEGL$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/glfw/GLFWNativeGLX default=4 keep-constructor=1 void=2
+org/lwjgl/glfw/GLFWNativeGLX default=5 keep-constructor=1 void=2
     glfwGetGLXContext(J)J default: default
+    glfwGetGLXFBConfig(J)J default: default [shim 3.3.3]
     glfwGetGLXFBConfig(JLorg/lwjgl/PointerBuffer;)Z default: default
     glfwGetGLXWindow(J)J default: default
     nglfwGetGLXFBConfig(JJ)I default: default
 org/lwjgl/glfw/GLFWNativeGLX$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/glfw/GLFWNativeNSGL default=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeNSGL default=1 keep-constructor=1 void=2
     glfwGetNSGLContext(J)J default: default
+    setFramework(Ljava/lang/String;)V void [shim 3.3.2]
+    setFrameworkLWJGL()V void [shim 3.3.2]
 org/lwjgl/glfw/GLFWNativeNSGL$Functions guarded-static-init=1 keep-constructor=1
 org/lwjgl/glfw/GLFWNativeOSMesa default=7 keep-constructor=1 void=2
     glfwGetOSMesaColorBuffer(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/PointerBuffer;)Z default: default
@@ -340,16 +412,22 @@ org/lwjgl/glfw/GLFWReallocateCallback$1 default=1 keep-constructor=1
     invoke(JJJ)J default: default
 org/lwjgl/glfw/GLFWReallocateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/glfw/GLFWScrollCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
     create(Lorg/lwjgl/glfw/GLFWScrollCallbackI;)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
     create(Lorg/lwjgl/glfw/GLFWScrollCallbackI;J)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
 org/lwjgl/glfw/GLFWScrollCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWScrollCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWScrollCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWVidMode fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=12
-org/lwjgl/glfw/GLFWVidMode$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/glfw/GLFWVidMode$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=6
+    newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/glfw/GLFWVidMode$Buffer; fluent [shim 3.1.6]
+    newInstance(J)Lorg/lwjgl/glfw/GLFWVidMode; struct [shim 3.1.6]
 org/lwjgl/glfw/GLFWVulkan default=6 guarded-static-init=1 id=3 keep-constructor=1 lwjgl-buffer-empty=1 void=3
     glfwGetInstanceProcAddress(Lorg/lwjgl/vulkan/VkInstance;Ljava/lang/CharSequence;)J default: default
     glfwGetInstanceProcAddress(Lorg/lwjgl/vulkan/VkInstance;Ljava/nio/ByteBuffer;)J default: default
@@ -365,61 +443,85 @@ org/lwjgl/glfw/GLFWWindowCloseCallback fluent=1 keep-constructor=2 object=4
     create(Lorg/lwjgl/glfw/GLFWWindowCloseCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowCloseCallback; object: new GLFWWindowCloseCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWWindowCloseCallback; object: new GLFWWindowCloseCallback
 org/lwjgl/glfw/GLFWWindowCloseCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWWindowCloseCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWWindowCloseCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWWindowContentScaleCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
     create(Lorg/lwjgl/glfw/GLFWWindowContentScaleCallbackI;)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
     create(Lorg/lwjgl/glfw/GLFWWindowContentScaleCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
 org/lwjgl/glfw/GLFWWindowContentScaleCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWWindowContentScaleCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWWindowContentScaleCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWWindowFocusCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
     create(Lorg/lwjgl/glfw/GLFWWindowFocusCallbackI;)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
     create(Lorg/lwjgl/glfw/GLFWWindowFocusCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
 org/lwjgl/glfw/GLFWWindowFocusCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWWindowFocusCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWWindowFocusCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWWindowIconifyCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
     create(Lorg/lwjgl/glfw/GLFWWindowIconifyCallbackI;)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
     create(Lorg/lwjgl/glfw/GLFWWindowIconifyCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
 org/lwjgl/glfw/GLFWWindowIconifyCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWWindowIconifyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWWindowIconifyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWWindowMaximizeCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
     create(Lorg/lwjgl/glfw/GLFWWindowMaximizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
     create(Lorg/lwjgl/glfw/GLFWWindowMaximizeCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
 org/lwjgl/glfw/GLFWWindowMaximizeCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWWindowMaximizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWWindowMaximizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWWindowPosCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
     create(Lorg/lwjgl/glfw/GLFWWindowPosCallbackI;)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
     create(Lorg/lwjgl/glfw/GLFWWindowPosCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
 org/lwjgl/glfw/GLFWWindowPosCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWWindowPosCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWWindowPosCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWWindowRefreshCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
     create(Lorg/lwjgl/glfw/GLFWWindowRefreshCallbackI;)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
     create(Lorg/lwjgl/glfw/GLFWWindowRefreshCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
 org/lwjgl/glfw/GLFWWindowRefreshCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWWindowRefreshCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWWindowRefreshCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]
 org/lwjgl/glfw/GLFWWindowSizeCallback fluent=1 keep-constructor=2 object=4
     create(J)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
     create(Lorg/lwjgl/glfw/GLFWWindowSizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
     create(Lorg/lwjgl/glfw/GLFWWindowSizeCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
     createSafe(J)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
 org/lwjgl/glfw/GLFWWindowSizeCallback$1 keep-constructor=1 void=1
-org/lwjgl/glfw/GLFWWindowSizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+org/lwjgl/glfw/GLFWWindowSizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
+    callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+    SIGNATURE:Ljava/lang/String; [shim 3.2.2]

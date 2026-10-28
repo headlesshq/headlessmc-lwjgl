@@ -11,10 +11,12 @@ public final class Catalog {
     public static final String STATIC_INIT_RULE = "guarded-static-init";
 
     private final List<Rule> rules;
+    private final ApiUnion union;
     private final Map<String, Map<String, ClassEntry>> modules = new TreeMap<>();
 
-    public Catalog(List<Rule> rules) {
+    public Catalog(List<Rule> rules, ApiUnion union) {
         this.rules = rules;
+        this.union = union;
     }
 
     /**
@@ -43,7 +45,11 @@ public final class Catalog {
         ClassEntry entry = modules.computeIfAbsent(module, k -> new TreeMap<>())
             .computeIfAbsent(method.owner().name, k -> new ClassEntry());
         entry.counts.merge(rule, 1, Integer::sum);
-        if (listedDescription != null) {
+        String origin = union.memberOrigin(method.key());
+        if (origin != null) {
+            String description = listedDescription == null ? rule : rule + ": " + listedDescription;
+            entry.listed.put(method.name() + method.desc(), description + " [shim " + origin + "]");
+        } else if (listedDescription != null) {
             entry.listed.put(method.name() + method.desc(), rule + ": " + listedDescription);
         }
     }
@@ -62,6 +68,11 @@ public final class Catalog {
         Map<String, ClassEntry> classes = modules.getOrDefault(module, Map.of());
         for (Map.Entry<String, ClassEntry> classEntry : classes.entrySet()) {
             builder.append(classEntry.getKey());
+            String classOrigin = union.classOrigin(classEntry.getKey());
+            if (classOrigin != null) {
+                builder.append(" shim-class=").append(classOrigin);
+            }
+
             for (Map.Entry<String, Integer> count : classEntry.getValue().counts.entrySet()) {
                 builder.append(' ').append(count.getKey()).append('=').append(count.getValue());
             }
@@ -69,6 +80,10 @@ public final class Catalog {
             builder.append('\n');
             for (Map.Entry<String, String> listed : classEntry.getValue().listed.entrySet()) {
                 builder.append("    ").append(listed.getKey()).append(' ').append(listed.getValue()).append('\n');
+            }
+
+            for (Map.Entry<String, String> field : union.fieldOrigins(classEntry.getKey()).entrySet()) {
+                builder.append("    ").append(field.getKey()).append(" [shim ").append(field.getValue()).append("]\n");
             }
         }
 

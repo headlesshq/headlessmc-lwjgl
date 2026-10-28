@@ -1,0 +1,24 @@
+# Binary incompatible changes between an older LWJGL version and the patched jars that are accepted.
+# Checked by ./gradlew checkApiCompatibility against the japicmp reports in build/reports/japicmp/<version>.
+# Format: CHANGE_TYPE class [member]
+
+# Abstract interface methods that LWJGL removed or replaced are re-added as default methods,
+# so that lambdas compiled against the latest version still have exactly one abstract method.
+METHOD_ABSTRACT_NOW_DEFAULT org.lwjgl.openal.SOFTCallbackBufferTypeI invoke(long,long,int)
+METHOD_ABSTRACT_NOW_DEFAULT org.lwjgl.system.CallbackI getCallInterface()
+METHOD_ABSTRACT_NOW_DEFAULT org.lwjgl.system.CallbackI getSignature()
+METHOD_ABSTRACT_NOW_DEFAULT org.lwjgl.system.MemoryUtil$MemoryAllocationReport invoke(long,long,java.lang.String,java.lang.StackTraceElement[])
+METHOD_ABSTRACT_NOW_DEFAULT org.lwjgl.util.vma.VmaAllocateDeviceMemoryFunctionI invoke(long,int,long,long)
+METHOD_ABSTRACT_NOW_DEFAULT org.lwjgl.util.vma.VmaFreeDeviceMemoryFunctionI invoke(long,int,long,long)
+
+# The fields changed their type, the fields with the old type are re-added next to them (fields are resolved by name and type).
+FIELD_TYPE_CHANGED org.lwjgl.util.tinyfd.TinyFileDialogs tinyfd_forceConsole
+FIELD_TYPE_CHANGED org.lwjgl.util.tinyfd.TinyFileDialogs tinyfd_silent
+FIELD_TYPE_CHANGED org.lwjgl.util.tinyfd.TinyFileDialogs tinyfd_verbose
+
+# LWJGL 3.4 moved these constants from VK10 to VK11/VK12. They are re-added to VK10 and hidden by the new ones.
+FIELD_STATIC_AND_OVERRIDES_STATIC org.lwjgl.vulkan.VK11 VK_LUID_SIZE
+FIELD_STATIC_AND_OVERRIDES_STATIC org.lwjgl.vulkan.VK11 VK_MAX_DEVICE_GROUP_SIZE
+FIELD_STATIC_AND_OVERRIDES_STATIC org.lwjgl.vulkan.VK11 VK_QUEUE_FAMILY_EXTERNAL
+FIELD_STATIC_AND_OVERRIDES_STATIC org.lwjgl.vulkan.VK12 VK_MAX_DRIVER_INFO_SIZE
+FIELD_STATIC_AND_OVERRIDES_STATIC org.lwjgl.vulkan.VK12 VK_MAX_DRIVER_NAME_SIZE

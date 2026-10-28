@@ -1,6 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl3.patcher;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Map;
  * --lock /path/to/lock/directory
  * --lwjgl-version 3.4.3
  * --version 0.1.0
+ * --compat 3.3.3:lwjgl-opengl=/path/to/lwjgl-opengl-3.3.3.jar (repeatable)
  * [--update-lock]
  * </pre>
  */
@@ -30,6 +32,7 @@ public final class Main {
         String lwjglVersion = "unknown";
         String version = "unknown";
         boolean updateLock = false;
+        List<Patcher.CompatInput> compat = new ArrayList<>();
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
                 case "--input" -> {
@@ -41,6 +44,11 @@ public final class Main {
                 case "--lock" -> lock = Path.of(args[++i]);
                 case "--lwjgl-version" -> lwjglVersion = args[++i];
                 case "--version" -> version = args[++i];
+                case "--compat" -> {
+                    String[] input = args[++i].split("=", 2);
+                    String[] versionAndModule = input[0].split(":", 2);
+                    compat.add(new Patcher.CompatInput(versionAndModule[0], versionAndModule[1], Path.of(input[1])));
+                }
                 case "--update-lock" -> updateLock = true;
                 default -> throw new IllegalArgumentException("Unknown argument " + args[i]);
             }
@@ -50,7 +58,7 @@ public final class Main {
             throw new IllegalArgumentException("--input, --runtime, --output and --lock are required");
         }
 
-        List<String> errors = new Patcher(new Patcher.Options(inputs, runtime, output, lock, updateLock, lwjglVersion, version)).run();
+        List<String> errors = new Patcher(new Patcher.Options(inputs, runtime, output, lock, updateLock, lwjglVersion, version, compat)).run();
         if (!errors.isEmpty()) {
             errors.forEach(System.err::println);
             System.err.println(errors.size() + " error(s)");

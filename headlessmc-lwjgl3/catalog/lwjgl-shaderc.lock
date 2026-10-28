@@ -241,8 +241,17 @@ org/lwjgl/util/shaderc/ShadercIncludeResolve$1 default=1 keep-constructor=1
     invoke(JJIJJ)J default: default
 org/lwjgl/util/shaderc/ShadercIncludeResolveI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/util/shaderc/ShadercIncludeResult fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 nio-buffer-empty=2 struct=7 struct-member=16
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
+org/lwjgl/util/shaderc/ShadercIncludeResult fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=11 nio-buffer=2 nio-buffer-empty=2 struct=11 struct-member=16
+    callocStack()Lorg/lwjgl/util/shaderc/ShadercIncludeResult; struct [shim 3.3.3]
+    callocStack(I)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
+    callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
+    callocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult; struct [shim 3.3.3]
     content()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    mallocStack()Lorg/lwjgl/util/shaderc/ShadercIncludeResult; struct [shim 3.3.3]
+    mallocStack(I)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
+    mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
+    mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult; struct [shim 3.3.3]
     source_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
 org/lwjgl/util/shaderc/ShadercIncludeResult$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=2 struct-member=5
     content()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -255,3 +264,4 @@ org/lwjgl/util/shaderc/ShadercIncludeResultRelease keep-constructor=2 object=4
 org/lwjgl/util/shaderc/ShadercIncludeResultRelease$1 keep-constructor=1 void=1
 org/lwjgl/util/shaderc/ShadercIncludeResultReleaseI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]

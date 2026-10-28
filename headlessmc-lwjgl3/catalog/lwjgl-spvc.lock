@@ -3,7 +3,8 @@
 # Methods resolved by rules that only guess are listed individually and have to be reviewed.
 # Regenerate with: ./gradlew updateCatalogLock
 org/lwjgl/util/spvc/Spv keep-constructor=1
-org/lwjgl/util/spvc/Spvc default=194 guarded-static-init=1 interface-proxy=2 keep-constructor=1 void=57
+    SpvCapabilityLongConstantCompositeINTEL:I [shim 3.3.3]
+org/lwjgl/util/spvc/Spvc default=195 guarded-static-init=1 interface-proxy=2 keep-constructor=1 void=57
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     nspvc_compiler_add_header_line(JJ)I default: default
@@ -122,6 +123,7 @@ org/lwjgl/util/spvc/Spvc default=194 guarded-static-init=1 interface-proxy=2 kee
     spvc_compiler_msl_add_inline_uniform_block(JII)I default: default
     spvc_compiler_msl_add_resource_binding(JLorg/lwjgl/util/spvc/SpvcMslResourceBinding;)I default: default
     spvc_compiler_msl_add_resource_binding_2(JLorg/lwjgl/util/spvc/SpvcMslResourceBinding2;)I default: default
+    spvc_compiler_msl_add_shader_input(JLorg/lwjgl/util/spvc/SpvcMslShaderInput;)I default: default [shim 3.3.1]
     spvc_compiler_msl_add_shader_input(JLorg/lwjgl/util/spvc/SpvcMslShaderInterfaceVar;)I default: default
     spvc_compiler_msl_add_shader_input_2(JLorg/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2;)I default: default
     spvc_compiler_msl_add_shader_output(JLorg/lwjgl/util/spvc/SpvcMslShaderInterfaceVar;)I default: default
@@ -218,6 +220,7 @@ org/lwjgl/util/spvc/SpvcErrorCallback default=1 keep-constructor=2 object=4
 org/lwjgl/util/spvc/SpvcErrorCallback$1 keep-constructor=1 void=1
 org/lwjgl/util/spvc/SpvcErrorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+    CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
 org/lwjgl/util/spvc/SpvcHLSLResourceBinding fluent=15 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=15 struct-member=13
 org/lwjgl/util/spvc/SpvcHLSLResourceBinding$Buffer fluent=15 guarded-static-init=1 keep-constructor=3 struct=6 struct-member=3
 org/lwjgl/util/spvc/SpvcHLSLResourceBindingMapping fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
