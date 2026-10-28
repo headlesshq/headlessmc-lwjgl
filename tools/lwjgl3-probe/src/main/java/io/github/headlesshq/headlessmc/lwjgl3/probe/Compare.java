@@ -11,6 +11,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.stream.Stream;
 
@@ -54,7 +55,8 @@ public final class Compare {
                 }
 
                 String suite = file.getFileName().toString().replace(".jsonl", "");
-                compare(suite, read(file), read(patchedFile), report.resolve(suite + ".txt"));
+                Map<String, Map<String, Object>> realRecords = read(file, null);
+                compare(suite, realRecords, read(patchedFile, realRecords.keySet()), report.resolve(suite + ".txt"));
             }
         }
     }
@@ -118,19 +120,41 @@ public final class Compare {
     }
 
     @SuppressWarnings("unchecked")
-    private static Map<String, Map<String, Object>> read(Path file) throws IOException {
+    /**
+     * @param keys the keys to keep, or {@code null} for all; the patched recordings contain every call and are only
+     *             needed for the calls that succeeded on the real implementation.
+     */
+    private static Map<String, Map<String, Object>> read(Path file, Set<String> keys) throws IOException {
         Map<String, Map<String, Object>> result = new LinkedHashMap<>();
         try (BufferedReader reader = Files.newBufferedReader(file, StandardCharsets.UTF_8)) {
             String line;
             while ((line = reader.readLine()) != null) {
+                if (line.startsWith("{\"type\"")) {
+                    continue;
+                }
+
+                int arguments = line.indexOf(",\"r\":");
+                if (arguments < 0) {
+                    arguments = line.indexOf(",\"out\":");
+                }
+
+                if (keys != null && arguments >= 0 && !keys.contains(key((Map<String, Object>) Json.read(line.substring(0, arguments) + "}")))) {
+                    continue;
+                }
+
                 Map<String, Object> record = (Map<String, Object>) Json.read(line);
-                if (!record.containsKey("type")) {
-                    result.put(record.get("m") + " " + Json.write(record.get("a")), record);
+                String key = key(record);
+                if (keys == null || keys.contains(key)) {
+                    result.put(key, record);
                 }
             }
         }
 
         return result;
+    }
+
+    private static String key(Map<String, Object> record) {
+        return record.get("m") + " " + Json.write(record.get("a"));
     }
 
     private static final class MethodResult {

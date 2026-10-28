@@ -1,5 +1,6 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.glfw;
 
+import io.github.headlesshq.headlessmc.lwjgl3.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Ids;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Input;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
@@ -29,6 +30,7 @@ import org.lwjgl.glfw.GLFWWindowSizeCallbackI;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
+import java.util.Map;
 
 import static org.lwjgl.glfw.GLFW.*;
 
@@ -39,6 +41,7 @@ import static org.lwjgl.glfw.GLFW.*;
 public final class GlfwInputPatches {
     private static final String GLFW = "org/lwjgl/glfw/GLFW";
     private static final long WAIT_MILLIS = 10L;
+    private static final int[] CONTEXT_VERSION = contextVersion();
 
     private GlfwInputPatches() {
         throw new AssertionError();
@@ -64,7 +67,9 @@ public final class GlfwInputPatches {
 
     private static long createWindow(int width, int height) {
         long handle = Ids.nextLong();
-        GlfwWindows.get(handle);
+        Map<Integer, Integer> attributes = GlfwWindows.get(handle).attributes;
+        attributes.putAll(GlfwWindows.HINTS);
+        attributes.remove(GLFW_OPENGL_PROFILE, GLFW_OPENGL_ANY_PROFILE);
         Input.setSize(width, height);
         Input.register();
         return handle;
@@ -176,17 +181,73 @@ public final class GlfwInputPatches {
     }
 
     @Patch(owner = GLFW)
+    public static void glfwDefaultWindowHints() {
+        GlfwWindows.HINTS.clear();
+    }
+
+    @Patch(owner = GLFW)
+    public static void glfwWindowHint(int hint, int value) {
+        GlfwWindows.HINTS.put(hint, value);
+    }
+
+    @Patch(owner = GLFW)
+    public static void glfwSetWindowAttrib(long window, int attrib, int value) {
+        GlfwWindows.get(window).attributes.put(attrib, value);
+    }
+
+    /**
+     * Returns the window hints the application set and otherwise the values a real GLFW reports for a visible window
+     * with the configured OpenGL version. The context version is always the configured one, the hints only request
+     * a minimum.
+     */
+    @Patch(owner = GLFW)
     public static int glfwGetWindowAttrib(long window, int attrib) {
         switch (attrib) {
             case GLFW_FOCUSED:
                 return Input.isFocused() ? GLFW_TRUE : GLFW_FALSE;
-            case GLFW_VISIBLE:
-            case GLFW_HOVERED:
+            case GLFW_CONTEXT_VERSION_MAJOR:
+                return CONTEXT_VERSION[0];
+            case GLFW_CONTEXT_VERSION_MINOR:
+                return CONTEXT_VERSION[1];
+            default:
+                break;
+        }
+
+        Integer value = GlfwWindows.get(window).attributes.get(attrib);
+        if (value != null) {
+            return value;
+        }
+
+        switch (attrib) {
             case GLFW_RESIZABLE:
+            case GLFW_VISIBLE:
             case GLFW_DECORATED:
+            case GLFW_AUTO_ICONIFY:
+            case GLFW_HOVERED:
+            case GLFW_FOCUS_ON_SHOW:
+            case GLFW_DOUBLEBUFFER:
                 return GLFW_TRUE;
+            case GLFW_CLIENT_API:
+                return GLFW_OPENGL_API;
+            case GLFW_OPENGL_PROFILE:
+                return GLFW_OPENGL_CORE_PROFILE;
+            case GLFW_CONTEXT_ROBUSTNESS:
+                return GLFW_NO_ROBUSTNESS;
+            case GLFW_CONTEXT_RELEASE_BEHAVIOR:
+                return GLFW_ANY_RELEASE_BEHAVIOR;
+            case GLFW_CONTEXT_CREATION_API:
+                return GLFW_NATIVE_CONTEXT_API;
             default:
                 return GLFW_FALSE;
+        }
+    }
+
+    private static int[] contextVersion() {
+        String[] parts = Config.getString("gl.version", "4.6").trim().split("\\.");
+        try {
+            return new int[]{Integer.parseInt(parts[0]), parts.length > 1 ? Integer.parseInt(parts[1]) : 0};
+        } catch (NumberFormatException e) {
+            return new int[]{4, 6};
         }
     }
 

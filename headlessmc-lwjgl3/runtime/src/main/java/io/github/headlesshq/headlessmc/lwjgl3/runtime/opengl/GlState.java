@@ -139,6 +139,8 @@ public final class GlState {
         if (pname == GL_VIEWPORT || pname == GL_SCISSOR_BOX) {
             double[] value = VALUES.get(pname);
             return value != null ? value.clone() : new double[]{0, 0, Input.width(), Input.height()};
+        } else if (pname == GL_TIMESTAMP) {
+            return new double[]{System.nanoTime()};
         } else if (pname == GL_SAMPLER_BINDING) {
             Integer sampler = BOUND_SAMPLERS.get(activeUnit());
             return new double[]{sampler == null ? 0 : sampler};

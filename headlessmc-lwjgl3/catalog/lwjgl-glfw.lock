@@ -6,7 +6,7 @@ org/lwjgl/glfw/Callbacks keep-constructor=1 void=1
 org/lwjgl/glfw/EventLoop default=2 keep-constructor=1 void=1
     isJavaStartedOnFirstThread()Z default: default
     isMainThread()Z default: default
-org/lwjgl/glfw/GLFW default=61 guarded-static-init=1 handler=71 id=4 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer-empty=1 object=12 struct=2 void=55
+org/lwjgl/glfw/GLFW default=61 guarded-static-init=1 handler=74 id=4 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer-empty=1 object=12 struct=2 void=52
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     glfwExtensionSupported(Ljava/lang/CharSequence;)Z default: default

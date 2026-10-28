@@ -20,8 +20,10 @@ import java.util.stream.Collectors;
  * --constants org.lwjgl.opengl (package whose constants name the parameters)
  * --output /path/to/gl-values.properties
  * </pre>
- * For every parameter, the most precise successful query wins: {@code glGetDoublev} for values with fractions,
- * otherwise {@code glGetInteger64v}, {@code glGetFloatv}, {@code glGetIntegerv}. Parameters that describe the state of the probe's own objects, like
+ * For every parameter, the most precise successful query wins: {@code glGetDoublev}, or {@code glGetInteger64v}
+ * for values beyond the precision of a double, then {@code glGetFloatv}, {@code glGetIntegerv}. Mesa answers
+ * {@code glGetInteger64v} for some legacy matrices with garbage, so doubles come first.
+ * Driver-specific memory statistics are left out as well. Parameters that describe the state of the probe's own objects, like
  * bindings, are left out.
  */
 public final class GlValueTable {
@@ -31,10 +33,9 @@ public final class GlValueTable {
         "org/lwjgl/opengl/GL11C.glGetFloatv(ILjava/nio/FloatBuffer;)V",
         "org/lwjgl/opengl/GL11C.glGetIntegerv(ILjava/nio/IntBuffer;)V");
     private static final Pattern STATE = Pattern.compile(
-        ".*(_BINDING|_BINDING_.*|_BOUND|CURRENT_PROGRAM|TIMESTAMP|GPU_DISJOINT|_TEXTURE_[0-9]D|_TEXTURE_CUBE_MAP"
-            + "|_TEXTURE_RECTANGLE|_TEXTURE_BUFFER|_TEXTURE_[0-9]D_ARRAY|ACTIVE_TEXTURE|CLIENT_ACTIVE_TEXTURE"
-            + "|_ARRAY_POINTER|_MATRIX|CURRENT_.*|_VIEWPORT|_SCISSOR_BOX|_DRAW_BUFFER.*|_READ_BUFFER|DEBUG_.*_COUNT"
-            + "|DEBUG_NEXT_LOGGED_MESSAGE_LENGTH|_RESET_NOTIFICATION_STRATEGY)");
+        ".*(_BINDING|_BINDING_.*|_BOUND|CURRENT_PROGRAM|CURRENT_QUERY|TIMESTAMP|GPU_DISJOINT|ACTIVE_TEXTURE"
+            + "|_ARRAY_POINTER|_VIEWPORT|_SCISSOR_BOX|_DRAW_BUFFER.*|_READ_BUFFER|DEBUG_.*_COUNT"
+            + "|DEBUG_NEXT_LOGGED_MESSAGE_LENGTH|_FREE_MEMORY_ATI|GPU_MEMORY_INFO_.*)");
 
     private GlValueTable() {
         throw new AssertionError();
@@ -82,7 +83,7 @@ public final class GlValueTable {
                 String name = entry.getKey();
                 Integer pname = values.get(name);
                 if (pname == null || STATE.matcher(name).matches() || lines.containsKey(pname)
-                    || query.equals(QUERIES.get(0)) && !hasFraction(entry.getValue())) {
+                    || query.equals(QUERIES.get(0)) && exceedsDouble(entry.getValue())) {
                     continue;
                 }
 
@@ -110,9 +111,9 @@ public final class GlValueTable {
         System.out.println("Wrote " + lines.size() + " GL values to " + output);
     }
 
-    private static boolean hasFraction(List<Object> values) {
+    private static boolean exceedsDouble(List<Object> values) {
         for (Object value : values) {
-            if (value instanceof Double decimal && decimal != Math.rint(decimal)) {
+            if (value instanceof Double decimal && Math.abs(decimal) >= 0x1p53) {
                 return true;
             }
         }

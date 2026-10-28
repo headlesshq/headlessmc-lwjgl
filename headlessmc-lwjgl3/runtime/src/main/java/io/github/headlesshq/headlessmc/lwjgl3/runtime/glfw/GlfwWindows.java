@@ -16,12 +16,17 @@ import org.lwjgl.glfw.GLFWWindowSizeCallbackI;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * The GLFW windows of the application with their callbacks, and the dispatching of injected {@link Input} events.
  * Injected input goes to the main window, the oldest window that is still open.
  */
 public final class GlfwWindows {
+    /**
+     * The window hints for the next window, see {@code glfwWindowHint}.
+     */
+    static final Map<Integer, Integer> HINTS = new ConcurrentHashMap<>();
     private static final Map<Long, GlfwWindow> WINDOWS = new LinkedHashMap<>();
 
     private GlfwWindows() {

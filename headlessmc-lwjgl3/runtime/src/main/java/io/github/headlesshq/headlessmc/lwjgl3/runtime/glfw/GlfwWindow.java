@@ -16,10 +16,11 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * The state of a GLFW window: its callbacks, input modes, title and close flag.
+ * The state of a GLFW window: its callbacks, input modes, attributes, title and close flag.
  */
 public final class GlfwWindow {
     final Map<Integer, Integer> inputModes = new ConcurrentHashMap<>();
+    final Map<Integer, Integer> attributes = new ConcurrentHashMap<>();
     volatile GLFWKeyCallbackI key;
     volatile GLFWCharCallbackI character;
     volatile GLFWCharModsCallbackI charMods;
