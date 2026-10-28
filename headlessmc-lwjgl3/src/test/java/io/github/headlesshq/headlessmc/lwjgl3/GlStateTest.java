@@ -10,6 +10,8 @@ import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 
+import java.nio.ByteBuffer;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -78,6 +80,14 @@ class GlStateTest {
             assertEquals(GL11.GL_TRUE, GL20.glGetProgrami(program, GL20.GL_LINK_STATUS));
             assertEquals(1, GL20.glGetProgrami(program, GL20.GL_ATTACHED_SHADERS));
             assertEquals(0, GL20.glGetProgrami(program, GL20.GL_ACTIVE_UNIFORMS));
+
+            GL11.glBindTexture(GL11.GL_TEXTURE_2D, 42);
+            GL11.glTexImage2D(GL11.GL_TEXTURE_2D, 0, GL11.GL_RGBA8, 256, 128, 0, GL11.GL_RGBA, GL11.GL_UNSIGNED_BYTE, (ByteBuffer) null);
+            assertEquals(256, GL11.glGetTexLevelParameteri(GL11.GL_TEXTURE_2D, 0, GL11.GL_TEXTURE_WIDTH));
+            assertEquals(128, GL11.glGetTexLevelParameteri(GL11.GL_TEXTURE_2D, 0, GL11.GL_TEXTURE_HEIGHT));
+            assertEquals(GL11.GL_RGBA8, GL11.glGetTexLevelParameteri(GL11.GL_TEXTURE_2D, 0, GL11.GL_TEXTURE_INTERNAL_FORMAT));
+            GL11.glBindTexture(GL11.GL_TEXTURE_2D, 43);
+            assertEquals(0, GL11.glGetTexLevelParameteri(GL11.GL_TEXTURE_2D, 0, GL11.GL_TEXTURE_WIDTH));
         } finally {
             GL11.glViewport(0, 0, 854, 480);
             GL13.glActiveTexture(GL13.GL_TEXTURE0);

@@ -177,6 +177,19 @@ public final class GlState {
         BOUND_TEXTURES.put(key(activeUnit(), target), texture);
     }
 
+    /**
+     * @param target a texture target, cube map faces count as {@code GL_TEXTURE_CUBE_MAP}.
+     * @return the texture bound to the target on the active texture unit.
+     */
+    public static synchronized int boundTexture(int target) {
+        if (target >= GL_TEXTURE_CUBE_MAP_POSITIVE_X && target <= GL_TEXTURE_CUBE_MAP_NEGATIVE_Z) {
+            target = GL_TEXTURE_CUBE_MAP;
+        }
+
+        Integer texture = BOUND_TEXTURES.get(key(activeUnit(), target));
+        return texture == null ? 0 : texture;
+    }
+
     public static synchronized void bindSampler(int unit, int sampler) {
         BOUND_SAMPLERS.put(GL_TEXTURE0 + unit, sampler);
     }
