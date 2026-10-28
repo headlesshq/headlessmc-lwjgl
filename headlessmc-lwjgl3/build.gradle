@@ -1,0 +1,123 @@
+description = 'Patched, headless LWJGL 3 jars that never load native libraries.'
+
+configurations {
+    lwjgl {
+        transitive = false
+        canBeConsumed = false
+    }
+    patcher {
+        canBeConsumed = false
+    }
+    runtimeJar {
+        canBeConsumed = false
+    }
+}
+
+dependencies {
+    lwjgl libs.bundles.lwjgl
+    patcher project(':headlessmc-lwjgl3-patcher')
+    runtimeJar project(':headlessmc-lwjgl3-runtime')
+
+    testImplementation project(':headlessmc-lwjgl-api')
+}
+
+def lwjglVersion = libs.versions.lwjgl.get()
+def patchedDirectory = layout.buildDirectory.dir('patched')
+def lockDirectory = layout.projectDirectory.dir('catalog')
+
+def lwjglInputs = configurations.lwjgl.incoming.artifacts.resolvedArtifacts.map { artifacts ->
+    artifacts.collect { artifact ->
+        def id = artifact.id.componentIdentifier as ModuleComponentIdentifier
+        "${id.module}=${artifact.file.absolutePath}"
+    }
+}
+
+def registerPatchTask = { String name, boolean updateLock ->
+    tasks.register(name, JavaExec) {
+        group = 'build'
+        classpath = configurations.patcher
+        mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.patcher.Main'
+        inputs.files(configurations.lwjgl)
+        inputs.files(configurations.runtimeJar)
+        inputs.property('version', project.version)
+        if (updateLock) {
+            description = 'Writes the behaviour catalog lock files from the current rules, review the diff afterwards.'
+            outputs.dir(lockDirectory)
+            outputs.upToDateWhen { false }
+        } else {
+            description = 'Patches the LWJGL jars and checks the behaviour catalog against the lock files.'
+            inputs.dir(lockDirectory).optional()
+        }
+        outputs.dir(patchedDirectory)
+        argumentProviders.add({
+            def args = []
+            lwjglInputs.get().each { args += ['--input', it] }
+            args += ['--runtime', configurations.runtimeJar.singleFile.absolutePath]
+            args += ['--output', patchedDirectory.get().asFile.absolutePath]
+            args += ['--lock', lockDirectory.asFile.absolutePath]
+            args += ['--lwjgl-version', lwjglVersion]
+            args += ['--version', project.version.toString()]
+            if (updateLock) {
+                args += ['--update-lock']
+            }
+            args
+        } as CommandLineArgumentProvider)
+    }
+}
+
+def patchLwjgl = registerPatchTask('patchLwjgl', false)
+registerPatchTask('updateCatalogLock', true)
+
+def patchedJars = fileTree(patchedDirectory) {
+    include '*.jar'
+    builtBy patchLwjgl
+}
+
+dependencies {
+    testImplementation patchedJars
+}
+
+tasks.named('compileTestJava', JavaCompile) {
+    options.release = 8
+}
+
+tasks.withType(Test).configureEach {
+    dependsOn patchLwjgl
+    systemProperty 'hmc.lwjgl3.test.patchedDirectory', patchedDirectory.get().asFile.absolutePath
+    systemProperty 'org.lwjgl.librarypath', layout.buildDirectory.dir('no-natives').get().asFile.absolutePath
+}
+
+[8, 17, 21].each { javaVersion ->
+    def testOnJava = tasks.register("testJava${javaVersion}", Test) {
+        group = 'verification'
+        description = "Runs the tests against the patched jars on Java ${javaVersion}."
+        testClassesDirs = sourceSets.test.output.classesDirs
+        classpath = sourceSets.test.runtimeClasspath
+        javaLauncher = javaToolchains.launcherFor {
+            languageVersion = JavaLanguageVersion.of(javaVersion)
+        }
+    }
+
+    tasks.named('check') {
+        dependsOn testOnJava
+    }
+}
+
+def testModulePath = tasks.register('testModulePath', JavaExec) {
+    group = 'verification'
+    description = 'Runs the startup calls with the patched jars as named modules on the module path.'
+    dependsOn patchLwjgl
+    classpath = sourceSets.test.runtimeClasspath.filter { !it.absolutePath.startsWith(patchedDirectory.get().asFile.absolutePath) }
+    mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.ModulePathCheck'
+    jvmArgumentProviders.add({
+        ['--module-path', patchedDirectory.get().asFile.absolutePath, '--add-modules', 'ALL-MODULE-PATH']
+    } as CommandLineArgumentProvider)
+}
+
+tasks.named('check') {
+    dependsOn testModulePath
+}
+
+tasks.named('jar') {
+    enabled = false
+}

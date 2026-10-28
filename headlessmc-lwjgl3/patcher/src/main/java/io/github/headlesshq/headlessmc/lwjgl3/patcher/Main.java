@@ -1,0 +1,61 @@
+package io.github.headlesshq.headlessmc.lwjgl3.patcher;
+
+import java.nio.file.Path;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Command line entry point of the patcher.
+ * <pre>
+ * --input lwjgl-opengl=/path/to/lwjgl-opengl.jar (repeatable)
+ * --runtime /path/to/runtime.jar
+ * --output /path/to/output/directory
+ * --lock /path/to/lock/directory
+ * --lwjgl-version 3.4.3
+ * --version 0.1.0
+ * [--update-lock]
+ * </pre>
+ */
+public final class Main {
+    private Main() {
+        throw new AssertionError();
+    }
+
+    public static void main(String[] args) throws Exception {
+        Map<String, Path> inputs = new LinkedHashMap<>();
+        Path runtime = null;
+        Path output = null;
+        Path lock = null;
+        String lwjglVersion = "unknown";
+        String version = "unknown";
+        boolean updateLock = false;
+        for (int i = 0; i < args.length; i++) {
+            switch (args[i]) {
+                case "--input" -> {
+                    String[] input = args[++i].split("=", 2);
+                    inputs.put(input[0], Path.of(input[1]));
+                }
+                case "--runtime" -> runtime = Path.of(args[++i]);
+                case "--output" -> output = Path.of(args[++i]);
+                case "--lock" -> lock = Path.of(args[++i]);
+                case "--lwjgl-version" -> lwjglVersion = args[++i];
+                case "--version" -> version = args[++i];
+                case "--update-lock" -> updateLock = true;
+                default -> throw new IllegalArgumentException("Unknown argument " + args[i]);
+            }
+        }
+
+        if (inputs.isEmpty() || runtime == null || output == null || lock == null) {
+            throw new IllegalArgumentException("--input, --runtime, --output and --lock are required");
+        }
+
+        List<String> errors = new Patcher(new Patcher.Options(inputs, runtime, output, lock, updateLock, lwjglVersion, version)).run();
+        if (!errors.isEmpty()) {
+            errors.forEach(System.err::println);
+            System.err.println(errors.size() + " error(s)");
+            System.exit(1);
+        }
+    }
+
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "description": "One PR per LWJGL release, CI fails until the behaviour catalog lock files are reviewed and updated.",
+      "matchPackageNames": ["org.lwjgl:**"],
+      "groupName": "LWJGL"
+    },
+    {
+      "description": "JUnit 6 requires Java 17, but the runtime tests also run on Java 8.",
+      "matchPackageNames": ["org.junit:**", "org.junit.jupiter:**", "org.junit.platform:**"],
+      "allowedVersions": "<6"
+    }
+  ]
+}

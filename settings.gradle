@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name = 'headlessmc-lwjgl'
+
+include 'headlessmc-lwjgl-api'
+
+include 'headlessmc-lwjgl3'
+include 'headlessmc-lwjgl3-patcher'
+include 'headlessmc-lwjgl3-runtime'
+project(':headlessmc-lwjgl3-patcher').projectDir = file('headlessmc-lwjgl3/patcher')
+project(':headlessmc-lwjgl3-runtime').projectDir = file('headlessmc-lwjgl3/runtime')

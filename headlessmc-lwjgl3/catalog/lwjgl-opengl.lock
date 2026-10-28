@@ -1,0 +1,1836 @@
+# Behaviour catalog of org.lwjgl:lwjgl-opengl:3.4.3
+# Every method of every class is patched by the first matching rule, counted per class.
+# Methods resolved by rules that only guess are listed individually and have to be reviewed.
+# Regenerate with: ./gradlew updateCatalogLock
+org/lwjgl/opengl/AMDBlendMinmaxFactor keep-constructor=1
+org/lwjgl/opengl/AMDDebugOutput default=3 guarded-static-init=1 keep-constructor=1 void=9
+    glGetDebugMessageLogAMD(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I default: default
+    glGetDebugMessageLogAMD(I[I[I[I[ILjava/nio/ByteBuffer;)I default: default
+    nglGetDebugMessageLogAMD(IIJJJJJ)I default: default
+org/lwjgl/opengl/AMDDepthClampSeparate keep-constructor=1
+org/lwjgl/opengl/AMDDrawBuffersBlend guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/AMDFramebufferMultisampleAdvanced guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/AMDGPUShaderHalfFloat keep-constructor=1
+org/lwjgl/opengl/AMDGPUShaderHalfFloatFetch keep-constructor=1
+org/lwjgl/opengl/AMDGPUShaderInt64 default=2 guarded-static-init=1 keep-constructor=1 void=70
+    glGetUniformi64NV(II)J default: default
+    glGetUniformui64NV(II)J default: default
+org/lwjgl/opengl/AMDInterleavedElements guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/AMDOcclusionQueryEvent guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/AMDPerformanceMonitor guarded-static-init=1 id=1 keep-constructor=1 void=33
+org/lwjgl/opengl/AMDPinnedMemory keep-constructor=1
+org/lwjgl/opengl/AMDQueryBufferObject keep-constructor=1
+org/lwjgl/opengl/AMDSamplePositions guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/AMDSeamlessCubemapPerTexture keep-constructor=1
+org/lwjgl/opengl/AMDSparseTexture guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/AMDStencilOperationExtended guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/AMDTransformFeedback4 keep-constructor=1
+org/lwjgl/opengl/AMDVertexShaderTessellator guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/APPLEAuxDepthStencil keep-constructor=1
+org/lwjgl/opengl/APPLEClientStorage keep-constructor=1
+org/lwjgl/opengl/APPLEElementArray guarded-static-init=1 keep-constructor=1 void=14
+org/lwjgl/opengl/APPLEFence default=3 guarded-static-init=1 id=1 keep-constructor=1 void=10
+    glIsFenceAPPLE(I)Z default: default
+    glTestFenceAPPLE(I)Z default: default
+    glTestObjectAPPLE(II)Z default: default
+org/lwjgl/opengl/APPLEFloatPixels keep-constructor=1
+org/lwjgl/opengl/APPLEFlushBufferRange guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/APPLEObjectPurgeable default=3 guarded-static-init=1 keep-constructor=1 void=3
+    glGetObjectParameterivAPPLE(III)I default: default
+    glObjectPurgeableAPPLE(III)I default: default
+    glObjectUnpurgeableAPPLE(III)I default: default
+org/lwjgl/opengl/APPLERGB422 keep-constructor=1
+org/lwjgl/opengl/APPLERowBytes keep-constructor=1
+org/lwjgl/opengl/APPLETextureRange default=1 guarded-static-init=1 keep-constructor=1 void=4
+    glGetTexParameterPointervAPPLE(II)J default: default
+org/lwjgl/opengl/APPLEVertexArrayObject default=1 guarded-static-init=1 id=1 keep-constructor=1 void=8
+    glIsVertexArrayAPPLE(I)Z default: default
+org/lwjgl/opengl/APPLEVertexArrayRange guarded-static-init=1 keep-constructor=1 void=5
+org/lwjgl/opengl/APPLEVertexProgramEvaluators default=1 guarded-static-init=1 keep-constructor=1 void=14
+    glIsVertexAttribEnabledAPPLE(II)Z default: default
+org/lwjgl/opengl/APPLEYCBCR422 keep-constructor=1
+org/lwjgl/opengl/ARBBaseInstance guarded-static-init=1 keep-constructor=1 void=13
+org/lwjgl/opengl/ARBBindlessTexture default=6 guarded-static-init=1 keep-constructor=1 void=19
+    glGetImageHandleARB(IIZII)J default: default
+    glGetTextureHandleARB(I)J default: default
+    glGetTextureSamplerHandleARB(II)J default: default
+    glGetVertexAttribLui64ARB(II)J default: default
+    glIsImageHandleResidentARB(J)Z default: default
+    glIsTextureHandleResidentARB(J)Z default: default
+org/lwjgl/opengl/ARBBlendFuncExtended default=3 guarded-static-init=1 keep-constructor=1 void=3
+    glGetFragDataIndex(ILjava/lang/CharSequence;)I default: default
+    glGetFragDataIndex(ILjava/nio/ByteBuffer;)I default: default
+    nglGetFragDataIndex(IJ)I default: default
+org/lwjgl/opengl/ARBBufferStorage guarded-static-init=1 keep-constructor=1 void=22
+org/lwjgl/opengl/ARBCLEvent guarded-static-init=1 id=2 keep-constructor=1
+org/lwjgl/opengl/ARBClearBufferObject guarded-static-init=1 keep-constructor=1 void=32
+org/lwjgl/opengl/ARBClearTexture guarded-static-init=1 keep-constructor=1 void=20
+org/lwjgl/opengl/ARBClipControl guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBColorBufferFloat guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBCompressedTexturePixelStorage keep-constructor=1
+org/lwjgl/opengl/ARBComputeShader guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/ARBComputeVariableGroupSize guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBConditionalRenderInverted keep-constructor=1
+org/lwjgl/opengl/ARBCopyBuffer guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBCopyImage guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBCullDistance keep-constructor=1
+org/lwjgl/opengl/ARBDebugOutput default=3 guarded-static-init=1 keep-constructor=1 void=9
+    glGetDebugMessageLogARB(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I default: default
+    glGetDebugMessageLogARB(I[I[I[I[I[ILjava/nio/ByteBuffer;)I default: default
+    nglGetDebugMessageLogARB(IIJJJJJJ)I default: default
+org/lwjgl/opengl/ARBDepthBufferFloat keep-constructor=1
+org/lwjgl/opengl/ARBDepthClamp keep-constructor=1
+org/lwjgl/opengl/ARBDepthTexture keep-constructor=1
+org/lwjgl/opengl/ARBDirectStateAccess default=20 guarded-static-init=1 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=2 void=279
+    glGetNamedBufferParameteri(II)I default: default
+    glGetNamedBufferParameteri64(II)J default: default
+    glGetNamedBufferPointer(II)J default: default
+    glGetNamedFramebufferAttachmentParameteri(III)I default: default
+    glGetNamedFramebufferParameteri(II)I default: default
+    glGetNamedRenderbufferParameteri(II)I default: default
+    glGetTextureLevelParameterf(III)F default: default
+    glGetTextureLevelParameteri(III)I default: default
+    glGetTextureParameterIi(II)I default: default
+    glGetTextureParameterIui(II)I default: default
+    glGetTextureParameterf(II)F default: default
+    glGetTextureParameteri(II)I default: default
+    glGetTransformFeedbacki(II)I default: default
+    glGetTransformFeedbacki(III)I default: default
+    glGetTransformFeedbacki64(III)J default: default
+    glGetVertexArrayIndexed64i(III)J default: default
+    glGetVertexArrayIndexedi(III)I default: default
+    glGetVertexArrayi(II)I default: default
+    glMapNamedBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapNamedBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nglMapNamedBuffer(II)J default: default
+    nglMapNamedBufferRange(IJJI)J default: default
+org/lwjgl/opengl/ARBDrawBuffers guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/ARBDrawBuffersBlend guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/ARBDrawElementsBaseVertex guarded-static-init=1 keep-constructor=1 void=21
+org/lwjgl/opengl/ARBDrawIndirect guarded-static-init=1 keep-constructor=1 void=10
+org/lwjgl/opengl/ARBDrawInstanced guarded-static-init=1 keep-constructor=1 void=7
+org/lwjgl/opengl/ARBES2Compatibility default=1 guarded-static-init=1 keep-constructor=1 void=9
+    glGetShaderPrecisionFormat(IILjava/nio/IntBuffer;)I default: default
+org/lwjgl/opengl/ARBES31Compatibility guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBES32Compatibility guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBES3Compatibility keep-constructor=1
+org/lwjgl/opengl/ARBEnhancedLayouts keep-constructor=1
+org/lwjgl/opengl/ARBExplicitUniformLocation keep-constructor=1
+org/lwjgl/opengl/ARBFragmentProgram keep-constructor=1
+org/lwjgl/opengl/ARBFragmentShader keep-constructor=1
+org/lwjgl/opengl/ARBFramebufferNoAttachments default=2 guarded-static-init=1 keep-constructor=1 void=8
+    glGetFramebufferParameteri(II)I default: default
+    glGetNamedFramebufferParameteriEXT(II)I default: default
+org/lwjgl/opengl/ARBFramebufferObject default=4 guarded-static-init=1 id=2 keep-constructor=1 success=1 void=31
+    glGetFramebufferAttachmentParameteri(III)I default: default
+    glGetRenderbufferParameteri(II)I default: default
+    glIsFramebuffer(I)Z default: default
+    glIsRenderbuffer(I)Z default: default
+org/lwjgl/opengl/ARBFramebufferSRGB keep-constructor=1
+org/lwjgl/opengl/ARBGLSPIRV guarded-static-init=1 keep-constructor=1 void=5
+org/lwjgl/opengl/ARBGPUShader5 keep-constructor=1
+org/lwjgl/opengl/ARBGPUShaderFP64 default=1 guarded-static-init=1 keep-constructor=1 void=89
+    glGetUniformd(II)D default: default
+org/lwjgl/opengl/ARBGPUShaderInt64 default=4 guarded-static-init=1 keep-constructor=1 void=76
+    glGetUniformi64vARB(II)J default: default
+    glGetUniformui64vARB(II)J default: default
+    glGetnUniformi64vARB(II)J default: default
+    glGetnUniformui64vARB(II)J default: default
+org/lwjgl/opengl/ARBGeometryShader4 guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/ARBGetProgramBinary guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/ARBGetTextureSubImage guarded-static-init=1 keep-constructor=1 void=22
+org/lwjgl/opengl/ARBHalfFloatPixel keep-constructor=1
+org/lwjgl/opengl/ARBHalfFloatVertex keep-constructor=1
+org/lwjgl/opengl/ARBImaging default=8 guarded-static-init=1 keep-constructor=1 void=90
+    glGetColorTableParameterf(II)F default: default
+    glGetColorTableParameteri(II)I default: default
+    glGetConvolutionParameterf(II)F default: default
+    glGetConvolutionParameteri(II)I default: default
+    glGetHistogramParameterf(II)F default: default
+    glGetHistogramParameteri(II)I default: default
+    glGetMinmaxParameterf(II)F default: default
+    glGetMinmaxParameteri(II)I default: default
+org/lwjgl/opengl/ARBIndirectParameters guarded-static-init=1 keep-constructor=1 void=10
+org/lwjgl/opengl/ARBInstancedArrays guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/ARBInternalformatQuery default=1 guarded-static-init=1 keep-constructor=1 void=3
+    glGetInternalformati(III)I default: default
+org/lwjgl/opengl/ARBInternalformatQuery2 default=1 guarded-static-init=1 keep-constructor=1 void=3
+    glGetInternalformati64(III)J default: default
+org/lwjgl/opengl/ARBInvalidateSubdata guarded-static-init=1 keep-constructor=1 void=12
+org/lwjgl/opengl/ARBMapBufferAlignment keep-constructor=1
+org/lwjgl/opengl/ARBMapBufferRange default=1 guarded-static-init=1 keep-constructor=1 nio-buffer=2 void=1
+    nglMapBufferRange(IJJI)J default: default
+org/lwjgl/opengl/ARBMatrixPalette guarded-static-init=1 keep-constructor=1 void=15
+org/lwjgl/opengl/ARBMultiBind guarded-static-init=1 keep-constructor=1 void=18
+org/lwjgl/opengl/ARBMultiDrawIndirect guarded-static-init=1 keep-constructor=1 void=10
+org/lwjgl/opengl/ARBMultisample guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBMultitexture guarded-static-init=1 keep-constructor=1 void=66
+org/lwjgl/opengl/ARBOcclusionQuery default=4 guarded-static-init=1 id=1 keep-constructor=1 void=20
+    glGetQueryObjectiARB(II)I default: default
+    glGetQueryObjectuiARB(II)I default: default
+    glGetQueryiARB(II)I default: default
+    glIsQueryARB(I)Z default: default
+org/lwjgl/opengl/ARBOcclusionQuery2 keep-constructor=1
+org/lwjgl/opengl/ARBParallelShaderCompile guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBPipelineStatisticsQuery keep-constructor=1
+org/lwjgl/opengl/ARBPixelBufferObject keep-constructor=1
+org/lwjgl/opengl/ARBPointParameters guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/ARBPointSprite keep-constructor=1
+org/lwjgl/opengl/ARBPolygonOffsetClamp guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBProgramInterfaceQuery default=12 guarded-static-init=1 keep-constructor=1 void=9
+    glGetProgramInterfacei(III)I default: default
+    glGetProgramResourceIndex(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceLocation(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceLocation(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceLocationIndex(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceLocationIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceName(III)Ljava/lang/String; default: default
+    glGetProgramResourceName(IIII)Ljava/lang/String; default: default
+    nglGetProgramResourceIndex(IIJ)I default: default
+    nglGetProgramResourceLocation(IIJ)I default: default
+    nglGetProgramResourceLocationIndex(IIJ)I default: default
+org/lwjgl/opengl/ARBProvokingVertex guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBQueryBufferObject keep-constructor=1
+org/lwjgl/opengl/ARBRobustness default=8 guarded-static-init=1 keep-constructor=1 void=77
+    glGetGraphicsResetStatusARB()I default: default
+    glGetnMapdARB(II)D default: default
+    glGetnMapfARB(II)F default: default
+    glGetnMapiARB(II)I default: default
+    glGetnUniformdARB(II)D default: default
+    glGetnUniformfARB(II)F default: default
+    glGetnUniformiARB(II)I default: default
+    glGetnUniformuiARB(II)I default: default
+org/lwjgl/opengl/ARBSPIRVExtensions keep-constructor=1
+org/lwjgl/opengl/ARBSampleLocations guarded-static-init=1 keep-constructor=1 void=7
+org/lwjgl/opengl/ARBSampleShading guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBSamplerObjects default=5 guarded-static-init=1 id=1 keep-constructor=1 void=34
+    glGetSamplerParameterIi(II)I default: default
+    glGetSamplerParameterIui(II)I default: default
+    glGetSamplerParameterf(II)F default: default
+    glGetSamplerParameteri(II)I default: default
+    glIsSampler(I)Z default: default
+org/lwjgl/opengl/ARBSeamlessCubeMap keep-constructor=1
+org/lwjgl/opengl/ARBSeamlessCubemapPerTexture keep-constructor=1
+org/lwjgl/opengl/ARBSeparateShaderObjects default=4 guarded-static-init=1 id=5 keep-constructor=1 void=136
+    glGetProgramPipelineInfoLog(I)Ljava/lang/String; default: default
+    glGetProgramPipelineInfoLog(II)Ljava/lang/String; default: default
+    glGetProgramPipelinei(II)I default: default
+    glIsProgramPipeline(I)Z default: default
+org/lwjgl/opengl/ARBShaderAtomicCounters default=1 guarded-static-init=1 keep-constructor=1 void=3
+    glGetActiveAtomicCounterBufferi(III)I default: default
+org/lwjgl/opengl/ARBShaderImageLoadStore guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/ARBShaderObjects default=13 guarded-static-init=1 id=2 keep-constructor=1 void=77
+    glGetActiveUniformARB(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetActiveUniformARB(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetHandleARB(I)I default: default
+    glGetInfoLogARB(I)Ljava/lang/String; default: default
+    glGetInfoLogARB(II)Ljava/lang/String; default: default
+    glGetObjectParameteriARB(II)I default: default
+    glGetShaderSourceARB(I)Ljava/lang/String; default: default
+    glGetShaderSourceARB(II)Ljava/lang/String; default: default
+    glGetUniformLocationARB(ILjava/lang/CharSequence;)I default: default
+    glGetUniformLocationARB(ILjava/nio/ByteBuffer;)I default: default
+    glGetUniformfARB(II)F default: default
+    glGetUniformiARB(II)I default: default
+    nglGetUniformLocationARB(IJ)I default: default
+org/lwjgl/opengl/ARBShaderStorageBufferObject guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBShaderSubroutine default=13 guarded-static-init=1 keep-constructor=1 void=19
+    glGetActiveSubroutineName(III)Ljava/lang/String; default: default
+    glGetActiveSubroutineName(IIII)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformName(III)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformName(IIII)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformi(IIII)I default: default
+    glGetProgramStagei(III)I default: default
+    glGetSubroutineIndex(IILjava/lang/CharSequence;)I default: default
+    glGetSubroutineIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetSubroutineUniformLocation(IILjava/lang/CharSequence;)I default: default
+    glGetSubroutineUniformLocation(IILjava/nio/ByteBuffer;)I default: default
+    glGetUniformSubroutineui(II)I default: default
+    nglGetSubroutineIndex(IIJ)I default: default
+    nglGetSubroutineUniformLocation(IIJ)I default: default
+org/lwjgl/opengl/ARBShadingLanguage100 keep-constructor=1
+org/lwjgl/opengl/ARBShadingLanguageInclude default=6 guarded-static-init=1 keep-constructor=1 void=19
+    glGetNamedStringARB(Ljava/lang/CharSequence;)Ljava/lang/String; default: default
+    glGetNamedStringARB(Ljava/lang/CharSequence;I)Ljava/lang/String; default: default
+    glGetNamedStringiARB(Ljava/lang/CharSequence;I)I default: default
+    glIsNamedStringARB(Ljava/lang/CharSequence;)Z default: default
+    glIsNamedStringARB(Ljava/nio/ByteBuffer;)Z default: default
+    nglIsNamedStringARB(IJ)Z default: default
+org/lwjgl/opengl/ARBShadow keep-constructor=1
+org/lwjgl/opengl/ARBShadowAmbient keep-constructor=1
+org/lwjgl/opengl/ARBSparseBuffer guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/ARBSparseTexture guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/ARBStencilTexturing keep-constructor=1
+org/lwjgl/opengl/ARBSync default=5 guarded-static-init=1 id=1 keep-constructor=1 success=1 void=9
+    glGetInteger64(I)J default: default
+    glGetSynci(JILjava/nio/IntBuffer;)I default: default
+    glIsSync(J)Z default: default
+    nglClientWaitSync(JIJ)I default: default
+    nglIsSync(J)Z default: default
+org/lwjgl/opengl/ARBTessellationShader guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/ARBTextureBarrier guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBTextureBorderClamp keep-constructor=1
+org/lwjgl/opengl/ARBTextureBufferObject guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBTextureBufferRange guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/ARBTextureCompression guarded-static-init=1 keep-constructor=1 void=21
+org/lwjgl/opengl/ARBTextureCompressionBPTC keep-constructor=1
+org/lwjgl/opengl/ARBTextureCompressionRGTC keep-constructor=1
+org/lwjgl/opengl/ARBTextureCubeMap keep-constructor=1
+org/lwjgl/opengl/ARBTextureCubeMapArray keep-constructor=1
+org/lwjgl/opengl/ARBTextureEnvCombine keep-constructor=1
+org/lwjgl/opengl/ARBTextureEnvDot3 keep-constructor=1
+org/lwjgl/opengl/ARBTextureFilterAnisotropic keep-constructor=1
+org/lwjgl/opengl/ARBTextureFilterMinmax keep-constructor=1
+org/lwjgl/opengl/ARBTextureFloat keep-constructor=1
+org/lwjgl/opengl/ARBTextureGather keep-constructor=1
+org/lwjgl/opengl/ARBTextureMirrorClampToEdge keep-constructor=1
+org/lwjgl/opengl/ARBTextureMirroredRepeat keep-constructor=1
+org/lwjgl/opengl/ARBTextureMultisample default=1 guarded-static-init=1 keep-constructor=1 void=6
+    glGetMultisamplef(II)F default: default
+org/lwjgl/opengl/ARBTextureRG keep-constructor=1
+org/lwjgl/opengl/ARBTextureRGB10_A2UI keep-constructor=1
+org/lwjgl/opengl/ARBTextureRectangle keep-constructor=1
+org/lwjgl/opengl/ARBTextureStorage guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/ARBTextureStorageMultisample guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/ARBTextureSwizzle keep-constructor=1
+org/lwjgl/opengl/ARBTextureView guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/ARBTimerQuery default=2 guarded-static-init=1 keep-constructor=1 void=9
+    glGetQueryObjecti64(II)J default: default
+    glGetQueryObjectui64(II)J default: default
+org/lwjgl/opengl/ARBTransformFeedback2 default=1 guarded-static-init=1 id=1 keep-constructor=1 void=11
+    glIsTransformFeedback(I)Z default: default
+org/lwjgl/opengl/ARBTransformFeedback3 default=1 guarded-static-init=1 keep-constructor=1 void=6
+    glGetQueryIndexedi(III)I default: default
+org/lwjgl/opengl/ARBTransformFeedbackInstanced guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/ARBTransformFeedbackOverflowQuery keep-constructor=1
+org/lwjgl/opengl/ARBTransposeMatrix guarded-static-init=1 keep-constructor=1 void=12
+org/lwjgl/opengl/ARBUniformBufferObject default=11 guarded-static-init=1 keep-constructor=1 void=22
+    glGetActiveUniformBlockName(II)Ljava/lang/String; default: default
+    glGetActiveUniformBlockName(III)Ljava/lang/String; default: default
+    glGetActiveUniformBlocki(III)I default: default
+    glGetActiveUniformName(II)Ljava/lang/String; default: default
+    glGetActiveUniformName(III)Ljava/lang/String; default: default
+    glGetActiveUniformsi(III)I default: default
+    glGetIntegeri(II)I default: default
+    glGetUniformBlockIndex(ILjava/lang/CharSequence;)I default: default
+    glGetUniformBlockIndex(ILjava/nio/ByteBuffer;)I default: default
+    glGetUniformIndices(ILjava/lang/CharSequence;)I default: default
+    nglGetUniformBlockIndex(IJ)I default: default
+org/lwjgl/opengl/ARBVertexArrayBGRA keep-constructor=1
+org/lwjgl/opengl/ARBVertexArrayObject default=1 guarded-static-init=1 id=1 keep-constructor=1 void=8
+    glIsVertexArray(I)Z default: default
+org/lwjgl/opengl/ARBVertexAttrib64Bit guarded-static-init=1 keep-constructor=1 void=24
+org/lwjgl/opengl/ARBVertexAttribBinding guarded-static-init=1 keep-constructor=1 void=12
+org/lwjgl/opengl/ARBVertexBlend guarded-static-init=1 keep-constructor=1 void=32
+org/lwjgl/opengl/ARBVertexBufferObject default=5 guarded-static-init=1 id=1 keep-constructor=1 nio-buffer=1 nio-buffer-empty=2 void=44
+    glGetBufferParameteriARB(II)I default: default
+    glGetBufferPointerARB(II)J default: default
+    glIsBufferARB(I)Z default: default
+    glMapBufferARB(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapBufferARB(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glUnmapBufferARB(I)Z default: default
+    nglMapBufferARB(II)J default: default
+org/lwjgl/opengl/ARBVertexProgram default=4 guarded-static-init=1 id=1 keep-constructor=1 void=142
+    glGetProgramiARB(II)I default: default
+    glGetVertexAttribPointerARB(II)J default: default
+    glGetVertexAttribiARB(II)I default: default
+    glIsProgramARB(I)Z default: default
+org/lwjgl/opengl/ARBVertexShader default=7 guarded-static-init=1 keep-constructor=1 void=106
+    glGetActiveAttribARB(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetActiveAttribARB(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetAttribLocationARB(ILjava/lang/CharSequence;)I default: default
+    glGetAttribLocationARB(ILjava/nio/ByteBuffer;)I default: default
+    glGetVertexAttribPointerARB(II)J default: default
+    glGetVertexAttribiARB(II)I default: default
+    nglGetAttribLocationARB(IJ)I default: default
+org/lwjgl/opengl/ARBVertexType2_10_10_10_REV guarded-static-init=1 keep-constructor=1 void=76
+org/lwjgl/opengl/ARBViewportArray default=2 guarded-static-init=1 keep-constructor=1 void=24
+    glGetDoublei(II)D default: default
+    glGetFloati(II)F default: default
+org/lwjgl/opengl/ARBWindowPos guarded-static-init=1 keep-constructor=1 void=32
+org/lwjgl/opengl/ATIMeminfo keep-constructor=1
+org/lwjgl/opengl/ATITextureCompression3DC keep-constructor=1
+org/lwjgl/opengl/CGL default=76 keep-constructor=1 void=6
+    CGLChoosePixelFormat(Ljava/nio/IntBuffer;Lorg/lwjgl/PointerBuffer;Ljava/nio/IntBuffer;)I default: default
+    CGLChoosePixelFormat([ILorg/lwjgl/PointerBuffer;[I)I default: default
+    CGLClearDrawable(J)I default: default
+    CGLCopyContext(JJI)I default: default
+    CGLCreateContext(JJLorg/lwjgl/PointerBuffer;)I default: default
+    CGLCreatePBuffer(IIIIILorg/lwjgl/PointerBuffer;)I default: default
+    CGLDescribePBuffer(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)I default: default
+    CGLDescribePBuffer(J[I[I[I[I[I)I default: default
+    CGLDescribePixelFormat(JIILjava/nio/IntBuffer;)I default: default
+    CGLDescribePixelFormat(JII[I)I default: default
+    CGLDescribeRenderer(JIILjava/nio/IntBuffer;)I default: default
+    CGLDescribeRenderer(JII[I)I default: default
+    CGLDestroyContext(J)I default: default
+    CGLDestroyPBuffer(J)I default: default
+    CGLDestroyPixelFormat(J)I default: default
+    CGLDestroyRendererInfo(J)I default: default
+    CGLDisable(JI)I default: default
+    CGLEnable(JI)I default: default
+    CGLErrorString(I)Ljava/lang/String; default: default
+    CGLFlushDrawable(J)I default: default
+    CGLGetContextRetainCount(J)I default: default
+    CGLGetCurrentContext()J default: default
+    CGLGetGlobalOption(ILjava/nio/IntBuffer;)I default: default
+    CGLGetGlobalOption(I[I)I default: default
+    CGLGetOffScreen(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    CGLGetOffScreen(J[I[I[ILorg/lwjgl/PointerBuffer;)I default: default
+    CGLGetPBuffer(JLorg/lwjgl/PointerBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)I default: default
+    CGLGetPBuffer(JLorg/lwjgl/PointerBuffer;[I[I[I)I default: default
+    CGLGetPBufferRetainCount(J)I default: default
+    CGLGetParameter(JILjava/nio/IntBuffer;)I default: default
+    CGLGetParameter(JI[I)I default: default
+    CGLGetPixelFormat(J)J default: default
+    CGLGetPixelFormatRetainCount(J)I default: default
+    CGLGetShareGroup(J)J default: default
+    CGLGetVirtualScreen(JLjava/nio/IntBuffer;)I default: default
+    CGLGetVirtualScreen(J[I)I default: default
+    CGLIsEnabled(JILjava/nio/IntBuffer;)I default: default
+    CGLIsEnabled(JI[I)I default: default
+    CGLLockContext(J)I default: default
+    CGLQueryRendererInfo(ILorg/lwjgl/PointerBuffer;Ljava/nio/IntBuffer;)I default: default
+    CGLQueryRendererInfo(ILorg/lwjgl/PointerBuffer;[I)I default: default
+    CGLRetainContext(J)J default: default
+    CGLRetainPBuffer(J)J default: default
+    CGLRetainPixelFormat(J)J default: default
+    CGLSetCurrentContext(J)I default: default
+    CGLSetFullScreen(J)I default: default
+    CGLSetFullScreenOnDisplay(JI)I default: default
+    CGLSetGlobalOption(II)I default: default
+    CGLSetGlobalOption(ILjava/nio/IntBuffer;)I default: default
+    CGLSetGlobalOption(I[I)I default: default
+    CGLSetOffScreen(JIIILjava/nio/ByteBuffer;)I default: default
+    CGLSetPBuffer(JJIII)I default: default
+    CGLSetParameter(JII)I default: default
+    CGLSetParameter(JILjava/nio/IntBuffer;)I default: default
+    CGLSetParameter(JI[I)I default: default
+    CGLSetVirtualScreen(JI)I default: default
+    CGLTexImagePBuffer(JJI)I default: default
+    CGLUnlockContext(J)I default: default
+    CGLUpdateContext(J)I default: default
+    nCGLChoosePixelFormat(JJJ)I default: default
+    nCGLCreateContext(JJJ)I default: default
+    nCGLCreatePBuffer(IIIIIJ)I default: default
+    nCGLDescribePBuffer(JJJJJJ)I default: default
+    nCGLDescribePixelFormat(JIIJ)I default: default
+    nCGLDescribeRenderer(JIIJ)I default: default
+    nCGLErrorString(I)J default: default
+    nCGLGetGlobalOption(IJ)I default: default
+    nCGLGetOffScreen(JJJJJ)I default: default
+    nCGLGetPBuffer(JJJJJ)I default: default
+    nCGLGetParameter(JIJ)I default: default
+    nCGLGetVirtualScreen(JJ)I default: default
+    nCGLIsEnabled(JIJ)I default: default
+    nCGLQueryRendererInfo(IJJ)I default: default
+    nCGLSetGlobalOption(IJ)I default: default
+    nCGLSetOffScreen(JIIIJ)I default: default
+    nCGLSetParameter(JIJ)I default: default
+org/lwjgl/opengl/CGL$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/opengl/EXT422Pixels keep-constructor=1
+org/lwjgl/opengl/EXTABGR keep-constructor=1
+org/lwjgl/opengl/EXTBGRA keep-constructor=1
+org/lwjgl/opengl/EXTBindableUniform default=2 guarded-static-init=1 keep-constructor=1 void=1
+    glGetUniformBufferSizeEXT(II)I default: default
+    glGetUniformOffsetEXT(II)J default: default
+org/lwjgl/opengl/EXTBlendColor guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTBlendEquationSeparate guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTBlendFuncSeparate guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTBlendMinmax guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTBlendSubtract keep-constructor=1
+org/lwjgl/opengl/EXTClipVolumeHint keep-constructor=1
+org/lwjgl/opengl/EXTCompiledVertexArray guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/EXTDebugLabel default=1 guarded-static-init=1 keep-constructor=1 void=6
+    glGetObjectLabelEXT(III)Ljava/lang/String; default: default
+org/lwjgl/opengl/EXTDebugMarker guarded-static-init=1 keep-constructor=1 void=7
+org/lwjgl/opengl/EXTDepthBoundsTest guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTDirectStateAccess default=39 guarded-static-init=1 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 void=589
+    glCheckNamedFramebufferStatusEXT(II)I default: default
+    glGetBooleanIndexedEXT(II)Z default: default
+    glGetDoubleIndexedEXT(II)D default: default
+    glGetDoubleiEXT(II)D default: default
+    glGetFloatIndexedEXT(II)F default: default
+    glGetFloatiEXT(II)F default: default
+    glGetFramebufferParameteriEXT(II)I default: default
+    glGetIntegerIndexedEXT(II)I default: default
+    glGetMultiTexEnvfEXT(III)F default: default
+    glGetMultiTexEnviEXT(III)I default: default
+    glGetMultiTexGendEXT(III)D default: default
+    glGetMultiTexGenfEXT(III)F default: default
+    glGetMultiTexGeniEXT(III)I default: default
+    glGetMultiTexLevelParameterfEXT(IIII)F default: default
+    glGetMultiTexLevelParameteriEXT(IIII)I default: default
+    glGetMultiTexParameterIiEXT(III)I default: default
+    glGetMultiTexParameterIuiEXT(III)I default: default
+    glGetMultiTexParameterfEXT(III)F default: default
+    glGetMultiTexParameteriEXT(III)I default: default
+    glGetNamedBufferParameteriEXT(II)I default: default
+    glGetNamedFramebufferAttachmentParameteriEXT(III)I default: default
+    glGetNamedProgramiEXT(III)I default: default
+    glGetNamedRenderbufferParameteriEXT(II)I default: default
+    glGetPointerIndexedEXT(II)J default: default
+    glGetPointeriEXT(II)J default: default
+    glGetTextureLevelParameterfEXT(IIII)F default: default
+    glGetTextureLevelParameteriEXT(IIII)I default: default
+    glGetTextureParameterIiEXT(III)I default: default
+    glGetTextureParameterIuiEXT(III)I default: default
+    glGetTextureParameterfEXT(III)F default: default
+    glGetTextureParameteriEXT(III)I default: default
+    glGetVertexArrayIntegerEXT(II)I default: default
+    glGetVertexArrayIntegeriEXT(III)I default: default
+    glGetVertexArrayPointerEXT(II)J default: default
+    glGetVertexArrayPointeriEXT(III)J default: default
+    glIsEnabledIndexedEXT(II)Z default: default
+    glMapNamedBufferEXT(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapNamedBufferEXT(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glUnmapNamedBufferEXT(I)Z default: default
+    nglMapNamedBufferEXT(II)J default: default
+    nglMapNamedBufferRangeEXT(IJJI)J default: default
+org/lwjgl/opengl/EXTDrawBuffers2 default=3 guarded-static-init=1 keep-constructor=1 void=8
+    glGetBooleanIndexedEXT(II)Z default: default
+    glGetIntegerIndexedEXT(II)I default: default
+    glIsEnabledIndexedEXT(II)Z default: default
+org/lwjgl/opengl/EXTDrawInstanced guarded-static-init=1 keep-constructor=1 void=7
+org/lwjgl/opengl/EXTEGLImageStorage guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/EXTExternalBuffer guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/EXTFragmentShadingRate guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/EXTFramebufferBlit guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTFramebufferBlitLayers guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/EXTFramebufferMultisample guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTFramebufferMultisampleBlitScaled keep-constructor=1
+org/lwjgl/opengl/EXTFramebufferObject default=4 guarded-static-init=1 id=2 keep-constructor=1 success=1 void=28
+    glGetFramebufferAttachmentParameteriEXT(III)I default: default
+    glGetRenderbufferParameteriEXT(II)I default: default
+    glIsFramebufferEXT(I)Z default: default
+    glIsRenderbufferEXT(I)Z default: default
+org/lwjgl/opengl/EXTFramebufferSRGB keep-constructor=1
+org/lwjgl/opengl/EXTGPUProgramParameters guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/EXTGPUShader4 default=6 guarded-static-init=1 keep-constructor=1 void=77
+    glGetFragDataLocationEXT(ILjava/lang/CharSequence;)I default: default
+    glGetFragDataLocationEXT(ILjava/nio/ByteBuffer;)I default: default
+    glGetUniformuiEXT(II)I default: default
+    glGetVertexAttribIiEXT(II)I default: default
+    glGetVertexAttribIuiEXT(II)I default: default
+    nglGetFragDataLocationEXT(IJ)I default: default
+org/lwjgl/opengl/EXTGeometryShader4 guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/EXTMemoryObject default=2 guarded-static-init=1 id=1 keep-constructor=1 void=30
+    glGetMemoryObjectParameteriEXT(II)I default: default
+    glIsMemoryObjectEXT(I)Z default: default
+org/lwjgl/opengl/EXTMemoryObjectFD guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTMemoryObjectWin32 guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/EXTMeshShader guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/EXTPackedDepthStencil keep-constructor=1
+org/lwjgl/opengl/EXTPackedFloat keep-constructor=1
+org/lwjgl/opengl/EXTPixelBufferObject keep-constructor=1
+org/lwjgl/opengl/EXTPointParameters guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/EXTPolygonOffsetClamp guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTProvokingVertex guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTRasterMultisample guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTSecondaryColor guarded-static-init=1 keep-constructor=1 void=39
+org/lwjgl/opengl/EXTSemaphore default=2 guarded-static-init=1 id=1 keep-constructor=1 void=24
+    glGetSemaphoreParameterui64EXT(II)J default: default
+    glIsSemaphoreEXT(I)Z default: default
+org/lwjgl/opengl/EXTSemaphoreFD guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTSemaphoreWin32 guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/EXTSeparateShaderObjects guarded-static-init=1 id=3 keep-constructor=1 void=2
+org/lwjgl/opengl/EXTShaderFramebufferFetch keep-constructor=1
+org/lwjgl/opengl/EXTShaderFramebufferFetchNonCoherent guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTShaderImageLoadStore guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/EXTSharedTexturePalette keep-constructor=1
+org/lwjgl/opengl/EXTStencilClearTag guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTStencilTwoSide guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTStencilWrap keep-constructor=1
+org/lwjgl/opengl/EXTTextureArray guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTTextureBufferObject guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/EXTTextureCompressionLATC keep-constructor=1
+org/lwjgl/opengl/EXTTextureCompressionRGTC keep-constructor=1
+org/lwjgl/opengl/EXTTextureCompressionS3TC keep-constructor=1
+org/lwjgl/opengl/EXTTextureFilterAnisotropic keep-constructor=1
+org/lwjgl/opengl/EXTTextureFilterMinmax keep-constructor=1
+org/lwjgl/opengl/EXTTextureInteger default=2 guarded-static-init=1 keep-constructor=1 void=16
+    glGetTexParameterIiEXT(II)I default: default
+    glGetTexParameterIuiEXT(II)I default: default
+org/lwjgl/opengl/EXTTextureMirrorClamp keep-constructor=1
+org/lwjgl/opengl/EXTTextureSRGB keep-constructor=1
+org/lwjgl/opengl/EXTTextureSRGBDecode keep-constructor=1
+org/lwjgl/opengl/EXTTextureSRGBR8 keep-constructor=1
+org/lwjgl/opengl/EXTTextureSRGBRG8 keep-constructor=1
+org/lwjgl/opengl/EXTTextureSharedExponent keep-constructor=1
+org/lwjgl/opengl/EXTTextureSnorm keep-constructor=1
+org/lwjgl/opengl/EXTTextureStorage guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/EXTTextureSwizzle keep-constructor=1
+org/lwjgl/opengl/EXTTimerQuery default=2 guarded-static-init=1 keep-constructor=1 void=8
+    glGetQueryObjecti64EXT(II)J default: default
+    glGetQueryObjectui64EXT(II)J default: default
+org/lwjgl/opengl/EXTTransformFeedback default=4 guarded-static-init=1 keep-constructor=1 void=17
+    glGetBooleanIndexedEXT(II)Z default: default
+    glGetIntegerIndexedEXT(II)I default: default
+    glGetTransformFeedbackVaryingEXT(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetTransformFeedbackVaryingEXT(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+org/lwjgl/opengl/EXTVertexAttrib64bit guarded-static-init=1 keep-constructor=1 void=24
+org/lwjgl/opengl/EXTWin32KeyedMutex default=2 guarded-static-init=1 keep-constructor=1
+    glAcquireKeyedMutexWin32EXT(IJI)Z default: default
+    glReleaseKeyedMutexWin32EXT(IJ)Z default: default
+org/lwjgl/opengl/EXTWindowRectangles guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/EXTX11SyncObject default=1 guarded-static-init=1 keep-constructor=1
+    glImportSyncEXT(IJI)J default: default
+org/lwjgl/opengl/GL default=1 guarded-static-init=1 handler=6 interface-proxy=5 keep-constructor=1 object=11 void=6
+    access$102(Lorg/lwjgl/opengl/GL$ICD;)Lorg/lwjgl/opengl/GL$ICD; interface-proxy: proxy GL$ICD
+    checkCapabilities(Lorg/lwjgl/opengl/GLCapabilities;)Lorg/lwjgl/opengl/GLCapabilities; object: new GLCapabilities
+    createCapabilitiesGLX(J)Lorg/lwjgl/opengl/GLXCapabilities; object: new GLXCapabilities
+    createCapabilitiesGLX(JI)Lorg/lwjgl/opengl/GLXCapabilities; object: new GLXCapabilities
+    createCapabilitiesWGL()Lorg/lwjgl/opengl/WGLCapabilities; object: new WGLCapabilities
+    createCapabilitiesWGL(J)Lorg/lwjgl/opengl/WGLCapabilities; object: new WGLCapabilities
+    createCapabilitiesWGLDummy()Lorg/lwjgl/opengl/WGLCapabilities; object: new WGLCapabilities
+    getCapabilitiesGLX()Lorg/lwjgl/opengl/GLXCapabilities; object: new GLXCapabilities
+    getCapabilitiesGLXClient()Lorg/lwjgl/opengl/GLXCapabilities; object: new GLXCapabilities
+    getCapabilitiesWGL()Lorg/lwjgl/opengl/WGLCapabilities; object: new WGLCapabilities
+    getFunctionProvider()Lorg/lwjgl/system/FunctionProvider; interface-proxy: proxy FunctionProvider
+    getICD()Lorg/lwjgl/opengl/GLCapabilities; object: new GLCapabilities
+    initCapabilitiesGLX(Z)Lorg/lwjgl/opengl/GLXCapabilities; object: new GLXCapabilities
+    isWayland()Z default: default
+    loadEGL()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNative()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadOSMesa()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+org/lwjgl/opengl/GL$1 default=1 keep-constructor=1
+    getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
+org/lwjgl/opengl/GL$2 guarded-static-init=1
+org/lwjgl/opengl/GL$ICD keep-abstract-interface-method=1 void=1
+org/lwjgl/opengl/GL$ICDStatic keep-constructor=2 object=2 void=1
+    access$200()Lorg/lwjgl/opengl/GLCapabilities; object: new GLCapabilities
+    get()Lorg/lwjgl/opengl/GLCapabilities; object: new GLCapabilities
+org/lwjgl/opengl/GL$ICDStatic$WriteOnce guarded-static-init=1 keep-constructor=1
+org/lwjgl/opengl/GL11 default=25 guarded-static-init=1 handler=7 id=2 keep-constructor=1 success=1 void=705
+    glAreTexturesResident(ILjava/nio/ByteBuffer;)Z default: default
+    glAreTexturesResident(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Z default: default
+    glAreTexturesResident([ILjava/nio/ByteBuffer;)Z default: default
+    glGetDouble(I)D default: default
+    glGetError()I default: default
+    glGetLightf(II)F default: default
+    glGetLighti(II)I default: default
+    glGetMapd(II)D default: default
+    glGetMapf(II)F default: default
+    glGetMapi(II)I default: default
+    glGetPointer(I)J default: default
+    glGetTexEnvf(II)F default: default
+    glGetTexEnvi(II)I default: default
+    glGetTexGend(II)D default: default
+    glGetTexGenf(II)F default: default
+    glGetTexGeni(II)I default: default
+    glGetTexLevelParameterf(III)F default: default
+    glGetTexLevelParameteri(III)I default: default
+    glGetTexParameterf(II)F default: default
+    glGetTexParameteri(II)I default: default
+    glIsList(I)Z default: default
+    glIsTexture(I)Z default: default
+    glRenderMode(I)I default: default
+    nglAreTexturesResident(IJJ)Z default: default
+    nglGetString(I)J default: default
+org/lwjgl/opengl/GL11C default=9 guarded-static-init=1 handler=7 id=1 keep-constructor=1 success=1 void=143
+    glGetDouble(I)D default: default
+    glGetError()I default: default
+    glGetPointer(I)J default: default
+    glGetTexLevelParameterf(III)F default: default
+    glGetTexLevelParameteri(III)I default: default
+    glGetTexParameterf(II)F default: default
+    glGetTexParameteri(II)I default: default
+    glIsTexture(I)Z default: default
+    nglGetString(I)J default: default
+org/lwjgl/opengl/GL12 guarded-static-init=1 keep-constructor=1 void=29
+org/lwjgl/opengl/GL12C guarded-static-init=1 keep-constructor=1 void=29
+org/lwjgl/opengl/GL13 guarded-static-init=1 keep-constructor=1 void=100
+org/lwjgl/opengl/GL13C guarded-static-init=1 keep-constructor=1 void=23
+org/lwjgl/opengl/GL14 guarded-static-init=1 keep-constructor=1 void=98
+org/lwjgl/opengl/GL14C guarded-static-init=1 keep-constructor=1 void=17
+org/lwjgl/opengl/GL15 default=8 guarded-static-init=1 id=2 keep-constructor=1 nio-buffer=1 nio-buffer-empty=2 success=1 void=70
+    glGetBufferParameteri(II)I default: default
+    glGetBufferPointer(II)J default: default
+    glGetQueryObjecti(II)I default: default
+    glGetQueryObjectui(II)I default: default
+    glGetQueryi(II)I default: default
+    glIsBuffer(I)Z default: default
+    glIsQuery(I)Z default: default
+    glMapBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nglMapBuffer(II)J default: default
+org/lwjgl/opengl/GL15C default=8 guarded-static-init=1 id=2 keep-constructor=1 nio-buffer=1 nio-buffer-empty=2 success=1 void=70
+    glGetBufferParameteri(II)I default: default
+    glGetBufferPointer(II)J default: default
+    glGetQueryObjecti(II)I default: default
+    glGetQueryObjectui(II)I default: default
+    glGetQueryi(II)I default: default
+    glIsBuffer(I)Z default: default
+    glIsQuery(I)Z default: default
+    glMapBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nglMapBuffer(II)J default: default
+org/lwjgl/opengl/GL20 default=22 guarded-static-init=1 id=2 keep-constructor=1 success=2 void=192
+    glGetActiveAttrib(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetActiveAttrib(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetActiveUniform(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetActiveUniform(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetAttribLocation(ILjava/lang/CharSequence;)I default: default
+    glGetAttribLocation(ILjava/nio/ByteBuffer;)I default: default
+    glGetProgramInfoLog(I)Ljava/lang/String; default: default
+    glGetProgramInfoLog(II)Ljava/lang/String; default: default
+    glGetShaderInfoLog(I)Ljava/lang/String; default: default
+    glGetShaderInfoLog(II)Ljava/lang/String; default: default
+    glGetShaderSource(I)Ljava/lang/String; default: default
+    glGetShaderSource(II)Ljava/lang/String; default: default
+    glGetUniformLocation(ILjava/lang/CharSequence;)I default: default
+    glGetUniformLocation(ILjava/nio/ByteBuffer;)I default: default
+    glGetUniformf(II)F default: default
+    glGetUniformi(II)I default: default
+    glGetVertexAttribPointer(II)J default: default
+    glGetVertexAttribi(II)I default: default
+    glIsProgram(I)Z default: default
+    glIsShader(I)Z default: default
+    nglGetAttribLocation(IJ)I default: default
+    nglGetUniformLocation(IJ)I default: default
+org/lwjgl/opengl/GL20C default=22 guarded-static-init=1 id=2 keep-constructor=1 success=2 void=192
+    glGetActiveAttrib(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetActiveAttrib(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetActiveUniform(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetActiveUniform(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetAttribLocation(ILjava/lang/CharSequence;)I default: default
+    glGetAttribLocation(ILjava/nio/ByteBuffer;)I default: default
+    glGetProgramInfoLog(I)Ljava/lang/String; default: default
+    glGetProgramInfoLog(II)Ljava/lang/String; default: default
+    glGetShaderInfoLog(I)Ljava/lang/String; default: default
+    glGetShaderInfoLog(II)Ljava/lang/String; default: default
+    glGetShaderSource(I)Ljava/lang/String; default: default
+    glGetShaderSource(II)Ljava/lang/String; default: default
+    glGetUniformLocation(ILjava/lang/CharSequence;)I default: default
+    glGetUniformLocation(ILjava/nio/ByteBuffer;)I default: default
+    glGetUniformf(II)F default: default
+    glGetUniformi(II)I default: default
+    glGetVertexAttribPointer(II)J default: default
+    glGetVertexAttribi(II)I default: default
+    glIsProgram(I)Z default: default
+    glIsShader(I)Z default: default
+    nglGetAttribLocation(IJ)I default: default
+    nglGetUniformLocation(IJ)I default: default
+org/lwjgl/opengl/GL21 guarded-static-init=1 keep-constructor=1 void=18
+org/lwjgl/opengl/GL21C guarded-static-init=1 keep-constructor=1 void=18
+org/lwjgl/opengl/GL30 default=20 guarded-static-init=1 handler=1 id=3 keep-constructor=1 nio-buffer=2 success=1 void=161
+    glGetBooleani(II)Z default: default
+    glGetFragDataLocation(ILjava/lang/CharSequence;)I default: default
+    glGetFragDataLocation(ILjava/nio/ByteBuffer;)I default: default
+    glGetFramebufferAttachmentParameteri(III)I default: default
+    glGetIntegeri(II)I default: default
+    glGetRenderbufferParameteri(II)I default: default
+    glGetTexParameterIi(II)I default: default
+    glGetTexParameterIui(II)I default: default
+    glGetTransformFeedbackVarying(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetTransformFeedbackVarying(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetUniformui(II)I default: default
+    glGetVertexAttribIi(II)I default: default
+    glGetVertexAttribIui(II)I default: default
+    glIsEnabledi(II)Z default: default
+    glIsFramebuffer(I)Z default: default
+    glIsRenderbuffer(I)Z default: default
+    glIsVertexArray(I)Z default: default
+    nglGetFragDataLocation(IJ)I default: default
+    nglGetStringi(II)J default: default
+    nglMapBufferRange(IJJI)J default: default
+org/lwjgl/opengl/GL30C default=20 guarded-static-init=1 handler=1 id=3 keep-constructor=1 nio-buffer=2 success=1 void=161
+    glGetBooleani(II)Z default: default
+    glGetFragDataLocation(ILjava/lang/CharSequence;)I default: default
+    glGetFragDataLocation(ILjava/nio/ByteBuffer;)I default: default
+    glGetFramebufferAttachmentParameteri(III)I default: default
+    glGetIntegeri(II)I default: default
+    glGetRenderbufferParameteri(II)I default: default
+    glGetTexParameterIi(II)I default: default
+    glGetTexParameterIui(II)I default: default
+    glGetTransformFeedbackVarying(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetTransformFeedbackVarying(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
+    glGetUniformui(II)I default: default
+    glGetVertexAttribIi(II)I default: default
+    glGetVertexAttribIui(II)I default: default
+    glIsEnabledi(II)Z default: default
+    glIsFramebuffer(I)Z default: default
+    glIsRenderbuffer(I)Z default: default
+    glIsVertexArray(I)Z default: default
+    nglGetFragDataLocation(IJ)I default: default
+    nglGetStringi(II)J default: default
+    nglMapBufferRange(IJJI)J default: default
+org/lwjgl/opengl/GL31 default=10 guarded-static-init=1 keep-constructor=1 void=27
+    glGetActiveUniformBlockName(II)Ljava/lang/String; default: default
+    glGetActiveUniformBlockName(III)Ljava/lang/String; default: default
+    glGetActiveUniformBlocki(III)I default: default
+    glGetActiveUniformName(II)Ljava/lang/String; default: default
+    glGetActiveUniformName(III)Ljava/lang/String; default: default
+    glGetActiveUniformsi(III)I default: default
+    glGetUniformBlockIndex(ILjava/lang/CharSequence;)I default: default
+    glGetUniformBlockIndex(ILjava/nio/ByteBuffer;)I default: default
+    glGetUniformIndices(ILjava/lang/CharSequence;)I default: default
+    nglGetUniformBlockIndex(IJ)I default: default
+org/lwjgl/opengl/GL31C default=10 guarded-static-init=1 keep-constructor=1 void=27
+    glGetActiveUniformBlockName(II)Ljava/lang/String; default: default
+    glGetActiveUniformBlockName(III)Ljava/lang/String; default: default
+    glGetActiveUniformBlocki(III)I default: default
+    glGetActiveUniformName(II)Ljava/lang/String; default: default
+    glGetActiveUniformName(III)Ljava/lang/String; default: default
+    glGetActiveUniformsi(III)I default: default
+    glGetUniformBlockIndex(ILjava/lang/CharSequence;)I default: default
+    glGetUniformBlockIndex(ILjava/nio/ByteBuffer;)I default: default
+    glGetUniformIndices(ILjava/lang/CharSequence;)I default: default
+    nglGetUniformBlockIndex(IJ)I default: default
+org/lwjgl/opengl/GL32 default=7 guarded-static-init=1 handler=2 id=1 keep-constructor=1 success=1 void=43
+    glGetBufferParameteri64(II)J default: default
+    glGetInteger64i(II)J default: default
+    glGetMultisamplef(II)F default: default
+    glGetSynci(JILjava/nio/IntBuffer;)I default: default
+    glIsSync(J)Z default: default
+    nglClientWaitSync(JIJ)I default: default
+    nglIsSync(J)Z default: default
+org/lwjgl/opengl/GL32C default=7 guarded-static-init=1 handler=2 id=1 keep-constructor=1 success=1 void=43
+    glGetBufferParameteri64(II)J default: default
+    glGetInteger64i(II)J default: default
+    glGetMultisamplef(II)F default: default
+    glGetSynci(JILjava/nio/IntBuffer;)I default: default
+    glIsSync(J)Z default: default
+    nglClientWaitSync(JIJ)I default: default
+    nglIsSync(J)Z default: default
+org/lwjgl/opengl/GL33 default=10 guarded-static-init=1 id=1 keep-constructor=1 void=123
+    glGetFragDataIndex(ILjava/lang/CharSequence;)I default: default
+    glGetFragDataIndex(ILjava/nio/ByteBuffer;)I default: default
+    glGetQueryObjecti64(II)J default: default
+    glGetQueryObjectui64(II)J default: default
+    glGetSamplerParameterIi(II)I default: default
+    glGetSamplerParameterIui(II)I default: default
+    glGetSamplerParameterf(II)F default: default
+    glGetSamplerParameteri(II)I default: default
+    glIsSampler(I)Z default: default
+    nglGetFragDataIndex(IJ)I default: default
+org/lwjgl/opengl/GL33C default=10 guarded-static-init=1 id=1 keep-constructor=1 void=63
+    glGetFragDataIndex(ILjava/lang/CharSequence;)I default: default
+    glGetFragDataIndex(ILjava/nio/ByteBuffer;)I default: default
+    glGetQueryObjecti64(II)J default: default
+    glGetQueryObjectui64(II)J default: default
+    glGetSamplerParameterIi(II)I default: default
+    glGetSamplerParameterIui(II)I default: default
+    glGetSamplerParameterf(II)F default: default
+    glGetSamplerParameteri(II)I default: default
+    glIsSampler(I)Z default: default
+    nglGetFragDataIndex(IJ)I default: default
+org/lwjgl/opengl/GL40 default=16 guarded-static-init=1 id=1 keep-constructor=1 void=101
+    glGetActiveSubroutineName(III)Ljava/lang/String; default: default
+    glGetActiveSubroutineName(IIII)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformName(III)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformName(IIII)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformi(IIII)I default: default
+    glGetProgramStagei(III)I default: default
+    glGetQueryIndexedi(III)I default: default
+    glGetSubroutineIndex(IILjava/lang/CharSequence;)I default: default
+    glGetSubroutineIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetSubroutineUniformLocation(IILjava/lang/CharSequence;)I default: default
+    glGetSubroutineUniformLocation(IILjava/nio/ByteBuffer;)I default: default
+    glGetUniformSubroutineui(II)I default: default
+    glGetUniformd(II)D default: default
+    glIsTransformFeedback(I)Z default: default
+    nglGetSubroutineIndex(IIJ)I default: default
+    nglGetSubroutineUniformLocation(IIJ)I default: default
+org/lwjgl/opengl/GL40C default=16 guarded-static-init=1 id=1 keep-constructor=1 void=101
+    glGetActiveSubroutineName(III)Ljava/lang/String; default: default
+    glGetActiveSubroutineName(IIII)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformName(III)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformName(IIII)Ljava/lang/String; default: default
+    glGetActiveSubroutineUniformi(IIII)I default: default
+    glGetProgramStagei(III)I default: default
+    glGetQueryIndexedi(III)I default: default
+    glGetSubroutineIndex(IILjava/lang/CharSequence;)I default: default
+    glGetSubroutineIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetSubroutineUniformLocation(IILjava/lang/CharSequence;)I default: default
+    glGetSubroutineUniformLocation(IILjava/nio/ByteBuffer;)I default: default
+    glGetUniformSubroutineui(II)I default: default
+    glGetUniformd(II)D default: default
+    glIsTransformFeedback(I)Z default: default
+    nglGetSubroutineIndex(IIJ)I default: default
+    nglGetSubroutineUniformLocation(IIJ)I default: default
+org/lwjgl/opengl/GL41 default=7 guarded-static-init=1 id=5 keep-constructor=1 void=197
+    glGetDoublei(II)D default: default
+    glGetFloati(II)F default: default
+    glGetProgramPipelineInfoLog(I)Ljava/lang/String; default: default
+    glGetProgramPipelineInfoLog(II)Ljava/lang/String; default: default
+    glGetProgramPipelinei(II)I default: default
+    glGetShaderPrecisionFormat(IILjava/nio/IntBuffer;)I default: default
+    glIsProgramPipeline(I)Z default: default
+org/lwjgl/opengl/GL41C default=7 guarded-static-init=1 id=5 keep-constructor=1 void=197
+    glGetDoublei(II)D default: default
+    glGetFloati(II)F default: default
+    glGetProgramPipelineInfoLog(I)Ljava/lang/String; default: default
+    glGetProgramPipelineInfoLog(II)Ljava/lang/String; default: default
+    glGetProgramPipelinei(II)I default: default
+    glGetShaderPrecisionFormat(IILjava/nio/IntBuffer;)I default: default
+    glIsProgramPipeline(I)Z default: default
+org/lwjgl/opengl/GL42 default=2 guarded-static-init=1 keep-constructor=1 void=26
+    glGetActiveAtomicCounterBufferi(III)I default: default
+    glGetInternalformati(III)I default: default
+org/lwjgl/opengl/GL42C default=2 guarded-static-init=1 keep-constructor=1 void=26
+    glGetActiveAtomicCounterBufferi(III)I default: default
+    glGetInternalformati(III)I default: default
+org/lwjgl/opengl/GL43 default=21 guarded-static-init=1 keep-constructor=1 void=93
+    glGetDebugMessageLog(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I default: default
+    glGetDebugMessageLog(I[I[I[I[I[ILjava/nio/ByteBuffer;)I default: default
+    glGetFramebufferParameteri(II)I default: default
+    glGetInternalformati64(III)J default: default
+    glGetObjectLabel(II)Ljava/lang/String; default: default
+    glGetObjectLabel(III)Ljava/lang/String; default: default
+    glGetObjectPtrLabel(J)Ljava/lang/String; default: default
+    glGetObjectPtrLabel(JI)Ljava/lang/String; default: default
+    glGetProgramInterfacei(III)I default: default
+    glGetProgramResourceIndex(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceLocation(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceLocation(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceLocationIndex(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceLocationIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceName(III)Ljava/lang/String; default: default
+    glGetProgramResourceName(IIII)Ljava/lang/String; default: default
+    nglGetDebugMessageLog(IIJJJJJJ)I default: default
+    nglGetProgramResourceIndex(IIJ)I default: default
+    nglGetProgramResourceLocation(IIJ)I default: default
+    nglGetProgramResourceLocationIndex(IIJ)I default: default
+org/lwjgl/opengl/GL43C default=21 guarded-static-init=1 keep-constructor=1 void=93
+    glGetDebugMessageLog(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I default: default
+    glGetDebugMessageLog(I[I[I[I[I[ILjava/nio/ByteBuffer;)I default: default
+    glGetFramebufferParameteri(II)I default: default
+    glGetInternalformati64(III)J default: default
+    glGetObjectLabel(II)Ljava/lang/String; default: default
+    glGetObjectLabel(III)Ljava/lang/String; default: default
+    glGetObjectPtrLabel(J)Ljava/lang/String; default: default
+    glGetObjectPtrLabel(JI)Ljava/lang/String; default: default
+    glGetProgramInterfacei(III)I default: default
+    glGetProgramResourceIndex(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceLocation(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceLocation(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceLocationIndex(IILjava/lang/CharSequence;)I default: default
+    glGetProgramResourceLocationIndex(IILjava/nio/ByteBuffer;)I default: default
+    glGetProgramResourceName(III)Ljava/lang/String; default: default
+    glGetProgramResourceName(IIII)Ljava/lang/String; default: default
+    nglGetDebugMessageLog(IIJJJJJJ)I default: default
+    nglGetProgramResourceIndex(IIJ)I default: default
+    nglGetProgramResourceLocation(IIJ)I default: default
+    nglGetProgramResourceLocationIndex(IIJ)I default: default
+org/lwjgl/opengl/GL44 guarded-static-init=1 keep-constructor=1 void=49
+org/lwjgl/opengl/GL44C guarded-static-init=1 keep-constructor=1 void=49
+org/lwjgl/opengl/GL45 default=28 guarded-static-init=1 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=2 void=381
+    glGetGraphicsResetStatus()I default: default
+    glGetNamedBufferParameteri(II)I default: default
+    glGetNamedBufferParameteri64(II)J default: default
+    glGetNamedBufferPointer(II)J default: default
+    glGetNamedFramebufferAttachmentParameteri(III)I default: default
+    glGetNamedFramebufferParameteri(II)I default: default
+    glGetNamedRenderbufferParameteri(II)I default: default
+    glGetTextureLevelParameterf(III)F default: default
+    glGetTextureLevelParameteri(III)I default: default
+    glGetTextureParameterIi(II)I default: default
+    glGetTextureParameterIui(II)I default: default
+    glGetTextureParameterf(II)F default: default
+    glGetTextureParameteri(II)I default: default
+    glGetTransformFeedbacki(II)I default: default
+    glGetTransformFeedbacki(III)I default: default
+    glGetTransformFeedbacki64(III)J default: default
+    glGetVertexArrayIndexed64i(III)J default: default
+    glGetVertexArrayIndexedi(III)I default: default
+    glGetVertexArrayi(II)I default: default
+    glGetnMapd(II)D default: default
+    glGetnMapf(II)F default: default
+    glGetnMapi(II)I default: default
+    glGetnUniformd(II)D default: default
+    glGetnUniformf(II)F default: default
+    glGetnUniformi(II)I default: default
+    glGetnUniformui(II)I default: default
+    glMapNamedBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapNamedBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nglMapNamedBuffer(II)J default: default
+    nglMapNamedBufferRange(IJJI)J default: default
+org/lwjgl/opengl/GL45C default=25 guarded-static-init=1 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=2 void=339
+    glGetGraphicsResetStatus()I default: default
+    glGetNamedBufferParameteri(II)I default: default
+    glGetNamedBufferParameteri64(II)J default: default
+    glGetNamedBufferPointer(II)J default: default
+    glGetNamedFramebufferAttachmentParameteri(III)I default: default
+    glGetNamedFramebufferParameteri(II)I default: default
+    glGetNamedRenderbufferParameteri(II)I default: default
+    glGetTextureLevelParameterf(III)F default: default
+    glGetTextureLevelParameteri(III)I default: default
+    glGetTextureParameterIi(II)I default: default
+    glGetTextureParameterIui(II)I default: default
+    glGetTextureParameterf(II)F default: default
+    glGetTextureParameteri(II)I default: default
+    glGetTransformFeedbacki(II)I default: default
+    glGetTransformFeedbacki(III)I default: default
+    glGetTransformFeedbacki64(III)J default: default
+    glGetVertexArrayIndexed64i(III)J default: default
+    glGetVertexArrayIndexedi(III)I default: default
+    glGetVertexArrayi(II)I default: default
+    glGetnUniformd(II)D default: default
+    glGetnUniformf(II)F default: default
+    glGetnUniformi(II)I default: default
+    glGetnUniformui(II)I default: default
+    glMapNamedBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapNamedBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nglMapNamedBuffer(II)J default: default
+    nglMapNamedBufferRange(IJJI)J default: default
+org/lwjgl/opengl/GL46 guarded-static-init=1 keep-constructor=1 void=16
+org/lwjgl/opengl/GL46C guarded-static-init=1 keep-constructor=1 void=16
+org/lwjgl/opengl/GLCapabilities default=257 keep-constructor=1 lwjgl-buffer-empty=1 void=1
+    ARB_buffer_storage(Ljava/util/Set;)Z default: default
+    ARB_clear_buffer_object(Ljava/util/Set;)Z default: default
+    ARB_clear_texture(Ljava/util/Set;)Z default: default
+    ARB_copy_buffer(Ljava/util/Set;)Z default: default
+    ARB_framebuffer_no_attachments(Ljava/util/Set;)Z default: default
+    ARB_framebuffer_object(Ljava/util/Set;)Z default: default
+    ARB_instanced_arrays(Ljava/util/Set;)Z default: default
+    ARB_invalidate_subdata(Ljava/util/Set;)Z default: default
+    ARB_map_buffer_range(Ljava/util/Set;)Z default: default
+    ARB_multi_bind(Ljava/util/Set;)Z default: default
+    ARB_query_buffer_object(Ljava/util/Set;)Z default: default
+    ARB_sampler_objects(Ljava/util/Set;)Z default: default
+    ARB_separate_shader_objects(Ljava/util/Set;)Z default: default
+    ARB_texture_buffer_object(Ljava/util/Set;)Z default: default
+    ARB_texture_buffer_range(Ljava/util/Set;)Z default: default
+    ARB_texture_storage(Ljava/util/Set;)Z default: default
+    ARB_texture_storage_multisample(Ljava/util/Set;)Z default: default
+    ARB_transform_feedback2(Ljava/util/Set;)Z default: default
+    ARB_uniform_buffer_object(Ljava/util/Set;)Z default: default
+    ARB_vertex_array_object(Ljava/util/Set;)Z default: default
+    ARB_vertex_attrib_64bit(Ljava/util/Set;)Z default: default
+    ARB_vertex_attrib_binding(Ljava/util/Set;)Z default: default
+    check_AMD_debug_output(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_draw_buffers_blend(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_framebuffer_multisample_advanced(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_gpu_shader_int64(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_interleaved_elements(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_occlusion_query_event(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_performance_monitor(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_sample_positions(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_sparse_texture(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_stencil_operation_extended(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AMD_vertex_shader_tessellator(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_APPLE_element_array(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_APPLE_fence(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_APPLE_flush_buffer_range(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_APPLE_object_purgeable(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_APPLE_texture_range(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_APPLE_vertex_array_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_APPLE_vertex_array_range(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_APPLE_vertex_program_evaluators(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_ES2_compatibility(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_ES3_1_compatibility(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_ES3_2_compatibility(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_base_instance(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_bindless_texture(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_blend_func_extended(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_buffer_storage(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_cl_event(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_clear_buffer_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_clear_texture(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_clip_control(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_color_buffer_float(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_compute_shader(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_compute_variable_group_size(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_copy_buffer(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_copy_image(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_debug_output(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_direct_state_access(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_draw_buffers(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_draw_buffers_blend(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_draw_elements_base_vertex(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_draw_indirect(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_draw_instanced(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_framebuffer_no_attachments(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_framebuffer_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_geometry_shader4(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_get_program_binary(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_get_texture_sub_image(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_gl_spirv(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_gpu_shader_fp64(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_gpu_shader_int64(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_imaging(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;Z)Z default: default
+    check_ARB_indirect_parameters(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_instanced_arrays(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_internalformat_query(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_internalformat_query2(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_invalidate_subdata(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_map_buffer_range(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_matrix_palette(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_multi_bind(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_multi_draw_indirect(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_multisample(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_multitexture(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_occlusion_query(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_parallel_shader_compile(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_point_parameters(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_polygon_offset_clamp(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_program_interface_query(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_provoking_vertex(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_robustness(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_sample_locations(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_sample_shading(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_sampler_objects(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_separate_shader_objects(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_shader_atomic_counters(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_shader_image_load_store(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_shader_objects(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_shader_storage_buffer_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_shader_subroutine(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_shading_language_include(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_sparse_buffer(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_sparse_texture(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_sync(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_tessellation_shader(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_texture_barrier(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_texture_buffer_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_texture_buffer_range(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_texture_compression(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_texture_multisample(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_texture_storage(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_texture_storage_multisample(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_texture_view(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_timer_query(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_transform_feedback2(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_transform_feedback3(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_transform_feedback_instanced(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_transpose_matrix(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_uniform_buffer_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_vertex_array_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_vertex_attrib_64bit(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_vertex_attrib_binding(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_vertex_blend(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_vertex_buffer_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_vertex_program(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_vertex_shader(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_vertex_type_2_10_10_10_rev(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;Z)Z default: default
+    check_ARB_viewport_array(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ARB_window_pos(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_EGL_image_storage(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_bindable_uniform(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_blend_color(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_blend_equation_separate(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_blend_func_separate(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_blend_minmax(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_compiled_vertex_array(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_debug_label(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_debug_marker(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_depth_bounds_test(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_direct_state_access(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_draw_buffers2(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_draw_instanced(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_external_buffer(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_fragment_shading_rate(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_framebuffer_blit(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_framebuffer_blit_layers(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_framebuffer_multisample(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_framebuffer_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_geometry_shader4(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_gpu_program_parameters(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_gpu_shader4(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_memory_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_memory_object_fd(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_memory_object_win32(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_mesh_shader(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_point_parameters(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_polygon_offset_clamp(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_provoking_vertex(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_raster_multisample(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_secondary_color(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_semaphore(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_semaphore_fd(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_semaphore_win32(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_separate_shader_objects(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_shader_framebuffer_fetch_non_coherent(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_shader_image_load_store(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_stencil_clear_tag(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_stencil_two_side(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_texture_array(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_texture_buffer_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_texture_integer(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_texture_storage(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_timer_query(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_transform_feedback(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_vertex_attrib_64bit(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_win32_keyed_mutex(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_window_rectangles(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_x11_sync_object(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL11(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;Z)Z default: default
+    check_GL12(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL13(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;Z)Z default: default
+    check_GL14(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;Z)Z default: default
+    check_GL15(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL20(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL21(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL30(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL31(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL32(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL33(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;Z)Z default: default
+    check_GL40(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL41(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL42(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL43(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL44(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL45(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GL46(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GREMEDY_frame_terminator(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_GREMEDY_string_marker(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_INTEL_framebuffer_CMAA(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_INTEL_map_texture(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_INTEL_performance_query(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_KHR_blend_equation_advanced(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_KHR_debug(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_KHR_parallel_shader_compile(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_KHR_robustness(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_MESA_framebuffer_flip_y(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NVX_conditional_render(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NVX_gpu_multicast2(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NVX_progress_fence(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_alpha_to_coverage_dither_control(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_bindless_multi_draw_indirect(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_bindless_multi_draw_indirect_count(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_bindless_texture(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_blend_equation_advanced(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_clip_space_w_scaling(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_command_list(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_conditional_render(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_conservative_raster(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_conservative_raster_dilate(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_conservative_raster_pre_snap_triangles(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_copy_image(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_depth_buffer_float(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_draw_texture(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_draw_vulkan_image(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_explicit_multisample(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_fence(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_fragment_coverage_to_color(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_framebuffer_mixed_samples(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_framebuffer_multisample_coverage(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_gpu_multicast(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_gpu_shader5(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_half_float(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_internalformat_sample_query(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_memory_attachment(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_memory_object_sparse(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_mesh_shader(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_path_rendering(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_pixel_data_range(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_point_sprite(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_primitive_restart(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_query_resource(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_query_resource_tag(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_sample_locations(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_scissor_exclusive(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_shader_buffer_load(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_shading_rate_image(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_texture_barrier(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_texture_multisample(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_timeline_semaphore(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_transform_feedback(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_transform_feedback2(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_vertex_array_range(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_vertex_attrib_integer_64bit(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_vertex_buffer_unified_memory(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_NV_viewport_swizzle(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_OVR_multiview(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    getAddressBuffer()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    hasDSA(Ljava/util/Set;)Z default: default
+org/lwjgl/opengl/GLChecks default=3 keep-constructor=1
+    getTexLevelParameteri(IIII)I default: default
+    typeToByteShift(I)I default: default
+    typeToBytes(I)I default: default
+org/lwjgl/opengl/GLDebugMessageAMDCallback default=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/opengl/GLDebugMessageAMDCallback; object: new GLDebugMessageAMDCallback
+    create(Lorg/lwjgl/opengl/GLDebugMessageAMDCallbackI;)Lorg/lwjgl/opengl/GLDebugMessageAMDCallback; object: new GLDebugMessageAMDCallback
+    create(Lorg/lwjgl/opengl/GLDebugMessageAMDCallbackI;J)Lorg/lwjgl/opengl/GLDebugMessageAMDCallback; object: new GLDebugMessageAMDCallback
+    createSafe(J)Lorg/lwjgl/opengl/GLDebugMessageAMDCallback; object: new GLDebugMessageAMDCallback
+    getMessage(IJ)Ljava/lang/String; default: default
+org/lwjgl/opengl/GLDebugMessageAMDCallback$1 keep-constructor=1 void=1
+org/lwjgl/opengl/GLDebugMessageAMDCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/opengl/GLDebugMessageARBCallback default=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/opengl/GLDebugMessageARBCallback; object: new GLDebugMessageARBCallback
+    create(Lorg/lwjgl/opengl/GLDebugMessageARBCallbackI;)Lorg/lwjgl/opengl/GLDebugMessageARBCallback; object: new GLDebugMessageARBCallback
+    create(Lorg/lwjgl/opengl/GLDebugMessageARBCallbackI;J)Lorg/lwjgl/opengl/GLDebugMessageARBCallback; object: new GLDebugMessageARBCallback
+    createSafe(J)Lorg/lwjgl/opengl/GLDebugMessageARBCallback; object: new GLDebugMessageARBCallback
+    getMessage(IJ)Ljava/lang/String; default: default
+org/lwjgl/opengl/GLDebugMessageARBCallback$1 keep-constructor=1 void=1
+org/lwjgl/opengl/GLDebugMessageARBCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/opengl/GLDebugMessageCallback default=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/opengl/GLDebugMessageCallback; object: new GLDebugMessageCallback
+    create(Lorg/lwjgl/opengl/GLDebugMessageCallbackI;)Lorg/lwjgl/opengl/GLDebugMessageCallback; object: new GLDebugMessageCallback
+    create(Lorg/lwjgl/opengl/GLDebugMessageCallbackI;J)Lorg/lwjgl/opengl/GLDebugMessageCallback; object: new GLDebugMessageCallback
+    createSafe(J)Lorg/lwjgl/opengl/GLDebugMessageCallback; object: new GLDebugMessageCallback
+    getMessage(IJ)Ljava/lang/String; default: default
+org/lwjgl/opengl/GLDebugMessageCallback$1 keep-constructor=1 void=1
+org/lwjgl/opengl/GLDebugMessageCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/opengl/GLUtil default=8 keep-constructor=1 object=2 void=5
+    getCategoryAMD(I)Ljava/lang/String; default: default
+    getDebugSeverity(I)Ljava/lang/String; default: default
+    getDebugSource(I)Ljava/lang/String; default: default
+    getDebugType(I)Ljava/lang/String; default: default
+    getSeverityAMD(I)Ljava/lang/String; default: default
+    getSeverityARB(I)Ljava/lang/String; default: default
+    getSourceARB(I)Ljava/lang/String; default: default
+    getTypeARB(I)Ljava/lang/String; default: default
+    setupDebugMessageCallback()Lorg/lwjgl/system/Callback; object: new Callback
+    setupDebugMessageCallback(Ljava/io/PrintStream;)Lorg/lwjgl/system/Callback; object: new Callback
+org/lwjgl/opengl/GLX default=18 keep-constructor=1 struct=2 void=7
+    glXCreateContext(JLorg/lwjgl/system/linux/XVisualInfo;JZ)J default: default
+    glXCreateGLXPixmap(JLorg/lwjgl/system/linux/XVisualInfo;J)J default: default
+    glXGetConfig(JLorg/lwjgl/system/linux/XVisualInfo;ILjava/nio/IntBuffer;)I default: default
+    glXGetConfig(JLorg/lwjgl/system/linux/XVisualInfo;I[I)I default: default
+    glXGetCurrentContext()J default: default
+    glXGetCurrentDrawable()J default: default
+    glXIsDirect(JJ)Z default: default
+    glXMakeCurrent(JJJ)Z default: default
+    glXQueryExtension(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
+    glXQueryExtension(J[I[I)Z default: default
+    glXQueryVersion(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
+    glXQueryVersion(J[I[I)Z default: default
+    nglXChooseVisual(JIJ)J default: default
+    nglXCreateContext(JJJI)J default: default
+    nglXCreateGLXPixmap(JJJ)J default: default
+    nglXGetConfig(JJIJ)I default: default
+    nglXQueryExtension(JJJ)I default: default
+    nglXQueryVersion(JJJ)I default: default
+org/lwjgl/opengl/GLX$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/opengl/GLX11 default=6 keep-constructor=1
+    glXGetClientString(JI)Ljava/lang/String; default: default
+    glXQueryExtensionsString(JI)Ljava/lang/String; default: default
+    glXQueryServerString(JII)Ljava/lang/String; default: default
+    nglXGetClientString(JI)J default: default
+    nglXQueryExtensionsString(JI)J default: default
+    nglXQueryServerString(JII)J default: default
+org/lwjgl/opengl/GLX12 default=1 keep-constructor=1
+    glXGetCurrentDisplay()J default: default
+org/lwjgl/opengl/GLX13 default=22 keep-constructor=1 lwjgl-buffer-empty=3 struct=1 void=8
+    glXChooseFBConfig(JILjava/nio/IntBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    glXChooseFBConfig(JI[I)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    glXCreateNewContext(JJIJZ)J default: default
+    glXCreatePbuffer(JJLjava/nio/IntBuffer;)J default: default
+    glXCreatePbuffer(JJ[I)J default: default
+    glXCreatePixmap(JJJLjava/nio/IntBuffer;)J default: default
+    glXCreatePixmap(JJJ[I)J default: default
+    glXCreateWindow(JJJLjava/nio/IntBuffer;)J default: default
+    glXCreateWindow(JJJ[I)J default: default
+    glXGetCurrentReadDrawable()J default: default
+    glXGetFBConfigAttrib(JJILjava/nio/IntBuffer;)I default: default
+    glXGetFBConfigAttrib(JJI[I)I default: default
+    glXGetFBConfigs(JI)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    glXMakeContextCurrent(JJJJ)Z default: default
+    glXQueryContext(JJILjava/nio/IntBuffer;)I default: default
+    glXQueryContext(JJI[I)I default: default
+    glXQueryDrawable(JJI)I default: default
+    nglXChooseFBConfig(JIJJ)J default: default
+    nglXCreatePbuffer(JJJ)J default: default
+    nglXCreatePixmap(JJJJ)J default: default
+    nglXCreateWindow(JJJJ)J default: default
+    nglXGetFBConfigAttrib(JJIJ)I default: default
+    nglXGetFBConfigs(JIJ)J default: default
+    nglXGetVisualFromFBConfig(JJ)J default: default
+    nglXQueryContext(JJIJ)I default: default
+org/lwjgl/opengl/GLX14 default=3 keep-constructor=1
+    glXGetProcAddress(Ljava/lang/CharSequence;)J default: default
+    glXGetProcAddress(Ljava/nio/ByteBuffer;)J default: default
+    nglXGetProcAddress(J)J default: default
+org/lwjgl/opengl/GLXAMDGPUAssociation default=13 keep-constructor=1 void=1
+    glXCreateAssociatedContextAMD(IJ)J default: default
+    glXCreateAssociatedContextAttribsAMD(IJLjava/nio/IntBuffer;)J default: default
+    glXCreateAssociatedContextAttribsAMD(IJ[I)J default: default
+    glXDeleteAssociatedContextAMD(J)Z default: default
+    glXGetContextGPUIDAMD(J)I default: default
+    glXGetCurrentAssociatedContextAMD()J default: default
+    glXGetGPUIDsAMD(Ljava/nio/IntBuffer;)I default: default
+    glXGetGPUIDsAMD([I)I default: default
+    glXGetGPUInfoAMD(IIILjava/nio/ByteBuffer;)I default: default
+    glXMakeAssociatedContextCurrentAMD(J)Z default: default
+    nglXCreateAssociatedContextAttribsAMD(IJJ)J default: default
+    nglXGetGPUIDsAMD(IJ)I default: default
+    nglXGetGPUInfoAMD(IIIIJ)I default: default
+org/lwjgl/opengl/GLXARBContextFlushControl keep-constructor=1
+org/lwjgl/opengl/GLXARBCreateContext default=3 keep-constructor=1
+    glXCreateContextAttribsARB(JJJZLjava/nio/IntBuffer;)J default: default
+    glXCreateContextAttribsARB(JJJZ[I)J default: default
+    nglXCreateContextAttribsARB(JJJIJ)J default: default
+org/lwjgl/opengl/GLXARBCreateContextNoError keep-constructor=1
+org/lwjgl/opengl/GLXARBCreateContextProfile keep-constructor=1
+org/lwjgl/opengl/GLXARBCreateContextRobustness keep-constructor=1
+org/lwjgl/opengl/GLXARBFBConfigFloat keep-constructor=1
+org/lwjgl/opengl/GLXARBFramebufferSRGB keep-constructor=1
+org/lwjgl/opengl/GLXARBGetProcAddress default=3 keep-constructor=1
+    glXGetProcAddressARB(Ljava/lang/CharSequence;)J default: default
+    glXGetProcAddressARB(Ljava/nio/ByteBuffer;)J default: default
+    nglXGetProcAddressARB(J)J default: default
+org/lwjgl/opengl/GLXARBMultisample keep-constructor=1
+org/lwjgl/opengl/GLXARBRobustnessApplicationIsolation keep-constructor=1
+org/lwjgl/opengl/GLXARBVertexBufferObject keep-constructor=1
+org/lwjgl/opengl/GLXCapabilities default=21 keep-constructor=1
+    check_GLX11(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX12(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX13(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX14(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_AMD_gpu_association(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_ARB_create_context(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_ARB_get_proc_address(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_EXT_import_context(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_EXT_swap_control(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_EXT_texture_from_pixmap(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_NV_copy_buffer(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_NV_copy_image(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_NV_delay_before_swap(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_NV_swap_group(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_SGIX_fbconfig(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_SGIX_pbuffer(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_SGIX_swap_barrier(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_SGIX_swap_group(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_SGI_make_current_read(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_SGI_swap_control(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_GLX_SGI_video_sync(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+org/lwjgl/opengl/GLXEXTBufferAge keep-constructor=1
+org/lwjgl/opengl/GLXEXTContextPriority keep-constructor=1
+org/lwjgl/opengl/GLXEXTCreateContextES2Profile keep-constructor=1
+org/lwjgl/opengl/GLXEXTCreateContextESProfile keep-constructor=1
+org/lwjgl/opengl/GLXEXTFBConfigPackedFloat keep-constructor=1
+org/lwjgl/opengl/GLXEXTFramebufferSRGB keep-constructor=1
+org/lwjgl/opengl/GLXEXTImportContext default=6 keep-constructor=1 void=1
+    glXGetContextIDEXT(J)J default: default
+    glXGetCurrentDisplayEXT()J default: default
+    glXImportContextEXT(JJ)J default: default
+    glXQueryContextInfoEXT(JJILjava/nio/IntBuffer;)I default: default
+    glXQueryContextInfoEXT(JJI[I)I default: default
+    nglXQueryContextInfoEXT(JJIJ)I default: default
+org/lwjgl/opengl/GLXEXTStereoTree keep-constructor=1
+org/lwjgl/opengl/GLXEXTSwapControl keep-constructor=1 void=1
+org/lwjgl/opengl/GLXEXTSwapControlTear keep-constructor=1
+org/lwjgl/opengl/GLXEXTTextureFromPixmap keep-constructor=1 void=4
+org/lwjgl/opengl/GLXEXTVisualInfo keep-constructor=1
+org/lwjgl/opengl/GLXEXTVisualRating keep-constructor=1
+org/lwjgl/opengl/GLXINTELSwapEvent keep-constructor=1
+org/lwjgl/opengl/GLXNVCopyBuffer keep-constructor=1 void=2
+org/lwjgl/opengl/GLXNVCopyImage keep-constructor=1 void=1
+org/lwjgl/opengl/GLXNVDelayBeforeSwap default=1 keep-constructor=1
+    glXDelayBeforeSwapNV(JJF)Z default: default
+org/lwjgl/opengl/GLXNVFloatBuffer keep-constructor=1
+org/lwjgl/opengl/GLXNVMultiGPUContext keep-constructor=1
+org/lwjgl/opengl/GLXNVMultisampleCoverage keep-constructor=1
+org/lwjgl/opengl/GLXNVRobustnessVideoMemoryPurge keep-constructor=1
+org/lwjgl/opengl/GLXNVSwapGroup default=12 keep-constructor=1
+    glXBindSwapBarrierNV(JII)Z default: default
+    glXJoinSwapGroupNV(JJI)Z default: default
+    glXQueryFrameCountNV(JILjava/nio/IntBuffer;)Z default: default
+    glXQueryFrameCountNV(JI[I)Z default: default
+    glXQueryMaxSwapGroupsNV(JILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
+    glXQueryMaxSwapGroupsNV(JI[I[I)Z default: default
+    glXQuerySwapGroupNV(JJLjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
+    glXQuerySwapGroupNV(JJ[I[I)Z default: default
+    glXResetFrameCountNV(JI)Z default: default
+    nglXQueryFrameCountNV(JIJ)I default: default
+    nglXQueryMaxSwapGroupsNV(JIJJ)I default: default
+    nglXQuerySwapGroupNV(JJJJ)I default: default
+org/lwjgl/opengl/GLXSGIMakeCurrentRead default=2 keep-constructor=1
+    glXGetCurrentReadDrawableSGI()J default: default
+    glXMakeCurrentReadSGI(JJJJ)Z default: default
+org/lwjgl/opengl/GLXSGISwapControl default=1 keep-constructor=1
+    glXSwapIntervalSGI(I)I default: default
+org/lwjgl/opengl/GLXSGIVideoSync default=6 keep-constructor=1
+    glXGetVideoSyncSGI(Ljava/nio/IntBuffer;)I default: default
+    glXGetVideoSyncSGI([I)I default: default
+    glXWaitVideoSyncSGI(IILjava/nio/IntBuffer;)I default: default
+    glXWaitVideoSyncSGI(II[I)I default: default
+    nglXGetVideoSyncSGI(J)I default: default
+    nglXWaitVideoSyncSGI(IIJ)I default: default
+org/lwjgl/opengl/GLXSGIXFBConfig default=9 keep-constructor=1 lwjgl-buffer-empty=2 struct=1
+    glXChooseFBConfigSGIX(JILjava/nio/IntBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    glXChooseFBConfigSGIX(JI[I)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    glXCreateContextWithConfigSGIX(JJIJZ)J default: default
+    glXCreateGLXPixmapWithConfigSGIX(JJJ)J default: default
+    glXGetFBConfigAttribSGIX(JJILjava/nio/IntBuffer;)I default: default
+    glXGetFBConfigAttribSGIX(JJI[I)I default: default
+    glXGetFBConfigFromVisualSGIX(JLorg/lwjgl/system/linux/XVisualInfo;)J default: default
+    nglXChooseFBConfigSGIX(JIJJ)J default: default
+    nglXGetFBConfigAttribSGIX(JJIJ)I default: default
+    nglXGetFBConfigFromVisualSGIX(JJ)J default: default
+    nglXGetVisualFromFBConfigSGIX(JJ)J default: default
+org/lwjgl/opengl/GLXSGIXPbuffer default=3 keep-constructor=1 void=7
+    glXCreateGLXPbufferSGIX(JJIILjava/nio/IntBuffer;)J default: default
+    glXCreateGLXPbufferSGIX(JJII[I)J default: default
+    nglXCreateGLXPbufferSGIX(JJIIJ)J default: default
+org/lwjgl/opengl/GLXSGIXSwapBarrier default=3 keep-constructor=1 void=1
+    glXQueryMaxSwapBarriersSGIX(JILjava/nio/IntBuffer;)Z default: default
+    glXQueryMaxSwapBarriersSGIX(JI[I)Z default: default
+    nglXQueryMaxSwapBarriersSGIX(JIJ)I default: default
+org/lwjgl/opengl/GLXSGIXSwapGroup keep-constructor=1 void=1
+org/lwjgl/opengl/GLXStereoNotifyEventEXT fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=16
+org/lwjgl/opengl/GLXStereoNotifyEventEXT$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/opengl/GPU_DEVICE fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 nio-buffer-empty=2 struct=9 struct-member=8
+    DeviceName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    DeviceString()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/opengl/GPU_DEVICE$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=3 struct-member=4
+    DeviceName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    DeviceString()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/opengl/GREMEDYFrameTerminator guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/GREMEDYStringMarker guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/INTELBlackholeRender keep-constructor=1
+org/lwjgl/opengl/INTELConservativeRasterization keep-constructor=1
+org/lwjgl/opengl/INTELFramebufferCMAA guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/INTELMapTexture default=3 guarded-static-init=1 keep-constructor=1 nio-buffer=2 nio-buffer-empty=4 void=2
+    getStride(Ljava/nio/IntBuffer;)I default: default
+    getStride([I)I default: default
+    glMapTexture2DINTEL(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapTexture2DINTEL(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapTexture2DINTEL(III[I[I)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    glMapTexture2DINTEL(III[I[ILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nglMapTexture2DINTEL(IIIJJ)J default: default
+org/lwjgl/opengl/INTELPerformanceQuery default=3 guarded-static-init=1 id=1 keep-constructor=1 void=26
+    glGetFirstPerfQueryIdINTEL()I default: default
+    glGetNextPerfQueryIdINTEL(I)I default: default
+    glGetPerfQueryIdByNameINTEL(Ljava/lang/CharSequence;)I default: default
+org/lwjgl/opengl/KHRBlendEquationAdvanced guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/KHRBlendEquationAdvancedCoherent keep-constructor=1
+org/lwjgl/opengl/KHRContextFlushControl keep-constructor=1
+org/lwjgl/opengl/KHRDebug default=7 guarded-static-init=1 keep-constructor=1 void=25
+    glGetDebugMessageLog(ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I default: default
+    glGetDebugMessageLog(I[I[I[I[I[ILjava/nio/ByteBuffer;)I default: default
+    glGetObjectLabel(II)Ljava/lang/String; default: default
+    glGetObjectLabel(III)Ljava/lang/String; default: default
+    glGetObjectPtrLabel(J)Ljava/lang/String; default: default
+    glGetObjectPtrLabel(JI)Ljava/lang/String; default: default
+    nglGetDebugMessageLog(IIJJJJJJ)I default: default
+org/lwjgl/opengl/KHRNoError keep-constructor=1
+org/lwjgl/opengl/KHRParallelShaderCompile guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/KHRRobustness default=4 guarded-static-init=1 keep-constructor=1 void=18
+    glGetGraphicsResetStatus()I default: default
+    glGetnUniformf(II)F default: default
+    glGetnUniformi(II)I default: default
+    glGetnUniformui(II)I default: default
+org/lwjgl/opengl/KHRShaderSubgroup keep-constructor=1
+org/lwjgl/opengl/KHRTextureCompressionASTCLDR keep-constructor=1
+org/lwjgl/opengl/MESAFramebufferFlipX keep-constructor=1
+org/lwjgl/opengl/MESAFramebufferFlipY guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/MESAFramebufferSwapXY keep-constructor=1
+org/lwjgl/opengl/NVAlphaToCoverageDitherControl guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVBindlessMultiDrawIndirect guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/NVBindlessMultiDrawIndirectCount guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/NVBindlessTexture default=5 guarded-static-init=1 keep-constructor=1 void=12
+    glGetImageHandleNV(IIZII)J default: default
+    glGetTextureHandleNV(I)J default: default
+    glGetTextureSamplerHandleNV(II)J default: default
+    glIsImageHandleResidentNV(J)Z default: default
+    glIsTextureHandleResidentNV(J)Z default: default
+org/lwjgl/opengl/NVBlendEquationAdvanced guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/NVBlendEquationAdvancedCoherent keep-constructor=1
+org/lwjgl/opengl/NVBlendMinmaxFactor keep-constructor=1
+org/lwjgl/opengl/NVClipSpaceWScaling guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVCommandList default=4 guarded-static-init=1 id=2 keep-constructor=1 void=33
+    glGetCommandHeaderNV(II)I default: default
+    glGetStageIndexNV(I)S default: default
+    glIsCommandListNV(I)Z default: default
+    glIsStateNV(I)Z default: default
+org/lwjgl/opengl/NVConditionalRender guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/NVConservativeRaster guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVConservativeRasterDilate guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVConservativeRasterPreSnap keep-constructor=1
+org/lwjgl/opengl/NVConservativeRasterPreSnapTriangles guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVCopyDepthToColor keep-constructor=1
+org/lwjgl/opengl/NVCopyImage guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVDeepTexture3D keep-constructor=1
+org/lwjgl/opengl/NVDepthBufferFloat guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/NVDepthClamp keep-constructor=1
+org/lwjgl/opengl/NVDrawTexture guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVDrawVulkanImage default=3 guarded-static-init=1 keep-constructor=1 void=4
+    glGetVkProcAddrNV(Ljava/lang/CharSequence;)J default: default
+    glGetVkProcAddrNV(Ljava/nio/ByteBuffer;)J default: default
+    nglGetVkProcAddrNV(J)J default: default
+org/lwjgl/opengl/NVExplicitMultisample guarded-static-init=1 keep-constructor=1 void=5
+org/lwjgl/opengl/NVFence default=3 guarded-static-init=1 id=1 keep-constructor=1 void=12
+    glGetFenceiNV(II)I default: default
+    glIsFenceNV(I)Z default: default
+    glTestFenceNV(I)Z default: default
+org/lwjgl/opengl/NVFillRectangle keep-constructor=1
+org/lwjgl/opengl/NVFloatBuffer keep-constructor=1
+org/lwjgl/opengl/NVFogDistance keep-constructor=1
+org/lwjgl/opengl/NVFragmentCoverageToColor guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVFramebufferMixedSamples guarded-static-init=1 keep-constructor=1 void=8
+org/lwjgl/opengl/NVFramebufferMultisampleCoverage guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVGPUMulticast default=4 guarded-static-init=1 keep-constructor=1 void=31
+    glMulticastGetQueryObjecti64NV(III)J default: default
+    glMulticastGetQueryObjectiNV(III)I default: default
+    glMulticastGetQueryObjectui64NV(III)J default: default
+    glMulticastGetQueryObjectuiNV(III)I default: default
+org/lwjgl/opengl/NVGPUShader5 default=2 guarded-static-init=1 keep-constructor=1 void=70
+    glGetUniformi64NV(II)J default: default
+    glGetUniformui64NV(II)J default: default
+org/lwjgl/opengl/NVHalfFloat guarded-static-init=1 keep-constructor=1 void=96
+org/lwjgl/opengl/NVInternalformatSampleQuery guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/NVLightMaxExponent keep-constructor=1
+org/lwjgl/opengl/NVMemoryAttachment guarded-static-init=1 keep-constructor=1 void=8
+org/lwjgl/opengl/NVMemoryObjectSparse guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/NVMeshShader guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/NVMultisampleCoverage keep-constructor=1
+org/lwjgl/opengl/NVMultisampleFilterHint keep-constructor=1
+org/lwjgl/opengl/NVPackedDepthStencil keep-constructor=1
+org/lwjgl/opengl/NVPathRendering default=25 guarded-static-init=1 id=1 keep-constructor=1 void=143
+    charcodeTypeToBytes(I)I default: default
+    colorFormatToComponents(I)I default: default
+    genModeToElements(I)I default: default
+    glGetPathColorGenfNV(II)F default: default
+    glGetPathColorGeniNV(II)I default: default
+    glGetPathLengthNV(III)F default: default
+    glGetPathParameterfNV(II)F default: default
+    glGetPathParameteriNV(II)I default: default
+    glGetPathTexGenfNV(II)F default: default
+    glGetPathTexGeniNV(II)I default: default
+    glIsPathNV(I)Z default: default
+    glIsPointInFillPathNV(IIFF)Z default: default
+    glIsPointInStrokePathNV(IFF)Z default: default
+    glPathGlyphIndexArrayNV(IILjava/nio/ByteBuffer;IIIIF)I default: default
+    glPathGlyphIndexRangeNV(ILjava/nio/ByteBuffer;IIFLjava/nio/IntBuffer;)I default: default
+    glPathGlyphIndexRangeNV(ILjava/nio/ByteBuffer;IIF[I)I default: default
+    glPathMemoryGlyphIndexArrayNV(IILjava/nio/ByteBuffer;IIIIF)I default: default
+    glPointAlongPathNV(IIIFLjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)Z default: default
+    glPointAlongPathNV(IIIF[F[F[F[F)Z default: default
+    nglPathGlyphIndexArrayNV(IIJIIIIF)I default: default
+    nglPathGlyphIndexRangeNV(IJIIFJ)I default: default
+    nglPathMemoryGlyphIndexArrayNV(IIJJIIIIF)I default: default
+    nglPointAlongPathNV(IIIFJJJJ)Z default: default
+    pathNameTypeToBytes(I)I default: default
+    transformTypeToElements(I)I default: default
+org/lwjgl/opengl/NVPathRenderingSharedEdge keep-constructor=1
+org/lwjgl/opengl/NVPixelDataRange guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/NVPointSprite guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/NVPrimitiveRestart guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/NVPrimitiveShadingRate keep-constructor=1
+org/lwjgl/opengl/NVQueryResource default=3 guarded-static-init=1 keep-constructor=1
+    glQueryResourceNV(IILjava/nio/IntBuffer;)I default: default
+    glQueryResourceNV(II[I)I default: default
+    nglQueryResourceNV(IIIJ)I default: default
+org/lwjgl/opengl/NVQueryResourceTag guarded-static-init=1 id=1 keep-constructor=1 void=10
+org/lwjgl/opengl/NVRepresentativeFragmentTest keep-constructor=1
+org/lwjgl/opengl/NVRobustnessVideoMemoryPurge keep-constructor=1
+org/lwjgl/opengl/NVSampleLocations guarded-static-init=1 keep-constructor=1 void=7
+org/lwjgl/opengl/NVScissorExclusive guarded-static-init=1 keep-constructor=1 void=4
+org/lwjgl/opengl/NVShaderBufferLoad default=6 guarded-static-init=1 keep-constructor=1 void=24
+    glGetBufferParameterui64NV(II)J default: default
+    glGetIntegerui64NV(I)J default: default
+    glGetNamedBufferParameterui64NV(II)J default: default
+    glGetUniformui64NV(II)J default: default
+    glIsBufferResidentNV(I)Z default: default
+    glIsNamedBufferResidentNV(I)Z default: default
+org/lwjgl/opengl/NVShaderBufferStore keep-constructor=1
+org/lwjgl/opengl/NVShaderSubgroupPartitioned keep-constructor=1
+org/lwjgl/opengl/NVShaderThreadGroup keep-constructor=1
+org/lwjgl/opengl/NVShadingRateImage guarded-static-init=1 keep-constructor=1 void=15
+org/lwjgl/opengl/NVTexgenReflection keep-constructor=1
+org/lwjgl/opengl/NVTextureBarrier guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVTextureMultisample guarded-static-init=1 keep-constructor=1 void=6
+org/lwjgl/opengl/NVTextureShader keep-constructor=1
+org/lwjgl/opengl/NVTextureShader2 keep-constructor=1
+org/lwjgl/opengl/NVTextureShader3 keep-constructor=1
+org/lwjgl/opengl/NVTimelineSemaphore guarded-static-init=1 id=1 keep-constructor=1 void=9
+org/lwjgl/opengl/NVTransformFeedback default=4 guarded-static-init=1 keep-constructor=1 void=23
+    glGetTransformFeedbackVaryingNV(II)I default: default
+    glGetVaryingLocationNV(ILjava/lang/CharSequence;)I default: default
+    glGetVaryingLocationNV(ILjava/nio/ByteBuffer;)I default: default
+    nglGetVaryingLocationNV(IJ)I default: default
+org/lwjgl/opengl/NVTransformFeedback2 default=1 guarded-static-init=1 id=1 keep-constructor=1 void=11
+    glIsTransformFeedbackNV(I)Z default: default
+org/lwjgl/opengl/NVUniformBufferUnifiedMemory keep-constructor=1
+org/lwjgl/opengl/NVVertexArrayRange guarded-static-init=1 keep-constructor=1 void=3
+org/lwjgl/opengl/NVVertexArrayRange2 keep-constructor=1
+org/lwjgl/opengl/NVVertexAttribInteger64bit default=2 guarded-static-init=1 keep-constructor=1 void=39
+    glGetVertexAttribLi64NV(II)J default: default
+    glGetVertexAttribLui64NV(II)J default: default
+org/lwjgl/opengl/NVVertexBufferUnifiedMemory default=1 guarded-static-init=1 keep-constructor=1 void=14
+    glGetIntegerui64iNV(II)J default: default
+org/lwjgl/opengl/NVViewportSwizzle guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/opengl/NVXConditionalRender guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/NVXGPUMemoryInfo keep-constructor=1
+org/lwjgl/opengl/NVXGpuMulticast2 default=6 guarded-static-init=1 keep-constructor=1 void=8
+    glAsyncCopyBufferSubDataNVX(Ljava/nio/IntBuffer;Ljava/nio/LongBuffer;IIIIJJJLjava/nio/IntBuffer;Ljava/nio/LongBuffer;)J default: default
+    glAsyncCopyBufferSubDataNVX([I[JIIIIJJJ[I[J)J default: default
+    glAsyncCopyImageSubDataNVX(Ljava/nio/IntBuffer;Ljava/nio/LongBuffer;IIIIIIIIIIIIIIIIILjava/nio/IntBuffer;Ljava/nio/LongBuffer;)I default: default
+    glAsyncCopyImageSubDataNVX([I[JIIIIIIIIIIIIIIIII[I[J)I default: default
+    nglAsyncCopyBufferSubDataNVX(IJJIIIIJJJIJJ)J default: default
+    nglAsyncCopyImageSubDataNVX(IJJIIIIIIIIIIIIIIIIIIJJ)I default: default
+org/lwjgl/opengl/NVXProgressFence guarded-static-init=1 id=1 keep-constructor=1 void=9
+org/lwjgl/opengl/OVRMultiview guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/opengl/S3S3TC keep-constructor=1
+org/lwjgl/opengl/WGL default=26 guarded-static-init=1 keep-constructor=1
+    nwglCopyContext(JJJI)I default: default
+    nwglCopyContext(JJJIJ)I default: default
+    nwglCreateContext(JJ)J default: default
+    nwglCreateContext(JJJ)J default: default
+    nwglCreateLayerContext(JJI)J default: default
+    nwglCreateLayerContext(JJIJ)J default: default
+    nwglDeleteContext(JJ)I default: default
+    nwglDeleteContext(JJJ)I default: default
+    nwglGetCurrentContext(J)J default: default
+    nwglGetCurrentContext(JJ)J default: default
+    nwglGetProcAddress(JJ)J default: default
+    nwglGetProcAddress(JJJ)J default: default
+    nwglMakeCurrent(JJJ)I default: default
+    nwglMakeCurrent(JJJJ)I default: default
+    nwglShareLists(JJJ)I default: default
+    nwglShareLists(JJJJ)I default: default
+    wglCopyContext(Ljava/nio/IntBuffer;JJI)Z default: default
+    wglCreateContext(Ljava/nio/IntBuffer;J)J default: default
+    wglCreateLayerContext(Ljava/nio/IntBuffer;JI)J default: default
+    wglDeleteContext(Ljava/nio/IntBuffer;J)Z default: default
+    wglGetCurrentContext(Ljava/nio/IntBuffer;)J default: default
+    wglGetCurrentDC()J default: default
+    wglGetProcAddress(Ljava/nio/IntBuffer;Ljava/lang/CharSequence;)J default: default
+    wglGetProcAddress(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)J default: default
+    wglMakeCurrent(Ljava/nio/IntBuffer;JJ)Z default: default
+    wglShareLists(Ljava/nio/IntBuffer;JJ)Z default: default
+org/lwjgl/opengl/WGL$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/opengl/WGLAMDGPUAssociation default=17 keep-constructor=1 void=1
+    nwglCreateAssociatedContextAttribsAMD(IJJ)J default: default
+    nwglGetGPUIDsAMD(IJ)I default: default
+    nwglGetGPUInfoAMD(IIIIJ)I default: default
+    wglCreateAssociatedContextAMD(I)J default: default
+    wglCreateAssociatedContextAttribsAMD(IJLjava/nio/IntBuffer;)J default: default
+    wglCreateAssociatedContextAttribsAMD(IJ[I)J default: default
+    wglDeleteAssociatedContextAMD(J)Z default: default
+    wglGetContextGPUIDAMD(J)I default: default
+    wglGetCurrentAssociatedContextAMD()J default: default
+    wglGetGPUIDsAMD(Ljava/nio/IntBuffer;)I default: default
+    wglGetGPUIDsAMD([I)I default: default
+    wglGetGPUInfoAMD(IIILjava/nio/ByteBuffer;)I default: default
+    wglGetGPUInfoAMD(IIILjava/nio/FloatBuffer;)I default: default
+    wglGetGPUInfoAMD(IIILjava/nio/IntBuffer;)I default: default
+    wglGetGPUInfoAMD(III[F)I default: default
+    wglGetGPUInfoAMD(III[I)I default: default
+    wglMakeAssociatedContextCurrentAMD(J)Z default: default
+org/lwjgl/opengl/WGLARBBufferRegion default=3 keep-constructor=1 void=1
+    wglCreateBufferRegionARB(JII)J default: default
+    wglRestoreBufferRegionARB(JIIIIII)Z default: default
+    wglSaveBufferRegionARB(JIIII)Z default: default
+org/lwjgl/opengl/WGLARBContextFlushControl keep-constructor=1
+org/lwjgl/opengl/WGLARBCreateContext default=3 keep-constructor=1
+    nwglCreateContextAttribsARB(JJJ)J default: default
+    wglCreateContextAttribsARB(JJLjava/nio/IntBuffer;)J default: default
+    wglCreateContextAttribsARB(JJ[I)J default: default
+org/lwjgl/opengl/WGLARBCreateContextNoError keep-constructor=1
+org/lwjgl/opengl/WGLARBCreateContextProfile keep-constructor=1
+org/lwjgl/opengl/WGLARBCreateContextRobustness keep-constructor=1
+org/lwjgl/opengl/WGLARBExtensionsString default=2 keep-constructor=1
+    nwglGetExtensionsStringARB(J)J default: default
+    wglGetExtensionsStringARB(J)Ljava/lang/String; default: default
+org/lwjgl/opengl/WGLARBFramebufferSRGB keep-constructor=1
+org/lwjgl/opengl/WGLARBMakeCurrentRead default=2 keep-constructor=1
+    wglGetCurrentReadDCARB()J default: default
+    wglMakeContextCurrentARB(JJJ)Z default: default
+org/lwjgl/opengl/WGLARBMultisample keep-constructor=1
+org/lwjgl/opengl/WGLARBPbuffer default=9 keep-constructor=1
+    nwglCreatePbufferARB(JIIIJ)J default: default
+    nwglQueryPbufferARB(JIJ)I default: default
+    wglCreatePbufferARB(JIIILjava/nio/IntBuffer;)J default: default
+    wglCreatePbufferARB(JIII[I)J default: default
+    wglDestroyPbufferARB(J)Z default: default
+    wglGetPbufferDCARB(J)J default: default
+    wglQueryPbufferARB(JILjava/nio/IntBuffer;)Z default: default
+    wglQueryPbufferARB(JI[I)Z default: default
+    wglReleasePbufferDCARB(JJ)I default: default
+org/lwjgl/opengl/WGLARBPixelFormat default=11 keep-constructor=1
+    nwglChoosePixelFormatARB(JJJIJJ)I default: default
+    nwglGetPixelFormatAttribfvARB(JIIIJJ)I default: default
+    nwglGetPixelFormatAttribivARB(JIIIJJ)I default: default
+    wglChoosePixelFormatARB(JLjava/nio/IntBuffer;Ljava/nio/FloatBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
+    wglChoosePixelFormatARB(J[I[F[I[I)Z default: default
+    wglGetPixelFormatAttribfARB(JIIILjava/nio/FloatBuffer;)Z default: default
+    wglGetPixelFormatAttribfvARB(JIILjava/nio/IntBuffer;Ljava/nio/FloatBuffer;)Z default: default
+    wglGetPixelFormatAttribfvARB(JII[I[F)Z default: default
+    wglGetPixelFormatAttribiARB(JIIILjava/nio/IntBuffer;)Z default: default
+    wglGetPixelFormatAttribivARB(JIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
+    wglGetPixelFormatAttribivARB(JII[I[I)Z default: default
+org/lwjgl/opengl/WGLARBPixelFormatFloat keep-constructor=1
+org/lwjgl/opengl/WGLARBRenderTexture default=5 keep-constructor=1
+    nwglSetPbufferAttribARB(JJ)I default: default
+    wglBindTexImageARB(JI)Z default: default
+    wglReleaseTexImageARB(JI)Z default: default
+    wglSetPbufferAttribARB(JLjava/nio/IntBuffer;)Z default: default
+    wglSetPbufferAttribARB(J[I)Z default: default
+org/lwjgl/opengl/WGLARBRobustnessApplicationIsolation keep-constructor=1
+org/lwjgl/opengl/WGLATIPixelFormatFloat keep-constructor=1
+org/lwjgl/opengl/WGLATIRenderTextureRectangle keep-constructor=1
+org/lwjgl/opengl/WGLCapabilities default=16 keep-constructor=1
+    check_WGL_AMD_gpu_association(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_ARB_buffer_region(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_ARB_create_context(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_ARB_extensions_string(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_ARB_make_current_read(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_ARB_pbuffer(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_ARB_pixel_format(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_ARB_render_texture(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_EXT_extensions_string(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_EXT_swap_control(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_NV_DX_interop(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_NV_copy_image(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_NV_delay_before_swap(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_NV_gpu_affinity(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_NV_swap_group(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+    check_WGL_NV_vertex_array_range(Lorg/lwjgl/system/FunctionProvider;[JLjava/util/Set;)Z default: default
+org/lwjgl/opengl/WGLEXTColorspace keep-constructor=1
+org/lwjgl/opengl/WGLEXTCreateContextES2Profile keep-constructor=1
+org/lwjgl/opengl/WGLEXTCreateContextESProfile keep-constructor=1
+org/lwjgl/opengl/WGLEXTDepthFloat keep-constructor=1
+org/lwjgl/opengl/WGLEXTExtensionsString default=2 keep-constructor=1
+    nwglGetExtensionsStringEXT()J default: default
+    wglGetExtensionsStringEXT()Ljava/lang/String; default: default
+org/lwjgl/opengl/WGLEXTFramebufferSRGB keep-constructor=1
+org/lwjgl/opengl/WGLEXTPixelFormatPackedFloat keep-constructor=1
+org/lwjgl/opengl/WGLEXTSwapControl default=2 keep-constructor=1
+    wglGetSwapIntervalEXT()I default: default
+    wglSwapIntervalEXT(I)Z default: default
+org/lwjgl/opengl/WGLNVCopyImage default=1 keep-constructor=1
+    wglCopyImageSubDataNV(JIIIIIIJIIIIIIIII)Z default: default
+org/lwjgl/opengl/WGLNVDXInterop default=10 keep-constructor=1
+    nwglDXLockObjectsNV(JIJ)I default: default
+    nwglDXUnlockObjectsNV(JIJ)I default: default
+    wglDXCloseDeviceNV(J)Z default: default
+    wglDXLockObjectsNV(JLorg/lwjgl/PointerBuffer;)Z default: default
+    wglDXObjectAccessNV(JI)Z default: default
+    wglDXOpenDeviceNV(J)J default: default
+    wglDXRegisterObjectNV(JJIII)J default: default
+    wglDXSetResourceShareHandleNV(JJ)Z default: default
+    wglDXUnlockObjectsNV(JLorg/lwjgl/PointerBuffer;)Z default: default
+    wglDXUnregisterObjectNV(JJ)Z default: default
+org/lwjgl/opengl/WGLNVDelayBeforeSwap default=1 keep-constructor=1
+    wglDelayBeforeSwapNV(JF)Z default: default
+org/lwjgl/opengl/WGLNVFloatBuffer keep-constructor=1
+org/lwjgl/opengl/WGLNVGPUAffinity default=9 keep-constructor=1
+    nwglCreateAffinityDCNV(J)J default: default
+    nwglEnumGpuDevicesNV(JIJ)I default: default
+    nwglEnumGpusFromAffinityDCNV(JIJ)I default: default
+    nwglEnumGpusNV(IJ)I default: default
+    wglCreateAffinityDCNV(Lorg/lwjgl/PointerBuffer;)J default: default
+    wglDeleteDCNV(J)Z default: default
+    wglEnumGpuDevicesNV(JILorg/lwjgl/opengl/GPU_DEVICE;)Z default: default
+    wglEnumGpusFromAffinityDCNV(JILorg/lwjgl/PointerBuffer;)Z default: default
+    wglEnumGpusNV(ILorg/lwjgl/PointerBuffer;)Z default: default
+org/lwjgl/opengl/WGLNVMultigpuContext keep-constructor=1
+org/lwjgl/opengl/WGLNVMultisampleCoverage keep-constructor=1
+org/lwjgl/opengl/WGLNVRenderDepthTexture keep-constructor=1
+org/lwjgl/opengl/WGLNVRenderTextureRectangle keep-constructor=1
+org/lwjgl/opengl/WGLNVSwapGroup default=12 keep-constructor=1
+    nwglQueryFrameCountNV(JJ)I default: default
+    nwglQueryMaxSwapGroupsNV(JJJ)I default: default
+    nwglQuerySwapGroupNV(JJJ)I default: default
+    wglBindSwapBarrierNV(II)Z default: default
+    wglJoinSwapGroupNV(JI)Z default: default
+    wglQueryFrameCountNV(JLjava/nio/IntBuffer;)Z default: default
+    wglQueryFrameCountNV(J[I)Z default: default
+    wglQueryMaxSwapGroupsNV(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
+    wglQueryMaxSwapGroupsNV(J[I[I)Z default: default
+    wglQuerySwapGroupNV(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
+    wglQuerySwapGroupNV(J[I[I)Z default: default
+    wglResetFrameCountNV(J)Z default: default
+org/lwjgl/opengl/WGLNVVertexArrayRange default=1 keep-constructor=1 nio-buffer=1 void=2
+    nwglAllocateMemoryNV(IFFF)J default: default
+org/lwjgl/opengl/_3DFXTextureCompressionFXT1 keep-constructor=1

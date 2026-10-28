@@ -1,0 +1,49 @@
+sourceSets {
+    java9 {
+        java {
+            srcDirs = ['src/java9/java']
+        }
+    }
+}
+
+sourceSets.java9.compileClasspath += sourceSets.main.output
+
+tasks.named('compileJava', JavaCompile) {
+    options.release = 8
+}
+
+tasks.named('compileTestJava', JavaCompile) {
+    options.release = 8
+}
+
+def compileModuleInfo = tasks.named('compileJava9Java', JavaCompile) {
+    dependsOn tasks.named('compileJava')
+    options.release = 9
+    modularity.inferModulePath = false
+    classpath = files()
+    doFirst {
+        options.compilerArgs = ['--patch-module', "io.github.headlesshq.headlessmc.lwjgl.api=${sourceSets.main.output.asPath}"]
+    }
+}
+
+tasks.named('jar', Jar) {
+    manifest {
+        attributes 'Multi-Release': true
+        attributes 'Implementation-Title': project.name
+        attributes 'Implementation-Version': project.version
+        attributes 'Implementation-Vendor': 'HeadlessHQ'
+    }
+    into('META-INF/versions/9') {
+        from(compileModuleInfo.map { it.destinationDirectory }) {
+            include 'module-info.class'
+        }
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}

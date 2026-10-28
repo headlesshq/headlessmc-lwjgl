@@ -1,0 +1,981 @@
+# Behaviour catalog of org.lwjgl:lwjgl-freetype:3.4.3
+# Every method of every class is patched by the first matching rule, counted per class.
+# Methods resolved by rules that only guess are listed individually and have to be reviewed.
+# Regenerate with: ./gradlew updateCatalogLock
+org/lwjgl/util/freetype/BDF_Property fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=8
+    u_atom()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/BDF_Property$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=4
+    u_atom()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/CID_FaceDict fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=8 struct-member=18
+org/lwjgl/util/freetype/CID_FaceDict$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=5 struct-member=9
+org/lwjgl/util/freetype/CID_FaceInfo fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=3 lwjgl-buffer-empty=1 nio-buffer=3 nio-buffer-empty=3 struct=8 struct-member=30
+    cid_font_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    ordering()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    registry()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    xuid()Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+org/lwjgl/util/freetype/CID_FaceInfo$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 nio-buffer-empty=3 struct=5 struct-member=15
+    cid_font_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    ordering()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    registry()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    xuid()Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+org/lwjgl/util/freetype/FTC_Face_Requester keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FTC_Face_Requester; object: new FTC_Face_Requester
+    create(Lorg/lwjgl/util/freetype/FTC_Face_RequesterI;)Lorg/lwjgl/util/freetype/FTC_Face_Requester; object: new FTC_Face_Requester
+    create(Lorg/lwjgl/util/freetype/FTC_Face_RequesterI;J)Lorg/lwjgl/util/freetype/FTC_Face_Requester; object: new FTC_Face_Requester
+    createSafe(J)Lorg/lwjgl/util/freetype/FTC_Face_Requester; object: new FTC_Face_Requester
+org/lwjgl/util/freetype/FTC_Face_Requester$1 default=1 keep-constructor=1
+    invoke(JJJJ)I default: default
+org/lwjgl/util/freetype/FTC_Face_RequesterI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FTC_ImageType fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=8
+org/lwjgl/util/freetype/FTC_ImageType$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/util/freetype/FTC_SBit fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=2 struct=2 struct-member=18
+org/lwjgl/util/freetype/FTC_SBit$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=9
+org/lwjgl/util/freetype/FTC_Scaler fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=12
+org/lwjgl/util/freetype/FTC_Scaler$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/util/freetype/FT_Affine23 fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=12
+org/lwjgl/util/freetype/FT_Affine23$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/util/freetype/FT_Alloc_Func keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Alloc_Func; object: new FT_Alloc_Func
+    create(Lorg/lwjgl/util/freetype/FT_Alloc_FuncI;)Lorg/lwjgl/util/freetype/FT_Alloc_Func; object: new FT_Alloc_Func
+    create(Lorg/lwjgl/util/freetype/FT_Alloc_FuncI;J)Lorg/lwjgl/util/freetype/FT_Alloc_Func; object: new FT_Alloc_Func
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Alloc_Func; object: new FT_Alloc_Func
+org/lwjgl/util/freetype/FT_Alloc_Func$1 default=1 keep-constructor=1
+    invoke(JJ)J default: default
+org/lwjgl/util/freetype/FT_Alloc_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_BBox fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/util/freetype/FT_BBox$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/util/freetype/FT_Bitmap fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=14
+org/lwjgl/util/freetype/FT_Bitmap$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=7
+org/lwjgl/util/freetype/FT_BitmapGlyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=6 struct-member=4
+org/lwjgl/util/freetype/FT_BitmapGlyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=4 struct-member=2
+org/lwjgl/util/freetype/FT_Bitmap_Size fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=10
+org/lwjgl/util/freetype/FT_Bitmap_Size$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/util/freetype/FT_COLR_Paint fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=33 struct-member=2
+org/lwjgl/util/freetype/FT_COLR_Paint$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=15 struct-member=1
+org/lwjgl/util/freetype/FT_CharMap fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=6
+org/lwjgl/util/freetype/FT_CharMap$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=3
+org/lwjgl/util/freetype/FT_ClipBox fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=15
+org/lwjgl/util/freetype/FT_ClipBox$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=6
+org/lwjgl/util/freetype/FT_Color fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/util/freetype/FT_Color$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/util/freetype/FT_ColorIndex fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=4
+org/lwjgl/util/freetype/FT_ColorIndex$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/util/freetype/FT_ColorLine fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=2
+org/lwjgl/util/freetype/FT_ColorLine$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=1
+org/lwjgl/util/freetype/FT_ColorStop fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=2
+org/lwjgl/util/freetype/FT_ColorStop$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=1
+org/lwjgl/util/freetype/FT_ColorStopIterator fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=6
+org/lwjgl/util/freetype/FT_ColorStopIterator$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=3
+org/lwjgl/util/freetype/FT_Data fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=5
+    pointer()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Data$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=1
+    pointer()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_DebugHook_Func keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_DebugHook_Func; object: new FT_DebugHook_Func
+    create(Lorg/lwjgl/util/freetype/FT_DebugHook_FuncI;)Lorg/lwjgl/util/freetype/FT_DebugHook_Func; object: new FT_DebugHook_Func
+    create(Lorg/lwjgl/util/freetype/FT_DebugHook_FuncI;J)Lorg/lwjgl/util/freetype/FT_DebugHook_Func; object: new FT_DebugHook_Func
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_DebugHook_Func; object: new FT_DebugHook_Func
+org/lwjgl/util/freetype/FT_DebugHook_Func$1 default=1 keep-constructor=1
+    invoke(J)I default: default
+org/lwjgl/util/freetype/FT_DebugHook_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Face fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=4 lwjgl-buffer-empty=2 nio-buffer=2 nio-buffer-empty=2 struct=16 struct-member=37
+    available_sizes()Lorg/lwjgl/util/freetype/FT_Bitmap_Size$Buffer; lwjgl-buffer-empty: buffer FT_Bitmap_Size$Buffer(0)
+    charmaps()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    family_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    style_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Face$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=2 nio-buffer-empty=2 struct=7 struct-member=17
+    available_sizes()Lorg/lwjgl/util/freetype/FT_Bitmap_Size$Buffer; lwjgl-buffer-empty: buffer FT_Bitmap_Size$Buffer(0)
+    charmaps()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    family_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    style_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Free_Func keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Free_Func; object: new FT_Free_Func
+    create(Lorg/lwjgl/util/freetype/FT_Free_FuncI;)Lorg/lwjgl/util/freetype/FT_Free_Func; object: new FT_Free_Func
+    create(Lorg/lwjgl/util/freetype/FT_Free_FuncI;J)Lorg/lwjgl/util/freetype/FT_Free_Func; object: new FT_Free_Func
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Free_Func; object: new FT_Free_Func
+org/lwjgl/util/freetype/FT_Free_Func$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_Free_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Generic fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=2 struct=7 struct-member=5
+    finalizer()Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
+    nfinalizer(J)Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
+org/lwjgl/util/freetype/FT_Generic$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 object=1 struct=2 struct-member=1
+    finalizer()Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
+org/lwjgl/util/freetype/FT_Generic_Finalizer keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
+    create(Lorg/lwjgl/util/freetype/FT_Generic_FinalizerI;)Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
+    create(Lorg/lwjgl/util/freetype/FT_Generic_FinalizerI;J)Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Generic_Finalizer; object: new FT_Generic_Finalizer
+org/lwjgl/util/freetype/FT_Generic_Finalizer$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_Generic_FinalizerI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Glyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=5
+org/lwjgl/util/freetype/FT_Glyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
+org/lwjgl/util/freetype/FT_GlyphSlot fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 struct=15 struct-member=23
+org/lwjgl/util/freetype/FT_GlyphSlot$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=9 struct-member=9
+org/lwjgl/util/freetype/FT_Glyph_Metrics fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=16
+org/lwjgl/util/freetype/FT_Glyph_Metrics$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc; object: new FT_Incremental_FreeGlyphDataFunc
+    create(Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFuncI;)Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc; object: new FT_Incremental_FreeGlyphDataFunc
+    create(Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFuncI;J)Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc; object: new FT_Incremental_FreeGlyphDataFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc; object: new FT_Incremental_FreeGlyphDataFunc
+org/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Incremental_Funcs fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=6 struct=7 struct-member=4
+    free_glyph_data()Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc; object: new FT_Incremental_FreeGlyphDataFunc
+    get_glyph_data()Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc; object: new FT_Incremental_GetGlyphDataFunc
+    get_glyph_metrics()Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
+    nfree_glyph_data(J)Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc; object: new FT_Incremental_FreeGlyphDataFunc
+    nget_glyph_data(J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc; object: new FT_Incremental_GetGlyphDataFunc
+    nget_glyph_metrics(J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
+org/lwjgl/util/freetype/FT_Incremental_Funcs$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 object=3 struct=2
+    free_glyph_data()Lorg/lwjgl/util/freetype/FT_Incremental_FreeGlyphDataFunc; object: new FT_Incremental_FreeGlyphDataFunc
+    get_glyph_data()Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc; object: new FT_Incremental_GetGlyphDataFunc
+    get_glyph_metrics()Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
+org/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc; object: new FT_Incremental_GetGlyphDataFunc
+    create(Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFuncI;)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc; object: new FT_Incremental_GetGlyphDataFunc
+    create(Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFuncI;J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc; object: new FT_Incremental_GetGlyphDataFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc; object: new FT_Incremental_GetGlyphDataFunc
+org/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFunc$1 default=1 keep-constructor=1
+    invoke(JIJ)I default: default
+org/lwjgl/util/freetype/FT_Incremental_GetGlyphDataFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
+    create(Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFuncI;)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
+    create(Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFuncI;J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc; object: new FT_Incremental_GetGlyphMetricsFunc
+org/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFunc$1 default=1 keep-constructor=1
+    invoke(JIZJ)I default: default
+org/lwjgl/util/freetype/FT_Incremental_GetGlyphMetricsFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Incremental_Interface fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=5
+org/lwjgl/util/freetype/FT_Incremental_Interface$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=1
+org/lwjgl/util/freetype/FT_Incremental_Metrics fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=8
+org/lwjgl/util/freetype/FT_Incremental_Metrics$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/util/freetype/FT_LayerIterator fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=4
+org/lwjgl/util/freetype/FT_LayerIterator$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=2
+org/lwjgl/util/freetype/FT_List fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=6
+org/lwjgl/util/freetype/FT_List$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=4
+org/lwjgl/util/freetype/FT_ListNode fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=2 struct=4
+org/lwjgl/util/freetype/FT_ListNode$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=4
+org/lwjgl/util/freetype/FT_List_Destructor keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_List_Destructor; object: new FT_List_Destructor
+    create(Lorg/lwjgl/util/freetype/FT_List_DestructorI;)Lorg/lwjgl/util/freetype/FT_List_Destructor; object: new FT_List_Destructor
+    create(Lorg/lwjgl/util/freetype/FT_List_DestructorI;J)Lorg/lwjgl/util/freetype/FT_List_Destructor; object: new FT_List_Destructor
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_List_Destructor; object: new FT_List_Destructor
+org/lwjgl/util/freetype/FT_List_Destructor$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_List_DestructorI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_List_Iterator keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_List_Iterator; object: new FT_List_Iterator
+    create(Lorg/lwjgl/util/freetype/FT_List_IteratorI;)Lorg/lwjgl/util/freetype/FT_List_Iterator; object: new FT_List_Iterator
+    create(Lorg/lwjgl/util/freetype/FT_List_IteratorI;J)Lorg/lwjgl/util/freetype/FT_List_Iterator; object: new FT_List_Iterator
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_List_Iterator; object: new FT_List_Iterator
+org/lwjgl/util/freetype/FT_List_Iterator$1 default=1 keep-constructor=1
+    invoke(JJ)I default: default
+org/lwjgl/util/freetype/FT_List_IteratorI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_MM_Axis fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 nio-buffer-empty=1 struct=2 struct-member=6
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_MM_Axis$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=3
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_MM_Var fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=4 lwjgl-buffer-empty=2 struct=2 struct-member=6
+    axis()Lorg/lwjgl/util/freetype/FT_Var_Axis$Buffer; lwjgl-buffer-empty: buffer FT_Var_Axis$Buffer(0)
+    namedstyle()Lorg/lwjgl/util/freetype/FT_Var_Named_Style$Buffer; lwjgl-buffer-empty: buffer FT_Var_Named_Style$Buffer(0)
+org/lwjgl/util/freetype/FT_MM_Var$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=2 struct=2 struct-member=3
+    axis()Lorg/lwjgl/util/freetype/FT_Var_Axis$Buffer; lwjgl-buffer-empty: buffer FT_Var_Axis$Buffer(0)
+    namedstyle()Lorg/lwjgl/util/freetype/FT_Var_Named_Style$Buffer; lwjgl-buffer-empty: buffer FT_Var_Named_Style$Buffer(0)
+org/lwjgl/util/freetype/FT_Matrix fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/util/freetype/FT_Matrix$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/util/freetype/FT_Memory fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=6 struct=7 struct-member=6
+    alloc()Lorg/lwjgl/util/freetype/FT_Alloc_Func; object: new FT_Alloc_Func
+    free$()Lorg/lwjgl/util/freetype/FT_Free_Func; object: new FT_Free_Func
+    nalloc(J)Lorg/lwjgl/util/freetype/FT_Alloc_Func; object: new FT_Alloc_Func
+    nfree$(J)Lorg/lwjgl/util/freetype/FT_Free_Func; object: new FT_Free_Func
+    nrealloc(J)Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
+    realloc()Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
+org/lwjgl/util/freetype/FT_Memory$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 object=3 struct=2 struct-member=1
+    alloc()Lorg/lwjgl/util/freetype/FT_Alloc_Func; object: new FT_Alloc_Func
+    free$()Lorg/lwjgl/util/freetype/FT_Free_Func; object: new FT_Free_Func
+    realloc()Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
+org/lwjgl/util/freetype/FT_Module_Class fluent=13 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=3 nio-buffer-empty=1 object=6 struct=7 struct-member=20
+    get_interface()Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
+    module_done()Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
+    module_init()Lorg/lwjgl/util/freetype/FT_Module_Constructor; object: new FT_Module_Constructor
+    module_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nget_interface(J)Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
+    nmodule_done(J)Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
+    nmodule_init(J)Lorg/lwjgl/util/freetype/FT_Module_Constructor; object: new FT_Module_Constructor
+org/lwjgl/util/freetype/FT_Module_Class$Buffer fluent=13 guarded-static-init=1 keep-constructor=3 nio-buffer=1 nio-buffer-empty=1 object=3 struct=2 struct-member=5
+    get_interface()Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
+    module_done()Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
+    module_init()Lorg/lwjgl/util/freetype/FT_Module_Constructor; object: new FT_Module_Constructor
+    module_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Module_Constructor keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Module_Constructor; object: new FT_Module_Constructor
+    create(Lorg/lwjgl/util/freetype/FT_Module_ConstructorI;)Lorg/lwjgl/util/freetype/FT_Module_Constructor; object: new FT_Module_Constructor
+    create(Lorg/lwjgl/util/freetype/FT_Module_ConstructorI;J)Lorg/lwjgl/util/freetype/FT_Module_Constructor; object: new FT_Module_Constructor
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Module_Constructor; object: new FT_Module_Constructor
+org/lwjgl/util/freetype/FT_Module_Constructor$1 default=1 keep-constructor=1
+    invoke(J)I default: default
+org/lwjgl/util/freetype/FT_Module_ConstructorI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Module_Destructor keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
+    create(Lorg/lwjgl/util/freetype/FT_Module_DestructorI;)Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
+    create(Lorg/lwjgl/util/freetype/FT_Module_DestructorI;J)Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Module_Destructor; object: new FT_Module_Destructor
+org/lwjgl/util/freetype/FT_Module_Destructor$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_Module_DestructorI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Module_Requester keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
+    create(Lorg/lwjgl/util/freetype/FT_Module_RequesterI;)Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
+    create(Lorg/lwjgl/util/freetype/FT_Module_RequesterI;J)Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Module_Requester; object: new FT_Module_Requester
+org/lwjgl/util/freetype/FT_Module_Requester$1 default=1 keep-constructor=1
+    invoke(JJ)J default: default
+org/lwjgl/util/freetype/FT_Module_RequesterI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Multi_Master fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 struct=9 struct-member=4
+    axis()Lorg/lwjgl/util/freetype/FT_MM_Axis$Buffer; lwjgl-buffer-empty: buffer FT_MM_Axis$Buffer(0)
+org/lwjgl/util/freetype/FT_Multi_Master$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 struct=3 struct-member=2
+    axis()Lorg/lwjgl/util/freetype/FT_MM_Axis$Buffer; lwjgl-buffer-empty: buffer FT_MM_Axis$Buffer(0)
+org/lwjgl/util/freetype/FT_OpaquePaint fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=2
+org/lwjgl/util/freetype/FT_OpaquePaint$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=1
+org/lwjgl/util/freetype/FT_Open_Args fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 nio-buffer=2 nio-buffer-empty=2 struct=9 struct-member=18
+    memory_base()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    params()Lorg/lwjgl/util/freetype/FT_Parameter$Buffer; lwjgl-buffer-empty: buffer FT_Parameter$Buffer(0)
+    pathname()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Open_Args$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 nio-buffer-empty=2 struct=3 struct-member=5
+    memory_base()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    params()Lorg/lwjgl/util/freetype/FT_Parameter$Buffer; lwjgl-buffer-empty: buffer FT_Parameter$Buffer(0)
+    pathname()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Outline fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 nio-buffer=2 nio-buffer-empty=2 struct=7 struct-member=6
+    contours()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    points()Lorg/lwjgl/util/freetype/FT_Vector$Buffer; lwjgl-buffer-empty: buffer FT_Vector$Buffer(0)
+    tags()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Outline$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 nio-buffer-empty=2 struct=2 struct-member=3
+    contours()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    points()Lorg/lwjgl/util/freetype/FT_Vector$Buffer; lwjgl-buffer-empty: buffer FT_Vector$Buffer(0)
+    tags()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_OutlineGlyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=6
+org/lwjgl/util/freetype/FT_OutlineGlyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=4
+org/lwjgl/util/freetype/FT_Outline_ConicToFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Outline_ConicToFunc; object: new FT_Outline_ConicToFunc
+    create(Lorg/lwjgl/util/freetype/FT_Outline_ConicToFuncI;)Lorg/lwjgl/util/freetype/FT_Outline_ConicToFunc; object: new FT_Outline_ConicToFunc
+    create(Lorg/lwjgl/util/freetype/FT_Outline_ConicToFuncI;J)Lorg/lwjgl/util/freetype/FT_Outline_ConicToFunc; object: new FT_Outline_ConicToFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Outline_ConicToFunc; object: new FT_Outline_ConicToFunc
+org/lwjgl/util/freetype/FT_Outline_ConicToFunc$1 default=1 keep-constructor=1
+    invoke(JJJ)I default: default
+org/lwjgl/util/freetype/FT_Outline_ConicToFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Outline_CubicToFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
+    create(Lorg/lwjgl/util/freetype/FT_Outline_CubicToFuncI;)Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
+    create(Lorg/lwjgl/util/freetype/FT_Outline_CubicToFuncI;J)Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
+org/lwjgl/util/freetype/FT_Outline_CubicToFunc$1 default=1 keep-constructor=1
+    invoke(JJJJ)I default: default
+org/lwjgl/util/freetype/FT_Outline_CubicToFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Outline_Funcs fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=8 struct=7 struct-member=10
+    conic_to()Lorg/lwjgl/util/freetype/FT_Outline_ConicToFunc; object: new FT_Outline_ConicToFunc
+    cubic_to()Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
+    line_to()Lorg/lwjgl/util/freetype/FT_Outline_LineToFunc; object: new FT_Outline_LineToFunc
+    move_to()Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
+    nconic_to(J)Lorg/lwjgl/util/freetype/FT_Outline_ConicToFunc; object: new FT_Outline_ConicToFunc
+    ncubic_to(J)Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
+    nline_to(J)Lorg/lwjgl/util/freetype/FT_Outline_LineToFunc; object: new FT_Outline_LineToFunc
+    nmove_to(J)Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
+org/lwjgl/util/freetype/FT_Outline_Funcs$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 object=4 struct=2 struct-member=2
+    conic_to()Lorg/lwjgl/util/freetype/FT_Outline_ConicToFunc; object: new FT_Outline_ConicToFunc
+    cubic_to()Lorg/lwjgl/util/freetype/FT_Outline_CubicToFunc; object: new FT_Outline_CubicToFunc
+    line_to()Lorg/lwjgl/util/freetype/FT_Outline_LineToFunc; object: new FT_Outline_LineToFunc
+    move_to()Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
+org/lwjgl/util/freetype/FT_Outline_LineToFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Outline_LineToFunc; object: new FT_Outline_LineToFunc
+    create(Lorg/lwjgl/util/freetype/FT_Outline_LineToFuncI;)Lorg/lwjgl/util/freetype/FT_Outline_LineToFunc; object: new FT_Outline_LineToFunc
+    create(Lorg/lwjgl/util/freetype/FT_Outline_LineToFuncI;J)Lorg/lwjgl/util/freetype/FT_Outline_LineToFunc; object: new FT_Outline_LineToFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Outline_LineToFunc; object: new FT_Outline_LineToFunc
+org/lwjgl/util/freetype/FT_Outline_LineToFunc$1 default=1 keep-constructor=1
+    invoke(JJ)I default: default
+org/lwjgl/util/freetype/FT_Outline_LineToFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Outline_MoveToFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
+    create(Lorg/lwjgl/util/freetype/FT_Outline_MoveToFuncI;)Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
+    create(Lorg/lwjgl/util/freetype/FT_Outline_MoveToFuncI;J)Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Outline_MoveToFunc; object: new FT_Outline_MoveToFunc
+org/lwjgl/util/freetype/FT_Outline_MoveToFunc$1 default=1 keep-constructor=1
+    invoke(JJ)I default: default
+org/lwjgl/util/freetype/FT_Outline_MoveToFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_PaintColrGlyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=2
+org/lwjgl/util/freetype/FT_PaintColrGlyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=1
+org/lwjgl/util/freetype/FT_PaintColrLayers fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4
+org/lwjgl/util/freetype/FT_PaintColrLayers$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3
+org/lwjgl/util/freetype/FT_PaintComposite fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=6 struct-member=2
+org/lwjgl/util/freetype/FT_PaintComposite$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=4 struct-member=1
+org/lwjgl/util/freetype/FT_PaintGlyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=2
+org/lwjgl/util/freetype/FT_PaintGlyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=1
+org/lwjgl/util/freetype/FT_PaintLinearGradient fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=10
+org/lwjgl/util/freetype/FT_PaintLinearGradient$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=6
+org/lwjgl/util/freetype/FT_PaintRadialGradient fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=8 struct-member=4
+org/lwjgl/util/freetype/FT_PaintRadialGradient$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=5 struct-member=2
+org/lwjgl/util/freetype/FT_PaintRotate fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=6
+org/lwjgl/util/freetype/FT_PaintRotate$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=3
+org/lwjgl/util/freetype/FT_PaintScale fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=8
+org/lwjgl/util/freetype/FT_PaintScale$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=4
+org/lwjgl/util/freetype/FT_PaintSkew fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=8
+org/lwjgl/util/freetype/FT_PaintSkew$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=4
+org/lwjgl/util/freetype/FT_PaintSolid fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4
+org/lwjgl/util/freetype/FT_PaintSolid$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3
+org/lwjgl/util/freetype/FT_PaintSweepGradient fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=6 struct-member=4
+org/lwjgl/util/freetype/FT_PaintSweepGradient$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=4 struct-member=2
+org/lwjgl/util/freetype/FT_PaintTransform fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=6
+org/lwjgl/util/freetype/FT_PaintTransform$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=4
+org/lwjgl/util/freetype/FT_PaintTranslate fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=4
+org/lwjgl/util/freetype/FT_PaintTranslate$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
+org/lwjgl/util/freetype/FT_Palette_Data fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=3 nio-buffer-empty=3 struct=7 struct-member=4
+    palette_entry_name_ids()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    palette_flags()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    palette_name_ids()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/util/freetype/FT_Palette_Data$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=3 struct=2 struct-member=2
+    palette_entry_name_ids()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    palette_flags()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    palette_name_ids()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/util/freetype/FT_Parameter fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=4
+org/lwjgl/util/freetype/FT_Parameter$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=1
+org/lwjgl/util/freetype/FT_Prop_GlyphToScriptMap fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=2 struct=4
+org/lwjgl/util/freetype/FT_Prop_GlyphToScriptMap$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=3
+org/lwjgl/util/freetype/FT_Prop_IncreaseXHeight fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=2
+org/lwjgl/util/freetype/FT_Prop_IncreaseXHeight$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=1
+org/lwjgl/util/freetype/FT_Raster_DoneFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Raster_DoneFunc; object: new FT_Raster_DoneFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_DoneFuncI;)Lorg/lwjgl/util/freetype/FT_Raster_DoneFunc; object: new FT_Raster_DoneFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_DoneFuncI;J)Lorg/lwjgl/util/freetype/FT_Raster_DoneFunc; object: new FT_Raster_DoneFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Raster_DoneFunc; object: new FT_Raster_DoneFunc
+org/lwjgl/util/freetype/FT_Raster_DoneFunc$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_Raster_DoneFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Raster_Funcs fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=10 struct=7 struct-member=8
+    nraster_done(J)Lorg/lwjgl/util/freetype/FT_Raster_DoneFunc; object: new FT_Raster_DoneFunc
+    nraster_new(J)Lorg/lwjgl/util/freetype/FT_Raster_NewFunc; object: new FT_Raster_NewFunc
+    nraster_render(J)Lorg/lwjgl/util/freetype/FT_Raster_RenderFunc; object: new FT_Raster_RenderFunc
+    nraster_reset(J)Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
+    nraster_set_mode(J)Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
+    raster_done()Lorg/lwjgl/util/freetype/FT_Raster_DoneFunc; object: new FT_Raster_DoneFunc
+    raster_new()Lorg/lwjgl/util/freetype/FT_Raster_NewFunc; object: new FT_Raster_NewFunc
+    raster_render()Lorg/lwjgl/util/freetype/FT_Raster_RenderFunc; object: new FT_Raster_RenderFunc
+    raster_reset()Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
+    raster_set_mode()Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
+org/lwjgl/util/freetype/FT_Raster_Funcs$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 object=5 struct=2 struct-member=1
+    raster_done()Lorg/lwjgl/util/freetype/FT_Raster_DoneFunc; object: new FT_Raster_DoneFunc
+    raster_new()Lorg/lwjgl/util/freetype/FT_Raster_NewFunc; object: new FT_Raster_NewFunc
+    raster_render()Lorg/lwjgl/util/freetype/FT_Raster_RenderFunc; object: new FT_Raster_RenderFunc
+    raster_reset()Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
+    raster_set_mode()Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
+org/lwjgl/util/freetype/FT_Raster_NewFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Raster_NewFunc; object: new FT_Raster_NewFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_NewFuncI;)Lorg/lwjgl/util/freetype/FT_Raster_NewFunc; object: new FT_Raster_NewFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_NewFuncI;J)Lorg/lwjgl/util/freetype/FT_Raster_NewFunc; object: new FT_Raster_NewFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Raster_NewFunc; object: new FT_Raster_NewFunc
+org/lwjgl/util/freetype/FT_Raster_NewFunc$1 default=1 keep-constructor=1
+    invoke(JJ)I default: default
+org/lwjgl/util/freetype/FT_Raster_NewFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Raster_Params fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 object=3 struct=11 struct-member=15
+    gray_spans()Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
+    nblack_spans(J)Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
+    ngray_spans(J)Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
+org/lwjgl/util/freetype/FT_Raster_Params$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 nio-buffer=1 object=1 struct=4 struct-member=2
+    gray_spans()Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
+org/lwjgl/util/freetype/FT_Raster_RenderFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Raster_RenderFunc; object: new FT_Raster_RenderFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_RenderFuncI;)Lorg/lwjgl/util/freetype/FT_Raster_RenderFunc; object: new FT_Raster_RenderFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_RenderFuncI;J)Lorg/lwjgl/util/freetype/FT_Raster_RenderFunc; object: new FT_Raster_RenderFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Raster_RenderFunc; object: new FT_Raster_RenderFunc
+org/lwjgl/util/freetype/FT_Raster_RenderFunc$1 default=1 keep-constructor=1
+    invoke(JJ)I default: default
+org/lwjgl/util/freetype/FT_Raster_RenderFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Raster_ResetFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_ResetFuncI;)Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_ResetFuncI;J)Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Raster_ResetFunc; object: new FT_Raster_ResetFunc
+org/lwjgl/util/freetype/FT_Raster_ResetFunc$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_Raster_ResetFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Raster_SetModeFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_SetModeFuncI;)Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
+    create(Lorg/lwjgl/util/freetype/FT_Raster_SetModeFuncI;J)Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Raster_SetModeFunc; object: new FT_Raster_SetModeFunc
+org/lwjgl/util/freetype/FT_Raster_SetModeFunc$1 default=1 keep-constructor=1
+    invoke(JJJ)I default: default
+org/lwjgl/util/freetype/FT_Raster_SetModeFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Realloc_Func keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
+    create(Lorg/lwjgl/util/freetype/FT_Realloc_FuncI;)Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
+    create(Lorg/lwjgl/util/freetype/FT_Realloc_FuncI;J)Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Realloc_Func; object: new FT_Realloc_Func
+org/lwjgl/util/freetype/FT_Realloc_Func$1 default=1 keep-constructor=1
+    invoke(JJJJ)J default: default
+org/lwjgl/util/freetype/FT_Realloc_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_SVG_Document fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 nio-buffer-empty=1 struct=8 struct-member=8
+    svg_document()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_SVG_Document$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=5 struct-member=4
+    svg_document()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_SfntLangTag fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=2
+    string()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_SfntLangTag$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=1
+    string()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_SfntName fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=10
+    string()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_SfntName$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=5
+    string()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Size fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=14 struct-member=5
+org/lwjgl/util/freetype/FT_Size$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=5
+org/lwjgl/util/freetype/FT_Size_Internal fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=4 struct-member=4
+org/lwjgl/util/freetype/FT_Size_Internal$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
+org/lwjgl/util/freetype/FT_Size_Metrics fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=16
+org/lwjgl/util/freetype/FT_Size_Metrics$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/util/freetype/FT_Size_Request fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=15
+org/lwjgl/util/freetype/FT_Size_Request$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/util/freetype/FT_Span fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=6
+org/lwjgl/util/freetype/FT_Span$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/util/freetype/FT_SpanFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
+    create(Lorg/lwjgl/util/freetype/FT_SpanFuncI;)Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
+    create(Lorg/lwjgl/util/freetype/FT_SpanFuncI;J)Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_SpanFunc; object: new FT_SpanFunc
+org/lwjgl/util/freetype/FT_SpanFunc$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_SpanFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Stream fluent=13 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=3 nio-buffer-empty=1 object=4 struct=12 struct-member=14
+    base()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    close$()Lorg/lwjgl/util/freetype/FT_Stream_CloseFunc; object: new FT_Stream_CloseFunc
+    nclose$(J)Lorg/lwjgl/util/freetype/FT_Stream_CloseFunc; object: new FT_Stream_CloseFunc
+    nread(J)Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
+    read()Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
+org/lwjgl/util/freetype/FT_Stream$Buffer fluent=13 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 object=2 struct=4 struct-member=2
+    base()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    close$()Lorg/lwjgl/util/freetype/FT_Stream_CloseFunc; object: new FT_Stream_CloseFunc
+    read()Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
+org/lwjgl/util/freetype/FT_StreamDesc fluent=5 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/util/freetype/FT_StreamDesc$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/util/freetype/FT_Stream_CloseFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Stream_CloseFunc; object: new FT_Stream_CloseFunc
+    create(Lorg/lwjgl/util/freetype/FT_Stream_CloseFuncI;)Lorg/lwjgl/util/freetype/FT_Stream_CloseFunc; object: new FT_Stream_CloseFunc
+    create(Lorg/lwjgl/util/freetype/FT_Stream_CloseFuncI;J)Lorg/lwjgl/util/freetype/FT_Stream_CloseFunc; object: new FT_Stream_CloseFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Stream_CloseFunc; object: new FT_Stream_CloseFunc
+org/lwjgl/util/freetype/FT_Stream_CloseFunc$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/FT_Stream_CloseFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_Stream_IoFunc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
+    create(Lorg/lwjgl/util/freetype/FT_Stream_IoFuncI;)Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
+    create(Lorg/lwjgl/util/freetype/FT_Stream_IoFuncI;J)Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
+    createSafe(J)Lorg/lwjgl/util/freetype/FT_Stream_IoFunc; object: new FT_Stream_IoFunc
+org/lwjgl/util/freetype/FT_Stream_IoFunc$1 default=1 keep-constructor=1
+    invoke(JJJJ)J default: default
+org/lwjgl/util/freetype/FT_Stream_IoFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/FT_SvgGlyph fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 nio-buffer-empty=1 struct=10 struct-member=10
+    svg_document()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_SvgGlyph$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=6 struct-member=5
+    svg_document()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_UnitVector fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/util/freetype/FT_UnitVector$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/util/freetype/FT_Var_Axis fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 nio-buffer-empty=1 struct=2 struct-member=12
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Var_Axis$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=6
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/FT_Var_Named_Style fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=4 struct=2 struct-member=4
+org/lwjgl/util/freetype/FT_Var_Named_Style$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer=1 struct=2 struct-member=2
+org/lwjgl/util/freetype/FT_Vector fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/util/freetype/FT_Vector$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/util/freetype/FreeType default=353 guarded-static-init=1 interface-proxy=2 keep-constructor=1 struct=1 void=71
+    FTC_CMapCache_Lookup(JJII)I default: default
+    FTC_CMapCache_New(JLorg/lwjgl/PointerBuffer;)I default: default
+    FTC_IMAGE_TYPE_COMPARE(Lorg/lwjgl/util/freetype/FTC_ImageType;Lorg/lwjgl/util/freetype/FTC_ImageType;)Z default: default
+    FTC_ImageCache_Lookup(JLorg/lwjgl/util/freetype/FTC_ImageType;ILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    FTC_ImageCache_LookupScaler(JLorg/lwjgl/util/freetype/FTC_Scaler;JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    FTC_ImageCache_New(JLorg/lwjgl/PointerBuffer;)I default: default
+    FTC_Manager_LookupFace(JJLorg/lwjgl/PointerBuffer;)I default: default
+    FTC_Manager_LookupSize(JLorg/lwjgl/util/freetype/FTC_Scaler;Lorg/lwjgl/PointerBuffer;)I default: default
+    FTC_Manager_New(JIIJLorg/lwjgl/util/freetype/FTC_Face_RequesterI;Ljava/nio/ByteBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    FTC_SBitCache_Lookup(JLorg/lwjgl/util/freetype/FTC_ImageType;ILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    FTC_SBitCache_LookupScaler(JLorg/lwjgl/util/freetype/FTC_Scaler;JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    FTC_SBitCache_New(JLorg/lwjgl/PointerBuffer;)I default: default
+    FT_Activate_Size(Lorg/lwjgl/util/freetype/FT_Size;)I default: default
+    FT_Add_Module(JLorg/lwjgl/util/freetype/FT_Module_Class;)I default: default
+    FT_Angle_Diff(JJ)J default: default
+    FT_Atan2(JJ)J default: default
+    FT_Attach_File(Lorg/lwjgl/util/freetype/FT_Face;Ljava/lang/CharSequence;)I default: default
+    FT_Attach_File(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/ByteBuffer;)I default: default
+    FT_Attach_Stream(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_Open_Args;)I default: default
+    FT_Bitmap_Blend(JLorg/lwjgl/util/freetype/FT_Bitmap;Lorg/lwjgl/util/freetype/FT_Vector;Lorg/lwjgl/util/freetype/FT_Bitmap;Lorg/lwjgl/util/freetype/FT_Vector;Lorg/lwjgl/util/freetype/FT_Color;)I default: default
+    FT_Bitmap_Convert(JLorg/lwjgl/util/freetype/FT_Bitmap;Lorg/lwjgl/util/freetype/FT_Bitmap;I)I default: default
+    FT_Bitmap_Copy(JLorg/lwjgl/util/freetype/FT_Bitmap;Lorg/lwjgl/util/freetype/FT_Bitmap;)I default: default
+    FT_Bitmap_Done(JLorg/lwjgl/util/freetype/FT_Bitmap;)I default: default
+    FT_Bitmap_Embolden(JLorg/lwjgl/util/freetype/FT_Bitmap;JJ)I default: default
+    FT_CURVE_TAG(I)I default: default
+    FT_CeilFix(J)J default: default
+    FT_ClassicKern_Validate(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/PointerBuffer;)I default: default
+    FT_Cos(J)J default: default
+    FT_DivFix(JJ)J default: default
+    FT_Done_Face(Lorg/lwjgl/util/freetype/FT_Face;)I default: default
+    FT_Done_FreeType(J)I default: default
+    FT_Done_Library(J)I default: default
+    FT_Done_MM_Var(JLorg/lwjgl/util/freetype/FT_MM_Var;)I default: default
+    FT_Done_Size(Lorg/lwjgl/util/freetype/FT_Size;)I default: default
+    FT_ENC_TAG(IIII)I default: default
+    FT_Error_String(I)Ljava/lang/String; default: default
+    FT_Face_CheckTrueTypePatents(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_Face_GetCharVariantIndex(Lorg/lwjgl/util/freetype/FT_Face;JJ)I default: default
+    FT_Face_GetCharVariantIsDefault(Lorg/lwjgl/util/freetype/FT_Face;JJ)I default: default
+    FT_Face_GetCharsOfVariant(Lorg/lwjgl/util/freetype/FT_Face;J)J default: default
+    FT_Face_GetVariantSelectors(Lorg/lwjgl/util/freetype/FT_Face;)J default: default
+    FT_Face_GetVariantsOfChar(Lorg/lwjgl/util/freetype/FT_Face;J)J default: default
+    FT_Face_Properties(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_Parameter$Buffer;)I default: default
+    FT_Face_SetUnpatentedHinting(Lorg/lwjgl/util/freetype/FT_Face;Z)Z default: default
+    FT_FloorFix(J)J default: default
+    FT_Get_Advance(Lorg/lwjgl/util/freetype/FT_Face;IILorg/lwjgl/CLongBuffer;)I default: default
+    FT_Get_Advances(Lorg/lwjgl/util/freetype/FT_Face;IILorg/lwjgl/CLongBuffer;)I default: default
+    FT_Get_BDF_Charset_ID(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    FT_Get_BDF_Property(Lorg/lwjgl/util/freetype/FT_Face;Ljava/lang/CharSequence;Lorg/lwjgl/util/freetype/BDF_Property;)I default: default
+    FT_Get_BDF_Property(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/ByteBuffer;Lorg/lwjgl/util/freetype/BDF_Property;)I default: default
+    FT_Get_CID_From_Glyph_Index(Lorg/lwjgl/util/freetype/FT_Face;ILjava/nio/IntBuffer;)I default: default
+    FT_Get_CID_Is_Internally_CID_Keyed(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/ByteBuffer;)I default: default
+    FT_Get_CID_Registry_Ordering_Supplement(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;Ljava/nio/IntBuffer;)I default: default
+    FT_Get_CMap_Format(Lorg/lwjgl/util/freetype/FT_CharMap;)J default: default
+    FT_Get_CMap_Language_ID(Lorg/lwjgl/util/freetype/FT_CharMap;)J default: default
+    FT_Get_Char_Index(Lorg/lwjgl/util/freetype/FT_Face;J)I default: default
+    FT_Get_Charmap_Index(Lorg/lwjgl/util/freetype/FT_CharMap;)I default: default
+    FT_Get_Color_Glyph_ClipBox(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/util/freetype/FT_ClipBox;)Z default: default
+    FT_Get_Color_Glyph_Layer(Lorg/lwjgl/util/freetype/FT_Face;ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/util/freetype/FT_LayerIterator;)Z default: default
+    FT_Get_Color_Glyph_Paint(Lorg/lwjgl/util/freetype/FT_Face;IILorg/lwjgl/util/freetype/FT_OpaquePaint;)Z default: default
+    FT_Get_Colorline_Stops(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_ColorStop;Lorg/lwjgl/util/freetype/FT_ColorStopIterator;)Z default: default
+    FT_Get_Default_Named_Instance(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/IntBuffer;)I default: default
+    FT_Get_FSType_Flags(Lorg/lwjgl/util/freetype/FT_Face;)S default: default
+    FT_Get_First_Char(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/IntBuffer;)J default: default
+    FT_Get_Font_Format(Lorg/lwjgl/util/freetype/FT_Face;)Ljava/lang/String; default: default
+    FT_Get_Gasp(Lorg/lwjgl/util/freetype/FT_Face;I)I default: default
+    FT_Get_Glyph(Lorg/lwjgl/util/freetype/FT_GlyphSlot;Lorg/lwjgl/PointerBuffer;)I default: default
+    FT_Get_Glyph_Name(Lorg/lwjgl/util/freetype/FT_Face;ILjava/nio/ByteBuffer;)I default: default
+    FT_Get_Kerning(Lorg/lwjgl/util/freetype/FT_Face;IIILorg/lwjgl/util/freetype/FT_Vector;)I default: default
+    FT_Get_MM_Blend_Coordinates(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Get_MM_Var(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/PointerBuffer;)I default: default
+    FT_Get_MM_WeightVector(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/IntBuffer;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Get_Module(JLjava/lang/CharSequence;)J default: default
+    FT_Get_Module(JLjava/nio/ByteBuffer;)J default: default
+    FT_Get_Multi_Master(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_Multi_Master;)I default: default
+    FT_Get_Name_Index(Lorg/lwjgl/util/freetype/FT_Face;Ljava/lang/CharSequence;)I default: default
+    FT_Get_Name_Index(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/ByteBuffer;)I default: default
+    FT_Get_Next_Char(Lorg/lwjgl/util/freetype/FT_Face;JLjava/nio/IntBuffer;)J default: default
+    FT_Get_PFR_Advance(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/CLongBuffer;)I default: default
+    FT_Get_PFR_Kerning(Lorg/lwjgl/util/freetype/FT_Face;IILorg/lwjgl/util/freetype/FT_Vector;)I default: default
+    FT_Get_PFR_Metrics(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/CLongBuffer;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Get_PS_Font_Info(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/PS_FontInfo;)I default: default
+    FT_Get_PS_Font_Private(Lorg/lwjgl/util/freetype/FT_Face;J)I default: default
+    FT_Get_PS_Font_Value(Lorg/lwjgl/util/freetype/FT_Face;IILjava/nio/ByteBuffer;)J default: default
+    FT_Get_Paint(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_OpaquePaint;Lorg/lwjgl/util/freetype/FT_COLR_Paint;)Z default: default
+    FT_Get_Paint_Layers(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_LayerIterator;Lorg/lwjgl/util/freetype/FT_OpaquePaint;)Z default: default
+    FT_Get_Postscript_Name(Lorg/lwjgl/util/freetype/FT_Face;)Ljava/lang/String; default: default
+    FT_Get_Renderer(JI)J default: default
+    FT_Get_Sfnt_LangTag(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/util/freetype/FT_SfntLangTag;)I default: default
+    FT_Get_Sfnt_Name(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/util/freetype/FT_SfntName;)I default: default
+    FT_Get_Sfnt_Name_Count(Lorg/lwjgl/util/freetype/FT_Face;)I default: default
+    FT_Get_Sfnt_Table(Lorg/lwjgl/util/freetype/FT_Face;I)J default: default
+    FT_Get_SubGlyph_Info(Lorg/lwjgl/util/freetype/FT_GlyphSlot;ILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/util/freetype/FT_Matrix;)I default: default
+    FT_Get_Track_Kerning(Lorg/lwjgl/util/freetype/FT_Face;JILorg/lwjgl/CLongBuffer;)I default: default
+    FT_Get_TrueType_Engine_Type(J)I default: default
+    FT_Get_Var_Axis_Flags(Lorg/lwjgl/util/freetype/FT_MM_Var;ILjava/nio/IntBuffer;)I default: default
+    FT_Get_Var_Blend_Coordinates(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Get_Var_Design_Coordinates(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_GlyphSlot_Own_Bitmap(Lorg/lwjgl/util/freetype/FT_GlyphSlot;)I default: default
+    FT_Glyph_Copy(Lorg/lwjgl/util/freetype/FT_Glyph;Lorg/lwjgl/PointerBuffer;)I default: default
+    FT_Glyph_Stroke(Lorg/lwjgl/PointerBuffer;JZ)I default: default
+    FT_Glyph_StrokeBorder(Lorg/lwjgl/PointerBuffer;JZZ)I default: default
+    FT_Glyph_To_Bitmap(Lorg/lwjgl/PointerBuffer;ILorg/lwjgl/util/freetype/FT_Vector;Z)I default: default
+    FT_Glyph_Transform(Lorg/lwjgl/util/freetype/FT_Glyph;Lorg/lwjgl/util/freetype/FT_Matrix;Lorg/lwjgl/util/freetype/FT_Vector;)I default: default
+    FT_Gzip_Uncompress(Lorg/lwjgl/util/freetype/FT_Memory;Ljava/nio/ByteBuffer;Lorg/lwjgl/CLongBuffer;Ljava/nio/ByteBuffer;)I default: default
+    FT_HAS_COLOR(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_FIXED_SIZES(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_GLYPH_NAMES(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_HORIZONTAL(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_KERNING(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_MULTIPLE_MASTERS(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_SBIX(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_SBIX_OVERLAY(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_SVG(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_HAS_VERTICAL(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_Has_PS_Glyph_Names(Lorg/lwjgl/util/freetype/FT_Face;)I default: default
+    FT_IMAGE_TAG(IIII)I default: default
+    FT_IS_CID_KEYED(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_IS_EMPTY(Lorg/lwjgl/util/freetype/FT_List;)Z default: default
+    FT_IS_FIXED_WIDTH(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_IS_NAMED_INSTANCE(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_IS_SCALABLE(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_IS_SFNT(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_IS_TRICKY(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_IS_VARIATION(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
+    FT_Init_FreeType(Lorg/lwjgl/PointerBuffer;)I default: default
+    FT_LOAD_TARGET_(I)I default: default
+    FT_LOAD_TARGET_MODE(I)I default: default
+    FT_Library_SetLcdFilter(JI)I default: default
+    FT_Library_SetLcdFilterWeights(JLjava/nio/ByteBuffer;)I default: default
+    FT_Library_SetLcdGeometry(JLorg/lwjgl/util/freetype/FT_Vector$Buffer;)I default: default
+    FT_List_Iterate(Lorg/lwjgl/util/freetype/FT_List;Lorg/lwjgl/util/freetype/FT_List_IteratorI;J)I default: default
+    FT_Load_Char(Lorg/lwjgl/util/freetype/FT_Face;JI)I default: default
+    FT_Load_Glyph(Lorg/lwjgl/util/freetype/FT_Face;II)I default: default
+    FT_Load_Sfnt_Table(Lorg/lwjgl/util/freetype/FT_Face;JJLjava/nio/ByteBuffer;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_MAKE_TAG(IIII)I default: default
+    FT_Matrix_Invert(Lorg/lwjgl/util/freetype/FT_Matrix;)I default: default
+    FT_MulDiv(JJJ)J default: default
+    FT_MulFix(JJ)J default: default
+    FT_New_Face(JLjava/lang/CharSequence;JLorg/lwjgl/PointerBuffer;)I default: default
+    FT_New_Face(JLjava/nio/ByteBuffer;JLorg/lwjgl/PointerBuffer;)I default: default
+    FT_New_Glyph(JILorg/lwjgl/PointerBuffer;)I default: default
+    FT_New_Library(Lorg/lwjgl/util/freetype/FT_Memory;Lorg/lwjgl/PointerBuffer;)I default: default
+    FT_New_Memory_Face(JLjava/nio/ByteBuffer;JLorg/lwjgl/PointerBuffer;)I default: default
+    FT_New_Size(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/PointerBuffer;)I default: default
+    FT_OpenType_Validate(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    FT_Open_Face(JLorg/lwjgl/util/freetype/FT_Open_Args;JLorg/lwjgl/PointerBuffer;)I default: default
+    FT_Outline_Check(Lorg/lwjgl/util/freetype/FT_Outline;)I default: default
+    FT_Outline_Copy(Lorg/lwjgl/util/freetype/FT_Outline;Lorg/lwjgl/util/freetype/FT_Outline;)I default: default
+    FT_Outline_Decompose(Lorg/lwjgl/util/freetype/FT_Outline;Lorg/lwjgl/util/freetype/FT_Outline_Funcs;J)I default: default
+    FT_Outline_Done(JLorg/lwjgl/util/freetype/FT_Outline;)I default: default
+    FT_Outline_Embolden(Lorg/lwjgl/util/freetype/FT_Outline;J)I default: default
+    FT_Outline_EmboldenXY(Lorg/lwjgl/util/freetype/FT_Outline;JJ)I default: default
+    FT_Outline_GetInsideBorder(Lorg/lwjgl/util/freetype/FT_Outline;)I default: default
+    FT_Outline_GetOutsideBorder(Lorg/lwjgl/util/freetype/FT_Outline;)I default: default
+    FT_Outline_Get_BBox(Lorg/lwjgl/util/freetype/FT_Outline;Lorg/lwjgl/util/freetype/FT_BBox;)I default: default
+    FT_Outline_Get_Bitmap(JLorg/lwjgl/util/freetype/FT_Outline;Lorg/lwjgl/util/freetype/FT_Bitmap;)I default: default
+    FT_Outline_Get_Orientation(Lorg/lwjgl/util/freetype/FT_Outline;)I default: default
+    FT_Outline_New(JIILorg/lwjgl/util/freetype/FT_Outline;)I default: default
+    FT_Outline_Render(JLorg/lwjgl/util/freetype/FT_Outline;Lorg/lwjgl/util/freetype/FT_Raster_Params;)I default: default
+    FT_Palette_Data_Get(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_Palette_Data;)I default: default
+    FT_Palette_Select(Lorg/lwjgl/util/freetype/FT_Face;SLorg/lwjgl/PointerBuffer;)I default: default
+    FT_Palette_Set_Foreground_Color(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_Color;)I default: default
+    FT_Property_Get(JLjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)I default: default
+    FT_Property_Get(JLjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I default: default
+    FT_Property_Set(JLjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;)I default: default
+    FT_Property_Set(JLjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I default: default
+    FT_Reference_Face(Lorg/lwjgl/util/freetype/FT_Face;)I default: default
+    FT_Reference_Library(J)I default: default
+    FT_Remove_Module(JJ)I default: default
+    FT_Render_Glyph(Lorg/lwjgl/util/freetype/FT_GlyphSlot;I)I default: default
+    FT_Request_Size(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_Size_Request;)I default: default
+    FT_RoundFix(J)J default: default
+    FT_Select_Charmap(Lorg/lwjgl/util/freetype/FT_Face;I)I default: default
+    FT_Select_Size(Lorg/lwjgl/util/freetype/FT_Face;I)I default: default
+    FT_Set_Char_Size(Lorg/lwjgl/util/freetype/FT_Face;JJII)I default: default
+    FT_Set_Charmap(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/util/freetype/FT_CharMap;)I default: default
+    FT_Set_MM_Blend_Coordinates(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Set_MM_Design_Coordinates(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Set_MM_WeightVector(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Set_Named_Instance(Lorg/lwjgl/util/freetype/FT_Face;I)I default: default
+    FT_Set_Pixel_Sizes(Lorg/lwjgl/util/freetype/FT_Face;II)I default: default
+    FT_Set_Renderer(JJLorg/lwjgl/util/freetype/FT_Parameter$Buffer;)I default: default
+    FT_Set_Var_Blend_Coordinates(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Set_Var_Design_Coordinates(Lorg/lwjgl/util/freetype/FT_Face;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Sfnt_Table_Info(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/CLongBuffer;Lorg/lwjgl/CLongBuffer;)I default: default
+    FT_Sin(J)J default: default
+    FT_Stream_OpenBzip2(Lorg/lwjgl/util/freetype/FT_Stream;Lorg/lwjgl/util/freetype/FT_Stream;)I default: default
+    FT_Stream_OpenGzip(Lorg/lwjgl/util/freetype/FT_Stream;Lorg/lwjgl/util/freetype/FT_Stream;)I default: default
+    FT_Stream_OpenLZW(Lorg/lwjgl/util/freetype/FT_Stream;Lorg/lwjgl/util/freetype/FT_Stream;)I default: default
+    FT_Stroker_BeginSubPath(JLorg/lwjgl/util/freetype/FT_Vector;Z)I default: default
+    FT_Stroker_ConicTo(JLorg/lwjgl/util/freetype/FT_Vector;Lorg/lwjgl/util/freetype/FT_Vector;)I default: default
+    FT_Stroker_CubicTo(JLorg/lwjgl/util/freetype/FT_Vector;Lorg/lwjgl/util/freetype/FT_Vector;Lorg/lwjgl/util/freetype/FT_Vector;)I default: default
+    FT_Stroker_EndSubPath(J)I default: default
+    FT_Stroker_GetBorderCounts(JILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)I default: default
+    FT_Stroker_GetCounts(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;)I default: default
+    FT_Stroker_LineTo(JLorg/lwjgl/util/freetype/FT_Vector;)I default: default
+    FT_Stroker_New(JLorg/lwjgl/PointerBuffer;)I default: default
+    FT_Stroker_ParseOutline(JLorg/lwjgl/util/freetype/FT_Outline;Z)I default: default
+    FT_Tan(J)J default: default
+    FT_TrueTypeGX_Validate(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/PointerBuffer;)I default: default
+    FT_Vector_Length(Lorg/lwjgl/util/freetype/FT_Vector;)J default: default
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    nFTC_CMapCache_New(JJ)I default: default
+    nFTC_ImageCache_Lookup(JJIJJ)I default: default
+    nFTC_ImageCache_LookupScaler(JJJIJJ)I default: default
+    nFTC_ImageCache_New(JJ)I default: default
+    nFTC_Manager_LookupFace(JJJ)I default: default
+    nFTC_Manager_LookupSize(JJJ)I default: default
+    nFTC_Manager_New(JIIJJJJ)I default: default
+    nFTC_SBitCache_Lookup(JJIJJ)I default: default
+    nFTC_SBitCache_LookupScaler(JJJIJJ)I default: default
+    nFTC_SBitCache_New(JJ)I default: default
+    nFT_Activate_Size(J)I default: default
+    nFT_Add_Module(JJ)I default: default
+    nFT_Attach_File(JJ)I default: default
+    nFT_Attach_Stream(JJ)I default: default
+    nFT_Bitmap_Blend(JJJJJJ)I default: default
+    nFT_Bitmap_Convert(JJJI)I default: default
+    nFT_Bitmap_Copy(JJJ)I default: default
+    nFT_Bitmap_Done(JJ)I default: default
+    nFT_Bitmap_Embolden(JJJJ)I default: default
+    nFT_ClassicKern_Validate(JIJ)I default: default
+    nFT_Done_Face(J)I default: default
+    nFT_Done_MM_Var(JJ)I default: default
+    nFT_Done_Size(J)I default: default
+    nFT_Error_String(I)J default: default
+    nFT_Face_CheckTrueTypePatents(J)Z default: default
+    nFT_Face_GetCharVariantIndex(JJJ)I default: default
+    nFT_Face_GetCharVariantIsDefault(JJJ)I default: default
+    nFT_Face_GetCharsOfVariant(JJ)J default: default
+    nFT_Face_GetVariantSelectors(J)J default: default
+    nFT_Face_GetVariantsOfChar(JJ)J default: default
+    nFT_Face_Properties(JIJ)I default: default
+    nFT_Face_SetUnpatentedHinting(JZ)Z default: default
+    nFT_Get_Advance(JIIJ)I default: default
+    nFT_Get_Advances(JIIIJ)I default: default
+    nFT_Get_BDF_Charset_ID(JJJ)I default: default
+    nFT_Get_BDF_Property(JJJ)I default: default
+    nFT_Get_CID_From_Glyph_Index(JIJ)I default: default
+    nFT_Get_CID_Is_Internally_CID_Keyed(JJ)I default: default
+    nFT_Get_CID_Registry_Ordering_Supplement(JJJJ)I default: default
+    nFT_Get_CMap_Format(J)J default: default
+    nFT_Get_CMap_Language_ID(J)J default: default
+    nFT_Get_Char_Index(JJ)I default: default
+    nFT_Get_Charmap_Index(J)I default: default
+    nFT_Get_Color_Glyph_ClipBox(JIJ)Z default: default
+    nFT_Get_Color_Glyph_Layer(JIJJJ)Z default: default
+    nFT_Get_Color_Glyph_Paint(JIIJ)Z default: default
+    nFT_Get_Colorline_Stops(JJJ)Z default: default
+    nFT_Get_Default_Named_Instance(JJ)I default: default
+    nFT_Get_FSType_Flags(J)S default: default
+    nFT_Get_First_Char(JJ)J default: default
+    nFT_Get_Font_Format(J)J default: default
+    nFT_Get_Gasp(JI)I default: default
+    nFT_Get_Glyph(JJ)I default: default
+    nFT_Get_Glyph_Name(JIJI)I default: default
+    nFT_Get_Kerning(JIIIJ)I default: default
+    nFT_Get_MM_Blend_Coordinates(JIJ)I default: default
+    nFT_Get_MM_Var(JJ)I default: default
+    nFT_Get_MM_WeightVector(JJJ)I default: default
+    nFT_Get_Module(JJ)J default: default
+    nFT_Get_Multi_Master(JJ)I default: default
+    nFT_Get_Name_Index(JJ)I default: default
+    nFT_Get_Next_Char(JJJ)J default: default
+    nFT_Get_PFR_Advance(JIJ)I default: default
+    nFT_Get_PFR_Kerning(JIIJ)I default: default
+    nFT_Get_PFR_Metrics(JJJJJ)I default: default
+    nFT_Get_PS_Font_Info(JJ)I default: default
+    nFT_Get_PS_Font_Private(JJ)I default: default
+    nFT_Get_PS_Font_Value(JIIJJ)J default: default
+    nFT_Get_Paint(JJJ)Z default: default
+    nFT_Get_Paint_Layers(JJJ)Z default: default
+    nFT_Get_Postscript_Name(J)J default: default
+    nFT_Get_Sfnt_LangTag(JIJ)I default: default
+    nFT_Get_Sfnt_Name(JIJ)I default: default
+    nFT_Get_Sfnt_Name_Count(J)I default: default
+    nFT_Get_Sfnt_Table(JI)J default: default
+    nFT_Get_SubGlyph_Info(JIJJJJJ)I default: default
+    nFT_Get_Track_Kerning(JJIJ)I default: default
+    nFT_Get_Var_Axis_Flags(JIJ)I default: default
+    nFT_Get_Var_Blend_Coordinates(JIJ)I default: default
+    nFT_Get_Var_Design_Coordinates(JIJ)I default: default
+    nFT_GlyphSlot_Own_Bitmap(J)I default: default
+    nFT_Glyph_Copy(JJ)I default: default
+    nFT_Glyph_Stroke(JJZ)I default: default
+    nFT_Glyph_StrokeBorder(JJZZ)I default: default
+    nFT_Glyph_To_Bitmap(JIJZ)I default: default
+    nFT_Glyph_Transform(JJJ)I default: default
+    nFT_Gzip_Uncompress(JJJJJ)I default: default
+    nFT_Has_PS_Glyph_Names(J)I default: default
+    nFT_Init_FreeType(J)I default: default
+    nFT_Library_SetLcdFilterWeights(JJ)I default: default
+    nFT_Library_SetLcdGeometry(JJ)I default: default
+    nFT_List_Find(JJ)J default: default
+    nFT_List_Iterate(JJJ)I default: default
+    nFT_Load_Char(JJI)I default: default
+    nFT_Load_Glyph(JII)I default: default
+    nFT_Load_Sfnt_Table(JJJJJ)I default: default
+    nFT_Matrix_Invert(J)I default: default
+    nFT_New_Face(JJJJ)I default: default
+    nFT_New_Glyph(JIJ)I default: default
+    nFT_New_Library(JJ)I default: default
+    nFT_New_Memory_Face(JJJJJ)I default: default
+    nFT_New_Size(JJ)I default: default
+    nFT_OpenType_Validate(JIJJJJJ)I default: default
+    nFT_Open_Face(JJJJ)I default: default
+    nFT_Outline_Check(J)I default: default
+    nFT_Outline_Copy(JJ)I default: default
+    nFT_Outline_Decompose(JJJ)I default: default
+    nFT_Outline_Done(JJ)I default: default
+    nFT_Outline_Embolden(JJ)I default: default
+    nFT_Outline_EmboldenXY(JJJ)I default: default
+    nFT_Outline_GetInsideBorder(J)I default: default
+    nFT_Outline_GetOutsideBorder(J)I default: default
+    nFT_Outline_Get_BBox(JJ)I default: default
+    nFT_Outline_Get_Bitmap(JJJ)I default: default
+    nFT_Outline_Get_Orientation(J)I default: default
+    nFT_Outline_New(JIIJ)I default: default
+    nFT_Outline_Render(JJJ)I default: default
+    nFT_Palette_Data_Get(JJ)I default: default
+    nFT_Palette_Select(JSJ)I default: default
+    nFT_Palette_Set_Foreground_Color(JJ)I default: default
+    nFT_Property_Get(JJJJ)I default: default
+    nFT_Property_Set(JJJJ)I default: default
+    nFT_Reference_Face(J)I default: default
+    nFT_Render_Glyph(JI)I default: default
+    nFT_Request_Size(JJ)I default: default
+    nFT_Select_Charmap(JI)I default: default
+    nFT_Select_Size(JI)I default: default
+    nFT_Set_Char_Size(JJJII)I default: default
+    nFT_Set_Charmap(JJ)I default: default
+    nFT_Set_MM_Blend_Coordinates(JIJ)I default: default
+    nFT_Set_MM_Design_Coordinates(JIJ)I default: default
+    nFT_Set_MM_WeightVector(JIJ)I default: default
+    nFT_Set_Named_Instance(JI)I default: default
+    nFT_Set_Pixel_Sizes(JII)I default: default
+    nFT_Set_Renderer(JJIJ)I default: default
+    nFT_Set_Var_Blend_Coordinates(JIJ)I default: default
+    nFT_Set_Var_Design_Coordinates(JIJ)I default: default
+    nFT_Sfnt_Table_Info(JIJJ)I default: default
+    nFT_Stream_OpenBzip2(JJ)I default: default
+    nFT_Stream_OpenGzip(JJ)I default: default
+    nFT_Stream_OpenLZW(JJ)I default: default
+    nFT_Stroker_BeginSubPath(JJZ)I default: default
+    nFT_Stroker_ConicTo(JJJ)I default: default
+    nFT_Stroker_CubicTo(JJJJ)I default: default
+    nFT_Stroker_GetBorderCounts(JIJJ)I default: default
+    nFT_Stroker_GetCounts(JJJ)I default: default
+    nFT_Stroker_LineTo(JJ)I default: default
+    nFT_Stroker_New(JJ)I default: default
+    nFT_Stroker_ParseOutline(JJZ)I default: default
+    nFT_TrueTypeGX_Validate(JIJI)I default: default
+    nFT_Vector_Length(J)J default: default
+org/lwjgl/util/freetype/FreeType$FT_Bitmap_Blend guarded-static-init=1 keep-constructor=1
+org/lwjgl/util/freetype/FreeType$FT_Get_Paint guarded-static-init=1 keep-constructor=1
+org/lwjgl/util/freetype/FreeType$FT_Palette_Set_Foreground_Color guarded-static-init=1 keep-constructor=1
+org/lwjgl/util/freetype/FreeType$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/util/freetype/PS_FontInfo fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=5 nio-buffer-empty=5 struct=2 struct-member=18
+    family_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    full_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    notice()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    version()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    weight()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/PS_FontInfo$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=5 struct=2 struct-member=9
+    family_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    full_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    notice()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    version()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    weight()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/PS_Private fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=9 nio-buffer-empty=9 struct=2 struct-member=50
+    blue_values()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    family_blues()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    family_other_blues()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    min_feature()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    other_blues()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    snap_heights()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    snap_widths()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    standard_height()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    standard_width()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/util/freetype/PS_Private$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=9 struct=2 struct-member=25
+    blue_values()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    family_blues()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    family_other_blues()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    min_feature()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    other_blues()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    snap_heights()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    snap_widths()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    standard_height()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    standard_width()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/util/freetype/SVG_Lib_Free_Func keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/SVG_Lib_Free_Func; object: new SVG_Lib_Free_Func
+    create(Lorg/lwjgl/util/freetype/SVG_Lib_Free_FuncI;)Lorg/lwjgl/util/freetype/SVG_Lib_Free_Func; object: new SVG_Lib_Free_Func
+    create(Lorg/lwjgl/util/freetype/SVG_Lib_Free_FuncI;J)Lorg/lwjgl/util/freetype/SVG_Lib_Free_Func; object: new SVG_Lib_Free_Func
+    createSafe(J)Lorg/lwjgl/util/freetype/SVG_Lib_Free_Func; object: new SVG_Lib_Free_Func
+org/lwjgl/util/freetype/SVG_Lib_Free_Func$1 keep-constructor=1 void=1
+org/lwjgl/util/freetype/SVG_Lib_Free_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/SVG_Lib_Init_Func keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
+    create(Lorg/lwjgl/util/freetype/SVG_Lib_Init_FuncI;)Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
+    create(Lorg/lwjgl/util/freetype/SVG_Lib_Init_FuncI;J)Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
+    createSafe(J)Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
+org/lwjgl/util/freetype/SVG_Lib_Init_Func$1 default=1 keep-constructor=1
+    invoke(J)I default: default
+org/lwjgl/util/freetype/SVG_Lib_Init_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
+    create(Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_FuncI;)Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
+    create(Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_FuncI;J)Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
+    createSafe(J)Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
+org/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func$1 default=1 keep-constructor=1
+    invoke(JZJ)I default: default
+org/lwjgl/util/freetype/SVG_Lib_Preset_Slot_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/SVG_Lib_Render_Func keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
+    create(Lorg/lwjgl/util/freetype/SVG_Lib_Render_FuncI;)Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
+    create(Lorg/lwjgl/util/freetype/SVG_Lib_Render_FuncI;J)Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
+    createSafe(J)Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
+org/lwjgl/util/freetype/SVG_Lib_Render_Func$1 default=1 keep-constructor=1
+    invoke(JJ)I default: default
+org/lwjgl/util/freetype/SVG_Lib_Render_FuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/freetype/SVG_RendererHooks fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=8 struct=7 struct-member=5
+    free_svg()Lorg/lwjgl/util/freetype/SVG_Lib_Free_Func; object: new SVG_Lib_Free_Func
+    init_svg()Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
+    nfree_svg(J)Lorg/lwjgl/util/freetype/SVG_Lib_Free_Func; object: new SVG_Lib_Free_Func
+    ninit_svg(J)Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
+    npreset_slot(J)Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
+    nrender_svg(J)Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
+    preset_slot()Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
+    render_svg()Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
+org/lwjgl/util/freetype/SVG_RendererHooks$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 object=4 struct=2
+    free_svg()Lorg/lwjgl/util/freetype/SVG_Lib_Free_Func; object: new SVG_Lib_Free_Func
+    init_svg()Lorg/lwjgl/util/freetype/SVG_Lib_Init_Func; object: new SVG_Lib_Init_Func
+    preset_slot()Lorg/lwjgl/util/freetype/SVG_Lib_Preset_Slot_Func; object: new SVG_Lib_Preset_Slot_Func
+    render_svg()Lorg/lwjgl/util/freetype/SVG_Lib_Render_Func; object: new SVG_Lib_Render_Func
+org/lwjgl/util/freetype/TT_Header fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=4 lwjgl-buffer-empty=2 struct=2 struct-member=34
+    Created()Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    Modified()Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+org/lwjgl/util/freetype/TT_Header$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=2 struct=2 struct-member=17
+    Created()Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    Modified()Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+org/lwjgl/util/freetype/TT_HoriHeader fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=5 nio-buffer-empty=1 struct=2 struct-member=28
+    Reserved()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/util/freetype/TT_HoriHeader$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=2 nio-buffer-empty=1 struct=2 struct-member=14
+    Reserved()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/util/freetype/TT_MaxProfile fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=30
+org/lwjgl/util/freetype/TT_MaxProfile$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=15
+org/lwjgl/util/freetype/TT_OS2 fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=2 nio-buffer-empty=2 struct=2 struct-member=78
+    achVendID()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    panose()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/TT_OS2$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=2 struct-member=39
+    achVendID()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    panose()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/TT_PCLT fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=3 nio-buffer-empty=3 struct=2 struct-member=30
+    CharacterComplement()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    FileName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    TypeFace()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/TT_PCLT$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=3 struct=2 struct-member=15
+    CharacterComplement()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    FileName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    TypeFace()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/freetype/TT_Postscript fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=18
+org/lwjgl/util/freetype/TT_Postscript$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=9
+org/lwjgl/util/freetype/TT_VertHeader fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=5 nio-buffer-empty=1 struct=2 struct-member=28
+    Reserved()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/util/freetype/TT_VertHeader$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer=2 nio-buffer-empty=1 struct=2 struct-member=14
+    Reserved()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)

@@ -1,0 +1,2969 @@
+# Behaviour catalog of org.lwjgl:lwjgl:3.4.3
+# Every method of every class is patched by the first matching rule, counted per class.
+# Methods resolved by rules that only guess are listed individually and have to be reviewed.
+# Regenerate with: ./gradlew updateCatalogLock
+org/lwjgl/BufferUtils default=1 keep-constructor=1 lwjgl-buffer=2 nio-buffer=7 void=8
+    getAllocationSize(II)I default: default
+org/lwjgl/CLongBuffer default=6 fluent=10 identity=2 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=2 lwjgl-buffer-empty=1 void=4
+    compareTo(Ljava/lang/Object;)I default: default
+    compareTo(Lorg/lwjgl/CLongBuffer;)I default: default
+    create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    get()J default: default
+    get(I)J default: default
+    get(Ljava/nio/ByteBuffer;)J default: default
+    get(Ljava/nio/ByteBuffer;I)J default: default
+org/lwjgl/PointerBuffer default=12 fluent=28 identity=2 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=2 lwjgl-buffer-empty=1 nio-buffer=12 void=4
+    compareTo(Ljava/lang/Object;)I default: default
+    compareTo(Lorg/lwjgl/PointerBuffer;)I default: default
+    create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    get()J default: default
+    get(I)J default: default
+    get(Ljava/nio/ByteBuffer;)J default: default
+    get(Ljava/nio/ByteBuffer;I)J default: default
+    getStringASCII()Ljava/lang/String; default: default
+    getStringASCII(I)Ljava/lang/String; default: default
+    getStringUTF16()Ljava/lang/String; default: default
+    getStringUTF16(I)Ljava/lang/String; default: default
+    getStringUTF8()Ljava/lang/String; default: default
+    getStringUTF8(I)Ljava/lang/String; default: default
+org/lwjgl/Version guarded-static-init=1 keep-constructor=1 keep-pure-java-class=5
+org/lwjgl/Version$BuildType guarded-static-init=1 keep-constructor=1 keep-enum=2
+org/lwjgl/VersionImpl default=1 keep-constructor=1
+    find()Ljava/lang/String; default: default
+org/lwjgl/system/APIUtil default=16 guarded-static-init=1 handler=1 interface-proxy=1 keep-constructor=1 nio-buffer=1 object=2 struct=8 void=15
+    apiArray(Lorg/lwjgl/system/MemoryStack;Lorg/lwjgl/system/APIUtil$Encoder;[Ljava/lang/CharSequence;)J default: default
+    apiArray(Lorg/lwjgl/system/MemoryStack;[J)J default: default
+    apiArray(Lorg/lwjgl/system/MemoryStack;[Ljava/nio/ByteBuffer;)J default: default
+    apiArrayi(Lorg/lwjgl/system/MemoryStack;Lorg/lwjgl/system/APIUtil$Encoder;[Ljava/lang/CharSequence;)J default: default
+    apiArrayp(Lorg/lwjgl/system/MemoryStack;Lorg/lwjgl/system/APIUtil$Encoder;[Ljava/lang/CharSequence;)J default: default
+    apiArrayp(Lorg/lwjgl/system/MemoryStack;[Ljava/nio/ByteBuffer;)J default: default
+    apiCheckAllocation(IJJ)J default: default
+    apiClassTokens(Ljava/util/function/BiPredicate;Ljava/util/Map;[Ljava/lang/Class;)Ljava/util/Map; default: default
+    apiCreateLibrary(Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    apiFindLibrary(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; default: default
+    apiGetBytes(II)J default: default
+    apiGetFunctionAddress(Lorg/lwjgl/system/FunctionProvider;Ljava/lang/String;)J default: default
+    apiGetFunctionAddressOptional(Lorg/lwjgl/system/SharedLibrary;Ljava/lang/String;)J default: default
+    apiParseVersion(Ljava/lang/String;)Lorg/lwjgl/system/APIUtil$APIVersion; object: new APIUtil$APIVersion
+    apiParseVersion(Lorg/lwjgl/system/Configuration;)Lorg/lwjgl/system/APIUtil$APIVersion; object: new APIUtil$APIVersion
+    apiStdcall()I default: default
+    apiUnknownToken(I)Ljava/lang/String; default: default
+    apiUnknownToken(Ljava/lang/String;I)Ljava/lang/String; default: default
+    lambda$apiFindLibrary$0(Ljava/lang/String;Ljava/nio/file/Path;Ljava/nio/file/attribute/BasicFileAttributes;)Z default: default
+org/lwjgl/system/APIUtil$1 guarded-static-init=1
+org/lwjgl/system/APIUtil$APIVersion default=2 identity=2 keep-constructor=2 keep-to-string=1
+    compareTo(Ljava/lang/Object;)I default: default
+    compareTo(Lorg/lwjgl/system/APIUtil$APIVersion;)I default: default
+org/lwjgl/system/APIUtil$Encoder keep-abstract-interface-method=1
+org/lwjgl/system/Callback default=2 identity=2 keep-constructor=2 keep-pointer-address=1 keep-to-string=1 void=2
+    get(J)Lorg/lwjgl/system/CallbackI; default: default
+    getSafe(J)Lorg/lwjgl/system/CallbackI; default: default
+org/lwjgl/system/Callback$Descriptor keep-constructor=1
+org/lwjgl/system/CallbackI default=1 keep-abstract-interface-method=2
+    address()J default: default
+org/lwjgl/system/CheckIntrinsics default=3 keep-constructor=1
+    checkFromIndexSize(III)I default: default
+    checkFromToIndex(III)I default: default
+    checkIndex(II)I default: default
+org/lwjgl/system/Checks default=14 guarded-static-init=1 keep-constructor=1 void=54
+    check(II)J default: default
+    check(J)J default: default
+    checkFunctions(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;[I[Ljava/lang/String;)Z default: default
+    checkFunctions(Lorg/lwjgl/system/FunctionProvider;[J[I[Ljava/lang/String;)Z default: default
+    checkFunctions(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;[I[Ljava/lang/String;)Z default: default
+    checkFunctions([J)Z default: default
+    lengthSafe([D)I default: default
+    lengthSafe([F)I default: default
+    lengthSafe([I)I default: default
+    lengthSafe([J)I default: default
+    lengthSafe([S)I default: default
+    remainingSafe(Ljava/nio/Buffer;)I default: default
+    remainingSafe(Lorg/lwjgl/system/CustomBuffer;)I default: default
+    reportMissing(Ljava/lang/String;Ljava/lang/String;)Z default: default
+org/lwjgl/system/Configuration guarded-static-init=1 keep-constructor=1 keep-pure-java-class=8
+org/lwjgl/system/Configuration$1 guarded-static-init=1
+org/lwjgl/system/Configuration$StateInit keep-interface-static-init=1 keep-pure-java-class=1
+org/lwjgl/system/CustomBuffer default=3 fluent=7 keep-buffer-bookkeeping=15 keep-constructor=1 keep-to-string=1 void=1
+    nextGetIndex()I default: default
+    nextPutIndex()I default: default
+    sizeof()I default: default
+org/lwjgl/system/FunctionProvider default=1 keep-abstract-interface-method=1
+    getFunctionAddress(Ljava/lang/CharSequence;)J default: default
+org/lwjgl/system/FunctionProviderLocal default=1 keep-abstract-interface-method=1
+    getFunctionAddress(JLjava/lang/CharSequence;)J default: default
+org/lwjgl/system/JNI default=998 guarded-static-init=1 keep-constructor=1 void=777
+    callC(IJ)S default: default
+    callF(IIIJ)F default: default
+    callI(IIIJ)I default: default
+    callI(IIJ)I default: default
+    callI(IJ)I default: default
+    callI(J)I default: default
+    callJ(IIJ)J default: default
+    callJ(IIZIIJ)J default: default
+    callJ(IJ)J default: default
+    callJ(J)J default: default
+    callJI(IJIIJ)I default: default
+    callJJP(JJJ)J default: default
+    callJJPPI(JJJJJ)I default: default
+    callJJPPP(JJJJJ)J default: default
+    callJP(JJ)J default: default
+    callJPPI(IIIIIJJJJ)I default: default
+    callJPPPPI(IIJJIJJJJ)I default: default
+    callJZ(IJIJ)Z default: default
+    callJZ(IJJ)Z default: default
+    callJZ(JJ)Z default: default
+    callP(IFFFJ)J default: default
+    callP(IIJ)J default: default
+    callP(IJ)J default: default
+    callP(J)J default: default
+    callPCCPSPPS(JSSJSJJJ)S default: default
+    callPCPPPPS(JSJJJJJ)S default: default
+    callPCPPPS(JSJJJJ)S default: default
+    callPCPS(JSJJ)S default: default
+    callPCPSPPPPPS(JSJSJJJJJJ)S default: default
+    callPCPSPPSPS(JSJSJJSJJ)S default: default
+    callPCPSPS(JSJSJJ)S default: default
+    callPCPSPSPSCCS(JSJSJSJSSSJ)S default: default
+    callPCS(JSJ)S default: default
+    callPCSPPPS(JSSJJJJ)S default: default
+    callPCSSSPSPPPS(JSSSSJSJJJJ)S default: default
+    callPF(JFJ)F default: default
+    callPI(IIIIIJJ)I default: default
+    callPI(IIIIJJ)I default: default
+    callPI(IIII[FJ)I default: default
+    callPI(IIII[IJ)I default: default
+    callPI(IIIJJ)I default: default
+    callPI(III[IJ)I default: default
+    callPI(IIJIIIIFJ)I default: default
+    callPI(IIJJ)I default: default
+    callPI(II[IJ)I default: default
+    callPI(IJIIFIJ)I default: default
+    callPI(IJIJ)I default: default
+    callPI(IJJ)I default: default
+    callPI(I[IIJ)I default: default
+    callPI(I[IJ)I default: default
+    callPI(JFFFFFFFFJ)I default: default
+    callPI(JFFFJ)I default: default
+    callPI(JFFJ)I default: default
+    callPI(JFIJ)I default: default
+    callPI(JFJ)I default: default
+    callPI(JIFFIJ)I default: default
+    callPI(JIFFJ)I default: default
+    callPI(JIFJ)I default: default
+    callPI(JIIIIIIJ)I default: default
+    callPI(JIIIIIJ)I default: default
+    callPI(JIIIIJ)I default: default
+    callPI(JIIIJ)I default: default
+    callPI(JIIJ)I default: default
+    callPI(JIIZJ)I default: default
+    callPI(JIJ)I default: default
+    callPI(JJ)I default: default
+    callPI([IIJ)I default: default
+    callPI([IJ)I default: default
+    callPJ(JIJ)J default: default
+    callPJCCS(JJSSJ)S default: default
+    callPJI(JIJJ)I default: default
+    callPJI(JJFJ)I default: default
+    callPJI(JJIJ)I default: default
+    callPJI(JJJ)I default: default
+    callPJJ(JJIIJ)J default: default
+    callPJJI(JJIJIJ)I default: default
+    callPJJI(JJJFJ)I default: default
+    callPJJI(JJJIJ)I default: default
+    callPJJI(JJJJ)I default: default
+    callPJJJ(JJJJ)J default: default
+    callPJJJI(JIJJJJ)I default: default
+    callPJJJI(JJJJJ)I default: default
+    callPJJJJPI(JJJJJJJ)I default: default
+    callPJJJJPI(JJJJJ[IJ)I default: default
+    callPJJJPI(JJJJIJJ)I default: default
+    callPJJPI(JJJJJ)I default: default
+    callPJJPPI(JJJJJJ)I default: default
+    callPJJPPPI(JJJIJJJJ)I default: default
+    callPJJPPPI(JJJIJJ[JJ)I default: default
+    callPJJPPPI(JJJJJJJ)I default: default
+    callPJJPPPI(JJJ[JJ[IJ)I default: default
+    callPJJPPPP(JJJJJJJ)J default: default
+    callPJJPPPP(JJJJJ[IJ)J default: default
+    callPJJPPPP(JJJJ[D[IJ)J default: default
+    callPJJPPPP(JJJJ[F[IJ)J default: default
+    callPJJPPPP(JJJJ[I[IJ)J default: default
+    callPJJPPPP(JJJJ[S[IJ)J default: default
+    callPJPI(JIJJIJ)I default: default
+    callPJPI(JIJJJ)I default: default
+    callPJPI(JIJ[IJ)I default: default
+    callPJPI(JJIJJ)I default: default
+    callPJPI(JJI[JJ)I default: default
+    callPJPI(JJJJ)I default: default
+    callPJPI(JJ[IJ)I default: default
+    callPJPI(JJ[JJ)I default: default
+    callPJPP(JJIIIJJ)J default: default
+    callPJPP(JJIII[IJ)J default: default
+    callPJPP(JJIJJ)J default: default
+    callPJPP(JJI[IJ)J default: default
+    callPJPP(JJJIJ)J default: default
+    callPJPPI(JJIIIJJJ)I default: default
+    callPJPPI(JJIIIJ[IJ)I default: default
+    callPJPPI(JJIIJJJ)I default: default
+    callPJPPI(JJIIJ[IJ)I default: default
+    callPJPPI(JJII[I[IJ)I default: default
+    callPJPPI(JJIJJJ)I default: default
+    callPJPPI(JJIJ[IJ)I default: default
+    callPJPPI(JJJJIJ)I default: default
+    callPJPPI(JJJJJ)I default: default
+    callPJPPI(JJJ[IJ)I default: default
+    callPJPPI(JJJ[JJ)I default: default
+    callPJPPI(JJ[IJIJ)I default: default
+    callPJPPI(JJ[IJJ)I default: default
+    callPJPPI(JJ[I[IJ)I default: default
+    callPJPPI(JJ[I[JJ)I default: default
+    callPJPPJI(JJIIJJJIJ)I default: default
+    callPJPPJI(JJIIJ[IJIJ)I default: default
+    callPJPPJI(JJIIJ[JJIJ)I default: default
+    callPJPPP(JJIIJJJ)J default: default
+    callPJPPP(JJIIJ[IJ)J default: default
+    callPJPPP(JJIJJJ)J default: default
+    callPJPPP(JJIJ[IJ)J default: default
+    callPJPPP(JJJIJJ)J default: default
+    callPJPPP(JJ[II[IJ)J default: default
+    callPJPPPI(JJIJJJJ)I default: default
+    callPJPPPI(JJIJJ[JJ)I default: default
+    callPJPPPI(JJJJJJ)I default: default
+    callPJPPPI(JJJJ[JJ)I default: default
+    callPJPPPP(JJJJJJ)J default: default
+    callPJPPPP(JJJJ[IJ)J default: default
+    callPJPPPP(JJJ[D[IJ)J default: default
+    callPJPPPP(JJJ[F[IJ)J default: default
+    callPJPPPP(JJJ[I[IJ)J default: default
+    callPJPPPP(JJJ[S[IJ)J default: default
+    callPJPPPPI(JIJJJIJJJ)I default: default
+    callPJPPPPI(JIJJJJJJ)I default: default
+    callPJPPPPP(JJJJJJJ)J default: default
+    callPJPPPPP(JJJJJ[IJ)J default: default
+    callPJPPPPP(JJJJ[F[IJ)J default: default
+    callPJPPPPP(JJJJ[I[IJ)J default: default
+    callPJPPPPP(JJJJ[S[IJ)J default: default
+    callPJPPPPPPP(JJJJJJJJJ)J default: default
+    callPJPPPPPPP(JJJJJJJ[IJ)J default: default
+    callPJPPPPPPP(JJJJJJ[F[IJ)J default: default
+    callPJPPPPPPP(JJJJJJ[I[IJ)J default: default
+    callPJPPPPPPP(JJJJJJ[S[IJ)J default: default
+    callPJPPPPPPPPP(JJJJJJJJJJJ)J default: default
+    callPJPPPPPPPPP(JJJJJJJJJ[IJ)J default: default
+    callPJPPPPPPPPP(JJJJJJJJ[F[IJ)J default: default
+    callPJPPPPPPPPP(JJJJJJJJ[I[IJ)J default: default
+    callPJPPPPPPPPP(JJJJJJJJ[S[IJ)J default: default
+    callPN(JJ)J default: default
+    callPNP(JJJ)J default: default
+    callPP(IIJIJ)J default: default
+    callPP(IIJJ)J default: default
+    callPP(IJIJ)J default: default
+    callPP(IJJ)J default: default
+    callPP(JIIJ)J default: default
+    callPP(JIJ)J default: default
+    callPP(JJ)J default: default
+    callPP([IJ)J default: default
+    callPPCS(JJSJ)S default: default
+    callPPI(IIJJIIIIFJ)I default: default
+    callPPI(IIJJJ)I default: default
+    callPPI(IJIIFJJ)I default: default
+    callPPI(IJIIF[IJ)I default: default
+    callPPI(IJJJ)I default: default
+    callPPI(IJ[IJ)I default: default
+    callPPI(JDDJJ)I default: default
+    callPPI(JFJJ)I default: default
+    callPPI(JIFFFFFIJJ)I default: default
+    callPPI(JIFFFFIJJ)I default: default
+    callPPI(JIFFFIJJ)I default: default
+    callPPI(JIFFFJJ)I default: default
+    callPPI(JIFFJJ)I default: default
+    callPPI(JIFJJ)I default: default
+    callPPI(JIIFFFFFIJIJ)I default: default
+    callPPI(JIIIIIIJIIIIIIIIIJ)I default: default
+    callPPI(JIIIIIIJJ)I default: default
+    callPPI(JIIIIIJJ)I default: default
+    callPPI(JIIIJJ)I default: default
+    callPPI(JIIJIJ)I default: default
+    callPPI(JIIJJ)I default: default
+    callPPI(JII[IJ)I default: default
+    callPPI(JII[JJ)I default: default
+    callPPI(JIJIJ)I default: default
+    callPPI(JIJJ)I default: default
+    callPPI(JI[DJ)I default: default
+    callPPI(JI[FJ)I default: default
+    callPPI(JI[IJ)I default: default
+    callPPI(JI[JJ)I default: default
+    callPPI(JI[SJ)I default: default
+    callPPI(JJFFJ)I default: default
+    callPPI(JJFIJ)I default: default
+    callPPI(JJFJ)I default: default
+    callPPI(JJIIIIJ)I default: default
+    callPPI(JJIIIJ)I default: default
+    callPPI(JJIIJ)I default: default
+    callPPI(JJIIZJ)I default: default
+    callPPI(JJIJ)I default: default
+    callPPI(JJJ)I default: default
+    callPPI(J[IJ)I default: default
+    callPPI(J[JIJ)I default: default
+    callPPI(J[JJ)I default: default
+    callPPI([IJJ)I default: default
+    callPPJ(JJJ)J default: default
+    callPPJI(JIJIJJ)I default: default
+    callPPJI(JIJJJ)I default: default
+    callPPJI(JI[JIJJ)I default: default
+    callPPJI(JJIJJ)I default: default
+    callPPJI(JJJJ)I default: default
+    callPPJPI(JJJJJ)I default: default
+    callPPJPI(J[JJJJ)I default: default
+    callPPJPP(JJJJJ)J default: default
+    callPPJPP(JJJ[IJ)J default: default
+    callPPJPPI(JIJJIJJJ)I default: default
+    callPPJPPI(JJIJIJJJ)I default: default
+    callPPJPPI(JJJJJJ)I default: default
+    callPPJPPI(JJJ[IJJ)I default: default
+    callPPJPPPP(JJJJJJJ)J default: default
+    callPPJPPPP(J[JJJJ[IJ)J default: default
+    callPPJPPPP(J[JJJ[D[IJ)J default: default
+    callPPJPPPP(J[JJJ[F[IJ)J default: default
+    callPPJPPPP(J[JJJ[I[IJ)J default: default
+    callPPJPPPP(J[JJJ[S[IJ)J default: default
+    callPPJPPPPP(JJJJJJJJ)J default: default
+    callPPJPPPPP(J[JJJJJ[IJ)J default: default
+    callPPJPPPPP(J[JJJJ[F[IJ)J default: default
+    callPPJPPPPP(J[JJJJ[I[IJ)J default: default
+    callPPJPPPPP(J[JJJJ[S[IJ)J default: default
+    callPPJPPPPPI(JJJJJIJJJJ)I default: default
+    callPPJPPPPPI(J[JJJJIJJJJ)I default: default
+    callPPJPPPPPI(J[JJJJIJ[IJJ)I default: default
+    callPPJPPPPPP(JJIJJJIJJJJ)J default: default
+    callPPJPPPPPP(JJIJJJIJJ[IJ)J default: default
+    callPPJPPPPPPPP(JJIJJJJJIJJJJ)J default: default
+    callPPJPPPPPPPP(JJIJJJJJIJJ[IJ)J default: default
+    callPPNI(JIJJJ)I default: default
+    callPPNP(JJJJ)J default: default
+    callPPNPI(JJJJJ)I default: default
+    callPPNPI(JJJ[JJ)I default: default
+    callPPNPP(JJJJJ)J default: default
+    callPPNPP(JJJ[IJ)J default: default
+    callPPP(IIIJJJ)J default: default
+    callPPP(III[I[IJ)J default: default
+    callPPP(IJJIJ)J default: default
+    callPPP(IJJJ)J default: default
+    callPPP(IJ[IJ)J default: default
+    callPPP(JIIIJJ)J default: default
+    callPPP(JIII[IJ)J default: default
+    callPPP(JIIJJ)J default: default
+    callPPP(JIJJ)J default: default
+    callPPP(JI[IJ)J default: default
+    callPPP(JJIIIJ)J default: default
+    callPPP(JJIJ)J default: default
+    callPPP(JJJ)J default: default
+    callPPP(J[IJ)J default: default
+    callPPPI(IJIJJJ)I default: default
+    callPPPI(IJJJJ)I default: default
+    callPPPI(IJ[IJJ)I default: default
+    callPPPI(JFFIIJJJ)I default: default
+    callPPPI(JIIIIJJJ)I default: default
+    callPPPI(JIIIJJJ)I default: default
+    callPPPI(JIII[I[FJ)I default: default
+    callPPPI(JIII[I[IJ)I default: default
+    callPPPI(JIIJIJJ)I default: default
+    callPPPI(JIIJJJ)I default: default
+    callPPPI(JIIJ[IJ)I default: default
+    callPPPI(JIJJIIIJ)I default: default
+    callPPPI(JIJJIIJ)I default: default
+    callPPPI(JIJJIJ)I default: default
+    callPPPI(JIJJJ)I default: default
+    callPPPI(JIJ[DJ)I default: default
+    callPPPI(JIJ[FJ)I default: default
+    callPPPI(JIJ[IJ)I default: default
+    callPPPI(JIJ[JJ)I default: default
+    callPPPI(JIJ[SJ)I default: default
+    callPPPI(JI[IJJ)I default: default
+    callPPPI(JI[I[IJ)I default: default
+    callPPPI(JI[I[JJ)I default: default
+    callPPPI(JI[JJJ)I default: default
+    callPPPI(JJIIIIJJ)I default: default
+    callPPPI(JJIIIJJ)I default: default
+    callPPPI(JJIJIJ)I default: default
+    callPPPI(JJIJJ)I default: default
+    callPPPI(JJI[IJ)I default: default
+    callPPPI(JJI[JJ)I default: default
+    callPPPI(JJJIIIJ)I default: default
+    callPPPI(JJJIIJ)I default: default
+    callPPPI(JJJIJ)I default: default
+    callPPPI(JJJJ)I default: default
+    callPPPI(JJ[IIJ)I default: default
+    callPPPI(JJ[IJ)I default: default
+    callPPPI(JJ[JJ)I default: default
+    callPPPI(J[IJJ)I default: default
+    callPPPI(J[I[IJ)I default: default
+    callPPPI(J[J[JJ)I default: default
+    callPPPI([IJ[IJ)I default: default
+    callPPPJI(JJJJJ)I default: default
+    callPPPJPP(JJJJJJ)J default: default
+    callPPPJPPI(JIJJJIJJJ)I default: default
+    callPPPJPPI(JJJJIJJJ)I default: default
+    callPPPJPPP(JJJJJJJ)J default: default
+    callPPPJPPP(JJJJJ[IJ)J default: default
+    callPPPP(IJJJJ)J default: default
+    callPPPP(IJ[J[IJ)J default: default
+    callPPPP(JIJJJ)J default: default
+    callPPPP(JI[IJJ)J default: default
+    callPPPP(JJIIJJ)J default: default
+    callPPPP(JJII[IJ)J default: default
+    callPPPP(JJIJIJ)J default: default
+    callPPPP(JJIJJ)J default: default
+    callPPPP(JJI[IJ)J default: default
+    callPPPP(JJJIJ)J default: default
+    callPPPP(JJJJ)J default: default
+    callPPPP(JJ[IJ)J default: default
+    callPPPP(J[J[IJ)J default: default
+    callPPPPI(IJJIIIIIIIIIIIIIIIIIIJJJ)I default: default
+    callPPPPI(IJJIJJJ)I default: default
+    callPPPPI(I[I[JIIIIIIIIIIIIIIIIII[I[JJ)I default: default
+    callPPPPI(JIIIJJJJ)I default: default
+    callPPPPI(JIIJJJJ)I default: default
+    callPPPPI(JIIJ[IJJ)I default: default
+    callPPPPI(JIIJ[JJJ)I default: default
+    callPPPPI(JII[J[I[IJ)I default: default
+    callPPPPI(JIJIIJJJ)I default: default
+    callPPPPI(JIJIIJ[IJ)I default: default
+    callPPPPI(JIJIJJJ)I default: default
+    callPPPPI(JIJJIJJ)I default: default
+    callPPPPI(JIJJJIJ)I default: default
+    callPPPPI(JIJJJJ)I default: default
+    callPPPPI(JIJJ[JJ)I default: default
+    callPPPPI(JIJ[IJJ)I default: default
+    callPPPPI(JIJ[JJJ)I default: default
+    callPPPPI(JIJ[J[JJ)I default: default
+    callPPPPI(JI[IJJJ)I default: default
+    callPPPPI(JJIIJJJ)I default: default
+    callPPPPI(JJIJIJJ)I default: default
+    callPPPPI(JJIJJJ)I default: default
+    callPPPPI(JJIJ[IJ)I default: default
+    callPPPPI(JJI[JJJ)I default: default
+    callPPPPI(JJJIIIJJ)I default: default
+    callPPPPI(JJJIIJJ)I default: default
+    callPPPPI(JJJIJIJ)I default: default
+    callPPPPI(JJJIJJ)I default: default
+    callPPPPI(JJJI[IJ)I default: default
+    callPPPPI(JJJJIJ)I default: default
+    callPPPPI(JJJJJ)I default: default
+    callPPPPI(JJJ[JJ)I default: default
+    callPPPPI(JJ[IJJ)I default: default
+    callPPPPI(JJ[I[IJ)I default: default
+    callPPPPI(J[IJI[IJ)I default: default
+    callPPPPI(J[JIJ[IJ)I default: default
+    callPPPPJPI(JJJJJJJ)I default: default
+    callPPPPJPPP(JJJJJJJJ)J default: default
+    callPPPPP(JIJJJJ)J default: default
+    callPPPPP(JIJJ[IJ)J default: default
+    callPPPPP(JJIJJJ)J default: default
+    callPPPPP(JJIJ[IJ)J default: default
+    callPPPPP(JJJIJJ)J default: default
+    callPPPPP(JJJI[IJ)J default: default
+    callPPPPP(JJJJIJ)J default: default
+    callPPPPP(JJJJJ)J default: default
+    callPPPPP(JJJ[IJ)J default: default
+    callPPPPP(JJ[J[IJ)J default: default
+    callPPPPP(J[JIJ[IJ)J default: default
+    callPPPPP(J[JJI[IJ)J default: default
+    callPPPPPI(IIJJJJJJ)I default: default
+    callPPPPPI(II[I[I[I[IJJ)I default: default
+    callPPPPPI(JIIJJJJJ)I default: default
+    callPPPPPI(JIJIJIJJJ)I default: default
+    callPPPPPI(JIJIJJJJ)I default: default
+    callPPPPPI(JIJJIJJJ)I default: default
+    callPPPPPI(JIJJJJJ)I default: default
+    callPPPPPI(JIJJ[IJJ)I default: default
+    callPPPPPI(JIJ[JIJJJ)I default: default
+    callPPPPPI(JI[JIJJJJ)I default: default
+    callPPPPPI(JJIJJJJ)I default: default
+    callPPPPPI(JJIJ[IJJ)I default: default
+    callPPPPPI(JJIJ[JJJ)I default: default
+    callPPPPPI(JJJIJJJ)I default: default
+    callPPPPPI(JJJJIJJ)I default: default
+    callPPPPPI(JJJJJJ)I default: default
+    callPPPPPI(JJJ[II[IJ)I default: default
+    callPPPPPI(JJ[I[I[IJ)I default: default
+    callPPPPPI(JJ[I[I[JJ)I default: default
+    callPPPPPI(J[I[FI[I[IJ)I default: default
+    callPPPPPI(J[I[I[IJJ)I default: default
+    callPPPPPJPPI(JJJJJJJJJ)I default: default
+    callPPPPPP(JIIJIJJJJ)J default: default
+    callPPPPPP(JIIJIJJ[IJ)J default: default
+    callPPPPPP(JIJJJJJ)J default: default
+    callPPPPPP(JIJJJ[IJ)J default: default
+    callPPPPPP(JJJJIJJ)J default: default
+    callPPPPPP(JJ[JJI[IJ)J default: default
+    callPPPPPPI(IIJJJJJJJ)I default: default
+    callPPPPPPI(II[I[I[I[I[IJJ)I default: default
+    callPPPPPPI(JIJIJJJJJ)I default: default
+    callPPPPPPI(JIJJJIJJJ)I default: default
+    callPPPPPPI(JJJIJJJJ)I default: default
+    callPPPPPPI(JJJIJ[IJJ)I default: default
+    callPPPPPPI(JJJIJ[JJJ)I default: default
+    callPPPPPPI(JJJJJJJ)I default: default
+    callPPPPPPI(JJ[JI[I[IJJ)I default: default
+    callPPPPPPI(J[I[I[I[I[IJ)I default: default
+    callPPPPPPP(JIJJJJJJ)J default: default
+    callPPPPPPP(JIJJJ[I[IJ)J default: default
+    callPPPPPPPI(JIJIJJJJJJ)I default: default
+    callPPPPPPPI(JIJJIJJJJJ)I default: default
+    callPPPPPPPI(JJIJJJIJJJ)I default: default
+    callPPPPPPPI(JJIJJJJJJ)I default: default
+    callPPPPPPPI(JJIJJ[DIJJJ)I default: default
+    callPPPPPPPI(JJIJJ[FIJJJ)I default: default
+    callPPPPPPPI(JJIJJ[IIJJJ)I default: default
+    callPPPPPPPI(JJIJJ[SIJJJ)I default: default
+    callPPPPPPPI(JJJIJJIJJJ)I default: default
+    callPPPPPPPI(JJJJIJJJJ)I default: default
+    callPPPPPPPI(JJJJIJ[IJJ)I default: default
+    callPPPPPPPI(JJJJJIJJJ)I default: default
+    callPPPPPPPI(JJJJJJJIJ)I default: default
+    callPPPPPPPI(JJ[FJJIJJJ)I default: default
+    callPPPPPPPI(JJ[IJJIJJJ)I default: default
+    callPPPPPPPP(IJJIIIIJJJIJJJ)J default: default
+    callPPPPPPPP(I[I[JIIIIJJJI[I[JJ)J default: default
+    callPPPPPPPP(JIJJIJJJJJ)J default: default
+    callPPPPPPPP(JIJJIJJJ[IJ)J default: default
+    callPPPPPPPPI(JIIJJJJIJJJJ)I default: default
+    callPPPPPPPPI(JJJJIJJIJJJ)I default: default
+    callPPPPPPPPI(JJJJJJIJJJ)I default: default
+    callPPPPPPPPPI(JJIJJJJJIJJJ)I default: default
+    callPPPPPPPPPI(JJIJJJJ[DIJJJ)I default: default
+    callPPPPPPPPPI(JJIJJJJ[FIJJJ)I default: default
+    callPPPPPPPPPI(JJIJJJJ[IIJJJ)I default: default
+    callPPPPPPPPPI(JJIJJJJ[SIJJJ)I default: default
+    callPPPPPPPPPI(JJJJJJIJJJJ)I default: default
+    callPPPPPPPPPI(JJ[JJJJI[I[IJJ)I default: default
+    callPPPPPPPPPPI(JJJJIJJJIJJJJ)I default: default
+    callPPPPPPPPPPI(JJJJJJJIJJJJ)I default: default
+    callPPPPPPPPPPI(JJ[JJIJJJI[I[IJJ)I default: default
+    callPPPPPPPPPPI(JJ[JJJJJI[I[IJJ)I default: default
+    callPPPPPPPPPPI(JJ[JJ[FJJI[I[IJJ)I default: default
+    callPPPPPPPPPPI(JJ[JJ[IJJI[I[IJJ)I default: default
+    callPPPPPPPPPPPI(JJJJJJJJIJJJJ)I default: default
+    callPPPPPPPPPPPI(JJ[JJJJJJI[I[IJJ)I default: default
+    callPPPPPPPPPPPPI(JJIJJJJJJJJIJJJ)I default: default
+    callPPPPPPPPPPPPI(JJIJJJJJJJ[DIJJJ)I default: default
+    callPPPPPPPPPPPPI(JJIJJJJJJJ[FIJJJ)I default: default
+    callPPPPPPPPPPPPI(JJIJJJJJJJ[IIJJJ)I default: default
+    callPPPPPPPPPPPPI(JJIJJJJJJJ[SIJJJ)I default: default
+    callPPPPPPPPPPPPI(JJJJJJJJJJIJJJ)I default: default
+    callPPPPPPPPPPPPPPPI(JJJJJJJJJJJJIJJJJ)I default: default
+    callPPPPPPPPPPPPPPPI(JJ[JJJJJJJJJJI[I[IJJ)I default: default
+    callPPPPS(JJIJIJJ)S default: default
+    callPPPPZ(IIIFJJJJJ)Z default: default
+    callPPPPZ(IIIF[F[F[F[FJ)Z default: default
+    callPPPS(JIJIJJ)S default: default
+    callPPPS(JJJJ)S default: default
+    callPPPSPSPCS(JJJSJSJSJ)S default: default
+    callPPS(JIJIJ)S default: default
+    callPPS(JJIJ)S default: default
+    callPPS(JJJ)S default: default
+    callPPSPS(JJSJJ)S default: default
+    callPPSPSPS(JJSJSJJ)S default: default
+    callPPSPSPSCCS(JJSJSJSSSJ)S default: default
+    callPPSPSPSPSPSPSS(JJSJSJSJSJSJSJ)S default: default
+    callPPSPSPSPSS(JJSJSJSJSJ)S default: default
+    callPPSPSPSS(JJSJSJSJ)S default: default
+    callPPSS(JJSJ)S default: default
+    callPPZ(IJJJ)Z default: default
+    callPPZ(I[IJJ)Z default: default
+    callPS(JJ)S default: default
+    callPSPS(JSJJ)S default: default
+    callPSPSPPPPPPPS(JSJSJJJJJJJJ)S default: default
+    callPSS(JSJ)S default: default
+    callPSSPPS(JSSJIJJ)S default: default
+    callPSSPS(JSSJIJ)S default: default
+    callPSSSPSSPPPS(JSSSJSSJJJJ)S default: default
+    callPZ(IJJ)Z default: default
+    callPZ(JJ)Z default: default
+    callS(IJ)S default: default
+    callSPPS(SJJJ)S default: default
+    callSPS(SJJ)S default: default
+    callSPSPPPSPS(SJSJJJSJJ)S default: default
+    callSPSS(SJSJ)S default: default
+    callSPSSPSPS(SJSSJSJJ)S default: default
+    callZ(IFFJ)Z default: default
+    callZ(IIFFJ)Z default: default
+    callZ(IIJ)Z default: default
+    callZ(IJ)Z default: default
+    invokeC(IJ)S default: default
+    invokeC(J)S default: default
+    invokeCC(ISJ)S default: default
+    invokeCC(SZJ)S default: default
+    invokeCCC(SSZJ)S default: default
+    invokeCCCCC(SSSSJ)S default: default
+    invokeCCCJPJC(SSSZIJJJJ)S default: default
+    invokeCCCJPJC(SSZSIJJJJ)S default: default
+    invokeCCCUJP(SSSBIJJ)J default: default
+    invokeCCJC(SSIJJ)S default: default
+    invokeCCJPJC(SZSIJJJJ)S default: default
+    invokeCCJZ(SZSIJJ)Z default: default
+    invokeCCP(SSJ)J default: default
+    invokeCCPP(SSJJ)J default: default
+    invokeCI(ISJ)I default: default
+    invokeCI(ISZJ)I default: default
+    invokeCJC(IZSIJJ)S default: default
+    invokeCP(SJ)J default: default
+    invokeCPCC(SJSJ)S default: default
+    invokeCPCC(S[SSJ)S default: default
+    invokeCPCP(SJSJ)J default: default
+    invokeCPCUI(SJSBJ)I default: default
+    invokeCPCUI(S[FSBJ)I default: default
+    invokeCPCUI(S[ISBJ)I default: default
+    invokeCPCUI(S[SSBJ)I default: default
+    invokeCPI(SJJ)I default: default
+    invokeCPI(S[IJ)I default: default
+    invokeCPP(ISJJ)J default: default
+    invokeCPPC(SJJJ)S default: default
+    invokeCUC(SBJ)S default: default
+    invokeD(IJ)D default: default
+    invokeD(J)D default: default
+    invokeF(IJ)F default: default
+    invokeF(J)F default: default
+    invokeI(IFJ)I default: default
+    invokeI(IIIIIIJ)I default: default
+    invokeI(IIIIIJ)I default: default
+    invokeI(IIIIJ)I default: default
+    invokeI(IIIJ)I default: default
+    invokeI(IIJ)I default: default
+    invokeI(IJ)I default: default
+    invokeI(IZJ)I default: default
+    invokeI(J)I default: default
+    invokeJ(IIJ)J default: default
+    invokeJ(J)J default: default
+    invokeJC(IIJJ)S default: default
+    invokeJI(JJ)I default: default
+    invokeJP(JJ)J default: default
+    invokeJPP(JJJ)J default: default
+    invokeJPPI(JJJJ)I default: default
+    invokeJPPP(IIIJJJJ)J default: default
+    invokeJPZ(JJZJ)Z default: default
+    invokeJZ(JIIJ)Z default: default
+    invokeJZ(JIJ)Z default: default
+    invokeN(IJ)J default: default
+    invokeNN(JJ)J default: default
+    invokeNNN(IJJJ)J default: default
+    invokeNNN(JJJ)J default: default
+    invokeNNNN(JJJJ)J default: default
+    invokeP(IIIJ)J default: default
+    invokeP(IIJ)J default: default
+    invokeP(IJ)J default: default
+    invokeP(J)J default: default
+    invokeP(ZJ)J default: default
+    invokePB(JJ)B default: default
+    invokePBPPP(JBJJJ)J default: default
+    invokePBZ(JBJ)Z default: default
+    invokePC(JIJ)S default: default
+    invokePC(JJ)S default: default
+    invokePCC(IJSJ)S default: default
+    invokePCC(JIISJ)S default: default
+    invokePCC(JISJ)S default: default
+    invokePCC(JSJ)S default: default
+    invokePCCC(JSSIIJ)S default: default
+    invokePCCCCC(JSSSSJ)S default: default
+    invokePCCZ(JSSIJ)Z default: default
+    invokePCCZ(JSSJ)Z default: default
+    invokePCI(JSJ)I default: default
+    invokePCI([FSJ)I default: default
+    invokePCP(JSZJ)J default: default
+    invokePCPI(JSJJ)I default: default
+    invokePCZ(JSJ)Z default: default
+    invokePD(JIIJ)D default: default
+    invokePD(JIJ)D default: default
+    invokePD(JJ)D default: default
+    invokePF(FFJJ)F default: default
+    invokePF(FJJ)F default: default
+    invokePF(IJFJ)F default: default
+    invokePF(JFFJ)F default: default
+    invokePF(JIIJ)F default: default
+    invokePF(JIJ)F default: default
+    invokePF(JJ)F default: default
+    invokePI(IJJ)I default: default
+    invokePI(JIIIIIIJ)I default: default
+    invokePI(JIIIIJ)I default: default
+    invokePI(JIIIJ)I default: default
+    invokePI(JIIJ)I default: default
+    invokePI(JIJ)I default: default
+    invokePI(JIZJ)I default: default
+    invokePI(JJ)I default: default
+    invokePI(JZJ)I default: default
+    invokePI(JZZJ)I default: default
+    invokePJ(JIIJ)J default: default
+    invokePJ(JIJ)J default: default
+    invokePJ(JJ)J default: default
+    invokePJI(JJIJ)I default: default
+    invokePJI(JJJ)I default: default
+    invokePJJ(IJJJ)J default: default
+    invokePJJ(JIJJ)J default: default
+    invokePJJ(JJIJ)J default: default
+    invokePJJ(JJJ)J default: default
+    invokePJJJJPI(JJJJJIJJ)I default: default
+    invokePJJP(JJJJ)J default: default
+    invokePJJZ(JIJJJ)Z default: default
+    invokePJP(JIIIIJJ)J default: default
+    invokePJP(JIIJJ)J default: default
+    invokePJP(JIJJ)J default: default
+    invokePJP(JJIJ)J default: default
+    invokePJP(JJJ)J default: default
+    invokePJPJPP(JJJJJJ)J default: default
+    invokePJPPNI(JIJJJJJ)I default: default
+    invokePJPPP(JIIJJJJ)J default: default
+    invokePJPPP(JJIJJIJ)J default: default
+    invokePJPPZ(JIIJJJJ)Z default: default
+    invokePJPZ(JIJJIJ)Z default: default
+    invokePJPZ(JJJIJ)Z default: default
+    invokePJUPC(JJBJJ)S default: default
+    invokePJZ(IJJJ)Z default: default
+    invokePJZ(JJJ)Z default: default
+    invokePN(JIJ)J default: default
+    invokePN(JJ)J default: default
+    invokePNI(JIJJ)I default: default
+    invokePNI(JJIJ)I default: default
+    invokePNI(JJJ)I default: default
+    invokePNNI(JJJIIJ)I default: default
+    invokePNNI(JJJJ)I default: default
+    invokePNNNPP(JJJJJJ)J default: default
+    invokePNNPI(JJIJJJ)I default: default
+    invokePNNPP(JJJJJ)J default: default
+    invokePNNPPI(JJJJJJ)I default: default
+    invokePNNPPPI(JJJIIJJJJ)I default: default
+    invokePNNPPPI(JJJII[I[IJJ)I default: default
+    invokePNP(JJJ)J default: default
+    invokePNPI(JJIJJ)I default: default
+    invokePNPI(JJJIJ)I default: default
+    invokePNPI(JJJJ)I default: default
+    invokePNPN(JJJIJ)J default: default
+    invokePNPN(JJJJ)J default: default
+    invokePNPNN(JJJJJ)J default: default
+    invokePNPNPN(JJIIIIIIIJJJJ)J default: default
+    invokePNPPI(JJJJJ)I default: default
+    invokePNPPPI(JIIJJJJJ)I default: default
+    invokePP(IIIJIJ)J default: default
+    invokePP(IIIJJ)J default: default
+    invokePP(IIJJ)J default: default
+    invokePP(IJJ)J default: default
+    invokePP(IZJJ)J default: default
+    invokePP(JDJ)J default: default
+    invokePP(JFIFIJ)J default: default
+    invokePP(JFJ)J default: default
+    invokePP(JIIIIIJ)J default: default
+    invokePP(JIIIIJ)J default: default
+    invokePP(JIIIJ)J default: default
+    invokePP(JIIJ)J default: default
+    invokePP(JIJ)J default: default
+    invokePP(JJ)J default: default
+    invokePP(JZJ)J default: default
+    invokePP([DIJ)J default: default
+    invokePP([FIJ)J default: default
+    invokePP([IIJ)J default: default
+    invokePP([JIJ)J default: default
+    invokePP([SIJ)J default: default
+    invokePPBPPP(JJBJJJ)J default: default
+    invokePPCC(JJSJ)S default: default
+    invokePPCI(JJSJ)I default: default
+    invokePPCI(J[FSJ)I default: default
+    invokePPD(JJJ)D default: default
+    invokePPF(JFJIJ)F default: default
+    invokePPF(JIJJ)F default: default
+    invokePPF(JJJ)F default: default
+    invokePPI(IJIJIZJ)I default: default
+    invokePPI(IJJJ)I default: default
+    invokePPI(IJ[IJ)I default: default
+    invokePPI(I[II[IIZJ)I default: default
+    invokePPI(I[SI[SIZJ)I default: default
+    invokePPI(JIIIIJIJ)I default: default
+    invokePPI(JIIIIJJ)I default: default
+    invokePPI(JIIIJJ)I default: default
+    invokePPI(JIIJIJ)I default: default
+    invokePPI(JIIJJ)I default: default
+    invokePPI(JIJIIJ)I default: default
+    invokePPI(JIJIJ)I default: default
+    invokePPI(JIJJ)I default: default
+    invokePPI(JIJZJ)I default: default
+    invokePPI(JIZJJ)I default: default
+    invokePPI(JJFJ)I default: default
+    invokePPI(JJIFFIIJ)I default: default
+    invokePPI(JJIIIIJ)I default: default
+    invokePPI(JJIIJ)I default: default
+    invokePPI(JJIJ)I default: default
+    invokePPI(JJJ)I default: default
+    invokePPI(JJZJ)I default: default
+    invokePPI(JJZZJ)I default: default
+    invokePPI(JZJJ)I default: default
+    invokePPI(JZZZJJ)I default: default
+    invokePPJ(JJIJ)J default: default
+    invokePPJ(JJJ)J default: default
+    invokePPJI(JJJJ)I default: default
+    invokePPJJPPP(JJJJJJJ)J default: default
+    invokePPJJPPZ(JJJJJJJ)Z default: default
+    invokePPJP(JJJJ)J default: default
+    invokePPJPP(JJJJJ)J default: default
+    invokePPJPPP(JJJIIJJJ)J default: default
+    invokePPN(JJJ)J default: default
+    invokePPNI(JIJJJ)I default: default
+    invokePPNI(JJJJ)I default: default
+    invokePPNN(JIIJJJ)J default: default
+    invokePPNNI(JJJJJ)I default: default
+    invokePPNNP(JJJJJ)J default: default
+    invokePPNNPI(JJJJJJ)I default: default
+    invokePPNPI(JJJJJ)I default: default
+    invokePPNPPI(JIJJJJJ)I default: default
+    invokePPNPPI(JJJIJJJ)I default: default
+    invokePPNPPPI(JIJJJJJJ)I default: default
+    invokePPP(IIIIJIJJ)J default: default
+    invokePPP(IIIIJJJ)J default: default
+    invokePPP(IJJJ)J default: default
+    invokePPP(JIIIJJ)J default: default
+    invokePPP(JIIJJ)J default: default
+    invokePPP(JIJIIJ)J default: default
+    invokePPP(JIJIJ)J default: default
+    invokePPP(JIJJ)J default: default
+    invokePPP(JJIIIIJ)J default: default
+    invokePPP(JJIIJ)J default: default
+    invokePPP(JJIJ)J default: default
+    invokePPP(JJJ)J default: default
+    invokePPP(JJZJ)J default: default
+    invokePPP(JJZZJ)J default: default
+    invokePPP(JZZJJ)J default: default
+    invokePPP(J[IJ)J default: default
+    invokePPPI(IJJJJ)I default: default
+    invokePPPI(JIIIIJJJ)I default: default
+    invokePPPI(JIIIJJIJ)I default: default
+    invokePPPI(JIIIJJJ)I default: default
+    invokePPPI(JIIJIJIIJ)I default: default
+    invokePPPI(JIIJJJ)I default: default
+    invokePPPI(JIJIJIJ)I default: default
+    invokePPPI(JIJIJJ)I default: default
+    invokePPPI(JIJJIIJ)I default: default
+    invokePPPI(JIJJIJ)I default: default
+    invokePPPI(JIJJJ)I default: default
+    invokePPPI(JIJZJJ)I default: default
+    invokePPPI(JJIIJJ)I default: default
+    invokePPPI(JJIJIIJ)I default: default
+    invokePPPI(JJIJIJ)I default: default
+    invokePPPI(JJIJJ)I default: default
+    invokePPPI(JJJIIJ)I default: default
+    invokePPPI(JJJIJ)I default: default
+    invokePPPI(JJJJ)I default: default
+    invokePPPJP(IJJJJJ)J default: default
+    invokePPPJP(JJJJIIJ)J default: default
+    invokePPPJP(JJJJIJ)J default: default
+    invokePPPJPP(JJJJJIJ)J default: default
+    invokePPPJZ(JJJJJ)Z default: default
+    invokePPPNI(JJIJJJ)I default: default
+    invokePPPNI(JJJJJ)I default: default
+    invokePPPNJI(JIJJJJJ)I default: default
+    invokePPPNNI(JIJJJJJ)I default: default
+    invokePPPNNI(JJJJJJ)I default: default
+    invokePPPNPI(JIJJJJJ)I default: default
+    invokePPPNPI(JJJJJJ)I default: default
+    invokePPPP(IIIJJIJJ)J default: default
+    invokePPPP(IIJJJJ)J default: default
+    invokePPPP(IJJJJ)J default: default
+    invokePPPP(JIIJJJ)J default: default
+    invokePPPP(JIJJIIJ)J default: default
+    invokePPPP(JIJJJ)J default: default
+    invokePPPP(JJIIIJJ)J default: default
+    invokePPPP(JJIIJIIJ)J default: default
+    invokePPPP(JJIIJIJ)J default: default
+    invokePPPP(JJIIJJ)J default: default
+    invokePPPP(JJIJIJ)J default: default
+    invokePPPP(JJIJJ)J default: default
+    invokePPPP(JJJIIJ)J default: default
+    invokePPPP(JJJIJ)J default: default
+    invokePPPP(JJJJ)J default: default
+    invokePPPP(JJZJJ)J default: default
+    invokePPPPI(JIIIJJJJ)I default: default
+    invokePPPPI(JIIJIJJIIJ)I default: default
+    invokePPPPI(JIIJJJIJ)I default: default
+    invokePPPPI(JIIJJJJ)I default: default
+    invokePPPPI(JIJIJIJIJ)I default: default
+    invokePPPPI(JIJJJJ)I default: default
+    invokePPPPI(JJIIJJJ)I default: default
+    invokePPPPI(JJII[F[IJ)I default: default
+    invokePPPPI(JJII[I[IJ)I default: default
+    invokePPPPI(JJIJIJJ)I default: default
+    invokePPPPI(JJIJJIJ)I default: default
+    invokePPPPI(JJIJJJ)I default: default
+    invokePPPPI(JJJIIIJIJ)I default: default
+    invokePPPPI(JJJIIJJ)I default: default
+    invokePPPPI(JJJIJJ)I default: default
+    invokePPPPI(JJJJIIIIJ)I default: default
+    invokePPPPI(JJJJIIJ)I default: default
+    invokePPPPI(JJJJIJ)I default: default
+    invokePPPPI(JJJJJ)I default: default
+    invokePPPPI(JJJ[JJ)I default: default
+    invokePPPPJJPPP(JJJJIJIJIJJJ)J default: default
+    invokePPPPNI(JIJJJJJ)I default: default
+    invokePPPPNI(JJIJJJJ)I default: default
+    invokePPPPNI(JJJJJJ)I default: default
+    invokePPPPNP(JJIJJJJ)J default: default
+    invokePPPPNPI(JJJJJJJ)I default: default
+    invokePPPPP(IIIJJJIJJ)J default: default
+    invokePPPPP(JIJJJJ)J default: default
+    invokePPPPP(JJIJIJJ)J default: default
+    invokePPPPP(JJIJJJ)J default: default
+    invokePPPPP(JJJIIIJJ)J default: default
+    invokePPPPP(JJJIJIIJ)J default: default
+    invokePPPPP(JJJIJIJ)J default: default
+    invokePPPPP(JJJIJJ)J default: default
+    invokePPPPP(JJJJIIIJ)J default: default
+    invokePPPPP(JJJJIJ)J default: default
+    invokePPPPP(JJJJJ)J default: default
+    invokePPPPPI(IJJJJJJ)I default: default
+    invokePPPPPI(JIJJJJJ)I default: default
+    invokePPPPPI(JJIIJJJJ)I default: default
+    invokePPPPPI(JJIJIJIJJ)I default: default
+    invokePPPPPI(JJIJJIIJJ)I default: default
+    invokePPPPPI(JJIJJJJ)I default: default
+    invokePPPPPI(JJJIIIFJJJ)I default: default
+    invokePPPPPI(JJJIJIIJJ)I default: default
+    invokePPPPPI(JJJIJJJ)I default: default
+    invokePPPPPI(JJJJJIJ)I default: default
+    invokePPPPPI(JJJJJJ)I default: default
+    invokePPPPPI(J[I[I[IJJ)I default: default
+    invokePPPPPJJJPP(JJJJJIJJJIJJ)J default: default
+    invokePPPPPJJPP(JJJJJIJIJIJJ)J default: default
+    invokePPPPPJJPPPPPPP(JJJJJIJIJIJJIJJJJJ)J default: default
+    invokePPPPPJPP(JJJJJIJIJJ)J default: default
+    invokePPPPPJPPP(JIJJJJIIJIIJJJ)J default: default
+    invokePPPPPJPPP(JIJJJJIIJIJJJ)J default: default
+    invokePPPPPJPPP(JJJJJIJIJIJJ)J default: default
+    invokePPPPPJPPPP(JJJJJIJIIJIIJJJ)J default: default
+    invokePPPPPJPPPPPP(JJJJIJJIIJJJJJJ)J default: default
+    invokePPPPPJPPPPPP(JJJJJIJIIJJIIJJJJ)J default: default
+    invokePPPPPJPPPPPPPP(JJJJIJJIJJIJJJJJJ)J default: default
+    invokePPPPPP(JJJIJIJJ)J default: default
+    invokePPPPPP(JJJIJJJ)J default: default
+    invokePPPPPP(JJJJIJIJ)J default: default
+    invokePPPPPP(JJJJIJJ)J default: default
+    invokePPPPPP(JJJJJIIIIJ)J default: default
+    invokePPPPPP(JJJJJIIJ)J default: default
+    invokePPPPPP(JJJJJIJ)J default: default
+    invokePPPPPP(JJJJJJ)J default: default
+    invokePPPPPPI(IIJJJJJJJ)I default: default
+    invokePPPPPPI(II[I[I[I[I[IJJ)I default: default
+    invokePPPPPPI(JIIJJJJJJ)I default: default
+    invokePPPPPPI(JIJJJJJJ)I default: default
+    invokePPPPPPI(JJIJIJIJIJJ)I default: default
+    invokePPPPPPI(JJJJJJIJ)I default: default
+    invokePPPPPPI(JJJJJJJ)I default: default
+    invokePPPPPPP(JJIIJJJJJ)J default: default
+    invokePPPPPPP(JJJIJIJJJ)J default: default
+    invokePPPPPPP(JJJIJJJJ)J default: default
+    invokePPPPPPP(JJJJIJIJIIJ)J default: default
+    invokePPPPPPP(JJJJIJIJJ)J default: default
+    invokePPPPPPP(JJJJIJJJ)J default: default
+    invokePPPPPPP(JJJJJIJIIIJ)J default: default
+    invokePPPPPPP(JJJJJIJIJ)J default: default
+    invokePPPPPPP(JJJJJJIJ)J default: default
+    invokePPPPPPP(JJJJJJJ)J default: default
+    invokePPPPPPPI(JIIJJJJJJJ)I default: default
+    invokePPPPPPPI(JII[I[I[I[I[IJJ)I default: default
+    invokePPPPPPPI(JJJIIJJIJIJIJ)I default: default
+    invokePPPPPPPI(JJJIJFFJJJJ)I default: default
+    invokePPPPPPPI(JJJJJJJJ)I default: default
+    invokePPPPPPPP(JJJJIJJJIJ)J default: default
+    invokePPPPPPPP(JJJJIJJJJ)J default: default
+    invokePPPPPPPP(JJJJJIJIJIJ)J default: default
+    invokePPPPPPPPI(JIIJJJJJJJJ)I default: default
+    invokePPPPPPPPI(JIIJ[I[I[F[I[I[IJ)I default: default
+    invokePPPPPPPPP(JJJJIJJJIJJ)J default: default
+    invokePPPPPPPPP(JJJJJIJIJIJJ)J default: default
+    invokePPPPPPPPP(JJJJJJJIJIIIIIJ)J default: default
+    invokePPPPPPPPP(JJJJJJJIJJ)J default: default
+    invokePPPPPPPPP(JJJJJJJJJ)J default: default
+    invokePPPPPPPPPP(JJJJIJJJJIJJ)J default: default
+    invokePPPPPPPPPP(JJJJJIJJJJJ)J default: default
+    invokePPPPPPPPPP(JJJJJJJIJIJIJ)J default: default
+    invokePPPPPPPPPPP(JJJJJJJIJIJJIJ)J default: default
+    invokePPPPPPPPPPP(JJJJJJJJJJJ)J default: default
+    invokePPPPPPPPPPPPP(JIJJJIJJIJJIIIIJJJJJ)J default: default
+    invokePPPPPPZ(JJJIJIJIIJIIJ)Z default: default
+    invokePPPPPPZ(JJJJJJJ)Z default: default
+    invokePPPPPZ(IJJJJJJ)Z default: default
+    invokePPPPPZ(JIIJJJJJ)Z default: default
+    invokePPPPPZ(JJIJJJJ)Z default: default
+    invokePPPPPZ(JJJIJIJIJ)Z default: default
+    invokePPPPPZ(JJJJDJIJ)Z default: default
+    invokePPPPPZ(JJJJJIJ)Z default: default
+    invokePPPPPZ(JJJJJJ)Z default: default
+    invokePPPPPZ(JJJJJZIJ)Z default: default
+    invokePPPPPZ(JJZZZIZJJJJ)Z default: default
+    invokePPPPZ(IJJJJJ)Z default: default
+    invokePPPPZ(JIJJJJ)Z default: default
+    invokePPPPZ(JJFIJJJ)Z default: default
+    invokePPPPZ(JJIIIIFIJJJ)Z default: default
+    invokePPPPZ(JJIJJJ)Z default: default
+    invokePPPPZ(JJJFFFFFJFJ)Z default: default
+    invokePPPPZ(JJJFFFFFJJ)Z default: default
+    invokePPPPZ(JJJFJJ)Z default: default
+    invokePPPPZ(JJJIJIJ)Z default: default
+    invokePPPPZ(JJJJIJ)Z default: default
+    invokePPPPZ(JJJJJ)Z default: default
+    invokePPPPZ(JZJJJJ)Z default: default
+    invokePPPPZ(ZJJJJJ)Z default: default
+    invokePPPUPZ(JJJBJJ)Z default: default
+    invokePPPZ(IJJJJ)Z default: default
+    invokePPPZ(JFFJJJ)Z default: default
+    invokePPPZ(JIJJJ)Z default: default
+    invokePPPZ(JJIJIZJ)Z default: default
+    invokePPPZ(JJJIJ)Z default: default
+    invokePPPZ(JJJJ)Z default: default
+    invokePPPZ(JJJZIJ)Z default: default
+    invokePPPZ(JJJZJ)Z default: default
+    invokePPPZ(JJZZZIZJJ)Z default: default
+    invokePPPZ(JJ[IJ)Z default: default
+    invokePPPZ(JZJJJ)Z default: default
+    invokePPUP(JJBJ)J default: default
+    invokePPUP(JJIBJ)J default: default
+    invokePPUUUI(JJBBBJ)I default: default
+    invokePPUUUUI(JJBBBBJ)I default: default
+    invokePPZ(IIIIIJIIIIJIJ)Z default: default
+    invokePPZ(IIIJIIJIJ)Z default: default
+    invokePPZ(IIIJIIJIZJ)Z default: default
+    invokePPZ(IJJJ)Z default: default
+    invokePPZ(JFFJJ)Z default: default
+    invokePPZ(JIIJJ)Z default: default
+    invokePPZ(JIJIJ)Z default: default
+    invokePPZ(JIJJ)Z default: default
+    invokePPZ(JJIIFJ)Z default: default
+    invokePPZ(JJIIJ)Z default: default
+    invokePPZ(JJIJ)Z default: default
+    invokePPZ(JJJ)Z default: default
+    invokePPZ(JJZJ)Z default: default
+    invokePPZ(JJZZZIJ)Z default: default
+    invokePPZ(JZJIJ)Z default: default
+    invokePPZ(J[IJ)Z default: default
+    invokePS(JIJ)S default: default
+    invokePSSCCPP(JSSSSJJ)J default: default
+    invokePSSZ(JISSJ)Z default: default
+    invokePSZ(JISJ)Z default: default
+    invokePSZ(JSJ)Z default: default
+    invokePU(JIJ)B default: default
+    invokePUP(JBJ)J default: default
+    invokePUP(JIBIZZJ)J default: default
+    invokePUUUI(JBBBJ)I default: default
+    invokePUUUUI(JBBBBJ)I default: default
+    invokePUUUUZ(JBBBBJ)Z default: default
+    invokePUUUUZ(JIIBBBBJ)Z default: default
+    invokePUUUZ(JBBBJ)Z default: default
+    invokePUZ(JBJ)Z default: default
+    invokePUZ(JIBJ)Z default: default
+    invokePZ(IIIFZJJ)Z default: default
+    invokePZ(IIJJ)Z default: default
+    invokePZ(IJFJ)Z default: default
+    invokePZ(IJIJ)Z default: default
+    invokePZ(IJJ)Z default: default
+    invokePZ(IJZJ)Z default: default
+    invokePZ(I[IZJ)Z default: default
+    invokePZ(JFFFFJ)Z default: default
+    invokePZ(JFFFJ)Z default: default
+    invokePZ(JFFJ)Z default: default
+    invokePZ(JFIJ)Z default: default
+    invokePZ(JFJ)Z default: default
+    invokePZ(JIIFFFFJ)Z default: default
+    invokePZ(JIIIJ)Z default: default
+    invokePZ(JIIJ)Z default: default
+    invokePZ(JIIZFFFJ)Z default: default
+    invokePZ(JIJ)Z default: default
+    invokePZ(JIZJ)Z default: default
+    invokePZ(JJ)Z default: default
+    invokePZ(JZIJ)Z default: default
+    invokePZ(JZJ)Z default: default
+    invokeU(IJ)B default: default
+    invokeUI(BJ)I default: default
+    invokeUPC(BJZJ)S default: default
+    invokeUPC(B[SZJ)S default: default
+    invokeUPU(BJJ)B default: default
+    invokeUPU(B[IJ)B default: default
+    invokeUPZ(BJJ)Z default: default
+    invokeUUCCUUZ(IBBSSBBJ)Z default: default
+    invokeZ(FFJ)Z default: default
+    invokeZ(IFJ)Z default: default
+    invokeZ(IIJ)Z default: default
+    invokeZ(IJ)Z default: default
+    invokeZ(J)Z default: default
+    invokeZ(ZJ)Z default: default
+org/lwjgl/system/Library default=9 guarded-static-init=1 interface-proxy=9 keep-constructor=1 void=7
+    findFile(Ljava/lang/String;Ljava/lang/String;)Ljava/nio/file/Path; default: default
+    findFile(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Ljava/nio/file/Path; default: default
+    findResource(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)Ljava/net/URL; default: default
+    getBundledPath(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; default: default
+    getRegularFilePath(Ljava/net/URL;)Ljava/lang/String; default: default
+    getSHA1(Ljava/net/URL;)[B default: default
+    getSHA1(Ljava/nio/file/Path;)[B default: default
+    loadNative(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNative(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNative(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNative(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ZZ)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNative(Ljava/lang/Class;Ljava/lang/String;Lorg/lwjgl/system/Configuration;Ljava/util/function/Supplier;[Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNative(Ljava/lang/Class;Ljava/lang/String;Lorg/lwjgl/system/Configuration;[Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNative(Ljava/lang/String;Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNativeFromLibraryPath(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadNativeFromSystem(Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    loadSystem(Ljava/util/function/Consumer;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;)Z default: default
+    loadSystemFromLibraryPath(Ljava/util/function/Consumer;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)Z default: default
+org/lwjgl/system/LibraryResource default=8 guarded-static-init=1 keep-constructor=1 void=1
+    load(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Ljava/nio/file/Path; default: default
+    load(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)Ljava/nio/file/Path; default: default
+    load(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;ZZ)Ljava/nio/file/Path; default: default
+    load(Ljava/lang/Class;Ljava/lang/String;Lorg/lwjgl/system/Configuration;Ljava/util/function/Supplier;[Ljava/lang/String;)Ljava/nio/file/Path; default: default
+    load(Ljava/lang/Class;Ljava/lang/String;Lorg/lwjgl/system/Configuration;[Ljava/lang/String;)Ljava/nio/file/Path; default: default
+    load(Ljava/lang/String;Ljava/lang/String;)Ljava/nio/file/Path; default: default
+    load(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;)Ljava/nio/file/Path; default: default
+    loadFromLibraryPath(Ljava/lang/String;Ljava/lang/String;Z)Ljava/nio/file/Path; default: default
+org/lwjgl/system/MathUtil keep-constructor=1 keep-pure-java-class=10
+org/lwjgl/system/MemoryAccessJNI default=17 fake-address=4 guarded-static-init=1 keep-constructor=1 void=14
+    aligned_free()J default: default
+    free()J default: default
+    getAddress(J)J default: default
+    getByte(J)B default: default
+    getDouble(J)D default: default
+    getFloat(J)F default: default
+    getInt(J)I default: default
+    getLong(J)J default: default
+    getPointerSize()I default: default
+    getShort(J)S default: default
+    ngetAddress(J)J default: default
+    ngetByte(J)B default: default
+    ngetDouble(J)D default: default
+    ngetFloat(J)F default: default
+    ngetInt(J)I default: default
+    ngetLong(J)J default: default
+    ngetShort(J)S default: default
+org/lwjgl/system/MemoryBackend default=8 interface-proxy=1 keep-abstract-interface-method=112
+    getDefaultInstance()Lorg/lwjgl/system/MemoryBackend; interface-proxy: proxy MemoryBackend
+    getStringASCII(J)Ljava/lang/String; default: default
+    getStringASCII(JI)Ljava/lang/String; default: default
+    getStringUTF16(J)Ljava/lang/String; default: default
+    getStringUTF16(JI)Ljava/lang/String; default: default
+    getStringUTF8(J)Ljava/lang/String; default: default
+    getStringUTF8(JI)Ljava/lang/String; default: default
+    putStringASCII(Ljava/lang/String;ZJI)I default: default
+    putStringUTF16(Ljava/lang/String;ZJI)I default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy default=69 guarded-static-init=1 keep-constructor=1 keep-unsafe-lookup=1 nio-buffer=15 nio-buffer-empty=16 void=53
+    address(IIJ)J default: default
+    allocateUTF8(Ljava/lang/String;ZLorg/lwjgl/system/MemoryUtil$MemoryAllocator;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    allocateUTF8([BZLorg/lwjgl/system/MemoryUtil$MemoryAllocator;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    bitsToInt(J)I default: default
+    bitsToLong(J)J default: default
+    byteBitsToChar(J)C default: default
+    byteBitsToInt(J)I default: default
+    byteBitsToLong(J)J default: default
+    byteBitsToShort(J)S default: default
+    duplicate(Ljava/lang/Class;Ljava/nio/Buffer;J)Ljava/nio/Buffer; default: default
+    duplicate(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    duplicate(Ljava/nio/CharBuffer;)Ljava/nio/CharBuffer; nio-buffer-empty: buffer chars(0)
+    duplicate(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    duplicate(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    duplicate(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    duplicate(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    duplicate(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    getAddress(J)J default: default
+    getAddress(Ljava/nio/Buffer;)J default: default
+    getAddress(Ljava/nio/Buffer;I)J default: default
+    getAddress(Ljava/nio/ByteBuffer;)J default: default
+    getAddress(Ljava/nio/ByteBuffer;I)J default: default
+    getAddress(Ljava/nio/CharBuffer;)J default: default
+    getAddress(Ljava/nio/CharBuffer;I)J default: default
+    getAddress(Ljava/nio/DoubleBuffer;)J default: default
+    getAddress(Ljava/nio/DoubleBuffer;I)J default: default
+    getAddress(Ljava/nio/FloatBuffer;)J default: default
+    getAddress(Ljava/nio/FloatBuffer;I)J default: default
+    getAddress(Ljava/nio/IntBuffer;)J default: default
+    getAddress(Ljava/nio/IntBuffer;I)J default: default
+    getAddress(Ljava/nio/LongBuffer;)J default: default
+    getAddress(Ljava/nio/LongBuffer;I)J default: default
+    getAddress(Ljava/nio/ShortBuffer;)J default: default
+    getAddress(Ljava/nio/ShortBuffer;I)J default: default
+    getAddress0(Ljava/nio/Buffer;)J default: default
+    getAddress0(Ljava/nio/ByteBuffer;)J default: default
+    getAddress0(Ljava/nio/CharBuffer;)J default: default
+    getAddress0(Ljava/nio/DoubleBuffer;)J default: default
+    getAddress0(Ljava/nio/FloatBuffer;)J default: default
+    getAddress0(Ljava/nio/IntBuffer;)J default: default
+    getAddress0(Ljava/nio/LongBuffer;)J default: default
+    getAddress0(Ljava/nio/ShortBuffer;)J default: default
+    getAddressOffset()J default: default
+    getAddressUnaligned(J)J default: default
+    getBoolean(J)Z default: default
+    getByte(J)B default: default
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+    getCapacityOffset()J default: default
+    getChar(J)C default: default
+    getCharUnaligned(J)C default: default
+    getDouble(J)D default: default
+    getDoubleUnaligned(J)D default: default
+    getFieldOffset(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/function/LongPredicate;)J default: default
+    getFieldOffsetInt(Ljava/lang/Object;I)J default: default
+    getFieldOffsetObject(Ljava/lang/Object;Ljava/lang/Object;)J default: default
+    getFloat(J)F default: default
+    getFloatUnaligned(J)F default: default
+    getInt(J)I default: default
+    getIntUnaligned(J)I default: default
+    getLimitOffset()J default: default
+    getLong(J)J default: default
+    getLong([BJ)J default: default
+    getLongUnaligned(J)J default: default
+    getMarkOffset()J default: default
+    getPositionOffset()J default: default
+    getShort(J)S default: default
+    getShortUnaligned(J)S default: default
+    getStringASCII(JI)Ljava/lang/String; default: default
+    getStringUTF8(JI)Ljava/lang/String; default: default
+    intBitsToLong(J)J default: default
+    lambda$getAddressOffset$0(Ljava/nio/ByteBuffer;JJ)Z default: default
+    lambda$getFieldOffsetInt$1(Ljava/lang/Object;IJ)Z default: default
+    lambda$getFieldOffsetObject$2(Ljava/lang/Object;Ljava/lang/Object;J)Z default: default
+    putStringUTF8(Ljava/lang/String;ZJI)I default: default
+    shortBitsToInt(J)I default: default
+    shortBitsToLong(J)J default: default
+    slice(Ljava/lang/Class;Ljava/nio/Buffer;JIJ)Ljava/nio/Buffer; default: default
+    slice(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    slice(Ljava/nio/CharBuffer;)Ljava/nio/CharBuffer; nio-buffer-empty: buffer chars(0)
+    slice(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    slice(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    slice(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    slice(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    slice(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/system/MemoryBackendUnsafeLegacy$1 guarded-static-init=1
+org/lwjgl/system/MemoryBackendUnsafeLegacy$P32 default=4 keep-constructor=1 void=4
+    getAddress(J)J default: default
+    getAddressUnaligned(J)J default: default
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy$P64CL32 default=2 keep-constructor=1 void=2
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy17 default=1 guarded-static-init=1 keep-constructor=1 void=3
+    getStringASCII(JI)Ljava/lang/String; default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy17$P32 default=4 keep-constructor=1 void=4
+    getAddress(J)J default: default
+    getAddressUnaligned(J)J default: default
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy17$P64CL32 default=2 keep-constructor=1 void=2
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy22 guarded-static-init=1 keep-constructor=1 nio-buffer=7 nio-buffer-empty=14 void=1
+    duplicate(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    duplicate(Ljava/nio/CharBuffer;)Ljava/nio/CharBuffer; nio-buffer-empty: buffer chars(0)
+    duplicate(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    duplicate(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    duplicate(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    duplicate(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    duplicate(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    slice(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    slice(Ljava/nio/CharBuffer;)Ljava/nio/CharBuffer; nio-buffer-empty: buffer chars(0)
+    slice(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    slice(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    slice(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    slice(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    slice(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/system/MemoryBackendUnsafeLegacy22$P32 default=4 keep-constructor=1 void=4
+    getAddress(J)J default: default
+    getAddressUnaligned(J)J default: default
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy22$P64CL32 default=2 keep-constructor=1 void=2
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy9 default=4 guarded-static-init=1 keep-constructor=1 nio-buffer-empty=1 void=3
+    allocateUTF8(Ljava/lang/String;ZLorg/lwjgl/system/MemoryUtil$MemoryAllocator;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    getStringUTF8(JI)Ljava/lang/String; default: default
+    getUTF8Bytes(Ljava/lang/String;)[B default: default
+    isCompactStringASCII([B)Z default: default
+    putStringUTF8(Ljava/lang/String;ZJI)I default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy9$P32 default=4 keep-constructor=1 void=4
+    getAddress(J)J default: default
+    getAddressUnaligned(J)J default: default
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy9$P64CL32 default=2 keep-constructor=1 void=2
+    getCLong(J)J default: default
+    getCLongUnaligned(J)J default: default
+org/lwjgl/system/MemoryManage interface-proxy=1 keep-constructor=1
+    getInstance()Lorg/lwjgl/system/MemoryUtil$MemoryAllocator; interface-proxy: proxy MemoryUtil$MemoryAllocator
+org/lwjgl/system/MemoryManage$1 guarded-static-init=1
+org/lwjgl/system/MemoryManage$DebugAllocator default=12 fake-address=4 guarded-static-init=1 keep-constructor=1 void=11
+    getAlignedAlloc()J default: default
+    getAlignedFree()J default: default
+    getCalloc()J default: default
+    getFree()J default: default
+    getMalloc()J default: default
+    getRealloc()J default: default
+    lambda$aggregate$1(Ljava/lang/Object;)Ljava/util/concurrent/atomic/AtomicLong; default: default
+    lambda$reportByMethod$2(Ljava/lang/Long;)Ljava/util/Map; default: default
+    lambda$reportByStacktrace$3(Ljava/lang/Long;)Ljava/util/Map; default: default
+    track(JJ)J default: default
+    untrack(J)J default: default
+    untrackAbort(J)Ljava/lang/IllegalStateException; default: default
+org/lwjgl/system/MemoryManage$DebugAllocator$Allocation default=2 identity=2 keep-constructor=1
+    access$100(Lorg/lwjgl/system/MemoryManage$DebugAllocator$Allocation;)[Ljava/lang/StackTraceElement; default: default
+    getElements()[Ljava/lang/StackTraceElement; default: default
+org/lwjgl/system/MemoryManage$DebugAllocator$AllocationKey identity=2 keep-constructor=1
+org/lwjgl/system/MemoryManage$DebugAllocator$CallbackIV keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/system/MemoryManage$DebugAllocator$CallbackPP keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/system/MemoryManage$DebugAllocator$CallbackPPP keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/system/MemoryManage$StdlibAllocator default=6 fake-address=4 keep-constructor=2 void=2
+    getAlignedAlloc()J default: default
+    getAlignedFree()J default: default
+    getCalloc()J default: default
+    getFree()J default: default
+    getMalloc()J default: default
+    getRealloc()J default: default
+org/lwjgl/system/MemoryStack default=25 fake-address=3 fluent=2 guarded-static-init=1 keep-constructor=1 lwjgl-buffer=12 lwjgl-buffer-empty=32 nio-buffer=28 nio-buffer-empty=53 object=7 values-buffer=30 void=5
+    ASCII(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    ASCII(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    ASCIISafe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    ASCIISafe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    UTF16(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    UTF16(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    UTF16Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    UTF16Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    UTF8(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    UTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    UTF8Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    UTF8Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    allocateUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    clongs(JJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    clongs(JJJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    clongs(JJJJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    clongs([J)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    create()Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
+    create(I)Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
+    create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
+    getAddress()J default: default
+    getFrameIndex()I default: default
+    getPointer()I default: default
+    getPointerAddress()J default: default
+    getSize()I default: default
+    nASCII(Ljava/lang/CharSequence;Z)I default: default
+    nASCIISafe(Ljava/lang/CharSequence;Z)I default: default
+    nUTF16(Ljava/lang/CharSequence;Z)I default: default
+    nUTF16Safe(Ljava/lang/CharSequence;Z)I default: default
+    nUTF8(Ljava/lang/CharSequence;Z)I default: default
+    nUTF8Safe(Ljava/lang/CharSequence;Z)I default: default
+    nallocateUTF8(Ljava/lang/CharSequence;Z)I default: default
+    nbyte(B)J default: default
+    nclong(J)J default: default
+    ncreate(JI)Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
+    ndouble(D)J default: default
+    nfloat(F)J default: default
+    nint(I)J default: default
+    nlong(J)J default: default
+    npointer(J)J default: default
+    npointer(Ljava/nio/Buffer;)J default: default
+    npointer(Lorg/lwjgl/system/Pointer;)J default: default
+    nshort(S)J default: default
+    nstackCalloc(III)J default: default
+    nstackMalloc(I)J default: default
+    nstackMalloc(II)J default: default
+    pointers(JJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(JJJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(JJJJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(Ljava/nio/Buffer;Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(Ljava/nio/Buffer;Ljava/nio/Buffer;Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(Ljava/nio/Buffer;Ljava/nio/Buffer;Ljava/nio/Buffer;Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers([J)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers([Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointers([Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    pointersOfElements(Lorg/lwjgl/system/CustomBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackASCII(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackASCII(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackASCIISafe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackASCIISafe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackBytes(B)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackBytes(BB)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackBytes(BBB)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackBytes(BBBB)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackBytes([B)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackCLongs(JJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    stackCLongs(JJJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    stackCLongs(JJJJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    stackCLongs([J)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    stackDoubles(D)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    stackDoubles(DD)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    stackDoubles(DDD)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    stackDoubles(DDDD)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    stackDoubles([D)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    stackFloats(F)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    stackFloats(FF)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    stackFloats(FFF)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    stackFloats(FFFF)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    stackFloats([F)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    stackGet()Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
+    stackInts(II)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    stackInts(III)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    stackInts(IIII)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    stackInts([I)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    stackLongs(JJ)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    stackLongs(JJJ)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    stackLongs(JJJJ)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    stackLongs([J)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    stackPointers(JJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPointers(JJJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPointers(JJJJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPointers(Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPointers([J)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPointers([Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    stackPop()Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
+    stackPush()Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
+    stackShorts(S)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    stackShorts(SS)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    stackShorts(SSS)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    stackShorts(SSSS)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    stackShorts([S)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    stackUTF16(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackUTF16(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackUTF16Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackUTF16Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackUTF8(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackUTF8Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    stackUTF8Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/MemoryStack$1 default=6 fake-address=4 keep-constructor=1 void=2
+    getAlignedAlloc()J default: default
+    getAlignedFree()J default: default
+    getCalloc()J default: default
+    getFree()J default: default
+    getMalloc()J default: default
+    getRealloc()J default: default
+org/lwjgl/system/MemoryStack$DebugMemoryStack fluent=2 keep-constructor=1 void=3
+org/lwjgl/system/MemoryUtil default=121 fake-address=41 guarded-static-init=1 interface-proxy=4 keep-constructor=1 lwjgl-buffer=11 nio-buffer=48 nio-buffer-empty=39 void=178
+    allocateUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    createBackend()Lorg/lwjgl/system/MemoryBackend; interface-proxy: proxy MemoryBackend
+    encodeUTF8Safe(Ljava/lang/CharSequence;ZJI)I default: default
+    getAllocationSize(II)J default: default
+    getAllocator()Lorg/lwjgl/system/MemoryUtil$MemoryAllocator; interface-proxy: proxy MemoryUtil$MemoryAllocator
+    getAllocator(Z)Lorg/lwjgl/system/MemoryUtil$MemoryAllocator; interface-proxy: proxy MemoryUtil$MemoryAllocator
+    getCacheLineSize()I default: default
+    getMemoryBackendSuffix()Ljava/lang/String; default: default
+    getPageSize()I default: default
+    lambda$static$0()[B default: default
+    lambda$static$1()[C default: default
+    memASCII(J)Ljava/lang/String; default: default
+    memASCII(JI)Ljava/lang/String; default: default
+    memASCII(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memASCII(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memASCII(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default
+    memASCII(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;I)I default: default
+    memASCII(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    memASCII(Ljava/nio/ByteBuffer;I)Ljava/lang/String; default: default
+    memASCII(Ljava/nio/ByteBuffer;II)Ljava/lang/String; default: default
+    memASCIISafe(J)Ljava/lang/String; default: default
+    memASCIISafe(JI)Ljava/lang/String; default: default
+    memASCIISafe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memASCIISafe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memASCIISafe(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    memBackend()Lorg/lwjgl/system/MemoryBackend; interface-proxy: proxy MemoryBackend
+    memByteBuffer(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBuffer(Ljava/nio/DoubleBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBuffer(Ljava/nio/FloatBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBuffer(Ljava/nio/IntBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBuffer(Ljava/nio/LongBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBuffer(Ljava/nio/ShortBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBuffer(Lorg/lwjgl/system/CustomBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBuffer(Lorg/lwjgl/system/Struct;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBufferNT1(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBufferNT1Safe(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBufferNT2(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memByteBufferNT2Safe(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memDuplicate(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memDuplicate(Ljava/nio/CharBuffer;)Ljava/nio/CharBuffer; nio-buffer-empty: buffer chars(0)
+    memDuplicate(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    memDuplicate(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    memDuplicate(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    memDuplicate(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    memDuplicate(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    memGet(Ljava/nio/ByteBuffer;J)B default: default
+    memGet(Ljava/nio/CharBuffer;J)C default: default
+    memGet(Ljava/nio/DoubleBuffer;J)D default: default
+    memGet(Ljava/nio/FloatBuffer;J)F default: default
+    memGet(Ljava/nio/IntBuffer;J)I default: default
+    memGet(Ljava/nio/LongBuffer;J)J default: default
+    memGet(Ljava/nio/ShortBuffer;J)S default: default
+    memGetAddress(J)J default: default
+    memGetAddress(Ljava/nio/ByteBuffer;J)J default: default
+    memGetAddressAtIndex(Ljava/nio/ByteBuffer;I)J default: default
+    memGetAddressUnaligned(J)J default: default
+    memGetAddressUnaligned(Ljava/nio/ByteBuffer;J)J default: default
+    memGetAddressUnalignedAtIndex(Ljava/nio/ByteBuffer;I)J default: default
+    memGetAtIndex(Ljava/nio/CharBuffer;I)C default: default
+    memGetAtIndex(Ljava/nio/DoubleBuffer;I)D default: default
+    memGetAtIndex(Ljava/nio/FloatBuffer;I)F default: default
+    memGetAtIndex(Ljava/nio/IntBuffer;I)I default: default
+    memGetAtIndex(Ljava/nio/LongBuffer;I)J default: default
+    memGetAtIndex(Ljava/nio/ShortBuffer;I)S default: default
+    memGetBoolean(J)Z default: default
+    memGetBoolean(Ljava/nio/ByteBuffer;J)Z default: default
+    memGetByte(J)B default: default
+    memGetCLong(J)J default: default
+    memGetCLong(Ljava/nio/ByteBuffer;J)J default: default
+    memGetCLongAtIndex(Ljava/nio/ByteBuffer;I)J default: default
+    memGetCLongUnaligned(J)J default: default
+    memGetCLongUnaligned(Ljava/nio/ByteBuffer;J)J default: default
+    memGetCLongUnalignedAtIndex(Ljava/nio/ByteBuffer;I)J default: default
+    memGetChar(J)C default: default
+    memGetChar(Ljava/nio/ByteBuffer;J)C default: default
+    memGetCharAtIndex(Ljava/nio/ByteBuffer;I)C default: default
+    memGetCharUnaligned(J)C default: default
+    memGetCharUnaligned(Ljava/nio/ByteBuffer;J)C default: default
+    memGetCharUnalignedAtIndex(Ljava/nio/ByteBuffer;I)C default: default
+    memGetDouble(J)D default: default
+    memGetDouble(Ljava/nio/ByteBuffer;J)D default: default
+    memGetDoubleAtIndex(Ljava/nio/ByteBuffer;I)D default: default
+    memGetDoubleUnaligned(J)D default: default
+    memGetDoubleUnaligned(Ljava/nio/ByteBuffer;J)D default: default
+    memGetDoubleUnalignedAtIndex(Ljava/nio/ByteBuffer;I)D default: default
+    memGetFloat(J)F default: default
+    memGetFloat(Ljava/nio/ByteBuffer;J)F default: default
+    memGetFloatAtIndex(Ljava/nio/ByteBuffer;I)F default: default
+    memGetFloatUnaligned(J)F default: default
+    memGetFloatUnaligned(Ljava/nio/ByteBuffer;J)F default: default
+    memGetFloatUnalignedAtIndex(Ljava/nio/ByteBuffer;I)F default: default
+    memGetInt(J)I default: default
+    memGetInt(Ljava/nio/ByteBuffer;J)I default: default
+    memGetIntAtIndex(Ljava/nio/ByteBuffer;I)I default: default
+    memGetIntUnaligned(J)I default: default
+    memGetIntUnaligned(Ljava/nio/ByteBuffer;J)I default: default
+    memGetIntUnalignedAtIndex(Ljava/nio/ByteBuffer;I)I default: default
+    memGetLong(J)J default: default
+    memGetLong(Ljava/nio/ByteBuffer;J)J default: default
+    memGetLongAtIndex(Ljava/nio/ByteBuffer;I)J default: default
+    memGetLongUnaligned(J)J default: default
+    memGetLongUnaligned(Ljava/nio/ByteBuffer;J)J default: default
+    memGetLongUnalignedAtIndex(Ljava/nio/ByteBuffer;I)J default: default
+    memGetShort(J)S default: default
+    memGetShort(Ljava/nio/ByteBuffer;J)S default: default
+    memGetShortAtIndex(Ljava/nio/ByteBuffer;I)S default: default
+    memGetShortUnaligned(J)S default: default
+    memGetShortUnaligned(Ljava/nio/ByteBuffer;J)S default: default
+    memGetShortUnalignedAtIndex(Ljava/nio/ByteBuffer;I)S default: default
+    memGlobalRefToObject(J)Ljava/lang/Object; default: default
+    memLengthASCII(Ljava/lang/CharSequence;Z)I default: default
+    memLengthNT1(Ljava/nio/ByteBuffer;)I default: default
+    memLengthNT1([BZ)I default: default
+    memLengthNT2(Ljava/nio/ByteBuffer;)I default: default
+    memLengthNT2([BZ)I default: default
+    memLengthUTF16(Ljava/lang/CharSequence;Z)I default: default
+    memLengthUTF8(Ljava/lang/CharSequence;Z)I default: default
+    memSlice(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memSlice(Ljava/nio/CharBuffer;)Ljava/nio/CharBuffer; nio-buffer-empty: buffer chars(0)
+    memSlice(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    memSlice(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    memSlice(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    memSlice(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    memSlice(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    memUTF16(J)Ljava/lang/String; default: default
+    memUTF16(JI)Ljava/lang/String; default: default
+    memUTF16(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memUTF16(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memUTF16(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default
+    memUTF16(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;I)I default: default
+    memUTF16(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    memUTF16(Ljava/nio/ByteBuffer;I)Ljava/lang/String; default: default
+    memUTF16(Ljava/nio/ByteBuffer;II)Ljava/lang/String; default: default
+    memUTF16Safe(J)Ljava/lang/String; default: default
+    memUTF16Safe(JI)Ljava/lang/String; default: default
+    memUTF16Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memUTF16Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memUTF16Safe(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    memUTF8(J)Ljava/lang/String; default: default
+    memUTF8(JI)Ljava/lang/String; default: default
+    memUTF8(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memUTF8(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default
+    memUTF8(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;I)I default: default
+    memUTF8(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    memUTF8(Ljava/nio/ByteBuffer;I)Ljava/lang/String; default: default
+    memUTF8(Ljava/nio/ByteBuffer;II)Ljava/lang/String; default: default
+    memUTF8Safe(J)Ljava/lang/String; default: default
+    memUTF8Safe(JI)Ljava/lang/String; default: default
+    memUTF8Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memUTF8Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    memUTF8Safe(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    ngetCacheLineSize()I default: default
+    ngetPageSize()I default: default
+    putStringUTF8(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default
+    putStringUTF8(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;I)I default: default
+    realloc(Ljava/nio/Buffer;Ljava/nio/Buffer;I)Ljava/nio/Buffer; default: default
+    strlenNT1(JI)I default: default
+    strlenNT1Checked(JI)I default: default
+    strlenNT2(JI)I default: default
+    strlenNT2Checked(JI)I default: default
+    write16(JIC)I default: default
+    write8(JII)I default: default
+    write8Safe(JIII)I default: default
+org/lwjgl/system/MemoryUtil$LazyInit guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/MemoryUtil$MemoryAllocationReport keep-abstract-interface-method=1
+org/lwjgl/system/MemoryUtil$MemoryAllocationReport$Aggregate guarded-static-init=1 keep-constructor=1 keep-enum=2
+org/lwjgl/system/MemoryUtil$MemoryAllocator keep-abstract-interface-method=12
+org/lwjgl/system/NativeResource keep-abstract-interface-method=1 void=1
+org/lwjgl/system/NativeType keep-abstract-interface-method=1
+org/lwjgl/system/Platform default=1 guarded-static-init=1 keep-constructor=2 keep-enum=13
+    mapLibraryName(Ljava/lang/String;)Ljava/lang/String; default: default
+org/lwjgl/system/Platform$1 keep-constructor=1 keep-enum=1
+org/lwjgl/system/Platform$2 keep-constructor=1 keep-enum=1
+org/lwjgl/system/Platform$3 keep-constructor=1 keep-enum=1
+org/lwjgl/system/Platform$4 keep-constructor=1 keep-enum=1
+org/lwjgl/system/Platform$Architecture guarded-static-init=1 keep-constructor=1 keep-enum=4
+org/lwjgl/system/Pointer keep-abstract-interface-method=1 keep-interface-static-init=1
+org/lwjgl/system/Pointer$Default identity=2 keep-constructor=1 keep-pointer-address=1 keep-to-string=1
+org/lwjgl/system/SharedLibrary keep-abstract-interface-method=2
+org/lwjgl/system/SharedLibrary$Default default=1 keep-constructor=1
+    getName()Ljava/lang/String; default: default
+org/lwjgl/system/SharedLibrary$Delegate default=3 keep-constructor=1 void=1
+    address()J default: default
+    getName()Ljava/lang/String; default: default
+    getPath()Ljava/lang/String; default: default
+org/lwjgl/system/SharedLibraryLoader default=6 guarded-static-init=1 keep-constructor=1 void=2
+    canWrite(Ljava/nio/file/Path;Ljava/nio/file/Path;Ljava/net/URL;Ljava/util/function/Consumer;)Z default: default
+    crc(Ljava/io/InputStream;)J default: default
+    extract(Ljava/nio/file/Path;Ljava/net/URL;)Ljava/nio/channels/FileChannel; default: default
+    getExtractPath(Ljava/lang/String;Ljava/net/URL;Ljava/util/function/Consumer;)Ljava/nio/file/Path; default: default
+    load(Ljava/lang/String;Ljava/lang/String;Ljava/net/URL;Ljava/util/function/Consumer;)Ljava/nio/channels/FileChannel; default: default
+    lock(Ljava/nio/file/Path;)Ljava/nio/channels/FileChannel; default: default
+org/lwjgl/system/SharedLibraryUtil default=2 keep-constructor=1
+    getLibraryPath(J)Ljava/lang/String; default: default
+    getLibraryPath(JJI)I default: default
+org/lwjgl/system/StackWalkUtil default=7 keep-constructor=1
+    isAutoCloseable(Ljava/lang/StackTraceElement;Ljava/lang/StackTraceElement;)Z default: default
+    isSameMethod(Ljava/lang/StackTraceElement;Ljava/lang/StackTraceElement;)Z default: default
+    isSameMethod(Ljava/lang/StackTraceElement;Ljava/lang/StackTraceElement;Ljava/lang/String;)Z default: default
+    stackWalkArray([Ljava/lang/Object;)[Ljava/lang/StackTraceElement; default: default
+    stackWalkCheckPop(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object; default: default
+    stackWalkGetMethod(Ljava/lang/Class;)Ljava/lang/Object; default: default
+    stackWalkGetTrace()[Ljava/lang/Object; default: default
+org/lwjgl/system/Struct fluent=1 guarded-static-init=1 keep-constructor=1 keep-struct-layout=20 struct-member=7
+org/lwjgl/system/Struct$Layout keep-constructor=1 keep-pure-java-class=1
+org/lwjgl/system/Struct$Member keep-constructor=1 keep-pure-java-class=3
+org/lwjgl/system/Struct$StructValidation keep-abstract-interface-method=1
+org/lwjgl/system/StructBuffer fluent=6 keep-buffer-bookkeeping=1 keep-constructor=2 struct=3 struct-member=6
+org/lwjgl/system/StructBuffer$StructIterator default=2 keep-constructor=1 struct=1 void=1
+    hasNext()Z default: default
+    next()Ljava/lang/Object; default: default
+org/lwjgl/system/StructBuffer$StructSpliterator default=4 fluent=1 keep-constructor=1 void=1
+    characteristics()I default: default
+    estimateSize()J default: default
+    getComparator()Ljava/util/Comparator; default: default
+    tryAdvance(Ljava/util/function/Consumer;)Z default: default
+org/lwjgl/system/ThreadLocalUtil default=4 guarded-static-init=1 keep-constructor=1 lwjgl-buffer-empty=1 void=2
+    areCapabilitiesDifferent(Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)Z default: default
+    getFunctionMissingAbort()J default: default
+    getThreadJNIEnv()J default: default
+    setupAddressBuffer(Lorg/lwjgl/PointerBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    setupEnvData(I)J default: default
+org/lwjgl/system/Upcalls default=3 guarded-static-init=1 keep-constructor=1 void=2
+    getCallbackHandler(Ljava/lang/reflect/Method;)J default: default
+    upcallCreate(Lorg/lwjgl/system/Callback$Descriptor;Ljava/lang/Object;)J default: default
+    upcallGet(J)Lorg/lwjgl/system/CallbackI; default: default
+org/lwjgl/system/Upcalls$1 keep-constructor=1 struct=2 void=1
+org/lwjgl/system/Upcalls$2 keep-constructor=1 struct=2 void=1
+org/lwjgl/system/Upcalls$ClosureRegistry keep-abstract-interface-method=3
+org/lwjgl/system/freebsd/DynamicLinkLoader default=10 guarded-static-init=1 keep-constructor=1
+    dlclose(J)I default: default
+    dlerror()Ljava/lang/String; default: default
+    dlopen(Ljava/lang/CharSequence;I)J default: default
+    dlopen(Ljava/nio/ByteBuffer;I)J default: default
+    dlsym(JLjava/lang/CharSequence;)J default: default
+    dlsym(JLjava/nio/ByteBuffer;)J default: default
+    ndlclose(J)I default: default
+    ndlerror()J default: default
+    ndlopen(JI)J default: default
+    ndlsym(JJ)J default: default
+org/lwjgl/system/freebsd/FreeBSDLibrary default=3 keep-constructor=2 void=1
+    getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
+    getPath()Ljava/lang/String; default: default
+    loadLibrary(Ljava/lang/String;)J default: default
+org/lwjgl/system/jni/JNINativeInterface default=24 guarded-static-init=1 keep-constructor=1 nio-buffer=1 nio-buffer-empty=9 void=57
+    FromReflectedField(Ljava/lang/reflect/Field;)J default: default
+    FromReflectedMethod(Ljava/lang/reflect/Method;)J default: default
+    GetBooleanArrayElements([BLjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    GetByteArrayElements([BLjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    GetCharArrayElements([CLjava/nio/ByteBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    GetDirectBufferAddress(Ljava/nio/Buffer;)J default: default
+    GetDoubleArrayElements([DLjava/nio/ByteBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    GetFloatArrayElements([FLjava/nio/ByteBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    GetIntArrayElements([ILjava/nio/ByteBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    GetJavaVM(Lorg/lwjgl/PointerBuffer;)I default: default
+    GetLongArrayElements([JLjava/nio/ByteBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    GetObjectRefType(Ljava/lang/Object;)I default: default
+    GetShortArrayElements([SLjava/nio/ByteBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    GetVersion()I default: default
+    NewGlobalRef(Ljava/lang/Object;)J default: default
+    NewWeakGlobalRef(Ljava/lang/Object;)J default: default
+    RegisterNatives(Ljava/lang/Class;Lorg/lwjgl/system/jni/JNINativeMethod$Buffer;)I default: default
+    ToReflectedField(Ljava/lang/Class;JZ)Ljava/lang/reflect/Field; default: default
+    ToReflectedMethod(Ljava/lang/Class;JZ)Ljava/lang/reflect/Method; default: default
+    UnregisterNatives(Ljava/lang/Class;)I default: default
+    nGetBooleanArrayElements([BJ)J default: default
+    nGetByteArrayElements([BJ)J default: default
+    nGetCharArrayElements([CJ)J default: default
+    nGetDoubleArrayElements([DJ)J default: default
+    nGetFloatArrayElements([FJ)J default: default
+    nGetIntArrayElements([IJ)J default: default
+    nGetJavaVM(J)I default: default
+    nGetLongArrayElements([JJ)J default: default
+    nGetShortArrayElements([SJ)J default: default
+    nNewDirectByteBuffer(JJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nRegisterNatives(Ljava/lang/Class;JI)I default: default
+    nToReflectedField(Ljava/lang/Class;JZ)Ljava/lang/reflect/Field; default: default
+    nToReflectedMethod(Ljava/lang/Class;JZ)Ljava/lang/reflect/Method; default: default
+org/lwjgl/system/jni/JNINativeMethod fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 nio-buffer-empty=2 struct=7 struct-member=10
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    signature()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/jni/JNINativeMethod$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=2 struct-member=3
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    signature()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/libc/LibCErrno default=1 guarded-static-init=1 keep-constructor=1
+    errno()I default: default
+org/lwjgl/system/libc/LibCLocale default=9 guarded-static-init=1 keep-constructor=1
+    LC_ALL()I default: default
+    LC_COLLATE()I default: default
+    LC_CTYPE()I default: default
+    LC_MONETARY()I default: default
+    LC_NUMERIC()I default: default
+    LC_TIME()I default: default
+    nsetlocale(IJ)J default: default
+    setlocale(ILjava/lang/CharSequence;)Ljava/lang/String; default: default
+    setlocale(ILjava/nio/ByteBuffer;)Ljava/lang/String; default: default
+org/lwjgl/system/libc/LibCStdio default=19 guarded-static-init=1 keep-constructor=1
+    feof(J)I default: default
+    ferror(J)I default: default
+    fflush(J)I default: default
+    fprintf()J default: default
+    fscanf()J default: default
+    nfeof(J)I default: default
+    nferror(J)I default: default
+    nfflush(J)I default: default
+    nvsnprintf(JJJJ)I default: default
+    nvsscanf(JJJ)I default: default
+    snprintf()J default: default
+    sscanf()J default: default
+    stderr()J default: default
+    stdin()J default: default
+    stdout()J default: default
+    vsnprintf(Ljava/nio/ByteBuffer;Ljava/lang/CharSequence;J)I default: default
+    vsnprintf(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;J)I default: default
+    vsscanf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;J)I default: default
+    vsscanf(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;J)I default: default
+org/lwjgl/system/libc/LibCStdlib fake-address=4 guarded-static-init=1 keep-constructor=1 nio-buffer=4 void=16
+org/lwjgl/system/libc/LibCString default=64 guarded-static-init=1 keep-constructor=1
+    memcpy(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)J default: default
+    memcpy(Ljava/nio/DoubleBuffer;Ljava/nio/DoubleBuffer;)J default: default
+    memcpy(Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)J default: default
+    memcpy(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)J default: default
+    memcpy(Ljava/nio/LongBuffer;Ljava/nio/LongBuffer;)J default: default
+    memcpy(Ljava/nio/ShortBuffer;Ljava/nio/ShortBuffer;)J default: default
+    memcpy(Lorg/lwjgl/system/CustomBuffer;Lorg/lwjgl/system/CustomBuffer;)J default: default
+    memcpy([B[B)J default: default
+    memcpy([D[D)J default: default
+    memcpy([F[F)J default: default
+    memcpy([I[I)J default: default
+    memcpy([J[J)J default: default
+    memcpy([S[S)J default: default
+    memmove(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)J default: default
+    memmove(Ljava/nio/DoubleBuffer;Ljava/nio/DoubleBuffer;)J default: default
+    memmove(Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)J default: default
+    memmove(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)J default: default
+    memmove(Ljava/nio/LongBuffer;Ljava/nio/LongBuffer;)J default: default
+    memmove(Ljava/nio/ShortBuffer;Ljava/nio/ShortBuffer;)J default: default
+    memmove(Lorg/lwjgl/system/CustomBuffer;Lorg/lwjgl/system/CustomBuffer;)J default: default
+    memmove([B[B)J default: default
+    memmove([D[D)J default: default
+    memmove([F[F)J default: default
+    memmove([I[I)J default: default
+    memmove([J[J)J default: default
+    memmove([S[S)J default: default
+    memset(Ljava/nio/ByteBuffer;I)J default: default
+    memset(Ljava/nio/DoubleBuffer;I)J default: default
+    memset(Ljava/nio/FloatBuffer;I)J default: default
+    memset(Ljava/nio/IntBuffer;I)J default: default
+    memset(Ljava/nio/LongBuffer;I)J default: default
+    memset(Ljava/nio/ShortBuffer;I)J default: default
+    memset(Lorg/lwjgl/system/CustomBuffer;I)J default: default
+    memset([BI)J default: default
+    memset([DI)J default: default
+    memset([FI)J default: default
+    memset([II)J default: default
+    memset([JI)J default: default
+    memset([SI)J default: default
+    nmemcpy(JJJ)J default: default
+    nmemcpy([B[BJ)J default: default
+    nmemcpy([D[DJ)J default: default
+    nmemcpy([F[FJ)J default: default
+    nmemcpy([I[IJ)J default: default
+    nmemcpy([J[JJ)J default: default
+    nmemcpy([S[SJ)J default: default
+    nmemmove(JJJ)J default: default
+    nmemmove([B[BJ)J default: default
+    nmemmove([D[DJ)J default: default
+    nmemmove([F[FJ)J default: default
+    nmemmove([I[IJ)J default: default
+    nmemmove([J[JJ)J default: default
+    nmemmove([S[SJ)J default: default
+    nmemset(JIJ)J default: default
+    nmemset([BIJ)J default: default
+    nmemset([DIJ)J default: default
+    nmemset([FIJ)J default: default
+    nmemset([IIJ)J default: default
+    nmemset([JIJ)J default: default
+    nmemset([SIJ)J default: default
+    nstrerror(I)J default: default
+    nstrlen(J)J default: default
+    strerror(I)Ljava/lang/String; default: default
+    strlen(Ljava/nio/ByteBuffer;)J default: default
+org/lwjgl/system/libffi/FFICIF fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 struct=9 struct-member=9
+    arg_types()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+org/lwjgl/system/libffi/FFICIF$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 struct=3 struct-member=4
+    arg_types()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+org/lwjgl/system/libffi/FFIClosure fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=5
+org/lwjgl/system/libffi/FFIClosure$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
+org/lwjgl/system/libffi/FFIType fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=9 struct=7 struct-member=10
+org/lwjgl/system/libffi/FFIType$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 lwjgl-buffer=1 struct=2 struct-member=3
+org/lwjgl/system/libffi/LibFFI default=55 guarded-static-init=1 keep-constructor=1 struct=22 void=8
+    FFI_DEFAULT_ABI()I default: default
+    FFI_EFI64()I default: default
+    FFI_FASTCALL()I default: default
+    FFI_FIRST_ABI()I default: default
+    FFI_GNUW64()I default: default
+    FFI_LAST_ABI()I default: default
+    FFI_MS_CDECL()I default: default
+    FFI_PASCAL()I default: default
+    FFI_REGISTER()I default: default
+    FFI_STDCALL()I default: default
+    FFI_SYSV()I default: default
+    FFI_THISCALL()I default: default
+    FFI_TYPE_DOUBLE()S default: default
+    FFI_UNIX64()I default: default
+    FFI_VFP()I default: default
+    FFI_WIN64()I default: default
+    ffi_call_plan_alloc(Lorg/lwjgl/system/libffi/FFICIF;)J default: default
+    ffi_call_plan_size(J)J default: default
+    ffi_get_closure_size()J default: default
+    ffi_get_default_abi()I default: default
+    ffi_get_struct_offsets(ILorg/lwjgl/system/libffi/FFIType;Lorg/lwjgl/PointerBuffer;)I default: default
+    ffi_get_version()Ljava/lang/String; default: default
+    ffi_get_version_number()J default: default
+    ffi_prep_cif(Lorg/lwjgl/system/libffi/FFICIF;ILorg/lwjgl/system/libffi/FFIType;Lorg/lwjgl/PointerBuffer;)I default: default
+    ffi_prep_cif_var(Lorg/lwjgl/system/libffi/FFICIF;IILorg/lwjgl/system/libffi/FFIType;Lorg/lwjgl/PointerBuffer;)I default: default
+    ffi_prep_closure_loc(Lorg/lwjgl/system/libffi/FFIClosure;Lorg/lwjgl/system/libffi/FFICIF;JJJ)I default: default
+    nffi_call_plan_alloc(J)J default: default
+    nffi_call_plan_size(J)J default: default
+    nffi_closure_alloc(JJ)J default: default
+    nffi_get_struct_offsets(IJJ)I default: default
+    nffi_get_version()J default: default
+    nffi_prep_cif(JIIJJ)I default: default
+    nffi_prep_cif_var(JIIIJJ)I default: default
+    nffi_prep_closure_loc(JJJJJ)I default: default
+    nffi_type_double()J default: default
+    nffi_type_float()J default: default
+    nffi_type_longdouble()J default: default
+    nffi_type_pointer()J default: default
+    nffi_type_schar()J default: default
+    nffi_type_sint()J default: default
+    nffi_type_sint16()J default: default
+    nffi_type_sint32()J default: default
+    nffi_type_sint64()J default: default
+    nffi_type_sint8()J default: default
+    nffi_type_slong()J default: default
+    nffi_type_sshort()J default: default
+    nffi_type_uchar()J default: default
+    nffi_type_uint()J default: default
+    nffi_type_uint16()J default: default
+    nffi_type_uint32()J default: default
+    nffi_type_uint64()J default: default
+    nffi_type_uint8()J default: default
+    nffi_type_ulong()J default: default
+    nffi_type_ushort()J default: default
+    nffi_type_void()J default: default
+org/lwjgl/system/linux/CMsghdr fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=13
+    cmsg_data()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/CMsghdr$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=4
+    cmsg_data()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/DynamicLinkLoader default=10 guarded-static-init=1 keep-constructor=1
+    dlclose(J)I default: default
+    dlerror()Ljava/lang/String; default: default
+    dlopen(Ljava/lang/CharSequence;I)J default: default
+    dlopen(Ljava/nio/ByteBuffer;I)J default: default
+    dlsym(JLjava/lang/CharSequence;)J default: default
+    dlsym(JLjava/nio/ByteBuffer;)J default: default
+    ndlclose(J)I default: default
+    ndlerror()J default: default
+    ndlopen(JI)J default: default
+    ndlsym(JJ)J default: default
+org/lwjgl/system/linux/EpollData fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/system/linux/EpollData$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/system/linux/EpollEvent fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=4
+org/lwjgl/system/linux/EpollEvent$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=1
+org/lwjgl/system/linux/FCNTL default=15 guarded-static-init=1 keep-constructor=1
+    creat(Ljava/nio/IntBuffer;Ljava/lang/CharSequence;I)I default: default
+    creat(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;I)I default: default
+    fcntl(Ljava/nio/IntBuffer;II)I default: default
+    fcntli(Ljava/nio/IntBuffer;III)I default: default
+    fcntlp(Ljava/nio/IntBuffer;IIJ)I default: default
+    ncreat(JJI)I default: default
+    nfcntl(JII)I default: default
+    nfcntli(JIII)I default: default
+    nfcntlp(JIIJ)I default: default
+    nopen(JJII)I default: default
+    nopenat(JIJII)I default: default
+    open(Ljava/nio/IntBuffer;Ljava/lang/CharSequence;II)I default: default
+    open(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;II)I default: default
+    openat(Ljava/nio/IntBuffer;ILjava/lang/CharSequence;II)I default: default
+    openat(Ljava/nio/IntBuffer;ILjava/nio/ByteBuffer;II)I default: default
+org/lwjgl/system/linux/FOwnerEx fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/system/linux/FOwnerEx$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/Flock fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=15
+org/lwjgl/system/linux/Flock$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/linux/IOVec fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=4
+    iov_base()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/IOVec$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=1
+    iov_base()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/KernelTimespec fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/system/linux/KernelTimespec$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/LinuxLibrary default=3 keep-constructor=2 void=1
+    getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
+    getPath()Ljava/lang/String; default: default
+    loadLibrary(Ljava/lang/String;)J default: default
+org/lwjgl/system/linux/MMAN default=4 guarded-static-init=1 keep-constructor=1
+    mmap(Ljava/nio/IntBuffer;JJIIIJ)J default: default
+    munmap(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I default: default
+    nmmap(JJJIIIJ)J default: default
+    nmunmap(JJJ)I default: default
+org/lwjgl/system/linux/Msghdr fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 nio-buffer=2 nio-buffer-empty=2 struct=7 struct-member=16
+    msg_control()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    msg_iov()Lorg/lwjgl/system/linux/IOVec$Buffer; lwjgl-buffer-empty: buffer IOVec$Buffer(0)
+    msg_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/Msghdr$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 nio-buffer-empty=2 struct=2 struct-member=4
+    msg_control()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    msg_iov()Lorg/lwjgl/system/linux/IOVec$Buffer; lwjgl-buffer-empty: buffer IOVec$Buffer(0)
+    msg_name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/OpenHow fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=9
+org/lwjgl/system/linux/OpenHow$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/system/linux/PThread default=1 guarded-static-init=1 keep-constructor=1
+    pthread_self()J default: default
+org/lwjgl/system/linux/Sockaddr fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=7
+    sa_data()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/Sockaddr$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=2
+    sa_data()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/Socket default=2 guarded-static-init=1 keep-constructor=1
+    nsocket(JIII)I default: default
+    socket(Ljava/nio/IntBuffer;III)I default: default
+org/lwjgl/system/linux/Stat default=5 guarded-static-init=1 keep-constructor=1
+    fstat(Ljava/nio/IntBuffer;IJ)I default: default
+    nfstat(JIJ)I default: default
+    nstat(JJJ)I default: default
+    stat(Ljava/nio/IntBuffer;Ljava/lang/CharSequence;J)I default: default
+    stat(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;J)I default: default
+org/lwjgl/system/linux/Statx fluent=28 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=15 struct-member=60
+org/lwjgl/system/linux/Statx$Buffer fluent=28 guarded-static-init=1 keep-constructor=3 struct=6 struct-member=16
+org/lwjgl/system/linux/StatxTimestamp fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=8
+org/lwjgl/system/linux/StatxTimestamp$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/UIO default=12 guarded-static-init=1 keep-constructor=1
+    npreadv(JIJIJ)J default: default
+    nprocess_vm_readv(JIJJJJJ)J default: default
+    nprocess_vm_writev(JIJJJJJ)J default: default
+    npwritev(JIJIJ)J default: default
+    nreadv(JIJI)J default: default
+    nwritev(JIJI)J default: default
+    preadv(Ljava/nio/IntBuffer;ILorg/lwjgl/system/linux/IOVec;IJ)J default: default
+    process_vm_readv(Ljava/nio/IntBuffer;ILorg/lwjgl/system/linux/IOVec;JLorg/lwjgl/system/linux/IOVec;JJ)J default: default
+    process_vm_writev(Ljava/nio/IntBuffer;ILorg/lwjgl/system/linux/IOVec;JLorg/lwjgl/system/linux/IOVec;JJ)J default: default
+    pwritev(Ljava/nio/IntBuffer;ILorg/lwjgl/system/linux/IOVec;IJ)J default: default
+    readv(Ljava/nio/IntBuffer;ILorg/lwjgl/system/linux/IOVec;I)J default: default
+    writev(Ljava/nio/IntBuffer;ILorg/lwjgl/system/linux/IOVec;I)J default: default
+org/lwjgl/system/linux/UNISTD default=9 guarded-static-init=1 keep-constructor=1
+    close(Ljava/nio/IntBuffer;I)I default: default
+    getpid()I default: default
+    getppid()I default: default
+    gettid()I default: default
+    nclose(JI)I default: default
+    nread(JIJJ)J default: default
+    nsysconf(JI)J default: default
+    read(Ljava/nio/IntBuffer;ILjava/nio/ByteBuffer;)J default: default
+    sysconf(Ljava/nio/IntBuffer;I)J default: default
+org/lwjgl/system/linux/Visual fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=24
+org/lwjgl/system/linux/Visual$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/system/linux/X11 default=21 guarded-static-init=1 interface-proxy=2 keep-constructor=1 lwjgl-buffer-empty=1 void=1
+    XCreateColormap(JJLorg/lwjgl/system/linux/Visual;I)J default: default
+    XCreateWindow(JJIIIIIIILorg/lwjgl/system/linux/Visual;JLorg/lwjgl/system/linux/XSetWindowAttributes;)J default: default
+    XDefaultScreen(J)I default: default
+    XDestroyWindow(JJ)I default: default
+    XDisplayMotionBufferSize(J)J default: default
+    XFree(Ljava/nio/ByteBuffer;)I default: default
+    XFree(Lorg/lwjgl/PointerBuffer;)I default: default
+    XFreeColormap(JJ)I default: default
+    XGetMotionEvents(JJJJ)Lorg/lwjgl/system/linux/XTimeCoord$Buffer; lwjgl-buffer-empty: buffer XTimeCoord$Buffer(0)
+    XOpenDisplay(Ljava/lang/CharSequence;)J default: default
+    XOpenDisplay(Ljava/nio/ByteBuffer;)J default: default
+    XRootWindow(JI)J default: default
+    XSendEvent(JJZJLorg/lwjgl/system/linux/XEvent;)I default: default
+    XTranslateCoordinates(JJJIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/CLongBuffer;)Z default: default
+    XTranslateCoordinates(JJJII[I[ILorg/lwjgl/CLongBuffer;)Z default: default
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    nXCreateColormap(JJJI)J default: default
+    nXCreateWindow(JJIIIIIIIJJJ)J default: default
+    nXFree(J)I default: default
+    nXGetMotionEvents(JJJJJ)J default: default
+    nXOpenDisplay(J)J default: default
+    nXSendEvent(JJIJJ)I default: default
+    nXTranslateCoordinates(JJJIIJJJ)I default: default
+org/lwjgl/system/linux/X11$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/linux/XAnyEvent fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=16
+org/lwjgl/system/linux/XAnyEvent$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/linux/XButtonEvent fluent=19 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=46
+org/lwjgl/system/linux/XButtonEvent$Buffer fluent=19 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=15
+org/lwjgl/system/linux/XCirculateEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XCirculateEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XCirculateRequestEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XCirculateRequestEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XClientMessageEvent fluent=17 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 nio-buffer=2 nio-buffer-empty=2 struct=7 struct-member=34
+    data_b()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    data_l()Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    data_s()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/system/linux/XClientMessageEvent$Buffer fluent=17 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 nio-buffer-empty=2 struct=2 struct-member=10
+    data_b()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    data_l()Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
+    data_s()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/system/linux/XColormapEvent fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=25
+org/lwjgl/system/linux/XColormapEvent$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/system/linux/XConfigureEvent fluent=16 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=37
+org/lwjgl/system/linux/XConfigureEvent$Buffer fluent=16 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=12
+org/lwjgl/system/linux/XConfigureRequestEvent fluent=18 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=43
+org/lwjgl/system/linux/XConfigureRequestEvent$Buffer fluent=18 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=14
+org/lwjgl/system/linux/XCreateWindowEvent fluent=16 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=37
+org/lwjgl/system/linux/XCreateWindowEvent$Buffer fluent=16 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=12
+org/lwjgl/system/linux/XCrossingEvent fluent=21 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=52
+org/lwjgl/system/linux/XCrossingEvent$Buffer fluent=21 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=17
+org/lwjgl/system/linux/XDestroyWindowEvent fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=19
+org/lwjgl/system/linux/XDestroyWindowEvent$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/system/linux/XErrorEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XErrorEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XEvent fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=73 struct-member=2
+org/lwjgl/system/linux/XEvent$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=35 struct-member=1
+org/lwjgl/system/linux/XExposeEvent fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=31
+org/lwjgl/system/linux/XExposeEvent$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=10
+org/lwjgl/system/linux/XFocusChangeEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XFocusChangeEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XGenericEvent fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=19
+org/lwjgl/system/linux/XGenericEvent$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/system/linux/XGenericEventCookie fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=23
+org/lwjgl/system/linux/XGenericEventCookie$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=7
+org/lwjgl/system/linux/XGraphicsExposeEvent fluent=16 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=37
+org/lwjgl/system/linux/XGraphicsExposeEvent$Buffer fluent=16 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=12
+org/lwjgl/system/linux/XGravityEvent fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=25
+org/lwjgl/system/linux/XGravityEvent$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/system/linux/XKeyEvent fluent=19 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=46
+org/lwjgl/system/linux/XKeyEvent$Buffer fluent=19 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=15
+org/lwjgl/system/linux/XKeymapEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=20
+    key_vector()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/XKeymapEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=6
+    key_vector()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/XMapEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XMapEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XMapRequestEvent fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=19
+org/lwjgl/system/linux/XMapRequestEvent$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/system/linux/XMappingEvent fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=25
+org/lwjgl/system/linux/XMappingEvent$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/system/linux/XMotionEvent fluent=19 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=46
+org/lwjgl/system/linux/XMotionEvent$Buffer fluent=19 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=15
+org/lwjgl/system/linux/XNoExposeEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XNoExposeEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XPropertyEvent fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=25
+org/lwjgl/system/linux/XPropertyEvent$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/system/linux/XReparentEvent fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=31
+org/lwjgl/system/linux/XReparentEvent$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=10
+org/lwjgl/system/linux/XResizeRequestEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XResizeRequestEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XSelectionClearEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XSelectionClearEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XSelectionEvent fluent=13 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=28
+org/lwjgl/system/linux/XSelectionEvent$Buffer fluent=13 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=9
+org/lwjgl/system/linux/XSelectionRequestEvent fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=31
+org/lwjgl/system/linux/XSelectionRequestEvent$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=10
+org/lwjgl/system/linux/XSetWindowAttributes fluent=19 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=45
+org/lwjgl/system/linux/XSetWindowAttributes$Buffer fluent=19 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=15
+org/lwjgl/system/linux/XTimeCoord fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=6
+org/lwjgl/system/linux/XTimeCoord$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/system/linux/XUnmapEvent fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=22
+org/lwjgl/system/linux/XUnmapEvent$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/system/linux/XVisibilityEvent fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=19
+org/lwjgl/system/linux/XVisibilityEvent$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/system/linux/XVisualInfo fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=29
+org/lwjgl/system/linux/XVisualInfo$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=9
+org/lwjgl/system/linux/liburing/IOCQRingOffsets fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=26
+org/lwjgl/system/linux/liburing/IOCQRingOffsets$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/system/linux/liburing/IOSQRingOffsets fluent=12 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=26
+org/lwjgl/system/linux/liburing/IOSQRingOffsets$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=8
+org/lwjgl/system/linux/liburing/IOTimespec fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/system/linux/liburing/IOTimespec$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/liburing/IOURing fluent=13 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=11 struct-member=23
+org/lwjgl/system/linux/liburing/IOURing$Buffer fluent=13 guarded-static-init=1 keep-constructor=3 struct=4 struct-member=5
+org/lwjgl/system/linux/liburing/IOURingAttrPI fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=18
+org/lwjgl/system/linux/liburing/IOURingAttrPI$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/system/linux/liburing/IOURingBPF fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=9
+org/lwjgl/system/linux/liburing/IOURingBPF$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingBPFContext fluent=13 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=33
+org/lwjgl/system/linux/liburing/IOURingBPFContext$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=10
+org/lwjgl/system/linux/liburing/IOURingBPFFilter fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=21
+org/lwjgl/system/linux/liburing/IOURingBPFFilter$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/linux/liburing/IOURingBuf fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=11
+org/lwjgl/system/linux/liburing/IOURingBuf$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/system/linux/liburing/IOURingBufReg fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=18
+org/lwjgl/system/linux/liburing/IOURingBufReg$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/linux/liburing/IOURingBufRing fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 struct=9 struct-member=14
+    bufs()Lorg/lwjgl/system/linux/liburing/IOURingBuf$Buffer; lwjgl-buffer-empty: buffer IOURingBuf$Buffer(0)
+org/lwjgl/system/linux/liburing/IOURingBufRing$Buffer fluent=12 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 struct=3 struct-member=4
+    bufs()Lorg/lwjgl/system/linux/liburing/IOURingBuf$Buffer; lwjgl-buffer-empty: buffer IOURingBuf$Buffer(0)
+org/lwjgl/system/linux/liburing/IOURingBufStatus fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=9
+org/lwjgl/system/linux/liburing/IOURingBufStatus$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingCQ fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=14 nio-buffer-empty=1 struct=9 struct-member=21
+    ring_ptr()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/liburing/IOURingCQ$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 nio-buffer=6 nio-buffer-empty=1 struct=3 struct-member=3
+    ring_ptr()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/liburing/IOURingCQE fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=13
+    big_cqe()Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+org/lwjgl/system/linux/liburing/IOURingCQE$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=4
+    big_cqe()Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+org/lwjgl/system/linux/liburing/IOURingClockRegister fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=6
+org/lwjgl/system/linux/liburing/IOURingClockRegister$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingCloneBuffers fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=18
+org/lwjgl/system/linux/liburing/IOURingCloneBuffers$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/linux/liburing/IOURingFileIndexRange fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=8
+org/lwjgl/system/linux/liburing/IOURingFileIndexRange$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingGeteventsArg fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/system/linux/liburing/IOURingGeteventsArg$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingMemRegionReg fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=9
+org/lwjgl/system/linux/liburing/IOURingMemRegionReg$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingNAPI fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=11
+org/lwjgl/system/linux/liburing/IOURingNAPI$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingParams fluent=15 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=11 struct-member=26
+org/lwjgl/system/linux/liburing/IOURingParams$Buffer fluent=15 guarded-static-init=1 keep-constructor=3 struct=4 struct-member=7
+org/lwjgl/system/linux/liburing/IOURingProbe fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 nio-buffer=1 struct=9 struct-member=13
+    ops()Lorg/lwjgl/system/linux/liburing/IOURingProbeOp$Buffer; lwjgl-buffer-empty: buffer IOURingProbeOp$Buffer(0)
+org/lwjgl/system/linux/liburing/IOURingProbe$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 struct=3 struct-member=2
+    ops()Lorg/lwjgl/system/linux/liburing/IOURingProbeOp$Buffer; lwjgl-buffer-empty: buffer IOURingProbeOp$Buffer(0)
+org/lwjgl/system/linux/liburing/IOURingProbeOp fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=10
+org/lwjgl/system/linux/liburing/IOURingProbeOp$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingQueryHdr fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=18
+org/lwjgl/system/linux/liburing/IOURingQueryHdr$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/linux/liburing/IOURingQueryOpcode fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=18
+org/lwjgl/system/linux/liburing/IOURingQueryOpcode$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/system/linux/liburing/IOURingRSRCRegister fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=14
+org/lwjgl/system/linux/liburing/IOURingRSRCRegister$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingRSRCUpdate fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=8
+org/lwjgl/system/linux/liburing/IOURingRSRCUpdate$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingRSRCUpdate2 fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=16
+org/lwjgl/system/linux/liburing/IOURingRSRCUpdate2$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingRecvmsgOut fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/system/linux/liburing/IOURingRecvmsgOut$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingRegWait fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=9 struct-member=19
+org/lwjgl/system/linux/liburing/IOURingRegWait$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingRestriction fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=17
+org/lwjgl/system/linux/liburing/IOURingRestriction$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingSQ fluent=18 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=15 nio-buffer-empty=1 struct=9 struct-member=30
+    ring_ptr()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/liburing/IOURingSQ$Buffer fluent=18 guarded-static-init=1 keep-constructor=3 nio-buffer=7 nio-buffer-empty=1 struct=3 struct-member=6
+    ring_ptr()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/liburing/IOURingSQE fluent=59 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=3 nio-buffer-empty=3 struct=7 struct-member=162
+    __pad2()Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    __pad3()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    cmd()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/liburing/IOURingSQE$Buffer fluent=60 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=3 struct=2 struct-member=53
+    __pad2()Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    __pad3()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    cmd()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/linux/liburing/IOURingSyncCancelReg fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=9 struct-member=19
+org/lwjgl/system/linux/liburing/IOURingSyncCancelReg$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingTaskRestriction fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=8 lwjgl-buffer-empty=1 nio-buffer=1 struct=9 struct-member=11
+    restrictions()Lorg/lwjgl/system/linux/liburing/IOURingRestriction$Buffer; lwjgl-buffer-empty: buffer IOURingRestriction$Buffer(0)
+org/lwjgl/system/linux/liburing/IOURingTaskRestriction$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 lwjgl-buffer-empty=1 struct=3 struct-member=2
+    restrictions()Lorg/lwjgl/system/linux/liburing/IOURingRestriction$Buffer; lwjgl-buffer-empty: buffer IOURingRestriction$Buffer(0)
+org/lwjgl/system/linux/liburing/IOURingZCRXAreaReg fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=18
+org/lwjgl/system/linux/liburing/IOURingZCRXAreaReg$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/linux/liburing/IOURingZCRXCQE fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=5
+org/lwjgl/system/linux/liburing/IOURingZCRXCQE$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrl fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=11 struct-member=11
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrl$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=4 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrlExport fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=6
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrlExport$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrlFlushRQ fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 nio-buffer=1 struct=2 struct-member=3
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrlFlushRQ$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2
+org/lwjgl/system/linux/liburing/IOURingZCRXIfqReg fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=9 struct-member=28
+org/lwjgl/system/linux/liburing/IOURingZCRXIfqReg$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=8
+org/lwjgl/system/linux/liburing/IOURingZCRXOffsets fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=14
+org/lwjgl/system/linux/liburing/IOURingZCRXOffsets$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/system/linux/liburing/IOURingZCRXRQ fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=4 struct=9 struct-member=13
+org/lwjgl/system/linux/liburing/IOURingZCRXRQ$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 nio-buffer=2 struct=3 struct-member=3
+org/lwjgl/system/linux/liburing/IOURingZCRXRQE fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=8
+org/lwjgl/system/linux/liburing/IOURingZCRXRQE$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/linux/liburing/IOUringRegionDesc fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 struct=7 struct-member=18
+org/lwjgl/system/linux/liburing/IOUringRegionDesc$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/linux/liburing/LibIOURing default=8 guarded-static-init=1 keep-constructor=1
+    io_uring_enter(Ljava/nio/IntBuffer;IIIIJ)I default: default
+    io_uring_enter2(Ljava/nio/IntBuffer;IIIIJI)I default: default
+    io_uring_register(Ljava/nio/IntBuffer;IIJI)I default: default
+    io_uring_setup(Ljava/nio/IntBuffer;ILorg/lwjgl/system/linux/liburing/IOURingParams;)I default: default
+    nio_uring_enter(JIIIIJ)I default: default
+    nio_uring_enter2(JIIIIJI)I default: default
+    nio_uring_register(JIIJI)I default: default
+    nio_uring_setup(JIJ)I default: default
+org/lwjgl/system/linux/liburing/LibURing default=193 guarded-static-init=1 keep-constructor=1 struct=8 void=249
+    __io_uring_sqring_wait(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_buf_ring_available(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingBufRing;S)I default: default
+    io_uring_buf_ring_head(Lorg/lwjgl/system/linux/liburing/IOURing;ILjava/nio/ShortBuffer;)I default: default
+    io_uring_buf_ring_mask(I)I default: default
+    io_uring_check_version(II)Z default: default
+    io_uring_clone_buffers(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_clone_buffers_offset(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURing;IIII)I default: default
+    io_uring_close_ring_fd(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_cq_eventfd_enabled(Lorg/lwjgl/system/linux/liburing/IOURing;)Z default: default
+    io_uring_cq_eventfd_toggle(Lorg/lwjgl/system/linux/liburing/IOURing;Z)I default: default
+    io_uring_cq_has_overflow(Lorg/lwjgl/system/linux/liburing/IOURing;)Z default: default
+    io_uring_cq_ready(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_cqe_get_data(Lorg/lwjgl/system/linux/liburing/IOURingCQE;)J default: default
+    io_uring_cqe_get_data64(Lorg/lwjgl/system/linux/liburing/IOURingCQE;)J default: default
+    io_uring_cqe_nr(Lorg/lwjgl/system/linux/liburing/IOURingCQE;)I default: default
+    io_uring_cqe_shift(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_cqe_shift_from_flags(I)I default: default
+    io_uring_enable_rings(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_enter(IIIIJ)I default: default
+    io_uring_enter2(IIIILjava/nio/ByteBuffer;)I default: default
+    io_uring_free_buf_ring(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingBufRing;II)I default: default
+    io_uring_get_events(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_load_sq_head(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_major_version()I default: default
+    io_uring_memory_size(II)J default: default
+    io_uring_memory_size_params(ILorg/lwjgl/system/linux/liburing/IOURingParams;)J default: default
+    io_uring_minor_version()I default: default
+    io_uring_mlock_size(II)J default: default
+    io_uring_mlock_size_params(ILorg/lwjgl/system/linux/liburing/IOURingParams;)J default: default
+    io_uring_opcode_supported(Lorg/lwjgl/system/linux/liburing/IOURingProbe;I)I default: default
+    io_uring_peek_batch_cqe(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;)I default: default
+    io_uring_peek_cqe(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;)I default: default
+    io_uring_queue_init(ILorg/lwjgl/system/linux/liburing/IOURing;I)I default: default
+    io_uring_queue_init_mem(ILorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingParams;Ljava/nio/ByteBuffer;)I default: default
+    io_uring_queue_init_params(ILorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingParams;)I default: default
+    io_uring_queue_mmap(ILorg/lwjgl/system/linux/liburing/IOURingParams;Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_recvmsg_name(Lorg/lwjgl/system/linux/liburing/IOURingRecvmsgOut;)J default: default
+    io_uring_recvmsg_payload(Lorg/lwjgl/system/linux/liburing/IOURingRecvmsgOut;Lorg/lwjgl/system/linux/Msghdr;)J default: default
+    io_uring_recvmsg_payload_length(Lorg/lwjgl/system/linux/liburing/IOURingRecvmsgOut;ILorg/lwjgl/system/linux/Msghdr;)I default: default
+    io_uring_register(IIJI)I default: default
+    io_uring_register_bpf_filter(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingBPF;)I default: default
+    io_uring_register_bpf_filter_task(Lorg/lwjgl/system/linux/liburing/IOURingBPF;)I default: default
+    io_uring_register_buf_ring(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingBufReg;I)I default: default
+    io_uring_register_buffers(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/IOVec$Buffer;)I default: default
+    io_uring_register_buffers_sparse(Lorg/lwjgl/system/linux/liburing/IOURing;I)I default: default
+    io_uring_register_buffers_tags(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/IOVec$Buffer;Ljava/nio/LongBuffer;)I default: default
+    io_uring_register_buffers_update_tag(Lorg/lwjgl/system/linux/liburing/IOURing;ILorg/lwjgl/system/linux/IOVec$Buffer;Ljava/nio/LongBuffer;)I default: default
+    io_uring_register_clock(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingClockRegister;)I default: default
+    io_uring_register_eventfd(Lorg/lwjgl/system/linux/liburing/IOURing;I)I default: default
+    io_uring_register_eventfd_async(Lorg/lwjgl/system/linux/liburing/IOURing;I)I default: default
+    io_uring_register_file_alloc_range(Lorg/lwjgl/system/linux/liburing/IOURing;II)I default: default
+    io_uring_register_files(Lorg/lwjgl/system/linux/liburing/IOURing;Ljava/nio/IntBuffer;)I default: default
+    io_uring_register_files_sparse(Lorg/lwjgl/system/linux/liburing/IOURing;I)I default: default
+    io_uring_register_files_tags(Lorg/lwjgl/system/linux/liburing/IOURing;Ljava/nio/IntBuffer;Ljava/nio/LongBuffer;)I default: default
+    io_uring_register_files_update(Lorg/lwjgl/system/linux/liburing/IOURing;ILjava/nio/IntBuffer;)I default: default
+    io_uring_register_files_update_tag(Lorg/lwjgl/system/linux/liburing/IOURing;ILjava/nio/IntBuffer;Ljava/nio/LongBuffer;)I default: default
+    io_uring_register_ifq(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingZCRXIfqReg;)I default: default
+    io_uring_register_iowq_aff(Lorg/lwjgl/system/linux/liburing/IOURing;JJ)I default: default
+    io_uring_register_iowq_max_workers(Lorg/lwjgl/system/linux/liburing/IOURing;Ljava/nio/IntBuffer;)I default: default
+    io_uring_register_napi(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingNAPI;)I default: default
+    io_uring_register_personality(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_register_probe(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingProbe;I)I default: default
+    io_uring_register_query(Lorg/lwjgl/system/linux/liburing/IOURingQueryHdr;)I default: default
+    io_uring_register_region(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingMemRegionReg;)I default: default
+    io_uring_register_restrictions(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingRestriction$Buffer;)I default: default
+    io_uring_register_ring_fd(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_register_sync_cancel(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingSyncCancelReg;)I default: default
+    io_uring_register_wait_reg(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingRegWait;I)I default: default
+    io_uring_register_zcrx_ctrl(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingZCRXCtrl;)I default: default
+    io_uring_resize_rings(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingParams;)I default: default
+    io_uring_ring_dontfork(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_set_iowait(Lorg/lwjgl/system/linux/liburing/IOURing;Z)I default: default
+    io_uring_setup(ILorg/lwjgl/system/linux/liburing/IOURingParams;)I default: default
+    io_uring_sq_ready(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_sq_space_left(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_sqe_shift(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_sqe_shift_from_flags(I)I default: default
+    io_uring_sqring_wait(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_submit(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_submit_and_get_events(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_submit_and_wait(Lorg/lwjgl/system/linux/liburing/IOURing;I)I default: default
+    io_uring_submit_and_wait_min_timeout(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/system/linux/KernelTimespec;IJ)I default: default
+    io_uring_submit_and_wait_reg(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;I)I default: default
+    io_uring_submit_and_wait_timeout(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/system/linux/KernelTimespec;J)I default: default
+    io_uring_unregister_buf_ring(Lorg/lwjgl/system/linux/liburing/IOURing;I)I default: default
+    io_uring_unregister_buffers(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_unregister_eventfd(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_unregister_files(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_unregister_iowq_aff(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_unregister_napi(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingNAPI;)I default: default
+    io_uring_unregister_personality(Lorg/lwjgl/system/linux/liburing/IOURing;I)I default: default
+    io_uring_unregister_ring_fd(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
+    io_uring_wait_cqe(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;)I default: default
+    io_uring_wait_cqe_nr(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;)I default: default
+    io_uring_wait_cqe_timeout(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/system/linux/KernelTimespec;)I default: default
+    io_uring_wait_cqes(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/system/linux/KernelTimespec;J)I default: default
+    io_uring_wait_cqes_min_timeout(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/system/linux/KernelTimespec;IJ)I default: default
+    n__io_uring_sqring_wait(J)I default: default
+    nio_uring_buf_ring_available(JJS)I default: default
+    nio_uring_buf_ring_head(JIJ)I default: default
+    nio_uring_clone_buffers(JJ)I default: default
+    nio_uring_clone_buffers_offset(JJIIII)I default: default
+    nio_uring_close_ring_fd(J)I default: default
+    nio_uring_cq_eventfd_enabled(J)Z default: default
+    nio_uring_cq_eventfd_toggle(JZ)I default: default
+    nio_uring_cq_has_overflow(J)Z default: default
+    nio_uring_cq_ready(J)I default: default
+    nio_uring_cqe_get_data(J)J default: default
+    nio_uring_cqe_get_data64(J)J default: default
+    nio_uring_cqe_nr(J)I default: default
+    nio_uring_cqe_shift(J)I default: default
+    nio_uring_enable_rings(J)I default: default
+    nio_uring_enter(IIIIJ)I default: default
+    nio_uring_enter2(IIIIJJ)I default: default
+    nio_uring_free_buf_ring(JJII)I default: default
+    nio_uring_get_events(J)I default: default
+    nio_uring_get_probe()J default: default
+    nio_uring_get_probe_ring(J)J default: default
+    nio_uring_get_sqe(J)J default: default
+    nio_uring_get_sqe128(J)J default: default
+    nio_uring_load_sq_head(J)I default: default
+    nio_uring_memory_size_params(IJ)J default: default
+    nio_uring_mlock_size_params(IJ)J default: default
+    nio_uring_opcode_supported(JI)I default: default
+    nio_uring_peek_batch_cqe(JJI)I default: default
+    nio_uring_peek_cqe(JJ)I default: default
+    nio_uring_queue_init(IJI)I default: default
+    nio_uring_queue_init_mem(IJJJJ)I default: default
+    nio_uring_queue_init_params(IJJ)I default: default
+    nio_uring_queue_mmap(IJJ)I default: default
+    nio_uring_recvmsg_cmsg_firsthdr(JJ)J default: default
+    nio_uring_recvmsg_cmsg_nexthdr(JJJ)J default: default
+    nio_uring_recvmsg_name(J)J default: default
+    nio_uring_recvmsg_payload(JJ)J default: default
+    nio_uring_recvmsg_payload_length(JIJ)I default: default
+    nio_uring_recvmsg_validate(JIJ)J default: default
+    nio_uring_register_bpf_filter(JJ)I default: default
+    nio_uring_register_bpf_filter_task(J)I default: default
+    nio_uring_register_buf_ring(JJI)I default: default
+    nio_uring_register_buffers(JJI)I default: default
+    nio_uring_register_buffers_sparse(JI)I default: default
+    nio_uring_register_buffers_tags(JJJI)I default: default
+    nio_uring_register_buffers_update_tag(JIJJI)I default: default
+    nio_uring_register_clock(JJ)I default: default
+    nio_uring_register_eventfd(JI)I default: default
+    nio_uring_register_eventfd_async(JI)I default: default
+    nio_uring_register_file_alloc_range(JII)I default: default
+    nio_uring_register_files(JJI)I default: default
+    nio_uring_register_files_sparse(JI)I default: default
+    nio_uring_register_files_tags(JJJI)I default: default
+    nio_uring_register_files_update(JIJI)I default: default
+    nio_uring_register_files_update_tag(JIJJI)I default: default
+    nio_uring_register_ifq(JJ)I default: default
+    nio_uring_register_iowq_aff(JJJ)I default: default
+    nio_uring_register_iowq_max_workers(JJ)I default: default
+    nio_uring_register_napi(JJ)I default: default
+    nio_uring_register_personality(J)I default: default
+    nio_uring_register_probe(JJI)I default: default
+    nio_uring_register_query(J)I default: default
+    nio_uring_register_region(JJ)I default: default
+    nio_uring_register_restrictions(JJI)I default: default
+    nio_uring_register_ring_fd(J)I default: default
+    nio_uring_register_sync_cancel(JJ)I default: default
+    nio_uring_register_wait_reg(JJI)I default: default
+    nio_uring_register_zcrx_ctrl(JJ)I default: default
+    nio_uring_resize_rings(JJ)I default: default
+    nio_uring_ring_dontfork(J)I default: default
+    nio_uring_set_iowait(JZ)I default: default
+    nio_uring_setup(IJ)I default: default
+    nio_uring_setup_buf_ring(JIIIJ)J default: default
+    nio_uring_sq_ready(J)I default: default
+    nio_uring_sq_space_left(J)I default: default
+    nio_uring_sqe_shift(J)I default: default
+    nio_uring_sqring_wait(J)I default: default
+    nio_uring_submit(J)I default: default
+    nio_uring_submit_and_get_events(J)I default: default
+    nio_uring_submit_and_wait(JI)I default: default
+    nio_uring_submit_and_wait_min_timeout(JJIJIJ)I default: default
+    nio_uring_submit_and_wait_reg(JJII)I default: default
+    nio_uring_submit_and_wait_timeout(JJIJJ)I default: default
+    nio_uring_unregister_buf_ring(JI)I default: default
+    nio_uring_unregister_buffers(J)I default: default
+    nio_uring_unregister_eventfd(J)I default: default
+    nio_uring_unregister_files(J)I default: default
+    nio_uring_unregister_iowq_aff(J)I default: default
+    nio_uring_unregister_napi(JJ)I default: default
+    nio_uring_unregister_personality(JI)I default: default
+    nio_uring_unregister_ring_fd(J)I default: default
+    nio_uring_wait_cqe(JJ)I default: default
+    nio_uring_wait_cqe_nr(JJI)I default: default
+    nio_uring_wait_cqe_timeout(JJJ)I default: default
+    nio_uring_wait_cqes(JJIJJ)I default: default
+    nio_uring_wait_cqes_min_timeout(JJIJIJ)I default: default
+org/lwjgl/system/macosx/CGEventTapCallBack keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/system/macosx/CGEventTapCallBack; object: new CGEventTapCallBack
+    create(Lorg/lwjgl/system/macosx/CGEventTapCallBackI;)Lorg/lwjgl/system/macosx/CGEventTapCallBack; object: new CGEventTapCallBack
+    create(Lorg/lwjgl/system/macosx/CGEventTapCallBackI;J)Lorg/lwjgl/system/macosx/CGEventTapCallBack; object: new CGEventTapCallBack
+    createSafe(J)Lorg/lwjgl/system/macosx/CGEventTapCallBack; object: new CGEventTapCallBack
+org/lwjgl/system/macosx/CGEventTapCallBack$1 default=1 keep-constructor=1
+    invoke(JIJJ)J default: default
+org/lwjgl/system/macosx/CGEventTapCallBackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/system/macosx/CGEventTapInformation fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=20
+org/lwjgl/system/macosx/CGEventTapInformation$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=10
+org/lwjgl/system/macosx/CGPoint fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/system/macosx/CGPoint$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/macosx/CoreFoundation default=20 guarded-static-init=1 keep-constructor=1 void=2
+    CFBundleCreate(JJ)J default: default
+    CFBundleGetBundleWithIdentifier(J)J default: default
+    CFBundleGetFunctionPointerForName(JJ)J default: default
+    CFRetain(J)J default: default
+    CFStringCreateWithCString(JLjava/nio/ByteBuffer;I)J default: default
+    CFStringCreateWithCStringNoCopy(JLjava/nio/ByteBuffer;IJ)J default: default
+    CFURLCreateWithFileSystemPath(JJJZ)J default: default
+    kCFAllocatorDefault()J default: default
+    kCFAllocatorMalloc()J default: default
+    kCFAllocatorMallocZone()J default: default
+    kCFAllocatorNull()J default: default
+    kCFAllocatorSystemDefault()J default: default
+    kCFAllocatorUseContext()J default: default
+    nCFBundleCreate(JJ)J default: default
+    nCFBundleGetBundleWithIdentifier(J)J default: default
+    nCFBundleGetFunctionPointerForName(JJ)J default: default
+    nCFRetain(J)J default: default
+    nCFStringCreateWithCString(JJI)J default: default
+    nCFStringCreateWithCStringNoCopy(JJIJ)J default: default
+    nCFURLCreateWithFileSystemPath(JJJZ)J default: default
+org/lwjgl/system/macosx/CoreGraphics default=26 guarded-static-init=1 interface-proxy=2 keep-constructor=1 struct=2 void=23
+    CGEventCreate(J)J default: default
+    CGEventCreateCopy(J)J default: default
+    CGEventCreateData(JJ)J default: default
+    CGEventCreateFromData(JJ)J default: default
+    CGEventCreateKeyboardEvent(JSZ)J default: default
+    CGEventCreateMouseEvent(JILorg/lwjgl/system/macosx/CGPoint;I)J default: default
+    CGEventCreateScrollWheelEvent(JII)J default: default
+    CGEventCreateScrollWheelEvent(JIII)J default: default
+    CGEventCreateScrollWheelEvent2(JIIIII)J default: default
+    CGEventCreateSourceFromEvent(J)J default: default
+    CGEventGetDoubleValueField(JI)D default: default
+    CGEventGetFlags(J)J default: default
+    CGEventGetIntegerValueField(JI)J default: default
+    CGEventGetTimestamp(J)J default: default
+    CGEventGetType(J)I default: default
+    CGEventGetTypeID()J default: default
+    CGEventTapCreate(IIIJLorg/lwjgl/system/macosx/CGEventTapCallBackI;J)J default: default
+    CGEventTapCreateForPid(JIIJLorg/lwjgl/system/macosx/CGEventTapCallBackI;J)J default: default
+    CGEventTapIsEnabled(J)Z default: default
+    CGGetEventTapList(Lorg/lwjgl/system/macosx/CGEventTapInformation$Buffer;Ljava/nio/IntBuffer;)I default: default
+    CGGetEventTapList(Lorg/lwjgl/system/macosx/CGEventTapInformation$Buffer;[I)I default: default
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    nCGEventCreateMouseEvent(JIJI)J default: default
+    nCGEventCreateMouseEvent(JIJIJ)J default: default
+    nCGEventTapCreate(IIIJJJ)J default: default
+    nCGEventTapCreateForPid(JIIJJJ)J default: default
+    nCGGetEventTapList(IJJ)I default: default
+org/lwjgl/system/macosx/CoreGraphics$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/macosx/DynamicLinkLoader default=10 guarded-static-init=1 keep-constructor=1
+    dlclose(J)I default: default
+    dlerror()Ljava/lang/String; default: default
+    dlopen(Ljava/lang/CharSequence;I)J default: default
+    dlopen(Ljava/nio/ByteBuffer;I)J default: default
+    dlsym(JLjava/lang/CharSequence;)J default: default
+    dlsym(JLjava/nio/ByteBuffer;)J default: default
+    ndlclose(J)I default: default
+    ndlerror()J default: default
+    ndlopen(JI)J default: default
+    ndlsym(JJ)J default: default
+org/lwjgl/system/macosx/EnumerationMutationHandler keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/system/macosx/EnumerationMutationHandler; object: new EnumerationMutationHandler
+    create(Lorg/lwjgl/system/macosx/EnumerationMutationHandlerI;)Lorg/lwjgl/system/macosx/EnumerationMutationHandler; object: new EnumerationMutationHandler
+    create(Lorg/lwjgl/system/macosx/EnumerationMutationHandlerI;J)Lorg/lwjgl/system/macosx/EnumerationMutationHandler; object: new EnumerationMutationHandler
+    createSafe(J)Lorg/lwjgl/system/macosx/EnumerationMutationHandler; object: new EnumerationMutationHandler
+org/lwjgl/system/macosx/EnumerationMutationHandler$1 keep-constructor=1 void=1
+org/lwjgl/system/macosx/EnumerationMutationHandlerI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/system/macosx/LibC default=1 keep-constructor=1
+    getpid()J default: default
+org/lwjgl/system/macosx/LibC$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/macosx/LibSystem guarded-static-init=1 interface-proxy=1 keep-constructor=1
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+org/lwjgl/system/macosx/MacOSXLibrary keep-constructor=1 object=2
+    create(Ljava/lang/String;)Lorg/lwjgl/system/macosx/MacOSXLibrary; object: new MacOSXLibrary
+    getWithIdentifier(Ljava/lang/String;)Lorg/lwjgl/system/macosx/MacOSXLibrary; object: new MacOSXLibrary
+org/lwjgl/system/macosx/MacOSXLibraryBundle default=3 keep-constructor=1 object=2 void=1
+    CString2CFString(Ljava/nio/ByteBuffer;I)J default: default
+    create(Ljava/lang/String;)Lorg/lwjgl/system/macosx/MacOSXLibraryBundle; object: new MacOSXLibraryBundle
+    getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
+    getPath()Ljava/lang/String; default: default
+    getWithIdentifier(Ljava/lang/String;)Lorg/lwjgl/system/macosx/MacOSXLibraryBundle; object: new MacOSXLibraryBundle
+org/lwjgl/system/macosx/MacOSXLibraryDL default=3 keep-constructor=2 void=1
+    getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
+    getPath()Ljava/lang/String; default: default
+    loadLibrary(Ljava/lang/String;)J default: default
+org/lwjgl/system/macosx/ObjCMethodDescription fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=4
+    types()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/macosx/ObjCMethodDescription$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=2
+    types()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/macosx/ObjCPropertyAttribute fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 nio-buffer-empty=2 struct=7 struct-member=7
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    value()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=2 struct-member=2
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    value()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/macosx/ObjCRuntime default=140 guarded-static-init=1 interface-proxy=2 keep-constructor=1 lwjgl-buffer=7 lwjgl-buffer-empty=6 struct=1 void=33
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    class_addIvar(JLjava/lang/CharSequence;JBLjava/lang/CharSequence;)Z default: default
+    class_addIvar(JLjava/nio/ByteBuffer;JBLjava/nio/ByteBuffer;)Z default: default
+    class_addMethod(JJJLjava/lang/CharSequence;)Z default: default
+    class_addMethod(JJJLjava/nio/ByteBuffer;)Z default: default
+    class_addProperty(JLjava/lang/CharSequence;Lorg/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer;)Z default: default
+    class_addProperty(JLjava/nio/ByteBuffer;Lorg/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer;)Z default: default
+    class_addProtocol(JJ)Z default: default
+    class_conformsToProtocol(JJ)Z default: default
+    class_createInstance(JJ)J default: default
+    class_getClassMethod(JJ)J default: default
+    class_getClassVariable(JLjava/lang/CharSequence;)J default: default
+    class_getClassVariable(JLjava/nio/ByteBuffer;)J default: default
+    class_getImageName(J)Ljava/lang/String; default: default
+    class_getInstanceMethod(JJ)J default: default
+    class_getInstanceSize(J)J default: default
+    class_getInstanceVariable(JLjava/lang/CharSequence;)J default: default
+    class_getInstanceVariable(JLjava/nio/ByteBuffer;)J default: default
+    class_getIvarLayout(J)Ljava/lang/String; default: default
+    class_getMethodImplementation(JJ)J default: default
+    class_getName(J)Ljava/lang/String; default: default
+    class_getProperty(JLjava/lang/CharSequence;)J default: default
+    class_getProperty(JLjava/nio/ByteBuffer;)J default: default
+    class_getSuperclass(J)J default: default
+    class_getVersion(J)I default: default
+    class_getWeakIvarLayout(J)Ljava/lang/String; default: default
+    class_isMetaClass(J)Z default: default
+    class_replaceMethod(JJJLjava/lang/CharSequence;)J default: default
+    class_replaceMethod(JJJLjava/nio/ByteBuffer;)J default: default
+    class_respondsToSelector(JJ)Z default: default
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    imp_getBlock(J)J default: default
+    imp_implementationWithBlock(J)J default: default
+    imp_removeBlock(J)Z default: default
+    ivar_getName(J)Ljava/lang/String; default: default
+    ivar_getOffset(J)J default: default
+    ivar_getTypeEncoding(J)Ljava/lang/String; default: default
+    method_copyArgumentType(JI)Ljava/lang/String; default: default
+    method_copyReturnType(J)Ljava/lang/String; default: default
+    method_getArgumentType(JIJ)Ljava/lang/String; default: default
+    method_getImplementation(J)J default: default
+    method_getName(J)J default: default
+    method_getNumberOfArguments(J)I default: default
+    method_getReturnType(JJ)Ljava/lang/String; default: default
+    method_getTypeEncoding(J)Ljava/lang/String; default: default
+    method_setImplementation(JJ)J default: default
+    nclass_addIvar(JJJBJ)Z default: default
+    nclass_addMethod(JJJJ)Z default: default
+    nclass_addProperty(JJJI)Z default: default
+    nclass_copyIvarList(JJ)J default: default
+    nclass_copyMethodList(JJ)J default: default
+    nclass_copyPropertyList(JJ)J default: default
+    nclass_copyProtocolList(JJ)J default: default
+    nclass_getClassVariable(JJ)J default: default
+    nclass_getImageName(J)J default: default
+    nclass_getInstanceVariable(JJ)J default: default
+    nclass_getIvarLayout(J)J default: default
+    nclass_getName(J)J default: default
+    nclass_getProperty(JJ)J default: default
+    nclass_getWeakIvarLayout(J)J default: default
+    nclass_replaceMethod(JJJJ)J default: default
+    nivar_getName(J)J default: default
+    nivar_getTypeEncoding(J)J default: default
+    nmethod_copyArgumentType(JI)J default: default
+    nmethod_copyReturnType(J)J default: default
+    nmethod_getTypeEncoding(J)J default: default
+    nobjc_allocateClassPair(JJJ)J default: default
+    nobjc_allocateProtocol(J)J default: default
+    nobjc_constructInstance(JJ)J default: default
+    nobjc_copyClassList(J)J default: default
+    nobjc_copyClassNamesForImage(JJ)J default: default
+    nobjc_copyImageNames(J)J default: default
+    nobjc_copyProtocolList(J)J default: default
+    nobjc_getClass(J)J default: default
+    nobjc_getClassList(JI)I default: default
+    nobjc_getMetaClass(J)J default: default
+    nobjc_getProtocol(J)J default: default
+    nobjc_getRequiredClass(J)J default: default
+    nobjc_loadWeak(J)J default: default
+    nobjc_lookUpClass(J)J default: default
+    nobjc_storeWeak(JJ)J default: default
+    nobject_getClassName(J)J default: default
+    nobject_getInstanceVariable(JJJ)J default: default
+    nobject_setInstanceVariable(JJJ)J default: default
+    nproperty_copyAttributeList(JJ)J default: default
+    nproperty_copyAttributeValue(JJ)J default: default
+    nproperty_getAttributes(J)J default: default
+    nproperty_getName(J)J default: default
+    nprotocol_copyMethodDescriptionList(JZZJ)J default: default
+    nprotocol_copyPropertyList(JJ)J default: default
+    nprotocol_copyProtocolList(JJ)J default: default
+    nprotocol_getName(J)J default: default
+    nprotocol_getProperty(JJZZ)J default: default
+    nsel_getName(J)J default: default
+    nsel_getUid(J)J default: default
+    nsel_registerName(J)J default: default
+    objc_allocateClassPair(JLjava/lang/CharSequence;J)J default: default
+    objc_allocateClassPair(JLjava/nio/ByteBuffer;J)J default: default
+    objc_allocateProtocol(Ljava/lang/CharSequence;)J default: default
+    objc_allocateProtocol(Ljava/nio/ByteBuffer;)J default: default
+    objc_constructInstance(JLjava/nio/ByteBuffer;)J default: default
+    objc_copyClassList()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    objc_copyClassNamesForImage(Ljava/lang/CharSequence;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    objc_copyClassNamesForImage(Ljava/nio/ByteBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    objc_copyImageNames()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    objc_copyProtocolList()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    objc_destructInstance(J)J default: default
+    objc_getAssociatedObject(JJ)J default: default
+    objc_getClass(Ljava/lang/CharSequence;)J default: default
+    objc_getClass(Ljava/nio/ByteBuffer;)J default: default
+    objc_getClassList(Lorg/lwjgl/PointerBuffer;)I default: default
+    objc_getMetaClass(Ljava/lang/CharSequence;)J default: default
+    objc_getMetaClass(Ljava/nio/ByteBuffer;)J default: default
+    objc_getProtocol(Ljava/lang/CharSequence;)J default: default
+    objc_getProtocol(Ljava/nio/ByteBuffer;)J default: default
+    objc_getRequiredClass(Ljava/lang/CharSequence;)J default: default
+    objc_getRequiredClass(Ljava/nio/ByteBuffer;)J default: default
+    objc_loadWeak(Lorg/lwjgl/PointerBuffer;)J default: default
+    objc_lookUpClass(Ljava/lang/CharSequence;)J default: default
+    objc_lookUpClass(Ljava/nio/ByteBuffer;)J default: default
+    objc_storeWeak(Lorg/lwjgl/PointerBuffer;J)J default: default
+    object_copy(JJ)J default: default
+    object_dispose(J)J default: default
+    object_getClass(J)J default: default
+    object_getClassName(J)Ljava/lang/String; default: default
+    object_getIndexedIvars(J)J default: default
+    object_getInstanceVariable(JLjava/lang/CharSequence;Lorg/lwjgl/PointerBuffer;)J default: default
+    object_getInstanceVariable(JLjava/nio/ByteBuffer;Lorg/lwjgl/PointerBuffer;)J default: default
+    object_getIvar(JJ)J default: default
+    object_setClass(JJ)J default: default
+    object_setInstanceVariable(JLjava/lang/CharSequence;Ljava/nio/ByteBuffer;)J default: default
+    object_setInstanceVariable(JLjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)J default: default
+    property_copyAttributeValue(JLjava/lang/CharSequence;)Ljava/lang/String; default: default
+    property_copyAttributeValue(JLjava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    property_getAttributes(J)Ljava/lang/String; default: default
+    property_getName(J)Ljava/lang/String; default: default
+    protocol_conformsToProtocol(JJ)Z default: default
+    protocol_copyMethodDescriptionList(JZZ)Lorg/lwjgl/system/macosx/ObjCMethodDescription$Buffer; lwjgl-buffer-empty: buffer ObjCMethodDescription$Buffer(0)
+    protocol_getName(J)Ljava/lang/String; default: default
+    protocol_getProperty(JLjava/lang/CharSequence;ZZ)J default: default
+    protocol_getProperty(JLjava/nio/ByteBuffer;ZZ)J default: default
+    protocol_isEqual(JJ)Z default: default
+    sel_getName(J)Ljava/lang/String; default: default
+    sel_getUid(Ljava/lang/CharSequence;)J default: default
+    sel_getUid(Ljava/nio/ByteBuffer;)J default: default
+    sel_isEqual(JJ)Z default: default
+    sel_registerName(Ljava/lang/CharSequence;)J default: default
+    sel_registerName(Ljava/nio/ByteBuffer;)J default: default
+org/lwjgl/system/macosx/ObjCRuntime$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/windows/CRYPTPROTECT_PROMPTSTRUCT fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=13
+    szPrompt()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/Crypt32 default=13 guarded-static-init=1 interface-proxy=2 keep-constructor=1
+    CryptProtectData(Ljava/nio/IntBuffer;Lorg/lwjgl/system/windows/DATA_BLOB;Ljava/lang/CharSequence;Lorg/lwjgl/system/windows/DATA_BLOB;JLorg/lwjgl/system/windows/CRYPTPROTECT_PROMPTSTRUCT;ILorg/lwjgl/system/windows/DATA_BLOB;)Z default: default
+    CryptProtectData(Ljava/nio/IntBuffer;Lorg/lwjgl/system/windows/DATA_BLOB;Ljava/nio/ByteBuffer;Lorg/lwjgl/system/windows/DATA_BLOB;JLorg/lwjgl/system/windows/CRYPTPROTECT_PROMPTSTRUCT;ILorg/lwjgl/system/windows/DATA_BLOB;)Z default: default
+    CryptProtectMemory(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;I)Z default: default
+    CryptUnprotectData(Ljava/nio/IntBuffer;Lorg/lwjgl/system/windows/DATA_BLOB;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/system/windows/DATA_BLOB;JLorg/lwjgl/system/windows/CRYPTPROTECT_PROMPTSTRUCT;ILorg/lwjgl/system/windows/DATA_BLOB;)Z default: default
+    CryptUnprotectMemory(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;I)Z default: default
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    nCryptProtectData(JJJJJJIJ)I default: default
+    nCryptProtectData(JJJJJJIJJ)I default: default
+    nCryptProtectMemory(JJII)I default: default
+    nCryptProtectMemory(JJIIJ)I default: default
+    nCryptUnprotectData(JJJJJJIJ)I default: default
+    nCryptUnprotectData(JJJJJJIJJ)I default: default
+    nCryptUnprotectMemory(JJII)I default: default
+    nCryptUnprotectMemory(JJIIJ)I default: default
+org/lwjgl/system/windows/Crypt32$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/windows/DATA_BLOB fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=5
+    pbData()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/DATA_BLOB$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=1
+    pbData()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/DEVMODE fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 nio-buffer-empty=2 struct=9 struct-member=77
+    dmDeviceName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    dmFormName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/DEVMODE$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=3 struct-member=37
+    dmDeviceName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    dmFormName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/DISPLAY_DEVICE fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=4 nio-buffer-empty=4 struct=7 struct-member=13
+    DeviceID()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    DeviceKey()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    DeviceName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    DeviceString()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/DISPLAY_DEVICE$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=4 struct=2 struct-member=6
+    DeviceID()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    DeviceKey()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    DeviceName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    DeviceString()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/GDI32 default=16 guarded-static-init=1 interface-proxy=2 keep-constructor=1
+    ChoosePixelFormat(Ljava/nio/IntBuffer;JLorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR;)I default: default
+    DescribePixelFormat(Ljava/nio/IntBuffer;JIILorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR;)I default: default
+    DescribePixelFormat(Ljava/nio/IntBuffer;JILorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR;)I default: default
+    GetPixelFormat(Ljava/nio/IntBuffer;J)I default: default
+    SetPixelFormat(Ljava/nio/IntBuffer;JILorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR;)Z default: default
+    SwapBuffers(Ljava/nio/IntBuffer;J)Z default: default
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    nChoosePixelFormat(JJJ)I default: default
+    nChoosePixelFormat(JJJJ)I default: default
+    nDescribePixelFormat(JJIIJ)I default: default
+    nDescribePixelFormat(JJIIJJ)I default: default
+    nGetPixelFormat(JJ)I default: default
+    nGetPixelFormat(JJJ)I default: default
+    nSetPixelFormat(JJIJ)I default: default
+    nSetPixelFormat(JJIJJ)I default: default
+    nSwapBuffers(JJ)I default: default
+    nSwapBuffers(JJJ)I default: default
+org/lwjgl/system/windows/GDI32$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/windows/HARDWAREINPUT fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=9
+org/lwjgl/system/windows/HARDWAREINPUT$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/system/windows/INPUT fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=13 struct-member=6
+org/lwjgl/system/windows/INPUT$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=5 struct-member=1
+org/lwjgl/system/windows/KEYBDINPUT fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=15
+org/lwjgl/system/windows/KEYBDINPUT$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/system/windows/Kernel32 default=8 guarded-static-init=1 interface-proxy=2 keep-constructor=1
+    GetCurrentProcess()J default: default
+    GetCurrentProcessId()I default: default
+    GetCurrentProcessorNumber()I default: default
+    GetCurrentThread()J default: default
+    GetCurrentThreadId()I default: default
+    GetProcessId(J)I default: default
+    GetProcessIdOfThread(J)I default: default
+    GetThreadId(J)I default: default
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+org/lwjgl/system/windows/Kernel32$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/windows/LARGE_INTEGER fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=9
+org/lwjgl/system/windows/LARGE_INTEGER$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/system/windows/MONITORINFOEX fluent=4 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=11 struct-member=7
+    szDevice()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/MONITORINFOEX$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=4 struct-member=3
+    szDevice()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/MOUSEINPUT fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=18
+org/lwjgl/system/windows/MOUSEINPUT$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/system/windows/MSG fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=16
+org/lwjgl/system/windows/MSG$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=5
+org/lwjgl/system/windows/PIXELFORMATDESCRIPTOR fluent=30 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=8 struct-member=78
+org/lwjgl/system/windows/PIXELFORMATDESCRIPTOR$Buffer fluent=30 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=26
+org/lwjgl/system/windows/POINT fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/system/windows/POINT$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/windows/POINTL fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/system/windows/POINTL$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/system/windows/RECT fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/system/windows/RECT$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/system/windows/SECURITY_ATTRIBUTES fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=10
+org/lwjgl/system/windows/SECURITY_ATTRIBUTES$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/system/windows/TOUCHINPUT fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=20
+org/lwjgl/system/windows/TOUCHINPUT$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=10
+org/lwjgl/system/windows/User32 default=137 guarded-static-init=1 interface-proxy=2 keep-constructor=1
+    AdjustWindowRectEx(Ljava/nio/IntBuffer;Lorg/lwjgl/system/windows/RECT;IZI)Z default: default
+    BringWindowToTop(J)Z default: default
+    CallWindowProc(Lorg/lwjgl/system/windows/WindowProcI;JIJJ)J default: default
+    ChangeDisplaySettingsEx(Ljava/lang/CharSequence;Lorg/lwjgl/system/windows/DEVMODE;JIJ)I default: default
+    ChangeDisplaySettingsEx(Ljava/nio/ByteBuffer;Lorg/lwjgl/system/windows/DEVMODE;JIJ)I default: default
+    ClientToScreen(JLorg/lwjgl/system/windows/POINT;)Z default: default
+    ClipCursor(Lorg/lwjgl/system/windows/RECT;)Z default: default
+    CloseTouchInputHandle(Ljava/nio/IntBuffer;J)Z default: default
+    CreateWindowEx(Ljava/nio/IntBuffer;ILjava/lang/CharSequence;Ljava/lang/CharSequence;IIIIIJJJJ)J default: default
+    CreateWindowEx(Ljava/nio/IntBuffer;ILjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;IIIIIJJJJ)J default: default
+    DefWindowProc(JIJJ)J default: default
+    DestroyWindow(Ljava/nio/IntBuffer;J)Z default: default
+    DispatchMessage(Lorg/lwjgl/system/windows/MSG;)J default: default
+    EnumDisplayDevices(Ljava/lang/CharSequence;ILorg/lwjgl/system/windows/DISPLAY_DEVICE;I)Z default: default
+    EnumDisplayDevices(Ljava/nio/ByteBuffer;ILorg/lwjgl/system/windows/DISPLAY_DEVICE;I)Z default: default
+    EnumDisplaySettingsEx(Ljava/lang/CharSequence;ILorg/lwjgl/system/windows/DEVMODE;I)Z default: default
+    EnumDisplaySettingsEx(Ljava/nio/ByteBuffer;ILorg/lwjgl/system/windows/DEVMODE;I)Z default: default
+    GetAsyncKeyState(I)S default: default
+    GetAwarenessFromDpiAwarenessContext(J)I default: default
+    GetClassLongPtr(Ljava/nio/IntBuffer;JI)J default: default
+    GetCursorPos(Lorg/lwjgl/system/windows/POINT;)Z default: default
+    GetDC(J)J default: default
+    GetDpiForSystem()I default: default
+    GetDpiForWindow(J)I default: default
+    GetMessage(Ljava/nio/IntBuffer;Lorg/lwjgl/system/windows/MSG;JII)Z default: default
+    GetMessageExtraInfo()J default: default
+    GetMonitorInfo(JLorg/lwjgl/system/windows/MONITORINFOEX;)Z default: default
+    GetSystemMetrics(I)I default: default
+    GetThreadDpiAwarenessContext()J default: default
+    GetTouchInputInfo(Ljava/nio/IntBuffer;JLorg/lwjgl/system/windows/TOUCHINPUT$Buffer;I)Z default: default
+    GetWindowDpiAwarenessContext(J)J default: default
+    GetWindowLongPtr(JI)J default: default
+    GetWindowLongPtr(Ljava/nio/IntBuffer;JI)J default: default
+    GetWindowPlacement(Ljava/nio/IntBuffer;JLorg/lwjgl/system/windows/WINDOWPLACEMENT;)Z default: default
+    GetWindowRect(Ljava/nio/IntBuffer;JLorg/lwjgl/system/windows/RECT;)Z default: default
+    IsIconic(J)Z default: default
+    IsTouchWindow(JLjava/nio/IntBuffer;)Z default: default
+    IsTouchWindow(J[I)Z default: default
+    IsValidDpiAwarenessContext(J)Z default: default
+    IsWindowVisible(J)Z default: default
+    IsZoomed(J)Z default: default
+    LoadCursor(Ljava/nio/IntBuffer;JLjava/lang/CharSequence;)J default: default
+    LoadCursor(Ljava/nio/IntBuffer;JLjava/nio/ByteBuffer;)J default: default
+    LoadIcon(Ljava/nio/IntBuffer;JLjava/lang/CharSequence;)J default: default
+    LoadIcon(Ljava/nio/IntBuffer;JLjava/nio/ByteBuffer;)J default: default
+    MonitorFromWindow(JI)J default: default
+    MoveWindow(Ljava/nio/IntBuffer;JIIIIZ)Z default: default
+    PeekMessage(Lorg/lwjgl/system/windows/MSG;JIII)Z default: default
+    PostMessage(Ljava/nio/IntBuffer;JIJJ)Z default: default
+    RegisterClassEx(Ljava/nio/IntBuffer;Lorg/lwjgl/system/windows/WNDCLASSEX;)S default: default
+    RegisterTouchWindow(Ljava/nio/IntBuffer;JI)Z default: default
+    ReleaseDC(JJ)Z default: default
+    SendInput(Lorg/lwjgl/system/windows/INPUT$Buffer;I)I default: default
+    SendMessage(Ljava/nio/IntBuffer;JIJJ)Z default: default
+    SetClassLongPtr(Ljava/nio/IntBuffer;JIJ)J default: default
+    SetCursor(J)J default: default
+    SetCursorPos(II)Z default: default
+    SetLayeredWindowAttributes(Ljava/nio/IntBuffer;JIBI)Z default: default
+    SetThreadDpiAwarenessContext(J)J default: default
+    SetWindowLongPtr(Ljava/nio/IntBuffer;JIJ)J default: default
+    SetWindowPlacement(Ljava/nio/IntBuffer;JLorg/lwjgl/system/windows/WINDOWPLACEMENT;)Z default: default
+    SetWindowPos(Ljava/nio/IntBuffer;JJIIIII)Z default: default
+    SetWindowText(Ljava/nio/IntBuffer;JLjava/lang/CharSequence;)Z default: default
+    SetWindowText(Ljava/nio/IntBuffer;JLjava/nio/ByteBuffer;)Z default: default
+    ShowCursor(Z)I default: default
+    ShowWindow(JI)Z default: default
+    TranslateMessage(Lorg/lwjgl/system/windows/MSG;)Z default: default
+    UnregisterClass(Ljava/nio/IntBuffer;Ljava/lang/CharSequence;J)Z default: default
+    UnregisterClass(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;J)Z default: default
+    UnregisterTouchWindow(Ljava/nio/IntBuffer;J)Z default: default
+    UpdateWindow(J)Z default: default
+    WaitMessage(Ljava/nio/IntBuffer;)Z default: default
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    nAdjustWindowRectEx(JJIII)I default: default
+    nAdjustWindowRectEx(JJIIIJ)I default: default
+    nCallWindowProc(JJIJJ)J default: default
+    nChangeDisplaySettingsEx(JJJIJ)I default: default
+    nClientToScreen(JJ)I default: default
+    nClipCursor(J)I default: default
+    nCloseTouchInputHandle(JJ)I default: default
+    nCloseTouchInputHandle(JJJ)I default: default
+    nCreateWindowEx(JIJJIIIIIJJJJ)J default: default
+    nCreateWindowEx(JIJJIIIIIJJJJJ)J default: default
+    nDestroyWindow(JJ)I default: default
+    nDestroyWindow(JJJ)I default: default
+    nDispatchMessage(J)J default: default
+    nEnumDisplayDevices(JIJI)I default: default
+    nEnumDisplaySettingsEx(JIJI)I default: default
+    nGetClassLongPtr(JJI)J default: default
+    nGetClassLongPtr(JJIJ)J default: default
+    nGetCursorPos(J)I default: default
+    nGetMessage(JJJII)I default: default
+    nGetMessage(JJJIIJ)I default: default
+    nGetMonitorInfo(JJ)I default: default
+    nGetTouchInputInfo(JJIJI)I default: default
+    nGetTouchInputInfo(JJIJIJ)I default: default
+    nGetWindowLongPtr(JJI)J default: default
+    nGetWindowLongPtr(JJIJ)J default: default
+    nGetWindowPlacement(JJJ)I default: default
+    nGetWindowPlacement(JJJJ)I default: default
+    nGetWindowRect(JJJ)I default: default
+    nGetWindowRect(JJJJ)I default: default
+    nIsTouchWindow(JJ)I default: default
+    nLoadCursor(JJJ)J default: default
+    nLoadCursor(JJJJ)J default: default
+    nLoadIcon(JJJ)J default: default
+    nLoadIcon(JJJJ)J default: default
+    nMoveWindow(JJIIIII)I default: default
+    nMoveWindow(JJIIIIIJ)I default: default
+    nPeekMessage(JJIII)I default: default
+    nPostMessage(JJIJJ)I default: default
+    nPostMessage(JJIJJJ)I default: default
+    nRegisterClassEx(JJ)S default: default
+    nRegisterClassEx(JJJ)S default: default
+    nRegisterTouchWindow(JJI)I default: default
+    nRegisterTouchWindow(JJIJ)I default: default
+    nSendInput(IJI)I default: default
+    nSendMessage(JJIJJ)I default: default
+    nSendMessage(JJIJJJ)I default: default
+    nSetClassLongPtr(JJIJ)J default: default
+    nSetClassLongPtr(JJIJJ)J default: default
+    nSetLayeredWindowAttributes(JJIBI)I default: default
+    nSetLayeredWindowAttributes(JJIBIJ)I default: default
+    nSetWindowLongPtr(JJIJ)J default: default
+    nSetWindowLongPtr(JJIJJ)J default: default
+    nSetWindowPlacement(JJJ)I default: default
+    nSetWindowPlacement(JJJJ)I default: default
+    nSetWindowPos(JJJIIIII)I default: default
+    nSetWindowPos(JJJIIIIIJ)I default: default
+    nSetWindowText(JJJ)I default: default
+    nSetWindowText(JJJJ)I default: default
+    nTranslateMessage(J)I default: default
+    nUnregisterClass(JJJ)I default: default
+    nUnregisterClass(JJJJ)I default: default
+    nUnregisterTouchWindow(JJ)I default: default
+    nUnregisterTouchWindow(JJJ)I default: default
+    nWaitMessage(J)I default: default
+    nWaitMessage(JJ)I default: default
+org/lwjgl/system/windows/User32$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/system/windows/WINDOWPLACEMENT fluent=13 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=13 struct-member=12
+org/lwjgl/system/windows/WINDOWPLACEMENT$Buffer fluent=13 guarded-static-init=1 keep-constructor=3 struct=5 struct-member=3
+org/lwjgl/system/windows/WNDCLASSEX fluent=16 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 nio-buffer-empty=2 object=2 struct=7 struct-member=35
+    lpfnWndProc()Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
+    lpszClassName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    lpszMenuName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    nlpfnWndProc(J)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
+org/lwjgl/system/windows/WNDCLASSEX$Buffer fluent=16 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 object=1 struct=2 struct-member=11
+    lpfnWndProc()Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
+    lpszClassName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    lpszMenuName()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/system/windows/WinBase default=17 guarded-static-init=1 keep-constructor=1
+    FreeLibrary(Ljava/nio/IntBuffer;J)Z default: default
+    GetLastError()I default: default
+    GetModuleFileName(Ljava/nio/IntBuffer;JI)Ljava/lang/String; default: default
+    GetModuleFileName(Ljava/nio/IntBuffer;JLjava/nio/ByteBuffer;)I default: default
+    GetModuleHandle(Ljava/nio/IntBuffer;Ljava/lang/CharSequence;)J default: default
+    GetModuleHandle(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)J default: default
+    GetProcAddress(Ljava/nio/IntBuffer;JLjava/lang/CharSequence;)J default: default
+    GetProcAddress(Ljava/nio/IntBuffer;JLjava/nio/ByteBuffer;)J default: default
+    LoadLibrary(Ljava/nio/IntBuffer;Ljava/lang/CharSequence;)J default: default
+    LoadLibrary(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)J default: default
+    LocalFree(Ljava/nio/IntBuffer;J)J default: default
+    nFreeLibrary(JJ)I default: default
+    nGetModuleFileName(JJJI)I default: default
+    nGetModuleHandle(JJ)J default: default
+    nGetProcAddress(JJJ)J default: default
+    nLoadLibrary(JJ)J default: default
+    nLocalFree(JJ)J default: default
+org/lwjgl/system/windows/WindowProc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
+    create(Lorg/lwjgl/system/windows/WindowProcI;)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
+    create(Lorg/lwjgl/system/windows/WindowProcI;J)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
+    createSafe(J)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
+org/lwjgl/system/windows/WindowProc$1 default=1 keep-constructor=1
+    invoke(JIJJ)J default: default
+org/lwjgl/system/windows/WindowProcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/system/windows/WindowsLibrary default=3 guarded-static-init=1 keep-constructor=2 void=1
+    getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
+    getPath()Ljava/lang/String; default: default
+    loadLibrary(Ljava/lang/String;)J default: default
+org/lwjgl/system/windows/WindowsUtil keep-constructor=1 void=1

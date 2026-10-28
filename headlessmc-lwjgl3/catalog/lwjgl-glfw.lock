@@ -1,0 +1,425 @@
+# Behaviour catalog of org.lwjgl:lwjgl-glfw:3.4.3
+# Every method of every class is patched by the first matching rule, counted per class.
+# Methods resolved by rules that only guess are listed individually and have to be reviewed.
+# Regenerate with: ./gradlew updateCatalogLock
+org/lwjgl/glfw/Callbacks keep-constructor=1 void=1
+org/lwjgl/glfw/EventLoop default=2 keep-constructor=1 void=1
+    isJavaStartedOnFirstThread()Z default: default
+    isMainThread()Z default: default
+org/lwjgl/glfw/GLFW default=77 guarded-static-init=1 handler=8 id=6 interface-proxy=2 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer=3 nio-buffer-empty=1 object=23 struct=2 success=1 void=84
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    glfwExtensionSupported(Ljava/lang/CharSequence;)Z default: default
+    glfwExtensionSupported(Ljava/nio/ByteBuffer;)Z default: default
+    glfwGetClipboardString(J)Ljava/lang/String; default: default
+    glfwGetCurrentContext()J default: default
+    glfwGetError(Lorg/lwjgl/PointerBuffer;)I default: default
+    glfwGetGamepadName(I)Ljava/lang/String; default: default
+    glfwGetGamepadState(ILorg/lwjgl/glfw/GLFWGamepadState;)Z default: default
+    glfwGetInputMode(JI)I default: default
+    glfwGetJoystickGUID(I)Ljava/lang/String; default: default
+    glfwGetJoystickName(I)Ljava/lang/String; default: default
+    glfwGetJoystickUserPointer(I)J default: default
+    glfwGetKey(JI)I default: default
+    glfwGetKeyName(II)Ljava/lang/String; default: default
+    glfwGetKeyScancode(I)I default: default
+    glfwGetMonitorName(J)Ljava/lang/String; default: default
+    glfwGetMonitorUserPointer(J)J default: default
+    glfwGetMonitors()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    glfwGetMouseButton(JI)I default: default
+    glfwGetPlatform()I default: default
+    glfwGetPreeditCandidate(JI)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    glfwGetPrimaryMonitor()J default: default
+    glfwGetProcAddress(Ljava/lang/CharSequence;)J default: default
+    glfwGetProcAddress(Ljava/nio/ByteBuffer;)J default: default
+    glfwGetVersionString()Ljava/lang/String; default: default
+    glfwGetWindowAttrib(JI)I default: default
+    glfwGetWindowMonitor(J)J default: default
+    glfwGetWindowOpacity(J)F default: default
+    glfwGetWindowTitle(J)Ljava/lang/String; default: default
+    glfwGetWindowUserPointer(J)J default: default
+    glfwJoystickIsGamepad(I)Z default: default
+    glfwJoystickPresent(I)Z default: default
+    glfwPlatformSupported(I)Z default: default
+    glfwRawMouseMotionSupported()Z default: default
+    glfwSetCharCallback(JLorg/lwjgl/glfw/GLFWCharCallbackI;)Lorg/lwjgl/glfw/GLFWCharCallback; object: new GLFWCharCallback
+    glfwSetCharModsCallback(JLorg/lwjgl/glfw/GLFWCharModsCallbackI;)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
+    glfwSetCursorEnterCallback(JLorg/lwjgl/glfw/GLFWCursorEnterCallbackI;)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
+    glfwSetCursorPosCallback(JLorg/lwjgl/glfw/GLFWCursorPosCallbackI;)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
+    glfwSetDropCallback(JLorg/lwjgl/glfw/GLFWDropCallbackI;)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
+    glfwSetErrorCallback(Lorg/lwjgl/glfw/GLFWErrorCallbackI;)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
+    glfwSetFramebufferSizeCallback(JLorg/lwjgl/glfw/GLFWFramebufferSizeCallbackI;)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
+    glfwSetIMEStatusCallback(JLorg/lwjgl/glfw/GLFWIMEStatusCallbackI;)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback
+    glfwSetJoystickCallback(Lorg/lwjgl/glfw/GLFWJoystickCallbackI;)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
+    glfwSetKeyCallback(JLorg/lwjgl/glfw/GLFWKeyCallbackI;)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
+    glfwSetMonitorCallback(Lorg/lwjgl/glfw/GLFWMonitorCallbackI;)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
+    glfwSetMouseButtonCallback(JLorg/lwjgl/glfw/GLFWMouseButtonCallbackI;)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
+    glfwSetPreeditCallback(JLorg/lwjgl/glfw/GLFWPreeditCallbackI;)Lorg/lwjgl/glfw/GLFWPreeditCallback; object: new GLFWPreeditCallback
+    glfwSetPreeditCandidateCallback(JLorg/lwjgl/glfw/GLFWPreeditCandidateCallbackI;)Lorg/lwjgl/glfw/GLFWPreeditCandidateCallback; object: new GLFWPreeditCandidateCallback
+    glfwSetScrollCallback(JLorg/lwjgl/glfw/GLFWScrollCallbackI;)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
+    glfwSetWindowCloseCallback(JLorg/lwjgl/glfw/GLFWWindowCloseCallbackI;)Lorg/lwjgl/glfw/GLFWWindowCloseCallback; object: new GLFWWindowCloseCallback
+    glfwSetWindowContentScaleCallback(JLorg/lwjgl/glfw/GLFWWindowContentScaleCallbackI;)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
+    glfwSetWindowFocusCallback(JLorg/lwjgl/glfw/GLFWWindowFocusCallbackI;)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
+    glfwSetWindowIconifyCallback(JLorg/lwjgl/glfw/GLFWWindowIconifyCallbackI;)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
+    glfwSetWindowMaximizeCallback(JLorg/lwjgl/glfw/GLFWWindowMaximizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
+    glfwSetWindowPosCallback(JLorg/lwjgl/glfw/GLFWWindowPosCallbackI;)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
+    glfwSetWindowRefreshCallback(JLorg/lwjgl/glfw/GLFWWindowRefreshCallbackI;)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
+    glfwSetWindowSizeCallback(JLorg/lwjgl/glfw/GLFWWindowSizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
+    glfwUpdateGamepadMappings(Ljava/nio/ByteBuffer;)Z default: default
+    glfwWindowShouldClose(J)Z default: default
+    nglfwExtensionSupported(J)I default: default
+    nglfwGetClipboardString(J)J default: default
+    nglfwGetError(J)I default: default
+    nglfwGetGamepadName(I)J default: default
+    nglfwGetGamepadState(IJ)I default: default
+    nglfwGetGammaRamp(J)J default: default
+    nglfwGetJoystickAxes(IJ)J default: default
+    nglfwGetJoystickButtons(IJ)J default: default
+    nglfwGetJoystickGUID(I)J default: default
+    nglfwGetJoystickHats(IJ)J default: default
+    nglfwGetJoystickName(I)J default: default
+    nglfwGetKeyName(II)J default: default
+    nglfwGetMonitorName(J)J default: default
+    nglfwGetMonitors(J)J default: default
+    nglfwGetPreeditCandidate(JIJ)J default: default
+    nglfwGetProcAddress(J)J default: default
+    nglfwGetVersionString()J default: default
+    nglfwGetVideoMode(J)J default: default
+    nglfwGetVideoModes(JJ)J default: default
+    nglfwGetWindowTitle(J)J default: default
+    nglfwSetCharCallback(JJ)J default: default
+    nglfwSetCharModsCallback(JJ)J default: default
+    nglfwSetCursorEnterCallback(JJ)J default: default
+    nglfwSetCursorPosCallback(JJ)J default: default
+    nglfwSetDropCallback(JJ)J default: default
+    nglfwSetErrorCallback(J)J default: default
+    nglfwSetFramebufferSizeCallback(JJ)J default: default
+    nglfwSetIMEStatusCallback(JJ)J default: default
+    nglfwSetJoystickCallback(J)J default: default
+    nglfwSetKeyCallback(JJ)J default: default
+    nglfwSetMonitorCallback(J)J default: default
+    nglfwSetMouseButtonCallback(JJ)J default: default
+    nglfwSetPreeditCallback(JJ)J default: default
+    nglfwSetPreeditCandidateCallback(JJ)J default: default
+    nglfwSetScrollCallback(JJ)J default: default
+    nglfwSetWindowCloseCallback(JJ)J default: default
+    nglfwSetWindowContentScaleCallback(JJ)J default: default
+    nglfwSetWindowFocusCallback(JJ)J default: default
+    nglfwSetWindowIconifyCallback(JJ)J default: default
+    nglfwSetWindowMaximizeCallback(JJ)J default: default
+    nglfwSetWindowPosCallback(JJ)J default: default
+    nglfwSetWindowRefreshCallback(JJ)J default: default
+    nglfwSetWindowSizeCallback(JJ)J default: default
+    nglfwUpdateGamepadMappings(J)I default: default
+org/lwjgl/glfw/GLFW$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWAllocateCallback keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWAllocateCallback; object: new GLFWAllocateCallback
+    create(Lorg/lwjgl/glfw/GLFWAllocateCallbackI;)Lorg/lwjgl/glfw/GLFWAllocateCallback; object: new GLFWAllocateCallback
+    create(Lorg/lwjgl/glfw/GLFWAllocateCallbackI;J)Lorg/lwjgl/glfw/GLFWAllocateCallback; object: new GLFWAllocateCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWAllocateCallback; object: new GLFWAllocateCallback
+org/lwjgl/glfw/GLFWAllocateCallback$1 default=1 keep-constructor=1
+    invoke(JJ)J default: default
+org/lwjgl/glfw/GLFWAllocateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWAllocator fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 object=6 struct=7 struct-member=7
+    allocate()Lorg/lwjgl/glfw/GLFWAllocateCallback; object: new GLFWAllocateCallback
+    deallocate()Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
+    nallocate(J)Lorg/lwjgl/glfw/GLFWAllocateCallback; object: new GLFWAllocateCallback
+    ndeallocate(J)Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
+    nreallocate(J)Lorg/lwjgl/glfw/GLFWReallocateCallback; object: new GLFWReallocateCallback
+    reallocate()Lorg/lwjgl/glfw/GLFWReallocateCallback; object: new GLFWReallocateCallback
+org/lwjgl/glfw/GLFWAllocator$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 object=3 struct=2 struct-member=1
+    allocate()Lorg/lwjgl/glfw/GLFWAllocateCallback; object: new GLFWAllocateCallback
+    deallocate()Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
+    reallocate()Lorg/lwjgl/glfw/GLFWReallocateCallback; object: new GLFWReallocateCallback
+org/lwjgl/glfw/GLFWCharCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWCharCallback; object: new GLFWCharCallback
+    create(Lorg/lwjgl/glfw/GLFWCharCallbackI;)Lorg/lwjgl/glfw/GLFWCharCallback; object: new GLFWCharCallback
+    create(Lorg/lwjgl/glfw/GLFWCharCallbackI;J)Lorg/lwjgl/glfw/GLFWCharCallback; object: new GLFWCharCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWCharCallback; object: new GLFWCharCallback
+org/lwjgl/glfw/GLFWCharCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWCharCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWCharModsCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
+    create(Lorg/lwjgl/glfw/GLFWCharModsCallbackI;)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
+    create(Lorg/lwjgl/glfw/GLFWCharModsCallbackI;J)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWCharModsCallback; object: new GLFWCharModsCallback
+org/lwjgl/glfw/GLFWCharModsCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWCharModsCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWCursorEnterCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
+    create(Lorg/lwjgl/glfw/GLFWCursorEnterCallbackI;)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
+    create(Lorg/lwjgl/glfw/GLFWCursorEnterCallbackI;J)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWCursorEnterCallback; object: new GLFWCursorEnterCallback
+org/lwjgl/glfw/GLFWCursorEnterCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWCursorEnterCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWCursorPosCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
+    create(Lorg/lwjgl/glfw/GLFWCursorPosCallbackI;)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
+    create(Lorg/lwjgl/glfw/GLFWCursorPosCallbackI;J)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWCursorPosCallback; object: new GLFWCursorPosCallback
+org/lwjgl/glfw/GLFWCursorPosCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWCursorPosCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWDeallocateCallback keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
+    create(Lorg/lwjgl/glfw/GLFWDeallocateCallbackI;)Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
+    create(Lorg/lwjgl/glfw/GLFWDeallocateCallbackI;J)Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWDeallocateCallback; object: new GLFWDeallocateCallback
+org/lwjgl/glfw/GLFWDeallocateCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWDeallocateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWDropCallback default=1 fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
+    create(Lorg/lwjgl/glfw/GLFWDropCallbackI;)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
+    create(Lorg/lwjgl/glfw/GLFWDropCallbackI;J)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
+    getName(JI)Ljava/lang/String; default: default
+org/lwjgl/glfw/GLFWDropCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWDropCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWErrorCallback default=1 fluent=1 keep-constructor=2 object=7
+    create(J)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
+    create(Lorg/lwjgl/glfw/GLFWErrorCallbackI;)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
+    create(Lorg/lwjgl/glfw/GLFWErrorCallbackI;J)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
+    createPrint()Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
+    createPrint(Ljava/io/PrintStream;)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
+    createThrow()Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
+    getDescription(J)Ljava/lang/String; default: default
+org/lwjgl/glfw/GLFWErrorCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWErrorCallback$2 default=1 keep-constructor=1 void=1
+    lambda$$0(Ljava/lang/reflect/Field;Ljava/lang/Integer;)Z default: default
+org/lwjgl/glfw/GLFWErrorCallback$3 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWErrorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWFramebufferSizeCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
+    create(Lorg/lwjgl/glfw/GLFWFramebufferSizeCallbackI;)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
+    create(Lorg/lwjgl/glfw/GLFWFramebufferSizeCallbackI;J)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWFramebufferSizeCallback; object: new GLFWFramebufferSizeCallback
+org/lwjgl/glfw/GLFWFramebufferSizeCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWFramebufferSizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWGamepadState fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 nio-buffer-empty=2 struct=7 struct-member=8
+    axes()Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    buttons()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/glfw/GLFWGamepadState$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=2 struct=2 struct-member=2
+    axes()Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    buttons()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/glfw/GLFWGammaRamp fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=3 nio-buffer-empty=3 struct=7 struct-member=7
+    blue()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    green()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    red()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/glfw/GLFWGammaRamp$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=3 struct=2 struct-member=1
+    blue()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    green()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    red()Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/glfw/GLFWIMEStatusCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback
+    create(Lorg/lwjgl/glfw/GLFWIMEStatusCallbackI;)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback
+    create(Lorg/lwjgl/glfw/GLFWIMEStatusCallbackI;J)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback
+org/lwjgl/glfw/GLFWIMEStatusCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWIMEStatusCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWImage fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=2 struct=7 struct-member=8
+org/lwjgl/glfw/GLFWImage$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 nio-buffer=1 struct=2 struct-member=2
+org/lwjgl/glfw/GLFWJoystickCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
+    create(Lorg/lwjgl/glfw/GLFWJoystickCallbackI;)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
+    create(Lorg/lwjgl/glfw/GLFWJoystickCallbackI;J)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
+org/lwjgl/glfw/GLFWJoystickCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWJoystickCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWKeyCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
+    create(Lorg/lwjgl/glfw/GLFWKeyCallbackI;)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
+    create(Lorg/lwjgl/glfw/GLFWKeyCallbackI;J)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWKeyCallback; object: new GLFWKeyCallback
+org/lwjgl/glfw/GLFWKeyCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWKeyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWMonitorCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
+    create(Lorg/lwjgl/glfw/GLFWMonitorCallbackI;)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
+    create(Lorg/lwjgl/glfw/GLFWMonitorCallbackI;J)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
+org/lwjgl/glfw/GLFWMonitorCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWMonitorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWMouseButtonCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
+    create(Lorg/lwjgl/glfw/GLFWMouseButtonCallbackI;)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
+    create(Lorg/lwjgl/glfw/GLFWMouseButtonCallbackI;J)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWMouseButtonCallback; object: new GLFWMouseButtonCallback
+org/lwjgl/glfw/GLFWMouseButtonCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWMouseButtonCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWNativeCocoa default=3 keep-constructor=1
+    glfwGetCocoaMonitor(J)I default: default
+    glfwGetCocoaView(J)J default: default
+    glfwGetCocoaWindow(J)J default: default
+org/lwjgl/glfw/GLFWNativeCocoa$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeEGL default=6 keep-constructor=1 void=4
+    glfwGetEGLConfig(JLorg/lwjgl/PointerBuffer;)Z default: default
+    glfwGetEGLContext(J)J default: default
+    glfwGetEGLDisplay()J default: default
+    glfwGetEGLSurface(J)J default: default
+    nglfwGetEGLConfig(JJ)I default: default
+    override(Ljava/lang/String;Ljava/lang/String;)Z default: default
+org/lwjgl/glfw/GLFWNativeEGL$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeGLX default=4 keep-constructor=1 void=2
+    glfwGetGLXContext(J)J default: default
+    glfwGetGLXFBConfig(JLorg/lwjgl/PointerBuffer;)Z default: default
+    glfwGetGLXWindow(J)J default: default
+    nglfwGetGLXFBConfig(JJ)I default: default
+org/lwjgl/glfw/GLFWNativeGLX$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeNSGL default=1 keep-constructor=1
+    glfwGetNSGLContext(J)J default: default
+org/lwjgl/glfw/GLFWNativeNSGL$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeOSMesa default=7 keep-constructor=1 void=2
+    glfwGetOSMesaColorBuffer(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/PointerBuffer;)Z default: default
+    glfwGetOSMesaColorBuffer(J[I[I[ILorg/lwjgl/PointerBuffer;)Z default: default
+    glfwGetOSMesaContext(J)J default: default
+    glfwGetOSMesaDepthBuffer(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    glfwGetOSMesaDepthBuffer(J[I[I[ILorg/lwjgl/PointerBuffer;)I default: default
+    nglfwGetOSMesaColorBuffer(JJJJJ)I default: default
+    nglfwGetOSMesaDepthBuffer(JJJJJ)I default: default
+org/lwjgl/glfw/GLFWNativeOSMesa$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeWGL default=1 keep-constructor=1 void=2
+    glfwGetWGLContext(J)J default: default
+org/lwjgl/glfw/GLFWNativeWGL$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeWayland default=3 keep-constructor=1
+    glfwGetWaylandDisplay()J default: default
+    glfwGetWaylandMonitor(J)J default: default
+    glfwGetWaylandWindow(J)J default: default
+org/lwjgl/glfw/GLFWNativeWayland$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeWin32 default=6 keep-constructor=1
+    glfwAttachWin32Window(JJ)J default: default
+    glfwGetWin32Adapter(J)Ljava/lang/String; default: default
+    glfwGetWin32Monitor(J)Ljava/lang/String; default: default
+    glfwGetWin32Window(J)J default: default
+    nglfwGetWin32Adapter(J)J default: default
+    nglfwGetWin32Monitor(J)J default: default
+org/lwjgl/glfw/GLFWNativeWin32$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWNativeX11 default=6 keep-constructor=1 void=3
+    glfwGetX11Adapter(J)J default: default
+    glfwGetX11Display()J default: default
+    glfwGetX11Monitor(J)J default: default
+    glfwGetX11SelectionString()Ljava/lang/String; default: default
+    glfwGetX11Window(J)J default: default
+    nglfwGetX11SelectionString()J default: default
+org/lwjgl/glfw/GLFWNativeX11$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWPreeditCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWPreeditCallback; object: new GLFWPreeditCallback
+    create(Lorg/lwjgl/glfw/GLFWPreeditCallbackI;)Lorg/lwjgl/glfw/GLFWPreeditCallback; object: new GLFWPreeditCallback
+    create(Lorg/lwjgl/glfw/GLFWPreeditCallbackI;J)Lorg/lwjgl/glfw/GLFWPreeditCallback; object: new GLFWPreeditCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWPreeditCallback; object: new GLFWPreeditCallback
+org/lwjgl/glfw/GLFWPreeditCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWPreeditCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWPreeditCandidateCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWPreeditCandidateCallback; object: new GLFWPreeditCandidateCallback
+    create(Lorg/lwjgl/glfw/GLFWPreeditCandidateCallbackI;)Lorg/lwjgl/glfw/GLFWPreeditCandidateCallback; object: new GLFWPreeditCandidateCallback
+    create(Lorg/lwjgl/glfw/GLFWPreeditCandidateCallbackI;J)Lorg/lwjgl/glfw/GLFWPreeditCandidateCallback; object: new GLFWPreeditCandidateCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWPreeditCandidateCallback; object: new GLFWPreeditCandidateCallback
+org/lwjgl/glfw/GLFWPreeditCandidateCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWPreeditCandidateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWReallocateCallback keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWReallocateCallback; object: new GLFWReallocateCallback
+    create(Lorg/lwjgl/glfw/GLFWReallocateCallbackI;)Lorg/lwjgl/glfw/GLFWReallocateCallback; object: new GLFWReallocateCallback
+    create(Lorg/lwjgl/glfw/GLFWReallocateCallbackI;J)Lorg/lwjgl/glfw/GLFWReallocateCallback; object: new GLFWReallocateCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWReallocateCallback; object: new GLFWReallocateCallback
+org/lwjgl/glfw/GLFWReallocateCallback$1 default=1 keep-constructor=1
+    invoke(JJJ)J default: default
+org/lwjgl/glfw/GLFWReallocateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWScrollCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
+    create(Lorg/lwjgl/glfw/GLFWScrollCallbackI;)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
+    create(Lorg/lwjgl/glfw/GLFWScrollCallbackI;J)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWScrollCallback; object: new GLFWScrollCallback
+org/lwjgl/glfw/GLFWScrollCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWScrollCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWVidMode fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=2 struct=2 struct-member=12
+org/lwjgl/glfw/GLFWVidMode$Buffer fluent=4 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/glfw/GLFWVulkan default=6 guarded-static-init=1 id=3 keep-constructor=1 lwjgl-buffer-empty=1 void=3
+    glfwGetInstanceProcAddress(Lorg/lwjgl/vulkan/VkInstance;Ljava/lang/CharSequence;)J default: default
+    glfwGetInstanceProcAddress(Lorg/lwjgl/vulkan/VkInstance;Ljava/nio/ByteBuffer;)J default: default
+    glfwGetPhysicalDevicePresentationSupport(Lorg/lwjgl/vulkan/VkInstance;Lorg/lwjgl/vulkan/VkPhysicalDevice;I)Z default: default
+    glfwGetRequiredInstanceExtensions()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+    glfwVulkanSupported()Z default: default
+    nglfwGetInstanceProcAddress(JJ)J default: default
+    nglfwGetRequiredInstanceExtensions(J)J default: default
+org/lwjgl/glfw/GLFWVulkan$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/glfw/GLFWWindowCloseCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWWindowCloseCallback; object: new GLFWWindowCloseCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowCloseCallbackI;)Lorg/lwjgl/glfw/GLFWWindowCloseCallback; object: new GLFWWindowCloseCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowCloseCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowCloseCallback; object: new GLFWWindowCloseCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWWindowCloseCallback; object: new GLFWWindowCloseCallback
+org/lwjgl/glfw/GLFWWindowCloseCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWWindowCloseCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWWindowContentScaleCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowContentScaleCallbackI;)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowContentScaleCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
+org/lwjgl/glfw/GLFWWindowContentScaleCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWWindowContentScaleCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWWindowFocusCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowFocusCallbackI;)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowFocusCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWWindowFocusCallback; object: new GLFWWindowFocusCallback
+org/lwjgl/glfw/GLFWWindowFocusCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWWindowFocusCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWWindowIconifyCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowIconifyCallbackI;)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowIconifyCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
+org/lwjgl/glfw/GLFWWindowIconifyCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWWindowIconifyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWWindowMaximizeCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowMaximizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowMaximizeCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
+org/lwjgl/glfw/GLFWWindowMaximizeCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWWindowMaximizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWWindowPosCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowPosCallbackI;)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowPosCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
+org/lwjgl/glfw/GLFWWindowPosCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWWindowPosCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWWindowRefreshCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowRefreshCallbackI;)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowRefreshCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
+org/lwjgl/glfw/GLFWWindowRefreshCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWWindowRefreshCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/glfw/GLFWWindowSizeCallback fluent=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowSizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
+    create(Lorg/lwjgl/glfw/GLFWWindowSizeCallbackI;J)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
+    createSafe(J)Lorg/lwjgl/glfw/GLFWWindowSizeCallback; object: new GLFWWindowSizeCallback
+org/lwjgl/glfw/GLFWWindowSizeCallback$1 keep-constructor=1 void=1
+org/lwjgl/glfw/GLFWWindowSizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor

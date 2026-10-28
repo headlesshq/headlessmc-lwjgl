@@ -1,0 +1,35 @@
+# Behaviour catalog of org.lwjgl:lwjgl-tinyfd:3.4.3
+# Every method of every class is patched by the first matching rule, counted per class.
+# Methods resolved by rules that only guess are listed individually and have to be reviewed.
+# Regenerate with: ./gradlew updateCatalogLock
+org/lwjgl/util/tinyfd/TinyFileDialogs default=30 guarded-static-init=1 keep-constructor=1 void=1
+    ntinyfd_colorChooser(JJJJ)J default: default
+    ntinyfd_getGlobalChar(J)J default: default
+    ntinyfd_getGlobalInt(J)I default: default
+    ntinyfd_inputBox(JJJ)J default: default
+    ntinyfd_messageBox(JJJJI)I default: default
+    ntinyfd_notifyPopup(JJJ)I default: default
+    ntinyfd_openFileDialog(JJIJJI)J default: default
+    ntinyfd_saveFileDialog(JJIJJ)J default: default
+    ntinyfd_selectFolderDialog(JJ)J default: default
+    ntinyfd_setGlobalInt(JI)I default: default
+    tinyfd_colorChooser(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    tinyfd_colorChooser(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    tinyfd_getGlobalChar(Ljava/lang/CharSequence;)Ljava/lang/String; default: default
+    tinyfd_getGlobalChar(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    tinyfd_getGlobalInt(Ljava/lang/CharSequence;)I default: default
+    tinyfd_getGlobalInt(Ljava/nio/ByteBuffer;)I default: default
+    tinyfd_inputBox(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String; default: default
+    tinyfd_inputBox(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    tinyfd_messageBox(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)I default: default
+    tinyfd_messageBox(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)I default: default
+    tinyfd_notifyPopup(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I default: default
+    tinyfd_notifyPopup(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I default: default
+    tinyfd_openFileDialog(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/lwjgl/PointerBuffer;Ljava/lang/CharSequence;Z)Ljava/lang/String; default: default
+    tinyfd_openFileDialog(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Lorg/lwjgl/PointerBuffer;Ljava/nio/ByteBuffer;Z)Ljava/lang/String; default: default
+    tinyfd_saveFileDialog(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Lorg/lwjgl/PointerBuffer;Ljava/lang/CharSequence;)Ljava/lang/String; default: default
+    tinyfd_saveFileDialog(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Lorg/lwjgl/PointerBuffer;Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    tinyfd_selectFolderDialog(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String; default: default
+    tinyfd_selectFolderDialog(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
+    tinyfd_setGlobalInt(Ljava/lang/CharSequence;I)I default: default
+    tinyfd_setGlobalInt(Ljava/nio/ByteBuffer;I)I default: default

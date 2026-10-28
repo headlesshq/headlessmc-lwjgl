@@ -1,0 +1,283 @@
+# Behaviour catalog of org.lwjgl:lwjgl-openal:3.4.3
+# Every method of every class is patched by the first matching rule, counted per class.
+# Methods resolved by rules that only guess are listed individually and have to be reviewed.
+# Regenerate with: ./gradlew updateCatalogLock
+org/lwjgl/openal/AL default=1 guarded-static-init=1 handler=2 interface-proxy=1 keep-constructor=1 object=3 void=4
+    access$102(Lorg/lwjgl/openal/AL$ICD;)Lorg/lwjgl/openal/AL$ICD; interface-proxy: proxy AL$ICD
+    checkCapabilities(Lorg/lwjgl/openal/ALCapabilities;)Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
+    getCapabilities()Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
+    getICD()Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
+    lambda$createCapabilities$0(JLjava/nio/ByteBuffer;)J default: default
+org/lwjgl/openal/AL$ICD keep-abstract-interface-method=1 void=1
+org/lwjgl/openal/AL$ICDStatic keep-constructor=2 object=2 void=1
+    access$200()Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
+    get()Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
+org/lwjgl/openal/AL$ICDStatic$WriteOnce guarded-static-init=1 keep-constructor=1
+org/lwjgl/openal/AL10 default=52 id=4 keep-constructor=1 void=211
+    alGetBoolean(I)Z default: default
+    alGetBooleanDirect(JI)Z default: default
+    alGetBufferf(II)F default: default
+    alGetBufferfDirect(JII)F default: default
+    alGetBufferi(II)I default: default
+    alGetBufferiDirect(JII)I default: default
+    alGetDouble(I)D default: default
+    alGetDoubleDirect(JI)D default: default
+    alGetEnumValue(Ljava/lang/CharSequence;)I default: default
+    alGetEnumValue(Ljava/nio/ByteBuffer;)I default: default
+    alGetEnumValueDirect(JLjava/lang/CharSequence;)I default: default
+    alGetEnumValueDirect(JLjava/nio/ByteBuffer;)I default: default
+    alGetError()I default: default
+    alGetErrorDirect(J)I default: default
+    alGetFloat(I)F default: default
+    alGetFloatDirect(JI)F default: default
+    alGetInteger(I)I default: default
+    alGetIntegerDirect(JI)I default: default
+    alGetListenerf(I)F default: default
+    alGetListenerfDirect(JI)F default: default
+    alGetListeneri(I)I default: default
+    alGetListeneriDirect(JI)I default: default
+    alGetProcAddress(Ljava/lang/CharSequence;)J default: default
+    alGetProcAddress(Ljava/nio/ByteBuffer;)J default: default
+    alGetProcAddressDirect(JLjava/lang/CharSequence;)J default: default
+    alGetProcAddressDirect(JLjava/nio/ByteBuffer;)J default: default
+    alGetSourcef(II)F default: default
+    alGetSourcefDirect(JII)F default: default
+    alGetSourcei(II)I default: default
+    alGetSourceiDirect(JII)I default: default
+    alGetString(I)Ljava/lang/String; default: default
+    alGetStringDirect(JI)Ljava/lang/String; default: default
+    alIsBuffer(I)Z default: default
+    alIsBufferDirect(JI)Z default: default
+    alIsEnabled(I)Z default: default
+    alIsEnabledDirect(JI)Z default: default
+    alIsExtensionPresent(Ljava/lang/CharSequence;)Z default: default
+    alIsExtensionPresent(Ljava/nio/ByteBuffer;)Z default: default
+    alIsExtensionPresentDirect(JLjava/lang/CharSequence;)Z default: default
+    alIsExtensionPresentDirect(JLjava/nio/ByteBuffer;)Z default: default
+    alIsSource(I)Z default: default
+    alIsSourceDirect(JI)Z default: default
+    alSourceUnqueueBuffers(I)I default: default
+    alSourceUnqueueBuffersDirect(JI)I default: default
+    nalGetEnumValue(J)I default: default
+    nalGetEnumValueDirect(JJ)I default: default
+    nalGetProcAddress(J)J default: default
+    nalGetProcAddressDirect(JJ)J default: default
+    nalGetString(I)J default: default
+    nalGetStringDirect(JI)J default: default
+    nalIsExtensionPresent(J)Z default: default
+    nalIsExtensionPresentDirect(JJ)Z default: default
+org/lwjgl/openal/AL11 keep-constructor=1 void=80
+org/lwjgl/openal/ALC default=1 guarded-static-init=1 handler=2 interface-proxy=2 keep-constructor=1 object=3 void=5
+    access$102(Lorg/lwjgl/openal/ALC$ICD;)Lorg/lwjgl/openal/ALC$ICD; interface-proxy: proxy ALC$ICD
+    check(Ljava/lang/Object;)Ljava/lang/Object; default: default
+    checkCapabilities(Lorg/lwjgl/openal/ALCCapabilities;)Lorg/lwjgl/openal/ALCCapabilities; object: new ALCCapabilities
+    getCapabilities()Lorg/lwjgl/openal/ALCCapabilities; object: new ALCCapabilities
+    getFunctionProvider()Lorg/lwjgl/system/FunctionProviderLocal; interface-proxy: proxy FunctionProviderLocal
+    getICD()Lorg/lwjgl/openal/ALCCapabilities; object: new ALCCapabilities
+org/lwjgl/openal/ALC$1 guarded-static-init=1
+org/lwjgl/openal/ALC$ICD keep-abstract-interface-method=1 void=1
+org/lwjgl/openal/ALC$ICDStatic keep-constructor=2 object=2 void=1
+    access$200()Lorg/lwjgl/openal/ALCCapabilities; object: new ALCCapabilities
+    get()Lorg/lwjgl/openal/ALCCapabilities; object: new ALCCapabilities
+org/lwjgl/openal/ALC$ICDStatic$WriteOnce guarded-static-init=1 keep-constructor=1
+org/lwjgl/openal/ALC$SharedLibraryAL default=2 keep-constructor=1
+    getFunctionAddress(JLjava/nio/ByteBuffer;)J default: default
+    getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
+org/lwjgl/openal/ALC10 default=13 id=6 keep-constructor=1 success=4 void=6
+    alcGetContextsDevice(J)J default: default
+    alcGetCurrentContext()J default: default
+    alcGetEnumValue(JLjava/lang/CharSequence;)I default: default
+    alcGetEnumValue(JLjava/nio/ByteBuffer;)I default: default
+    alcGetError(J)I default: default
+    alcGetInteger(JI)I default: default
+    alcGetProcAddress(JLjava/lang/CharSequence;)J default: default
+    alcGetProcAddress(JLjava/nio/ByteBuffer;)J default: default
+    alcGetString(JI)Ljava/lang/String; default: default
+    nalcGetEnumValue(JJ)I default: default
+    nalcGetProcAddress(JJ)J default: default
+    nalcGetString(JI)J default: default
+    nalcIsExtensionPresent(JJ)Z default: default
+org/lwjgl/openal/ALC11 id=3 keep-constructor=1 success=1 void=10
+org/lwjgl/openal/ALCCapabilities default=11 keep-constructor=1 lwjgl-buffer-empty=1
+    check_ALC10(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_ALC11(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_CAPTURE(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_direct_context(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_thread_local_context(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_HRTF(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_device_clock(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_loopback(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_pause_device(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_reopen_device(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_system_events(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    getAddressBuffer()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+org/lwjgl/openal/ALCapabilities default=13 keep-constructor=1 lwjgl-buffer-empty=1
+    check_AL10(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_AL11(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_EFX(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_STATIC_BUFFER(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_EXT_debug(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_buffer_samples(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_buffer_sub_data(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_callback_buffer(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_deferred_updates(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_events(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_source_latency(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_source_resampler(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    check_SOFT_source_start_delay(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;Ljava/util/Set;)Z default: default
+    getAddressBuffer()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
+org/lwjgl/openal/ALUtil default=1 keep-constructor=1
+    getStringList(JI)Ljava/util/List; default: default
+org/lwjgl/openal/EXT32BitFormats keep-constructor=1
+org/lwjgl/openal/EXTAlaw keep-constructor=1
+org/lwjgl/openal/EXTBFormat keep-constructor=1
+org/lwjgl/openal/EXTCapture id=3 keep-constructor=1 success=1 void=10
+org/lwjgl/openal/EXTDebug default=8 keep-constructor=1 void=40
+    alGetDebugMessageLogDirectEXT(JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I default: default
+    alGetDebugMessageLogDirectEXT(J[I[I[I[I[ILjava/nio/ByteBuffer;)I default: default
+    alGetDebugMessageLogEXT(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)I default: default
+    alGetDebugMessageLogEXT([I[I[I[I[ILjava/nio/ByteBuffer;)I default: default
+    alGetPointerDirectEXT(JI)J default: default
+    alGetPointerEXT(I)J default: default
+    nalGetDebugMessageLogDirectEXT(JIIJJJJJJ)I default: default
+    nalGetDebugMessageLogEXT(IIJJJJJJ)I default: default
+org/lwjgl/openal/EXTDebugProc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/openal/EXTDebugProc; object: new EXTDebugProc
+    create(Lorg/lwjgl/openal/EXTDebugProcI;)Lorg/lwjgl/openal/EXTDebugProc; object: new EXTDebugProc
+    create(Lorg/lwjgl/openal/EXTDebugProcI;J)Lorg/lwjgl/openal/EXTDebugProc; object: new EXTDebugProc
+    createSafe(J)Lorg/lwjgl/openal/EXTDebugProc; object: new EXTDebugProc
+org/lwjgl/openal/EXTDebugProc$1 keep-constructor=1 void=1
+org/lwjgl/openal/EXTDebugProcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/openal/EXTDedicated keep-constructor=1
+org/lwjgl/openal/EXTDefaultFilterOrder keep-constructor=1
+org/lwjgl/openal/EXTDirectContext default=3 keep-constructor=1
+    alcGetProcAddress2(JLjava/lang/CharSequence;)J default: default
+    alcGetProcAddress2(JLjava/nio/ByteBuffer;)J default: default
+    nalcGetProcAddress2(JJ)J default: default
+org/lwjgl/openal/EXTDisconnect keep-constructor=1
+org/lwjgl/openal/EXTDouble keep-constructor=1
+org/lwjgl/openal/EXTEfx default=18 id=6 keep-constructor=1 void=162
+    alGetAuxiliaryEffectSlotf(II)F default: default
+    alGetAuxiliaryEffectSlotfDirect(JII)F default: default
+    alGetAuxiliaryEffectSloti(II)I default: default
+    alGetAuxiliaryEffectSlotiDirect(JII)I default: default
+    alGetEffectf(II)F default: default
+    alGetEffectfDirect(JII)F default: default
+    alGetEffecti(II)I default: default
+    alGetEffectiDirect(JII)I default: default
+    alGetFilterf(II)F default: default
+    alGetFilterfDirect(JII)F default: default
+    alGetFilteri(II)I default: default
+    alGetFilteriDirect(JII)I default: default
+    alIsAuxiliaryEffectSlot(I)Z default: default
+    alIsAuxiliaryEffectSlotDirect(JI)Z default: default
+    alIsEffect(I)Z default: default
+    alIsEffectDirect(JI)Z default: default
+    alIsFilter(I)Z default: default
+    alIsFilterDirect(JI)Z default: default
+org/lwjgl/openal/EXTExponentDistance keep-constructor=1
+org/lwjgl/openal/EXTFloat32 keep-constructor=1
+org/lwjgl/openal/EXTIma4 keep-constructor=1
+org/lwjgl/openal/EXTLinearDistance keep-constructor=1
+org/lwjgl/openal/EXTMCFormats keep-constructor=1
+org/lwjgl/openal/EXTMulaw keep-constructor=1
+org/lwjgl/openal/EXTMulawBFormat keep-constructor=1
+org/lwjgl/openal/EXTMulawMCFormats keep-constructor=1
+org/lwjgl/openal/EXTOffset keep-constructor=1
+org/lwjgl/openal/EXTSourceDistanceModel keep-constructor=1
+org/lwjgl/openal/EXTSourceRadius keep-constructor=1
+org/lwjgl/openal/EXTStaticBuffer keep-constructor=1 void=16
+org/lwjgl/openal/EXTStereoAngles keep-constructor=1
+org/lwjgl/openal/EXTThreadLocalContext default=1 keep-constructor=1 success=1
+    alcGetThreadContext()J default: default
+org/lwjgl/openal/EXTVorbis keep-constructor=1
+org/lwjgl/openal/EnumerateAllExt keep-constructor=1
+org/lwjgl/openal/LOKIAudioChannel keep-constructor=1
+org/lwjgl/openal/LOKIIMAADPCM keep-constructor=1
+org/lwjgl/openal/LOKIQuadriphonic keep-constructor=1
+org/lwjgl/openal/LOKIWAVEFormat keep-constructor=1
+org/lwjgl/openal/SOFTBFormatHOA keep-constructor=1
+org/lwjgl/openal/SOFTBformatEx keep-constructor=1
+org/lwjgl/openal/SOFTBlockAlignment keep-constructor=1
+org/lwjgl/openal/SOFTBufferLengthQuery keep-constructor=1
+org/lwjgl/openal/SOFTBufferSamples default=1 keep-constructor=1 void=30
+    alIsBufferFormatSupportedSOFT(I)Z default: default
+org/lwjgl/openal/SOFTBufferSubData keep-constructor=1 void=16
+org/lwjgl/openal/SOFTCallbackBuffer default=2 keep-constructor=1 void=16
+    alGetBufferPtrDirectSOFT(JII)J default: default
+    alGetBufferPtrSOFT(II)J default: default
+org/lwjgl/openal/SOFTCallbackBufferType keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/openal/SOFTCallbackBufferType; object: new SOFTCallbackBufferType
+    create(Lorg/lwjgl/openal/SOFTCallbackBufferTypeI;)Lorg/lwjgl/openal/SOFTCallbackBufferType; object: new SOFTCallbackBufferType
+    create(Lorg/lwjgl/openal/SOFTCallbackBufferTypeI;J)Lorg/lwjgl/openal/SOFTCallbackBufferType; object: new SOFTCallbackBufferType
+    createSafe(J)Lorg/lwjgl/openal/SOFTCallbackBufferType; object: new SOFTCallbackBufferType
+org/lwjgl/openal/SOFTCallbackBufferType$1 default=1 keep-constructor=1
+    invoke(JJI)I default: default
+org/lwjgl/openal/SOFTCallbackBufferTypeI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/openal/SOFTDeferredUpdates keep-constructor=1 void=4
+org/lwjgl/openal/SOFTDeviceClock default=1 keep-constructor=1 void=3
+    alcGetInteger64vSOFT(JI)J default: default
+org/lwjgl/openal/SOFTDirectChannels keep-constructor=1
+org/lwjgl/openal/SOFTDirectChannelsRemix keep-constructor=1
+org/lwjgl/openal/SOFTEffectTarget keep-constructor=1
+org/lwjgl/openal/SOFTEventProc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/openal/SOFTEventProc; object: new SOFTEventProc
+    create(Lorg/lwjgl/openal/SOFTEventProcI;)Lorg/lwjgl/openal/SOFTEventProc; object: new SOFTEventProc
+    create(Lorg/lwjgl/openal/SOFTEventProcI;J)Lorg/lwjgl/openal/SOFTEventProc; object: new SOFTEventProc
+    createSafe(J)Lorg/lwjgl/openal/SOFTEventProc; object: new SOFTEventProc
+org/lwjgl/openal/SOFTEventProc$1 keep-constructor=1 void=1
+org/lwjgl/openal/SOFTEventProcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/openal/SOFTEvents default=2 keep-constructor=1 void=14
+    alGetPointerDirectSOFT(JI)J default: default
+    alGetPointerSOFT(I)J default: default
+org/lwjgl/openal/SOFTGainClampEx keep-constructor=1
+org/lwjgl/openal/SOFTHRTF default=3 keep-constructor=1 success=2
+    alcGetStringiSOFT(JII)Ljava/lang/String; default: default
+    nalcGetStringiSOFT(JII)J default: default
+    nalcResetDeviceSOFT(JJ)Z default: default
+org/lwjgl/openal/SOFTLoopPoints keep-constructor=1
+org/lwjgl/openal/SOFTLoopback default=1 id=3 keep-constructor=1 void=8
+    alcIsRenderFormatSupportedSOFT(JIII)Z default: default
+org/lwjgl/openal/SOFTLoopbackBformat keep-constructor=1
+org/lwjgl/openal/SOFTMSADPCM keep-constructor=1
+org/lwjgl/openal/SOFTOutputLimiter keep-constructor=1
+org/lwjgl/openal/SOFTOutputMode keep-constructor=1
+org/lwjgl/openal/SOFTPauseDevice keep-constructor=1 void=2
+org/lwjgl/openal/SOFTReopenDevice default=5 keep-constructor=1
+    alcReopenDeviceSOFT(JLjava/lang/CharSequence;Ljava/nio/IntBuffer;)Z default: default
+    alcReopenDeviceSOFT(JLjava/lang/CharSequence;[I)Z default: default
+    alcReopenDeviceSOFT(JLjava/nio/ByteBuffer;Ljava/nio/IntBuffer;)Z default: default
+    alcReopenDeviceSOFT(JLjava/nio/ByteBuffer;[I)Z default: default
+    nalcReopenDeviceSOFT(JJJ)Z default: default
+org/lwjgl/openal/SOFTSourceLatency default=4 keep-constructor=1 void=56
+    alGetSourcedDirectSOFT(JII)D default: default
+    alGetSourcedSOFT(II)D default: default
+    alGetSourcei64DirectSOFT(JII)J default: default
+    alGetSourcei64SOFT(II)J default: default
+org/lwjgl/openal/SOFTSourceLength keep-constructor=1
+org/lwjgl/openal/SOFTSourceResampler default=4 keep-constructor=1
+    alGetStringiDirectSOFT(JII)Ljava/lang/String; default: default
+    alGetStringiSOFT(II)Ljava/lang/String; default: default
+    nalGetStringiDirectSOFT(JII)J default: default
+    nalGetStringiSOFT(II)J default: default
+org/lwjgl/openal/SOFTSourceSpatialize keep-constructor=1
+org/lwjgl/openal/SOFTSourceStartDelay keep-constructor=1 void=8
+org/lwjgl/openal/SOFTSystemEventProc keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/openal/SOFTSystemEventProc; object: new SOFTSystemEventProc
+    create(Lorg/lwjgl/openal/SOFTSystemEventProcI;)Lorg/lwjgl/openal/SOFTSystemEventProc; object: new SOFTSystemEventProc
+    create(Lorg/lwjgl/openal/SOFTSystemEventProcI;J)Lorg/lwjgl/openal/SOFTSystemEventProc; object: new SOFTSystemEventProc
+    createSafe(J)Lorg/lwjgl/openal/SOFTSystemEventProc; object: new SOFTSystemEventProc
+org/lwjgl/openal/SOFTSystemEventProc$1 keep-constructor=1 void=1
+org/lwjgl/openal/SOFTSystemEventProcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/openal/SOFTSystemEvents default=4 keep-constructor=1 void=2
+    alcEventControlSOFT(Ljava/nio/IntBuffer;Z)Z default: default
+    alcEventControlSOFT([IZ)Z default: default
+    alcEventIsSupportedSOFT(II)I default: default
+    nalcEventControlSOFT(IJZ)Z default: default
+org/lwjgl/openal/SOFTUHJ keep-constructor=1
+org/lwjgl/openal/SOFTUHJEx keep-constructor=1
+org/lwjgl/openal/SOFTXHoldOnDisconnect keep-constructor=1

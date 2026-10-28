@@ -1,0 +1,10 @@
+description = 'Handlers and state of the patched LWJGL 3, embedded into the patched jars by the patcher.'
+
+dependencies {
+    compileOnly libs.bundles.lwjgl
+    compileOnly project(':headlessmc-lwjgl-api')
+}
+
+tasks.named('compileJava', JavaCompile) {
+    options.release = 8
+}

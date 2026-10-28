@@ -1,0 +1,256 @@
+# Behaviour catalog of org.lwjgl:lwjgl-spvc:3.4.3
+# Every method of every class is patched by the first matching rule, counted per class.
+# Methods resolved by rules that only guess are listed individually and have to be reviewed.
+# Regenerate with: ./gradlew updateCatalogLock
+org/lwjgl/util/spvc/Spv keep-constructor=1
+org/lwjgl/util/spvc/Spvc default=194 guarded-static-init=1 interface-proxy=2 keep-constructor=1 void=57
+    access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
+    nspvc_compiler_add_header_line(JJ)I default: default
+    nspvc_compiler_buffer_get_hlsl_counter_buffer(JIJ)Z default: default
+    nspvc_compiler_build_dummy_sampler_for_combined_images(JJ)I default: default
+    nspvc_compiler_compile(JJ)I default: default
+    nspvc_compiler_create_compiler_options(JJ)I default: default
+    nspvc_compiler_create_shader_resources(JJ)I default: default
+    nspvc_compiler_create_shader_resources_for_active_variables(JJJ)I default: default
+    nspvc_compiler_get_active_buffer_ranges(JIJJ)I default: default
+    nspvc_compiler_get_active_interface_variables(JJ)I default: default
+    nspvc_compiler_get_binary_offset_for_decoration(JIIJ)Z default: default
+    nspvc_compiler_get_buffer_block_decorations(JIJJ)I default: default
+    nspvc_compiler_get_cleansed_entry_point_name(JJI)J default: default
+    nspvc_compiler_get_combined_image_samplers(JJJ)I default: default
+    nspvc_compiler_get_declared_capabilities(JJJ)I default: default
+    nspvc_compiler_get_declared_extensions(JJJ)I default: default
+    nspvc_compiler_get_declared_struct_member_size(JJIJ)I default: default
+    nspvc_compiler_get_declared_struct_size(JJJ)I default: default
+    nspvc_compiler_get_declared_struct_size_runtime_array(JJJJ)I default: default
+    nspvc_compiler_get_decoration_string(JII)J default: default
+    nspvc_compiler_get_entry_points(JJJ)I default: default
+    nspvc_compiler_get_execution_modes(JJJ)I default: default
+    nspvc_compiler_get_member_decoration_string(JIII)J default: default
+    nspvc_compiler_get_member_name(JII)J default: default
+    nspvc_compiler_get_name(JI)J default: default
+    nspvc_compiler_get_remapped_declared_block_name(JI)J default: default
+    nspvc_compiler_get_required_extension(JJ)J default: default
+    nspvc_compiler_get_specialization_constants(JJJ)I default: default
+    nspvc_compiler_get_work_group_size_specialization_constants(JJJJ)I default: default
+    nspvc_compiler_hlsl_add_resource_binding(JJ)I default: default
+    nspvc_compiler_hlsl_add_vertex_attribute_remap(JJJ)I default: default
+    nspvc_compiler_hlsl_set_root_constants_layout(JJJ)I default: default
+    nspvc_compiler_msl_add_resource_binding(JJ)I default: default
+    nspvc_compiler_msl_add_resource_binding_2(JJ)I default: default
+    nspvc_compiler_msl_add_shader_input(JJ)I default: default
+    nspvc_compiler_msl_add_shader_input_2(JJ)I default: default
+    nspvc_compiler_msl_add_shader_output(JJ)I default: default
+    nspvc_compiler_msl_add_shader_output_2(JJ)I default: default
+    nspvc_compiler_msl_add_vertex_attribute(JJ)I default: default
+    nspvc_compiler_msl_get_combined_sampler_suffix(J)J default: default
+    nspvc_compiler_msl_remap_constexpr_sampler(JIJ)I default: default
+    nspvc_compiler_msl_remap_constexpr_sampler_by_binding(JIIJ)I default: default
+    nspvc_compiler_msl_remap_constexpr_sampler_by_binding_ycbcr(JIIJJ)I default: default
+    nspvc_compiler_msl_remap_constexpr_sampler_ycbcr(JIJJ)I default: default
+    nspvc_compiler_msl_set_combined_sampler_suffix(JJ)I default: default
+    nspvc_compiler_rename_entry_point(JJJI)I default: default
+    nspvc_compiler_require_extension(JJ)I default: default
+    nspvc_compiler_set_entry_point(JJI)I default: default
+    nspvc_compiler_type_struct_member_array_stride(JJIJ)I default: default
+    nspvc_compiler_type_struct_member_matrix_stride(JJIJ)I default: default
+    nspvc_compiler_type_struct_member_offset(JJIJ)I default: default
+    nspvc_context_create(J)I default: default
+    nspvc_context_create_compiler(JIJIJ)I default: default
+    nspvc_context_get_last_error_string(J)J default: default
+    nspvc_context_parse_spirv(JJJJ)I default: default
+    nspvc_get_commit_revision_and_timestamp()J default: default
+    nspvc_resources_get_builtin_resource_list_for_type(JIJJ)I default: default
+    nspvc_resources_get_resource_list_for_type(JIJJ)I default: default
+    spvc_compiler_add_header_line(JLjava/lang/CharSequence;)I default: default
+    spvc_compiler_add_header_line(JLjava/nio/ByteBuffer;)I default: default
+    spvc_compiler_buffer_get_hlsl_counter_buffer(JILjava/nio/IntBuffer;)Z default: default
+    spvc_compiler_buffer_is_hlsl_counter_buffer(JI)Z default: default
+    spvc_compiler_build_combined_image_samplers(J)I default: default
+    spvc_compiler_build_dummy_sampler_for_combined_images(JLjava/nio/IntBuffer;)I default: default
+    spvc_compiler_compile(JLorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_create_compiler_options(JLorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_create_shader_resources(JLorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_create_shader_resources_for_active_variables(JLorg/lwjgl/PointerBuffer;J)I default: default
+    spvc_compiler_flatten_buffer_block(JI)I default: default
+    spvc_compiler_get_active_buffer_ranges(JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_active_interface_variables(JLorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_binary_offset_for_decoration(JIILjava/nio/IntBuffer;)Z default: default
+    spvc_compiler_get_buffer_block_decorations(JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_cleansed_entry_point_name(JLjava/lang/CharSequence;I)Ljava/lang/String; default: default
+    spvc_compiler_get_cleansed_entry_point_name(JLjava/nio/ByteBuffer;I)Ljava/lang/String; default: default
+    spvc_compiler_get_combined_image_samplers(JLorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_constant_handle(JI)J default: default
+    spvc_compiler_get_current_id_bound(J)I default: default
+    spvc_compiler_get_declared_capabilities(JLorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_declared_extensions(JLorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_declared_struct_member_size(JJILorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_declared_struct_size(JJLorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_declared_struct_size_runtime_array(JJJLorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_decoration(JII)I default: default
+    spvc_compiler_get_decoration_string(JII)Ljava/lang/String; default: default
+    spvc_compiler_get_entry_points(JLorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_execution_mode_argument(JI)I default: default
+    spvc_compiler_get_execution_mode_argument_by_index(JII)I default: default
+    spvc_compiler_get_execution_model(J)I default: default
+    spvc_compiler_get_execution_modes(JLorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_member_decoration(JIII)I default: default
+    spvc_compiler_get_member_decoration_string(JIII)Ljava/lang/String; default: default
+    spvc_compiler_get_member_name(JII)Ljava/lang/String; default: default
+    spvc_compiler_get_name(JI)Ljava/lang/String; default: default
+    spvc_compiler_get_num_required_extensions(J)J default: default
+    spvc_compiler_get_remapped_declared_block_name(JI)Ljava/lang/String; default: default
+    spvc_compiler_get_required_extension(JJ)Ljava/lang/String; default: default
+    spvc_compiler_get_specialization_constants(JLorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_compiler_get_type_handle(JI)J default: default
+    spvc_compiler_get_work_group_size_specialization_constants(JLorg/lwjgl/util/spvc/SpvcSpecializationConstant;Lorg/lwjgl/util/spvc/SpvcSpecializationConstant;Lorg/lwjgl/util/spvc/SpvcSpecializationConstant;)I default: default
+    spvc_compiler_has_active_builtin(JII)Z default: default
+    spvc_compiler_has_decoration(JII)Z default: default
+    spvc_compiler_has_member_decoration(JIII)Z default: default
+    spvc_compiler_hlsl_add_resource_binding(JLorg/lwjgl/util/spvc/SpvcHLSLResourceBinding;)I default: default
+    spvc_compiler_hlsl_add_vertex_attribute_remap(JLorg/lwjgl/util/spvc/SpvcHlslVertexAttributeRemap;J)I default: default
+    spvc_compiler_hlsl_is_resource_used(JIII)Z default: default
+    spvc_compiler_hlsl_remap_num_workgroups_builtin(J)I default: default
+    spvc_compiler_hlsl_set_resource_binding_flags(JI)I default: default
+    spvc_compiler_hlsl_set_root_constants_layout(JLorg/lwjgl/util/spvc/SpvcHlslRootConstants;J)I default: default
+    spvc_compiler_install_compiler_options(JJ)I default: default
+    spvc_compiler_mask_stage_output_by_builtin(JI)I default: default
+    spvc_compiler_mask_stage_output_by_location(JII)I default: default
+    spvc_compiler_msl_add_discrete_descriptor_set(JI)I default: default
+    spvc_compiler_msl_add_dynamic_buffer(JIII)I default: default
+    spvc_compiler_msl_add_inline_uniform_block(JII)I default: default
+    spvc_compiler_msl_add_resource_binding(JLorg/lwjgl/util/spvc/SpvcMslResourceBinding;)I default: default
+    spvc_compiler_msl_add_resource_binding_2(JLorg/lwjgl/util/spvc/SpvcMslResourceBinding2;)I default: default
+    spvc_compiler_msl_add_shader_input(JLorg/lwjgl/util/spvc/SpvcMslShaderInterfaceVar;)I default: default
+    spvc_compiler_msl_add_shader_input_2(JLorg/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2;)I default: default
+    spvc_compiler_msl_add_shader_output(JLorg/lwjgl/util/spvc/SpvcMslShaderInterfaceVar;)I default: default
+    spvc_compiler_msl_add_shader_output_2(JLorg/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2;)I default: default
+    spvc_compiler_msl_add_vertex_attribute(JLorg/lwjgl/util/spvc/SpvcMslVertexAttribute;)I default: default
+    spvc_compiler_msl_get_automatic_resource_binding(JI)I default: default
+    spvc_compiler_msl_get_automatic_resource_binding_secondary(JI)I default: default
+    spvc_compiler_msl_get_combined_sampler_suffix(J)Ljava/lang/String; default: default
+    spvc_compiler_msl_is_rasterization_disabled(J)Z default: default
+    spvc_compiler_msl_is_resource_used(JIII)Z default: default
+    spvc_compiler_msl_is_shader_input_used(JI)Z default: default
+    spvc_compiler_msl_is_shader_output_used(JI)Z default: default
+    spvc_compiler_msl_is_vertex_attribute_used(JI)Z default: default
+    spvc_compiler_msl_needs_buffer_size_buffer(J)Z default: default
+    spvc_compiler_msl_needs_input_threadgroup_mem(J)Z default: default
+    spvc_compiler_msl_needs_output_buffer(J)Z default: default
+    spvc_compiler_msl_needs_patch_output_buffer(J)Z default: default
+    spvc_compiler_msl_needs_swizzle_buffer(J)Z default: default
+    spvc_compiler_msl_remap_constexpr_sampler(JILorg/lwjgl/util/spvc/SpvcMslConstexprSampler;)I default: default
+    spvc_compiler_msl_remap_constexpr_sampler_by_binding(JIILorg/lwjgl/util/spvc/SpvcMslConstexprSampler;)I default: default
+    spvc_compiler_msl_remap_constexpr_sampler_by_binding_ycbcr(JIILorg/lwjgl/util/spvc/SpvcMslConstexprSampler;Lorg/lwjgl/util/spvc/SpvcMslSamplerYcbcrConversion;)I default: default
+    spvc_compiler_msl_remap_constexpr_sampler_ycbcr(JILorg/lwjgl/util/spvc/SpvcMslConstexprSampler;Lorg/lwjgl/util/spvc/SpvcMslSamplerYcbcrConversion;)I default: default
+    spvc_compiler_msl_set_argument_buffer_device_address_space(JIZ)I default: default
+    spvc_compiler_msl_set_combined_sampler_suffix(JLjava/lang/CharSequence;)I default: default
+    spvc_compiler_msl_set_combined_sampler_suffix(JLjava/nio/ByteBuffer;)I default: default
+    spvc_compiler_msl_set_fragment_output_components(JII)I default: default
+    spvc_compiler_options_set_bool(JIZ)I default: default
+    spvc_compiler_options_set_uint(JII)I default: default
+    spvc_compiler_rename_entry_point(JLjava/lang/CharSequence;Ljava/lang/CharSequence;I)I default: default
+    spvc_compiler_rename_entry_point(JLjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)I default: default
+    spvc_compiler_require_extension(JLjava/lang/CharSequence;)I default: default
+    spvc_compiler_require_extension(JLjava/nio/ByteBuffer;)I default: default
+    spvc_compiler_set_enabled_interface_variables(JJ)I default: default
+    spvc_compiler_set_entry_point(JLjava/lang/CharSequence;I)I default: default
+    spvc_compiler_set_entry_point(JLjava/nio/ByteBuffer;I)I default: default
+    spvc_compiler_type_struct_member_array_stride(JJILjava/nio/IntBuffer;)I default: default
+    spvc_compiler_type_struct_member_matrix_stride(JJILjava/nio/IntBuffer;)I default: default
+    spvc_compiler_type_struct_member_offset(JJILjava/nio/IntBuffer;)I default: default
+    spvc_compiler_variable_is_depth_or_compare(JI)Z default: default
+    spvc_constant_get_scalar_fp16(JII)F default: default
+    spvc_constant_get_scalar_fp32(JII)F default: default
+    spvc_constant_get_scalar_fp64(JII)D default: default
+    spvc_constant_get_scalar_i16(JII)I default: default
+    spvc_constant_get_scalar_i32(JII)I default: default
+    spvc_constant_get_scalar_i64(JII)J default: default
+    spvc_constant_get_scalar_i8(JII)I default: default
+    spvc_constant_get_scalar_u16(JII)I default: default
+    spvc_constant_get_scalar_u32(JII)I default: default
+    spvc_constant_get_scalar_u64(JII)J default: default
+    spvc_constant_get_scalar_u8(JII)I default: default
+    spvc_constant_get_type(J)I default: default
+    spvc_context_create(Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_context_create_compiler(JIJILorg/lwjgl/PointerBuffer;)I default: default
+    spvc_context_get_last_error_string(J)Ljava/lang/String; default: default
+    spvc_context_parse_spirv(JLjava/nio/IntBuffer;JLorg/lwjgl/PointerBuffer;)I default: default
+    spvc_get_commit_revision_and_timestamp()Ljava/lang/String; default: default
+    spvc_msl_get_aux_buffer_struct_version()I default: default
+    spvc_resources_get_builtin_resource_list_for_type(JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_resources_get_resource_list_for_type(JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
+    spvc_type_array_dimension_is_literal(JI)Z default: default
+    spvc_type_get_array_dimension(JI)I default: default
+    spvc_type_get_base_type_id(J)I default: default
+    spvc_type_get_basetype(J)I default: default
+    spvc_type_get_bit_width(J)I default: default
+    spvc_type_get_columns(J)I default: default
+    spvc_type_get_image_access_qualifier(J)I default: default
+    spvc_type_get_image_arrayed(J)Z default: default
+    spvc_type_get_image_dimension(J)I default: default
+    spvc_type_get_image_is_depth(J)Z default: default
+    spvc_type_get_image_is_storage(J)Z default: default
+    spvc_type_get_image_multisampled(J)Z default: default
+    spvc_type_get_image_sampled_type(J)I default: default
+    spvc_type_get_image_storage_format(J)I default: default
+    spvc_type_get_member_type(JI)I default: default
+    spvc_type_get_num_array_dimensions(J)I default: default
+    spvc_type_get_num_member_types(J)I default: default
+    spvc_type_get_storage_class(J)I default: default
+    spvc_type_get_vector_size(J)I default: default
+org/lwjgl/util/spvc/Spvc$Functions guarded-static-init=1 keep-constructor=1
+org/lwjgl/util/spvc/SpvcBufferRange fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=9
+org/lwjgl/util/spvc/SpvcBufferRange$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/util/spvc/SpvcCombinedImageSampler fluent=7 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=9
+org/lwjgl/util/spvc/SpvcCombinedImageSampler$Buffer fluent=7 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=3
+org/lwjgl/util/spvc/SpvcEntryPoint fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=7
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/spvc/SpvcEntryPoint$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=2
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/spvc/SpvcErrorCallback default=1 keep-constructor=2 object=4
+    create(J)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
+    create(Lorg/lwjgl/util/spvc/SpvcErrorCallbackI;)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
+    create(Lorg/lwjgl/util/spvc/SpvcErrorCallbackI;J)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
+    createSafe(J)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
+    getError(J)Ljava/lang/String; default: default
+org/lwjgl/util/spvc/SpvcErrorCallback$1 keep-constructor=1 void=1
+org/lwjgl/util/spvc/SpvcErrorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
+    getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
+org/lwjgl/util/spvc/SpvcHLSLResourceBinding fluent=15 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=15 struct-member=13
+org/lwjgl/util/spvc/SpvcHLSLResourceBinding$Buffer fluent=15 guarded-static-init=1 keep-constructor=3 struct=6 struct-member=3
+org/lwjgl/util/spvc/SpvcHLSLResourceBindingMapping fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/util/spvc/SpvcHLSLResourceBindingMapping$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
+org/lwjgl/util/spvc/SpvcHlslRootConstants fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/util/spvc/SpvcHlslRootConstants$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/util/spvc/SpvcHlslVertexAttributeRemap fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=7
+    semantic()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/spvc/SpvcHlslVertexAttributeRemap$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=2
+    semantic()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/spvc/SpvcMslConstexprSampler fluent=19 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=45
+org/lwjgl/util/spvc/SpvcMslConstexprSampler$Buffer fluent=19 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=15
+org/lwjgl/util/spvc/SpvcMslResourceBinding fluent=10 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=18
+org/lwjgl/util/spvc/SpvcMslResourceBinding$Buffer fluent=10 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=6
+org/lwjgl/util/spvc/SpvcMslResourceBinding2 fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=21
+org/lwjgl/util/spvc/SpvcMslResourceBinding2$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/util/spvc/SpvcMslSamplerYcbcrConversion fluent=14 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=28
+    swizzle()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+org/lwjgl/util/spvc/SpvcMslSamplerYcbcrConversion$Buffer fluent=14 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=9
+    swizzle()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+org/lwjgl/util/spvc/SpvcMslShaderInput fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/util/spvc/SpvcMslShaderInput$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=12
+org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=4
+org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2 fluent=9 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=15
+org/lwjgl/util/spvc/SpvcMslShaderInterfaceVar2$Buffer fluent=9 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=5
+org/lwjgl/util/spvc/SpvcMslVertexAttribute fluent=11 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=21
+org/lwjgl/util/spvc/SpvcMslVertexAttribute$Buffer fluent=11 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=7
+org/lwjgl/util/spvc/SpvcReflectedBuiltinResource fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=9 struct-member=8
+org/lwjgl/util/spvc/SpvcReflectedBuiltinResource$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 struct=3 struct-member=2
+org/lwjgl/util/spvc/SpvcReflectedResource fluent=8 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 nio-buffer=1 nio-buffer-empty=1 struct=7 struct-member=13
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/spvc/SpvcReflectedResource$Buffer fluent=8 guarded-static-init=1 keep-constructor=3 nio-buffer-empty=1 struct=2 struct-member=4
+    name()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+org/lwjgl/util/spvc/SpvcSpecializationConstant fluent=6 guarded-static-init=1 keep-constructor=2 keep-struct-sizeof=1 lwjgl-buffer=7 struct=7 struct-member=6
+org/lwjgl/util/spvc/SpvcSpecializationConstant$Buffer fluent=6 guarded-static-init=1 keep-constructor=3 struct=2 struct-member=2
