@@ -68,6 +68,16 @@ class GlStateTest {
             GL11.glGetFloatv(GL11.GL_COLOR_CLEAR_VALUE, clear);
             assertArrayEquals(new float[]{0.25f, 0.5f, 0.75f, 1.0f}, clear);
             assertEquals(GL11.GL_LESS, GL11.glGetInteger(GL11.GL_DEPTH_FUNC));
+
+            int shader = GL20.glCreateShader(GL20.GL_FRAGMENT_SHADER);
+            int program = GL20.glCreateProgram();
+            GL20.glAttachShader(program, shader);
+            assertEquals(GL20.GL_FRAGMENT_SHADER, GL20.glGetShaderi(shader, GL20.GL_SHADER_TYPE));
+            assertEquals(GL11.GL_TRUE, GL20.glGetShaderi(shader, GL20.GL_COMPILE_STATUS));
+            assertEquals(0, GL20.glGetShaderi(shader, GL20.GL_INFO_LOG_LENGTH));
+            assertEquals(GL11.GL_TRUE, GL20.glGetProgrami(program, GL20.GL_LINK_STATUS));
+            assertEquals(1, GL20.glGetProgrami(program, GL20.GL_ATTACHED_SHADERS));
+            assertEquals(0, GL20.glGetProgrami(program, GL20.GL_ACTIVE_UNIFORMS));
         } finally {
             GL11.glViewport(0, 0, 854, 480);
             GL13.glActiveTexture(GL13.GL_TEXTURE0);

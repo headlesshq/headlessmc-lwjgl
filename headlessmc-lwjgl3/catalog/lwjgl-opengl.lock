@@ -667,7 +667,7 @@ org/lwjgl/opengl/GL15C default=8 guarded-static-init=1 handler=1 id=2 keep-const
     glMapBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     glMapBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglMapBuffer(II)J default: default
-org/lwjgl/opengl/GL20 default=22 guarded-static-init=1 handler=1 id=2 keep-constructor=1 success=2 void=191
+org/lwjgl/opengl/GL20 default=22 guarded-static-init=1 handler=12 id=1 keep-constructor=1 void=183
     glGetActiveAttrib(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
     glGetActiveAttrib(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
     glGetActiveUniform(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
@@ -690,7 +690,7 @@ org/lwjgl/opengl/GL20 default=22 guarded-static-init=1 handler=1 id=2 keep-const
     glIsShader(I)Z default: default
     nglGetAttribLocation(IJ)I default: default
     nglGetUniformLocation(IJ)I default: default
-org/lwjgl/opengl/GL20C default=22 guarded-static-init=1 handler=1 id=2 keep-constructor=1 success=2 void=191
+org/lwjgl/opengl/GL20C default=22 guarded-static-init=1 handler=12 id=1 keep-constructor=1 void=183
     glGetActiveAttrib(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
     glGetActiveAttrib(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
     glGetActiveUniform(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default

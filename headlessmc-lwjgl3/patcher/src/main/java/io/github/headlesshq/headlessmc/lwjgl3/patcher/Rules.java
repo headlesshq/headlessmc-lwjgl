@@ -55,8 +55,6 @@ public final class Rules {
         Map.entry("glCheckFramebufferStatusEXT", 0x8CD5),
         Map.entry("glCheckNamedFramebufferStatus", 0x8CD5),
         Map.entry("glClientWaitSync", 0x911A),
-        Map.entry("glGetShaderi", 1),
-        Map.entry("glGetProgrami", 1),
         Map.entry("glUnmapBuffer", true),
         Map.entry("glUnmapNamedBuffer", true),
         Map.entry("glIsEnabled", false)
