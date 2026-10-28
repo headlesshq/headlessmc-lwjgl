@@ -8,6 +8,8 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.concurrent.ConcurrentSkipListMap;
 
@@ -84,6 +86,57 @@ public final class StructMemory {
         while ((region = (Region) COLLECTED.poll()) != null) {
             REGIONS.remove(region.address, region);
         }
+    }
+
+    /**
+     * @param buffer a buffer.
+     * @return the address of the current position of the buffer if it is registered memory, otherwise
+     * {@link DummyBuffers#FAKE_ADDRESS}.
+     */
+    public static long addressOf(Buffer buffer) {
+        if (buffer == null || !buffer.isDirect()) {
+            return DummyBuffers.FAKE_ADDRESS;
+        }
+
+        long address = address(buffer);
+        return find(address, buffer.capacity()) == null ? DummyBuffers.FAKE_ADDRESS : address + buffer.position();
+    }
+
+    /**
+     * @param text a string.
+     * @return new registered memory holding the null-terminated UTF-8 encoding of the string.
+     */
+    public static ByteBuffer utf8(CharSequence text) {
+        byte[] bytes = text.toString().getBytes(StandardCharsets.UTF_8);
+        ByteBuffer buffer = allocate(bytes.length + 1);
+        buffer.put(bytes).put((byte) 0).flip();
+        return buffer;
+    }
+
+    /**
+     * @param address the address of a null-terminated string.
+     * @param charset the encoding of the string.
+     * @return the string, empty if the address is not registered memory.
+     */
+    public static String string(long address, Charset charset) {
+        Map.Entry<Long, Region> entry = REGIONS.floorEntry(address);
+        ByteBuffer memory = entry == null ? null : entry.getValue().get();
+        if (memory == null || address >= entry.getKey() + entry.getValue().size) {
+            return "";
+        }
+
+        int start = (int) (address - entry.getKey());
+        int end = start;
+        while (end < memory.capacity() && memory.get(end) != 0) {
+            end++;
+        }
+
+        byte[] bytes = new byte[end - start];
+        for (int i = 0; i < bytes.length; i++) {
+            bytes[i] = memory.get(start + i);
+        }
+
+        return new String(bytes, charset);
     }
 
     public static byte getByte(long address) {

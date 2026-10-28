@@ -6,6 +6,16 @@ import io.github.headlesshq.headlessmc.lwjgl.api.Keys;
 import io.github.headlesshq.headlessmc.lwjgl.api.Modifiers;
 import org.junit.jupiter.api.Test;
 import org.lwjgl.glfw.GLFW;
+import org.lwjgl.sdl.SDLEvents;
+import org.lwjgl.sdl.SDLInit;
+import org.lwjgl.sdl.SDLKeyboard;
+import org.lwjgl.sdl.SDLMouse;
+import org.lwjgl.sdl.SDLScancode;
+import org.lwjgl.sdl.SDLVideo;
+import org.lwjgl.sdl.SDL_DisplayMode;
+import org.lwjgl.sdl.SDL_Event;
+import org.lwjgl.sdl.SDL_KeyboardEvent;
+import org.lwjgl.system.MemoryStack;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +24,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Injects input through the API and checks that a GLFW application sees it.
+ * Injects input through the API and checks that GLFW and SDL applications see it.
  */
 class InputTest {
     @Test
@@ -73,6 +83,77 @@ class InputTest {
             HeadlessLwjgl.get().window().resize(854, 480);
             GLFW.glfwPollEvents();
             GLFW.glfwDestroyWindow(window);
+        }
+    }
+
+    @Test
+    void sdl() {
+        assertTrue(SDLInit.SDL_Init(SDLInit.SDL_INIT_VIDEO));
+        long window = SDLVideo.SDL_CreateWindow("Input", 1280, 720, SDLVideo.SDL_WINDOW_OPENGL);
+        try {
+            assertTrue(SDLKeyboard.SDL_StartTextInput(window));
+            HeadlessLwjgl lwjgl = HeadlessLwjgl.get();
+            lwjgl.keyboard().press(Keys.W, Modifiers.SHIFT);
+            assertEquals(1, SDLKeyboard.SDL_GetKeyboardState().get(SDLScancode.SDL_SCANCODE_W));
+            lwjgl.keyboard().type("é");
+            lwjgl.mouse().moveTo(10.0, 20.0);
+            lwjgl.mouse().press(Buttons.RIGHT);
+            lwjgl.mouse().scroll(0.0, -1.0);
+            lwjgl.window().requestClose();
+
+            try (MemoryStack stack = MemoryStack.stackPush()) {
+                SDL_Event event = SDL_Event.malloc(stack);
+                List<String> events = new ArrayList<>();
+                while (SDLEvents.SDL_PollEvent(event)) {
+                    switch (event.type()) {
+                        case SDLEvents.SDL_EVENT_KEY_DOWN:
+                            SDL_KeyboardEvent key = event.key();
+                            events.add("key " + key.scancode() + " " + Integer.toHexString(key.key()) + " " + key.mod() + " " + key.down());
+                            break;
+                        case SDLEvents.SDL_EVENT_TEXT_INPUT:
+                            events.add("text " + event.text().textString());
+                            break;
+                        case SDLEvents.SDL_EVENT_MOUSE_MOTION:
+                            events.add("motion " + event.motion().x() + " " + event.motion().y() + " " + event.motion().xrel());
+                            break;
+                        case SDLEvents.SDL_EVENT_MOUSE_BUTTON_DOWN:
+                            events.add("button " + event.button().button() + " " + event.button().down());
+                            break;
+                        case SDLEvents.SDL_EVENT_MOUSE_WHEEL:
+                            events.add("wheel " + event.wheel().y());
+                            break;
+                        case SDLEvents.SDL_EVENT_WINDOW_CLOSE_REQUESTED:
+                            events.add("close " + event.window().windowID());
+                            break;
+                        case SDLEvents.SDL_EVENT_QUIT:
+                            events.add("quit");
+                            break;
+                        default:
+                            events.add("other " + event.type());
+                            break;
+                    }
+                }
+
+                assertEquals(Arrays.asList("key 26 77 1 true", "text é", "motion 10.0 20.0 10.0", "button 3 true",
+                                           "wheel -1.0", "close 1", "quit"), events);
+            }
+
+            assertEquals(1 << 2, SDLMouse.SDL_GetMouseState(null, null));
+            SDL_DisplayMode mode = SDLVideo.SDL_GetCurrentDisplayMode(SDLVideo.SDL_GetPrimaryDisplay());
+            assertNotNull(mode);
+            assertEquals(1920, mode.w());
+            assertEquals(1080, mode.h());
+        } finally {
+            HeadlessLwjgl.get().keyboard().release(Keys.W);
+            HeadlessLwjgl.get().mouse().release(Buttons.RIGHT);
+            SDLEvents.SDL_PumpEvents();
+            while (SDLEvents.SDL_PollEvent(null)) {
+                try (MemoryStack stack = MemoryStack.stackPush()) {
+                    SDLEvents.SDL_PollEvent(SDL_Event.malloc(stack));
+                }
+            }
+
+            SDLVideo.SDL_DestroyWindow(window);
         }
     }
 

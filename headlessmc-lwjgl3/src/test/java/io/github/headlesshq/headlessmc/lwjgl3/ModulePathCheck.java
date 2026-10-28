@@ -26,6 +26,7 @@ public final class ModulePathCheck {
         test.sdl();
         test.openAl();
         new InputTest().glfw();
+        new InputTest().sdl();
         StructTest structs = new StructTest();
         structs.fieldsCanBeReadBack();
         structs.buffersHaveDistinctElements();

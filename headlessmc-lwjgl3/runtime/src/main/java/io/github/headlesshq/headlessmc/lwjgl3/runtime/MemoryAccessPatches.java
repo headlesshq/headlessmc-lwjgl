@@ -2,9 +2,13 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime;
 
 import org.lwjgl.system.Struct;
 
+import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
+
 /**
  * Patches for the address based accessors of {@code org.lwjgl.system.MemoryUtil}, which only touch the struct memory
- * of {@link StructMemory}: other addresses read as 0 and ignore writes. {@code C long} and pointers are 64 bit.
+ * of {@link StructMemory}: other addresses read as 0 and ignore writes, strings at them are empty, and buffers that are
+ * not struct memory have a fake address. {@code C long} and pointers are 64 bit.
  */
 public final class MemoryAccessPatches {
     private static final String MEMORY_UTIL = "org/lwjgl/system/MemoryUtil";
@@ -191,6 +195,36 @@ public final class MemoryAccessPatches {
     @Patch(owner = MEMORY_UTIL)
     public static void memPutAddressUnaligned(long address, long value) {
         StructMemory.putLong(address, value);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long memAddress(ByteBuffer buffer) {
+        return StructMemory.addressOf(buffer);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long memAddressSafe(ByteBuffer buffer) {
+        return buffer == null ? 0L : StructMemory.addressOf(buffer);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static String memUTF8(long address) {
+        return StructMemory.string(address, StandardCharsets.UTF_8);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static String memUTF8Safe(long address) {
+        return address == 0L ? null : StructMemory.string(address, StandardCharsets.UTF_8);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static String memASCII(long address) {
+        return StructMemory.string(address, StandardCharsets.US_ASCII);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static String memASCIISafe(long address) {
+        return address == 0L ? null : StructMemory.string(address, StandardCharsets.US_ASCII);
     }
 
     @Patch(owner = MEMORY_UTIL)
