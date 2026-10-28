@@ -2,7 +2,6 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
 
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl3.runtime.Log;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.WindowConfig;
 import org.lwjgl.opengl.GL46C;
 
 import java.io.IOException;
@@ -21,7 +20,8 @@ import java.util.Set;
 
 /**
  * The values returned by {@code glGet*} queries, keyed by the name of the GL constant.
- * <p>Defaults are the values recorded from a real driver by the probe ({@value #RECORDED}), completed by values that
+ * <p>State the application sets, like the viewport or bindings, comes from {@link GlState}.
+ * Defaults are the values recorded from a real driver by the probe ({@value #RECORDED}), completed by values that
  * resemble a desktop OpenGL 4.6 driver. Every value can be overridden with the system property
  * {@code hmc.lwjgl3.gl.<GL_CONSTANT_NAME>}, e.g. {@code -Dhmc.lwjgl3.gl.GL_MAX_TEXTURE_SIZE=8192}, values with
  * multiple components are comma separated. Queries for unknown parameters return 0 and are reported once.</p>
@@ -55,10 +55,6 @@ public final class GlValues {
         put("GL_SUBPIXEL_BITS", 8);
         put("GL_SAMPLE_BUFFERS", 0);
         put("GL_SAMPLES", 0);
-        put("GL_PACK_ALIGNMENT", 4);
-        put("GL_UNPACK_ALIGNMENT", 4);
-        put("GL_VIEWPORT", 0, 0, WindowConfig.WIDTH, WindowConfig.HEIGHT);
-        put("GL_SCISSOR_BOX", 0, 0, WindowConfig.WIDTH, WindowConfig.HEIGHT);
 
         put("GL_MAX_TEXTURE_SIZE", 16384);
         put("GL_MAX_3D_TEXTURE_SIZE", 2048);
@@ -222,6 +218,11 @@ public final class GlValues {
      * @return all components of the value, an array with a single 0 for unknown parameters.
      */
     public static double[] getDoubles(int pname) {
+        double[] state = GlState.get(pname);
+        if (state != null) {
+            return state;
+        }
+
         double[] values = VALUES.get(pname);
         if (values == null) {
             String name = NAMES.get(pname);

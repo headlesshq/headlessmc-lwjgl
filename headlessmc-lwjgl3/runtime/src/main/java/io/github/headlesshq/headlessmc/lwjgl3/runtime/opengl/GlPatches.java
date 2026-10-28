@@ -5,6 +5,8 @@ import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.opengl.GLCapabilities;
 
+import java.nio.ByteBuffer;
+import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
@@ -114,6 +116,49 @@ public final class GlPatches {
     @Patch(owner = {GL11C, GL11})
     public static boolean glGetBoolean(int pname) {
         return GlValues.getInteger(pname) != 0;
+    }
+
+    @Patch(owner = {GL11C, GL11})
+    public static void glGetFloatv(int pname, float[] params) {
+        double[] values = GlValues.getDoubles(pname);
+        for (int i = 0; i < values.length && i < params.length; i++) {
+            params[i] = (float) values[i];
+        }
+    }
+
+    @Patch(owner = {GL11C, GL11})
+    public static double glGetDouble(int pname) {
+        return GlValues.getDoubles(pname)[0];
+    }
+
+    @Patch(owner = {GL11C, GL11})
+    public static void glGetDoublev(int pname, DoubleBuffer params) {
+        double[] values = GlValues.getDoubles(pname);
+        for (int i = 0; i < values.length && params.position() + i < params.limit(); i++) {
+            params.put(params.position() + i, values[i]);
+        }
+    }
+
+    @Patch(owner = {GL11C, GL11})
+    public static void glGetDoublev(int pname, double[] params) {
+        double[] values = GlValues.getDoubles(pname);
+        System.arraycopy(values, 0, params, 0, Math.min(values.length, params.length));
+    }
+
+    @Patch(owner = {GL11C, GL11})
+    public static void glGetBooleanv(int pname, ByteBuffer params) {
+        double[] values = GlValues.getDoubles(pname);
+        for (int i = 0; i < values.length && params.position() + i < params.limit(); i++) {
+            params.put(params.position() + i, (byte) (values[i] != 0.0 ? 1 : 0));
+        }
+    }
+
+    @Patch(owner = {GL32C, GL32})
+    public static void glGetInteger64v(int pname, long[] params) {
+        double[] values = GlValues.getDoubles(pname);
+        for (int i = 0; i < values.length && i < params.length; i++) {
+            params[i] = Math.round(values[i]);
+        }
     }
 
     @Patch(owner = {GL32C, GL32})
