@@ -217,3 +217,35 @@ tasks.named('check') {
 tasks.named('jar') {
     enabled = false
 }
+
+def patchedModules = libs.bundles.lwjgl.get().collect { it.module.name }
+
+/**
+ * One publication per patched LWJGL module: org.lwjgl:lwjgl-glfw becomes io.github.headlesshq:headlessmc-lwjgl3-glfw.
+ * The core module depends on the input API, every other module on the core module.
+ */
+publishing {
+    publications {
+        patchedModules.each { module ->
+            def suffix = module == 'lwjgl' ? '' : module.substring('lwjgl'.length())
+            create("patched${suffix.replace('-', '_')}", MavenPublication) {
+                artifactId = "headlessmc-lwjgl3${suffix}"
+                artifact(patchedDirectory.map { it.file("${module}.jar") }) {
+                    builtBy patchLwjgl
+                }
+                pom {
+                    name = "HeadlessMc LWJGL 3 ${module}"
+                    description = "Headless ${module} ${lwjglVersion}, every method patched, no native libraries."
+                    withXml {
+                        def dependencies = asNode().appendNode('dependencies')
+                        def dependency = dependencies.appendNode('dependency')
+                        dependency.appendNode('groupId', project.group)
+                        dependency.appendNode('artifactId', module == 'lwjgl' ? 'headlessmc-lwjgl-api' : 'headlessmc-lwjgl3')
+                        dependency.appendNode('version', project.version)
+                        dependency.appendNode('scope', 'runtime')
+                    }
+                }
+            }
+        }
+    }
+}
