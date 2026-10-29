@@ -420,7 +420,7 @@ org/lwjgl/stb/STBTTVertex guarded-static-init=1 keep-bridge=1 keep-constructor=2
 org/lwjgl/stb/STBTTVertex$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTVertex$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTVertex; struct [shim 3.1.6]
-org/lwjgl/stb/STBTruetype default=77 guarded-static-init=1 keep-constructor=1 lwjgl-buffer-empty=2 nio-buffer-empty=13 void=78
+org/lwjgl/stb/STBTruetype default=66 guarded-static-init=1 handler=19 keep-constructor=1 lwjgl-buffer-empty=2 nio-buffer-empty=13 void=70
     STBTT_POINT_SIZE(I)I default: default
     nstbtt_BakeFontBitmap(JIFJIIIIJ)I default: default
     nstbtt_CompareUTF8toUTF16_bigendian(JIJI)I default: default
@@ -467,7 +467,6 @@ org/lwjgl/stb/STBTruetype default=77 guarded-static-init=1 keep-constructor=1 lw
     nstbtt_ScaleForPixelHeight(JF)F default: default
     stbtt_BakeFontBitmap(Ljava/nio/ByteBuffer;FLjava/nio/ByteBuffer;IIILorg/lwjgl/stb/STBTTBakedChar$Buffer;)I default: default
     stbtt_CompareUTF8toUTF16_bigendian(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Z default: default
-    stbtt_FindGlyphIndex(Lorg/lwjgl/stb/STBTTFontinfo;I)I default: default
     stbtt_FindMatchingFont(Ljava/nio/ByteBuffer;Ljava/lang/CharSequence;I)I default: default
     stbtt_FindMatchingFont(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)I default: default
     stbtt_FindSVGDoc(Lorg/lwjgl/stb/STBTTFontinfo;I)J default: default
@@ -484,7 +483,6 @@ org/lwjgl/stb/STBTruetype default=77 guarded-static-init=1 keep-constructor=1 lw
     stbtt_GetCodepointShape(Lorg/lwjgl/stb/STBTTFontinfo;I)Lorg/lwjgl/stb/STBTTVertex$Buffer; lwjgl-buffer-empty: buffer STBTTVertex$Buffer(0)
     stbtt_GetCodepointShape(Lorg/lwjgl/stb/STBTTFontinfo;ILorg/lwjgl/PointerBuffer;)I default: default
     stbtt_GetFontNameString(Lorg/lwjgl/stb/STBTTFontinfo;IIII)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stbtt_GetFontOffsetForIndex(Ljava/nio/ByteBuffer;I)I default: default
     stbtt_GetFontVMetricsOS2(Lorg/lwjgl/stb/STBTTFontinfo;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
     stbtt_GetFontVMetricsOS2(Lorg/lwjgl/stb/STBTTFontinfo;[I[I[I)Z default: default
     stbtt_GetGlyphBitmap(Lorg/lwjgl/stb/STBTTFontinfo;FFILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -501,18 +499,9 @@ org/lwjgl/stb/STBTruetype default=77 guarded-static-init=1 keep-constructor=1 lw
     stbtt_GetGlyphShape(Lorg/lwjgl/stb/STBTTFontinfo;ILorg/lwjgl/PointerBuffer;)I default: default
     stbtt_GetKerningTable(Lorg/lwjgl/stb/STBTTFontinfo;Lorg/lwjgl/stb/STBTTKerningentry$Buffer;)I default: default
     stbtt_GetKerningTableLength(Lorg/lwjgl/stb/STBTTFontinfo;)I default: default
-    stbtt_GetNumberOfFonts(Ljava/nio/ByteBuffer;)I default: default
-    stbtt_InitFont(Lorg/lwjgl/stb/STBTTFontinfo;Ljava/nio/ByteBuffer;)Z default: default
-    stbtt_InitFont(Lorg/lwjgl/stb/STBTTFontinfo;Ljava/nio/ByteBuffer;I)Z default: default
     stbtt_IsGlyphEmpty(Lorg/lwjgl/stb/STBTTFontinfo;I)Z default: default
-    stbtt_PackBegin(Lorg/lwjgl/stb/STBTTPackContext;Ljava/nio/ByteBuffer;IIII)Z default: default
-    stbtt_PackBegin(Lorg/lwjgl/stb/STBTTPackContext;Ljava/nio/ByteBuffer;IIIIJ)Z default: default
-    stbtt_PackFontRange(Lorg/lwjgl/stb/STBTTPackContext;Ljava/nio/ByteBuffer;IFILorg/lwjgl/stb/STBTTPackedchar$Buffer;)Z default: default
-    stbtt_PackFontRanges(Lorg/lwjgl/stb/STBTTPackContext;Ljava/nio/ByteBuffer;ILorg/lwjgl/stb/STBTTPackRange$Buffer;)Z default: default
     stbtt_PackFontRangesGatherRects(Lorg/lwjgl/stb/STBTTPackContext;Lorg/lwjgl/stb/STBTTFontinfo;Lorg/lwjgl/stb/STBTTPackRange$Buffer;Lorg/lwjgl/stb/STBRPRect$Buffer;)I default: default
     stbtt_PackFontRangesRenderIntoRects(Lorg/lwjgl/stb/STBTTPackContext;Lorg/lwjgl/stb/STBTTFontinfo;Lorg/lwjgl/stb/STBTTPackRange$Buffer;Lorg/lwjgl/stb/STBRPRect$Buffer;)Z default: default
-    stbtt_ScaleForMappingEmToPixels(Lorg/lwjgl/stb/STBTTFontinfo;F)F default: default
-    stbtt_ScaleForPixelHeight(Lorg/lwjgl/stb/STBTTFontinfo;F)F default: default
 org/lwjgl/stb/STBVorbis default=66 guarded-static-init=1 keep-constructor=1 nio-buffer-empty=2 struct=2 void=6
     nstb_vorbis_decode_filename(JJJJ)I default: default
     nstb_vorbis_decode_filename(J[I[IJ)I default: default

@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.glfw.GLFWFramebufferSizeCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.openal.AL;
 import org.lwjgl.openal.ALC;
@@ -20,6 +21,11 @@ import org.lwjgl.sdl.SDLVideo;
 import org.lwjgl.sdl.SDL_DisplayMode;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.stb.STBImage;
+import org.lwjgl.stb.STBTTAlignedQuad;
+import org.lwjgl.stb.STBTTFontinfo;
+import org.lwjgl.stb.STBTTPackContext;
+import org.lwjgl.stb.STBTTPackedchar;
+import org.lwjgl.stb.STBTruetype;
 import org.lwjgl.vulkan.VK;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
@@ -34,6 +40,43 @@ import static org.junit.jupiter.api.Assertions.*;
  * Calls that every Minecraft version makes during startup.
  */
 class StartupTest {
+    /**
+     * The early loading screens of Forge and NeoForge render text with STB TrueType, and Minecraft frees the
+     * framebuffer size callback they set.
+     */
+    @Test
+    void forgeEarlyDisplay() {
+        assertTrue(GLFW.glfwInit());
+        long window = GLFW.glfwCreateWindow(854, 480, "Early display", 0L, 0L);
+        GLFW.glfwSetFramebufferSizeCallback(window, (w, width, height) -> { });
+        GLFWFramebufferSizeCallback previous = GLFW.glfwSetFramebufferSizeCallback(window, null);
+        assertNotNull(previous);
+        previous.free();
+
+        ByteBuffer font = BufferUtils.createByteBuffer(16);
+        try (STBTTFontinfo info = STBTTFontinfo.create();
+             STBTTPackContext context = STBTTPackContext.malloc();
+             STBTTPackedchar.Buffer chars = STBTTPackedchar.malloc(96);
+             STBTTAlignedQuad quad = STBTTAlignedQuad.malloc()) {
+            assertTrue(STBTruetype.stbtt_InitFont(info, font));
+            assertTrue(STBTruetype.stbtt_PackBegin(context, BufferUtils.createByteBuffer(512 * 512), 512, 512, 0, 1, 0L));
+            assertTrue(STBTruetype.stbtt_PackFontRange(context, font, 0, 16.0f, 32, chars));
+            float[] ascent = new float[1];
+            float[] descent = new float[1];
+            float[] lineGap = new float[1];
+            STBTruetype.stbtt_GetScaledFontVMetrics(font, 0, 16.0f, ascent, descent, lineGap);
+            assertTrue(ascent[0] > 0.0f);
+            assertTrue(descent[0] < 0.0f);
+            float[] x = {0.0f};
+            float[] y = {0.0f};
+            STBTruetype.stbtt_GetPackedQuad(chars, 512, 512, 'A' - 32, x, y, quad, false);
+            assertTrue(x[0] > 0.0f);
+            assertEquals(x[0], quad.x1());
+        }
+
+        GLFW.glfwDestroyWindow(window);
+    }
+
     /**
      * Minecraft 26.3 checks each native library when it starts and prefers Vulkan if a Vulkan loader exists.
      */
