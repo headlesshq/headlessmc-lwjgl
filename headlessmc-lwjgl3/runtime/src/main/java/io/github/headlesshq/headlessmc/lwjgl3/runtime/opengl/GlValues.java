@@ -1,7 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Config;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Log;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Config;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Log;
 import org.lwjgl.opengl.ARBVertexProgram;
 import org.lwjgl.opengl.ATIMeminfo;
 import org.lwjgl.opengl.GL11;

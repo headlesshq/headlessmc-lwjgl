@@ -1,6 +1,6 @@
 package io.github.headlesshq.headlessmc.lwjgl3;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.DummyBuffers;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.DummyBuffers;
 import org.junit.jupiter.api.Test;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.glfw.GLFW;

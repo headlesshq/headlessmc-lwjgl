@@ -1,6 +1,6 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
 
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;

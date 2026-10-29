@@ -18,7 +18,8 @@ configurations {
 
 dependencies {
     lwjgl libs.bundles.lwjgl
-    patcher project(':headlessmc-lwjgl3-patcher')
+    patcher project(':headlessmc-lwjgl-patcher')
+    runtimeJar project(':headlessmc-lwjgl-runtime')
     runtimeJar project(':headlessmc-lwjgl3-runtime')
     japicmp libs.japicmp
 
@@ -65,7 +66,7 @@ def registerPatchTask = { String name, boolean updateLock ->
     tasks.register(name, JavaExec) {
         group = 'build'
         classpath = configurations.patcher
-        mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.patcher.Main'
+        mainClass = 'io.github.headlesshq.headlessmc.lwjgl.patcher.Main'
         inputs.files(configurations.lwjgl)
         inputs.files(configurations.runtimeJar)
         compatArtifacts.each { inputs.files(it.artifactFiles) }
@@ -82,7 +83,7 @@ def registerPatchTask = { String name, boolean updateLock ->
         argumentProviders.add({
             def args = []
             lwjglInputs.get().each { args += ['--input', it] }
-            args += ['--runtime', configurations.runtimeJar.singleFile.absolutePath]
+            configurations.runtimeJar.files.each { args += ['--runtime', it.absolutePath] }
             args += ['--output', patchedDirectory.get().asFile.absolutePath]
             args += ['--lock', lockDirectory.asFile.absolutePath]
             args += ['--lwjgl-version', lwjglVersion]
@@ -160,7 +161,7 @@ def apiCompatibility = tasks.register('checkApiCompatibility', JavaExec) {
     description = 'Checks the japicmp reports: the patched jars must be binary compatible with every LWJGL version in ' +
         'lwjgl3.compatVersions, except for the changes listed in catalog/api-compatibility.allow.'
     classpath = configurations.patcher
-    mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.patcher.ApiCompatibilityGate'
+    mainClass = 'io.github.headlesshq.headlessmc.lwjgl.patcher.ApiCompatibilityGate'
     inputs.file(allowFile)
     outputs.upToDateWhen { true }
     argumentProviders.add({

@@ -1,7 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.openal;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Dummies;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Dummies;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.openal.ALCCapabilities;
 import org.lwjgl.openal.ALCapabilities;

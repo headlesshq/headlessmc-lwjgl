@@ -1,9 +1,9 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.sdl;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Ids;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Input;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.WindowConfig;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Ids;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.WindowConfig;
 import org.lwjgl.sdl.SDL_DisplayMode;
 import org.lwjgl.sdl.SDL_Event;
 import org.lwjgl.sdl.SDL_Rect;

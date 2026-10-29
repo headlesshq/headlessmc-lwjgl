@@ -13,10 +13,11 @@ rootProject.name = 'headlessmc-lwjgl'
 
 include 'headlessmc-lwjgl-api'
 
+include 'headlessmc-lwjgl-patcher'
+include 'headlessmc-lwjgl-runtime'
+
 include 'headlessmc-lwjgl3'
-include 'headlessmc-lwjgl3-patcher'
 include 'headlessmc-lwjgl3-runtime'
-project(':headlessmc-lwjgl3-patcher').projectDir = file('headlessmc-lwjgl3/patcher')
 project(':headlessmc-lwjgl3-runtime').projectDir = file('headlessmc-lwjgl3/runtime')
 
 include 'lwjgl3-probe'

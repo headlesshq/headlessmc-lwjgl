@@ -1,6 +1,6 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.sdl;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Input;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
 
 import java.nio.ByteBuffer;
 import java.util.Map;

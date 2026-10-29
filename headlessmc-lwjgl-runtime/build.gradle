@@ -1,0 +1,9 @@
+description = 'The parts of the runtime of the patched LWJGL that do not depend on an LWJGL version, embedded into the patched core jar.'
+
+dependencies {
+    compileOnly project(':headlessmc-lwjgl-api')
+}
+
+tasks.named('compileJava', JavaCompile) {
+    options.release = 8
+}

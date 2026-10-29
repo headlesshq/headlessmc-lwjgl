@@ -1,8 +1,8 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.sdl;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Input;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.InputEvent;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.StructMemory;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.InputEvent;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.StructMemory;
 import org.lwjgl.sdl.SDL_Event;
 
 import java.nio.ByteBuffer;

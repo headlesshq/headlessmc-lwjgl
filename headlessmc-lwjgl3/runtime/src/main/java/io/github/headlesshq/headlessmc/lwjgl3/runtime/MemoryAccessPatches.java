@@ -1,5 +1,8 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime;
 
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.StructMemory;
+
 import org.lwjgl.system.Struct;
 
 import java.nio.ByteBuffer;

@@ -1,6 +1,6 @@
 package io.github.headlesshq.headlessmc.lwjgl3;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.StaticInit;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.StaticInit;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

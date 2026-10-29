@@ -1,5 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime;
 
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+
 import java.io.PrintStream;
 
 /**

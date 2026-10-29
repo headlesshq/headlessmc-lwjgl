@@ -1,10 +1,10 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.glfw;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Config;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.DummyBuffers;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.StructMemory;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.WindowConfig;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Config;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.DummyBuffers;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.StructMemory;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.WindowConfig;
 import org.lwjgl.glfw.GLFWVidMode;
 
 import java.nio.ByteBuffer;

@@ -3,6 +3,7 @@ description = 'Handlers and state of the patched LWJGL 3, embedded into the patc
 dependencies {
     compileOnly libs.bundles.lwjgl
     compileOnly project(':headlessmc-lwjgl-api')
+    compileOnly project(':headlessmc-lwjgl-runtime')
 }
 
 tasks.named('compileJava', JavaCompile) {

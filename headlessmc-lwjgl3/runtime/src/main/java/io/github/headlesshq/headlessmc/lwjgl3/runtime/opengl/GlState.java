@@ -1,6 +1,6 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Input;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 

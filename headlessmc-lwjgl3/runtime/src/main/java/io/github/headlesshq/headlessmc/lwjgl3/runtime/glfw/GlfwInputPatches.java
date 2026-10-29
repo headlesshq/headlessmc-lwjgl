@@ -1,9 +1,9 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.glfw;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Config;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Ids;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Input;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Config;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Ids;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
 import org.lwjgl.glfw.GLFWCharCallback;
 import org.lwjgl.glfw.GLFWCharCallbackI;
 import org.lwjgl.glfw.GLFWCharModsCallback;

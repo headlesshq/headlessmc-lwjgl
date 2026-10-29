@@ -1,7 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.glfw;
 
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.Input;
-import io.github.headlesshq.headlessmc.lwjgl3.runtime.InputEvent;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.InputEvent;
 import org.lwjgl.glfw.GLFWCharCallbackI;
 import org.lwjgl.glfw.GLFWCharModsCallbackI;
 import org.lwjgl.glfw.GLFWCursorEnterCallbackI;
