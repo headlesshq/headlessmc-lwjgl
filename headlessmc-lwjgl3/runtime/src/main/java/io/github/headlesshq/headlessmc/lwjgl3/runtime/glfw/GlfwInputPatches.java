@@ -30,6 +30,7 @@ import org.lwjgl.glfw.GLFWWindowSizeCallbackI;
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
 import java.nio.FloatBuffer;
+import java.util.Locale;
 import java.util.Map;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -135,7 +136,37 @@ public final class GlfwInputPatches {
 
     @Patch(owner = GLFW)
     public static int glfwGetKeyScancode(int key) {
-        return key;
+        return key >= GLFW_KEY_SPACE && key <= GLFW_KEY_LAST ? key : -1;
+    }
+
+    /**
+     * Printable keys are named by their lower case character on a US layout, like GLFW, other keys have no name.
+     */
+    @Patch(owner = GLFW)
+    public static String glfwGetKeyName(int key, int scancode) {
+        int printable = key == GLFW_KEY_UNKNOWN ? scancode : key;
+        if (printable >= GLFW_KEY_SPACE + 1 && printable <= GLFW_KEY_GRAVE_ACCENT) {
+            return String.valueOf((char) printable).toLowerCase(Locale.ROOT);
+        } else if (printable >= GLFW_KEY_KP_0 && printable <= GLFW_KEY_KP_9) {
+            return String.valueOf((char) ('0' + printable - GLFW_KEY_KP_0));
+        }
+
+        switch (printable) {
+            case GLFW_KEY_KP_DECIMAL:
+                return ".";
+            case GLFW_KEY_KP_DIVIDE:
+                return "/";
+            case GLFW_KEY_KP_MULTIPLY:
+                return "*";
+            case GLFW_KEY_KP_SUBTRACT:
+                return "-";
+            case GLFW_KEY_KP_ADD:
+                return "+";
+            case GLFW_KEY_KP_EQUAL:
+                return "=";
+            default:
+                return null;
+        }
     }
 
     @Patch(owner = GLFW)

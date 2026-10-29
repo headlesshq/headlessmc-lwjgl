@@ -699,11 +699,9 @@ org/lwjgl/opengl/GL20C default=22 guarded-static-init=1 handler=12 id=1 keep-con
     nglGetUniformLocation(IJ)I default: default
 org/lwjgl/opengl/GL21 guarded-static-init=1 keep-constructor=1 void=18
 org/lwjgl/opengl/GL21C guarded-static-init=1 keep-constructor=1 void=18
-org/lwjgl/opengl/GL30 default=18 guarded-static-init=1 handler=15 id=3 keep-constructor=1 nio-buffer=2 success=1 void=149
-    glGetBooleani(II)Z default: default
+org/lwjgl/opengl/GL30 default=16 guarded-static-init=1 handler=22 id=3 keep-constructor=1 nio-buffer=2 success=1 void=144
     glGetFragDataLocation(ILjava/lang/CharSequence;)I default: default
     glGetFragDataLocation(ILjava/nio/ByteBuffer;)I default: default
-    glGetIntegeri(II)I default: default
     glGetTexParameterIi(II)I default: default
     glGetTexParameterIui(II)I default: default
     glGetTransformFeedbackVarying(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
@@ -718,11 +716,9 @@ org/lwjgl/opengl/GL30 default=18 guarded-static-init=1 handler=15 id=3 keep-cons
     nglGetFragDataLocation(IJ)I default: default
     nglGetStringi(II)J default: default
     nglMapBufferRange(IJJI)J default: default
-org/lwjgl/opengl/GL30C default=18 guarded-static-init=1 handler=15 id=3 keep-constructor=1 nio-buffer=2 success=1 void=149
-    glGetBooleani(II)Z default: default
+org/lwjgl/opengl/GL30C default=16 guarded-static-init=1 handler=22 id=3 keep-constructor=1 nio-buffer=2 success=1 void=144
     glGetFragDataLocation(ILjava/lang/CharSequence;)I default: default
     glGetFragDataLocation(ILjava/nio/ByteBuffer;)I default: default
-    glGetIntegeri(II)I default: default
     glGetTexParameterIi(II)I default: default
     glGetTexParameterIui(II)I default: default
     glGetTransformFeedbackVarying(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
@@ -759,18 +755,16 @@ org/lwjgl/opengl/GL31C default=10 guarded-static-init=1 keep-constructor=1 void=
     glGetUniformBlockIndex(ILjava/nio/ByteBuffer;)I default: default
     glGetUniformIndices(ILjava/lang/CharSequence;)I default: default
     nglGetUniformBlockIndex(IJ)I default: default
-org/lwjgl/opengl/GL32 default=7 guarded-static-init=1 handler=4 id=1 keep-constructor=1 success=1 void=42
+org/lwjgl/opengl/GL32 default=6 guarded-static-init=1 handler=7 id=1 keep-constructor=1 success=1 void=40
     glGetBufferParameteri64(II)J default: default
-    glGetInteger64i(II)J default: default
     glGetMultisamplef(II)F default: default
     glGetSynci(JILjava/nio/IntBuffer;)I default: default
     glIsSync(J)Z default: default
     nglClientWaitSync(JIJ)I default: default
     nglDeleteSync(J)V void [shim 3.3.3]
     nglIsSync(J)Z default: default
-org/lwjgl/opengl/GL32C default=7 guarded-static-init=1 handler=4 id=1 keep-constructor=1 success=1 void=42
+org/lwjgl/opengl/GL32C default=6 guarded-static-init=1 handler=7 id=1 keep-constructor=1 success=1 void=40
     glGetBufferParameteri64(II)J default: default
-    glGetInteger64i(II)J default: default
     glGetMultisamplef(II)F default: default
     glGetSynci(JILjava/nio/IntBuffer;)I default: default
     glIsSync(J)Z default: default
@@ -833,17 +827,13 @@ org/lwjgl/opengl/GL40C default=16 guarded-static-init=1 id=1 keep-constructor=1 
     glIsTransformFeedback(I)Z default: default
     nglGetSubroutineIndex(IIJ)I default: default
     nglGetSubroutineUniformLocation(IIJ)I default: default
-org/lwjgl/opengl/GL41 default=7 guarded-static-init=1 id=5 keep-constructor=1 void=197
-    glGetDoublei(II)D default: default
-    glGetFloati(II)F default: default
+org/lwjgl/opengl/GL41 default=5 guarded-static-init=1 handler=6 id=5 keep-constructor=1 void=193
     glGetProgramPipelineInfoLog(I)Ljava/lang/String; default: default
     glGetProgramPipelineInfoLog(II)Ljava/lang/String; default: default
     glGetProgramPipelinei(II)I default: default
     glGetShaderPrecisionFormat(IILjava/nio/IntBuffer;)I default: default
     glIsProgramPipeline(I)Z default: default
-org/lwjgl/opengl/GL41C default=7 guarded-static-init=1 id=5 keep-constructor=1 void=197
-    glGetDoublei(II)D default: default
-    glGetFloati(II)F default: default
+org/lwjgl/opengl/GL41C default=5 guarded-static-init=1 handler=6 id=5 keep-constructor=1 void=193
     glGetProgramPipelineInfoLog(I)Ljava/lang/String; default: default
     glGetProgramPipelineInfoLog(II)Ljava/lang/String; default: default
     glGetProgramPipelinei(II)I default: default

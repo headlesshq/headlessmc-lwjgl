@@ -3,6 +3,7 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime.glfw;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.DummyBuffers;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+import org.lwjgl.PointerBuffer;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.StructMemory;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.WindowConfig;
 import org.lwjgl.glfw.GLFWVidMode;
@@ -62,6 +63,26 @@ public final class GlfwMonitorPatches {
     @Patch(owner = GLFW)
     public static long glfwGetPrimaryMonitor() {
         return MONITOR;
+    }
+
+    @Patch(owner = GLFW)
+    public static PointerBuffer glfwGetMonitors() {
+        PointerBuffer monitors = PointerBuffer.create(StructMemory.allocate(Long.BYTES));
+        monitors.put(0, MONITOR);
+        return monitors;
+    }
+
+    /**
+     * Function pointers are never called, but must not be {@code NULL}.
+     */
+    @Patch(owner = GLFW)
+    public static long glfwGetProcAddress(CharSequence procname) {
+        return DummyBuffers.FAKE_ADDRESS;
+    }
+
+    @Patch(owner = GLFW)
+    public static long glfwGetProcAddress(ByteBuffer procname) {
+        return DummyBuffers.FAKE_ADDRESS;
     }
 
     /**

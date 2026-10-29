@@ -127,6 +127,11 @@ public final class GlState {
         }
     }
 
+    private static final Map<Long, double[]> INDEXED = new HashMap<>();
+    private static final int[] INDEXED_BUFFER_TARGETS = {
+        GL_UNIFORM_BUFFER, GL_TRANSFORM_FEEDBACK_BUFFER, GL_SHADER_STORAGE_BUFFER, GL_ATOMIC_COUNTER_BUFFER
+    };
+
     private GlState() {
         throw new AssertionError();
     }
@@ -157,6 +162,71 @@ public final class GlState {
 
         double[] value = VALUES.get(pname);
         return value == null ? null : value.clone();
+    }
+
+    /**
+     * Binds a buffer to an indexed target, see {@code glBindBufferRange}, which also binds it to the generic target.
+     *
+     * @param size the size of the range, 0 for the whole buffer like {@code glBindBufferBase}.
+     */
+    public static synchronized void bindBufferRange(int target, int index, int buffer, long offset, long size) {
+        int[] pnames = indexedBufferParameters(target);
+        if (pnames != null) {
+            INDEXED.put(indexedKey(pnames[0], index), new double[]{buffer});
+            INDEXED.put(indexedKey(pnames[1], index), new double[]{offset});
+            INDEXED.put(indexedKey(pnames[2], index), new double[]{size});
+        }
+
+        bindBuffer(target, buffer);
+    }
+
+    /**
+     * @param pname an indexed {@code glGet} parameter.
+     * @param index the index.
+     * @return the tracked value, or {@code null} if the parameter is not part of the tracked indexed state.
+     */
+    public static synchronized double[] getIndexed(int pname, int index) {
+        double[] value = INDEXED.get(indexedKey(pname, index));
+        if (value != null) {
+            return value.clone();
+        }
+
+        for (int target : INDEXED_BUFFER_TARGETS) {
+            for (int parameter : indexedBufferParameters(target)) {
+                if (parameter == pname) {
+                    return new double[]{0};
+                }
+            }
+        }
+
+        if (pname == GL_VIEWPORT || pname == GL_SCISSOR_BOX || pname == GL_COLOR_WRITEMASK
+            || CAPABILITIES.contains(pname)) {
+            return index == 0 ? get(pname) : null;
+        }
+
+        return null;
+    }
+
+    private static int[] indexedBufferParameters(int target) {
+        switch (target) {
+            case GL_UNIFORM_BUFFER:
+                return new int[]{GL_UNIFORM_BUFFER_BINDING, GL_UNIFORM_BUFFER_START, GL_UNIFORM_BUFFER_SIZE};
+            case GL_TRANSFORM_FEEDBACK_BUFFER:
+                return new int[]{GL_TRANSFORM_FEEDBACK_BUFFER_BINDING, GL_TRANSFORM_FEEDBACK_BUFFER_START,
+                    GL_TRANSFORM_FEEDBACK_BUFFER_SIZE};
+            case GL_SHADER_STORAGE_BUFFER:
+                return new int[]{GL_SHADER_STORAGE_BUFFER_BINDING, GL_SHADER_STORAGE_BUFFER_START,
+                    GL_SHADER_STORAGE_BUFFER_SIZE};
+            case GL_ATOMIC_COUNTER_BUFFER:
+                return new int[]{GL_ATOMIC_COUNTER_BUFFER_BINDING, GL_ATOMIC_COUNTER_BUFFER_START,
+                    GL_ATOMIC_COUNTER_BUFFER_SIZE};
+            default:
+                return null;
+        }
+    }
+
+    private static long indexedKey(int pname, int index) {
+        return ((long) pname << 32) | (index & 0xFFFFFFFFL);
     }
 
     public static synchronized void set(int pname, double... values) {

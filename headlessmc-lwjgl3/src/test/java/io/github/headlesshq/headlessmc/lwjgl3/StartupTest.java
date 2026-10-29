@@ -57,6 +57,10 @@ class StartupTest {
     void forgeEarlyDisplay() {
         assertTrue(GLFW.glfwInit());
         long window = GLFW.glfwCreateWindow(854, 480, "Early display", 0L, 0L);
+        assertEquals(1, GLFW.glfwGetMonitors().remaining());
+        assertEquals(GLFW.glfwGetPrimaryMonitor(), GLFW.glfwGetMonitors().get(0));
+        assertEquals("a", GLFW.glfwGetKeyName(GLFW.GLFW_KEY_A, 0));
+        assertNull(GLFW.glfwGetKeyName(GLFW.GLFW_KEY_ESCAPE, 0));
         GLFW.glfwSetFramebufferSizeCallback(window, (w, width, height) -> { });
         GLFWFramebufferSizeCallback previous = GLFW.glfwSetFramebufferSizeCallback(window, null);
         assertNotNull(previous);

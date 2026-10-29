@@ -9,6 +9,8 @@ import org.lwjgl.opengl.GL14;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
+import org.lwjgl.opengl.GL31;
+import org.lwjgl.opengl.GL32;
 import org.lwjgl.opengl.GL42;
 import org.lwjgl.opengl.GL43;
 
@@ -130,6 +132,20 @@ class GlStateTest {
 
         assertEquals(GL11.GL_TRUE, GL42.glGetInternalformati(GL11.GL_TEXTURE_2D, GL11.GL_RGBA8, GL43.GL_INTERNALFORMAT_SUPPORTED));
         assertTrue(GL42.glGetInternalformati(GL30.GL_RENDERBUFFER, GL11.GL_RGBA8, GL13.GL_SAMPLES) >= 4);
+    }
+
+    @Test
+    void indexedQueries() {
+        int buffer = GL15.glGenBuffers();
+        GL30.glBindBufferBase(GL31.GL_UNIFORM_BUFFER, 1, buffer);
+        assertEquals(buffer, GL30.glGetIntegeri(GL31.GL_UNIFORM_BUFFER_BINDING, 1));
+        assertEquals(0, GL30.glGetIntegeri(GL31.GL_UNIFORM_BUFFER_BINDING, 2));
+        assertEquals(buffer, GL11.glGetInteger(GL31.GL_UNIFORM_BUFFER_BINDING));
+        GL30.glBindBufferRange(GL31.GL_UNIFORM_BUFFER, 2, buffer, 256L, 64L);
+        assertEquals(256L, GL32.glGetInteger64i(GL31.GL_UNIFORM_BUFFER_START, 2));
+        assertEquals(64L, GL32.glGetInteger64i(GL31.GL_UNIFORM_BUFFER_SIZE, 2));
+        assertEquals(64, GL30.glGetIntegeri(GL43.GL_MAX_COMPUTE_WORK_GROUP_SIZE, 2));
+        assertTrue(GL30.glGetIntegeri(GL43.GL_MAX_COMPUTE_WORK_GROUP_COUNT, 0) >= 65535);
     }
 
 }

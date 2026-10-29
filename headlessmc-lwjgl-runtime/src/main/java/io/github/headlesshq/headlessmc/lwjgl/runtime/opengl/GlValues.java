@@ -228,7 +228,10 @@ public final class GlValues {
      * @return all components of the value rounded to integers, an array with a single 0 for unknown parameters.
      */
     public static int[] get(int pname) {
-        double[] values = getDoubles(pname);
+        return toIntegers(pname, getDoubles(pname));
+    }
+
+    private static int[] toIntegers(int pname, double[] values) {
         boolean normalized = NORMALIZED.contains(pname);
         int[] result = new int[values.length];
         for (int i = 0; i < values.length; i++) {
@@ -271,6 +274,39 @@ public final class GlValues {
         }
 
         return values;
+    }
+
+    /**
+     * Indexed queries like {@code glGetIntegeri_v}: tracked indexed state, the compute work group limits per
+     * dimension, otherwise the value of the non-indexed query.
+     */
+    public static double[] getIndexedDoubles(int pname, int index) {
+        double[] state = GlState.getIndexed(pname, index);
+        if (state != null) {
+            return state;
+        }
+
+        if (pname == GL_MAX_COMPUTE_WORK_GROUP_COUNT) {
+            return new double[]{65535};
+        } else if (pname == GL_MAX_COMPUTE_WORK_GROUP_SIZE) {
+            return new double[]{index == 2 ? 64 : 1024};
+        }
+
+        return getDoubles(pname);
+    }
+
+    public static int[] getIndexed(int pname, int index) {
+        return toIntegers(pname, getIndexedDoubles(pname, index));
+    }
+
+    public static long[] getIndexedLongs(int pname, int index) {
+        double[] values = getIndexedDoubles(pname, index);
+        long[] result = new long[values.length];
+        for (int i = 0; i < values.length; i++) {
+            result[i] = toInteger(values[i], NORMALIZED.contains(pname));
+        }
+
+        return result;
     }
 
     public static int getInteger(int pname) {

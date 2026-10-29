@@ -6,7 +6,7 @@ org/lwjgl/glfw/Callbacks keep-constructor=1 void=1
 org/lwjgl/glfw/EventLoop default=2 keep-constructor=1 void=1
     isJavaStartedOnFirstThread()Z default: default
     isMainThread()Z default: default
-org/lwjgl/glfw/GLFW default=61 guarded-static-init=1 handler=76 id=4 interface-proxy=2 keep-constructor=1 lwjgl-buffer-empty=1 nio-buffer-empty=1 object=12 struct=1 void=52
+org/lwjgl/glfw/GLFW default=58 guarded-static-init=1 handler=80 id=4 interface-proxy=2 keep-constructor=1 nio-buffer-empty=1 object=12 struct=1 void=52
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     glfwExtensionSupported(Ljava/lang/CharSequence;)Z default: default
@@ -15,12 +15,8 @@ org/lwjgl/glfw/GLFW default=61 guarded-static-init=1 handler=76 id=4 interface-p
     glfwGetError(Lorg/lwjgl/PointerBuffer;)I default: default
     glfwGetGamepadState(ILorg/lwjgl/glfw/GLFWGamepadState;)Z default: default
     glfwGetJoystickUserPointer(I)J default: default
-    glfwGetKeyName(II)Ljava/lang/String; default: default
     glfwGetMonitorUserPointer(J)J default: default
-    glfwGetMonitors()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     glfwGetPreeditCandidate(JI)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    glfwGetProcAddress(Ljava/lang/CharSequence;)J default: default
-    glfwGetProcAddress(Ljava/nio/ByteBuffer;)J default: default
     glfwGetWindowMonitor(J)J default: default
     glfwGetWindowUserPointer(J)J default: default
     glfwJoystickIsGamepad(I)Z default: default
