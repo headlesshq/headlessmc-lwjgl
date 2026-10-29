@@ -19,6 +19,8 @@ import java.util.regex.Pattern;
  * Adapts a module descriptor to the patched jar: adds and exports the packages of the embedded runtime and of re-added
  * classes, and removes
  * every package that no longer exists, e.g. packages that only existed in dropped multi-release classes.
+ * The module is made {@code open}, so that launchers, mods and HeadlessMc can reflect into it like into a jar on the
+ * classpath.
  */
 public final class ModuleInfoPatcher {
     private static final Pattern VERSIONED = Pattern.compile("META-INF/versions/(\\d+)/module-info\\.class");
@@ -58,7 +60,7 @@ public final class ModuleInfoPatcher {
      *                         embedded into the module.
      * @param existingPackages the internal names of all packages in the patched jar.
      * @param staticRequires the modules to add as {@code requires static}, e.g. the input API.
-     * @return the patched {@code module-info.class}.
+     * @return the patched, open {@code module-info.class}.
      */
     public static byte[] patch(byte[] bytes, Collection<String> exportedPackages, Set<String> existingPackages,
                                Collection<String> staticRequires) {
@@ -70,9 +72,8 @@ public final class ModuleInfoPatcher {
         }
 
         module.exports.removeIf(export -> !existingPackages.contains(export.packaze));
-        if (module.opens != null) {
-            module.opens.removeIf(open -> !existingPackages.contains(open.packaze));
-        }
+        module.access |= Opcodes.ACC_OPEN;
+        module.opens = null;
 
         if (module.packages != null) {
             module.packages.removeIf(pkg -> !existingPackages.contains(pkg));
