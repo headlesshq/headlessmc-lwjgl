@@ -2,35 +2,20 @@
 # Every method of every class is patched by the first matching rule, counted per class.
 # Methods resolved by rules that only guess are listed individually and have to be reviewed.
 # Regenerate with: ./gradlew updateCatalogLock
-org/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc; object: new GLSLFreeIncludeResultFunc
-    create(Lorg/lwjgl/util/shaderc/GLSLFreeIncludeResultFuncI;)Lorg/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc; object: new GLSLFreeIncludeResultFunc
-    create(Lorg/lwjgl/util/shaderc/GLSLFreeIncludeResultFuncI;J)Lorg/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc; object: new GLSLFreeIncludeResultFunc
-    createSafe(J)Lorg/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc; object: new GLSLFreeIncludeResultFunc
-org/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc$1 default=1 keep-constructor=1
-    invoke(JJ)I default: default
+org/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc keep-callback=4 keep-constructor=2
+org/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/GLSLFreeIncludeResultFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/util/shaderc/GLSLIncludeCallbacks guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/util/shaderc/GLSLIncludeCallbacks$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/util/shaderc/GLSLIncludeLocalFunc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/shaderc/GLSLIncludeLocalFunc; object: new GLSLIncludeLocalFunc
-    create(Lorg/lwjgl/util/shaderc/GLSLIncludeLocalFuncI;)Lorg/lwjgl/util/shaderc/GLSLIncludeLocalFunc; object: new GLSLIncludeLocalFunc
-    create(Lorg/lwjgl/util/shaderc/GLSLIncludeLocalFuncI;J)Lorg/lwjgl/util/shaderc/GLSLIncludeLocalFunc; object: new GLSLIncludeLocalFunc
-    createSafe(J)Lorg/lwjgl/util/shaderc/GLSLIncludeLocalFunc; object: new GLSLIncludeLocalFunc
-org/lwjgl/util/shaderc/GLSLIncludeLocalFunc$1 default=1 keep-constructor=1
-    invoke(JJJJ)J default: default
+org/lwjgl/util/shaderc/GLSLIncludeLocalFunc keep-callback=4 keep-constructor=2
+org/lwjgl/util/shaderc/GLSLIncludeLocalFunc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/GLSLIncludeLocalFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/util/shaderc/GLSLIncludeResult guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/util/shaderc/GLSLIncludeResult$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=13
-org/lwjgl/util/shaderc/GLSLIncludeSystemFunc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/shaderc/GLSLIncludeSystemFunc; object: new GLSLIncludeSystemFunc
-    create(Lorg/lwjgl/util/shaderc/GLSLIncludeSystemFuncI;)Lorg/lwjgl/util/shaderc/GLSLIncludeSystemFunc; object: new GLSLIncludeSystemFunc
-    create(Lorg/lwjgl/util/shaderc/GLSLIncludeSystemFuncI;J)Lorg/lwjgl/util/shaderc/GLSLIncludeSystemFunc; object: new GLSLIncludeSystemFunc
-    createSafe(J)Lorg/lwjgl/util/shaderc/GLSLIncludeSystemFunc; object: new GLSLIncludeSystemFunc
-org/lwjgl/util/shaderc/GLSLIncludeSystemFunc$1 default=1 keep-constructor=1
-    invoke(JJJJ)J default: default
+org/lwjgl/util/shaderc/GLSLIncludeSystemFunc keep-callback=4 keep-constructor=2
+org/lwjgl/util/shaderc/GLSLIncludeSystemFunc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/GLSLIncludeSystemFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/util/shaderc/GLSLang default=27 guarded-static-init=1 interface-proxy=2 keep-constructor=1 nio-buffer=2 void=39
@@ -126,12 +111,8 @@ org/lwjgl/util/shaderc/SPVBinary guarded-static-init=1 keep-constructor=2 keep-s
 org/lwjgl/util/shaderc/SPVBinary$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=8
 org/lwjgl/util/shaderc/SPVDiagnostic guarded-static-init=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/util/shaderc/SPVDiagnostic$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/util/shaderc/SPVMessageConsumer keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/shaderc/SPVMessageConsumer; object: new SPVMessageConsumer
-    create(Lorg/lwjgl/util/shaderc/SPVMessageConsumerI;)Lorg/lwjgl/util/shaderc/SPVMessageConsumer; object: new SPVMessageConsumer
-    create(Lorg/lwjgl/util/shaderc/SPVMessageConsumerI;J)Lorg/lwjgl/util/shaderc/SPVMessageConsumer; object: new SPVMessageConsumer
-    createSafe(J)Lorg/lwjgl/util/shaderc/SPVMessageConsumer; object: new SPVMessageConsumer
-org/lwjgl/util/shaderc/SPVMessageConsumer$1 keep-constructor=1 void=1
+org/lwjgl/util/shaderc/SPVMessageConsumer keep-callback=4 keep-constructor=2
+org/lwjgl/util/shaderc/SPVMessageConsumer$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/SPVMessageConsumerI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/util/shaderc/SPVOptimizer default=10 guarded-static-init=1 interface-proxy=2 keep-constructor=1 void=6
@@ -150,24 +131,14 @@ org/lwjgl/util/shaderc/SPVOptimizer default=10 guarded-static-init=1 interface-p
 org/lwjgl/util/shaderc/SPVOptimizer$Functions guarded-static-init=1 keep-constructor=1
 org/lwjgl/util/shaderc/SPVParsedHeader guarded-static-init=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1
 org/lwjgl/util/shaderc/SPVParsedHeader$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/util/shaderc/SPVParsedHeaderFn keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/shaderc/SPVParsedHeaderFn; object: new SPVParsedHeaderFn
-    create(Lorg/lwjgl/util/shaderc/SPVParsedHeaderFnI;)Lorg/lwjgl/util/shaderc/SPVParsedHeaderFn; object: new SPVParsedHeaderFn
-    create(Lorg/lwjgl/util/shaderc/SPVParsedHeaderFnI;J)Lorg/lwjgl/util/shaderc/SPVParsedHeaderFn; object: new SPVParsedHeaderFn
-    createSafe(J)Lorg/lwjgl/util/shaderc/SPVParsedHeaderFn; object: new SPVParsedHeaderFn
-org/lwjgl/util/shaderc/SPVParsedHeaderFn$1 default=1 keep-constructor=1
-    invoke(JIIIIII)I default: default
+org/lwjgl/util/shaderc/SPVParsedHeaderFn keep-callback=4 keep-constructor=2
+org/lwjgl/util/shaderc/SPVParsedHeaderFn$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/SPVParsedHeaderFnI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/util/shaderc/SPVParsedInstruction guarded-static-init=1 keep-constructor=2 keep-struct=39 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/util/shaderc/SPVParsedInstruction$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/util/shaderc/SPVParsedInstructionFn keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/shaderc/SPVParsedInstructionFn; object: new SPVParsedInstructionFn
-    create(Lorg/lwjgl/util/shaderc/SPVParsedInstructionFnI;)Lorg/lwjgl/util/shaderc/SPVParsedInstructionFn; object: new SPVParsedInstructionFn
-    create(Lorg/lwjgl/util/shaderc/SPVParsedInstructionFnI;J)Lorg/lwjgl/util/shaderc/SPVParsedInstructionFn; object: new SPVParsedInstructionFn
-    createSafe(J)Lorg/lwjgl/util/shaderc/SPVParsedInstructionFn; object: new SPVParsedInstructionFn
-org/lwjgl/util/shaderc/SPVParsedInstructionFn$1 default=1 keep-constructor=1
-    invoke(JJ)I default: default
+org/lwjgl/util/shaderc/SPVParsedInstructionFn keep-callback=4 keep-constructor=2
+org/lwjgl/util/shaderc/SPVParsedInstructionFn$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/SPVParsedInstructionFnI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/util/shaderc/SPVParsedOperand guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -205,13 +176,8 @@ org/lwjgl/util/shaderc/Shaderc default=25 guarded-static-init=1 interface-proxy=
     shaderc_result_get_num_errors(J)J default: default
     shaderc_result_get_num_warnings(J)J default: default
 org/lwjgl/util/shaderc/Shaderc$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/util/shaderc/ShadercIncludeResolve keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/shaderc/ShadercIncludeResolve; object: new ShadercIncludeResolve
-    create(Lorg/lwjgl/util/shaderc/ShadercIncludeResolveI;)Lorg/lwjgl/util/shaderc/ShadercIncludeResolve; object: new ShadercIncludeResolve
-    create(Lorg/lwjgl/util/shaderc/ShadercIncludeResolveI;J)Lorg/lwjgl/util/shaderc/ShadercIncludeResolve; object: new ShadercIncludeResolve
-    createSafe(J)Lorg/lwjgl/util/shaderc/ShadercIncludeResolve; object: new ShadercIncludeResolve
-org/lwjgl/util/shaderc/ShadercIncludeResolve$1 default=1 keep-constructor=1
-    invoke(JJIJJ)J default: default
+org/lwjgl/util/shaderc/ShadercIncludeResolve keep-callback=4 keep-constructor=2
+org/lwjgl/util/shaderc/ShadercIncludeResolve$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/ShadercIncludeResolveI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
@@ -225,12 +191,8 @@ org/lwjgl/util/shaderc/ShadercIncludeResult guarded-static-init=1 keep-construct
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult; struct [shim 3.3.3]
 org/lwjgl/util/shaderc/ShadercIncludeResult$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/util/shaderc/ShadercIncludeResultRelease keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/shaderc/ShadercIncludeResultRelease; object: new ShadercIncludeResultRelease
-    create(Lorg/lwjgl/util/shaderc/ShadercIncludeResultReleaseI;)Lorg/lwjgl/util/shaderc/ShadercIncludeResultRelease; object: new ShadercIncludeResultRelease
-    create(Lorg/lwjgl/util/shaderc/ShadercIncludeResultReleaseI;J)Lorg/lwjgl/util/shaderc/ShadercIncludeResultRelease; object: new ShadercIncludeResultRelease
-    createSafe(J)Lorg/lwjgl/util/shaderc/ShadercIncludeResultRelease; object: new ShadercIncludeResultRelease
-org/lwjgl/util/shaderc/ShadercIncludeResultRelease$1 keep-constructor=1 void=1
+org/lwjgl/util/shaderc/ShadercIncludeResultRelease keep-callback=4 keep-constructor=2
+org/lwjgl/util/shaderc/ShadercIncludeResultRelease$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/ShadercIncludeResultReleaseI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]

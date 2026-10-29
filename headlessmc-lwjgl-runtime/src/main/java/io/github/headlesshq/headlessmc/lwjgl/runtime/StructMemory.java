@@ -8,9 +8,11 @@ import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
@@ -19,6 +21,8 @@ import java.util.concurrent.ConcurrentSkipListMap;
  * garbage collector frees the memory once the struct is unreachable, whether or not the application frees it.</p>
  * <p>The patched {@code MemoryUtil} accessors only touch memory registered here. Every other address, like the fake
  * addresses of {@link DummyBuffers}, reads as 0 and ignores writes, so a wrong address can never crash the JVM.</p>
+ * <p>Raw allocations like {@code nmemAlloc} up to {@code hmc.lwjgl<2|3>.memory.rawThreshold} bytes get real memory as
+ * well, which is retained until it is freed, larger ones get the fake address.</p>
  */
 public final class StructMemory {
     private static final Object UNSAFE = unsafe();
@@ -36,6 +40,8 @@ public final class StructMemory {
     private static final long BUFFER_ADDRESS = bufferAddressOffset();
     private static final ConcurrentSkipListMap<Long, Region> REGIONS = new ConcurrentSkipListMap<>();
     private static final ReferenceQueue<ByteBuffer> COLLECTED = new ReferenceQueue<>();
+    private static final long RAW_THRESHOLD = Config.getLong("memory.rawThreshold", 64L * 1024L);
+    private static final Map<Long, ByteBuffer> RETAINED = new ConcurrentHashMap<>();
 
     private StructMemory() {
         throw new AssertionError();
@@ -51,6 +57,51 @@ public final class StructMemory {
         long address = address(buffer);
         REGIONS.put(address, new Region(address, buffer.capacity(), buffer));
         return buffer;
+    }
+
+    /**
+     * @param size the size in bytes.
+     * @return the address of new zeroed memory that is retained until {@link #free(long)}, or
+     * {@link DummyBuffers#FAKE_ADDRESS} if the size exceeds the raw threshold.
+     */
+    public static long allocateRaw(long size) {
+        if (size < 0 || size > RAW_THRESHOLD) {
+            return DummyBuffers.FAKE_ADDRESS;
+        }
+
+        ByteBuffer buffer = allocate((int) size);
+        long address = address(buffer);
+        RETAINED.put(address, buffer);
+        return address;
+    }
+
+    /**
+     * Like {@code realloc}: the contents are kept up to the smaller of the two sizes.
+     *
+     * @param address an address returned by {@link #allocateRaw(long)}, or 0.
+     * @param size the new size in bytes.
+     * @return the address of the new memory.
+     */
+    public static long reallocateRaw(long address, long size) {
+        long result = allocateRaw(size);
+        ByteBuffer old = RETAINED.get(address);
+        if (old != null) {
+            long bytes = Math.min(old.capacity(), size);
+            if (result != DummyBuffers.FAKE_ADDRESS) {
+                copy(address, result, bytes);
+            }
+
+            free(address);
+        }
+
+        return result;
+    }
+
+    /**
+     * Releases memory returned by {@link #allocateRaw(long)}, other addresses are ignored.
+     */
+    public static void free(long address) {
+        RETAINED.remove(address);
     }
 
     /**
@@ -100,6 +151,25 @@ public final class StructMemory {
 
         long address = address(buffer);
         return find(address, buffer.capacity()) == null ? DummyBuffers.FAKE_ADDRESS : address + buffer.position();
+    }
+
+    /**
+     * @param address an address.
+     * @param bytes the number of bytes.
+     * @return a buffer over the registered memory at the address, in native byte order, or {@code null} if the range is
+     * not registered memory.
+     */
+    public static ByteBuffer view(long address, int bytes) {
+        Map.Entry<Long, Region> entry = REGIONS.floorEntry(address);
+        ByteBuffer memory = find(address, bytes);
+        if (memory == null) {
+            return null;
+        }
+
+        ByteBuffer view = memory.duplicate();
+        int start = (int) (address - entry.getKey());
+        view.limit(start + bytes).position(start);
+        return view.slice().order(ByteOrder.nativeOrder());
     }
 
     /**

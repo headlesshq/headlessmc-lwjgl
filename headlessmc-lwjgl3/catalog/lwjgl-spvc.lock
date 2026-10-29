@@ -209,13 +209,8 @@ org/lwjgl/util/spvc/SpvcCombinedImageSampler guarded-static-init=1 keep-construc
 org/lwjgl/util/spvc/SpvcCombinedImageSampler$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
 org/lwjgl/util/spvc/SpvcEntryPoint guarded-static-init=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/util/spvc/SpvcEntryPoint$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=11
-org/lwjgl/util/spvc/SpvcErrorCallback default=1 keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
-    create(Lorg/lwjgl/util/spvc/SpvcErrorCallbackI;)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
-    create(Lorg/lwjgl/util/spvc/SpvcErrorCallbackI;J)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
-    createSafe(J)Lorg/lwjgl/util/spvc/SpvcErrorCallback; object: new SpvcErrorCallback
-    getError(J)Ljava/lang/String; default: default
-org/lwjgl/util/spvc/SpvcErrorCallback$1 keep-constructor=1 void=1
+org/lwjgl/util/spvc/SpvcErrorCallback keep-callback=5 keep-constructor=2
+org/lwjgl/util/spvc/SpvcErrorCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/spvc/SpvcErrorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]

@@ -2,6 +2,9 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime.stb;
 
 import io.github.headlesshq.headlessmc.lwjgl.runtime.DummyBuffers;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.StructMemory;
+import org.lwjgl.stb.STBIIOCallbacks;
+import org.lwjgl.stb.STBIReadCallback;
 
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
@@ -11,12 +14,14 @@ import java.nio.ShortBuffer;
 /**
  * Patches for {@code STBImage}: images are not decoded, but their real size and channel count are read from the PNG
  * header, so that applications lay out textures, atlases and animations as usual. The pixels are a dummy buffer of
- * the right size. Images that are not PNGs are reported as 16x16 RGBA.
+ * the right size. Images that are not PNGs are reported as 16x16 RGBA. Images read with callbacks only have their
+ * header read.
  */
 public final class StbImagePatches {
     private static final String STB_IMAGE = "org/lwjgl/stb/STBImage";
     private static final int DEFAULT_SIZE = 16;
     private static final int RGBA = 4;
+    private static final int HEADER_SIZE = 26;
     private static final byte[] PNG_SIGNATURE = {(byte) 0x89, 'P', 'N', 'G', '\r', '\n', 0x1A, '\n'};
 
     private StbImagePatches() {
@@ -27,7 +32,7 @@ public final class StbImagePatches {
      * @return width, height and channel count of the image.
      */
     static int[] header(ByteBuffer image) {
-        if (image != null && image.remaining() >= 26) {
+        if (image != null && image.remaining() >= HEADER_SIZE) {
             int start = image.position();
             boolean png = true;
             for (int i = 0; i < PNG_SIGNATURE.length && png; i++) {
@@ -128,6 +133,72 @@ public final class StbImagePatches {
     public static boolean stbi_info_from_memory(ByteBuffer buffer, int[] x, int[] y, int[] comp) {
         load(buffer, x, y, comp);
         return true;
+    }
+
+    /**
+     * Reads the header of an image with the read callback.
+     */
+    static ByteBuffer read(STBIIOCallbacks callbacks, long user) {
+        ByteBuffer header = StructMemory.allocate(HEADER_SIZE);
+        STBIReadCallback read = callbacks == null ? null : callbacks.read();
+        if (read == null) {
+            header.limit(0);
+            return header;
+        }
+
+        long address = StructMemory.address(header);
+        int total = 0;
+        while (total < HEADER_SIZE) {
+            int count = read.invoke(user, address + total, HEADER_SIZE - total);
+            if (count <= 0) {
+                break;
+            }
+
+            total += count;
+        }
+
+        header.limit(total);
+        return header;
+    }
+
+    @Patch(owner = STB_IMAGE)
+    public static ByteBuffer stbi_load_from_callbacks(STBIIOCallbacks clbk, long user, IntBuffer x, IntBuffer y, IntBuffer channels_in_file, int desired_channels) {
+        return stbi_load_from_memory(read(clbk, user), x, y, channels_in_file, desired_channels);
+    }
+
+    @Patch(owner = STB_IMAGE)
+    public static ByteBuffer stbi_load_from_callbacks(STBIIOCallbacks clbk, long user, int[] x, int[] y, int[] channels_in_file, int desired_channels) {
+        return stbi_load_from_memory(read(clbk, user), x, y, channels_in_file, desired_channels);
+    }
+
+    @Patch(owner = STB_IMAGE)
+    public static ShortBuffer stbi_load_16_from_callbacks(STBIIOCallbacks clbk, long user, IntBuffer x, IntBuffer y, IntBuffer channels_in_file, int desired_channels) {
+        return stbi_load_16_from_memory(read(clbk, user), x, y, channels_in_file, desired_channels);
+    }
+
+    @Patch(owner = STB_IMAGE)
+    public static ShortBuffer stbi_load_16_from_callbacks(STBIIOCallbacks clbk, long user, int[] x, int[] y, int[] channels_in_file, int desired_channels) {
+        return stbi_load_16_from_memory(read(clbk, user), x, y, channels_in_file, desired_channels);
+    }
+
+    @Patch(owner = STB_IMAGE)
+    public static FloatBuffer stbi_loadf_from_callbacks(STBIIOCallbacks clbk, long user, IntBuffer x, IntBuffer y, IntBuffer channels_in_file, int desired_channels) {
+        return stbi_loadf_from_memory(read(clbk, user), x, y, channels_in_file, desired_channels);
+    }
+
+    @Patch(owner = STB_IMAGE)
+    public static FloatBuffer stbi_loadf_from_callbacks(STBIIOCallbacks clbk, long user, int[] x, int[] y, int[] channels_in_file, int desired_channels) {
+        return stbi_loadf_from_memory(read(clbk, user), x, y, channels_in_file, desired_channels);
+    }
+
+    @Patch(owner = STB_IMAGE)
+    public static boolean stbi_info_from_callbacks(STBIIOCallbacks clbk, long user, IntBuffer x, IntBuffer y, IntBuffer comp) {
+        return stbi_info_from_memory(read(clbk, user), x, y, comp);
+    }
+
+    @Patch(owner = STB_IMAGE)
+    public static boolean stbi_info_from_callbacks(STBIIOCallbacks clbk, long user, int[] x, int[] y, int[] comp) {
+        return stbi_info_from_memory(read(clbk, user), x, y, comp);
     }
 
     private static void put(IntBuffer buffer, int value) {

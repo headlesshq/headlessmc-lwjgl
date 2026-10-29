@@ -14,13 +14,8 @@ org/lwjgl/stb/STBEasyFont default=9 guarded-static-init=1 keep-constructor=1 voi
     stb_easy_font_print(FFLjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I default: default
     stb_easy_font_width(Ljava/lang/CharSequence;)I default: default
     stb_easy_font_width(Ljava/nio/ByteBuffer;)I default: default
-org/lwjgl/stb/STBIEOFCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/stb/STBIEOFCallback; object: new STBIEOFCallback
-    create(Lorg/lwjgl/stb/STBIEOFCallbackI;)Lorg/lwjgl/stb/STBIEOFCallback; object: new STBIEOFCallback
-    create(Lorg/lwjgl/stb/STBIEOFCallbackI;J)Lorg/lwjgl/stb/STBIEOFCallback; object: new STBIEOFCallback
-    createSafe(J)Lorg/lwjgl/stb/STBIEOFCallback; object: new STBIEOFCallback
-org/lwjgl/stb/STBIEOFCallback$1 default=1 keep-constructor=1
-    invoke(J)I default: default
+org/lwjgl/stb/STBIEOFCallback keep-callback=4 keep-constructor=2
+org/lwjgl/stb/STBIEOFCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIEOFCallbackI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)I default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -39,89 +34,53 @@ org/lwjgl/stb/STBIIOCallbacks guarded-static-init=1 keep-constructor=2 keep-stru
 org/lwjgl/stb/STBIIOCallbacks$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=12 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBIIOCallbacks$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBIIOCallbacks; struct [shim 3.1.6]
-org/lwjgl/stb/STBIRInputCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/stb/STBIRInputCallback; object: new STBIRInputCallback
-    create(Lorg/lwjgl/stb/STBIRInputCallbackI;)Lorg/lwjgl/stb/STBIRInputCallback; object: new STBIRInputCallback
-    create(Lorg/lwjgl/stb/STBIRInputCallbackI;J)Lorg/lwjgl/stb/STBIRInputCallback; object: new STBIRInputCallback
-    createSafe(J)Lorg/lwjgl/stb/STBIRInputCallback; object: new STBIRInputCallback
-org/lwjgl/stb/STBIRInputCallback$1 keep-constructor=1 void=1
+org/lwjgl/stb/STBIRInputCallback keep-callback=4 keep-constructor=2
+org/lwjgl/stb/STBIRInputCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIRInputCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/stb/STBIRKernelCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/stb/STBIRKernelCallback; object: new STBIRKernelCallback
-    create(Lorg/lwjgl/stb/STBIRKernelCallbackI;)Lorg/lwjgl/stb/STBIRKernelCallback; object: new STBIRKernelCallback
-    create(Lorg/lwjgl/stb/STBIRKernelCallbackI;J)Lorg/lwjgl/stb/STBIRKernelCallback; object: new STBIRKernelCallback
-    createSafe(J)Lorg/lwjgl/stb/STBIRKernelCallback; object: new STBIRKernelCallback
-org/lwjgl/stb/STBIRKernelCallback$1 default=1 keep-constructor=1
-    invoke(FFJ)F default: default
+org/lwjgl/stb/STBIRKernelCallback keep-callback=4 keep-constructor=2
+org/lwjgl/stb/STBIRKernelCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIRKernelCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/stb/STBIROutputCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/stb/STBIROutputCallback; object: new STBIROutputCallback
-    create(Lorg/lwjgl/stb/STBIROutputCallbackI;)Lorg/lwjgl/stb/STBIROutputCallback; object: new STBIROutputCallback
-    create(Lorg/lwjgl/stb/STBIROutputCallbackI;J)Lorg/lwjgl/stb/STBIROutputCallback; object: new STBIROutputCallback
-    createSafe(J)Lorg/lwjgl/stb/STBIROutputCallback; object: new STBIROutputCallback
-org/lwjgl/stb/STBIROutputCallback$1 keep-constructor=1 void=1
+org/lwjgl/stb/STBIROutputCallback keep-callback=4 keep-constructor=2
+org/lwjgl/stb/STBIROutputCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIROutputCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/stb/STBIRSupportCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/stb/STBIRSupportCallback; object: new STBIRSupportCallback
-    create(Lorg/lwjgl/stb/STBIRSupportCallbackI;)Lorg/lwjgl/stb/STBIRSupportCallback; object: new STBIRSupportCallback
-    create(Lorg/lwjgl/stb/STBIRSupportCallbackI;J)Lorg/lwjgl/stb/STBIRSupportCallback; object: new STBIRSupportCallback
-    createSafe(J)Lorg/lwjgl/stb/STBIRSupportCallback; object: new STBIRSupportCallback
-org/lwjgl/stb/STBIRSupportCallback$1 default=1 keep-constructor=1
-    invoke(FJ)F default: default
+org/lwjgl/stb/STBIRSupportCallback keep-callback=4 keep-constructor=2
+org/lwjgl/stb/STBIRSupportCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIRSupportCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/stb/STBIR_RESIZE guarded-static-init=1 keep-constructor=2 keep-struct=153 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/stb/STBIR_RESIZE$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=78
-org/lwjgl/stb/STBIReadCallback keep-constructor=2 nio-buffer=1 object=4
-    create(J)Lorg/lwjgl/stb/STBIReadCallback; object: new STBIReadCallback
-    create(Lorg/lwjgl/stb/STBIReadCallbackI;)Lorg/lwjgl/stb/STBIReadCallback; object: new STBIReadCallback
-    create(Lorg/lwjgl/stb/STBIReadCallbackI;J)Lorg/lwjgl/stb/STBIReadCallback; object: new STBIReadCallback
-    createSafe(J)Lorg/lwjgl/stb/STBIReadCallback; object: new STBIReadCallback
-org/lwjgl/stb/STBIReadCallback$1 default=1 keep-constructor=1
-    invoke(JJI)I default: default
+org/lwjgl/stb/STBIReadCallback keep-callback=5 keep-constructor=2
+org/lwjgl/stb/STBIReadCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIReadCallbackI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)I default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/stb/STBISkipCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/stb/STBISkipCallback; object: new STBISkipCallback
-    create(Lorg/lwjgl/stb/STBISkipCallbackI;)Lorg/lwjgl/stb/STBISkipCallback; object: new STBISkipCallback
-    create(Lorg/lwjgl/stb/STBISkipCallbackI;J)Lorg/lwjgl/stb/STBISkipCallback; object: new STBISkipCallback
-    createSafe(J)Lorg/lwjgl/stb/STBISkipCallback; object: new STBISkipCallback
-org/lwjgl/stb/STBISkipCallback$1 keep-constructor=1 void=1
+org/lwjgl/stb/STBISkipCallback keep-callback=4 keep-constructor=2
+org/lwjgl/stb/STBISkipCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBISkipCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/stb/STBIWriteCallback keep-constructor=2 nio-buffer=1 object=4
-    create(J)Lorg/lwjgl/stb/STBIWriteCallback; object: new STBIWriteCallback
-    create(Lorg/lwjgl/stb/STBIWriteCallbackI;)Lorg/lwjgl/stb/STBIWriteCallback; object: new STBIWriteCallback
-    create(Lorg/lwjgl/stb/STBIWriteCallbackI;J)Lorg/lwjgl/stb/STBIWriteCallback; object: new STBIWriteCallback
-    createSafe(J)Lorg/lwjgl/stb/STBIWriteCallback; object: new STBIWriteCallback
-org/lwjgl/stb/STBIWriteCallback$1 keep-constructor=1 void=1
+org/lwjgl/stb/STBIWriteCallback keep-callback=5 keep-constructor=2
+org/lwjgl/stb/STBIWriteCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIWriteCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/stb/STBIZlibCompress keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/stb/STBIZlibCompress; object: new STBIZlibCompress
-    create(Lorg/lwjgl/stb/STBIZlibCompressI;)Lorg/lwjgl/stb/STBIZlibCompress; object: new STBIZlibCompress
-    create(Lorg/lwjgl/stb/STBIZlibCompressI;J)Lorg/lwjgl/stb/STBIZlibCompress; object: new STBIZlibCompress
-    createSafe(J)Lorg/lwjgl/stb/STBIZlibCompress; object: new STBIZlibCompress
-org/lwjgl/stb/STBIZlibCompress$1 default=1 keep-constructor=1
-    invoke(JIJI)J default: default
+org/lwjgl/stb/STBIZlibCompress keep-callback=4 keep-constructor=2
+org/lwjgl/stb/STBIZlibCompress$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIZlibCompressI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)J default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/stb/STBImage default=56 guarded-static-init=1 handler=8 keep-constructor=1 nio-buffer-empty=24 void=19
+org/lwjgl/stb/STBImage default=54 guarded-static-init=1 handler=16 keep-constructor=1 nio-buffer-empty=18 void=19
     nstbi_failure_reason()J default: default
     nstbi_info(JJJJ)I default: default
     nstbi_info(J[I[I[I)I default: default
@@ -166,8 +125,6 @@ org/lwjgl/stb/STBImage default=56 guarded-static-init=1 handler=8 keep-construct
     stbi_info(Ljava/lang/CharSequence;[I[I[I)Z default: default
     stbi_info(Ljava/nio/ByteBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
     stbi_info(Ljava/nio/ByteBuffer;[I[I[I)Z default: default
-    stbi_info_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
-    stbi_info_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;J[I[I[I)Z default: default
     stbi_is_16_bit(Ljava/lang/CharSequence;)Z default: default
     stbi_is_16_bit(Ljava/nio/ByteBuffer;)Z default: default
     stbi_is_16_bit_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;J)Z default: default
@@ -184,18 +141,12 @@ org/lwjgl/stb/STBImage default=56 guarded-static-init=1 handler=8 keep-construct
     stbi_load_16(Ljava/lang/CharSequence;[I[I[II)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
     stbi_load_16(Ljava/nio/ByteBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;I)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
     stbi_load_16(Ljava/nio/ByteBuffer;[I[I[II)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    stbi_load_16_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;I)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    stbi_load_16_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;J[I[I[II)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    stbi_load_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;I)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stbi_load_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;J[I[I[II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     stbi_load_gif_from_memory(Ljava/nio/ByteBuffer;Lorg/lwjgl/PointerBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;I)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     stbi_load_gif_from_memory(Ljava/nio/ByteBuffer;Lorg/lwjgl/PointerBuffer;[I[I[I[II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     stbi_loadf(Ljava/lang/CharSequence;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;I)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
     stbi_loadf(Ljava/lang/CharSequence;[I[I[II)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
     stbi_loadf(Ljava/nio/ByteBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;I)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
     stbi_loadf(Ljava/nio/ByteBuffer;[I[I[II)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    stbi_loadf_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;JLjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;I)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    stbi_loadf_from_callbacks(Lorg/lwjgl/stb/STBIIOCallbacks;J[I[I[II)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
     stbi_zlib_decode_buffer(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I default: default
     stbi_zlib_decode_malloc(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     stbi_zlib_decode_malloc_guesssize(Ljava/nio/ByteBuffer;I)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)

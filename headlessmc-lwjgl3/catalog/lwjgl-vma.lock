@@ -117,12 +117,8 @@ org/lwjgl/util/vma/Vma default=90 guarded-static-init=1 keep-constructor=1 void=
     VMA_RECORD_FLUSH_AFTER_CALL_BIT:I [shim 3.2.2]
     VMA_VIRTUAL_BLOCK_CREATE_BUDDY_ALGORITHM_BIT:I [shim 3.3.1]
     VMA_VIRTUAL_BLOCK_CREATE_TLSF_ALGORITHM_BIT:I [shim 3.3.1]
-org/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction; object: new VmaAllocateDeviceMemoryFunction
-    create(Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunctionI;)Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction; object: new VmaAllocateDeviceMemoryFunction
-    create(Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunctionI;J)Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction; object: new VmaAllocateDeviceMemoryFunction
-    createSafe(J)Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction; object: new VmaAllocateDeviceMemoryFunction
-org/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction$1 keep-constructor=1 void=1
+org/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction keep-callback=4 keep-constructor=2
+org/lwjgl/util/vma/VmaAllocateDeviceMemoryFunction$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/vma/VmaAllocateDeviceMemoryFunctionI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=3
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -182,13 +178,8 @@ org/lwjgl/util/vma/VmaBudget guarded-static-init=1 keep-constructor=2 keep-struc
 org/lwjgl/util/vma/VmaBudget$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9 struct-member=2
     allocationBytes()J struct-member [shim 3.3.1]
     blockBytes()J struct-member [shim 3.3.1]
-org/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction; object: new VmaCheckDefragmentationBreakFunction
-    create(Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunctionI;)Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction; object: new VmaCheckDefragmentationBreakFunction
-    create(Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunctionI;J)Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction; object: new VmaCheckDefragmentationBreakFunction
-    createSafe(J)Lorg/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction; object: new VmaCheckDefragmentationBreakFunction
-org/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction$1 default=1 keep-constructor=1
-    invoke(J)I default: default
+org/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction keep-callback=4 keep-constructor=2
+org/lwjgl/util/vma/VmaCheckDefragmentationBreakFunction$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/vma/VmaCheckDefragmentationBreakFunctionI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
@@ -262,12 +253,8 @@ org/lwjgl/util/vma/VmaDeviceMemoryCallbacks fluent=1 guarded-static-init=1 keep-
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks; struct [shim 3.3.3]
     set(Lorg/lwjgl/util/vma/VmaAllocateDeviceMemoryFunctionI;Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunctionI;)Lorg/lwjgl/util/vma/VmaDeviceMemoryCallbacks; fluent [shim 3.2.2]
 org/lwjgl/util/vma/VmaDeviceMemoryCallbacks$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/util/vma/VmaFreeDeviceMemoryFunction keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
-    create(Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunctionI;)Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
-    create(Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunctionI;J)Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
-    createSafe(J)Lorg/lwjgl/util/vma/VmaFreeDeviceMemoryFunction; object: new VmaFreeDeviceMemoryFunction
-org/lwjgl/util/vma/VmaFreeDeviceMemoryFunction$1 keep-constructor=1 void=1
+org/lwjgl/util/vma/VmaFreeDeviceMemoryFunction keep-callback=4 keep-constructor=2
+org/lwjgl/util/vma/VmaFreeDeviceMemoryFunction$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/vma/VmaFreeDeviceMemoryFunctionI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=3
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor

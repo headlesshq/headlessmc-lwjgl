@@ -144,12 +144,8 @@ org/lwjgl/openal/EXTDebug default=8 keep-constructor=1 void=40
     alGetPointerEXT(I)J default: default
     nalGetDebugMessageLogDirectEXT(JIIJJJJJJ)I default: default
     nalGetDebugMessageLogEXT(IIJJJJJJ)I default: default
-org/lwjgl/openal/EXTDebugProc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/openal/EXTDebugProc; object: new EXTDebugProc
-    create(Lorg/lwjgl/openal/EXTDebugProcI;)Lorg/lwjgl/openal/EXTDebugProc; object: new EXTDebugProc
-    create(Lorg/lwjgl/openal/EXTDebugProcI;J)Lorg/lwjgl/openal/EXTDebugProc; object: new EXTDebugProc
-    createSafe(J)Lorg/lwjgl/openal/EXTDebugProc; object: new EXTDebugProc
-org/lwjgl/openal/EXTDebugProc$1 keep-constructor=1 void=1
+org/lwjgl/openal/EXTDebugProc keep-callback=4 keep-constructor=2
+org/lwjgl/openal/EXTDebugProc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/openal/EXTDebugProcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/openal/EXTDedicated keep-constructor=1
@@ -210,13 +206,8 @@ org/lwjgl/openal/SOFTBufferSubData keep-constructor=1 void=16
 org/lwjgl/openal/SOFTCallbackBuffer default=2 keep-constructor=1 void=16
     alGetBufferPtrDirectSOFT(JII)J default: default
     alGetBufferPtrSOFT(II)J default: default
-org/lwjgl/openal/SOFTCallbackBufferType keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/openal/SOFTCallbackBufferType; object: new SOFTCallbackBufferType
-    create(Lorg/lwjgl/openal/SOFTCallbackBufferTypeI;)Lorg/lwjgl/openal/SOFTCallbackBufferType; object: new SOFTCallbackBufferType
-    create(Lorg/lwjgl/openal/SOFTCallbackBufferTypeI;J)Lorg/lwjgl/openal/SOFTCallbackBufferType; object: new SOFTCallbackBufferType
-    createSafe(J)Lorg/lwjgl/openal/SOFTCallbackBufferType; object: new SOFTCallbackBufferType
-org/lwjgl/openal/SOFTCallbackBufferType$1 default=1 keep-constructor=1
-    invoke(JJI)I default: default
+org/lwjgl/openal/SOFTCallbackBufferType keep-callback=4 keep-constructor=2
+org/lwjgl/openal/SOFTCallbackBufferType$1 keep-callback=1 keep-constructor=1
 org/lwjgl/openal/SOFTCallbackBufferTypeI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     invoke(JJI)J default: default [shim 3.3.3]
@@ -227,12 +218,8 @@ org/lwjgl/openal/SOFTDeviceClock default=1 keep-constructor=1 void=3
 org/lwjgl/openal/SOFTDirectChannels keep-constructor=1
 org/lwjgl/openal/SOFTDirectChannelsRemix keep-constructor=1
 org/lwjgl/openal/SOFTEffectTarget keep-constructor=1
-org/lwjgl/openal/SOFTEventProc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/openal/SOFTEventProc; object: new SOFTEventProc
-    create(Lorg/lwjgl/openal/SOFTEventProcI;)Lorg/lwjgl/openal/SOFTEventProc; object: new SOFTEventProc
-    create(Lorg/lwjgl/openal/SOFTEventProcI;J)Lorg/lwjgl/openal/SOFTEventProc; object: new SOFTEventProc
-    createSafe(J)Lorg/lwjgl/openal/SOFTEventProc; object: new SOFTEventProc
-org/lwjgl/openal/SOFTEventProc$1 keep-constructor=1 void=1
+org/lwjgl/openal/SOFTEventProc keep-callback=4 keep-constructor=2
+org/lwjgl/openal/SOFTEventProc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/openal/SOFTEventProcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
@@ -272,12 +259,8 @@ org/lwjgl/openal/SOFTSourceResampler default=4 keep-constructor=1
     nalGetStringiSOFT(II)J default: default
 org/lwjgl/openal/SOFTSourceSpatialize keep-constructor=1
 org/lwjgl/openal/SOFTSourceStartDelay keep-constructor=1 void=8
-org/lwjgl/openal/SOFTSystemEventProc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/openal/SOFTSystemEventProc; object: new SOFTSystemEventProc
-    create(Lorg/lwjgl/openal/SOFTSystemEventProcI;)Lorg/lwjgl/openal/SOFTSystemEventProc; object: new SOFTSystemEventProc
-    create(Lorg/lwjgl/openal/SOFTSystemEventProcI;J)Lorg/lwjgl/openal/SOFTSystemEventProc; object: new SOFTSystemEventProc
-    createSafe(J)Lorg/lwjgl/openal/SOFTSystemEventProc; object: new SOFTSystemEventProc
-org/lwjgl/openal/SOFTSystemEventProc$1 keep-constructor=1 void=1
+org/lwjgl/openal/SOFTSystemEventProc keep-callback=4 keep-constructor=2
+org/lwjgl/openal/SOFTSystemEventProc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/openal/SOFTSystemEventProcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/openal/SOFTSystemEvents default=4 keep-constructor=1 void=2

@@ -62,15 +62,12 @@ org/lwjgl/system/APIUtil$APIVersion default=2 identity=2 keep-constructor=2 keep
     compareTo(Ljava/lang/Object;)I default: default
     compareTo(Lorg/lwjgl/system/APIUtil$APIVersion;)I default: default
 org/lwjgl/system/APIUtil$Encoder keep-abstract-interface-method=1
-org/lwjgl/system/Callback default=3 identity=2 keep-constructor=4 keep-pointer-address=1 keep-to-string=1 void=2
+org/lwjgl/system/Callback default=1 identity=2 keep-constructor=4 keep-pointer-address=1 keep-pure-java-method=4 keep-to-string=1
     <init>(Ljava/lang/String;)V keep-constructor [shim 3.2.2]
     <init>(Lorg/lwjgl/system/libffi/FFICIF;)V keep-constructor [shim 3.3.3]
     __stdcall(Ljava/lang/String;)Ljava/lang/String; default: default [shim 3.2.2]
-    get(J)Lorg/lwjgl/system/CallbackI; default: default
-    getSafe(J)Lorg/lwjgl/system/CallbackI; default: default
 org/lwjgl/system/Callback$Descriptor keep-constructor=1
-org/lwjgl/system/CallbackI default=2 keep-abstract-interface-method=2 struct=1
-    address()J default: default
+org/lwjgl/system/CallbackI default=1 keep-abstract-interface-method=2 keep-pure-java-method=1 struct=1
     getCallInterface()Lorg/lwjgl/system/libffi/FFICIF; struct [shim 3.3.3]
     getSignature()Ljava/lang/String; default: default [shim 3.2.2]
 org/lwjgl/system/CallbackI$B shim-class=3.2.2 keep-abstract-interface-method=1
@@ -2825,7 +2822,7 @@ org/lwjgl/system/MemoryStack$1 default=6 fake-address=4 keep-constructor=1 void=
     getMalloc()J default: default
     getRealloc()J default: default
 org/lwjgl/system/MemoryStack$DebugMemoryStack fluent=2 keep-constructor=1 void=3
-org/lwjgl/system/MemoryUtil default=101 fake-address=50 guarded-static-init=1 handler=53 interface-proxy=4 keep-constructor=1 lwjgl-buffer=12 nio-buffer=41 nio-buffer-empty=39 void=159
+org/lwjgl/system/MemoryUtil default=78 fake-address=42 guarded-static-init=1 handler=112 interface-proxy=4 keep-constructor=1 lwjgl-buffer=12 nio-buffer=27 nio-buffer-empty=27 void=157
     allocateUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     createBackend()Lorg/lwjgl/system/MemoryBackend; interface-proxy: proxy MemoryBackend
     encodeUTF8Safe(Ljava/lang/CharSequence;ZJI)I default: default
@@ -2838,17 +2835,7 @@ org/lwjgl/system/MemoryUtil default=101 fake-address=50 guarded-static-init=1 ha
     lambda$static$0()[B default: default
     lambda$static$1()[C default: default
     memASCII(JI)Ljava/lang/String; default: default
-    memASCII(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memASCII(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memASCII(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default
-    memASCII(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;I)I default: default
-    memASCII(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
-    memASCII(Ljava/nio/ByteBuffer;I)Ljava/lang/String; default: default
-    memASCII(Ljava/nio/ByteBuffer;II)Ljava/lang/String; default: default
     memASCIISafe(JI)Ljava/lang/String; default: default
-    memASCIISafe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memASCIISafe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memASCIISafe(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
     memAddress0(Lorg/lwjgl/system/CustomBuffer;)J fake-address [shim 3.1.6]
     memAddress0Safe(Ljava/nio/Buffer;)J fake-address [shim 3.1.6]
     memAddress0Safe(Lorg/lwjgl/system/CustomBuffer;)J fake-address [shim 3.1.6]
@@ -2930,13 +2917,8 @@ org/lwjgl/system/MemoryUtil default=101 fake-address=50 guarded-static-init=1 ha
     memGetShortUnaligned(Ljava/nio/ByteBuffer;J)S default: default
     memGetShortUnalignedAtIndex(Ljava/nio/ByteBuffer;I)S default: default
     memGlobalRefToObject(J)Ljava/lang/Object; default: default
-    memLengthASCII(Ljava/lang/CharSequence;Z)I default: default
-    memLengthNT1(Ljava/nio/ByteBuffer;)I default: default
     memLengthNT1([BZ)I default: default
-    memLengthNT2(Ljava/nio/ByteBuffer;)I default: default
     memLengthNT2([BZ)I default: default
-    memLengthUTF16(Ljava/lang/CharSequence;Z)I default: default
-    memLengthUTF8(Ljava/lang/CharSequence;Z)I default: default
     memNewGlobalRef(Ljava/lang/Object;)J default: default [shim 3.2.2]
     memNewWeakGlobalRef(Ljava/lang/Object;)J default: default [shim 3.2.2]
     memSlice(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -2949,30 +2931,10 @@ org/lwjgl/system/MemoryUtil default=101 fake-address=50 guarded-static-init=1 ha
     memSlice(Lorg/lwjgl/PointerBuffer;II)Lorg/lwjgl/PointerBuffer; lwjgl-buffer [shim 3.1.6]
     memUTF16(J)Ljava/lang/String; default: default
     memUTF16(JI)Ljava/lang/String; default: default
-    memUTF16(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memUTF16(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memUTF16(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default
-    memUTF16(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;I)I default: default
-    memUTF16(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
-    memUTF16(Ljava/nio/ByteBuffer;I)Ljava/lang/String; default: default
-    memUTF16(Ljava/nio/ByteBuffer;II)Ljava/lang/String; default: default
     memUTF16Safe(J)Ljava/lang/String; default: default
     memUTF16Safe(JI)Ljava/lang/String; default: default
-    memUTF16Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memUTF16Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memUTF16Safe(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
     memUTF8(JI)Ljava/lang/String; default: default
-    memUTF8(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memUTF8(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default
-    memUTF8(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;I)I default: default
-    memUTF8(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
-    memUTF8(Ljava/nio/ByteBuffer;I)Ljava/lang/String; default: default
-    memUTF8(Ljava/nio/ByteBuffer;II)Ljava/lang/String; default: default
     memUTF8Safe(JI)Ljava/lang/String; default: default
-    memUTF8Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memUTF8Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memUTF8Safe(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
     ngetCacheLineSize()I default: default
     ngetPageSize()I default: default
     putStringUTF8(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default
@@ -3063,10 +3025,8 @@ org/lwjgl/system/ThreadLocalUtil default=6 guarded-static-init=1 keep-constructo
     setupAddressBuffer(Lorg/lwjgl/PointerBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     setupEnvData()J default: default [shim 3.3.3]
     setupEnvData(I)J default: default
-org/lwjgl/system/Upcalls default=3 guarded-static-init=1 keep-constructor=1 void=2
+org/lwjgl/system/Upcalls default=1 guarded-static-init=1 handler=3 keep-constructor=1 void=1
     getCallbackHandler(Ljava/lang/reflect/Method;)J default: default
-    upcallCreate(Lorg/lwjgl/system/Callback$Descriptor;Ljava/lang/Object;)J default: default
-    upcallGet(J)Lorg/lwjgl/system/CallbackI; default: default
 org/lwjgl/system/Upcalls$1 keep-constructor=1 struct=2 void=1
 org/lwjgl/system/Upcalls$2 keep-constructor=1 struct=2 void=1
 org/lwjgl/system/Upcalls$ClosureRegistry keep-abstract-interface-method=3
@@ -4373,13 +4333,8 @@ org/lwjgl/system/linux/liburing/LibURing default=211 guarded-static-init=1 keep-
     nio_uring_wait_cqe_timeout(JJJ)I default: default
     nio_uring_wait_cqes(JJIJJ)I default: default
     nio_uring_wait_cqes_min_timeout(JJIJIJ)I default: default
-org/lwjgl/system/macosx/CGEventTapCallBack keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/macosx/CGEventTapCallBack; object: new CGEventTapCallBack
-    create(Lorg/lwjgl/system/macosx/CGEventTapCallBackI;)Lorg/lwjgl/system/macosx/CGEventTapCallBack; object: new CGEventTapCallBack
-    create(Lorg/lwjgl/system/macosx/CGEventTapCallBackI;J)Lorg/lwjgl/system/macosx/CGEventTapCallBack; object: new CGEventTapCallBack
-    createSafe(J)Lorg/lwjgl/system/macosx/CGEventTapCallBack; object: new CGEventTapCallBack
-org/lwjgl/system/macosx/CGEventTapCallBack$1 default=1 keep-constructor=1
-    invoke(JIJJ)J default: default
+org/lwjgl/system/macosx/CGEventTapCallBack keep-callback=4 keep-constructor=2
+org/lwjgl/system/macosx/CGEventTapCallBack$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/macosx/CGEventTapCallBackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
@@ -4465,12 +4420,8 @@ org/lwjgl/system/macosx/DynamicLinkLoader default=10 guarded-static-init=1 keep-
     ndlerror()J default: default
     ndlopen(JI)J default: default
     ndlsym(JJ)J default: default
-org/lwjgl/system/macosx/EnumerationMutationHandler keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/macosx/EnumerationMutationHandler; object: new EnumerationMutationHandler
-    create(Lorg/lwjgl/system/macosx/EnumerationMutationHandlerI;)Lorg/lwjgl/system/macosx/EnumerationMutationHandler; object: new EnumerationMutationHandler
-    create(Lorg/lwjgl/system/macosx/EnumerationMutationHandlerI;J)Lorg/lwjgl/system/macosx/EnumerationMutationHandler; object: new EnumerationMutationHandler
-    createSafe(J)Lorg/lwjgl/system/macosx/EnumerationMutationHandler; object: new EnumerationMutationHandler
-org/lwjgl/system/macosx/EnumerationMutationHandler$1 keep-constructor=1 void=1
+org/lwjgl/system/macosx/EnumerationMutationHandler keep-callback=4 keep-constructor=2
+org/lwjgl/system/macosx/EnumerationMutationHandler$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/macosx/EnumerationMutationHandlerI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -5181,13 +5132,8 @@ org/lwjgl/system/windows/WinBase default=34 guarded-static-init=1 keep-construct
     nLoadLibrary(JJ)J default: default
     nLocalFree(J)J default: default [shim 3.3.3]
     nLocalFree(JJ)J default: default
-org/lwjgl/system/windows/WindowProc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
-    create(Lorg/lwjgl/system/windows/WindowProcI;)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
-    create(Lorg/lwjgl/system/windows/WindowProcI;J)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
-    createSafe(J)Lorg/lwjgl/system/windows/WindowProc; object: new WindowProc
-org/lwjgl/system/windows/WindowProc$1 default=1 keep-constructor=1
-    invoke(JIJJ)J default: default
+org/lwjgl/system/windows/WindowProc keep-callback=4 keep-constructor=2
+org/lwjgl/system/windows/WindowProc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/windows/WindowProcI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)J default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor

@@ -1927,13 +1927,8 @@ org/lwjgl/vulkan/VkAllocationCallbacks guarded-static-init=1 keep-constructor=2 
 org/lwjgl/vulkan/VkAllocationCallbacks$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=18 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/vulkan/VkAllocationCallbacks$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/vulkan/VkAllocationCallbacks; struct [shim 3.1.6]
-org/lwjgl/vulkan/VkAllocationFunction keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/vulkan/VkAllocationFunction; object: new VkAllocationFunction
-    create(Lorg/lwjgl/vulkan/VkAllocationFunctionI;)Lorg/lwjgl/vulkan/VkAllocationFunction; object: new VkAllocationFunction
-    create(Lorg/lwjgl/vulkan/VkAllocationFunctionI;J)Lorg/lwjgl/vulkan/VkAllocationFunction; object: new VkAllocationFunction
-    createSafe(J)Lorg/lwjgl/vulkan/VkAllocationFunction; object: new VkAllocationFunction
-org/lwjgl/vulkan/VkAllocationFunction$1 default=1 keep-constructor=1
-    invoke(JJJI)J default: default
+org/lwjgl/vulkan/VkAllocationFunction keep-callback=4 keep-constructor=2
+org/lwjgl/vulkan/VkAllocationFunction$1 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkAllocationFunctionI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)J default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -2969,14 +2964,8 @@ org/lwjgl/vulkan/VkDebugReportCallbackCreateInfoEXT guarded-static-init=1 keep-c
 org/lwjgl/vulkan/VkDebugReportCallbackCreateInfoEXT$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=17 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/vulkan/VkDebugReportCallbackCreateInfoEXT$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/vulkan/VkDebugReportCallbackCreateInfoEXT; struct [shim 3.1.6]
-org/lwjgl/vulkan/VkDebugReportCallbackEXT default=1 keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/vulkan/VkDebugReportCallbackEXT; object: new VkDebugReportCallbackEXT
-    create(Lorg/lwjgl/vulkan/VkDebugReportCallbackEXTI;)Lorg/lwjgl/vulkan/VkDebugReportCallbackEXT; object: new VkDebugReportCallbackEXT
-    create(Lorg/lwjgl/vulkan/VkDebugReportCallbackEXTI;J)Lorg/lwjgl/vulkan/VkDebugReportCallbackEXT; object: new VkDebugReportCallbackEXT
-    createSafe(J)Lorg/lwjgl/vulkan/VkDebugReportCallbackEXT; object: new VkDebugReportCallbackEXT
-    getString(J)Ljava/lang/String; default: default
-org/lwjgl/vulkan/VkDebugReportCallbackEXT$1 default=1 keep-constructor=1
-    invoke(IIJJIJJJ)I default: default
+org/lwjgl/vulkan/VkDebugReportCallbackEXT keep-callback=5 keep-constructor=2
+org/lwjgl/vulkan/VkDebugReportCallbackEXT$1 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkDebugReportCallbackEXTI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)I default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -3004,13 +2993,8 @@ org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackDataEXT guarded-static-init=1 keep
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCallbackDataEXT; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
 org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackDataEXT$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=31
-org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXT keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXT; object: new VkDebugUtilsMessengerCallbackEXT
-    create(Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXTI;)Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXT; object: new VkDebugUtilsMessengerCallbackEXT
-    create(Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXTI;J)Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXT; object: new VkDebugUtilsMessengerCallbackEXT
-    createSafe(J)Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXT; object: new VkDebugUtilsMessengerCallbackEXT
-org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXT$1 default=1 keep-constructor=1
-    invoke(IIJJ)I default: default
+org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXT keep-callback=4 keep-constructor=2
+org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXT$1 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkDebugUtilsMessengerCallbackEXTI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)I default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -3648,12 +3632,8 @@ org/lwjgl/vulkan/VkDeviceMemoryOverallocationCreateInfoAMD guarded-static-init=1
 org/lwjgl/vulkan/VkDeviceMemoryOverallocationCreateInfoAMD$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=13
 org/lwjgl/vulkan/VkDeviceMemoryReportCallbackDataEXT guarded-static-init=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/vulkan/VkDeviceMemoryReportCallbackDataEXT$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXT keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXT; object: new VkDeviceMemoryReportCallbackEXT
-    create(Lorg/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXTI;)Lorg/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXT; object: new VkDeviceMemoryReportCallbackEXT
-    create(Lorg/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXTI;J)Lorg/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXT; object: new VkDeviceMemoryReportCallbackEXT
-    createSafe(J)Lorg/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXT; object: new VkDeviceMemoryReportCallbackEXT
-org/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXT$1 keep-constructor=1 void=1
+org/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXT keep-callback=4 keep-constructor=2
+org/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXT$1 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkDeviceMemoryReportCallbackEXTI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
@@ -4572,12 +4552,8 @@ org/lwjgl/vulkan/VkFramebufferMixedSamplesCombinationNV guarded-static-init=1 ke
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/vulkan/VkFramebufferMixedSamplesCombinationNV$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/vulkan/VkFramebufferMixedSamplesCombinationNV; struct [shim 3.3.3]
 org/lwjgl/vulkan/VkFramebufferMixedSamplesCombinationNV$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=15
-org/lwjgl/vulkan/VkFreeFunction keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/vulkan/VkFreeFunction; object: new VkFreeFunction
-    create(Lorg/lwjgl/vulkan/VkFreeFunctionI;)Lorg/lwjgl/vulkan/VkFreeFunction; object: new VkFreeFunction
-    create(Lorg/lwjgl/vulkan/VkFreeFunctionI;J)Lorg/lwjgl/vulkan/VkFreeFunction; object: new VkFreeFunction
-    createSafe(J)Lorg/lwjgl/vulkan/VkFreeFunction; object: new VkFreeFunction
-org/lwjgl/vulkan/VkFreeFunction$1 keep-constructor=1 void=1
+org/lwjgl/vulkan/VkFreeFunction keep-callback=4 keep-constructor=2
+org/lwjgl/vulkan/VkFreeFunction$1 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkFreeFunctionI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -4635,12 +4611,8 @@ org/lwjgl/vulkan/VkGeometryTrianglesNV guarded-static-init=1 keep-constructor=2 
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/vulkan/VkGeometryTrianglesNV$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/vulkan/VkGeometryTrianglesNV; struct [shim 3.3.3]
 org/lwjgl/vulkan/VkGeometryTrianglesNV$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=33
-org/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG shim-class=3.3.2 keep-constructor=2 object=3
-    create(J)Lorg/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG; object: new VkGetInstanceProcAddrLUNARG
-    create(Lorg/lwjgl/vulkan/VkGetInstanceProcAddrLUNARGI;)Lorg/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG; object: new VkGetInstanceProcAddrLUNARG
-    createSafe(J)Lorg/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG; object: new VkGetInstanceProcAddrLUNARG
-org/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG$Container shim-class=3.3.2 default=1 keep-constructor=1
-    invoke(JJ)J default: default
+org/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG shim-class=3.3.2 keep-callback=3 keep-constructor=2
+org/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG$Container shim-class=3.3.2 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkGetInstanceProcAddrLUNARGI shim-class=3.3.2 keep-abstract-interface-method=1 keep-interface-static-init=1 struct=1 void=1
 org/lwjgl/vulkan/VkGetLatencyMarkerInfoNV guarded-static-init=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/vulkan/VkGetLatencyMarkerInfoNV$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=15
@@ -5328,23 +5300,15 @@ org/lwjgl/vulkan/VkInstanceCreateInfo guarded-static-init=1 keep-constructor=2 k
 org/lwjgl/vulkan/VkInstanceCreateInfo$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=28 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/vulkan/VkInstanceCreateInfo$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/vulkan/VkInstanceCreateInfo; struct [shim 3.1.6]
-org/lwjgl/vulkan/VkInternalAllocationNotification keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/vulkan/VkInternalAllocationNotification; object: new VkInternalAllocationNotification
-    create(Lorg/lwjgl/vulkan/VkInternalAllocationNotificationI;)Lorg/lwjgl/vulkan/VkInternalAllocationNotification; object: new VkInternalAllocationNotification
-    create(Lorg/lwjgl/vulkan/VkInternalAllocationNotificationI;J)Lorg/lwjgl/vulkan/VkInternalAllocationNotification; object: new VkInternalAllocationNotification
-    createSafe(J)Lorg/lwjgl/vulkan/VkInternalAllocationNotification; object: new VkInternalAllocationNotification
-org/lwjgl/vulkan/VkInternalAllocationNotification$1 keep-constructor=1 void=1
+org/lwjgl/vulkan/VkInternalAllocationNotification keep-callback=4 keep-constructor=2
+org/lwjgl/vulkan/VkInternalAllocationNotification$1 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkInternalAllocationNotificationI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/vulkan/VkInternalFreeNotification keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/vulkan/VkInternalFreeNotification; object: new VkInternalFreeNotification
-    create(Lorg/lwjgl/vulkan/VkInternalFreeNotificationI;)Lorg/lwjgl/vulkan/VkInternalFreeNotification; object: new VkInternalFreeNotification
-    create(Lorg/lwjgl/vulkan/VkInternalFreeNotificationI;J)Lorg/lwjgl/vulkan/VkInternalFreeNotification; object: new VkInternalFreeNotification
-    createSafe(J)Lorg/lwjgl/vulkan/VkInternalFreeNotification; object: new VkInternalFreeNotification
-org/lwjgl/vulkan/VkInternalFreeNotification$1 keep-constructor=1 void=1
+org/lwjgl/vulkan/VkInternalFreeNotification keep-callback=4 keep-constructor=2
+org/lwjgl/vulkan/VkInternalFreeNotification$1 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkInternalFreeNotificationI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -9153,13 +9117,8 @@ org/lwjgl/vulkan/VkRayTracingShaderGroupCreateInfoNV guarded-static-init=1 keep-
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/vulkan/VkRayTracingShaderGroupCreateInfoNV$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/vulkan/VkRayTracingShaderGroupCreateInfoNV; struct [shim 3.3.3]
 org/lwjgl/vulkan/VkRayTracingShaderGroupCreateInfoNV$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=21
-org/lwjgl/vulkan/VkReallocationFunction keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/vulkan/VkReallocationFunction; object: new VkReallocationFunction
-    create(Lorg/lwjgl/vulkan/VkReallocationFunctionI;)Lorg/lwjgl/vulkan/VkReallocationFunction; object: new VkReallocationFunction
-    create(Lorg/lwjgl/vulkan/VkReallocationFunctionI;J)Lorg/lwjgl/vulkan/VkReallocationFunction; object: new VkReallocationFunction
-    createSafe(J)Lorg/lwjgl/vulkan/VkReallocationFunction; object: new VkReallocationFunction
-org/lwjgl/vulkan/VkReallocationFunction$1 default=1 keep-constructor=1
-    invoke(JJJJI)J default: default
+org/lwjgl/vulkan/VkReallocationFunction keep-callback=4 keep-constructor=2
+org/lwjgl/vulkan/VkReallocationFunction$1 keep-callback=1 keep-constructor=1
 org/lwjgl/vulkan/VkReallocationFunctionI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)J default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor

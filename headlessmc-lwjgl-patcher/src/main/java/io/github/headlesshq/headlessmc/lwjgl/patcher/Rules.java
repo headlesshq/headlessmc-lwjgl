@@ -19,6 +19,7 @@ public final class Rules {
     private static final String STRUCT = "org/lwjgl/system/Struct";
     private static final String STRUCT_BUFFER = "org/lwjgl/system/StructBuffer";
     private static final String CALLBACK_INTERFACE = "org/lwjgl/system/CallbackI";
+    private static final String CALLBACK = "org/lwjgl/system/Callback";
 
     /**
      * Pure Java classes without native code, of LWJGL 3 and LWJGL 2.
@@ -55,7 +56,11 @@ public final class Rules {
         "org/lwjgl/input/Keyboard.getKeyName",
         "org/lwjgl/input/Keyboard.getKeyIndex",
         "org/lwjgl/input/Keyboard.getKeyCount",
-        "org/lwjgl/opencl/CLPlatform.getInfoUtilInstance"
+        "org/lwjgl/opencl/CLPlatform.getInfoUtilInstance",
+        "org/lwjgl/system/CallbackI.address",
+        "org/lwjgl/system/Callback.get",
+        "org/lwjgl/system/Callback.getSafe",
+        "org/lwjgl/system/Callback.free"
     );
 
     private static final Set<String> STRUCT_ALLOCATIONS = Set.of("malloc", "calloc", "create", "mallocStack", "callocStack");
@@ -129,6 +134,7 @@ public final class Rules {
             rule("keep-pointer-address", false, m -> !m.isStatic() && "address".equals(m.name()) && "()J".equals(m.desc())
                 && ("org/lwjgl/system/Pointer$Default".equals(m.owner().name) || "org/lwjgl/system/Callback".equals(m.owner().name))
                 ? new Behaviour.Keep() : null),
+            rule("keep-callback", false, m -> isCallbackCode(m, pool) ? new Behaviour.Keep() : null),
             rule("keep-struct-sizeof", false, m -> !m.isStatic() && "sizeof".equals(m.name()) && "()I".equals(m.desc())
                 && pool.isAssignable(m.owner().name, STRUCT) ? new Behaviour.Keep() : null),
             rule("keep-struct", false, m -> isStructCode(m, pool) ? new Behaviour.Keep() : null),
@@ -155,6 +161,24 @@ public final class Rules {
             rule("void", false, m -> m.returnType().getSort() == Type.VOID ? new Behaviour.TypeDefault() : null),
             rule("default", true, m -> new Behaviour.TypeDefault())
         );
+    }
+
+    /**
+     * The static methods of callback classes, factories and helpers like {@code getData}, and the methods of the
+     * callbacks they create, which delegate to Java instances, are pure Java once the upcall registry and the memory
+     * accessors are patched.
+     */
+    private static boolean isCallbackCode(MethodInfo method, ClassPool pool) {
+        String owner = method.owner().name;
+        if (CALLBACK.equals(owner) || !pool.isAssignable(owner, CALLBACK)) {
+            return false;
+        }
+
+        if (method.isStatic()) {
+            return !"<clinit>".equals(method.name());
+        }
+
+        return "invoke".equals(method.name()) && !method.isAbstract();
     }
 
     private static boolean isKeptClass(String name) {

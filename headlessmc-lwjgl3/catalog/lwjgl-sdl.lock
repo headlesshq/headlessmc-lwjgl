@@ -1018,98 +1018,54 @@ org/lwjgl/sdl/SDLVulkan default=4 keep-constructor=1 lwjgl-buffer-empty=1 sdl-su
     nSDL_Vulkan_GetInstanceExtensions(J)J default: default
     nSDL_Vulkan_LoadLibrary(J)Z default: default
 org/lwjgl/sdl/SDLVulkan$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDL_AppEvent_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_AppEvent_func; object: new SDL_AppEvent_func
-    create(Lorg/lwjgl/sdl/SDL_AppEvent_funcI;)Lorg/lwjgl/sdl/SDL_AppEvent_func; object: new SDL_AppEvent_func
-    create(Lorg/lwjgl/sdl/SDL_AppEvent_funcI;J)Lorg/lwjgl/sdl/SDL_AppEvent_func; object: new SDL_AppEvent_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_AppEvent_func; object: new SDL_AppEvent_func
-org/lwjgl/sdl/SDL_AppEvent_func$1 default=1 keep-constructor=1
-    invoke(JJ)I default: default
+org/lwjgl/sdl/SDL_AppEvent_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_AppEvent_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AppEvent_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_AppInit_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_AppInit_func; object: new SDL_AppInit_func
-    create(Lorg/lwjgl/sdl/SDL_AppInit_funcI;)Lorg/lwjgl/sdl/SDL_AppInit_func; object: new SDL_AppInit_func
-    create(Lorg/lwjgl/sdl/SDL_AppInit_funcI;J)Lorg/lwjgl/sdl/SDL_AppInit_func; object: new SDL_AppInit_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_AppInit_func; object: new SDL_AppInit_func
-org/lwjgl/sdl/SDL_AppInit_func$1 default=1 keep-constructor=1
-    invoke(JIJ)I default: default
+org/lwjgl/sdl/SDL_AppInit_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_AppInit_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AppInit_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_AppIterate_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_AppIterate_func; object: new SDL_AppIterate_func
-    create(Lorg/lwjgl/sdl/SDL_AppIterate_funcI;)Lorg/lwjgl/sdl/SDL_AppIterate_func; object: new SDL_AppIterate_func
-    create(Lorg/lwjgl/sdl/SDL_AppIterate_funcI;J)Lorg/lwjgl/sdl/SDL_AppIterate_func; object: new SDL_AppIterate_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_AppIterate_func; object: new SDL_AppIterate_func
-org/lwjgl/sdl/SDL_AppIterate_func$1 default=1 keep-constructor=1
-    invoke(J)I default: default
+org/lwjgl/sdl/SDL_AppIterate_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_AppIterate_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AppIterate_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_AppQuit_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_AppQuit_func; object: new SDL_AppQuit_func
-    create(Lorg/lwjgl/sdl/SDL_AppQuit_funcI;)Lorg/lwjgl/sdl/SDL_AppQuit_func; object: new SDL_AppQuit_func
-    create(Lorg/lwjgl/sdl/SDL_AppQuit_funcI;J)Lorg/lwjgl/sdl/SDL_AppQuit_func; object: new SDL_AppQuit_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_AppQuit_func; object: new SDL_AppQuit_func
-org/lwjgl/sdl/SDL_AppQuit_func$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_AppQuit_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_AppQuit_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AppQuit_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_AsyncIOOutcome guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_AsyncIOOutcome$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
 org/lwjgl/sdl/SDL_AudioDeviceEvent guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_AudioDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_AudioPostmixCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_AudioPostmixCallback; object: new SDL_AudioPostmixCallback
-    create(Lorg/lwjgl/sdl/SDL_AudioPostmixCallbackI;)Lorg/lwjgl/sdl/SDL_AudioPostmixCallback; object: new SDL_AudioPostmixCallback
-    create(Lorg/lwjgl/sdl/SDL_AudioPostmixCallbackI;J)Lorg/lwjgl/sdl/SDL_AudioPostmixCallback; object: new SDL_AudioPostmixCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_AudioPostmixCallback; object: new SDL_AudioPostmixCallback
-org/lwjgl/sdl/SDL_AudioPostmixCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_AudioPostmixCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_AudioPostmixCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AudioPostmixCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_AudioSpec guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_AudioSpec$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_AudioStreamCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_AudioStreamCallback; object: new SDL_AudioStreamCallback
-    create(Lorg/lwjgl/sdl/SDL_AudioStreamCallbackI;)Lorg/lwjgl/sdl/SDL_AudioStreamCallback; object: new SDL_AudioStreamCallback
-    create(Lorg/lwjgl/sdl/SDL_AudioStreamCallbackI;J)Lorg/lwjgl/sdl/SDL_AudioStreamCallback; object: new SDL_AudioStreamCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_AudioStreamCallback; object: new SDL_AudioStreamCallback
-org/lwjgl/sdl/SDL_AudioStreamCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_AudioStreamCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_AudioStreamCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AudioStreamCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback; object: new SDL_AudioStreamDataCompleteCallback
-    create(Lorg/lwjgl/sdl/SDL_AudioStreamDataCompleteCallbackI;)Lorg/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback; object: new SDL_AudioStreamDataCompleteCallback
-    create(Lorg/lwjgl/sdl/SDL_AudioStreamDataCompleteCallbackI;J)Lorg/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback; object: new SDL_AudioStreamDataCompleteCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback; object: new SDL_AudioStreamDataCompleteCallback
-org/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AudioStreamDataCompleteCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_CameraDeviceEvent guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_CameraDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
 org/lwjgl/sdl/SDL_CameraSpec guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_CameraSpec$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/sdl/SDL_CleanupPropertyCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_CleanupPropertyCallback; object: new SDL_CleanupPropertyCallback
-    create(Lorg/lwjgl/sdl/SDL_CleanupPropertyCallbackI;)Lorg/lwjgl/sdl/SDL_CleanupPropertyCallback; object: new SDL_CleanupPropertyCallback
-    create(Lorg/lwjgl/sdl/SDL_CleanupPropertyCallbackI;J)Lorg/lwjgl/sdl/SDL_CleanupPropertyCallback; object: new SDL_CleanupPropertyCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_CleanupPropertyCallback; object: new SDL_CleanupPropertyCallback
-org/lwjgl/sdl/SDL_CleanupPropertyCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_CleanupPropertyCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_CleanupPropertyCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_CleanupPropertyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_ClipboardCleanupCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_ClipboardCleanupCallback; object: new SDL_ClipboardCleanupCallback
-    create(Lorg/lwjgl/sdl/SDL_ClipboardCleanupCallbackI;)Lorg/lwjgl/sdl/SDL_ClipboardCleanupCallback; object: new SDL_ClipboardCleanupCallback
-    create(Lorg/lwjgl/sdl/SDL_ClipboardCleanupCallbackI;J)Lorg/lwjgl/sdl/SDL_ClipboardCleanupCallback; object: new SDL_ClipboardCleanupCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_ClipboardCleanupCallback; object: new SDL_ClipboardCleanupCallback
-org/lwjgl/sdl/SDL_ClipboardCleanupCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_ClipboardCleanupCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_ClipboardCleanupCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_ClipboardCleanupCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_ClipboardDataCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_ClipboardDataCallback; object: new SDL_ClipboardDataCallback
-    create(Lorg/lwjgl/sdl/SDL_ClipboardDataCallbackI;)Lorg/lwjgl/sdl/SDL_ClipboardDataCallback; object: new SDL_ClipboardDataCallback
-    create(Lorg/lwjgl/sdl/SDL_ClipboardDataCallbackI;J)Lorg/lwjgl/sdl/SDL_ClipboardDataCallback; object: new SDL_ClipboardDataCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_ClipboardDataCallback; object: new SDL_ClipboardDataCallback
-org/lwjgl/sdl/SDL_ClipboardDataCallback$1 default=1 keep-constructor=1
-    invoke(JJJ)J default: default
+org/lwjgl/sdl/SDL_ClipboardDataCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_ClipboardDataCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_ClipboardDataCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_ClipboardEvent guarded-static-init=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1118,34 +1074,20 @@ org/lwjgl/sdl/SDL_Color guarded-static-init=1 keep-constructor=2 keep-struct=24 
 org/lwjgl/sdl/SDL_Color$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
 org/lwjgl/sdl/SDL_CommonEvent guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_CommonEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_CompareCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_CompareCallback; object: new SDL_CompareCallback
-    create(Lorg/lwjgl/sdl/SDL_CompareCallbackI;)Lorg/lwjgl/sdl/SDL_CompareCallback; object: new SDL_CompareCallback
-    create(Lorg/lwjgl/sdl/SDL_CompareCallbackI;J)Lorg/lwjgl/sdl/SDL_CompareCallback; object: new SDL_CompareCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_CompareCallback; object: new SDL_CompareCallback
-org/lwjgl/sdl/SDL_CompareCallback$1 default=1 keep-constructor=1
-    invoke(JJ)I default: default
+org/lwjgl/sdl/SDL_CompareCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_CompareCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_CompareCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_CompareCallback_r keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_CompareCallback_r; object: new SDL_CompareCallback_r
-    create(Lorg/lwjgl/sdl/SDL_CompareCallback_rI;)Lorg/lwjgl/sdl/SDL_CompareCallback_r; object: new SDL_CompareCallback_r
-    create(Lorg/lwjgl/sdl/SDL_CompareCallback_rI;J)Lorg/lwjgl/sdl/SDL_CompareCallback_r; object: new SDL_CompareCallback_r
-    createSafe(J)Lorg/lwjgl/sdl/SDL_CompareCallback_r; object: new SDL_CompareCallback_r
-org/lwjgl/sdl/SDL_CompareCallback_r$1 default=1 keep-constructor=1
-    invoke(JJJ)I default: default
+org/lwjgl/sdl/SDL_CompareCallback_r keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_CompareCallback_r$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_CompareCallback_rI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_CursorFrameInfo guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_CursorFrameInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
 org/lwjgl/sdl/SDL_DateTime guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_DateTime$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_DialogFileCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_DialogFileCallback; object: new SDL_DialogFileCallback
-    create(Lorg/lwjgl/sdl/SDL_DialogFileCallbackI;)Lorg/lwjgl/sdl/SDL_DialogFileCallback; object: new SDL_DialogFileCallback
-    create(Lorg/lwjgl/sdl/SDL_DialogFileCallbackI;J)Lorg/lwjgl/sdl/SDL_DialogFileCallback; object: new SDL_DialogFileCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_DialogFileCallback; object: new SDL_DialogFileCallback
-org/lwjgl/sdl/SDL_DialogFileCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_DialogFileCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_DialogFileCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_DialogFileCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_DialogFileFilter guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1156,50 +1098,26 @@ org/lwjgl/sdl/SDL_DisplayMode guarded-static-init=1 keep-constructor=2 keep-stru
 org/lwjgl/sdl/SDL_DisplayMode$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
 org/lwjgl/sdl/SDL_DropEvent guarded-static-init=1 keep-constructor=2 keep-struct=42 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_DropEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/sdl/SDL_EGLAttribArrayCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_EGLAttribArrayCallback; object: new SDL_EGLAttribArrayCallback
-    create(Lorg/lwjgl/sdl/SDL_EGLAttribArrayCallbackI;)Lorg/lwjgl/sdl/SDL_EGLAttribArrayCallback; object: new SDL_EGLAttribArrayCallback
-    create(Lorg/lwjgl/sdl/SDL_EGLAttribArrayCallbackI;J)Lorg/lwjgl/sdl/SDL_EGLAttribArrayCallback; object: new SDL_EGLAttribArrayCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_EGLAttribArrayCallback; object: new SDL_EGLAttribArrayCallback
-org/lwjgl/sdl/SDL_EGLAttribArrayCallback$1 default=1 keep-constructor=1
-    invoke(J)J default: default
+org/lwjgl/sdl/SDL_EGLAttribArrayCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_EGLAttribArrayCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_EGLAttribArrayCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_EGLIntArrayCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_EGLIntArrayCallback; object: new SDL_EGLIntArrayCallback
-    create(Lorg/lwjgl/sdl/SDL_EGLIntArrayCallbackI;)Lorg/lwjgl/sdl/SDL_EGLIntArrayCallback; object: new SDL_EGLIntArrayCallback
-    create(Lorg/lwjgl/sdl/SDL_EGLIntArrayCallbackI;J)Lorg/lwjgl/sdl/SDL_EGLIntArrayCallback; object: new SDL_EGLIntArrayCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_EGLIntArrayCallback; object: new SDL_EGLIntArrayCallback
-org/lwjgl/sdl/SDL_EGLIntArrayCallback$1 default=1 keep-constructor=1
-    invoke(JJJ)J default: default
+org/lwjgl/sdl/SDL_EGLIntArrayCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_EGLIntArrayCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_EGLIntArrayCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_EnumerateDirectoryCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_EnumerateDirectoryCallback; object: new SDL_EnumerateDirectoryCallback
-    create(Lorg/lwjgl/sdl/SDL_EnumerateDirectoryCallbackI;)Lorg/lwjgl/sdl/SDL_EnumerateDirectoryCallback; object: new SDL_EnumerateDirectoryCallback
-    create(Lorg/lwjgl/sdl/SDL_EnumerateDirectoryCallbackI;J)Lorg/lwjgl/sdl/SDL_EnumerateDirectoryCallback; object: new SDL_EnumerateDirectoryCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_EnumerateDirectoryCallback; object: new SDL_EnumerateDirectoryCallback
-org/lwjgl/sdl/SDL_EnumerateDirectoryCallback$1 default=1 keep-constructor=1
-    invoke(JJJ)I default: default
+org/lwjgl/sdl/SDL_EnumerateDirectoryCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_EnumerateDirectoryCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_EnumerateDirectoryCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_EnumeratePropertiesCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_EnumeratePropertiesCallback; object: new SDL_EnumeratePropertiesCallback
-    create(Lorg/lwjgl/sdl/SDL_EnumeratePropertiesCallbackI;)Lorg/lwjgl/sdl/SDL_EnumeratePropertiesCallback; object: new SDL_EnumeratePropertiesCallback
-    create(Lorg/lwjgl/sdl/SDL_EnumeratePropertiesCallbackI;J)Lorg/lwjgl/sdl/SDL_EnumeratePropertiesCallback; object: new SDL_EnumeratePropertiesCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_EnumeratePropertiesCallback; object: new SDL_EnumeratePropertiesCallback
-org/lwjgl/sdl/SDL_EnumeratePropertiesCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_EnumeratePropertiesCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_EnumeratePropertiesCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_EnumeratePropertiesCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_Event guarded-static-init=1 keep-constructor=2 keep-struct=205 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_Event$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=122
-org/lwjgl/sdl/SDL_EventFilter keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_EventFilter; object: new SDL_EventFilter
-    create(Lorg/lwjgl/sdl/SDL_EventFilterI;)Lorg/lwjgl/sdl/SDL_EventFilter; object: new SDL_EventFilter
-    create(Lorg/lwjgl/sdl/SDL_EventFilterI;J)Lorg/lwjgl/sdl/SDL_EventFilter; object: new SDL_EventFilter
-    createSafe(J)Lorg/lwjgl/sdl/SDL_EventFilter; object: new SDL_EventFilter
-org/lwjgl/sdl/SDL_EventFilter$1 default=1 keep-constructor=1
-    invoke(JJ)Z default: default
+org/lwjgl/sdl/SDL_EventFilter keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_EventFilter$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_EventFilterI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_FColor guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1314,77 +1232,38 @@ org/lwjgl/sdl/SDL_HapticPeriodic guarded-static-init=1 keep-constructor=2 keep-s
 org/lwjgl/sdl/SDL_HapticPeriodic$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=35
 org/lwjgl/sdl/SDL_HapticRamp guarded-static-init=1 keep-constructor=2 keep-struct=57 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_HapticRamp$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=31
-org/lwjgl/sdl/SDL_HintCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_HintCallback; object: new SDL_HintCallback
-    create(Lorg/lwjgl/sdl/SDL_HintCallbackI;)Lorg/lwjgl/sdl/SDL_HintCallback; object: new SDL_HintCallback
-    create(Lorg/lwjgl/sdl/SDL_HintCallbackI;J)Lorg/lwjgl/sdl/SDL_HintCallback; object: new SDL_HintCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_HintCallback; object: new SDL_HintCallback
-org/lwjgl/sdl/SDL_HintCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_HintCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_HintCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_HintCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_HitTest keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_HitTest; object: new SDL_HitTest
-    create(Lorg/lwjgl/sdl/SDL_HitTestI;)Lorg/lwjgl/sdl/SDL_HitTest; object: new SDL_HitTest
-    create(Lorg/lwjgl/sdl/SDL_HitTestI;J)Lorg/lwjgl/sdl/SDL_HitTest; object: new SDL_HitTest
-    createSafe(J)Lorg/lwjgl/sdl/SDL_HitTest; object: new SDL_HitTest
-org/lwjgl/sdl/SDL_HitTest$1 default=1 keep-constructor=1
-    invoke(JJJ)I default: default
+org/lwjgl/sdl/SDL_HitTest keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_HitTest$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_HitTestI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_IOStreamInterface guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_IOStreamInterface$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback; object: new SDL_IOStreamInterfaceCloseCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallbackI;)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback; object: new SDL_IOStreamInterfaceCloseCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallbackI;J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback; object: new SDL_IOStreamInterfaceCloseCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback; object: new SDL_IOStreamInterfaceCloseCallback
-org/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback$1 default=1 keep-constructor=1
-    invoke(J)Z default: default
+org/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallback; object: new SDL_IOStreamInterfaceFlushCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallbackI;)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallback; object: new SDL_IOStreamInterfaceFlushCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallbackI;J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallback; object: new SDL_IOStreamInterfaceFlushCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallback; object: new SDL_IOStreamInterfaceFlushCallback
-org/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallback$1 default=1 keep-constructor=1
-    invoke(JJ)Z default: default
+org/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_IOStreamInterfaceFlushCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_IOStreamInterfaceReadCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceReadCallback; object: new SDL_IOStreamInterfaceReadCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceReadCallbackI;)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceReadCallback; object: new SDL_IOStreamInterfaceReadCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceReadCallbackI;J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceReadCallback; object: new SDL_IOStreamInterfaceReadCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceReadCallback; object: new SDL_IOStreamInterfaceReadCallback
-org/lwjgl/sdl/SDL_IOStreamInterfaceReadCallback$1 default=1 keep-constructor=1
-    invoke(JJJJ)J default: default
+org/lwjgl/sdl/SDL_IOStreamInterfaceReadCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_IOStreamInterfaceReadCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_IOStreamInterfaceReadCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallback; object: new SDL_IOStreamInterfaceSeekCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallbackI;)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallback; object: new SDL_IOStreamInterfaceSeekCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallbackI;J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallback; object: new SDL_IOStreamInterfaceSeekCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallback; object: new SDL_IOStreamInterfaceSeekCallback
-org/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallback$1 default=1 keep-constructor=1
-    invoke(JJI)J default: default
+org/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_IOStreamInterfaceSeekCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallback; object: new SDL_IOStreamInterfaceSizeCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallbackI;)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallback; object: new SDL_IOStreamInterfaceSizeCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallbackI;J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallback; object: new SDL_IOStreamInterfaceSizeCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallback; object: new SDL_IOStreamInterfaceSizeCallback
-org/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallback$1 default=1 keep-constructor=1
-    invoke(J)J default: default
+org/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_IOStreamInterfaceSizeCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback; object: new SDL_IOStreamInterfaceWriteCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallbackI;)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback; object: new SDL_IOStreamInterfaceWriteCallback
-    create(Lorg/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallbackI;J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback; object: new SDL_IOStreamInterfaceWriteCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback; object: new SDL_IOStreamInterfaceWriteCallback
-org/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback$1 default=1 keep-constructor=1
-    invoke(JJJJ)J default: default
+org/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_JoyAxisEvent guarded-static-init=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1405,20 +1284,12 @@ org/lwjgl/sdl/SDL_KeyboardEvent guarded-static-init=1 keep-constructor=2 keep-st
 org/lwjgl/sdl/SDL_KeyboardEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
 org/lwjgl/sdl/SDL_Locale guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_Locale$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_LogOutputFunction keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_LogOutputFunction; object: new SDL_LogOutputFunction
-    create(Lorg/lwjgl/sdl/SDL_LogOutputFunctionI;)Lorg/lwjgl/sdl/SDL_LogOutputFunction; object: new SDL_LogOutputFunction
-    create(Lorg/lwjgl/sdl/SDL_LogOutputFunctionI;J)Lorg/lwjgl/sdl/SDL_LogOutputFunction; object: new SDL_LogOutputFunction
-    createSafe(J)Lorg/lwjgl/sdl/SDL_LogOutputFunction; object: new SDL_LogOutputFunction
-org/lwjgl/sdl/SDL_LogOutputFunction$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_LogOutputFunction keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_LogOutputFunction$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_LogOutputFunctionI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_MainThreadCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_MainThreadCallback; object: new SDL_MainThreadCallback
-    create(Lorg/lwjgl/sdl/SDL_MainThreadCallbackI;)Lorg/lwjgl/sdl/SDL_MainThreadCallback; object: new SDL_MainThreadCallback
-    create(Lorg/lwjgl/sdl/SDL_MainThreadCallbackI;J)Lorg/lwjgl/sdl/SDL_MainThreadCallback; object: new SDL_MainThreadCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_MainThreadCallback; object: new SDL_MainThreadCallback
-org/lwjgl/sdl/SDL_MainThreadCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_MainThreadCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_MainThreadCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_MainThreadCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_MessageBoxButtonData guarded-static-init=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1435,23 +1306,14 @@ org/lwjgl/sdl/SDL_MouseDeviceEvent guarded-static-init=1 keep-constructor=2 keep
 org/lwjgl/sdl/SDL_MouseDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
 org/lwjgl/sdl/SDL_MouseMotionEvent guarded-static-init=1 keep-constructor=2 keep-struct=46 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_MouseMotionEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_MouseMotionTransformCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_MouseMotionTransformCallback; object: new SDL_MouseMotionTransformCallback
-    create(Lorg/lwjgl/sdl/SDL_MouseMotionTransformCallbackI;)Lorg/lwjgl/sdl/SDL_MouseMotionTransformCallback; object: new SDL_MouseMotionTransformCallback
-    create(Lorg/lwjgl/sdl/SDL_MouseMotionTransformCallbackI;J)Lorg/lwjgl/sdl/SDL_MouseMotionTransformCallback; object: new SDL_MouseMotionTransformCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_MouseMotionTransformCallback; object: new SDL_MouseMotionTransformCallback
-org/lwjgl/sdl/SDL_MouseMotionTransformCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_MouseMotionTransformCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_MouseMotionTransformCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_MouseMotionTransformCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_MouseWheelEvent guarded-static-init=1 keep-constructor=2 keep-struct=54 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_MouseWheelEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=28
-org/lwjgl/sdl/SDL_NSTimerCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_NSTimerCallback; object: new SDL_NSTimerCallback
-    create(Lorg/lwjgl/sdl/SDL_NSTimerCallbackI;)Lorg/lwjgl/sdl/SDL_NSTimerCallback; object: new SDL_NSTimerCallback
-    create(Lorg/lwjgl/sdl/SDL_NSTimerCallbackI;J)Lorg/lwjgl/sdl/SDL_NSTimerCallback; object: new SDL_NSTimerCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_NSTimerCallback; object: new SDL_NSTimerCallback
-org/lwjgl/sdl/SDL_NSTimerCallback$1 default=1 keep-constructor=1
-    invoke(JIJ)J default: default
+org/lwjgl/sdl/SDL_NSTimerCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_NSTimerCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_NSTimerCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_Palette guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1484,113 +1346,54 @@ org/lwjgl/sdl/SDL_SensorEvent guarded-static-init=1 keep-constructor=2 keep-stru
 org/lwjgl/sdl/SDL_SensorEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
 org/lwjgl/sdl/SDL_StorageInterface guarded-static-init=1 keep-constructor=2 keep-struct=56 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_StorageInterface$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=30
-org/lwjgl/sdl/SDL_StorageInterfaceCloseCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceCloseCallback; object: new SDL_StorageInterfaceCloseCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceCloseCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceCloseCallback; object: new SDL_StorageInterfaceCloseCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceCloseCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceCloseCallback; object: new SDL_StorageInterfaceCloseCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceCloseCallback; object: new SDL_StorageInterfaceCloseCallback
-org/lwjgl/sdl/SDL_StorageInterfaceCloseCallback$1 default=1 keep-constructor=1
-    invoke(J)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceCloseCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceCloseCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceCloseCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceCopyCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceCopyCallback; object: new SDL_StorageInterfaceCopyCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceCopyCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceCopyCallback; object: new SDL_StorageInterfaceCopyCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceCopyCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceCopyCallback; object: new SDL_StorageInterfaceCopyCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceCopyCallback; object: new SDL_StorageInterfaceCopyCallback
-org/lwjgl/sdl/SDL_StorageInterfaceCopyCallback$1 default=1 keep-constructor=1
-    invoke(JJJ)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceCopyCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceCopyCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceCopyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallback; object: new SDL_StorageInterfaceEnumerateCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallback; object: new SDL_StorageInterfaceEnumerateCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallback; object: new SDL_StorageInterfaceEnumerateCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallback; object: new SDL_StorageInterfaceEnumerateCallback
-org/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallback$1 default=1 keep-constructor=1
-    invoke(JJJJ)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceEnumerateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceInfoCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceInfoCallback; object: new SDL_StorageInterfaceInfoCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceInfoCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceInfoCallback; object: new SDL_StorageInterfaceInfoCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceInfoCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceInfoCallback; object: new SDL_StorageInterfaceInfoCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceInfoCallback; object: new SDL_StorageInterfaceInfoCallback
-org/lwjgl/sdl/SDL_StorageInterfaceInfoCallback$1 default=1 keep-constructor=1
-    invoke(JJJ)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceInfoCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceInfoCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceInfoCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceMkdirCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceMkdirCallback; object: new SDL_StorageInterfaceMkdirCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceMkdirCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceMkdirCallback; object: new SDL_StorageInterfaceMkdirCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceMkdirCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceMkdirCallback; object: new SDL_StorageInterfaceMkdirCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceMkdirCallback; object: new SDL_StorageInterfaceMkdirCallback
-org/lwjgl/sdl/SDL_StorageInterfaceMkdirCallback$1 default=1 keep-constructor=1
-    invoke(JJ)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceMkdirCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceMkdirCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceMkdirCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceReadFileCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceReadFileCallback; object: new SDL_StorageInterfaceReadFileCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceReadFileCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceReadFileCallback; object: new SDL_StorageInterfaceReadFileCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceReadFileCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceReadFileCallback; object: new SDL_StorageInterfaceReadFileCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceReadFileCallback; object: new SDL_StorageInterfaceReadFileCallback
-org/lwjgl/sdl/SDL_StorageInterfaceReadFileCallback$1 default=1 keep-constructor=1
-    invoke(JJJJ)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceReadFileCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceReadFileCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceReadFileCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceReadyCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceReadyCallback; object: new SDL_StorageInterfaceReadyCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceReadyCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceReadyCallback; object: new SDL_StorageInterfaceReadyCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceReadyCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceReadyCallback; object: new SDL_StorageInterfaceReadyCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceReadyCallback; object: new SDL_StorageInterfaceReadyCallback
-org/lwjgl/sdl/SDL_StorageInterfaceReadyCallback$1 default=1 keep-constructor=1
-    invoke(J)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceReadyCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceReadyCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceReadyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceRemoveCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceRemoveCallback; object: new SDL_StorageInterfaceRemoveCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceRemoveCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceRemoveCallback; object: new SDL_StorageInterfaceRemoveCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceRemoveCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceRemoveCallback; object: new SDL_StorageInterfaceRemoveCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceRemoveCallback; object: new SDL_StorageInterfaceRemoveCallback
-org/lwjgl/sdl/SDL_StorageInterfaceRemoveCallback$1 default=1 keep-constructor=1
-    invoke(JJ)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceRemoveCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceRemoveCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceRemoveCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceRenameCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceRenameCallback; object: new SDL_StorageInterfaceRenameCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceRenameCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceRenameCallback; object: new SDL_StorageInterfaceRenameCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceRenameCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceRenameCallback; object: new SDL_StorageInterfaceRenameCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceRenameCallback; object: new SDL_StorageInterfaceRenameCallback
-org/lwjgl/sdl/SDL_StorageInterfaceRenameCallback$1 default=1 keep-constructor=1
-    invoke(JJJ)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceRenameCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceRenameCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceRenameCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallback; object: new SDL_StorageInterfaceSpaceRemainingCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallback; object: new SDL_StorageInterfaceSpaceRemainingCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallback; object: new SDL_StorageInterfaceSpaceRemainingCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallback; object: new SDL_StorageInterfaceSpaceRemainingCallback
-org/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallback$1 default=1 keep-constructor=1
-    invoke(J)J default: default
+org/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceSpaceRemainingCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback; object: new SDL_StorageInterfaceWriteFileCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallbackI;)Lorg/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback; object: new SDL_StorageInterfaceWriteFileCallback
-    create(Lorg/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallbackI;J)Lorg/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback; object: new SDL_StorageInterfaceWriteFileCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback; object: new SDL_StorageInterfaceWriteFileCallback
-org/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback$1 default=1 keep-constructor=1
-    invoke(JJJJ)Z default: default
+org/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_Surface guarded-static-init=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_Surface$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/sdl/SDL_TLSDestructorCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_TLSDestructorCallback; object: new SDL_TLSDestructorCallback
-    create(Lorg/lwjgl/sdl/SDL_TLSDestructorCallbackI;)Lorg/lwjgl/sdl/SDL_TLSDestructorCallback; object: new SDL_TLSDestructorCallback
-    create(Lorg/lwjgl/sdl/SDL_TLSDestructorCallbackI;J)Lorg/lwjgl/sdl/SDL_TLSDestructorCallback; object: new SDL_TLSDestructorCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_TLSDestructorCallback; object: new SDL_TLSDestructorCallback
-org/lwjgl/sdl/SDL_TLSDestructorCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_TLSDestructorCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_TLSDestructorCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_TLSDestructorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_TextEditingCandidatesEvent guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1601,23 +1404,14 @@ org/lwjgl/sdl/SDL_TextInputEvent guarded-static-init=1 keep-constructor=2 keep-s
 org/lwjgl/sdl/SDL_TextInputEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=15
 org/lwjgl/sdl/SDL_Texture guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_Texture$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_TimerCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_TimerCallback; object: new SDL_TimerCallback
-    create(Lorg/lwjgl/sdl/SDL_TimerCallbackI;)Lorg/lwjgl/sdl/SDL_TimerCallback; object: new SDL_TimerCallback
-    create(Lorg/lwjgl/sdl/SDL_TimerCallbackI;J)Lorg/lwjgl/sdl/SDL_TimerCallback; object: new SDL_TimerCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_TimerCallback; object: new SDL_TimerCallback
-org/lwjgl/sdl/SDL_TimerCallback$1 default=1 keep-constructor=1
-    invoke(JII)I default: default
+org/lwjgl/sdl/SDL_TimerCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_TimerCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_TimerCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_TouchFingerEvent guarded-static-init=1 keep-constructor=2 keep-struct=50 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_TouchFingerEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/sdl/SDL_TrayCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_TrayCallback; object: new SDL_TrayCallback
-    create(Lorg/lwjgl/sdl/SDL_TrayCallbackI;)Lorg/lwjgl/sdl/SDL_TrayCallback; object: new SDL_TrayCallback
-    create(Lorg/lwjgl/sdl/SDL_TrayCallbackI;J)Lorg/lwjgl/sdl/SDL_TrayCallback; object: new SDL_TrayCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_TrayCallback; object: new SDL_TrayCallback
-org/lwjgl/sdl/SDL_TrayCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_TrayCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_TrayCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_TrayCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_UserEvent guarded-static-init=1 keep-constructor=2 keep-struct=34 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1626,73 +1420,36 @@ org/lwjgl/sdl/SDL_Vertex guarded-static-init=1 keep-constructor=2 keep-struct=23
 org/lwjgl/sdl/SDL_Vertex$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=15
 org/lwjgl/sdl/SDL_VirtualJoystickDesc guarded-static-init=1 keep-constructor=2 keep-struct=113 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_VirtualJoystickDesc$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=55
-org/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback; object: new SDL_VirtualJoystickDescCleanupCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallbackI;)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback; object: new SDL_VirtualJoystickDescCleanupCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallbackI;J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback; object: new SDL_VirtualJoystickDescCleanupCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback; object: new SDL_VirtualJoystickDescCleanupCallback
-org/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallback; object: new SDL_VirtualJoystickDescRumbleCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallbackI;)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallback; object: new SDL_VirtualJoystickDescRumbleCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallbackI;J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallback; object: new SDL_VirtualJoystickDescRumbleCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallback; object: new SDL_VirtualJoystickDescRumbleCallback
-org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallback$1 default=1 keep-constructor=1
-    invoke(JSS)Z default: default
+org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallback; object: new SDL_VirtualJoystickDescRumbleTriggersCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallbackI;)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallback; object: new SDL_VirtualJoystickDescRumbleTriggersCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallbackI;J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallback; object: new SDL_VirtualJoystickDescRumbleTriggersCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallback; object: new SDL_VirtualJoystickDescRumbleTriggersCallback
-org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallback$1 default=1 keep-constructor=1
-    invoke(JSS)Z default: default
+org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescRumbleTriggersCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallback; object: new SDL_VirtualJoystickDescSendEffectCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallbackI;)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallback; object: new SDL_VirtualJoystickDescSendEffectCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallbackI;J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallback; object: new SDL_VirtualJoystickDescSendEffectCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallback; object: new SDL_VirtualJoystickDescSendEffectCallback
-org/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallback$1 default=1 keep-constructor=1
-    invoke(JJI)Z default: default
+org/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescSendEffectCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallback; object: new SDL_VirtualJoystickDescSetLEDCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallbackI;)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallback; object: new SDL_VirtualJoystickDescSetLEDCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallbackI;J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallback; object: new SDL_VirtualJoystickDescSetLEDCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallback; object: new SDL_VirtualJoystickDescSetLEDCallback
-org/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallback$1 default=1 keep-constructor=1
-    invoke(JBBB)Z default: default
+org/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescSetLEDCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallback; object: new SDL_VirtualJoystickDescSetPlayerIndexCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallbackI;)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallback; object: new SDL_VirtualJoystickDescSetPlayerIndexCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallbackI;J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallback; object: new SDL_VirtualJoystickDescSetPlayerIndexCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallback; object: new SDL_VirtualJoystickDescSetPlayerIndexCallback
-org/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescSetPlayerIndexCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallback; object: new SDL_VirtualJoystickDescSetSensorsEnabledCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallbackI;)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallback; object: new SDL_VirtualJoystickDescSetSensorsEnabledCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallbackI;J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallback; object: new SDL_VirtualJoystickDescSetSensorsEnabledCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallback; object: new SDL_VirtualJoystickDescSetSensorsEnabledCallback
-org/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallback$1 default=1 keep-constructor=1
-    invoke(JZ)Z default: default
+org/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescSetSensorsEnabledCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback; object: new SDL_VirtualJoystickDescUpdateCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallbackI;)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback; object: new SDL_VirtualJoystickDescUpdateCallback
-    create(Lorg/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallbackI;J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback; object: new SDL_VirtualJoystickDescUpdateCallback
-    createSafe(J)Lorg/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback; object: new SDL_VirtualJoystickDescUpdateCallback
-org/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_VirtualJoystickSensorDesc guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
@@ -1701,67 +1458,33 @@ org/lwjgl/sdl/SDL_VirtualJoystickTouchpadDesc guarded-static-init=1 keep-constru
 org/lwjgl/sdl/SDL_VirtualJoystickTouchpadDesc$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=8
 org/lwjgl/sdl/SDL_WindowEvent guarded-static-init=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_WindowEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_WindowsMessageHook keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_WindowsMessageHook; object: new SDL_WindowsMessageHook
-    create(Lorg/lwjgl/sdl/SDL_WindowsMessageHookI;)Lorg/lwjgl/sdl/SDL_WindowsMessageHook; object: new SDL_WindowsMessageHook
-    create(Lorg/lwjgl/sdl/SDL_WindowsMessageHookI;J)Lorg/lwjgl/sdl/SDL_WindowsMessageHook; object: new SDL_WindowsMessageHook
-    createSafe(J)Lorg/lwjgl/sdl/SDL_WindowsMessageHook; object: new SDL_WindowsMessageHook
-org/lwjgl/sdl/SDL_WindowsMessageHook$1 default=1 keep-constructor=1
-    invoke(JJ)Z default: default
+org/lwjgl/sdl/SDL_WindowsMessageHook keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_WindowsMessageHook$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_WindowsMessageHookI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_X11EventHook keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_X11EventHook; object: new SDL_X11EventHook
-    create(Lorg/lwjgl/sdl/SDL_X11EventHookI;)Lorg/lwjgl/sdl/SDL_X11EventHook; object: new SDL_X11EventHook
-    create(Lorg/lwjgl/sdl/SDL_X11EventHookI;J)Lorg/lwjgl/sdl/SDL_X11EventHook; object: new SDL_X11EventHook
-    createSafe(J)Lorg/lwjgl/sdl/SDL_X11EventHook; object: new SDL_X11EventHook
-org/lwjgl/sdl/SDL_X11EventHook$1 default=1 keep-constructor=1
-    invoke(JJ)Z default: default
+org/lwjgl/sdl/SDL_X11EventHook keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_X11EventHook$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_X11EventHookI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_calloc_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_calloc_func; object: new SDL_calloc_func
-    create(Lorg/lwjgl/sdl/SDL_calloc_funcI;)Lorg/lwjgl/sdl/SDL_calloc_func; object: new SDL_calloc_func
-    create(Lorg/lwjgl/sdl/SDL_calloc_funcI;J)Lorg/lwjgl/sdl/SDL_calloc_func; object: new SDL_calloc_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_calloc_func; object: new SDL_calloc_func
-org/lwjgl/sdl/SDL_calloc_func$1 default=1 keep-constructor=1
-    invoke(JJ)J default: default
+org/lwjgl/sdl/SDL_calloc_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_calloc_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_calloc_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_free_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_free_func; object: new SDL_free_func
-    create(Lorg/lwjgl/sdl/SDL_free_funcI;)Lorg/lwjgl/sdl/SDL_free_func; object: new SDL_free_func
-    create(Lorg/lwjgl/sdl/SDL_free_funcI;J)Lorg/lwjgl/sdl/SDL_free_func; object: new SDL_free_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_free_func; object: new SDL_free_func
-org/lwjgl/sdl/SDL_free_func$1 keep-constructor=1 void=1
+org/lwjgl/sdl/SDL_free_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_free_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_free_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
 org/lwjgl/sdl/SDL_hid_device_info guarded-static-init=1 keep-constructor=2 keep-struct=77 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/sdl/SDL_hid_device_info$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=40
-org/lwjgl/sdl/SDL_main_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_main_func; object: new SDL_main_func
-    create(Lorg/lwjgl/sdl/SDL_main_funcI;)Lorg/lwjgl/sdl/SDL_main_func; object: new SDL_main_func
-    create(Lorg/lwjgl/sdl/SDL_main_funcI;J)Lorg/lwjgl/sdl/SDL_main_func; object: new SDL_main_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_main_func; object: new SDL_main_func
-org/lwjgl/sdl/SDL_main_func$1 default=1 keep-constructor=1
-    invoke(IJ)I default: default
+org/lwjgl/sdl/SDL_main_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_main_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_main_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_malloc_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_malloc_func; object: new SDL_malloc_func
-    create(Lorg/lwjgl/sdl/SDL_malloc_funcI;)Lorg/lwjgl/sdl/SDL_malloc_func; object: new SDL_malloc_func
-    create(Lorg/lwjgl/sdl/SDL_malloc_funcI;J)Lorg/lwjgl/sdl/SDL_malloc_func; object: new SDL_malloc_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_malloc_func; object: new SDL_malloc_func
-org/lwjgl/sdl/SDL_malloc_func$1 default=1 keep-constructor=1
-    invoke(J)J default: default
+org/lwjgl/sdl/SDL_malloc_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_malloc_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_malloc_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_realloc_func keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/sdl/SDL_realloc_func; object: new SDL_realloc_func
-    create(Lorg/lwjgl/sdl/SDL_realloc_funcI;)Lorg/lwjgl/sdl/SDL_realloc_func; object: new SDL_realloc_func
-    create(Lorg/lwjgl/sdl/SDL_realloc_funcI;J)Lorg/lwjgl/sdl/SDL_realloc_func; object: new SDL_realloc_func
-    createSafe(J)Lorg/lwjgl/sdl/SDL_realloc_func; object: new SDL_realloc_func
-org/lwjgl/sdl/SDL_realloc_func$1 default=1 keep-constructor=1
-    invoke(JJ)J default: default
+org/lwjgl/sdl/SDL_realloc_func keep-callback=4 keep-constructor=2
+org/lwjgl/sdl/SDL_realloc_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_realloc_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor

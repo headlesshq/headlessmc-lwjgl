@@ -2,61 +2,36 @@
 # Every method of every class is patched by the first matching rule, counted per class.
 # Methods resolved by rules that only guess are listed individually and have to be reviewed.
 # Regenerate with: ./gradlew updateCatalogLock
-org/lwjgl/system/jemalloc/ExtentAlloc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/ExtentAlloc; object: new ExtentAlloc
-    create(Lorg/lwjgl/system/jemalloc/ExtentAllocI;)Lorg/lwjgl/system/jemalloc/ExtentAlloc; object: new ExtentAlloc
-    create(Lorg/lwjgl/system/jemalloc/ExtentAllocI;J)Lorg/lwjgl/system/jemalloc/ExtentAlloc; object: new ExtentAlloc
-    createSafe(J)Lorg/lwjgl/system/jemalloc/ExtentAlloc; object: new ExtentAlloc
-org/lwjgl/system/jemalloc/ExtentAlloc$1 default=1 keep-constructor=1
-    invoke(JJJJJJI)J default: default
+org/lwjgl/system/jemalloc/ExtentAlloc keep-callback=4 keep-constructor=2
+org/lwjgl/system/jemalloc/ExtentAlloc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentAllocI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)J default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentCommit keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/ExtentCommit; object: new ExtentCommit
-    create(Lorg/lwjgl/system/jemalloc/ExtentCommitI;)Lorg/lwjgl/system/jemalloc/ExtentCommit; object: new ExtentCommit
-    create(Lorg/lwjgl/system/jemalloc/ExtentCommitI;J)Lorg/lwjgl/system/jemalloc/ExtentCommit; object: new ExtentCommit
-    createSafe(J)Lorg/lwjgl/system/jemalloc/ExtentCommit; object: new ExtentCommit
-org/lwjgl/system/jemalloc/ExtentCommit$1 default=1 keep-constructor=1
-    invoke(JJJJJI)Z default: default
+org/lwjgl/system/jemalloc/ExtentCommit keep-callback=4 keep-constructor=2
+org/lwjgl/system/jemalloc/ExtentCommit$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentCommitI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)Z default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentDalloc keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/ExtentDalloc; object: new ExtentDalloc
-    create(Lorg/lwjgl/system/jemalloc/ExtentDallocI;)Lorg/lwjgl/system/jemalloc/ExtentDalloc; object: new ExtentDalloc
-    create(Lorg/lwjgl/system/jemalloc/ExtentDallocI;J)Lorg/lwjgl/system/jemalloc/ExtentDalloc; object: new ExtentDalloc
-    createSafe(J)Lorg/lwjgl/system/jemalloc/ExtentDalloc; object: new ExtentDalloc
-org/lwjgl/system/jemalloc/ExtentDalloc$1 default=1 keep-constructor=1
-    invoke(JJJZI)Z default: default
+org/lwjgl/system/jemalloc/ExtentDalloc keep-callback=4 keep-constructor=2
+org/lwjgl/system/jemalloc/ExtentDalloc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentDallocI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)Z default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentDecommit keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/ExtentDecommit; object: new ExtentDecommit
-    create(Lorg/lwjgl/system/jemalloc/ExtentDecommitI;)Lorg/lwjgl/system/jemalloc/ExtentDecommit; object: new ExtentDecommit
-    create(Lorg/lwjgl/system/jemalloc/ExtentDecommitI;J)Lorg/lwjgl/system/jemalloc/ExtentDecommit; object: new ExtentDecommit
-    createSafe(J)Lorg/lwjgl/system/jemalloc/ExtentDecommit; object: new ExtentDecommit
-org/lwjgl/system/jemalloc/ExtentDecommit$1 default=1 keep-constructor=1
-    invoke(JJJJJI)Z default: default
+org/lwjgl/system/jemalloc/ExtentDecommit keep-callback=4 keep-constructor=2
+org/lwjgl/system/jemalloc/ExtentDecommit$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentDecommitI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)Z default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentDestroy keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/ExtentDestroy; object: new ExtentDestroy
-    create(Lorg/lwjgl/system/jemalloc/ExtentDestroyI;)Lorg/lwjgl/system/jemalloc/ExtentDestroy; object: new ExtentDestroy
-    create(Lorg/lwjgl/system/jemalloc/ExtentDestroyI;J)Lorg/lwjgl/system/jemalloc/ExtentDestroy; object: new ExtentDestroy
-    createSafe(J)Lorg/lwjgl/system/jemalloc/ExtentDestroy; object: new ExtentDestroy
-org/lwjgl/system/jemalloc/ExtentDestroy$1 default=1 keep-constructor=1
-    invoke(JJJZI)Z default: default
+org/lwjgl/system/jemalloc/ExtentDestroy keep-callback=4 keep-constructor=2
+org/lwjgl/system/jemalloc/ExtentDestroy$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentDestroyI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)Z default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -78,37 +53,22 @@ org/lwjgl/system/jemalloc/ExtentHooks guarded-static-init=1 keep-constructor=2 k
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jemalloc/ExtentHooks; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
 org/lwjgl/system/jemalloc/ExtentHooks$Buffer shim-class=3.1.6 keep-buffer-bookkeeping=1 keep-constructor=3 keep-struct=24
-org/lwjgl/system/jemalloc/ExtentMerge keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge
-    create(Lorg/lwjgl/system/jemalloc/ExtentMergeI;)Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge
-    create(Lorg/lwjgl/system/jemalloc/ExtentMergeI;J)Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge
-    createSafe(J)Lorg/lwjgl/system/jemalloc/ExtentMerge; object: new ExtentMerge
-org/lwjgl/system/jemalloc/ExtentMerge$1 default=1 keep-constructor=1
-    invoke(JJJJJZI)Z default: default
+org/lwjgl/system/jemalloc/ExtentMerge keep-callback=4 keep-constructor=2
+org/lwjgl/system/jemalloc/ExtentMerge$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentMergeI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)Z default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentPurge keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    create(Lorg/lwjgl/system/jemalloc/ExtentPurgeI;)Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    create(Lorg/lwjgl/system/jemalloc/ExtentPurgeI;J)Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-    createSafe(J)Lorg/lwjgl/system/jemalloc/ExtentPurge; object: new ExtentPurge
-org/lwjgl/system/jemalloc/ExtentPurge$1 default=1 keep-constructor=1
-    invoke(JJJJJI)Z default: default
+org/lwjgl/system/jemalloc/ExtentPurge keep-callback=4 keep-constructor=2
+org/lwjgl/system/jemalloc/ExtentPurge$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentPurgeI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)Z default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentSplit keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/ExtentSplit; object: new ExtentSplit
-    create(Lorg/lwjgl/system/jemalloc/ExtentSplitI;)Lorg/lwjgl/system/jemalloc/ExtentSplit; object: new ExtentSplit
-    create(Lorg/lwjgl/system/jemalloc/ExtentSplitI;J)Lorg/lwjgl/system/jemalloc/ExtentSplit; object: new ExtentSplit
-    createSafe(J)Lorg/lwjgl/system/jemalloc/ExtentSplit; object: new ExtentSplit
-org/lwjgl/system/jemalloc/ExtentSplit$1 default=1 keep-constructor=1
-    invoke(JJJJJZI)Z default: default
+org/lwjgl/system/jemalloc/ExtentSplit keep-callback=4 keep-constructor=2
+org/lwjgl/system/jemalloc/ExtentSplit$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentSplitI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     callback(J)Z default: default [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
@@ -147,13 +107,8 @@ org/lwjgl/system/jemalloc/JEmallocAllocator shim-class=3.3.3 default=6 fake-addr
     getFree()J default: default
     getMalloc()J default: default
     getRealloc()J default: default
-org/lwjgl/system/jemalloc/MallocMessageCallback default=1 keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/system/jemalloc/MallocMessageCallback; object: new MallocMessageCallback
-    create(Lorg/lwjgl/system/jemalloc/MallocMessageCallbackI;)Lorg/lwjgl/system/jemalloc/MallocMessageCallback; object: new MallocMessageCallback
-    create(Lorg/lwjgl/system/jemalloc/MallocMessageCallbackI;J)Lorg/lwjgl/system/jemalloc/MallocMessageCallback; object: new MallocMessageCallback
-    createSafe(J)Lorg/lwjgl/system/jemalloc/MallocMessageCallback; object: new MallocMessageCallback
-    getMessage(J)Ljava/lang/String; default: default
-org/lwjgl/system/jemalloc/MallocMessageCallback$1 keep-constructor=1 void=1
+org/lwjgl/system/jemalloc/MallocMessageCallback keep-callback=5 keep-constructor=2
+org/lwjgl/system/jemalloc/MallocMessageCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/MallocMessageCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor

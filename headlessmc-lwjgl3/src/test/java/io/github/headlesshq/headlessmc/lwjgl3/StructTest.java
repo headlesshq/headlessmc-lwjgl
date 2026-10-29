@@ -52,8 +52,19 @@ class StructTest {
     }
 
     @Test
+    void smallAllocationsAreRealMemory() {
+        long address = MemoryUtil.nmemAlloc(64);
+        MemoryUtil.memPutInt(address + 4, 5);
+        assertEquals(5, MemoryUtil.memGetInt(address + 4));
+        assertEquals(5, MemoryUtil.memByteBuffer(address, 64).getInt(4));
+        long grown = MemoryUtil.nmemRealloc(address, 128);
+        assertEquals(5, MemoryUtil.memGetInt(grown + 4));
+        MemoryUtil.nmemFree(grown);
+    }
+
+    @Test
     void fakeAddressesAreHarmless() {
-        long fake = MemoryUtil.nmemAlloc(64);
+        long fake = MemoryUtil.nmemAlloc(64L * 1024L * 1024L);
         MemoryUtil.memPutInt(fake, 5);
         assertEquals(0, MemoryUtil.memGetInt(fake));
         assertEquals(0, GLFWVidMode.create(fake).width());

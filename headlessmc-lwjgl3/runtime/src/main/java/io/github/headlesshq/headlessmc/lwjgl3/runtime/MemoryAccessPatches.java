@@ -363,4 +363,139 @@ public final class MemoryAccessPatches {
         StructMemory.set(ptr.address(), value, ptr.sizeof());
     }
 
+    /**
+     * Buffers over registered memory, e.g. struct memory or the data argument of callbacks, view that memory, buffers
+     * over other addresses are dummy buffers of the right capacity.
+     */
+    @Patch(owner = MEMORY_UTIL)
+    public static ByteBuffer memByteBuffer(long address, int capacity) {
+        ByteBuffer view = StructMemory.view(address, capacity * 1);
+        return view == null ? DummyBuffers.bytes(capacity) : view;
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static ByteBuffer memByteBufferSafe(long address, int capacity) {
+        return address == 0L ? null : memByteBuffer(address, capacity);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static ShortBuffer memShortBuffer(long address, int capacity) {
+        ByteBuffer view = StructMemory.view(address, capacity * 2);
+        return view == null ? DummyBuffers.shorts(capacity) : view.asShortBuffer();
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static ShortBuffer memShortBufferSafe(long address, int capacity) {
+        return address == 0L ? null : memShortBuffer(address, capacity);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static CharBuffer memCharBuffer(long address, int capacity) {
+        ByteBuffer view = StructMemory.view(address, capacity * 2);
+        return view == null ? DummyBuffers.chars(capacity) : view.asCharBuffer();
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static CharBuffer memCharBufferSafe(long address, int capacity) {
+        return address == 0L ? null : memCharBuffer(address, capacity);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static IntBuffer memIntBuffer(long address, int capacity) {
+        ByteBuffer view = StructMemory.view(address, capacity * 4);
+        return view == null ? DummyBuffers.ints(capacity) : view.asIntBuffer();
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static IntBuffer memIntBufferSafe(long address, int capacity) {
+        return address == 0L ? null : memIntBuffer(address, capacity);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static LongBuffer memLongBuffer(long address, int capacity) {
+        ByteBuffer view = StructMemory.view(address, capacity * 8);
+        return view == null ? DummyBuffers.longs(capacity) : view.asLongBuffer();
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static LongBuffer memLongBufferSafe(long address, int capacity) {
+        return address == 0L ? null : memLongBuffer(address, capacity);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static FloatBuffer memFloatBuffer(long address, int capacity) {
+        ByteBuffer view = StructMemory.view(address, capacity * 4);
+        return view == null ? DummyBuffers.floats(capacity) : view.asFloatBuffer();
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static FloatBuffer memFloatBufferSafe(long address, int capacity) {
+        return address == 0L ? null : memFloatBuffer(address, capacity);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static DoubleBuffer memDoubleBuffer(long address, int capacity) {
+        ByteBuffer view = StructMemory.view(address, capacity * 8);
+        return view == null ? DummyBuffers.doubles(capacity) : view.asDoubleBuffer();
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static DoubleBuffer memDoubleBufferSafe(long address, int capacity) {
+        return address == 0L ? null : memDoubleBuffer(address, capacity);
+    }
+
+    /**
+     * Small raw allocations get real memory, e.g. for staging buffers that are filled by the application and read with
+     * {@code memCopy} or {@code memByteBuffer}, larger ones the fake address.
+     */
+    @Patch(owner = MEMORY_UTIL)
+    public static long nmemAlloc(long size) {
+        return StructMemory.allocateRaw(size);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long nmemAllocChecked(long size) {
+        return StructMemory.allocateRaw(size);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long nmemCalloc(long num, long size) {
+        return StructMemory.allocateRaw(num * size);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long nmemCallocChecked(long num, long size) {
+        return StructMemory.allocateRaw(num * size);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long nmemRealloc(long ptr, long size) {
+        return StructMemory.reallocateRaw(ptr, size);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long nmemReallocChecked(long ptr, long size) {
+        return StructMemory.reallocateRaw(ptr, size);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long nmemAlignedAlloc(long alignment, long size) {
+        return StructMemory.allocateRaw(size);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static long nmemAlignedAllocChecked(long alignment, long size) {
+        return StructMemory.allocateRaw(size);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static void nmemFree(long ptr) {
+        StructMemory.free(ptr);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static void nmemAlignedFree(long ptr) {
+        StructMemory.free(ptr);
+    }
+
 }

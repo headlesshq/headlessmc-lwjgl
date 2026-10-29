@@ -1249,37 +1249,22 @@ org/lwjgl/opengl/GLChecks default=3 keep-constructor=1
     getTexLevelParameteri(IIII)I default: default
     typeToByteShift(I)I default: default
     typeToBytes(I)I default: default
-org/lwjgl/opengl/GLDebugMessageAMDCallback default=1 keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/opengl/GLDebugMessageAMDCallback; object: new GLDebugMessageAMDCallback
-    create(Lorg/lwjgl/opengl/GLDebugMessageAMDCallbackI;)Lorg/lwjgl/opengl/GLDebugMessageAMDCallback; object: new GLDebugMessageAMDCallback
-    create(Lorg/lwjgl/opengl/GLDebugMessageAMDCallbackI;J)Lorg/lwjgl/opengl/GLDebugMessageAMDCallback; object: new GLDebugMessageAMDCallback
-    createSafe(J)Lorg/lwjgl/opengl/GLDebugMessageAMDCallback; object: new GLDebugMessageAMDCallback
-    getMessage(IJ)Ljava/lang/String; default: default
-org/lwjgl/opengl/GLDebugMessageAMDCallback$1 keep-constructor=1 void=1
+org/lwjgl/opengl/GLDebugMessageAMDCallback keep-callback=5 keep-constructor=2
+org/lwjgl/opengl/GLDebugMessageAMDCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/opengl/GLDebugMessageAMDCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/opengl/GLDebugMessageARBCallback default=1 keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/opengl/GLDebugMessageARBCallback; object: new GLDebugMessageARBCallback
-    create(Lorg/lwjgl/opengl/GLDebugMessageARBCallbackI;)Lorg/lwjgl/opengl/GLDebugMessageARBCallback; object: new GLDebugMessageARBCallback
-    create(Lorg/lwjgl/opengl/GLDebugMessageARBCallbackI;J)Lorg/lwjgl/opengl/GLDebugMessageARBCallback; object: new GLDebugMessageARBCallback
-    createSafe(J)Lorg/lwjgl/opengl/GLDebugMessageARBCallback; object: new GLDebugMessageARBCallback
-    getMessage(IJ)Ljava/lang/String; default: default
-org/lwjgl/opengl/GLDebugMessageARBCallback$1 keep-constructor=1 void=1
+org/lwjgl/opengl/GLDebugMessageARBCallback keep-callback=5 keep-constructor=2
+org/lwjgl/opengl/GLDebugMessageARBCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/opengl/GLDebugMessageARBCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/opengl/GLDebugMessageCallback default=1 keep-constructor=2 object=4
-    create(J)Lorg/lwjgl/opengl/GLDebugMessageCallback; object: new GLDebugMessageCallback
-    create(Lorg/lwjgl/opengl/GLDebugMessageCallbackI;)Lorg/lwjgl/opengl/GLDebugMessageCallback; object: new GLDebugMessageCallback
-    create(Lorg/lwjgl/opengl/GLDebugMessageCallbackI;J)Lorg/lwjgl/opengl/GLDebugMessageCallback; object: new GLDebugMessageCallback
-    createSafe(J)Lorg/lwjgl/opengl/GLDebugMessageCallback; object: new GLDebugMessageCallback
-    getMessage(IJ)Ljava/lang/String; default: default
-org/lwjgl/opengl/GLDebugMessageCallback$1 keep-constructor=1 void=1
+org/lwjgl/opengl/GLDebugMessageCallback keep-callback=5 keep-constructor=2
+org/lwjgl/opengl/GLDebugMessageCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/opengl/GLDebugMessageCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
     callback(J)V void [shim 3.2.2]
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
