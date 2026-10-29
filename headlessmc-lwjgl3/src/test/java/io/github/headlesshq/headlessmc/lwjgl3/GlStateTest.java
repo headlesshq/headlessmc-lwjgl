@@ -135,6 +135,14 @@ class GlStateTest {
     }
 
     @Test
+    void objectsExist() {
+        int texture = GL11.glGenTextures();
+        assertTrue(GL11.glIsTexture(texture));
+        assertFalse(GL11.glIsTexture(0));
+        assertTrue(GL20.glIsProgram(GL20.glCreateProgram()));
+    }
+
+    @Test
     void indexedQueries() {
         int buffer = GL15.glGenBuffers();
         GL30.glBindBufferBase(GL31.GL_UNIFORM_BUFFER, 1, buffer);

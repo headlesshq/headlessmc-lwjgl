@@ -96,6 +96,9 @@ public final class Rules {
         Map.entry("glClientWaitSync", 0x911A),
         Map.entry("glUnmapBuffer", true),
         Map.entry("glUnmapNamedBuffer", true),
+        Map.entry("glUnmapBufferARB", true),
+        Map.entry("glUnmapNamedBufferEXT", true),
+        Map.entry("glCheckNamedFramebufferStatusEXT", 0x8CD5),
         Map.entry("glIsEnabled", false)
     );
 
@@ -109,6 +112,8 @@ public final class Rules {
         "n?(mem(Alloc|Calloc|Realloc|AlignedAlloc)\\w*|memAddress\\w*|memGlobalRef\\w*|malloc|calloc|realloc|aligned_alloc|"
             + "je_\\w*(alloc)\\w*|rpmalloc\\w*|rpcalloc|rprealloc|rpaligned_\\w*|SDL_(malloc|calloc|realloc|aligned_alloc))");
     private static final Pattern STB_WRITE = Pattern.compile("n?stbi_write_\\w+");
+    private static final Pattern IS_OBJECT = Pattern.compile(
+        "(gl|al)Is(?!Enabled|PointIn|VertexAttribEnabled|NamedString|Direct|ExtensionPresent)[A-Z]\\w*");
     private static final Pattern VALUES = Pattern.compile("bytes|shorts|ints|longs|floats|doubles");
     private static final List<String> SIZE_NAMES = List.of(
         "size", "capacity", "length", "count", "num", "elements", "bufSize", "nmemb", "n", "len"
@@ -154,6 +159,7 @@ public final class Rules {
             rule("success", false, Rules::success),
             rule("sdl-success", false, Rules::sdlSuccess),
             rule("stb-write-success", false, Rules::stbWriteSuccess),
+            rule("is-object", false, Rules::isObject),
             rule("id", false, m -> isIdType(m.returnType()) && ID.matcher(m.name()).matches() ? new Behaviour.NextId() : null),
             rule("fake-address", false, m -> m.returnType().getSort() == Type.LONG && ALLOCATION.matcher(m.name()).matches()
                 ? new Behaviour.Constant(Behaviour.FAKE_ADDRESS) : null),
@@ -233,6 +239,22 @@ public final class Rules {
         }
 
         return true;
+    }
+
+    /**
+     * {@code glIsTexture(name)}, {@code alIsSource(name)} and the like are true for every name but 0, since every name
+     * an application passes was created by it. Queries of state, like {@code glIsEnabled}, are handled elsewhere.
+     */
+    private static Behaviour isObject(MethodInfo method) {
+        if (method.returnType().getSort() != Type.BOOLEAN || !IS_OBJECT.matcher(method.name()).matches()) {
+            return null;
+        }
+
+        Type[] arguments = method.argumentTypes();
+        boolean name = arguments.length >= 1 && isIdType(arguments[arguments.length - 1]);
+        boolean direct = arguments.length == 1 || arguments.length == 2 && arguments[0].getSort() == Type.LONG
+            && method.name().endsWith("Direct");
+        return name && direct ? new Behaviour.NonZeroParameter(arguments.length - 1) : null;
     }
 
     private static boolean isKeptClass(String name) {

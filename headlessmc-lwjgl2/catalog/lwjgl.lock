@@ -266,7 +266,7 @@ org/lwjgl/input/OpenGLPackageAccess$2 keep-bridge=1 keep-constructor=1 keep-pure
 org/lwjgl/openal/AL guarded-static-init=1 handler=5 keep-constructor=1 object=2 void=5
     getContext()Lorg/lwjgl/openal/ALCcontext; object: new ALCcontext
     getDevice()Lorg/lwjgl/openal/ALCdevice; object: new ALCdevice
-org/lwjgl/openal/AL10 default=29 handler=28 id=4 keep-constructor=1 void=54
+org/lwjgl/openal/AL10 default=27 handler=28 id=4 is-object=2 keep-constructor=1 void=54
     alGetBoolean(I)Z default: default
     alGetDouble(I)D default: default
     alGetEnumValue(Ljava/lang/String;)I default: default
@@ -274,10 +274,8 @@ org/lwjgl/openal/AL10 default=29 handler=28 id=4 keep-constructor=1 void=54
     alGetFloat(I)F default: default
     alGetInteger(I)I default: default
     alGetListeneri(I)I default: default
-    alIsBuffer(I)Z default: default
     alIsEnabled(I)Z default: default
     alIsExtensionPresent(Ljava/lang/String;)Z default: default
-    alIsSource(I)Z default: default
     nalGetBoolean(I)Z default: default
     nalGetBufferf(II)F default: default
     nalGetBufferi(II)I default: default
@@ -327,16 +325,13 @@ org/lwjgl/openal/ALCcontext default=1 identity=1 keep-constructor=1 nio-buffer-e
     isValid()Z default: default
 org/lwjgl/openal/ALCdevice default=1 identity=1 keep-constructor=1 void=3
     isValid()Z default: default
-org/lwjgl/openal/EFX10 default=18 id=6 keep-constructor=1 void=55
+org/lwjgl/openal/EFX10 default=15 id=6 is-object=3 keep-constructor=1 void=55
     alGetAuxiliaryEffectSlotf(II)F default: default
     alGetAuxiliaryEffectSloti(II)I default: default
     alGetEffectf(II)F default: default
     alGetEffecti(II)I default: default
     alGetFilterf(II)F default: default
     alGetFilteri(II)I default: default
-    alIsAuxiliaryEffectSlot(I)Z default: default
-    alIsEffect(I)Z default: default
-    alIsFilter(I)Z default: default
     nalGetAuxiliaryEffectSlotf(II)F default: default
     nalGetAuxiliaryEffectSloti(II)I default: default
     nalGetEffectf(II)F default: default
@@ -1036,8 +1031,7 @@ org/lwjgl/opengl/APIUtil default=11 keep-constructor=1 nio-buffer=3 nio-buffer-e
 org/lwjgl/opengl/APPLEAuxDepthStencil keep-constructor=1
 org/lwjgl/opengl/APPLEClientStorage keep-constructor=1
 org/lwjgl/opengl/APPLEElementArray keep-constructor=1 void=12
-org/lwjgl/opengl/APPLEFence default=6 id=1 keep-constructor=1 void=11
-    glIsFenceAPPLE(I)Z default: default
+org/lwjgl/opengl/APPLEFence default=5 id=1 is-object=1 keep-constructor=1 void=11
     glTestFenceAPPLE(I)Z default: default
     glTestObjectAPPLE(II)Z default: default
     nglIsFenceAPPLE(IJ)Z default: default
@@ -1057,8 +1051,7 @@ org/lwjgl/opengl/APPLERowBytes keep-constructor=1
 org/lwjgl/opengl/APPLETextureRange default=2 keep-constructor=1 void=2
     glGetTexParameterPointervAPPLE(IIJ)Ljava/nio/Buffer; default: default
     nglGetTexParameterPointervAPPLE(IIJJ)Ljava/nio/Buffer; default: default
-org/lwjgl/opengl/APPLEVertexArrayObject default=2 id=1 keep-constructor=1 void=7
-    glIsVertexArrayAPPLE(I)Z default: default
+org/lwjgl/opengl/APPLEVertexArrayObject default=1 id=1 is-object=1 keep-constructor=1 void=7
     nglIsVertexArrayAPPLE(IJ)Z default: default
 org/lwjgl/opengl/APPLEVertexArrayRange keep-constructor=1 void=6
 org/lwjgl/opengl/APPLEVertexProgramEvaluators default=2 keep-constructor=1 void=12
@@ -1066,12 +1059,10 @@ org/lwjgl/opengl/APPLEVertexProgramEvaluators default=2 keep-constructor=1 void=
     nglIsVertexAttribEnabledAPPLE(IIJ)Z default: default
 org/lwjgl/opengl/APPLEYcbcr422 keep-constructor=1
 org/lwjgl/opengl/ARBBaseInstance keep-constructor=1 void=9
-org/lwjgl/opengl/ARBBindlessTexture default=10 keep-constructor=1 void=22
+org/lwjgl/opengl/ARBBindlessTexture default=8 is-object=2 keep-constructor=1 void=22
     glGetImageHandleARB(IIZII)J default: default
     glGetTextureHandleARB(I)J default: default
     glGetTextureSamplerHandleARB(II)J default: default
-    glIsImageHandleResidentARB(J)Z default: default
-    glIsTextureHandleResidentARB(J)Z default: default
     nglGetImageHandleARB(IIZIIJ)J default: default
     nglGetTextureHandleARB(IJ)J default: default
     nglGetTextureSamplerHandleARB(IIJ)J default: default
@@ -1080,13 +1071,11 @@ org/lwjgl/opengl/ARBBindlessTexture default=10 keep-constructor=1 void=22
 org/lwjgl/opengl/ARBBlendFuncExtended default=2 keep-constructor=1 void=2
     glGetFragDataIndex(ILjava/lang/CharSequence;)I default: default
     glGetFragDataIndex(ILjava/nio/ByteBuffer;)I default: default
-org/lwjgl/opengl/ARBBufferObject default=6 id=1 keep-constructor=1 nio-buffer=1 nio-buffer-empty=4 void=28
+org/lwjgl/opengl/ARBBufferObject default=4 id=1 is-object=1 keep-constructor=1 nio-buffer=1 nio-buffer-empty=4 success=1 void=28
     glGetBufferParameterARB(II)I default: default
     glGetBufferParameteriARB(II)I default: default
     glGetBufferPointerARB(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    glIsBufferARB(I)Z default: default
     glMapBufferARB(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    glUnmapBufferARB(I)Z default: default
     nglGetBufferPointervARB(IIJJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglIsBufferARB(IJ)Z default: default
     nglMapBufferARB(IIJLjava/nio/ByteBuffer;J)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -1154,13 +1143,11 @@ org/lwjgl/opengl/ARBFragmentShader keep-constructor=1
 org/lwjgl/opengl/ARBFramebufferNoAttachments default=2 keep-constructor=1 void=6
     glGetFramebufferParameteri(II)I default: default
     glGetNamedFramebufferParameterEXT(II)I default: default
-org/lwjgl/opengl/ARBFramebufferObject default=6 id=2 keep-constructor=1 success=1 void=19
+org/lwjgl/opengl/ARBFramebufferObject default=4 id=2 is-object=2 keep-constructor=1 success=1 void=19
     glGetFramebufferAttachmentParameter(III)I default: default
     glGetFramebufferAttachmentParameteri(III)I default: default
     glGetRenderbufferParameter(II)I default: default
     glGetRenderbufferParameteri(II)I default: default
-    glIsFramebuffer(I)Z default: default
-    glIsRenderbuffer(I)Z default: default
 org/lwjgl/opengl/ARBFramebufferSRGB keep-constructor=1
 org/lwjgl/opengl/ARBGeometryShader4 keep-constructor=1 void=8
 org/lwjgl/opengl/ARBGetProgramBinary keep-constructor=1 void=3
@@ -1195,23 +1182,21 @@ org/lwjgl/opengl/ARBMultiBind keep-constructor=1 void=6
 org/lwjgl/opengl/ARBMultiDrawIndirect keep-constructor=1 void=6
 org/lwjgl/opengl/ARBMultisample keep-constructor=1 void=2
 org/lwjgl/opengl/ARBMultitexture keep-constructor=1 void=36
-org/lwjgl/opengl/ARBOcclusionQuery default=6 id=1 keep-constructor=1 void=15
+org/lwjgl/opengl/ARBOcclusionQuery default=5 id=1 is-object=1 keep-constructor=1 void=15
     glGetQueryARB(II)I default: default
     glGetQueryObjectiARB(II)I default: default
     glGetQueryObjectuiARB(II)I default: default
     glGetQueryiARB(II)I default: default
-    glIsQueryARB(I)Z default: default
     nglIsQueryARB(IJ)Z default: default
 org/lwjgl/opengl/ARBOcclusionQuery2 keep-constructor=1
 org/lwjgl/opengl/ARBPipelineStatisticsQuery keep-constructor=1
 org/lwjgl/opengl/ARBPixelBufferObject keep-constructor=1
 org/lwjgl/opengl/ARBPointParameters keep-constructor=1 void=4
 org/lwjgl/opengl/ARBPointSprite keep-constructor=1
-org/lwjgl/opengl/ARBProgram default=5 id=1 keep-constructor=1 void=38
+org/lwjgl/opengl/ARBProgram default=4 id=1 is-object=1 keep-constructor=1 void=38
     glGetProgramARB(II)I default: default
     glGetProgramStringARB(II)Ljava/lang/String; default: default
     glGetProgramiARB(II)I default: default
-    glIsProgramARB(I)Z default: default
     nglIsProgramARB(IJ)Z default: default
 org/lwjgl/opengl/ARBProgramInterfaceQuery default=8 keep-constructor=1 void=3
     glGetProgramInterfacei(III)I default: default
@@ -1229,18 +1214,16 @@ org/lwjgl/opengl/ARBRobustness default=2 keep-constructor=1 void=200
     nglGetGraphicsResetStatusARB(J)I default: default
     GL_NO_ERROR:I [shim 2.9.1]
 org/lwjgl/opengl/ARBSampleShading keep-constructor=1 void=2
-org/lwjgl/opengl/ARBSamplerObjects default=5 id=1 keep-constructor=1 void=14
+org/lwjgl/opengl/ARBSamplerObjects default=4 id=1 is-object=1 keep-constructor=1 void=14
     glGetSamplerParameterIi(II)I default: default
     glGetSamplerParameterIui(II)I default: default
     glGetSamplerParameterf(II)F default: default
     glGetSamplerParameteri(II)I default: default
-    glIsSampler(I)Z default: default
 org/lwjgl/opengl/ARBSeamlessCubeMap keep-constructor=1
 org/lwjgl/opengl/ARBSeamlessCubemapPerTexture keep-constructor=1
-org/lwjgl/opengl/ARBSeparateShaderObjects default=3 id=6 keep-constructor=1 void=60
+org/lwjgl/opengl/ARBSeparateShaderObjects default=2 id=6 is-object=1 keep-constructor=1 void=60
     glGetProgramPipelineInfoLog(II)Ljava/lang/String; default: default
     glGetProgramPipelinei(II)I default: default
-    glIsProgramPipeline(I)Z default: default
 org/lwjgl/opengl/ARBShaderAtomicCounters default=1 keep-constructor=1 void=1
     glGetActiveAtomicCounterBuffer(III)I default: default
 org/lwjgl/opengl/ARBShaderImageLoadStore keep-constructor=1 void=2
@@ -1323,8 +1306,7 @@ org/lwjgl/opengl/ARBTextureView keep-constructor=1 void=1
 org/lwjgl/opengl/ARBTimerQuery default=2 keep-constructor=1 void=3
     glGetQueryObjecti64(II)J default: default
     glGetQueryObjectui64(II)J default: default
-org/lwjgl/opengl/ARBTransformFeedback2 default=1 id=1 keep-constructor=1 void=7
-    glIsTransformFeedback(I)Z default: default
+org/lwjgl/opengl/ARBTransformFeedback2 id=1 is-object=1 keep-constructor=1 void=7
 org/lwjgl/opengl/ARBTransformFeedback3 default=1 keep-constructor=1 void=4
     glGetQueryIndexedi(III)I default: default
 org/lwjgl/opengl/ARBTransformFeedbackInstanced keep-constructor=1 void=2
@@ -1341,8 +1323,7 @@ org/lwjgl/opengl/ARBUniformBufferObject default=9 keep-constructor=1 void=10
     glGetUniformBlockIndex(ILjava/lang/CharSequence;)I default: default
     glGetUniformBlockIndex(ILjava/nio/ByteBuffer;)I default: default
 org/lwjgl/opengl/ARBVertexArrayBgra keep-constructor=1
-org/lwjgl/opengl/ARBVertexArrayObject default=1 id=1 keep-constructor=1 void=4
-    glIsVertexArray(I)Z default: default
+org/lwjgl/opengl/ARBVertexArrayObject id=1 is-object=1 keep-constructor=1 void=4
 org/lwjgl/opengl/ARBVertexAttrib64bit keep-constructor=1 void=13
 org/lwjgl/opengl/ARBVertexAttribBinding keep-constructor=1 void=6
 org/lwjgl/opengl/ARBVertexBlend keep-constructor=1 void=26
@@ -1385,9 +1366,8 @@ org/lwjgl/opengl/ATITextureCompression3DC keep-constructor=1
 org/lwjgl/opengl/ATITextureEnvCombine3 keep-constructor=1
 org/lwjgl/opengl/ATITextureFloat keep-constructor=1
 org/lwjgl/opengl/ATITextureMirrorOnce keep-constructor=1
-org/lwjgl/opengl/ATIVertexArrayObject default=10 keep-constructor=1 void=24
+org/lwjgl/opengl/ATIVertexArrayObject default=9 is-object=1 keep-constructor=1 void=24
     glGetObjectBufferiATI(II)I default: default
-    glIsObjectBufferATI(I)Z default: default
     glNewObjectBufferATI(II)I default: default
     glNewObjectBufferATI(Ljava/nio/ByteBuffer;I)I default: default
     glNewObjectBufferATI(Ljava/nio/DoubleBuffer;I)I default: default
@@ -1716,8 +1696,7 @@ org/lwjgl/opengl/EXTBlendSubtract keep-constructor=1
 org/lwjgl/opengl/EXTCgShader keep-constructor=1
 org/lwjgl/opengl/EXTCompiledVertexArray keep-constructor=1 void=4
 org/lwjgl/opengl/EXTDepthBoundsTest keep-constructor=1 void=2
-org/lwjgl/opengl/EXTDirectStateAccess default=31 keep-constructor=1 nio-buffer=2 nio-buffer-empty=14 void=549
-    glCheckNamedFramebufferStatusEXT(II)I default: default
+org/lwjgl/opengl/EXTDirectStateAccess default=29 keep-constructor=1 nio-buffer=2 nio-buffer-empty=14 success=2 void=549
     glGetBooleanIndexedEXT(II)Z default: default
     glGetDoubleEXT(II)D default: default
     glGetDoubleIndexedEXT(II)D default: default
@@ -1752,7 +1731,6 @@ org/lwjgl/opengl/EXTDirectStateAccess default=31 keep-constructor=1 nio-buffer=2
     glGetVertexArrayPointeri_EXT(IIIJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0) [shim 2.9.1]
     glIsEnabledIndexedEXT(II)Z default: default
     glMapNamedBufferEXT(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    glUnmapNamedBufferEXT(I)Z default: default
     nglCheckNamedFramebufferStatusEXT(IIJ)I default: default
     nglGetNamedBufferPointervEXT(IIJJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglGetPointerIndexedvEXT(IIJJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -1773,13 +1751,11 @@ org/lwjgl/opengl/EXTFogCoord keep-constructor=1 void=9
 org/lwjgl/opengl/EXTFramebufferBlit keep-constructor=1 void=2
 org/lwjgl/opengl/EXTFramebufferMultisample keep-constructor=1 void=2
 org/lwjgl/opengl/EXTFramebufferMultisampleBlitScaled keep-constructor=1
-org/lwjgl/opengl/EXTFramebufferObject default=9 handler=2 id=2 keep-constructor=1 success=1 void=28
+org/lwjgl/opengl/EXTFramebufferObject default=7 handler=2 id=2 is-object=2 keep-constructor=1 success=1 void=28
     glGetFramebufferAttachmentParameterEXT(III)I default: default
     glGetFramebufferAttachmentParameteriEXT(III)I default: default
     glGetRenderbufferParameterEXT(II)I default: default
     glGetRenderbufferParameteriEXT(II)I default: default
-    glIsFramebufferEXT(I)Z default: default
-    glIsRenderbufferEXT(I)Z default: default
     nglCheckFramebufferStatusEXT(IJ)I default: default
     nglIsFramebufferEXT(IJ)Z default: default
     nglIsRenderbufferEXT(IJ)Z default: default
@@ -1868,7 +1844,7 @@ org/lwjgl/opengl/FastIntMap$Entry default=2 keep-constructor=1
 org/lwjgl/opengl/FastIntMap$EntryIterator default=1 keep-bridge=1 keep-constructor=1 object=1 void=2
     hasNext()Z default: default
     next()Lorg/lwjgl/opengl/FastIntMap$Entry; object: new FastIntMap$Entry
-org/lwjgl/opengl/GL11 default=19 handler=46 id=3 keep-constructor=1 nio-buffer-empty=2 void=499
+org/lwjgl/opengl/GL11 default=17 handler=46 id=3 is-object=2 keep-constructor=1 nio-buffer-empty=2 void=499
     glAreTexturesResident(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Z default: default
     glGetError()I default: default
     glGetPointer(IJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -1879,8 +1855,6 @@ org/lwjgl/opengl/GL11 default=19 handler=46 id=3 keep-constructor=1 nio-buffer-e
     glGetTexGeni(II)I default: default
     glGetTexParameterf(II)F default: default
     glGetTexParameteri(II)I default: default
-    glIsList(I)Z default: default
-    glIsTexture(I)Z default: default
     glRenderMode(I)I default: default
     nglAreTexturesResident(IJJJ)Z default: default
     nglGetError(J)I default: default
@@ -1893,7 +1867,7 @@ org/lwjgl/opengl/GL11 default=19 handler=46 id=3 keep-constructor=1 nio-buffer-e
 org/lwjgl/opengl/GL12 keep-constructor=1 void=24
 org/lwjgl/opengl/GL13 handler=1 keep-constructor=1 void=62
 org/lwjgl/opengl/GL14 handler=2 keep-constructor=1 void=49
-org/lwjgl/opengl/GL15 default=11 handler=1 id=2 keep-constructor=1 nio-buffer=1 nio-buffer-empty=4 success=1 void=42
+org/lwjgl/opengl/GL15 default=9 handler=1 id=2 is-object=2 keep-constructor=1 nio-buffer=1 nio-buffer-empty=4 success=1 void=42
     glGetBufferParameter(II)I default: default
     glGetBufferParameteri(II)I default: default
     glGetBufferPointer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -1901,15 +1875,13 @@ org/lwjgl/opengl/GL15 default=11 handler=1 id=2 keep-constructor=1 nio-buffer=1 
     glGetQueryObjecti(II)I default: default
     glGetQueryObjectui(II)I default: default
     glGetQueryi(II)I default: default
-    glIsBuffer(I)Z default: default
-    glIsQuery(I)Z default: default
     glMapBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglGetBufferPointerv(IIJJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglIsBuffer(IJ)Z default: default
     nglIsQuery(IJ)Z default: default
     nglMapBuffer(IIJLjava/nio/ByteBuffer;J)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglUnmapBuffer(IJ)Z default: default
-org/lwjgl/opengl/GL20 default=21 handler=12 id=3 keep-constructor=1 nio-buffer-empty=2 void=133
+org/lwjgl/opengl/GL20 default=19 handler=12 id=3 is-object=2 keep-constructor=1 nio-buffer-empty=2 void=133
     glGetActiveAttrib(III)Ljava/lang/String; default: default
     glGetActiveAttrib(IIILjava/nio/IntBuffer;)Ljava/lang/String; default: default
     glGetActiveAttribSize(II)I default: default
@@ -1926,15 +1898,13 @@ org/lwjgl/opengl/GL20 default=21 handler=12 id=3 keep-constructor=1 nio-buffer-e
     glGetUniformLocation(ILjava/lang/CharSequence;)I default: default
     glGetUniformLocation(ILjava/nio/ByteBuffer;)I default: default
     glGetVertexAttribPointer(IIJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    glIsProgram(I)Z default: default
-    glIsShader(I)Z default: default
     nglGetAttribLocation(IJJ)I default: default
     nglGetUniformLocation(IJJ)I default: default
     nglGetVertexAttribPointerv(IIJJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglIsProgram(IJ)Z default: default
     nglIsShader(IJ)Z default: default
 org/lwjgl/opengl/GL21 keep-constructor=1 void=12
-org/lwjgl/opengl/GL30 default=22 handler=4 id=3 keep-constructor=1 nio-buffer=1 nio-buffer-empty=1 success=1 void=160
+org/lwjgl/opengl/GL30 default=19 handler=4 id=3 is-object=3 keep-constructor=1 nio-buffer=1 nio-buffer-empty=1 success=1 void=160
     glGetBoolean(II)Z default: default
     glGetFragDataLocation(ILjava/lang/CharSequence;)I default: default
     glGetFragDataLocation(ILjava/nio/ByteBuffer;)I default: default
@@ -1947,9 +1917,6 @@ org/lwjgl/opengl/GL30 default=22 handler=4 id=3 keep-constructor=1 nio-buffer=1 
     glGetTexParameterIui(II)I default: default
     glGetTransformFeedbackVarying(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
     glIsEnabledi(II)Z default: default
-    glIsFramebuffer(I)Z default: default
-    glIsRenderbuffer(I)Z default: default
-    glIsVertexArray(I)Z default: default
     nglCheckFramebufferStatus(IJ)I default: default
     nglGetFragDataLocation(IJJ)I default: default
     nglGetStringi(IIJ)Ljava/lang/String; default: default
@@ -1980,7 +1947,7 @@ org/lwjgl/opengl/GL32 default=8 handler=2 id=1 keep-constructor=1 object=1 succe
     nglIsSync(JJ)Z default: default
     GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER:I [shim 2.9.1]
     GL_MAX_VARYING_COMPONENTS:I [shim 2.9.1]
-org/lwjgl/opengl/GL33 default=13 handler=1 id=1 keep-constructor=1 void=113
+org/lwjgl/opengl/GL33 default=12 handler=1 id=1 is-object=1 keep-constructor=1 void=113
     glGetFragDataIndex(ILjava/lang/CharSequence;)I default: default
     glGetFragDataIndex(ILjava/nio/ByteBuffer;)I default: default
     glGetQueryObject(II)J default: default
@@ -1991,11 +1958,10 @@ org/lwjgl/opengl/GL33 default=13 handler=1 id=1 keep-constructor=1 void=113
     glGetSamplerParameterIui(II)I default: default
     glGetSamplerParameterf(II)F default: default
     glGetSamplerParameteri(II)I default: default
-    glIsSampler(I)Z default: default
     nglGetFragDataIndex(IJJ)I default: default
     nglIsSampler(IJ)Z default: default
     GL_SRC1_ALPHA:I [shim 2.9.1]
-org/lwjgl/opengl/GL40 default=18 id=1 keep-constructor=1 void=93
+org/lwjgl/opengl/GL40 default=17 id=1 is-object=1 keep-constructor=1 void=93
     glGetActiveSubroutineName(IIII)Ljava/lang/String; default: default
     glGetActiveSubroutineUniform(IIII)I default: default
     glGetActiveSubroutineUniformName(IIII)Ljava/lang/String; default: default
@@ -2010,18 +1976,16 @@ org/lwjgl/opengl/GL40 default=18 id=1 keep-constructor=1 void=93
     glGetSubroutineUniformLocation(IILjava/nio/ByteBuffer;)I default: default
     glGetUniformSubroutineu(II)I default: default
     glGetUniformSubroutineui(II)I default: default
-    glIsTransformFeedback(I)Z default: default
     nglGetSubroutineIndex(IIJJ)I default: default
     nglGetSubroutineUniformLocation(IIJJ)I default: default
     nglIsTransformFeedback(IJ)Z default: default
     GL_UNIFORM_NAME_LENGTH:I [shim 2.9.1]
     GL_UNIFORM_SIZE:I [shim 2.9.1]
-org/lwjgl/opengl/GL41 default=6 id=9 keep-constructor=1 void=175
+org/lwjgl/opengl/GL41 default=5 id=9 is-object=1 keep-constructor=1 void=175
     glGetDouble(II)D default: default
     glGetFloat(II)F default: default
     glGetProgramPipelineInfoLog(II)Ljava/lang/String; default: default
     glGetProgramPipelinei(II)I default: default
-    glIsProgramPipeline(I)Z default: default
     nglIsProgramPipeline(IJ)Z default: default
     GL_DEPTH_RANGE:I [shim 2.9.1]
     GL_DOUBLE_MAT2:I [shim 2.9.1]
@@ -2464,12 +2428,10 @@ org/lwjgl/opengl/MouseEventQueue default=3 keep-constructor=1 void=22
     isGrabbed()Z default: default
     transformY(I)I default: default
 org/lwjgl/opengl/NVBindlessMultiDrawIndirect keep-constructor=1 void=8
-org/lwjgl/opengl/NVBindlessTexture default=10 keep-constructor=1 void=16
+org/lwjgl/opengl/NVBindlessTexture default=8 is-object=2 keep-constructor=1 void=16
     glGetImageHandleNV(IIZII)J default: default
     glGetTextureHandleNV(I)J default: default
     glGetTextureSamplerHandleNV(II)J default: default
-    glIsImageHandleResidentNV(J)Z default: default
-    glIsTextureHandleResidentNV(J)Z default: default
     nglGetImageHandleNV(IIZIIJ)J default: default
     nglGetTextureHandleNV(IJ)J default: default
     nglGetTextureSamplerHandleNV(IIJ)J default: default
@@ -2488,8 +2450,7 @@ org/lwjgl/opengl/NVEvaluators keep-constructor=1 void=18
 org/lwjgl/opengl/NVExplicitMultisample default=2 keep-constructor=1 void=8
     glGetBooleanIndexedEXT(II)Z default: default
     glGetIntegerIndexedEXT(II)I default: default
-org/lwjgl/opengl/NVFence default=4 id=1 keep-constructor=1 void=11
-    glIsFenceNV(I)Z default: default
+org/lwjgl/opengl/NVFence default=3 id=1 is-object=1 keep-constructor=1 void=11
     glTestFenceNV(I)Z default: default
     nglIsFenceNV(IJ)Z default: default
     nglTestFenceNV(IJ)Z default: default
@@ -2506,14 +2467,13 @@ org/lwjgl/opengl/NVHalfFloat keep-constructor=1 void=50
 org/lwjgl/opengl/NVLightMaxExponent keep-constructor=1
 org/lwjgl/opengl/NVMultisampleCoverage keep-constructor=1
 org/lwjgl/opengl/NVMultisampleFilterHint keep-constructor=1
-org/lwjgl/opengl/NVOcclusionQuery default=4 id=1 keep-constructor=1 void=13
+org/lwjgl/opengl/NVOcclusionQuery default=3 id=1 is-object=1 keep-constructor=1 void=13
     glGetOcclusionQueryiNV(II)I default: default
     glGetOcclusionQueryuiNV(II)I default: default
-    glIsOcclusionQueryNV(I)Z default: default
     nglIsOcclusionQueryNV(IJ)Z default: default
 org/lwjgl/opengl/NVPackedDepthStencil keep-constructor=1
 org/lwjgl/opengl/NVParameterBufferObject keep-constructor=1 void=6
-org/lwjgl/opengl/NVPathRendering default=16 id=2 keep-constructor=1 void=87
+org/lwjgl/opengl/NVPathRendering default=15 id=2 is-object=1 keep-constructor=1 void=87
     glGetPathColorGenfNV(II)F default: default
     glGetPathColorGeniNV(II)I default: default
     glGetPathLengthNV(III)F default: default
@@ -2521,7 +2481,6 @@ org/lwjgl/opengl/NVPathRendering default=16 id=2 keep-constructor=1 void=87
     glGetPathParameteriNV(II)I default: default
     glGetPathTexGenfNV(II)F default: default
     glGetPathTexGeniNV(II)I default: default
-    glIsPathNV(I)Z default: default
     glIsPointInFillPathNV(IIFF)Z default: default
     glIsPointInStrokePathNV(IFF)Z default: default
     glPathParameterfNV(IILjava/nio/IntBuffer;)V void [shim 2.9.1]
@@ -2547,12 +2506,11 @@ org/lwjgl/opengl/NVPresentVideoUtil default=6 keep-constructor=1 nio-buffer-empt
     nglEnumerateVideoDevicesNV(Ljava/nio/ByteBuffer;Ljava/nio/LongBuffer;I)I default: default
     nglQueryContextNV(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;ILjava/nio/IntBuffer;I)Z default: default
 org/lwjgl/opengl/NVPrimitiveRestart keep-constructor=1 void=4
-org/lwjgl/opengl/NVProgram default=7 id=1 keep-constructor=1 void=17
+org/lwjgl/opengl/NVProgram default=6 id=1 is-object=1 keep-constructor=1 void=17
     glAreProgramsResidentNV(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Z default: default
     glGetProgramNV(II)I default: default
     glGetProgramStringNV(II)Ljava/lang/String; default: default
     glGetProgramiNV(II)I default: default
-    glIsProgramNV(I)Z default: default
     nglAreProgramsResidentNV(IJJJ)Z default: default
     nglIsProgramNV(IJ)Z default: default
 org/lwjgl/opengl/NVRegisterCombiners default=6 keep-constructor=1 void=26
@@ -2563,12 +2521,10 @@ org/lwjgl/opengl/NVRegisterCombiners default=6 keep-constructor=1 void=26
     glGetFinalCombinerInputParameterfNV(II)F default: default
     glGetFinalCombinerInputParameteriNV(II)I default: default
 org/lwjgl/opengl/NVRegisterCombiners2 keep-constructor=1 void=4
-org/lwjgl/opengl/NVShaderBufferLoad default=7 keep-constructor=1 void=23
+org/lwjgl/opengl/NVShaderBufferLoad default=5 is-object=2 keep-constructor=1 void=23
     glGetBufferParameterui64NV(II)J default: default
     glGetIntegerui64NV(I)J default: default
     glGetNamedBufferParameterui64NV(II)J default: default
-    glIsBufferResidentNV(I)Z default: default
-    glIsNamedBufferResidentNV(I)Z default: default
     nglIsBufferResidentNV(IJ)Z default: default
     nglIsNamedBufferResidentNV(IJ)Z default: default
 org/lwjgl/opengl/NVShaderBufferStore keep-constructor=1
@@ -2594,8 +2550,7 @@ org/lwjgl/opengl/NVTransformFeedback default=8 keep-constructor=1 void=21
     glGetVaryingLocationNV(ILjava/lang/CharSequence;)I default: default
     glGetVaryingLocationNV(ILjava/nio/ByteBuffer;)I default: default
     nglGetVaryingLocationNV(IJJ)I default: default
-org/lwjgl/opengl/NVTransformFeedback2 default=2 id=1 keep-constructor=1 void=13
-    glIsTransformFeedbackNV(I)Z default: default
+org/lwjgl/opengl/NVTransformFeedback2 default=1 id=1 is-object=1 keep-constructor=1 void=13
     nglIsTransformFeedbackNV(IJ)Z default: default
 org/lwjgl/opengl/NVVertexArrayRange keep-constructor=1 nio-buffer=1 nio-buffer-empty=1 void=10
     nglAllocateMemoryNV(IFFFJJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)

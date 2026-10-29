@@ -97,6 +97,47 @@ public sealed interface Behaviour {
     }
 
     /**
+     * Returns whether a parameter is not 0, e.g. {@code glIsTexture(name)}: every name an application passes was
+     * created by it.
+     *
+     * @param parameter the index of the parameter, not counting {@code this}.
+     */
+    record NonZeroParameter(int parameter) implements Behaviour {
+        @Override
+        public String describe() {
+            return "arg" + parameter + " != 0";
+        }
+
+        /**
+         * Branch free, {@code (x | -x) >>> (bits - 1)} is 1 for every x but 0, so that no stack map frame is needed,
+         * which class files older than Java 6 must not have.
+         */
+        @Override
+        public InsnList emit(MethodInfo method) {
+            InsnList il = new InsnList();
+            Type type = method.argumentTypes()[parameter];
+            il.add(new VarInsnNode(type.getOpcode(ILOAD), method.slot(parameter)));
+            if (type.getSort() == Type.LONG) {
+                il.add(new InsnNode(DUP2));
+                il.add(new InsnNode(LNEG));
+                il.add(new InsnNode(LOR));
+                il.add(new IntInsnNode(BIPUSH, 63));
+                il.add(new InsnNode(LUSHR));
+                il.add(new InsnNode(L2I));
+            } else {
+                il.add(new InsnNode(DUP));
+                il.add(new InsnNode(INEG));
+                il.add(new InsnNode(IOR));
+                il.add(new IntInsnNode(BIPUSH, 31));
+                il.add(new InsnNode(IUSHR));
+            }
+
+            il.add(new InsnNode(IRETURN));
+            return il;
+        }
+    }
+
+    /**
      * Returns {@code this}, for fluent instance methods.
      */
     record ReturnThis() implements Behaviour {

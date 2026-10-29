@@ -13,7 +13,7 @@ org/lwjgl/openal/AL$ICDStatic keep-constructor=2 object=2 void=1
     access$200()Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
     get()Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
 org/lwjgl/openal/AL$ICDStatic$WriteOnce guarded-static-init=1 keep-constructor=1
-org/lwjgl/openal/AL10 default=45 handler=60 id=4 keep-constructor=1 void=158
+org/lwjgl/openal/AL10 default=41 handler=60 id=4 is-object=4 keep-constructor=1 void=158
     alGetBoolean(I)Z default: default
     alGetBooleanDirect(JI)Z default: default
     alGetBufferfDirect(JII)F default: default
@@ -40,16 +40,12 @@ org/lwjgl/openal/AL10 default=45 handler=60 id=4 keep-constructor=1 void=158
     alGetSourcefDirect(JII)F default: default
     alGetSourceiDirect(JII)I default: default
     alGetStringDirect(JI)Ljava/lang/String; default: default
-    alIsBuffer(I)Z default: default
-    alIsBufferDirect(JI)Z default: default
     alIsEnabled(I)Z default: default
     alIsEnabledDirect(JI)Z default: default
     alIsExtensionPresent(Ljava/lang/CharSequence;)Z default: default
     alIsExtensionPresent(Ljava/nio/ByteBuffer;)Z default: default
     alIsExtensionPresentDirect(JLjava/lang/CharSequence;)Z default: default
     alIsExtensionPresentDirect(JLjava/nio/ByteBuffer;)Z default: default
-    alIsSource(I)Z default: default
-    alIsSourceDirect(JI)Z default: default
     alSourceUnqueueBuffersDirect(JI)I default: default
     nalGetEnumValue(J)I default: default
     nalGetEnumValueDirect(JJ)I default: default
@@ -147,7 +143,7 @@ org/lwjgl/openal/EXTDirectContext default=3 keep-constructor=1
     nalcGetProcAddress2(JJ)J default: default
 org/lwjgl/openal/EXTDisconnect keep-constructor=1
 org/lwjgl/openal/EXTDouble keep-constructor=1
-org/lwjgl/openal/EXTEfx default=18 id=6 keep-constructor=1 void=162
+org/lwjgl/openal/EXTEfx default=12 id=6 is-object=6 keep-constructor=1 void=162
     alGetAuxiliaryEffectSlotf(II)F default: default
     alGetAuxiliaryEffectSlotfDirect(JII)F default: default
     alGetAuxiliaryEffectSloti(II)I default: default
@@ -160,12 +156,6 @@ org/lwjgl/openal/EXTEfx default=18 id=6 keep-constructor=1 void=162
     alGetFilterfDirect(JII)F default: default
     alGetFilteri(II)I default: default
     alGetFilteriDirect(JII)I default: default
-    alIsAuxiliaryEffectSlot(I)Z default: default
-    alIsAuxiliaryEffectSlotDirect(JI)Z default: default
-    alIsEffect(I)Z default: default
-    alIsEffectDirect(JI)Z default: default
-    alIsFilter(I)Z default: default
-    alIsFilterDirect(JI)Z default: default
 org/lwjgl/openal/EXTExponentDistance keep-constructor=1
 org/lwjgl/openal/EXTFloat32 keep-constructor=1
 org/lwjgl/openal/EXTIma4 keep-constructor=1
@@ -191,8 +181,7 @@ org/lwjgl/openal/SOFTBFormatHOA keep-constructor=1
 org/lwjgl/openal/SOFTBformatEx keep-constructor=1
 org/lwjgl/openal/SOFTBlockAlignment keep-constructor=1
 org/lwjgl/openal/SOFTBufferLengthQuery keep-constructor=1
-org/lwjgl/openal/SOFTBufferSamples default=1 keep-constructor=1 void=30
-    alIsBufferFormatSupportedSOFT(I)Z default: default
+org/lwjgl/openal/SOFTBufferSamples is-object=1 keep-constructor=1 void=30
 org/lwjgl/openal/SOFTBufferSubData keep-constructor=1 void=16
 org/lwjgl/openal/SOFTCallbackBuffer default=2 keep-constructor=1 void=16
     alGetBufferPtrDirectSOFT(JII)J default: default
