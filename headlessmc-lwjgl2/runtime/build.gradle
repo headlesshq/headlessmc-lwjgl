@@ -1,0 +1,18 @@
+description = 'Handlers and state of the patched LWJGL 2, embedded into the patched jars by the patcher.'
+
+configurations {
+    lwjgl2 {
+        transitive = false
+    }
+    compileOnly.extendsFrom lwjgl2
+}
+
+dependencies {
+    lwjgl2 libs.bundles.lwjgl2
+    compileOnly project(':headlessmc-lwjgl-api')
+    compileOnly project(':headlessmc-lwjgl-runtime')
+}
+
+tasks.named('compileJava', JavaCompile) {
+    options.release = 8
+}

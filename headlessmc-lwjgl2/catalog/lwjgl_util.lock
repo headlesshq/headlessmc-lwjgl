@@ -1,0 +1,496 @@
+# Behaviour catalog of org.lwjgl:lwjgl_util:2.9.4-nightly-20150209
+# Every method of every class is patched by the first matching rule, counted per class.
+# Methods resolved by rules that only guess are listed individually and have to be reviewed.
+# Regenerate with: ./gradlew updateCatalogLock
+org/lwjgl/util/Color default=9 identity=2 keep-constructor=6 keep-to-string=1 void=26
+    getAlpha()I default: default
+    getAlphaByte()B default: default
+    getBlue()I default: default
+    getBlueByte()B default: default
+    getGreen()I default: default
+    getGreenByte()B default: default
+    getRed()I default: default
+    getRedByte()B default: default
+    toHSB([F)[F default: default
+org/lwjgl/util/Dimension default=2 identity=2 keep-constructor=3 keep-to-string=1 void=5
+    getHeight()I default: default
+    getWidth()I default: default
+org/lwjgl/util/Display default=1 guarded-static-init=1 keep-constructor=1 object=1
+    getAvailableDisplayModes(IIIIIIII)[Lorg/lwjgl/opengl/DisplayMode; default: default
+    setDisplayMode([Lorg/lwjgl/opengl/DisplayMode;[Ljava/lang/String;)Lorg/lwjgl/opengl/DisplayMode; object: new DisplayMode
+org/lwjgl/util/Display$1FieldAccessor default=1 keep-constructor=1
+    getInt(Lorg/lwjgl/opengl/DisplayMode;)I default: default
+org/lwjgl/util/Display$1Sorter default=2 keep-constructor=1
+    compare(Ljava/lang/Object;Ljava/lang/Object;)I default: default
+    compare(Lorg/lwjgl/opengl/DisplayMode;Lorg/lwjgl/opengl/DisplayMode;)I default: default
+org/lwjgl/util/Point default=2 identity=2 keep-constructor=3 keep-to-string=1 void=8
+    getX()I default: default
+    getY()I default: default
+org/lwjgl/util/ReadableColor keep-abstract-interface-method=14 keep-interface-static-init=1
+org/lwjgl/util/ReadableDimension keep-abstract-interface-method=3
+org/lwjgl/util/ReadablePoint keep-abstract-interface-method=3
+org/lwjgl/util/ReadableRectangle keep-abstract-interface-method=1
+org/lwjgl/util/Rectangle default=10 fluent=2 identity=1 keep-constructor=4 keep-to-string=1 void=21
+    contains(II)Z default: default
+    contains(IIII)Z default: default
+    contains(Lorg/lwjgl/util/ReadablePoint;)Z default: default
+    contains(Lorg/lwjgl/util/ReadableRectangle;)Z default: default
+    getHeight()I default: default
+    getWidth()I default: default
+    getX()I default: default
+    getY()I default: default
+    intersects(Lorg/lwjgl/util/ReadableRectangle;)Z default: default
+    isEmpty()Z default: default
+org/lwjgl/util/Renderable keep-abstract-interface-method=1
+org/lwjgl/util/Timer default=2 guarded-static-init=1 keep-constructor=1 keep-to-string=1 void=5
+    getTime()F default: default
+    isPaused()Z default: default
+org/lwjgl/util/WaveData guarded-static-init=1 keep-constructor=1 nio-buffer-empty=1 object=6 void=1
+    convertAudioBytes([BZLjava/nio/ByteOrder;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    create(Ljava/io/InputStream;)Lorg/lwjgl/util/WaveData; object: new WaveData
+    create(Ljava/lang/String;)Lorg/lwjgl/util/WaveData; object: new WaveData
+    create(Ljava/net/URL;)Lorg/lwjgl/util/WaveData; object: new WaveData
+    create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/util/WaveData; object: new WaveData
+    create(Ljavax/sound/sampled/AudioInputStream;)Lorg/lwjgl/util/WaveData; object: new WaveData
+    create([B)Lorg/lwjgl/util/WaveData; object: new WaveData
+org/lwjgl/util/WritableColor keep-abstract-interface-method=19
+org/lwjgl/util/WritableDimension keep-abstract-interface-method=4
+org/lwjgl/util/WritablePoint keep-abstract-interface-method=4
+org/lwjgl/util/WritableRectangle keep-abstract-interface-method=3
+org/lwjgl/util/XPMFile default=6 guarded-static-init=1 keep-constructor=1 object=2 void=3
+    getBytes()[B default: default
+    getHeight()I default: default
+    getWidth()I default: default
+    load(Ljava/io/InputStream;)Lorg/lwjgl/util/XPMFile; object: new XPMFile
+    load(Ljava/lang/String;)Lorg/lwjgl/util/XPMFile; object: new XPMFile
+    nextLineOfInterest(Ljava/io/LineNumberReader;)Ljava/lang/String; default: default
+    parseColor(Ljava/lang/String;)[Ljava/lang/Object; default: default
+    parseFormat(Ljava/lang/String;)[I default: default
+org/lwjgl/util/glu/Cylinder keep-constructor=1 void=1
+org/lwjgl/util/glu/Disk keep-constructor=1 void=1
+org/lwjgl/util/glu/GLU default=7 interface-proxy=1 keep-constructor=1 void=4
+    gluBuild2DMipmaps(IIIIIILjava/nio/ByteBuffer;)I default: default
+    gluCheckExtension(Ljava/lang/String;Ljava/lang/String;)Z default: default
+    gluErrorString(I)Ljava/lang/String; default: default
+    gluGetString(I)Ljava/lang/String; default: default
+    gluNewTess()Lorg/lwjgl/util/glu/GLUtessellator; interface-proxy: proxy GLUtessellator
+    gluProject(FFFLjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;Ljava/nio/IntBuffer;Ljava/nio/FloatBuffer;)Z default: default
+    gluScaleImage(IIIILjava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;)I default: default
+    gluUnProject(FFFLjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;Ljava/nio/IntBuffer;Ljava/nio/FloatBuffer;)Z default: default
+org/lwjgl/util/glu/GLUtessellator keep-abstract-interface-method=13
+org/lwjgl/util/glu/GLUtessellatorCallback keep-abstract-interface-method=12
+org/lwjgl/util/glu/GLUtessellatorCallbackAdapter keep-constructor=1 void=12
+org/lwjgl/util/glu/MipMap default=2 keep-constructor=1
+    gluBuild2DMipmaps(IIIIIILjava/nio/ByteBuffer;)I default: default
+    gluScaleImage(IIIILjava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;)I default: default
+org/lwjgl/util/glu/PartialDisk keep-constructor=1 void=1
+org/lwjgl/util/glu/PixelStoreState keep-constructor=1 void=2
+org/lwjgl/util/glu/Project default=3 guarded-static-init=1 keep-constructor=1 void=6
+    __gluInvertMatrixf(Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)Z default: default
+    gluProject(FFFLjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;Ljava/nio/IntBuffer;Ljava/nio/FloatBuffer;)Z default: default
+    gluUnProject(FFFLjava/nio/FloatBuffer;Ljava/nio/FloatBuffer;Ljava/nio/IntBuffer;Ljava/nio/FloatBuffer;)Z default: default
+org/lwjgl/util/glu/Quadric default=6 keep-constructor=1 void=6
+    cos(F)F default: default
+    getDrawStyle()I default: default
+    getNormals()I default: default
+    getOrientation()I default: default
+    getTextureFlag()Z default: default
+    sin(F)F default: default
+org/lwjgl/util/glu/Registry default=2 keep-constructor=1
+    gluCheckExtension(Ljava/lang/String;Ljava/lang/String;)Z default: default
+    gluGetString(I)Ljava/lang/String; default: default
+org/lwjgl/util/glu/Sphere keep-constructor=1 void=1
+org/lwjgl/util/glu/Util default=6 guarded-static-init=1 keep-constructor=1 void=1
+    bytesPerPixel(II)I default: default
+    ceil(II)I default: default
+    compPerPix(I)I default: default
+    glGetIntegerv(I)I default: default
+    nearestPower(I)I default: default
+    normalize([F)[F default: default
+org/lwjgl/util/glu/tessellation/ActiveRegion keep-constructor=1
+org/lwjgl/util/glu/tessellation/CachedVertex keep-constructor=1
+org/lwjgl/util/glu/tessellation/Dict default=1 keep-constructor=1 object=8 void=2
+    dictInsert(Lorg/lwjgl/util/glu/tessellation/Dict;Ljava/lang/Object;)Lorg/lwjgl/util/glu/tessellation/DictNode; object: new DictNode
+    dictInsertBefore(Lorg/lwjgl/util/glu/tessellation/Dict;Lorg/lwjgl/util/glu/tessellation/DictNode;Ljava/lang/Object;)Lorg/lwjgl/util/glu/tessellation/DictNode; object: new DictNode
+    dictKey(Lorg/lwjgl/util/glu/tessellation/DictNode;)Ljava/lang/Object; default: default
+    dictMax(Lorg/lwjgl/util/glu/tessellation/Dict;)Lorg/lwjgl/util/glu/tessellation/DictNode; object: new DictNode
+    dictMin(Lorg/lwjgl/util/glu/tessellation/Dict;)Lorg/lwjgl/util/glu/tessellation/DictNode; object: new DictNode
+    dictNewDict(Ljava/lang/Object;Lorg/lwjgl/util/glu/tessellation/Dict$DictLeq;)Lorg/lwjgl/util/glu/tessellation/Dict; object: new Dict
+    dictPred(Lorg/lwjgl/util/glu/tessellation/DictNode;)Lorg/lwjgl/util/glu/tessellation/DictNode; object: new DictNode
+    dictSearch(Lorg/lwjgl/util/glu/tessellation/Dict;Ljava/lang/Object;)Lorg/lwjgl/util/glu/tessellation/DictNode; object: new DictNode
+    dictSucc(Lorg/lwjgl/util/glu/tessellation/DictNode;)Lorg/lwjgl/util/glu/tessellation/DictNode; object: new DictNode
+org/lwjgl/util/glu/tessellation/Dict$DictLeq keep-abstract-interface-method=1
+org/lwjgl/util/glu/tessellation/DictNode keep-constructor=1
+org/lwjgl/util/glu/tessellation/GLUface keep-constructor=1
+org/lwjgl/util/glu/tessellation/GLUhalfEdge keep-constructor=1
+org/lwjgl/util/glu/tessellation/GLUmesh keep-constructor=1
+org/lwjgl/util/glu/tessellation/GLUtessellatorImpl default=2 guarded-static-init=1 interface-proxy=1 keep-constructor=1 void=23
+    addVertex([DLjava/lang/Object;)Z default: default
+    flushCache()Z default: default
+    gluNewTess()Lorg/lwjgl/util/glu/GLUtessellator; interface-proxy: proxy GLUtessellator
+org/lwjgl/util/glu/tessellation/GLUvertex keep-constructor=1
+org/lwjgl/util/glu/tessellation/Geom default=12 guarded-static-init=1 keep-constructor=1 void=1
+    EdgeEval(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
+    EdgeGoesLeft(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Z default: default
+    EdgeGoesRight(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Z default: default
+    EdgeSign(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
+    Interpolate(DDDD)D default: default
+    TransEval(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
+    TransLeq(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)Z default: default
+    TransSign(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
+    VertCCW(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)Z default: default
+    VertEq(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)Z default: default
+    VertL1dist(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
+    VertLeq(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)Z default: default
+org/lwjgl/util/glu/tessellation/Mesh default=2 guarded-static-init=1 keep-constructor=1 object=7 void=10
+    MakeEdge(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge; object: new GLUhalfEdge
+    __gl_meshAddEdgeVertex(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge; object: new GLUhalfEdge
+    __gl_meshConnect(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge; object: new GLUhalfEdge
+    __gl_meshDelete(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Z default: default
+    __gl_meshMakeEdge(Lorg/lwjgl/util/glu/tessellation/GLUmesh;)Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge; object: new GLUhalfEdge
+    __gl_meshNewMesh()Lorg/lwjgl/util/glu/tessellation/GLUmesh; object: new GLUmesh
+    __gl_meshSplice(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Z default: default
+    __gl_meshSplitEdge(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge; object: new GLUhalfEdge
+    __gl_meshUnion(Lorg/lwjgl/util/glu/tessellation/GLUmesh;Lorg/lwjgl/util/glu/tessellation/GLUmesh;)Lorg/lwjgl/util/glu/tessellation/GLUmesh; object: new GLUmesh
+org/lwjgl/util/glu/tessellation/Normal default=2 guarded-static-init=1 keep-constructor=1 void=4
+    Dot([D[D)D default: default
+    LongAxis([D)I default: default
+org/lwjgl/util/glu/tessellation/PriorityQ default=6 keep-constructor=1 object=1 void=2
+    LEQ(Lorg/lwjgl/util/glu/tessellation/PriorityQ$Leq;Ljava/lang/Object;Ljava/lang/Object;)Z default: default
+    pqExtractMin()Ljava/lang/Object; default: default
+    pqInit()Z default: default
+    pqInsert(Ljava/lang/Object;)I default: default
+    pqIsEmpty()Z default: default
+    pqMinimum()Ljava/lang/Object; default: default
+    pqNewPriorityQ(Lorg/lwjgl/util/glu/tessellation/PriorityQ$Leq;)Lorg/lwjgl/util/glu/tessellation/PriorityQ; object: new PriorityQ
+org/lwjgl/util/glu/tessellation/PriorityQ$Leq keep-abstract-interface-method=1
+org/lwjgl/util/glu/tessellation/PriorityQ$PQhandleElem keep-constructor=1
+org/lwjgl/util/glu/tessellation/PriorityQ$PQnode keep-constructor=1
+org/lwjgl/util/glu/tessellation/PriorityQHeap default=5 guarded-static-init=1 keep-constructor=1 void=4
+    pqExtractMin()Ljava/lang/Object; default: default
+    pqInit()Z default: default
+    pqInsert(Ljava/lang/Object;)I default: default
+    pqIsEmpty()Z default: default
+    pqMinimum()Ljava/lang/Object; default: default
+org/lwjgl/util/glu/tessellation/PriorityQSort default=7 guarded-static-init=1 keep-constructor=1 void=3
+    GT(Lorg/lwjgl/util/glu/tessellation/PriorityQ$Leq;Ljava/lang/Object;Ljava/lang/Object;)Z default: default
+    LT(Lorg/lwjgl/util/glu/tessellation/PriorityQ$Leq;Ljava/lang/Object;Ljava/lang/Object;)Z default: default
+    pqExtractMin()Ljava/lang/Object; default: default
+    pqInit()Z default: default
+    pqInsert(Ljava/lang/Object;)I default: default
+    pqIsEmpty()Z default: default
+    pqMinimum()Ljava/lang/Object; default: default
+org/lwjgl/util/glu/tessellation/PriorityQSort$Stack keep-constructor=2
+org/lwjgl/util/glu/tessellation/Render default=5 guarded-static-init=1 keep-constructor=1 object=4 void=5
+    AddToTrail(Lorg/lwjgl/util/glu/tessellation/GLUface;Lorg/lwjgl/util/glu/tessellation/GLUface;)Lorg/lwjgl/util/glu/tessellation/GLUface; object: new GLUface
+    ComputeNormal(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;[DZ)I default: default
+    IsEven(J)Z default: default
+    Marked(Lorg/lwjgl/util/glu/tessellation/GLUface;)Z default: default
+    MaximumFan(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/Render$FaceCount; object: new Render$FaceCount
+    MaximumStrip(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/Render$FaceCount; object: new Render$FaceCount
+    __gl_renderCache(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;)Z default: default
+    access$500(Lorg/lwjgl/util/glu/tessellation/GLUface;Lorg/lwjgl/util/glu/tessellation/GLUface;)Lorg/lwjgl/util/glu/tessellation/GLUface; object: new GLUface
+    access$600(Lorg/lwjgl/util/glu/tessellation/GLUface;)Z default: default
+org/lwjgl/util/glu/tessellation/Render$FaceCount keep-constructor=4
+org/lwjgl/util/glu/tessellation/Render$RenderFan guarded-static-init=1 keep-constructor=2 void=1
+org/lwjgl/util/glu/tessellation/Render$RenderStrip guarded-static-init=1 keep-constructor=2 void=1
+org/lwjgl/util/glu/tessellation/Render$RenderTriangle guarded-static-init=1 keep-constructor=2 void=1
+org/lwjgl/util/glu/tessellation/Render$renderCallBack keep-abstract-interface-method=1
+org/lwjgl/util/glu/tessellation/Sweep default=9 guarded-static-init=1 keep-constructor=1 object=6 void=20
+    AddRegionBelow(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;Lorg/lwjgl/util/glu/tessellation/ActiveRegion;Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/ActiveRegion; object: new ActiveRegion
+    CheckForIntersect(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Z default: default
+    CheckForLeftSplice(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Z default: default
+    CheckForRightSplice(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Z default: default
+    EdgeLeq(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;Lorg/lwjgl/util/glu/tessellation/ActiveRegion;Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Z default: default
+    FinishLeftRegions(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;Lorg/lwjgl/util/glu/tessellation/ActiveRegion;Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge; object: new GLUhalfEdge
+    FixUpperEdge(Lorg/lwjgl/util/glu/tessellation/ActiveRegion;Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Z default: default
+    InitPriorityQ(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;)Z default: default
+    IsWindingInside(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;I)Z default: default
+    RegionAbove(Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Lorg/lwjgl/util/glu/tessellation/ActiveRegion; object: new ActiveRegion
+    RegionBelow(Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Lorg/lwjgl/util/glu/tessellation/ActiveRegion; object: new ActiveRegion
+    RemoveDegenerateFaces(Lorg/lwjgl/util/glu/tessellation/GLUmesh;)Z default: default
+    TopLeftRegion(Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Lorg/lwjgl/util/glu/tessellation/ActiveRegion; object: new ActiveRegion
+    TopRightRegion(Lorg/lwjgl/util/glu/tessellation/ActiveRegion;)Lorg/lwjgl/util/glu/tessellation/ActiveRegion; object: new ActiveRegion
+    __gl_computeInterior(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;)Z default: default
+org/lwjgl/util/glu/tessellation/Sweep$1 default=1 keep-constructor=1
+    leq(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z default: default
+org/lwjgl/util/glu/tessellation/Sweep$2 default=1 keep-constructor=1
+    leq(Ljava/lang/Object;Ljava/lang/Object;)Z default: default
+org/lwjgl/util/glu/tessellation/TessMono default=3 guarded-static-init=1 keep-constructor=1 void=1
+    __gl_meshSetWindingNumber(Lorg/lwjgl/util/glu/tessellation/GLUmesh;IZ)Z default: default
+    __gl_meshTessellateInterior(Lorg/lwjgl/util/glu/tessellation/GLUmesh;)Z default: default
+    __gl_meshTessellateMonoRegion(Lorg/lwjgl/util/glu/tessellation/GLUface;)Z default: default
+org/lwjgl/util/glu/tessellation/TessState keep-constructor=1
+org/lwjgl/util/input/ControllerAdapter default=25 keep-constructor=1 void=9
+    getAxisCount()I default: default
+    getAxisName(I)Ljava/lang/String; default: default
+    getAxisValue(I)F default: default
+    getButtonCount()I default: default
+    getButtonName(I)Ljava/lang/String; default: default
+    getDeadZone(I)F default: default
+    getIndex()I default: default
+    getName()Ljava/lang/String; default: default
+    getPovX()F default: default
+    getPovY()F default: default
+    getRXAxisDeadZone()F default: default
+    getRXAxisValue()F default: default
+    getRYAxisDeadZone()F default: default
+    getRYAxisValue()F default: default
+    getRZAxisDeadZone()F default: default
+    getRZAxisValue()F default: default
+    getRumblerCount()I default: default
+    getRumblerName(I)Ljava/lang/String; default: default
+    getXAxisDeadZone()F default: default
+    getXAxisValue()F default: default
+    getYAxisDeadZone()F default: default
+    getYAxisValue()F default: default
+    getZAxisDeadZone()F default: default
+    getZAxisValue()F default: default
+    isButtonPressed(I)Z default: default
+org/lwjgl/util/jinput/KeyMap default=1 keep-constructor=1
+    map(I)Lnet/java/games/input/Component$Identifier$Key; default: default
+org/lwjgl/util/jinput/LWJGLEnvironmentPlugin default=2 keep-constructor=1
+    getControllers()[Lnet/java/games/input/Controller; default: default
+    isSupported()Z default: default
+org/lwjgl/util/jinput/LWJGLKeyboard default=2 keep-constructor=1 void=1
+    createComponents()[Lnet/java/games/input/Component; default: default
+    getNextDeviceEvent(Lnet/java/games/input/Event;)Z default: default
+org/lwjgl/util/jinput/LWJGLKeyboard$Key default=3 keep-constructor=1 void=1
+    isAnalog()Z default: default
+    isRelative()Z default: default
+    poll()F default: default
+org/lwjgl/util/jinput/LWJGLMouse default=3 keep-constructor=1 void=2
+    createComponents()[Lnet/java/games/input/Component; default: default
+    getNextDeviceEvent(Lnet/java/games/input/Event;)Z default: default
+    map(I)Lorg/lwjgl/util/jinput/LWJGLMouse$Button; default: default
+org/lwjgl/util/jinput/LWJGLMouse$Axis default=3 keep-constructor=1
+    isAnalog()Z default: default
+    isRelative()Z default: default
+    poll()F default: default
+org/lwjgl/util/jinput/LWJGLMouse$Button default=3 keep-constructor=1 void=1
+    isAnalog()Z default: default
+    isRelative()Z default: default
+    poll()F default: default
+org/lwjgl/util/mapped/CacheLinePad keep-abstract-interface-method=2
+org/lwjgl/util/mapped/CacheLineSize default=4 keep-constructor=1 nio-buffer=1 void=2
+    doTest(IIILjava/nio/IntBuffer;Ljava/util/concurrent/ExecutorCompletionService;)J default: default
+    getCacheLineSize()I default: default
+    memoryLoop(IILjava/nio/IntBuffer;I)J default: default
+    waitForResults(ILjava/util/concurrent/ExecutorCompletionService;)J default: default
+org/lwjgl/util/mapped/CacheLineSize$1 default=2 keep-constructor=1
+    call()Ljava/lang/Long; default: default
+    call()Ljava/lang/Object; default: default
+org/lwjgl/util/mapped/CacheUtil default=1 guarded-static-init=1 keep-constructor=1 nio-buffer=7 object=1
+    createPointerBuffer(I)Lorg/lwjgl/PointerBuffer; object: new PointerBuffer
+    getCacheLineSize()I default: default
+org/lwjgl/util/mapped/MappedField keep-abstract-interface-method=2
+org/lwjgl/util/mapped/MappedForeach default=1 keep-constructor=1
+    iterator()Ljava/util/Iterator; default: default
+org/lwjgl/util/mapped/MappedForeach$1 default=2 keep-constructor=1 object=1 void=1
+    hasNext()Z default: default
+    next()Ljava/lang/Object; default: default
+    next()Lorg/lwjgl/util/mapped/MappedObject; object: new MappedObject
+org/lwjgl/util/mapped/MappedHelper default=32 keep-constructor=1 nio-buffer=1 object=2 void=39
+    aget(J)J default: default
+    aget(Lorg/lwjgl/util/mapped/MappedObject;I)J default: default
+    bget(J)B default: default
+    bget(Lorg/lwjgl/util/mapped/MappedObject;I)B default: default
+    bvget(J)B default: default
+    bvget(Lorg/lwjgl/util/mapped/MappedObject;I)B default: default
+    cget(J)C default: default
+    cget(Lorg/lwjgl/util/mapped/MappedObject;I)C default: default
+    cvget(J)C default: default
+    cvget(Lorg/lwjgl/util/mapped/MappedObject;I)C default: default
+    dget(J)D default: default
+    dget(Lorg/lwjgl/util/mapped/MappedObject;I)D default: default
+    dup(Lorg/lwjgl/util/mapped/MappedObject;Lorg/lwjgl/util/mapped/MappedObject;)Lorg/lwjgl/util/mapped/MappedObject; object: new MappedObject
+    dvget(J)D default: default
+    dvget(Lorg/lwjgl/util/mapped/MappedObject;I)D default: default
+    fget(J)F default: default
+    fget(Lorg/lwjgl/util/mapped/MappedObject;I)F default: default
+    fvget(J)F default: default
+    fvget(Lorg/lwjgl/util/mapped/MappedObject;I)F default: default
+    get_view(Lorg/lwjgl/util/mapped/MappedObject;I)I default: default
+    get_view_shift(Lorg/lwjgl/util/mapped/MappedObject;I)I default: default
+    iget(J)I default: default
+    iget(Lorg/lwjgl/util/mapped/MappedObject;I)I default: default
+    ivget(J)I default: default
+    ivget(Lorg/lwjgl/util/mapped/MappedObject;I)I default: default
+    jget(J)J default: default
+    jget(Lorg/lwjgl/util/mapped/MappedObject;I)J default: default
+    jvget(J)J default: default
+    jvget(Lorg/lwjgl/util/mapped/MappedObject;I)J default: default
+    sget(J)S default: default
+    sget(Lorg/lwjgl/util/mapped/MappedObject;I)S default: default
+    slice(Lorg/lwjgl/util/mapped/MappedObject;Lorg/lwjgl/util/mapped/MappedObject;)Lorg/lwjgl/util/mapped/MappedObject; object: new MappedObject
+    svget(J)S default: default
+    svget(Lorg/lwjgl/util/mapped/MappedObject;I)S default: default
+org/lwjgl/util/mapped/MappedObject default=7 fluent=2 guarded-static-init=1 keep-constructor=1 nio-buffer-empty=1 object=3 void=7
+    asArray()[Lorg/lwjgl/util/mapped/MappedObject; default: default
+    backingByteBuffer()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    capacity()I default: default
+    foreach(Lorg/lwjgl/util/mapped/MappedObject;)Ljava/lang/Iterable; default: default
+    foreach(Lorg/lwjgl/util/mapped/MappedObject;I)Ljava/lang/Iterable; default: default
+    getAlign()I default: default
+    getSizeof()I default: default
+    getViewAddress(I)J default: default
+    malloc(I)Lorg/lwjgl/util/mapped/MappedObject; object: new MappedObject
+    map(JI)Lorg/lwjgl/util/mapped/MappedObject; object: new MappedObject
+    map(Ljava/nio/ByteBuffer;)Lorg/lwjgl/util/mapped/MappedObject; object: new MappedObject
+org/lwjgl/util/mapped/MappedObjectClassLoader default=5 guarded-static-init=1 keep-constructor=1 void=1
+    copyOf([BI)[B default: default
+    fork(Ljava/lang/Class;[Ljava/lang/String;)Z default: default
+    loadClass(Ljava/lang/String;Z)Ljava/lang/Class; default: default
+    loadMappedObject()Ljava/lang/Class; default: default
+    readStream(Ljava/io/InputStream;)[B default: default
+org/lwjgl/util/mapped/MappedObjectTransformer default=24 guarded-static-init=1 keep-constructor=1 object=1 void=6
+    generateAddressInstructions(Lorg/objectweb/asm/tree/FieldInsnNode;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateByteBufferInstructions(Lorg/objectweb/asm/tree/FieldInsnNode;Lorg/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo;J)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateCopyRangeInstructions(Lorg/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateCopyToInstructions(Lorg/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateDupInstructions(Lorg/objectweb/asm/tree/MethodInsnNode;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateFieldInstructions(Lorg/objectweb/asm/tree/FieldInsnNode;Lorg/lwjgl/util/mapped/MappedObjectTransformer$FieldInfo;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateMapInstructions(Lorg/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo;Ljava/lang/String;ZZ)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateRunViewConstructorInstructions(Lorg/objectweb/asm/tree/MethodInsnNode;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateSIZEOFInstructions(Lorg/objectweb/asm/tree/FieldInsnNode;Lorg/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateSetViewInstructions(Lorg/objectweb/asm/tree/FieldInsnNode;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateSliceInstructions(Lorg/objectweb/asm/tree/MethodInsnNode;)Lorg/objectweb/asm/tree/InsnList; default: default
+    generateViewInstructions(Lorg/objectweb/asm/tree/FieldInsnNode;Lorg/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo;)Lorg/objectweb/asm/tree/InsnList; default: default
+    getIntNode(I)Lorg/objectweb/asm/tree/AbstractInsnNode; default: default
+    getMethodGenAdapter(Ljava/lang/String;Lorg/objectweb/asm/ClassVisitor;)Lorg/objectweb/asm/ClassAdapter; default: default
+    getOpcodeName(Lorg/objectweb/asm/tree/AbstractInsnNode;)Ljava/lang/String; default: default
+    getterName(Ljava/lang/String;)Ljava/lang/String; default: default
+    jvmClassName(Ljava/lang/Class;)Ljava/lang/String; default: default
+    registerField(ZLjava/lang/String;JLjava/lang/reflect/Field;)Lorg/lwjgl/util/mapped/MappedObjectTransformer$FieldInfo; object: new MappedObjectTransformer$FieldInfo
+    replace(Lorg/objectweb/asm/tree/InsnList;ILorg/objectweb/asm/tree/AbstractInsnNode;Lorg/objectweb/asm/tree/InsnList;)I default: default
+    setterName(Ljava/lang/String;)Ljava/lang/String; default: default
+    transformArrayAccess(Lorg/objectweb/asm/tree/InsnList;ILjava/util/Map;Lorg/objectweb/asm/tree/VarInsnNode;Lorg/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo;I)I default: default
+    transformFieldAccess(Lorg/objectweb/asm/tree/FieldInsnNode;)Lorg/objectweb/asm/tree/InsnList; default: default
+    transformMappedAPI(Ljava/lang/String;[B)[B default: default
+    transformMappedObject([B)[B default: default
+    transformMethodCall(Lorg/objectweb/asm/tree/InsnList;ILjava/util/Map;Lorg/objectweb/asm/tree/MethodInsnNode;Lorg/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo;Ljava/util/Map;)I default: default
+org/lwjgl/util/mapped/MappedObjectTransformer$1 default=1 keep-constructor=1
+    visitMethod(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Lorg/objectweb/asm/MethodVisitor; default: default
+org/lwjgl/util/mapped/MappedObjectTransformer$2 default=1 keep-constructor=1
+    getCommonSuperClass(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; default: default
+org/lwjgl/util/mapped/MappedObjectTransformer$3 keep-constructor=1 void=9
+org/lwjgl/util/mapped/MappedObjectTransformer$FieldInfo default=1 keep-constructor=1
+    getAccessType()Ljava/lang/String; default: default
+org/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo default=1 keep-constructor=1
+    getPoT(I)I default: default
+org/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter default=6 keep-constructor=1
+    access$000(Lorg/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter;)Lorg/objectweb/asm/ClassVisitor; default: default
+    access$100(Lorg/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter;)Lorg/objectweb/asm/ClassVisitor; default: default
+    access$200(Lorg/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter;)Lorg/objectweb/asm/ClassVisitor; default: default
+    access$300(Lorg/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter;)Lorg/objectweb/asm/ClassVisitor; default: default
+    visitField(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)Lorg/objectweb/asm/FieldVisitor; default: default
+    visitMethod(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Lorg/objectweb/asm/MethodVisitor; default: default
+org/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter$1 keep-constructor=1 void=1
+org/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter$2 default=1 keep-constructor=1 void=5
+    analyse()[Lorg/objectweb/asm/tree/analysis/Frame; default: default
+org/lwjgl/util/mapped/MappedObjectUnsafe default=1 guarded-static-init=1 keep-constructor=1 keep-unsafe-lookup=1 nio-buffer=1
+    getObjectFieldOffset(Ljava/lang/Class;Ljava/lang/String;)J default: default
+org/lwjgl/util/mapped/MappedSet keep-constructor=1 object=3
+    create(Lorg/lwjgl/util/mapped/MappedObject;Lorg/lwjgl/util/mapped/MappedObject;)Lorg/lwjgl/util/mapped/MappedSet2; object: new MappedSet2
+    create(Lorg/lwjgl/util/mapped/MappedObject;Lorg/lwjgl/util/mapped/MappedObject;Lorg/lwjgl/util/mapped/MappedObject;)Lorg/lwjgl/util/mapped/MappedSet3; object: new MappedSet3
+    create(Lorg/lwjgl/util/mapped/MappedObject;Lorg/lwjgl/util/mapped/MappedObject;Lorg/lwjgl/util/mapped/MappedObject;Lorg/lwjgl/util/mapped/MappedObject;)Lorg/lwjgl/util/mapped/MappedSet4; object: new MappedSet4
+org/lwjgl/util/mapped/MappedSet2 keep-constructor=1 void=2
+org/lwjgl/util/mapped/MappedSet3 keep-constructor=1 void=2
+org/lwjgl/util/mapped/MappedSet4 keep-constructor=1 void=2
+org/lwjgl/util/mapped/MappedType keep-abstract-interface-method=4
+org/lwjgl/util/vector/Matrix default=1 fluent=9 keep-constructor=1
+    determinant()F default: default
+org/lwjgl/util/vector/Matrix2f default=1 fluent=12 keep-constructor=2 keep-to-string=1 object=10
+    add(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+    determinant()F default: default
+    invert(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+    load(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+    mul(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+    negate(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+    setIdentity(Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+    setZero(Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+    sub(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+    transform(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)Lorg/lwjgl/util/vector/Vector2f; object: new Vector2f
+    transpose(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
+org/lwjgl/util/vector/Matrix3f default=1 fluent=12 keep-constructor=1 keep-to-string=1 object=10
+    add(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+    determinant()F default: default
+    invert(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+    load(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+    mul(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+    negate(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+    setIdentity(Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+    setZero(Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+    sub(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+    transform(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f; object: new Vector3f
+    transpose(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
+org/lwjgl/util/vector/Matrix4f default=2 fluent=20 keep-constructor=2 keep-to-string=1 object=14
+    add(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    determinant()F default: default
+    determinant3x3(FFFFFFFFF)F default: default
+    invert(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    load(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    mul(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    negate(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    rotate(FLorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    scale(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    setIdentity(Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    setZero(Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    sub(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    transform(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)Lorg/lwjgl/util/vector/Vector4f; object: new Vector4f
+    translate(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    translate(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+    transpose(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
+org/lwjgl/util/vector/Quaternion default=6 fluent=11 keep-constructor=3 keep-to-string=1 object=8 void=8
+    dot(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)F default: default
+    getW()F default: default
+    getX()F default: default
+    getY()F default: default
+    getZ()F default: default
+    lengthSquared()F default: default
+    mul(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+    mulInverse(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+    negate(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+    normalise(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+    scale(FLorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+    setFromMatrix(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+    setFromMatrix(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+    setIdentity(Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+org/lwjgl/util/vector/ReadableVector keep-abstract-interface-method=3
+org/lwjgl/util/vector/ReadableVector2f keep-abstract-interface-method=2
+org/lwjgl/util/vector/ReadableVector3f keep-abstract-interface-method=1
+org/lwjgl/util/vector/ReadableVector4f keep-abstract-interface-method=1
+org/lwjgl/util/vector/Vector default=2 fluent=5 keep-constructor=1
+    length()F default: default
+    lengthSquared()F default: default
+org/lwjgl/util/vector/Vector2f default=5 fluent=8 identity=1 keep-constructor=3 keep-to-string=1 object=2 void=3
+    add(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)Lorg/lwjgl/util/vector/Vector2f; object: new Vector2f
+    angle(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)F default: default
+    dot(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)F default: default
+    getX()F default: default
+    getY()F default: default
+    lengthSquared()F default: default
+    sub(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)Lorg/lwjgl/util/vector/Vector2f; object: new Vector2f
+org/lwjgl/util/vector/Vector3f default=6 fluent=8 identity=1 keep-constructor=3 keep-to-string=1 object=3 void=5
+    add(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f; object: new Vector3f
+    angle(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)F default: default
+    cross(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f; object: new Vector3f
+    dot(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)F default: default
+    getX()F default: default
+    getY()F default: default
+    getZ()F default: default
+    lengthSquared()F default: default
+    sub(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f; object: new Vector3f
+org/lwjgl/util/vector/Vector4f default=7 fluent=8 identity=1 keep-constructor=3 keep-to-string=1 object=2 void=7
+    add(Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)Lorg/lwjgl/util/vector/Vector4f; object: new Vector4f
+    angle(Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)F default: default
+    dot(Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)F default: default
+    getW()F default: default
+    getX()F default: default
+    getY()F default: default
+    getZ()F default: default
+    lengthSquared()F default: default
+    sub(Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)Lorg/lwjgl/util/vector/Vector4f; object: new Vector4f
+org/lwjgl/util/vector/WritableVector2f keep-abstract-interface-method=3
+org/lwjgl/util/vector/WritableVector3f keep-abstract-interface-method=2
+org/lwjgl/util/vector/WritableVector4f keep-abstract-interface-method=2

@@ -2,6 +2,8 @@ description = 'The parts of the runtime of the patched LWJGL that do not depend 
 
 dependencies {
     compileOnly project(':headlessmc-lwjgl-api')
+    // only for compile time constants, which javac inlines, the runtime must not refer to LWJGL 3 classes
+    compileOnly libs.lwjgl.opengl
 }
 
 tasks.named('compileJava', JavaCompile) {

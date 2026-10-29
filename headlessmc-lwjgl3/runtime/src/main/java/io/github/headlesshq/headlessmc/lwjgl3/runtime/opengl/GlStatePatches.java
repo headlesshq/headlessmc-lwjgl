@@ -1,6 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
 
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.opengl.GlState;
 
 import static org.lwjgl.opengl.GL46C.*;
 

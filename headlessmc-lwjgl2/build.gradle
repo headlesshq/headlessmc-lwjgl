@@ -1,0 +1,12 @@
+description = 'Patched, headless LWJGL 2 jars that never load native libraries.'
+
+ext.patchedLwjgl = [
+    flavor         : 'lwjgl2',
+    dependencies   : libs.bundles.lwjgl2.get(),
+    version        : libs.versions.lwjgl2.get(),
+    compatVersions : providers.gradleProperty('lwjgl2.compatVersions').get().split(',').collect { it.trim() },
+    runtime        : ':headlessmc-lwjgl2-runtime',
+    japicmp        : libs.japicmp,
+    japicmpExcludes: [],
+]
+apply from: rootProject.file('gradle/patched-lwjgl.gradle')

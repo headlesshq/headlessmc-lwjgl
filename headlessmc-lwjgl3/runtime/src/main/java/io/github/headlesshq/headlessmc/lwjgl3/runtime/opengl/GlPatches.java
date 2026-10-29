@@ -2,6 +2,8 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
 
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Dummies;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.opengl.GlInfo;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.opengl.GlValues;
 import org.lwjgl.PointerBuffer;
 import org.lwjgl.opengl.GLCapabilities;
 

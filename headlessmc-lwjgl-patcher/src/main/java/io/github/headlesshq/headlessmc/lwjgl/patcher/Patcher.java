@@ -138,11 +138,20 @@ public final class Patcher {
         return result;
     }
 
+    /**
+     * Compares versions like {@code 3.3.3} or {@code 2.9.2-nightly-20140822} part by part, numeric parts as numbers.
+     */
     static int compareVersions(String first, String second) {
-        String[] a = first.split("\\.");
-        String[] b = second.split("\\.");
+        String[] a = first.split("[.-]");
+        String[] b = second.split("[.-]");
         for (int i = 0; i < Math.max(a.length, b.length); i++) {
-            int difference = Integer.compare(i < a.length ? Integer.parseInt(a[i]) : 0, i < b.length ? Integer.parseInt(b[i]) : 0);
+            if (i >= a.length || i >= b.length) {
+                return Integer.compare(a.length, b.length);
+            }
+
+            int difference = a[i].matches("\\d+") && b[i].matches("\\d+")
+                ? Long.compare(Long.parseLong(a[i]), Long.parseLong(b[i]))
+                : a[i].compareTo(b[i]);
             if (difference != 0) {
                 return difference;
             }
@@ -185,7 +194,8 @@ public final class Patcher {
      * Reads the runtime jars and assigns every runtime package to the module it is embedded into: the common runtime
      * package and the root package of a flavour runtime ({@code ...lwjgl3.runtime}) go into the core module
      * {@code lwjgl}, a sub package ({@code ...lwjgl3.runtime.glfw}) into the module of the same name
-     * ({@code lwjgl-glfw}).
+     * ({@code lwjgl-glfw}). Sub packages of the common runtime go into the core module if the flavour has no such
+     * module, like LWJGL 2, which has OpenGL in its core jar.
      */
     private List<ClassNode> readRuntime() throws IOException {
         List<ClassNode> result = new ArrayList<>();
@@ -215,6 +225,10 @@ public final class Patcher {
                     int subStart = runtimeRoot + RUNTIME_SEGMENT.length();
                     String sub = pkg.length() > subStart ? pkg.substring(subStart) : "";
                     String moduleName = sub.isEmpty() ? "lwjgl" : "lwjgl-" + sub;
+                    if (path.startsWith(Behaviour.RUNTIME) && !modules.containsKey(moduleName)) {
+                        moduleName = "lwjgl";
+                    }
+
                     Module module = modules.get(moduleName);
                     if (module == null) {
                         errors.add("Runtime package " + pkg + " has no matching LWJGL module " + moduleName);

@@ -135,7 +135,10 @@ public final class ClassPatcher {
         il.add(end);
         il.add(new InsnNode(RETURN));
         il.add(handler);
-        il.add(new FrameNode(F_SAME1, 0, null, 1, new Object[]{"java/lang/Throwable"}));
+        if ((node.version & 0xFFFF) >= V1_6) {
+            il.add(new FrameNode(F_SAME1, 0, null, 1, new Object[]{"java/lang/Throwable"}));
+        }
+
         il.add(new LdcInsnNode(Type.getObjectType(node.name).getClassName()));
         il.add(new MethodInsnNode(INVOKESTATIC, Behaviour.RUNTIME + "StaticInit", "failed", STATIC_INIT_FAILED_DESC, false));
         il.add(new InsnNode(RETURN));

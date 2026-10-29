@@ -93,8 +93,8 @@ tasks.register('glValueTable', JavaExec) {
     mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.probe.GlValueTable'
     outputs.upToDateWhen { false }
     def name = providers.gradleProperty('probe.name').orElse('mesa-llvmpipe')
-    def output = project(':headlessmc-lwjgl3-runtime').layout.projectDirectory
-        .file('src/main/resources/io/github/headlesshq/headlessmc/lwjgl3/runtime/opengl/gl-values.properties')
+    def output = project(':headlessmc-lwjgl-runtime').layout.projectDirectory
+        .file('src/main/resources/io/github/headlesshq/headlessmc/lwjgl/runtime/opengl/gl-values.properties')
     argumentProviders.add({
         ['--recording', layout.projectDirectory.file("recordings/${name.get()}/glfw-opengl.jsonl.gz").asFile.absolutePath,
          '--output', output.asFile.absolutePath]

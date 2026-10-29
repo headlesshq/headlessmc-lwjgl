@@ -20,5 +20,9 @@ include 'headlessmc-lwjgl3'
 include 'headlessmc-lwjgl3-runtime'
 project(':headlessmc-lwjgl3-runtime').projectDir = file('headlessmc-lwjgl3/runtime')
 
+include 'headlessmc-lwjgl2'
+include 'headlessmc-lwjgl2-runtime'
+project(':headlessmc-lwjgl2-runtime').projectDir = file('headlessmc-lwjgl2/runtime')
+
 include 'lwjgl3-probe'
 project(':lwjgl3-probe').projectDir = file('tools/lwjgl3-probe')

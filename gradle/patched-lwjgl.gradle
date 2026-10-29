@@ -1,0 +1,249 @@
+/*
+ * Shared build logic of the patched LWJGL flavours. The applying project sets ext.patchedLwjgl first:
+ *   flavor          'lwjgl3' or 'lwjgl2', also the artifact id prefix, headlessmc-<flavor>[-<module>]
+ *   dependencies    the LWJGL module dependencies to patch
+ *   version         their version
+ *   compatVersions  older versions whose public API is re-added and checked with japicmp
+ *   runtime         the project path of the flavour runtime
+ *   japicmpExcludes packages excluded from the japicmp comparison
+ * It registers patchLwjgl, updateCatalogLock, the japicmp gate checkApiCompatibility and one publication per module,
+ * and exposes the patched jars as ext.patchedJars and their directory as ext.patchedDirectory.
+ */
+def settings = project.ext.patchedLwjgl
+def flavor = settings.flavor
+
+configurations {
+    lwjgl {
+        transitive = false
+        canBeConsumed = false
+    }
+    patcher {
+        canBeConsumed = false
+    }
+    runtimeJar {
+        canBeConsumed = false
+    }
+    japicmp {
+        canBeConsumed = false
+    }
+}
+
+dependencies {
+    settings.dependencies.each { lwjgl it }
+    patcher project(':headlessmc-lwjgl-patcher')
+    runtimeJar project(':headlessmc-lwjgl-runtime')
+    runtimeJar project(settings.runtime)
+    japicmp settings.japicmp
+
+    testImplementation project(':headlessmc-lwjgl-api')
+}
+
+def lwjglVersion = settings.version
+def patchedDirectory = layout.buildDirectory.dir('patched')
+def lockDirectory = layout.projectDirectory.dir('catalog')
+
+def lwjglInputs = configurations.lwjgl.incoming.artifacts.resolvedArtifacts.map { artifacts ->
+    artifacts.collect { artifact ->
+        def id = artifact.id.componentIdentifier as ModuleComponentIdentifier
+        "${id.module}=${artifact.file.absolutePath}"
+    }
+}
+
+def compatVersions = settings.compatVersions
+def compatConfigurations = compatVersions.collect { compatVersion ->
+    configurations.create("lwjglCompat${compatVersion.replace('.', '_')}") {
+        transitive = false
+        canBeConsumed = false
+        description = "The LWJGL ${compatVersion} jars whose public API is re-added to the patched jars."
+        settings.dependencies.each { dependency ->
+            dependencies.add(project.dependencies.create("${dependency.module.group}:${dependency.module.name}:${compatVersion}"))
+        }
+    }
+}
+
+def compatArtifacts = compatConfigurations.collect { configuration ->
+    configuration.incoming.artifactView { lenient = true }.artifacts
+}
+
+def compatInputs = providers.provider {
+    compatArtifacts.collectMany { artifacts ->
+        artifacts.artifacts.collect { artifact ->
+            def id = artifact.id.componentIdentifier as ModuleComponentIdentifier
+            "${id.version}:${id.module}=${artifact.file.absolutePath}"
+        }
+    }
+}
+
+def registerPatchTask = { String name, boolean updateLock ->
+    tasks.register(name, JavaExec) {
+        group = 'build'
+        classpath = configurations.patcher
+        mainClass = 'io.github.headlesshq.headlessmc.lwjgl.patcher.Main'
+        inputs.files(configurations.lwjgl)
+        inputs.files(configurations.runtimeJar)
+        compatArtifacts.each { inputs.files(it.artifactFiles) }
+        inputs.property('version', project.version)
+        if (updateLock) {
+            description = 'Writes the behaviour catalog lock files from the current rules, review the diff afterwards.'
+            outputs.dir(lockDirectory)
+            outputs.upToDateWhen { false }
+        } else {
+            description = 'Patches the LWJGL jars and checks the behaviour catalog against the lock files.'
+            inputs.dir(lockDirectory).optional()
+        }
+        outputs.dir(patchedDirectory)
+        argumentProviders.add({
+            def args = []
+            lwjglInputs.get().each { args += ['--input', it] }
+            configurations.runtimeJar.files.each { args += ['--runtime', it.absolutePath] }
+            args += ['--output', patchedDirectory.get().asFile.absolutePath]
+            args += ['--lock', lockDirectory.asFile.absolutePath]
+            args += ['--lwjgl-version', lwjglVersion]
+            args += ['--version', project.version.toString()]
+            compatInputs.get().each { args += ['--compat', it] }
+            if (updateLock) {
+                args += ['--update-lock']
+            }
+            args
+        } as CommandLineArgumentProvider)
+    }
+}
+
+def patchLwjgl = registerPatchTask('patchLwjgl', false)
+registerPatchTask('updateCatalogLock', true)
+
+def patchedJars = fileTree(patchedDirectory) {
+    include '*.jar'
+    builtBy patchLwjgl
+}
+
+project.ext.patchedDirectory = patchedDirectory
+project.ext.patchedJars = patchedJars
+
+dependencies {
+    testImplementation patchedJars
+}
+
+tasks.named('compileTestJava', JavaCompile) {
+    options.release = 8
+}
+
+tasks.withType(Test).configureEach {
+    dependsOn patchLwjgl
+    systemProperty "hmc.${flavor}.test.patchedDirectory", patchedDirectory.get().asFile.absolutePath
+    systemProperty 'org.lwjgl.librarypath', layout.buildDirectory.dir('no-natives').get().asFile.absolutePath
+}
+
+[8, 17, 21].each { javaVersion ->
+    def testOnJava = tasks.register("testJava${javaVersion}", Test) {
+        group = 'verification'
+        description = "Runs the tests against the patched jars on Java ${javaVersion}."
+        testClassesDirs = sourceSets.test.output.classesDirs
+        classpath = sourceSets.test.runtimeClasspath
+        javaLauncher = javaToolchains.launcherFor {
+            languageVersion = JavaLanguageVersion.of(javaVersion)
+        }
+    }
+
+    tasks.named('check') {
+        dependsOn testOnJava
+    }
+}
+
+
+def allowFile = layout.projectDirectory.file('catalog/api-compatibility.allow')
+def apiCompatibility = tasks.register('checkApiCompatibility', JavaExec) {
+    group = 'verification'
+    description = 'Checks the japicmp reports: the patched jars must be binary compatible with every LWJGL version in ' +
+        flavor + '.compatVersions, except for the changes listed in catalog/api-compatibility.allow.'
+    classpath = configurations.patcher
+    mainClass = 'io.github.headlesshq.headlessmc.lwjgl.patcher.ApiCompatibilityGate'
+    inputs.file(allowFile)
+    outputs.upToDateWhen { true }
+    argumentProviders.add({
+        def args = ['--allow', allowFile.asFile.absolutePath]
+        compatVersions.each { compatVersion ->
+            def report = layout.buildDirectory.file("reports/japicmp/${compatVersion}/report.xml").get().asFile
+            args += ['--report', "${compatVersion}=${report.absolutePath}"]
+        }
+        args
+    } as CommandLineArgumentProvider)
+}
+
+compatVersions.eachWithIndex { compatVersion, index ->
+    def oldJars = compatArtifacts[index].artifactFiles
+    def reportDirectory = layout.buildDirectory.dir("reports/japicmp/${compatVersion}")
+    def check = tasks.register("checkApiCompatibility${compatVersion.replace('.', '_')}", JavaExec) {
+        group = 'verification'
+        description = "Checks with japicmp that the patched jars are binary compatible with LWJGL ${compatVersion}."
+        dependsOn patchLwjgl
+        classpath = configurations.japicmp
+        mainClass = 'japicmp.JApiCmp'
+        inputs.files(oldJars)
+        inputs.files(patchedJars)
+        outputs.dir(reportDirectory)
+        argumentProviders.add({
+            def reports = reportDirectory.get().asFile
+            [
+                '--old', oldJars.files.collect { it.absolutePath }.join(';'),
+                '--new', patchedJars.files.collect { it.absolutePath }.join(';'),
+                '--only-incompatible',
+                *settings.japicmpExcludes.collectMany { ['--exclude', it] },
+                '--ignore-missing-classes',
+                '-a', 'protected',
+                '--html-file', new File(reports, 'report.html').absolutePath,
+                '--xml-file', new File(reports, 'report.xml').absolutePath,
+            ]
+        } as CommandLineArgumentProvider)
+        standardOutput = OutputStream.nullOutputStream()
+        doFirst {
+            reportDirectory.get().asFile.mkdirs()
+        }
+    }
+
+    apiCompatibility.configure {
+        dependsOn check
+        inputs.dir(reportDirectory)
+    }
+}
+
+tasks.named('check') {
+    dependsOn apiCompatibility
+}
+
+tasks.named('jar') {
+    enabled = false
+}
+
+def patchedModules = settings.dependencies.collect { it.module.name }
+
+/**
+ * One publication per patched LWJGL module: org.lwjgl:lwjgl-glfw becomes io.github.headlesshq:headlessmc-lwjgl3-glfw,
+ * org.lwjgl.lwjgl:lwjgl_util becomes io.github.headlesshq:headlessmc-lwjgl2-util.
+ * The core module depends on the input API, every other module on the core module.
+ */
+publishing {
+    publications {
+        patchedModules.each { module ->
+            def suffix = module == 'lwjgl' ? '' : '-' + module.substring('lwjgl'.length() + 1)
+            create("patched${suffix.replace('-', '_')}", MavenPublication) {
+                artifactId = "headlessmc-${flavor}${suffix}"
+                artifact(patchedDirectory.map { it.file("${module}.jar") }) {
+                    builtBy patchLwjgl
+                }
+                pom {
+                    name = "HeadlessMc ${flavor} ${module}"
+                    description = "Headless ${module} ${lwjglVersion}, every method patched, no native libraries."
+                    withXml {
+                        def dependencies = asNode().appendNode('dependencies')
+                        def dependency = dependencies.appendNode('dependency')
+                        dependency.appendNode('groupId', project.group)
+                        dependency.appendNode('artifactId', module == 'lwjgl' ? 'headlessmc-lwjgl-api' : "headlessmc-${flavor}".toString())
+                        dependency.appendNode('version', project.version)
+                        dependency.appendNode('scope', 'runtime')
+                    }
+                }
+            }
+        }
+    }
+}

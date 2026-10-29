@@ -3,6 +3,7 @@ asm = "9.11.1"
 japicmp = "0.26.5"
 junit = "5.14.4"
 lwjgl = "3.4.3"
+lwjgl2 = "2.9.4-nightly-20150209"
 
 [libraries]
 asm = { group = "org.ow2.asm", name = "asm", version.ref = "asm" }
@@ -28,8 +29,12 @@ lwjgl-tinyfd = { group = "org.lwjgl", name = "lwjgl-tinyfd", version.ref = "lwjg
 lwjgl-vma = { group = "org.lwjgl", name = "lwjgl-vma", version.ref = "lwjgl" }
 lwjgl-vulkan = { group = "org.lwjgl", name = "lwjgl-vulkan", version.ref = "lwjgl" }
 
+lwjgl2 = { group = "org.lwjgl.lwjgl", name = "lwjgl", version.ref = "lwjgl2" }
+lwjgl2-util = { group = "org.lwjgl.lwjgl", name = "lwjgl_util", version.ref = "lwjgl2" }
+
 [bundles]
 lwjgl = [
     "lwjgl", "lwjgl-freetype", "lwjgl-glfw", "lwjgl-jemalloc", "lwjgl-openal", "lwjgl-opengl", "lwjgl-sdl",
     "lwjgl-shaderc", "lwjgl-spvc", "lwjgl-stb", "lwjgl-tinyfd", "lwjgl-vma", "lwjgl-vulkan"
 ]
+lwjgl2 = ["lwjgl2", "lwjgl2-util"]

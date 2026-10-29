@@ -1,4 +1,4 @@
-package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
+package io.github.headlesshq.headlessmc.lwjgl.runtime.opengl;
 
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Config;
 

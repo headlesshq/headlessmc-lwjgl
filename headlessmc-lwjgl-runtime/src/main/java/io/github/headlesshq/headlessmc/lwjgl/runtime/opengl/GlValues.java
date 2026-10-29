@@ -1,4 +1,4 @@
-package io.github.headlesshq.headlessmc.lwjgl3.runtime.opengl;
+package io.github.headlesshq.headlessmc.lwjgl.runtime.opengl;
 
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Log;
@@ -7,13 +7,13 @@ import org.lwjgl.opengl.ATIMeminfo;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.GL14;
-import org.lwjgl.opengl.GL46C;
 import org.lwjgl.opengl.NVXGPUMemoryInfo;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -322,7 +322,7 @@ public final class GlValues {
 
     /**
      * Reads the values recorded from a real driver by the probe, see {@code tools/lwjgl3-probe}.
-     * The keys are the hexadecimal values of the parameters, since not every parameter has a name in {@code GL46C}.
+     * The keys are the hexadecimal values of the parameters, since not every parameter has a name in the core GL classes.
      */
     private static Map<Integer, double[]> recorded() {
         Map<Integer, double[]> result = new LinkedHashMap<>();
@@ -371,9 +371,42 @@ public final class GlValues {
         }
     }
 
+    /**
+     * @return the core classes declaring the GL constants: the {@code GL46C} hierarchy of LWJGL 3, or the
+     * {@code GL11} to {@code GL44} classes of LWJGL 2.
+     */
+    private static List<Class<?>> constantClasses() {
+        List<Class<?>> result = new ArrayList<>();
+        Class<?> core = load("org.lwjgl.opengl.GL46C");
+        if (core != null) {
+            for (Class<?> type = core; type != null && type != Object.class; type = type.getSuperclass()) {
+                result.add(type);
+            }
+
+            return result;
+        }
+
+        for (String version : new String[]{"11", "12", "13", "14", "15", "20", "21", "30", "31", "32", "33", "40", "41", "42", "43", "44"}) {
+            Class<?> type = load("org.lwjgl.opengl.GL" + version);
+            if (type != null) {
+                result.add(type);
+            }
+        }
+
+        return result;
+    }
+
+    private static Class<?> load(String name) {
+        try {
+            return Class.forName(name, false, GlValues.class.getClassLoader());
+        } catch (ClassNotFoundException | LinkageError e) {
+            return null;
+        }
+    }
+
     private static Map<String, Integer> constants() {
         Map<String, Integer> result = new HashMap<>();
-        for (Class<?> type = GL46C.class; type != null && type != Object.class; type = type.getSuperclass()) {
+        for (Class<?> type : constantClasses()) {
             for (Field field : type.getDeclaredFields()) {
                 int modifiers = field.getModifiers();
                 if (Modifier.isStatic(modifiers) && Modifier.isPublic(modifiers) && field.getType() == int.class
