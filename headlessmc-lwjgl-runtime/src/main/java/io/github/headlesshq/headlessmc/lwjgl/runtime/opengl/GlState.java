@@ -227,6 +227,20 @@ public final class GlState {
         }
     }
 
+    /**
+     * @param target {@code GL_FRAMEBUFFER}, {@code GL_DRAW_FRAMEBUFFER} or {@code GL_READ_FRAMEBUFFER}.
+     * @return the framebuffer bound to the target, 0 for the default framebuffer.
+     */
+    public static synchronized int boundFramebuffer(int target) {
+        double[] value = VALUES.get(target == GL_READ_FRAMEBUFFER ? GL_READ_FRAMEBUFFER_BINDING : GL_DRAW_FRAMEBUFFER_BINDING);
+        return value == null ? 0 : (int) value[0];
+    }
+
+    public static synchronized int boundRenderbuffer() {
+        double[] value = VALUES.get(GL_RENDERBUFFER_BINDING);
+        return value == null ? 0 : (int) value[0];
+    }
+
     private static int activeUnit() {
         double[] value = VALUES.get(GL_ACTIVE_TEXTURE);
         return value == null ? GL_TEXTURE0 : (int) value[0];

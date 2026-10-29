@@ -9,6 +9,8 @@ import org.lwjgl.opengl.GL14;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
+import org.lwjgl.opengl.GL42;
+import org.lwjgl.opengl.GL43;
 
 import java.nio.ByteBuffer;
 
@@ -93,6 +95,41 @@ class GlStateTest {
             GL13.glActiveTexture(GL13.GL_TEXTURE0);
             GLFW.glfwDestroyWindow(window);
         }
+    }
+
+    @Test
+    void textureParametersFramebuffersAndFormats() {
+        int texture = GL11.glGenTextures();
+        GL11.glBindTexture(GL11.GL_TEXTURE_2D, texture);
+        assertEquals(GL11.GL_REPEAT, GL11.glGetTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_WRAP_S));
+        GL11.glTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER, GL11.GL_NEAREST);
+        assertEquals(GL11.GL_NEAREST, GL11.glGetTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER));
+        GL11.glBindTexture(GL11.GL_TEXTURE_2D, GL11.glGenTextures());
+        assertEquals(GL11.GL_NEAREST_MIPMAP_LINEAR, GL11.glGetTexParameteri(GL11.GL_TEXTURE_2D, GL11.GL_TEXTURE_MIN_FILTER));
+
+        GL30.glBindFramebuffer(GL30.GL_FRAMEBUFFER, 0);
+        assertEquals(GL30.GL_FRAMEBUFFER_DEFAULT, GL30.glGetFramebufferAttachmentParameteri(GL30.GL_FRAMEBUFFER, GL11.GL_BACK,
+                                                                                            GL30.GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE));
+        int framebuffer = GL30.glGenFramebuffers();
+        GL30.glBindFramebuffer(GL30.GL_FRAMEBUFFER, framebuffer);
+        GL30.glFramebufferTexture2D(GL30.GL_FRAMEBUFFER, GL30.GL_COLOR_ATTACHMENT0, GL11.GL_TEXTURE_2D, texture, 0);
+        assertEquals(GL11.GL_TEXTURE, GL30.glGetFramebufferAttachmentParameteri(GL30.GL_FRAMEBUFFER, GL30.GL_COLOR_ATTACHMENT0,
+                                                                                GL30.GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE));
+        assertEquals(texture, GL30.glGetFramebufferAttachmentParameteri(GL30.GL_FRAMEBUFFER, GL30.GL_COLOR_ATTACHMENT0,
+                                                                        GL30.GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME));
+        assertEquals(GL11.GL_NONE, GL30.glGetFramebufferAttachmentParameteri(GL30.GL_FRAMEBUFFER, GL30.GL_DEPTH_ATTACHMENT,
+                                                                             GL30.GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE));
+        assertEquals(GL30.GL_FRAMEBUFFER_COMPLETE, GL30.glCheckFramebufferStatus(GL30.GL_FRAMEBUFFER));
+
+        int renderbuffer = GL30.glGenRenderbuffers();
+        GL30.glBindRenderbuffer(GL30.GL_RENDERBUFFER, renderbuffer);
+        GL30.glRenderbufferStorage(GL30.GL_RENDERBUFFER, GL30.GL_DEPTH24_STENCIL8, 854, 480);
+        assertEquals(854, GL30.glGetRenderbufferParameteri(GL30.GL_RENDERBUFFER, GL30.GL_RENDERBUFFER_WIDTH));
+        assertEquals(GL30.GL_DEPTH24_STENCIL8, GL30.glGetRenderbufferParameteri(GL30.GL_RENDERBUFFER, GL30.GL_RENDERBUFFER_INTERNAL_FORMAT));
+        GL30.glBindFramebuffer(GL30.GL_FRAMEBUFFER, 0);
+
+        assertEquals(GL11.GL_TRUE, GL42.glGetInternalformati(GL11.GL_TEXTURE_2D, GL11.GL_RGBA8, GL43.GL_INTERNALFORMAT_SUPPORTED));
+        assertTrue(GL42.glGetInternalformati(GL30.GL_RENDERBUFFER, GL11.GL_RGBA8, GL13.GL_SAMPLES) >= 4);
     }
 
 }
