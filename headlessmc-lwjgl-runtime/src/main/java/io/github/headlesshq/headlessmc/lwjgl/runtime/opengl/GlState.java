@@ -207,6 +207,16 @@ public final class GlState {
         }
     }
 
+    /**
+     * @param target a buffer target, e.g. {@code GL_ARRAY_BUFFER}.
+     * @return the buffer bound to the target.
+     */
+    public static synchronized int boundBuffer(int target) {
+        Integer binding = BUFFER_BINDINGS.get(target);
+        double[] value = binding == null ? null : VALUES.get(binding);
+        return value == null ? 0 : (int) value[0];
+    }
+
     public static synchronized void bindFramebuffer(int target, int framebuffer) {
         if (target == GL_FRAMEBUFFER || target == GL_DRAW_FRAMEBUFFER) {
             set(GL_DRAW_FRAMEBUFFER_BINDING, framebuffer);

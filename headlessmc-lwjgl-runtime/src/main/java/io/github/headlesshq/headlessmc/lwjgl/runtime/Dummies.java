@@ -7,6 +7,7 @@ import java.lang.reflect.Proxy;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Predicate;
+import java.util.regex.Pattern;
 
 /**
  * Creates dummy instances of patched LWJGL classes.
@@ -17,6 +18,11 @@ public final class Dummies {
     public static final String FACTORY = "hmc$dummy";
 
     private static final Map<Class<?>, Object> PROXIES = new ConcurrentHashMap<>();
+    /**
+     * Methods of allocator interfaces like {@code MemoryUtil.MemoryAllocator}, which return a nonzero address, like the
+     * patched allocation functions, because callers treat 0 as out of memory.
+     */
+    private static final Pattern ALLOCATION = Pattern.compile("malloc|calloc|realloc|aligned_alloc|alloc|allocate");
 
     private Dummies() {
         throw new AssertionError();
@@ -38,7 +44,8 @@ public final class Dummies {
 
     /**
      * Returns a proxy for an LWJGL interface, whose methods return {@code 0}, {@code false}, {@code ""} or
-     * {@code null} and whose {@code equals}/{@code hashCode} are identity based.
+     * {@code null}, allocation methods a fake nonzero address, and whose {@code equals}/{@code hashCode} are identity
+     * based.
      * One proxy is created per interface and reused.
      *
      * @param type the interface.
@@ -58,6 +65,10 @@ public final class Dummies {
                 case "toString":
                     return "HeadlessMc dummy " + type.getName();
                 default:
+                    if (method.getReturnType() == long.class && ALLOCATION.matcher(method.getName()).matches()) {
+                        return DummyBuffers.FAKE_ADDRESS;
+                    }
+
                     return defaultValue(method.getReturnType());
             }
         });

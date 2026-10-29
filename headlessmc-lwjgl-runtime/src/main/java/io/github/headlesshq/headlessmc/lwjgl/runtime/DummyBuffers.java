@@ -26,7 +26,7 @@ public final class DummyBuffers {
     public static final long FAKE_ADDRESS = 0x10000L;
     public static final long FAKE_ADDRESS_ALIGNMENT = 64L;
 
-    private static final int SMALL_THRESHOLD = Config.getInt("buffers.smallThreshold", 4096);
+    private static final int SMALL_THRESHOLD = Config.getInt("buffers.smallThreshold", 16 * 1024 * 1024);
     private static final long WARN_THRESHOLD = Config.getLong("buffers.warnThreshold", 64L * 1024L * 1024L);
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 

@@ -641,27 +641,21 @@ org/lwjgl/opengl/GL13 guarded-static-init=1 handler=1 keep-constructor=1 void=99
 org/lwjgl/opengl/GL13C guarded-static-init=1 handler=1 keep-constructor=1 void=22
 org/lwjgl/opengl/GL14 guarded-static-init=1 handler=2 keep-constructor=1 void=96
 org/lwjgl/opengl/GL14C guarded-static-init=1 handler=2 keep-constructor=1 void=15
-org/lwjgl/opengl/GL15 default=8 guarded-static-init=1 handler=1 id=2 keep-constructor=1 nio-buffer=1 nio-buffer-empty=2 success=1 void=69
-    glGetBufferParameteri(II)I default: default
+org/lwjgl/opengl/GL15 default=7 guarded-static-init=1 handler=18 id=2 keep-constructor=1 nio-buffer=1 success=1 void=55
     glGetBufferPointer(II)J default: default
     glGetQueryObjecti(II)I default: default
     glGetQueryObjectui(II)I default: default
     glGetQueryi(II)I default: default
     glIsBuffer(I)Z default: default
     glIsQuery(I)Z default: default
-    glMapBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    glMapBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglMapBuffer(II)J default: default
-org/lwjgl/opengl/GL15C default=8 guarded-static-init=1 handler=1 id=2 keep-constructor=1 nio-buffer=1 nio-buffer-empty=2 success=1 void=69
-    glGetBufferParameteri(II)I default: default
+org/lwjgl/opengl/GL15C default=7 guarded-static-init=1 handler=18 id=2 keep-constructor=1 nio-buffer=1 success=1 void=55
     glGetBufferPointer(II)J default: default
     glGetQueryObjecti(II)I default: default
     glGetQueryObjectui(II)I default: default
     glGetQueryi(II)I default: default
     glIsBuffer(I)Z default: default
     glIsQuery(I)Z default: default
-    glMapBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    glMapBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglMapBuffer(II)J default: default
 org/lwjgl/opengl/GL20 default=22 guarded-static-init=1 handler=12 id=1 keep-constructor=1 void=183
     glGetActiveAttrib(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default

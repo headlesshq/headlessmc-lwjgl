@@ -2825,7 +2825,7 @@ org/lwjgl/system/MemoryStack$1 default=6 fake-address=4 keep-constructor=1 void=
     getMalloc()J default: default
     getRealloc()J default: default
 org/lwjgl/system/MemoryStack$DebugMemoryStack fluent=2 keep-constructor=1 void=3
-org/lwjgl/system/MemoryUtil default=101 fake-address=50 guarded-static-init=1 handler=46 interface-proxy=4 keep-constructor=1 lwjgl-buffer=12 nio-buffer=48 nio-buffer-empty=39 void=159
+org/lwjgl/system/MemoryUtil default=101 fake-address=50 guarded-static-init=1 handler=53 interface-proxy=4 keep-constructor=1 lwjgl-buffer=12 nio-buffer=41 nio-buffer-empty=39 void=159
     allocateUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     createBackend()Lorg/lwjgl/system/MemoryBackend; interface-proxy: proxy MemoryBackend
     encodeUTF8Safe(Ljava/lang/CharSequence;ZJI)I default: default

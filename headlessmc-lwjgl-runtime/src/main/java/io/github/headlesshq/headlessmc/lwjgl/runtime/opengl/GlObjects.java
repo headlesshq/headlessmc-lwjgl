@@ -8,14 +8,15 @@ import java.util.concurrent.ConcurrentHashMap;
 import static org.lwjgl.opengl.GL46C.*;
 
 /**
- * The properties of GL objects that applications query back: shader types, attached shaders, and the size and
- * internal format of texture images. Every shader compiles, every program links and validates, without info logs or
- * active resources.
+ * The properties of GL objects that applications query back: shader types, attached shaders, the size and
+ * internal format of texture images, and the size of buffer data, which also decides the size of mapped buffers.
+ * Every shader compiles, every program links and validates, without info logs or active resources.
  */
 public final class GlObjects {
     private static final Map<Integer, Integer> SHADER_TYPES = new ConcurrentHashMap<>();
     private static final Map<Integer, Integer> ATTACHED_SHADERS = new ConcurrentHashMap<>();
     private static final Map<Long, int[]> TEXTURE_LEVELS = new ConcurrentHashMap<>();
+    private static final Map<Integer, Long> BUFFER_SIZES = new ConcurrentHashMap<>();
 
     private GlObjects() {
         throw new AssertionError();
@@ -86,6 +87,34 @@ public final class GlObjects {
                 return image == null ? 0 : 1;
             case GL_TEXTURE_INTERNAL_FORMAT:
                 return image == null ? GL_RGBA : image[2];
+            default:
+                return 0;
+        }
+    }
+
+    /**
+     * Records the size of the data store of the buffer bound to the target, see {@code glBufferData}.
+     */
+    public static void bufferData(int target, long size) {
+        BUFFER_SIZES.put(GlState.boundBuffer(target), size);
+    }
+
+    /**
+     * @param target a buffer target.
+     * @return the size of the data store of the buffer bound to the target.
+     */
+    public static long bufferSize(int target) {
+        return BUFFER_SIZES.getOrDefault(GlState.boundBuffer(target), 0L);
+    }
+
+    public static int bufferValue(int target, int pname) {
+        switch (pname) {
+            case GL_BUFFER_SIZE:
+                return (int) Math.min(Integer.MAX_VALUE, bufferSize(target));
+            case GL_BUFFER_USAGE:
+                return GL_STATIC_DRAW;
+            case GL_BUFFER_ACCESS:
+                return GL_READ_WRITE;
             default:
                 return 0;
         }

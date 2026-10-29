@@ -1,17 +1,25 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime;
 
+import io.github.headlesshq.headlessmc.lwjgl.runtime.DummyBuffers;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.StructMemory;
 
 import org.lwjgl.system.Struct;
 
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.DoubleBuffer;
+import java.nio.FloatBuffer;
+import java.nio.IntBuffer;
+import java.nio.LongBuffer;
+import java.nio.ShortBuffer;
 import java.nio.charset.StandardCharsets;
 
 /**
  * Patches for the address based accessors of {@code org.lwjgl.system.MemoryUtil}, which only touch the struct memory
  * of {@link StructMemory}: other addresses read as 0 and ignore writes, strings at them are empty, and buffers that are
- * not struct memory have a fake address. {@code C long} and pointers are 64 bit.
+ * not struct memory have a fake address. {@code C long} and pointers are 64 bit. {@code memRealloc} keeps the contents
+ * and the position of the buffer, like the real one.
  */
 public final class MemoryAccessPatches {
     private static final String MEMORY_UTIL = "org/lwjgl/system/MemoryUtil";
@@ -228,6 +236,111 @@ public final class MemoryAccessPatches {
     @Patch(owner = MEMORY_UTIL)
     public static String memASCIISafe(long address) {
         return address == 0L ? null : StructMemory.string(address, StandardCharsets.US_ASCII);
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static ByteBuffer memRealloc(ByteBuffer ptr, int size) {
+        ByteBuffer buffer = DummyBuffers.bytes(size);
+        if (ptr != null) {
+            ByteBuffer old = ptr.duplicate();
+            old.clear();
+            old.limit(Math.min(old.capacity(), size));
+            buffer.put(old);
+            buffer.clear();
+            buffer.position(Math.min(ptr.position(), size));
+        }
+
+        return buffer;
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static ShortBuffer memRealloc(ShortBuffer ptr, int size) {
+        ShortBuffer buffer = DummyBuffers.shorts((long) size << 1);
+        if (ptr != null) {
+            ShortBuffer old = ptr.duplicate();
+            old.clear();
+            old.limit(Math.min(old.capacity(), size));
+            buffer.put(old);
+            buffer.clear();
+            buffer.position(Math.min(ptr.position(), size));
+        }
+
+        return buffer;
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static CharBuffer memRealloc(CharBuffer ptr, int size) {
+        CharBuffer buffer = DummyBuffers.chars((long) size << 1);
+        if (ptr != null) {
+            CharBuffer old = ptr.duplicate();
+            old.clear();
+            old.limit(Math.min(old.capacity(), size));
+            buffer.put(old);
+            buffer.clear();
+            buffer.position(Math.min(ptr.position(), size));
+        }
+
+        return buffer;
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static IntBuffer memRealloc(IntBuffer ptr, int size) {
+        IntBuffer buffer = DummyBuffers.ints((long) size << 2);
+        if (ptr != null) {
+            IntBuffer old = ptr.duplicate();
+            old.clear();
+            old.limit(Math.min(old.capacity(), size));
+            buffer.put(old);
+            buffer.clear();
+            buffer.position(Math.min(ptr.position(), size));
+        }
+
+        return buffer;
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static LongBuffer memRealloc(LongBuffer ptr, int size) {
+        LongBuffer buffer = DummyBuffers.longs((long) size << 3);
+        if (ptr != null) {
+            LongBuffer old = ptr.duplicate();
+            old.clear();
+            old.limit(Math.min(old.capacity(), size));
+            buffer.put(old);
+            buffer.clear();
+            buffer.position(Math.min(ptr.position(), size));
+        }
+
+        return buffer;
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static FloatBuffer memRealloc(FloatBuffer ptr, int size) {
+        FloatBuffer buffer = DummyBuffers.floats((long) size << 2);
+        if (ptr != null) {
+            FloatBuffer old = ptr.duplicate();
+            old.clear();
+            old.limit(Math.min(old.capacity(), size));
+            buffer.put(old);
+            buffer.clear();
+            buffer.position(Math.min(ptr.position(), size));
+        }
+
+        return buffer;
+    }
+
+    @Patch(owner = MEMORY_UTIL)
+    public static DoubleBuffer memRealloc(DoubleBuffer ptr, int size) {
+        DoubleBuffer buffer = DummyBuffers.doubles((long) size << 3);
+        if (ptr != null) {
+            DoubleBuffer old = ptr.duplicate();
+            old.clear();
+            old.limit(Math.min(old.capacity(), size));
+            buffer.put(old);
+            buffer.clear();
+            buffer.position(Math.min(ptr.position(), size));
+        }
+
+        return buffer;
     }
 
     @Patch(owner = MEMORY_UTIL)
