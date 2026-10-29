@@ -86,7 +86,10 @@ class StartupTest {
 
         AL.create();
         assertTrue(AL.isCreated());
-        assertNotEquals(0, AL10.alGenSources());
+        int source = AL10.alGenSources();
+        assertNotEquals(0, source);
+        AL10.alSourcePlay(source);
+        assertEquals(AL10.AL_STOPPED, AL10.alGetSourcei(source, AL10.AL_SOURCE_STATE));
         Display.destroy();
         assertFalse(Display.isCreated());
     }

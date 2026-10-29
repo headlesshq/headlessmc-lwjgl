@@ -9,7 +9,9 @@ import org.lwjgl.glfw.GLFWFramebufferSizeCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.openal.AL;
 import org.lwjgl.openal.ALC;
+import org.lwjgl.openal.AL10;
 import org.lwjgl.openal.ALC10;
+import org.lwjgl.openal.ALC11;
 import org.lwjgl.openal.ALCCapabilities;
 import org.lwjgl.openal.ALCapabilities;
 import org.lwjgl.opengl.GL;
@@ -204,6 +206,33 @@ class StartupTest {
         assertTrue(alcCapabilities.OpenALC11);
         ALCapabilities alCapabilities = AL.createCapabilities(alcCapabilities);
         assertTrue(alCapabilities.OpenAL11);
+
+        assertTrue(ALC10.alcGetInteger(device, ALC11.ALC_MONO_SOURCES) > 0);
+        assertNotNull(ALC10.alcGetString(device, ALC10.ALC_DEVICE_SPECIFIER));
+        int buffer = AL10.alGenBuffers();
+        AL10.alBufferData(buffer, AL10.AL_FORMAT_STEREO16, BufferUtils.createShortBuffer(8), 44100);
+        assertEquals(44100, AL10.alGetBufferi(buffer, AL10.AL_FREQUENCY));
+        assertEquals(2, AL10.alGetBufferi(buffer, AL10.AL_CHANNELS));
+        int source = AL10.alGenSources();
+        assertEquals(AL10.AL_INITIAL, AL10.alGetSourcei(source, AL10.AL_SOURCE_STATE));
+        AL10.alSourcei(source, AL10.AL_BUFFER, buffer);
+        AL10.alSourcef(source, AL10.AL_GAIN, 0.5f);
+        assertEquals(0.5f, AL10.alGetSourcef(source, AL10.AL_GAIN));
+        AL10.alSourcePlay(source);
+        assertEquals(AL10.AL_STOPPED, AL10.alGetSourcei(source, AL10.AL_SOURCE_STATE));
+
+        int stream = AL10.alGenSources();
+        AL10.alSourceQueueBuffers(stream, new int[]{buffer, buffer});
+        AL10.alSourcePlay(stream);
+        assertEquals(2, AL10.alGetSourcei(stream, AL10.AL_BUFFERS_PROCESSED));
+        assertEquals(buffer, AL10.alSourceUnqueueBuffers(stream));
+        assertEquals(1, AL10.alGetSourcei(stream, AL10.AL_BUFFERS_QUEUED));
+
+        AL10.alSourcei(source, AL10.AL_LOOPING, AL10.AL_TRUE);
+        AL10.alSourcePlay(source);
+        assertEquals(AL10.AL_PLAYING, AL10.alGetSourcei(source, AL10.AL_SOURCE_STATE));
+        AL10.alSourceStop(source);
+        assertEquals(AL10.AL_STOPPED, AL10.alGetSourcei(source, AL10.AL_SOURCE_STATE));
     }
 
 }

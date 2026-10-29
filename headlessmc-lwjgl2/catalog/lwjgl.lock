@@ -266,25 +266,18 @@ org/lwjgl/input/OpenGLPackageAccess$2 keep-bridge=1 keep-constructor=1 keep-pure
 org/lwjgl/openal/AL guarded-static-init=1 handler=5 keep-constructor=1 object=2 void=5
     getContext()Lorg/lwjgl/openal/ALCcontext; object: new ALCcontext
     getDevice()Lorg/lwjgl/openal/ALCdevice; object: new ALCdevice
-org/lwjgl/openal/AL10 default=36 id=4 keep-constructor=1 void=75
+org/lwjgl/openal/AL10 default=29 handler=28 id=4 keep-constructor=1 void=54
     alGetBoolean(I)Z default: default
-    alGetBufferf(II)F default: default
-    alGetBufferi(II)I default: default
     alGetDouble(I)D default: default
     alGetEnumValue(Ljava/lang/String;)I default: default
     alGetError()I default: default
     alGetFloat(I)F default: default
     alGetInteger(I)I default: default
-    alGetListenerf(I)F default: default
     alGetListeneri(I)I default: default
-    alGetSourcef(II)F default: default
-    alGetSourcei(II)I default: default
-    alGetString(I)Ljava/lang/String; default: default
     alIsBuffer(I)Z default: default
     alIsEnabled(I)Z default: default
     alIsExtensionPresent(Ljava/lang/String;)Z default: default
     alIsSource(I)Z default: default
-    alSourceUnqueueBuffers(I)I default: default
     nalGetBoolean(I)Z default: default
     nalGetBufferf(II)F default: default
     nalGetBufferi(II)I default: default
@@ -308,13 +301,12 @@ org/lwjgl/openal/AL11 default=4 keep-constructor=1 void=27
     alGetBufferi(II)I default: default
     nalGetBufferf(II)F default: default
     nalGetBufferi(II)I default: default
-org/lwjgl/openal/ALC10 default=12 guarded-static-init=1 id=2 keep-constructor=1 nio-buffer-empty=1 object=4 success=3 void=9
+org/lwjgl/openal/ALC10 default=11 guarded-static-init=1 handler=2 id=2 keep-constructor=1 nio-buffer-empty=1 object=4 success=3 void=8
     alcCreateContext(Lorg/lwjgl/openal/ALCdevice;Ljava/nio/IntBuffer;)Lorg/lwjgl/openal/ALCcontext; object: new ALCcontext
     alcGetContextsDevice(Lorg/lwjgl/openal/ALCcontext;)Lorg/lwjgl/openal/ALCdevice; object: new ALCdevice
     alcGetCurrentContext()Lorg/lwjgl/openal/ALCcontext; object: new ALCcontext
     alcGetEnumValue(Lorg/lwjgl/openal/ALCdevice;Ljava/lang/String;)I default: default
     alcGetError(Lorg/lwjgl/openal/ALCdevice;)I default: default
-    alcGetString(Lorg/lwjgl/openal/ALCdevice;I)Ljava/lang/String; default: default
     alcOpenDevice(Ljava/lang/String;)Lorg/lwjgl/openal/ALCdevice; object: new ALCdevice
     getContext(Lorg/lwjgl/openal/ALCcontext;)J default: default
     getDevice(Lorg/lwjgl/openal/ALCdevice;)J default: default

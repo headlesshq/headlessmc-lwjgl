@@ -13,12 +13,10 @@ org/lwjgl/openal/AL$ICDStatic keep-constructor=2 object=2 void=1
     access$200()Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
     get()Lorg/lwjgl/openal/ALCapabilities; object: new ALCapabilities
 org/lwjgl/openal/AL$ICDStatic$WriteOnce guarded-static-init=1 keep-constructor=1
-org/lwjgl/openal/AL10 default=52 id=4 keep-constructor=1 void=211
+org/lwjgl/openal/AL10 default=45 handler=60 id=4 keep-constructor=1 void=158
     alGetBoolean(I)Z default: default
     alGetBooleanDirect(JI)Z default: default
-    alGetBufferf(II)F default: default
     alGetBufferfDirect(JII)F default: default
-    alGetBufferi(II)I default: default
     alGetBufferiDirect(JII)I default: default
     alGetDouble(I)D default: default
     alGetDoubleDirect(JI)D default: default
@@ -32,7 +30,6 @@ org/lwjgl/openal/AL10 default=52 id=4 keep-constructor=1 void=211
     alGetFloatDirect(JI)F default: default
     alGetInteger(I)I default: default
     alGetIntegerDirect(JI)I default: default
-    alGetListenerf(I)F default: default
     alGetListenerfDirect(JI)F default: default
     alGetListeneri(I)I default: default
     alGetListeneriDirect(JI)I default: default
@@ -40,11 +37,8 @@ org/lwjgl/openal/AL10 default=52 id=4 keep-constructor=1 void=211
     alGetProcAddress(Ljava/nio/ByteBuffer;)J default: default
     alGetProcAddressDirect(JLjava/lang/CharSequence;)J default: default
     alGetProcAddressDirect(JLjava/nio/ByteBuffer;)J default: default
-    alGetSourcef(II)F default: default
     alGetSourcefDirect(JII)F default: default
-    alGetSourcei(II)I default: default
     alGetSourceiDirect(JII)I default: default
-    alGetString(I)Ljava/lang/String; default: default
     alGetStringDirect(JI)Ljava/lang/String; default: default
     alIsBuffer(I)Z default: default
     alIsBufferDirect(JI)Z default: default
@@ -56,7 +50,6 @@ org/lwjgl/openal/AL10 default=52 id=4 keep-constructor=1 void=211
     alIsExtensionPresentDirect(JLjava/nio/ByteBuffer;)Z default: default
     alIsSource(I)Z default: default
     alIsSourceDirect(JI)Z default: default
-    alSourceUnqueueBuffers(I)I default: default
     alSourceUnqueueBuffersDirect(JI)I default: default
     nalGetEnumValue(J)I default: default
     nalGetEnumValueDirect(JJ)I default: default
@@ -84,16 +77,14 @@ org/lwjgl/openal/ALC$ICDStatic$WriteOnce guarded-static-init=1 keep-constructor=
 org/lwjgl/openal/ALC$SharedLibraryAL default=2 keep-constructor=1
     getFunctionAddress(JLjava/nio/ByteBuffer;)J default: default
     getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
-org/lwjgl/openal/ALC10 default=13 id=6 keep-constructor=1 success=4 void=6
+org/lwjgl/openal/ALC10 default=11 handler=4 id=6 keep-constructor=1 success=4 void=4
     alcGetContextsDevice(J)J default: default
     alcGetCurrentContext()J default: default
     alcGetEnumValue(JLjava/lang/CharSequence;)I default: default
     alcGetEnumValue(JLjava/nio/ByteBuffer;)I default: default
     alcGetError(J)I default: default
-    alcGetInteger(JI)I default: default
     alcGetProcAddress(JLjava/lang/CharSequence;)J default: default
     alcGetProcAddress(JLjava/nio/ByteBuffer;)J default: default
-    alcGetString(JI)Ljava/lang/String; default: default
     nalcGetEnumValue(JJ)I default: default
     nalcGetProcAddress(JJ)J default: default
     nalcGetString(JI)J default: default
