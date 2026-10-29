@@ -1,0 +1,202 @@
+name: Minecraft versions
+
+# Launches every Minecraft version and modloader of mc-runtime-test's ci-data.json with HeadlessMc -lwjgl and the
+# patched jars of this commit, and waits until mc-runtime-test has joined a world and run its checks.
+# Runs on release-please PRs, on PRs labeled mc-versions and manually.
+"on":
+  workflow_dispatch:
+    inputs:
+      versions:
+        description: Comma-delimited Minecraft versions to run (e.g. 1.12.2,1.20.1), or all
+        default: all
+      headlessmc-ref:
+        description: Git ref of headlesshq/headlessmc to build the launcher from
+        default: feat/patched-lwjgl
+      mcrt-ref:
+        description: Git ref of headlesshq/mc-runtime-test to take the ci-data.json and the action from
+        default: 286a6d64008be90fc82f8ffadb8f111adab6907e
+  pull_request:
+    types: [ opened, synchronize, reopened, labeled ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  HEADLESSMC_REF: ${{ inputs.headlessmc-ref || 'feat/patched-lwjgl' }}
+  MCRT_REF: ${{ inputs.mcrt-ref || '286a6d64008be90fc82f8ffadb8f111adab6907e' }}
+
+jobs:
+  matrix:
+    name: Construct matrix
+    if: >
+      github.event_name == 'workflow_dispatch'
+      || startsWith(github.head_ref, 'release-please--')
+      || contains(github.event.pull_request.labels.*.name, 'mc-versions')
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: headlesshq/mc-runtime-test
+          ref: ${{ env.MCRT_REF }}
+          sparse-checkout: ci-data.json
+          sparse-checkout-cone-mode: false
+
+      - id: matrix
+        name: Construct matrix
+        env:
+          VERSIONS: ${{ inputs.versions || 'all' }}
+        shell: python
+        run: |
+          import json
+          import os
+
+          with open('ci-data.json') as f:
+              run_data = json.load(f)['run_data']
+
+          versions = [v.strip() for v in os.environ['VERSIONS'].split(',') if v.strip()]
+          if 'all' not in versions:
+              run_data = [entry for entry in run_data if entry['mc'] in versions]
+
+          include = [{key: entry[key] for key in ('mc', 'type', 'modloader', 'java')} for entry in run_data]
+          if not include:
+              raise SystemExit(f"No versions in ci-data.json match {os.environ['VERSIONS']}")
+
+          print(json.dumps(include, indent=2))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as fh:
+              fh.write(f"matrix={json.dumps({'include': include})}\n")
+
+  patched-lwjgl:
+    name: Patch LWJGL
+    needs: matrix
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6
+
+      - name: Patch and stage the jars for HeadlessMc
+        run: ./gradlew headlessMcDirectory --stacktrace
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: patched-lwjgl
+          path: build/headlessmc
+          retention-days: 1
+
+  headlessmc:
+    name: Build HeadlessMc
+    needs: matrix
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: headlesshq/headlessmc
+          ref: ${{ env.HEADLESSMC_REF }}
+
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6
+
+      # the launcher only needs a lock file to build, the runs use the jars of this commit
+      - name: Lock the headlessmc-lwjgl release
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: ./gradlew :headlessmc-patcher:headlessmc-patcher-lwjgl-patched:updatePatchedLwjgl --stacktrace
+
+      - name: Build uber jar
+        run: ./gradlew :headlessmc-application:quarkusBuild -Dquarkus.package.jar.type=uber-jar --stacktrace
+
+      - name: Rename uber jar
+        run: mv headlessmc-application/build/quarkus-build/gen/headlessmc-application-*.jar headlessmc.jar
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: headlessmc
+          path: headlessmc.jar
+          retention-days: 1
+
+  run:
+    name: ${{ matrix.mc }} ${{ matrix.type }}
+    needs: [ matrix, patched-lwjgl, headlessmc ]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.matrix.outputs.matrix) }}
+    steps:
+      # checked out into a sub directory to use the action of the same ref as the ci-data.json
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          repository: headlesshq/mc-runtime-test
+          ref: ${{ env.MCRT_REF }}
+          path: mc-runtime-test
+
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+
+      # with download-hmc: false the action expects headlessmc.jar in the working directory
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: headlessmc
+          path: .
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: patched-lwjgl
+          path: patched-lwjgl
+
+      - name: Run the MC client
+        timeout-minutes: 15
+        uses: ./mc-runtime-test
+        env:
+          # the action starts HeadlessMc itself, this is the only way to pass it a system property
+          JAVA_TOOL_OPTIONS: -Dhmc.lwjgl.patched-directory=${{ github.workspace }}/patched-lwjgl
+        with:
+          mc: ${{ matrix.mc }}
+          modloader: ${{ matrix.modloader }}
+          java: ${{ matrix.java }}
+          mc-runtime-test: ${{ matrix.type }}
+          # headless, the action adds -lwjgl, which selects the patched LWJGL
+          xvfb: false
+          cache-mc: github
+          download-hmc: false
+          headlessmc-command: --retries 2 --jvm -Djava.awt.headless=true
+
+      # Minecraft 1.13+ logs the LWJGL version, every version before uses LWJGL 2, which has no such line
+      - name: Check that the patched LWJGL of this commit was used
+        run: |
+          if find HeadlessMC -path '*lwjgl-patched*' | grep -q .; then
+            echo "::error::HeadlessMc downloaded the released jars instead of using the jars of this commit"
+            exit 1
+          fi
+          version=$(unzip -p patched-lwjgl/lwjgl3/lwjgl.jar META-INF/MANIFEST.MF | tr -d '\r' | sed -n 's/^HeadlessMc-LWJGL-Version: //p')
+          if grep -q "Backend library: LWJGL version" run/logs/latest.log && ! grep -q "Backend library: LWJGL version $version" run/logs/latest.log; then
+            echo "::error::Minecraft did not run with the patched LWJGL $version"
+            grep "Backend library" run/logs/latest.log
+            exit 1
+          fi
+
+      - name: Upload crash reports and logs
+        if: failure()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: logs-${{ matrix.mc }}-${{ matrix.type }}
+          path: |
+            run/crash-reports/**
+            run/logs/**
+            run/hs_err_pid*.log
+            HeadlessMC/logs/**
+          if-no-files-found: ignore
+          retention-days: 7
