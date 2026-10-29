@@ -1,0 +1,36 @@
+name: Probe
+
+# Records what the real LWJGL returns on Mesa (llvmpipe/lavapipe) under Xvfb and compares it with the patched jars.
+# Run it after an LWJGL update, review build/reports/probe and commit the recordings if they changed.
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6
+
+      - name: Install Xvfb and Mesa
+        run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y xvfb libgl1-mesa-dri mesa-vulkan-drivers
+
+      - name: Record
+        run: ./gradlew :lwjgl3-probe:probe -Pprobe.name=mesa-llvmpipe -Pprobe.xvfb -Pprobe.software --stacktrace
+
+      - name: Compare with the patched jars
+        run: ./gradlew :lwjgl3-probe:probeCompare --stacktrace
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        if: always()
+        with:
+          name: probe
+          path: |
+            tools/lwjgl3-probe/recordings
+            tools/lwjgl3-probe/build/reports/probe
