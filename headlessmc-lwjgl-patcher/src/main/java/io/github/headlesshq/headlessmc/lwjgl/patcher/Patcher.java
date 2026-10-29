@@ -283,6 +283,7 @@ public final class Patcher {
     private void write(Module module) throws IOException {
         Attributes attributes = module.manifest.getMainAttributes();
         attributes.putIfAbsent(Attributes.Name.MANIFEST_VERSION, "1.0");
+        attributes.remove(Attributes.Name.SEALED);
         attributes.putValue("HeadlessMc-LWJGL3-Version", options.version());
         attributes.putValue("HeadlessMc-LWJGL-Version", options.lwjglVersion());
         module.manifest.getEntries().clear();
