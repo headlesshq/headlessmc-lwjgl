@@ -21,7 +21,8 @@ import static org.objectweb.asm.Opcodes.*;
  * Re-adds the public API that older LWJGL versions had and the latest version removed, so that code compiled
  * against an older version links against the patched jars.
  * <ul>
- *     <li>Missing public classes are copied from the newest old version that has them ({@link #addClasses}).</li>
+ *     <li>Missing public classes, with their nested classes, are copied from the newest old version that has them
+ *     ({@link #addClasses}).</li>
  *     <li>Missing public and protected methods and fields are copied into the existing classes, members that became
  *     less accessible are made accessible again, removed superinterfaces are added again and a removed superclass
  *     is put back between the class and its current superclass ({@link #addMembers}).</li>
@@ -58,8 +59,15 @@ public final class ApiUnion {
      */
     public Map<String, List<ClassNode>> addClasses(String version, String module, List<ClassNode> classes) {
         Map<String, List<ClassNode>> added = new TreeMap<>();
+        List<String> publicNames = new ArrayList<>();
         for (ClassNode old : classes) {
-            if (pool.contains(old.name) || (old.access & ACC_PUBLIC) == 0) {
+            if (!pool.contains(old.name) && (old.access & ACC_PUBLIC) != 0) {
+                publicNames.add(old.name);
+            }
+        }
+
+        for (ClassNode old : classes) {
+            if (pool.contains(old.name) || (old.access & ACC_PUBLIC) == 0 && !isNestedIn(old.name, publicNames)) {
                 continue;
             }
 
@@ -75,6 +83,16 @@ public final class ApiUnion {
         }
 
         return added;
+    }
+
+    private static boolean isNestedIn(String name, List<String> outerNames) {
+        for (String outer : outerNames) {
+            if (name.startsWith(outer + "$")) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**

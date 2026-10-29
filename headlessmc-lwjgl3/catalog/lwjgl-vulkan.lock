@@ -4639,6 +4639,8 @@ org/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG shim-class=3.3.2 keep-constructor=2
     create(J)Lorg/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG; object: new VkGetInstanceProcAddrLUNARG
     create(Lorg/lwjgl/vulkan/VkGetInstanceProcAddrLUNARGI;)Lorg/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG; object: new VkGetInstanceProcAddrLUNARG
     createSafe(J)Lorg/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG; object: new VkGetInstanceProcAddrLUNARG
+org/lwjgl/vulkan/VkGetInstanceProcAddrLUNARG$Container shim-class=3.3.2 default=1 keep-constructor=1
+    invoke(JJ)J default: default
 org/lwjgl/vulkan/VkGetInstanceProcAddrLUNARGI shim-class=3.3.2 keep-abstract-interface-method=1 keep-interface-static-init=1 struct=1 void=1
 org/lwjgl/vulkan/VkGetLatencyMarkerInfoNV guarded-static-init=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/vulkan/VkGetLatencyMarkerInfoNV$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=15

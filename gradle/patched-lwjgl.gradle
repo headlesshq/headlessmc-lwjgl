@@ -177,6 +177,7 @@ compatVersions.eachWithIndex { compatVersion, index ->
         group = 'verification'
         description = "Checks with japicmp that the patched jars are binary compatible with LWJGL ${compatVersion}."
         dependsOn patchLwjgl
+        onlyIf('the old version resolved') { !oldJars.isEmpty() }
         classpath = configurations.japicmp
         mainClass = 'japicmp.JApiCmp'
         inputs.files(oldJars)

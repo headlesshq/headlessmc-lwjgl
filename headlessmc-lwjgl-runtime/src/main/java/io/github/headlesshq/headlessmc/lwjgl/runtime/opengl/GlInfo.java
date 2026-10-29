@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static org.lwjgl.opengl.GL46C.*;
+
 /**
  * The OpenGL implementation the patched LWJGL pretends to be.
  * <ul>
@@ -97,6 +99,36 @@ public final class GlInfo {
         }
 
         return ALL_EXTENSIONS || EXTENSIONS.contains(field);
+    }
+
+    /**
+     * @param name the queried string, e.g. {@code GL_VERSION}.
+     * @return the answer of {@code glGetString}, {@code null} for unknown names.
+     */
+    public static String string(int name) {
+        switch (name) {
+            case GL_VENDOR:
+                return vendor();
+            case GL_RENDERER:
+                return renderer();
+            case GL_VERSION:
+                return version();
+            case GL_SHADING_LANGUAGE_VERSION:
+                return shadingLanguageVersion();
+            case GL_EXTENSIONS:
+                return String.join(" ", extensions());
+            default:
+                return null;
+        }
+    }
+
+    /**
+     * @param name the queried string array, only {@code GL_EXTENSIONS} is supported.
+     * @param index the index in the array.
+     * @return the answer of {@code glGetStringi}, {@code null} for unknown names or indices.
+     */
+    public static String string(int name, int index) {
+        return name == GL_EXTENSIONS && index >= 0 && index < extensions().size() ? extensions().get(index) : null;
     }
 
 }

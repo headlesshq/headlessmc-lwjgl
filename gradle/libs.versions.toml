@@ -6,6 +6,7 @@ lwjgl = "3.4.3"
 lwjgl2 = "2.9.4-nightly-20150209"
 
 [libraries]
+jinput = { group = "net.java.jinput", name = "jinput", version = "2.0.5" }
 asm = { group = "org.ow2.asm", name = "asm", version.ref = "asm" }
 asm-tree = { group = "org.ow2.asm", name = "asm-tree", version.ref = "asm" }
 

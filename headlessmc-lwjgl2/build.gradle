@@ -10,3 +10,8 @@ ext.patchedLwjgl = [
     japicmpExcludes: [],
 ]
 apply from: rootProject.file('gradle/patched-lwjgl.gradle')
+
+dependencies {
+    testImplementation project.ext.patchedJars
+    testRuntimeOnly libs.jinput
+}

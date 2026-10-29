@@ -20,40 +20,13 @@ org/lwjgl/J2SESysImplementation default=2 keep-constructor=1 void=1
     getClipboard()Ljava/lang/String; default: default
     getTime()J default: default
 org/lwjgl/LWJGLException keep-constructor=4
-org/lwjgl/LWJGLUtil default=14 guarded-static-init=1 keep-constructor=1 nio-buffer-empty=1 void=2
-    getClassTokens(Lorg/lwjgl/LWJGLUtil$TokenFilter;Ljava/util/Map;Ljava/lang/Iterable;)Ljava/util/Map; default: default
-    getClassTokens(Lorg/lwjgl/LWJGLUtil$TokenFilter;Ljava/util/Map;[Ljava/lang/Class;)Ljava/util/Map; default: default
-    getLibraryPaths(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)[Ljava/lang/String; default: default
-    getLibraryPaths(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/ClassLoader;)[Ljava/lang/String; default: default
-    getPathFromClassLoader(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/String; default: default
-    getPlatform()I default: default
-    getPlatformName()Ljava/lang/String; default: default
-    getPrivilegedBoolean(Ljava/lang/String;)Z default: default
-    getPrivilegedInteger(Ljava/lang/String;)Ljava/lang/Integer; default: default
-    getPrivilegedInteger(Ljava/lang/String;I)Ljava/lang/Integer; default: default
-    getPrivilegedProperty(Ljava/lang/String;)Ljava/lang/String; default: default
-    isMacOSXEqualsOrBetterThan(II)Z default: default
-    loadIcon(Ljava/lang/String;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    mapLibraryName(Ljava/lang/String;)Ljava/lang/String; default: default
-    toHexString(I)Ljava/lang/String; default: default
-org/lwjgl/LWJGLUtil$1 default=2 keep-constructor=1
-    run()Ljava/lang/Object; default: default
-    run()Ljava/lang/Process; default: default
-org/lwjgl/LWJGLUtil$2 default=2 keep-constructor=1
-    run()Ljava/lang/Object; default: default
-    run()Ljava/lang/String; default: default
-org/lwjgl/LWJGLUtil$3 default=2 keep-constructor=1
-    run()Ljava/lang/Object; default: default
-    run()Ljava/lang/String; default: default
-org/lwjgl/LWJGLUtil$4 default=2 keep-constructor=1
-    run()Ljava/lang/Boolean; default: default
-    run()Ljava/lang/Object; default: default
-org/lwjgl/LWJGLUtil$5 default=2 keep-constructor=1
-    run()Ljava/lang/Integer; default: default
-    run()Ljava/lang/Object; default: default
-org/lwjgl/LWJGLUtil$6 default=2 keep-constructor=1
-    run()Ljava/lang/Integer; default: default
-    run()Ljava/lang/Object; default: default
+org/lwjgl/LWJGLUtil guarded-static-init=1 keep-constructor=1 keep-pure-java-class=17
+org/lwjgl/LWJGLUtil$1 keep-constructor=1 keep-pure-java-class=2
+org/lwjgl/LWJGLUtil$2 keep-constructor=1 keep-pure-java-class=2
+org/lwjgl/LWJGLUtil$3 keep-constructor=1 keep-pure-java-class=2
+org/lwjgl/LWJGLUtil$4 keep-constructor=1 keep-pure-java-class=2
+org/lwjgl/LWJGLUtil$5 keep-constructor=1 keep-pure-java-class=2
+org/lwjgl/LWJGLUtil$6 keep-constructor=1 keep-pure-java-class=2
 org/lwjgl/LWJGLUtil$TokenFilter keep-abstract-interface-method=1
 org/lwjgl/LinuxSysImplementation default=3 guarded-static-init=1 keep-constructor=1
     getRequiredJNIVersion()I default: default
@@ -127,7 +100,7 @@ org/lwjgl/MemoryUtilSun$AccessorReflectFast default=1 keep-constructor=1
     getAddress(Ljava/nio/Buffer;)J default: default
 org/lwjgl/MemoryUtilSun$AccessorUnsafe default=1 keep-constructor=1 keep-unsafe-lookup=1
     getAddress(Ljava/nio/Buffer;)J default: default
-org/lwjgl/NondirectBufferWrapper shim-class=2.9.0 default=1 guarded-static-init=1 keep-constructor=1 nio-buffer=12 nio-buffer-empty=30 void=6
+org/lwjgl/NondirectBufferWrapper shim-class=2.9.0 guarded-static-init=1 keep-constructor=1 nio-buffer=12 nio-buffer-empty=30 object=1 void=6
     doNoCopyWrap(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     doNoCopyWrap(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
     doNoCopyWrap(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
@@ -140,7 +113,7 @@ org/lwjgl/NondirectBufferWrapper shim-class=2.9.0 default=1 guarded-static-init=
     doWrap(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
     doWrap(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
     doWrap(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    getCachedBuffers(I)Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers; default: default
+    getCachedBuffers(I)Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers; object: new NondirectBufferWrapper$CachedBuffers
     lookupBuffer(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     lookupBuffer(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
     lookupBuffer(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
@@ -159,6 +132,21 @@ org/lwjgl/NondirectBufferWrapper shim-class=2.9.0 default=1 guarded-static-init=
     wrapNoCopyDirect(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
     wrapNoCopyDirect(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
     wrapNoCopyDirect(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+org/lwjgl/NondirectBufferWrapper$1 shim-class=2.9.0 default=1 keep-constructor=1 object=1
+    initialValue()Ljava/lang/Object; default: default
+    initialValue()Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers; object: new NondirectBufferWrapper$CachedBuffers
+org/lwjgl/NondirectBufferWrapper$CachedBuffers shim-class=2.9.0 keep-constructor=2 nio-buffer-empty=11
+    access$100(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
+    access$1000(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    access$1100(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
+    access$200(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    access$300(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
+    access$400(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    access$500(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
+    access$600(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    access$700(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
+    access$800(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
+    access$900(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
 org/lwjgl/PointerBuffer default=14 fluent=21 guarded-static-init=1 identity=2 keep-constructor=2 keep-to-string=1 nio-buffer-empty=1 object=1 void=4
     allocateDirect(I)Lorg/lwjgl/PointerBuffer; object: new PointerBuffer
     capacity()I default: default
@@ -182,13 +170,8 @@ org/lwjgl/PointerWrapper keep-abstract-interface-method=1
 org/lwjgl/PointerWrapperAbstract default=2 identity=2 keep-constructor=1 keep-to-string=1 void=1
     getPointer()J default: default
     isValid()Z default: default
-org/lwjgl/Sys default=6 guarded-static-init=1 interface-proxy=1 keep-constructor=1 void=4
+org/lwjgl/Sys default=1 guarded-static-init=1 handler=5 interface-proxy=1 keep-constructor=1 void=4
     createImplementation()Lorg/lwjgl/SysImplementation; interface-proxy: proxy SysImplementation
-    getClipboard()Ljava/lang/String; default: default
-    getTime()J default: default
-    getTimerResolution()J default: default
-    getVersion()Ljava/lang/String; default: default
-    is64Bit()Z default: default
     openURL(Ljava/lang/String;)Z default: default
 org/lwjgl/Sys$1 default=1 keep-constructor=1
     run()Ljava/lang/Object; default: default
@@ -277,20 +260,7 @@ org/lwjgl/input/JInputController default=25 keep-constructor=1 void=9
     getZAxisDeadZone()F default: default
     getZAxisValue()F default: default
     isButtonPressed(I)Z default: default
-org/lwjgl/input/Keyboard default=14 guarded-static-init=1 keep-constructor=1 void=8
-    areRepeatEventsEnabled()Z default: default
-    getEventCharacter()C default: default
-    getEventKey()I default: default
-    getEventKeyState()Z default: default
-    getEventNanoseconds()J default: default
-    getKeyCount()I default: default
-    getKeyIndex(Ljava/lang/String;)I default: default
-    getKeyName(I)Ljava/lang/String; default: default
-    getNumKeyboardEvents()I default: default
-    isCreated()Z default: default
-    isKeyDown(I)Z default: default
-    isRepeatEvent()Z default: default
-    next()Z default: default
+org/lwjgl/input/Keyboard default=1 guarded-static-init=1 handler=14 keep-constructor=1 keep-pure-java-method=3 void=4
     readNext(Lorg/lwjgl/input/Keyboard$KeyEvent;)Z default: default
 org/lwjgl/input/Keyboard$KeyEvent default=10 keep-constructor=2 void=2
     access$200(Lorg/lwjgl/input/Keyboard$KeyEvent;)Z default: default
@@ -303,48 +273,21 @@ org/lwjgl/input/Keyboard$KeyEvent default=10 keep-constructor=2 void=2
     access$502(Lorg/lwjgl/input/Keyboard$KeyEvent;I)I default: default
     access$600(Lorg/lwjgl/input/Keyboard$KeyEvent;)J default: default
     access$602(Lorg/lwjgl/input/Keyboard$KeyEvent;J)J default: default
-org/lwjgl/input/Mouse default=24 guarded-static-init=1 interface-proxy=1 keep-constructor=1 object=2 void=11
-    getButtonCount()I default: default
-    getButtonIndex(Ljava/lang/String;)I default: default
-    getButtonName(I)Ljava/lang/String; default: default
-    getDWheel()I default: default
-    getDX()I default: default
-    getDY()I default: default
-    getEventButton()I default: default
-    getEventButtonState()Z default: default
-    getEventDWheel()I default: default
-    getEventDX()I default: default
-    getEventDY()I default: default
-    getEventNanoseconds()J default: default
-    getEventX()I default: default
-    getEventY()I default: default
+org/lwjgl/input/Mouse default=2 guarded-static-init=1 handler=27 interface-proxy=1 keep-constructor=1 object=2 void=6
     getImplementation()Lorg/lwjgl/opengl/InputImplementation; interface-proxy: proxy InputImplementation
     getNativeCursor()Lorg/lwjgl/input/Cursor; object: new Cursor
     getPrivilegedBoolean(Ljava/lang/String;)Z default: default
-    getX()I default: default
-    getY()I default: default
-    hasWheel()Z default: default
-    isButtonDown(I)Z default: default
     isClipMouseCoordinatesToWindow()Z default: default
-    isCreated()Z default: default
-    isGrabbed()Z default: default
-    isInsideWindow()Z default: default
-    next()Z default: default
     setNativeCursor(Lorg/lwjgl/input/Cursor;)Lorg/lwjgl/input/Cursor; object: new Cursor
 org/lwjgl/input/Mouse$1 default=2 keep-constructor=1
     run()Ljava/lang/Boolean; default: default
     run()Ljava/lang/Object; default: default
-org/lwjgl/input/OpenGLPackageAccess guarded-static-init=1 interface-proxy=1 keep-constructor=1
-    createImplementation()Lorg/lwjgl/opengl/InputImplementation; interface-proxy: proxy InputImplementation
-org/lwjgl/input/OpenGLPackageAccess$1 default=1 keep-constructor=1
-    run()Ljava/lang/Object; default: default
-org/lwjgl/input/OpenGLPackageAccess$2 default=1 interface-proxy=1 keep-constructor=1
-    run()Ljava/lang/Object; default: default
-    run()Lorg/lwjgl/opengl/InputImplementation; interface-proxy: proxy InputImplementation
-org/lwjgl/openal/AL default=1 guarded-static-init=1 keep-constructor=1 object=2 void=9
+org/lwjgl/input/OpenGLPackageAccess guarded-static-init=1 keep-constructor=1 keep-pure-java-class=1
+org/lwjgl/input/OpenGLPackageAccess$1 keep-constructor=1 keep-pure-java-class=1
+org/lwjgl/input/OpenGLPackageAccess$2 keep-constructor=1 keep-pure-java-class=2
+org/lwjgl/openal/AL guarded-static-init=1 handler=5 keep-constructor=1 object=2 void=5
     getContext()Lorg/lwjgl/openal/ALCcontext; object: new ALCcontext
     getDevice()Lorg/lwjgl/openal/ALCdevice; object: new ALCdevice
-    isCreated()Z default: default
 org/lwjgl/openal/AL10 default=36 id=4 keep-constructor=1 void=75
     alGetBoolean(I)Z default: default
     alGetBufferf(II)F default: default
@@ -920,7 +863,7 @@ org/lwjgl/opencl/CLObjectRetainable default=4 keep-constructor=1
     isValid()Z default: default
     release()I default: default
     retain()I default: default
-org/lwjgl/opencl/CLPlatform default=6 guarded-static-init=1 interface-proxy=1 keep-constructor=1 object=3 void=4
+org/lwjgl/opencl/CLPlatform default=6 guarded-static-init=1 keep-constructor=1 keep-pure-java-method=1 object=3 void=4
     getCLDevice(J)Lorg/lwjgl/opencl/CLDevice; object: new CLDevice
     getCLDeviceRegistry()Lorg/lwjgl/opencl/CLObjectRegistry; object: new CLObjectRegistry
     getCLPlatform(J)Lorg/lwjgl/opencl/CLPlatform; object: new CLPlatform
@@ -928,7 +871,6 @@ org/lwjgl/opencl/CLPlatform default=6 guarded-static-init=1 interface-proxy=1 ke
     getDevices(I)Ljava/util/List; default: default
     getDevices(ILorg/lwjgl/opencl/api/Filter;)Ljava/util/List; default: default
     getInfoString(I)Ljava/lang/String; default: default
-    getInfoUtilInstance(Ljava/lang/Class;Ljava/lang/String;)Lorg/lwjgl/opencl/InfoUtil; interface-proxy: proxy InfoUtil
     getPlatforms()Ljava/util/List; default: default
     getPlatforms(Lorg/lwjgl/opencl/api/Filter;)Ljava/util/List; default: default
 org/lwjgl/opencl/CLPlatform$CLPlatformUtil keep-abstract-interface-method=2
@@ -1566,25 +1508,7 @@ org/lwjgl/opengl/CallbackUtil default=5 guarded-static-init=1 keep-constructor=1
     getDebugOutputCallbackARB()J default: default
     ncreateGlobalRef(Ljava/lang/Object;)J default: default
 org/lwjgl/opengl/Context keep-abstract-interface-method=4
-org/lwjgl/opengl/ContextAttribs default=17 fluent=13 keep-constructor=5 keep-to-string=1 nio-buffer-empty=1
-    getAttribList()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    getContextFlags()I default: default
-    getContextReleaseBehavior()I default: default
-    getContextResetNotificationStrategy()I default: default
-    getLayerPlane()I default: default
-    getMajorVersion()I default: default
-    getMinorVersion()I default: default
-    getProfileMask()I default: default
-    hasFlag(I)Z default: default
-    hasMask(I)Z default: default
-    isContextResetIsolation()Z default: default
-    isDebug()Z default: default
-    isForwardCompatible()Z default: default
-    isLoseContextOnReset()Z default: default
-    isProfileCompatibility()Z default: default
-    isProfileCore()Z default: default
-    isProfileES()Z default: default
-    isRobustAccess()Z default: default
+org/lwjgl/opengl/ContextAttribs keep-constructor=5 keep-pure-java-class=32
 org/lwjgl/opengl/ContextCapabilities default=205 keep-constructor=1 void=2
     AMD_debug_output_initNativeFunctionAddresses()Z default: default
     AMD_draw_buffers_blend_initNativeFunctionAddresses()Z default: default
@@ -1806,42 +1730,22 @@ org/lwjgl/opengl/ContextGLES default=3 guarded-static-init=1 keep-constructor=1 
     getEGLContext()Lorg/lwjgl/opengles/EGLContext; default: default
     isCurrent()Z default: default
 org/lwjgl/opengl/ContextImplementation keep-abstract-interface-method=9
-org/lwjgl/opengl/Display default=29 guarded-static-init=1 interface-proxy=3 keep-constructor=1 object=3 void=45
+org/lwjgl/opengl/Display default=11 guarded-static-init=1 handler=39 interface-proxy=3 keep-constructor=1 object=1 void=26
     access$102(Z)Z default: default
     access$200()Ljava/lang/Thread; default: default
     access$502(I)I default: default
     access$602(I)I default: default
     access$702([Ljava/nio/ByteBuffer;)[Ljava/nio/ByteBuffer; default: default
     createDisplayImplementation()Lorg/lwjgl/opengl/DisplayImplementation; interface-proxy: proxy DisplayImplementation
-    getAdapter()Ljava/lang/String; default: default
-    getAvailableDisplayModes()[Lorg/lwjgl/opengl/DisplayMode; default: default
-    getDesktopDisplayMode()Lorg/lwjgl/opengl/DisplayMode; object: new DisplayMode
-    getDisplayMode()Lorg/lwjgl/opengl/DisplayMode; object: new DisplayMode
     getDrawable()Lorg/lwjgl/opengl/Drawable; interface-proxy: proxy Drawable
     getEffectiveMode()Lorg/lwjgl/opengl/DisplayMode; object: new DisplayMode
-    getHeight()I default: default
     getImplementation()Lorg/lwjgl/opengl/DisplayImplementation; interface-proxy: proxy DisplayImplementation
     getParent()Ljava/awt/Canvas; default: default
-    getPixelScaleFactor()F default: default
     getPrivilegedBoolean(Ljava/lang/String;)Z default: default
     getPrivilegedString(Ljava/lang/String;)Ljava/lang/String; default: default
-    getTitle()Ljava/lang/String; default: default
-    getVersion()Ljava/lang/String; default: default
-    getWidth()I default: default
     getWindowX()I default: default
     getWindowY()I default: default
-    getX()I default: default
-    getY()I default: default
-    isActive()Z default: default
-    isCloseRequested()Z default: default
-    isCreated()Z default: default
-    isCurrent()Z default: default
     isDirty()Z default: default
-    isFullscreen()Z default: default
-    isResizable()Z default: default
-    isVisible()Z default: default
-    setIcon([Ljava/nio/ByteBuffer;)I default: default
-    wasResized()Z default: default
 org/lwjgl/opengl/Display$1 keep-constructor=1 void=1
 org/lwjgl/opengl/Display$2 keep-constructor=1 void=1
 org/lwjgl/opengl/Display$3 default=1 keep-constructor=1
@@ -1857,12 +1761,7 @@ org/lwjgl/opengl/Display$8 default=2 keep-constructor=1
     run()Ljava/lang/Object; default: default
     run()Ljava/lang/String; default: default
 org/lwjgl/opengl/DisplayImplementation keep-abstract-interface-method=32
-org/lwjgl/opengl/DisplayMode default=5 identity=2 keep-constructor=3 keep-to-string=1
-    getBitsPerPixel()I default: default
-    getFrequency()I default: default
-    getHeight()I default: default
-    getWidth()I default: default
-    isFullscreenCapable()Z default: default
+org/lwjgl/opengl/DisplayMode keep-constructor=3 keep-pure-java-class=8
 org/lwjgl/opengl/Drawable keep-abstract-interface-method=5
 org/lwjgl/opengl/DrawableGL default=1 interface-proxy=3 keep-constructor=1 object=2 void=11
     createSharedContext()Lorg/lwjgl/opengl/Context; interface-proxy: proxy Context
@@ -1953,7 +1852,7 @@ org/lwjgl/opengl/EXTFogCoord keep-constructor=1 void=9
 org/lwjgl/opengl/EXTFramebufferBlit keep-constructor=1 void=2
 org/lwjgl/opengl/EXTFramebufferMultisample keep-constructor=1 void=2
 org/lwjgl/opengl/EXTFramebufferMultisampleBlitScaled keep-constructor=1
-org/lwjgl/opengl/EXTFramebufferObject default=9 id=2 keep-constructor=1 success=1 void=30
+org/lwjgl/opengl/EXTFramebufferObject default=9 handler=2 id=2 keep-constructor=1 success=1 void=28
     glGetFramebufferAttachmentParameterEXT(III)I default: default
     glGetFramebufferAttachmentParameteriEXT(III)I default: default
     glGetRenderbufferParameterEXT(II)I default: default
@@ -2051,22 +1950,15 @@ org/lwjgl/opengl/FastIntMap$EntryIterator default=2 keep-constructor=1 object=1 
     hasNext()Z default: default
     next()Ljava/lang/Object; default: default
     next()Lorg/lwjgl/opengl/FastIntMap$Entry; object: new FastIntMap$Entry
-org/lwjgl/opengl/GL11 default=26 id=3 keep-constructor=1 nio-buffer-empty=2 success=1 void=537
+org/lwjgl/opengl/GL11 default=19 handler=46 id=3 keep-constructor=1 nio-buffer-empty=2 void=499
     glAreTexturesResident(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Z default: default
-    glGetBoolean(I)Z default: default
-    glGetDouble(I)D default: default
     glGetError()I default: default
-    glGetFloat(I)F default: default
-    glGetInteger(I)I default: default
     glGetPointer(IJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    glGetString(I)Ljava/lang/String; default: default
     glGetTexEnvf(II)F default: default
     glGetTexEnvi(II)I default: default
     glGetTexGend(II)D default: default
     glGetTexGenf(II)F default: default
     glGetTexGeni(II)I default: default
-    glGetTexLevelParameterf(III)F default: default
-    glGetTexLevelParameteri(III)I default: default
     glGetTexParameterf(II)F default: default
     glGetTexParameteri(II)I default: default
     glIsList(I)Z default: default
@@ -2081,9 +1973,9 @@ org/lwjgl/opengl/GL11 default=26 id=3 keep-constructor=1 nio-buffer-empty=2 succ
     nglIsTexture(IJ)Z default: default
     nglRenderMode(IJ)I default: default
 org/lwjgl/opengl/GL12 keep-constructor=1 void=24
-org/lwjgl/opengl/GL13 keep-constructor=1 void=63
-org/lwjgl/opengl/GL14 keep-constructor=1 void=51
-org/lwjgl/opengl/GL15 default=11 id=2 keep-constructor=1 nio-buffer=1 nio-buffer-empty=4 success=1 void=43
+org/lwjgl/opengl/GL13 handler=1 keep-constructor=1 void=62
+org/lwjgl/opengl/GL14 handler=2 keep-constructor=1 void=49
+org/lwjgl/opengl/GL15 default=11 handler=1 id=2 keep-constructor=1 nio-buffer=1 nio-buffer-empty=4 success=1 void=42
     glGetBufferParameter(II)I default: default
     glGetBufferParameteri(II)I default: default
     glGetBufferPointer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -2099,7 +1991,7 @@ org/lwjgl/opengl/GL15 default=11 id=2 keep-constructor=1 nio-buffer=1 nio-buffer
     nglIsQuery(IJ)Z default: default
     nglMapBuffer(IIJLjava/nio/ByteBuffer;J)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglUnmapBuffer(IJ)Z default: default
-org/lwjgl/opengl/GL20 default=25 id=4 keep-constructor=1 nio-buffer-empty=2 void=140
+org/lwjgl/opengl/GL20 default=21 handler=12 id=3 keep-constructor=1 nio-buffer-empty=2 void=133
     glGetActiveAttrib(III)Ljava/lang/String; default: default
     glGetActiveAttrib(IIILjava/nio/IntBuffer;)Ljava/lang/String; default: default
     glGetActiveAttribSize(II)I default: default
@@ -2110,13 +2002,9 @@ org/lwjgl/opengl/GL20 default=25 id=4 keep-constructor=1 nio-buffer-empty=2 void
     glGetActiveUniformType(II)I default: default
     glGetAttribLocation(ILjava/lang/CharSequence;)I default: default
     glGetAttribLocation(ILjava/nio/ByteBuffer;)I default: default
-    glGetProgram(II)I default: default
     glGetProgramInfoLog(II)Ljava/lang/String; default: default
-    glGetProgrami(II)I default: default
-    glGetShader(II)I default: default
     glGetShaderInfoLog(II)Ljava/lang/String; default: default
     glGetShaderSource(II)Ljava/lang/String; default: default
-    glGetShaderi(II)I default: default
     glGetUniformLocation(ILjava/lang/CharSequence;)I default: default
     glGetUniformLocation(ILjava/nio/ByteBuffer;)I default: default
     glGetVertexAttribPointer(IIJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -2128,7 +2016,7 @@ org/lwjgl/opengl/GL20 default=25 id=4 keep-constructor=1 nio-buffer-empty=2 void
     nglIsProgram(IJ)Z default: default
     nglIsShader(IJ)Z default: default
 org/lwjgl/opengl/GL21 keep-constructor=1 void=12
-org/lwjgl/opengl/GL30 default=23 id=3 keep-constructor=1 nio-buffer=1 nio-buffer-empty=1 success=1 void=163
+org/lwjgl/opengl/GL30 default=22 handler=4 id=3 keep-constructor=1 nio-buffer=1 nio-buffer-empty=1 success=1 void=160
     glGetBoolean(II)Z default: default
     glGetFragDataLocation(ILjava/lang/CharSequence;)I default: default
     glGetFragDataLocation(ILjava/nio/ByteBuffer;)I default: default
@@ -2137,7 +2025,6 @@ org/lwjgl/opengl/GL30 default=23 id=3 keep-constructor=1 nio-buffer=1 nio-buffer
     glGetInteger(II)I default: default
     glGetRenderbufferParameter(II)I default: default
     glGetRenderbufferParameteri(II)I default: default
-    glGetStringi(II)Ljava/lang/String; default: default
     glGetTexParameterIi(II)I default: default
     glGetTexParameterIui(II)I default: default
     glGetTransformFeedbackVarying(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
@@ -2163,11 +2050,10 @@ org/lwjgl/opengl/GL31 default=9 keep-constructor=1 void=27
     glGetUniformBlockIndex(ILjava/lang/CharSequence;)I default: default
     glGetUniformBlockIndex(ILjava/nio/ByteBuffer;)I default: default
     nglGetUniformBlockIndex(IJJ)I default: default
-org/lwjgl/opengl/GL32 default=9 id=1 keep-constructor=1 object=1 success=1 void=42
+org/lwjgl/opengl/GL32 default=8 handler=2 id=1 keep-constructor=1 object=1 success=1 void=41
     glFenceSync(II)Lorg/lwjgl/opengl/GLSync; object: new GLSync
     glGetBufferParameter(II)J default: default
     glGetBufferParameteri64(II)J default: default
-    glGetInteger64(I)J default: default
     glGetInteger64(II)J default: default
     glGetSync(Lorg/lwjgl/opengl/GLSync;I)I default: default
     glGetSynci(Lorg/lwjgl/opengl/GLSync;I)I default: default
@@ -2176,7 +2062,7 @@ org/lwjgl/opengl/GL32 default=9 id=1 keep-constructor=1 object=1 success=1 void=
     nglIsSync(JJ)Z default: default
     GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER:I [shim 2.9.1]
     GL_MAX_VARYING_COMPONENTS:I [shim 2.9.1]
-org/lwjgl/opengl/GL33 default=13 id=1 keep-constructor=1 void=114
+org/lwjgl/opengl/GL33 default=13 handler=1 id=1 keep-constructor=1 void=113
     glGetFragDataIndex(ILjava/lang/CharSequence;)I default: default
     glGetFragDataIndex(ILjava/nio/ByteBuffer;)I default: default
     glGetQueryObject(II)J default: default
@@ -2324,8 +2210,7 @@ org/lwjgl/opengl/GLChecks default=16 keep-constructor=1 void=10
     calculateTexImage3DStorage(IIIII)I default: default
     calculateTexImage3DStorage(Ljava/nio/Buffer;IIIII)I default: default
     calculateTransformPathValues(I)I default: default
-org/lwjgl/opengl/GLContext default=5 guarded-static-init=1 keep-constructor=1 object=4 void=9
-    getCapabilities()Lorg/lwjgl/opengl/ContextCapabilities; object: new ContextCapabilities
+org/lwjgl/opengl/GLContext default=5 guarded-static-init=1 handler=1 keep-constructor=1 object=3 void=9
     getCapabilities(Ljava/lang/Object;)Lorg/lwjgl/opengl/ContextCapabilities; object: new ContextCapabilities
     getCapabilitiesImpl()Lorg/lwjgl/opengl/ContextCapabilities; object: new ContextCapabilities
     getFunctionAddress(Ljava/lang/String;)J default: default
@@ -2851,18 +2736,7 @@ org/lwjgl/opengl/Pbuffer default=5 guarded-static-init=1 interface-proxy=1 keep-
 org/lwjgl/opengl/PeerInfo keep-constructor=1 nio-buffer-empty=2 void=5
     getHandle()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     lockAndGetHandle()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/opengl/PixelFormat default=11 fluent=14 keep-constructor=7
-    getAccumulationAlpha()I default: default
-    getAccumulationBitsPerPixel()I default: default
-    getAlphaBits()I default: default
-    getAuxBuffers()I default: default
-    getBitsPerPixel()I default: default
-    getDepthBits()I default: default
-    getSamples()I default: default
-    getStencilBits()I default: default
-    isFloatingPoint()Z default: default
-    isSRGB()Z default: default
-    isStereo()Z default: default
+org/lwjgl/opengl/PixelFormat keep-constructor=7 keep-pure-java-class=25
 org/lwjgl/opengl/References keep-constructor=1 void=2
 org/lwjgl/opengl/ReferencesStack keep-constructor=1 object=2 void=2
     getReferences()Lorg/lwjgl/opengl/References; object: new References

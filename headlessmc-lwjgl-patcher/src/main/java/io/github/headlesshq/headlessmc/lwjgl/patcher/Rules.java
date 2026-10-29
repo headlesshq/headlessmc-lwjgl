@@ -20,17 +20,42 @@ public final class Rules {
     private static final String STRUCT_BUFFER = "org/lwjgl/system/StructBuffer";
     private static final String CALLBACK_INTERFACE = "org/lwjgl/system/CallbackI";
 
+    /**
+     * Pure Java classes without native code, of LWJGL 3 and LWJGL 2.
+     */
     private static final Set<String> KEPT_CLASSES = Set.of(
         "org/lwjgl/Version",
         "org/lwjgl/system/Configuration",
         "org/lwjgl/system/MathUtil",
         "org/lwjgl/system/Struct$Member",
-        "org/lwjgl/system/Struct$Layout"
+        "org/lwjgl/system/Struct$Layout",
+        "org/lwjgl/LWJGLUtil",
+        "org/lwjgl/opengl/DisplayMode",
+        "org/lwjgl/opengl/PixelFormat",
+        "org/lwjgl/opengl/ContextAttribs",
+        "org/lwjgl/util/Color",
+        "org/lwjgl/util/Dimension",
+        "org/lwjgl/util/Point",
+        "org/lwjgl/util/Rectangle"
     );
 
     private static final Set<String> KEPT_CLASS_PREFIXES = Set.of(
         "org/lwjgl/Version$",
-        "org/lwjgl/system/Configuration$"
+        "org/lwjgl/system/Configuration$",
+        "org/lwjgl/LWJGLUtil$",
+        "org/lwjgl/input/OpenGLPackageAccess",
+        "org/lwjgl/util/vector/"
+    );
+
+    /**
+     * Pure Java lookups in classes that are patched otherwise, as {@code owner.name}: LWJGL 2's key names, built by the
+     * static initializer, and the reflective lookup of LWJGL 2's OpenCL info utilities.
+     */
+    private static final Set<String> KEPT_METHODS = Set.of(
+        "org/lwjgl/input/Keyboard.getKeyName",
+        "org/lwjgl/input/Keyboard.getKeyIndex",
+        "org/lwjgl/input/Keyboard.getKeyCount",
+        "org/lwjgl/opencl/CLPlatform.getInfoUtilInstance"
     );
 
     private static final Set<String> STRUCT_ALLOCATIONS = Set.of("malloc", "calloc", "create", "mallocStack", "callocStack");
@@ -93,6 +118,7 @@ public final class Rules {
             rule("keep-abstract-interface-method", false, m -> m.isOwnerInterface() && m.isAbstract() ? new Behaviour.Keep() : null),
             rule("keep-enum", false, m -> m.isOwnerEnum() ? new Behaviour.Keep() : null),
             rule("keep-pure-java-class", false, m -> isKeptClass(m.owner().name) ? new Behaviour.Keep() : null),
+            rule("keep-pure-java-method", false, m -> KEPT_METHODS.contains(m.owner().name + "." + m.name()) ? new Behaviour.Keep() : null),
             rule("keep-struct-layout", false, m -> STRUCT.equals(m.owner().name) && m.isStatic()
                 && (m.name().startsWith("__") || STRUCT_LAYOUT_HELPERS.contains(m.name())) ? new Behaviour.Keep() : null),
             rule("keep-unsafe-lookup", false, m -> m.isStatic() && "getUnsafeInstance".equals(m.name())

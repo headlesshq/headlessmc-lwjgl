@@ -52,6 +52,11 @@ public final class ApiCompatibilityGate {
         Set<String> used = new TreeSet<>();
         List<String> violations = new ArrayList<>();
         for (String[] report : reports) {
+            if (!Files.exists(Path.of(report[1]))) {
+                System.out.println("No japicmp report for LWJGL " + report[0] + ", the version did not resolve");
+                continue;
+            }
+
             for (String change : changes(Path.of(report[1]))) {
                 if (allowed.contains(change)) {
                     used.add(change);

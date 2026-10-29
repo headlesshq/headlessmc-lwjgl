@@ -176,29 +176,12 @@ public final class GlPatches {
 
     @Patch(owner = {GL11C, GL11})
     public static String glGetString(int name) {
-        switch (name) {
-            case GL_VENDOR:
-                return GlInfo.vendor();
-            case GL_RENDERER:
-                return GlInfo.renderer();
-            case GL_VERSION:
-                return GlInfo.version();
-            case GL_SHADING_LANGUAGE_VERSION:
-                return GlInfo.shadingLanguageVersion();
-            case GL_EXTENSIONS:
-                return String.join(" ", GlInfo.extensions());
-            default:
-                return null;
-        }
+        return GlInfo.string(name);
     }
 
     @Patch(owner = {GL30C, GL30})
     public static String glGetStringi(int name, int index) {
-        if (name == GL_EXTENSIONS && index >= 0 && index < GlInfo.extensions().size()) {
-            return GlInfo.extensions().get(index);
-        }
-
-        return null;
+        return GlInfo.string(name, index);
     }
 
 }

@@ -1,0 +1,3 @@
+# Binary incompatible changes between an older LWJGL 2 version and the patched jars that are accepted.
+# Checked by ./gradlew :headlessmc-lwjgl2:checkApiCompatibility against the japicmp reports in build/reports/japicmp/<version>.
+# Format: CHANGE_TYPE class [member]

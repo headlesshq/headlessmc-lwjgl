@@ -2,19 +2,8 @@
 # Every method of every class is patched by the first matching rule, counted per class.
 # Methods resolved by rules that only guess are listed individually and have to be reviewed.
 # Regenerate with: ./gradlew updateCatalogLock
-org/lwjgl/util/Color default=9 identity=2 keep-constructor=6 keep-to-string=1 void=26
-    getAlpha()I default: default
-    getAlphaByte()B default: default
-    getBlue()I default: default
-    getBlueByte()B default: default
-    getGreen()I default: default
-    getGreenByte()B default: default
-    getRed()I default: default
-    getRedByte()B default: default
-    toHSB([F)[F default: default
-org/lwjgl/util/Dimension default=2 identity=2 keep-constructor=3 keep-to-string=1 void=5
-    getHeight()I default: default
-    getWidth()I default: default
+org/lwjgl/util/Color keep-constructor=6 keep-pure-java-class=38
+org/lwjgl/util/Dimension keep-constructor=3 keep-pure-java-class=10
 org/lwjgl/util/Display default=1 guarded-static-init=1 keep-constructor=1 object=1
     getAvailableDisplayModes(IIIIIIII)[Lorg/lwjgl/opengl/DisplayMode; default: default
     setDisplayMode([Lorg/lwjgl/opengl/DisplayMode;[Ljava/lang/String;)Lorg/lwjgl/opengl/DisplayMode; object: new DisplayMode
@@ -23,24 +12,12 @@ org/lwjgl/util/Display$1FieldAccessor default=1 keep-constructor=1
 org/lwjgl/util/Display$1Sorter default=2 keep-constructor=1
     compare(Ljava/lang/Object;Ljava/lang/Object;)I default: default
     compare(Lorg/lwjgl/opengl/DisplayMode;Lorg/lwjgl/opengl/DisplayMode;)I default: default
-org/lwjgl/util/Point default=2 identity=2 keep-constructor=3 keep-to-string=1 void=8
-    getX()I default: default
-    getY()I default: default
+org/lwjgl/util/Point keep-constructor=3 keep-pure-java-class=13
 org/lwjgl/util/ReadableColor keep-abstract-interface-method=14 keep-interface-static-init=1
 org/lwjgl/util/ReadableDimension keep-abstract-interface-method=3
 org/lwjgl/util/ReadablePoint keep-abstract-interface-method=3
 org/lwjgl/util/ReadableRectangle keep-abstract-interface-method=1
-org/lwjgl/util/Rectangle default=10 fluent=2 identity=1 keep-constructor=4 keep-to-string=1 void=21
-    contains(II)Z default: default
-    contains(IIII)Z default: default
-    contains(Lorg/lwjgl/util/ReadablePoint;)Z default: default
-    contains(Lorg/lwjgl/util/ReadableRectangle;)Z default: default
-    getHeight()I default: default
-    getWidth()I default: default
-    getX()I default: default
-    getY()I default: default
-    intersects(Lorg/lwjgl/util/ReadableRectangle;)Z default: default
-    isEmpty()Z default: default
+org/lwjgl/util/Rectangle keep-constructor=4 keep-pure-java-class=35
 org/lwjgl/util/Renderable keep-abstract-interface-method=1
 org/lwjgl/util/Timer default=2 guarded-static-init=1 keep-constructor=1 keep-to-string=1 void=5
     getTime()F default: default
@@ -400,97 +377,19 @@ org/lwjgl/util/mapped/MappedSet4 keep-constructor=1 void=2
 org/lwjgl/util/mapped/MappedType keep-abstract-interface-method=4
 org/lwjgl/util/vector/Matrix default=1 fluent=9 keep-constructor=1
     determinant()F default: default
-org/lwjgl/util/vector/Matrix2f default=1 fluent=12 keep-constructor=2 keep-to-string=1 object=10
-    add(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-    determinant()F default: default
-    invert(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-    load(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-    mul(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-    negate(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-    setIdentity(Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-    setZero(Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-    sub(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-    transform(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)Lorg/lwjgl/util/vector/Vector2f; object: new Vector2f
-    transpose(Lorg/lwjgl/util/vector/Matrix2f;Lorg/lwjgl/util/vector/Matrix2f;)Lorg/lwjgl/util/vector/Matrix2f; object: new Matrix2f
-org/lwjgl/util/vector/Matrix3f default=1 fluent=12 keep-constructor=1 keep-to-string=1 object=10
-    add(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-    determinant()F default: default
-    invert(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-    load(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-    mul(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-    negate(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-    setIdentity(Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-    setZero(Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-    sub(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-    transform(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f; object: new Vector3f
-    transpose(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Matrix3f;)Lorg/lwjgl/util/vector/Matrix3f; object: new Matrix3f
-org/lwjgl/util/vector/Matrix4f default=2 fluent=20 keep-constructor=2 keep-to-string=1 object=14
-    add(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    determinant()F default: default
-    determinant3x3(FFFFFFFFF)F default: default
-    invert(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    load(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    mul(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    negate(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    rotate(FLorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    scale(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    setIdentity(Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    setZero(Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    sub(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    transform(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)Lorg/lwjgl/util/vector/Vector4f; object: new Vector4f
-    translate(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    translate(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-    transpose(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Matrix4f;)Lorg/lwjgl/util/vector/Matrix4f; object: new Matrix4f
-org/lwjgl/util/vector/Quaternion default=6 fluent=11 keep-constructor=3 keep-to-string=1 object=8 void=8
-    dot(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)F default: default
-    getW()F default: default
-    getX()F default: default
-    getY()F default: default
-    getZ()F default: default
-    lengthSquared()F default: default
-    mul(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
-    mulInverse(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
-    negate(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
-    normalise(Lorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
-    scale(FLorg/lwjgl/util/vector/Quaternion;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
-    setFromMatrix(Lorg/lwjgl/util/vector/Matrix3f;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
-    setFromMatrix(Lorg/lwjgl/util/vector/Matrix4f;Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
-    setIdentity(Lorg/lwjgl/util/vector/Quaternion;)Lorg/lwjgl/util/vector/Quaternion; object: new Quaternion
+org/lwjgl/util/vector/Matrix2f keep-constructor=2 keep-pure-java-class=24
+org/lwjgl/util/vector/Matrix3f keep-constructor=1 keep-pure-java-class=24
+org/lwjgl/util/vector/Matrix4f keep-constructor=2 keep-pure-java-class=37
+org/lwjgl/util/vector/Quaternion keep-constructor=3 keep-pure-java-class=34
 org/lwjgl/util/vector/ReadableVector keep-abstract-interface-method=3
 org/lwjgl/util/vector/ReadableVector2f keep-abstract-interface-method=2
 org/lwjgl/util/vector/ReadableVector3f keep-abstract-interface-method=1
 org/lwjgl/util/vector/ReadableVector4f keep-abstract-interface-method=1
-org/lwjgl/util/vector/Vector default=2 fluent=5 keep-constructor=1
-    length()F default: default
+org/lwjgl/util/vector/Vector default=1 fluent=4 keep-constructor=1 keep-pure-java-class=2
     lengthSquared()F default: default
-org/lwjgl/util/vector/Vector2f default=5 fluent=8 identity=1 keep-constructor=3 keep-to-string=1 object=2 void=3
-    add(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)Lorg/lwjgl/util/vector/Vector2f; object: new Vector2f
-    angle(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)F default: default
-    dot(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)F default: default
-    getX()F default: default
-    getY()F default: default
-    lengthSquared()F default: default
-    sub(Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;Lorg/lwjgl/util/vector/Vector2f;)Lorg/lwjgl/util/vector/Vector2f; object: new Vector2f
-org/lwjgl/util/vector/Vector3f default=6 fluent=8 identity=1 keep-constructor=3 keep-to-string=1 object=3 void=5
-    add(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f; object: new Vector3f
-    angle(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)F default: default
-    cross(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f; object: new Vector3f
-    dot(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)F default: default
-    getX()F default: default
-    getY()F default: default
-    getZ()F default: default
-    lengthSquared()F default: default
-    sub(Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;Lorg/lwjgl/util/vector/Vector3f;)Lorg/lwjgl/util/vector/Vector3f; object: new Vector3f
-org/lwjgl/util/vector/Vector4f default=7 fluent=8 identity=1 keep-constructor=3 keep-to-string=1 object=2 void=7
-    add(Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)Lorg/lwjgl/util/vector/Vector4f; object: new Vector4f
-    angle(Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)F default: default
-    dot(Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)F default: default
-    getW()F default: default
-    getX()F default: default
-    getY()F default: default
-    getZ()F default: default
-    lengthSquared()F default: default
-    sub(Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;Lorg/lwjgl/util/vector/Vector4f;)Lorg/lwjgl/util/vector/Vector4f; object: new Vector4f
+org/lwjgl/util/vector/Vector2f keep-constructor=3 keep-pure-java-class=20
+org/lwjgl/util/vector/Vector3f keep-constructor=3 keep-pure-java-class=24
+org/lwjgl/util/vector/Vector4f keep-constructor=3 keep-pure-java-class=26
 org/lwjgl/util/vector/WritableVector2f keep-abstract-interface-method=3
 org/lwjgl/util/vector/WritableVector3f keep-abstract-interface-method=2
 org/lwjgl/util/vector/WritableVector4f keep-abstract-interface-method=2
