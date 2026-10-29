@@ -201,6 +201,14 @@ public final class StbImagePatches {
         return stbi_info_from_memory(read(clbk, user), x, y, comp);
     }
 
+    /**
+     * Loading never fails, so there is no failure reason, which Minecraft 26.3 checks when it loads STB.
+     */
+    @Patch(owner = STB_IMAGE)
+    public static String stbi_failure_reason() {
+        return null;
+    }
+
     private static void put(IntBuffer buffer, int value) {
         if (buffer != null) {
             buffer.put(buffer.position(), value);

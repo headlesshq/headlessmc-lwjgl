@@ -17,8 +17,13 @@ import org.lwjgl.opengl.GL30;
 import org.lwjgl.opengl.GLCapabilities;
 import org.lwjgl.sdl.SDLInit;
 import org.lwjgl.sdl.SDLVideo;
+import org.lwjgl.sdl.SDL_DisplayMode;
+import org.lwjgl.PointerBuffer;
+import org.lwjgl.stb.STBImage;
+import org.lwjgl.vulkan.VK;
 import org.lwjgl.system.MemoryStack;
 import org.lwjgl.system.MemoryUtil;
+import org.lwjgl.system.SharedLibrary;
 
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
@@ -29,6 +34,33 @@ import static org.junit.jupiter.api.Assertions.*;
  * Calls that every Minecraft version makes during startup.
  */
 class StartupTest {
+    /**
+     * Minecraft 26.3 checks each native library when it starts and prefers Vulkan if a Vulkan loader exists.
+     */
+    @Test
+    void minecraft26LibraryChecks() {
+        assertNull(STBImage.stbi_failure_reason());
+        assertInstanceOf(SharedLibrary.class, GL.getFunctionProvider());
+        assertInstanceOf(SharedLibrary.class, ALC.getFunctionProvider());
+        assertThrows(IllegalStateException.class, VK::create);
+        assertThrows(IllegalStateException.class, VK::getFunctionProvider);
+        PointerBuffer modes = SDLVideo.SDL_GetFullscreenDisplayModes(SDLVideo.SDL_GetPrimaryDisplay());
+        assertNotNull(modes);
+        assertEquals(1, modes.limit());
+        try (MemoryStack stack = MemoryStack.stackPush()) {
+            IntBuffer major = stack.callocInt(1);
+            IntBuffer minor = stack.callocInt(1);
+            assertTrue(SDLVideo.SDL_GL_SetAttribute(SDLVideo.SDL_GL_CONTEXT_MAJOR_VERSION, 3));
+            assertTrue(SDLVideo.SDL_GL_GetAttribute(SDLVideo.SDL_GL_CONTEXT_MAJOR_VERSION, major));
+            assertTrue(SDLVideo.SDL_GL_GetAttribute(SDLVideo.SDL_GL_CONTEXT_MINOR_VERSION, minor));
+            assertTrue(major.get(0) * 10 + minor.get(0) >= 33);
+        }
+
+        SDL_DisplayMode mode = SDL_DisplayMode.create(modes.get(0));
+        assertEquals(1920, mode.w());
+        assertEquals(1080, mode.h());
+    }
+
     @Test
     void memory() {
         try (MemoryStack stack = MemoryStack.stackPush()) {

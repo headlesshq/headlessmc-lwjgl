@@ -22,6 +22,7 @@ public final class Dummies {
      * Methods of allocator interfaces like {@code MemoryUtil.MemoryAllocator}, which return a nonzero address, like the
      * patched allocation functions, because callers treat 0 as out of memory.
      */
+    private static final String SHARED_LIBRARY = "org.lwjgl.system.SharedLibrary";
     private static final Pattern ALLOCATION = Pattern.compile("malloc|calloc|realloc|aligned_alloc|alloc|allocate");
 
     private Dummies() {
@@ -59,8 +60,29 @@ public final class Dummies {
         return PROXIES.computeIfAbsent(type, Dummies::createProxy);
     }
 
+    /**
+     * Function providers of LWJGL 3 are shared libraries, which applications rely on, e.g. Minecraft 26.3 casts
+     * {@code GL.getFunctionProvider()} to {@code SharedLibrary} to pass its path to SDL.
+     */
+    private static Class<?>[] proxyInterfaces(Class<?> type) {
+        if (type.getName().startsWith("org.lwjgl.system.FunctionProvider")) {
+            try {
+                Class<?> sharedLibrary = Class.forName(SHARED_LIBRARY, false, type.getClassLoader());
+                if (sharedLibrary != type && !type.isAssignableFrom(sharedLibrary)) {
+                    return new Class<?>[]{type, sharedLibrary};
+                }
+
+                return new Class<?>[]{sharedLibrary};
+            } catch (ClassNotFoundException ignored) {
+                // LWJGL 2 has no shared libraries
+            }
+        }
+
+        return new Class<?>[]{type};
+    }
+
     private static Object createProxy(Class<?> type) {
-        return Proxy.newProxyInstance(type.getClassLoader(), new Class<?>[]{type}, (proxy, method, args) -> {
+        return Proxy.newProxyInstance(type.getClassLoader(), proxyInterfaces(type), (proxy, method, args) -> {
             switch (method.getName()) {
                 case "equals":
                     return args != null && args.length == 1 && proxy == args[0];

@@ -5,9 +5,11 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -16,6 +18,11 @@ class AllClassesTest {
      * Classes that LWJGL only uses on newer Java versions, with the minimum Java version.
      */
     private static final Map<String, Integer> MINIMUM_JAVA_VERSION = new HashMap<>();
+    /**
+     * Classes whose static initializer fails like on a real machine, e.g. {@code VK} loads Vulkan unless it is
+     * initialized explicitly, but there is no Vulkan loader.
+     */
+    private static final Set<String> EXPECTED_STATIC_INIT_FAILURES = Collections.singleton("org.lwjgl.vulkan.VK");
 
     static {
         MINIMUM_JAVA_VERSION.put("org.lwjgl.system.MemoryBackendUnsafeLegacy9", 9);
@@ -44,7 +51,8 @@ class AllClassesTest {
         }
 
         for (Map.Entry<String, Throwable> failure : StaticInit.failures().entrySet()) {
-            if (MINIMUM_JAVA_VERSION.getOrDefault(failure.getKey(), 8) <= javaVersion) {
+            if (MINIMUM_JAVA_VERSION.getOrDefault(failure.getKey(), 8) <= javaVersion
+                && !EXPECTED_STATIC_INIT_FAILURES.contains(failure.getKey())) {
                 failures.add(failure.getKey() + " static initializer: " + failure.getValue());
             }
         }

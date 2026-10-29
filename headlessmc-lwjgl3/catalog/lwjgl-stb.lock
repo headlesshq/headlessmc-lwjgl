@@ -80,7 +80,7 @@ org/lwjgl/stb/STBIZlibCompressI default=1 keep-abstract-interface-method=1 keep-
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/stb/STBImage default=54 guarded-static-init=1 handler=16 keep-constructor=1 nio-buffer-empty=18 void=19
+org/lwjgl/stb/STBImage default=53 guarded-static-init=1 handler=17 keep-constructor=1 nio-buffer-empty=18 void=19
     nstbi_failure_reason()J default: default
     nstbi_info(JJJJ)I default: default
     nstbi_info(J[I[I[I)I default: default
@@ -120,7 +120,6 @@ org/lwjgl/stb/STBImage default=54 guarded-static-init=1 handler=16 keep-construc
     nstbi_zlib_decode_malloc_guesssize_headerflag(JIIJI)J default: default
     nstbi_zlib_decode_noheader_buffer(JIJI)I default: default
     nstbi_zlib_decode_noheader_malloc(JIJ)J default: default
-    stbi_failure_reason()Ljava/lang/String; default: default
     stbi_info(Ljava/lang/CharSequence;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default
     stbi_info(Ljava/lang/CharSequence;[I[I[I)Z default: default
     stbi_info(Ljava/nio/ByteBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)Z default: default

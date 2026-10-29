@@ -20,6 +20,7 @@ public final class Rules {
     private static final String STRUCT_BUFFER = "org/lwjgl/system/StructBuffer";
     private static final String CALLBACK_INTERFACE = "org/lwjgl/system/CallbackI";
     private static final String CALLBACK = "org/lwjgl/system/Callback";
+    private static final Set<String> ADDRESS_BUFFERS = Set.of("org/lwjgl/PointerBuffer", "org/lwjgl/CLongBuffer");
 
     /**
      * Pure Java classes without native code, of LWJGL 3 and LWJGL 2.
@@ -28,6 +29,7 @@ public final class Rules {
         "org/lwjgl/Version",
         "org/lwjgl/system/Configuration",
         "org/lwjgl/system/MathUtil",
+        "org/lwjgl/system/CheckIntrinsics",
         "org/lwjgl/system/Struct$Member",
         "org/lwjgl/system/Struct$Layout",
         "org/lwjgl/LWJGLUtil",
@@ -136,6 +138,7 @@ public final class Rules {
                 && ("org/lwjgl/system/Pointer$Default".equals(m.owner().name) || "org/lwjgl/system/Callback".equals(m.owner().name))
                 ? new Behaviour.Keep() : null),
             rule("keep-callback", false, m -> isCallbackCode(m, pool) ? new Behaviour.Keep() : null),
+            rule("keep-address-buffer", false, m -> isAddressBufferCode(m) ? new Behaviour.Keep() : null),
             rule("keep-struct-sizeof", false, m -> !m.isStatic() && "sizeof".equals(m.name()) && "()I".equals(m.desc())
                 && pool.isAssignable(m.owner().name, STRUCT) ? new Behaviour.Keep() : null),
             rule("keep-struct", false, m -> isStructCode(m, pool) ? new Behaviour.Keep() : null),
@@ -180,6 +183,19 @@ public final class Rules {
         }
 
         return "invoke".equals(method.name()) && !method.isAbstract();
+    }
+
+    /**
+     * {@code PointerBuffer} and {@code CLongBuffer} read and write their memory with the patched {@code MemoryUtil}
+     * accessors. They keep their dummy factories, which give them real memory, except {@code create}, which wraps
+     * memory of the application.
+     */
+    private static boolean isAddressBufferCode(MethodInfo method) {
+        if (!ADDRESS_BUFFERS.contains(method.owner().name) || "<clinit>".equals(method.name())) {
+            return false;
+        }
+
+        return !method.isStatic() || "create".equals(method.name());
     }
 
     private static boolean isKeptClass(String name) {

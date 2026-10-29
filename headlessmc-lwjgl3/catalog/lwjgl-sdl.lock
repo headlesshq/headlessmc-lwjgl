@@ -938,7 +938,7 @@ org/lwjgl/sdl/SDLVersion default=7 guarded-static-init=1 keep-constructor=1 sdl-
     SDL_VERSIONNUM_MINOR(I)I default: default
     nSDL_GetRevision()J default: default
 org/lwjgl/sdl/SDLVersion$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLVideo default=70 guarded-static-init=1 handler=19 id=4 keep-constructor=1 lwjgl-buffer=1 lwjgl-buffer-empty=1 nio-buffer=1 sdl-success=63 struct=3 void=4
+org/lwjgl/sdl/SDLVideo default=70 guarded-static-init=1 handler=26 id=4 keep-constructor=1 lwjgl-buffer-empty=1 nio-buffer=1 sdl-success=58 struct=3 void=3
     SDL_EGL_GetCurrentConfig()J default: default
     SDL_EGL_GetCurrentDisplay()J default: default
     SDL_EGL_GetProcAddress(Ljava/lang/CharSequence;)J default: default

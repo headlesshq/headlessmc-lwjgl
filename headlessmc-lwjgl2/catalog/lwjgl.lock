@@ -146,23 +146,10 @@ org/lwjgl/NondirectBufferWrapper$CachedBuffers shim-class=2.9.0 keep-constructor
     access$700(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
     access$800(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
     access$900(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
-org/lwjgl/PointerBuffer default=14 fluent=21 guarded-static-init=1 identity=2 keep-constructor=2 keep-to-string=1 nio-buffer-empty=1 object=1 void=4
+org/lwjgl/PointerBuffer default=2 guarded-static-init=1 keep-address-buffer=37 keep-constructor=2 object=1 void=4
     allocateDirect(I)Lorg/lwjgl/PointerBuffer; object: new PointerBuffer
-    capacity()I default: default
-    compareTo(Ljava/lang/Object;)I default: default
-    get()J default: default
-    get(I)J default: default
-    getBuffer()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     getPointerSize()I default: default
-    hasRemaining()Z default: default
     is64Bit()Z default: default
-    isReadOnly()Z default: default
-    limit()I default: default
-    order()Ljava/nio/ByteOrder; default: default
-    position()I default: default
-    positionByte()I default: default
-    remaining()I default: default
-    remainingByte()I default: default
 org/lwjgl/PointerBuffer$PointerBufferR default=1 fluent=7 keep-constructor=1
     isReadOnly()Z default: default
 org/lwjgl/PointerWrapper keep-abstract-interface-method=1

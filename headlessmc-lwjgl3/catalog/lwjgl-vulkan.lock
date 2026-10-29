@@ -1323,10 +1323,9 @@ org/lwjgl/vulkan/VALVEFragmentDensityMapLayered keep-constructor=1
 org/lwjgl/vulkan/VALVEMutableDescriptorType keep-constructor=1
 org/lwjgl/vulkan/VALVEShaderMixedFloatDotProduct keep-constructor=1
 org/lwjgl/vulkan/VALVEVideoEncodeRgbConversion keep-constructor=1
-org/lwjgl/vulkan/VK default=3 guarded-static-init=1 interface-proxy=1 keep-constructor=1 object=1 void=5
+org/lwjgl/vulkan/VK default=3 guarded-static-init=1 handler=5 keep-constructor=1 object=1 void=1
     check(Ljava/lang/Object;)Ljava/lang/Object; default: default
     getEnabledExtensionSet(ILorg/lwjgl/PointerBuffer;)Ljava/util/Set; default: default
-    getFunctionProvider()Lorg/lwjgl/system/FunctionProvider; interface-proxy: proxy FunctionProvider
     getGlobalCommands()Lorg/lwjgl/vulkan/VK$GlobalCommands; object: new VK$GlobalCommands
     getInstanceVersionSupported()I default: default
 org/lwjgl/vulkan/VK$1 guarded-static-init=1

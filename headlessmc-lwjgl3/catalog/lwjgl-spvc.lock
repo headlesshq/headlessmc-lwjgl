@@ -4,7 +4,7 @@
 # Regenerate with: ./gradlew updateCatalogLock
 org/lwjgl/util/spvc/Spv keep-constructor=1
     SpvCapabilityLongConstantCompositeINTEL:I [shim 3.3.3]
-org/lwjgl/util/spvc/Spvc default=195 guarded-static-init=1 interface-proxy=2 keep-constructor=1 void=57
+org/lwjgl/util/spvc/Spvc default=193 guarded-static-init=1 handler=2 interface-proxy=2 keep-constructor=1 void=57
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     nspvc_compiler_add_header_line(JJ)I default: default
@@ -181,8 +181,6 @@ org/lwjgl/util/spvc/Spvc default=195 guarded-static-init=1 interface-proxy=2 kee
     spvc_context_parse_spirv(JLjava/nio/IntBuffer;JLorg/lwjgl/PointerBuffer;)I default: default
     spvc_get_commit_revision_and_timestamp()Ljava/lang/String; default: default
     spvc_msl_get_aux_buffer_struct_version()I default: default
-    spvc_resources_get_builtin_resource_list_for_type(JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
-    spvc_resources_get_resource_list_for_type(JILorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
     spvc_type_array_dimension_is_literal(JI)Z default: default
     spvc_type_get_array_dimension(JI)I default: default
     spvc_type_get_base_type_id(J)I default: default

@@ -4,26 +4,12 @@
 # Regenerate with: ./gradlew updateCatalogLock
 org/lwjgl/BufferUtils default=1 keep-constructor=1 lwjgl-buffer=2 nio-buffer=7 void=8
     getAllocationSize(II)I default: default
-org/lwjgl/CLongBuffer default=5 fluent=8 identity=2 keep-bridge=3 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=2 lwjgl-buffer-empty=1 void=4
-    compareTo(Lorg/lwjgl/CLongBuffer;)I default: default
-    create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
-    get()J default: default
-    get(I)J default: default
+org/lwjgl/CLongBuffer default=2 keep-address-buffer=17 keep-bridge=3 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=1 void=2
     get(Ljava/nio/ByteBuffer;)J default: default
     get(Ljava/nio/ByteBuffer;I)J default: default
-org/lwjgl/PointerBuffer default=11 fluent=30 identity=2 keep-bridge=3 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=2 lwjgl-buffer-empty=1 nio-buffer=12 void=4
-    compareTo(Lorg/lwjgl/PointerBuffer;)I default: default
-    create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    get()J default: default
-    get(I)J default: default
+org/lwjgl/PointerBuffer default=2 fluent=4 keep-address-buffer=53 keep-bridge=3 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=1 void=2
     get(Ljava/nio/ByteBuffer;)J default: default
     get(Ljava/nio/ByteBuffer;I)J default: default
-    getStringASCII()Ljava/lang/String; default: default
-    getStringASCII(I)Ljava/lang/String; default: default
-    getStringUTF16()Ljava/lang/String; default: default
-    getStringUTF16(I)Ljava/lang/String; default: default
-    getStringUTF8()Ljava/lang/String; default: default
-    getStringUTF8(I)Ljava/lang/String; default: default
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/PointerBuffer; fluent [shim 3.1.6]
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/CustomBuffer; fluent [shim 3.1.6]
     putAddressOf(ILorg/lwjgl/PointerBuffer;)Lorg/lwjgl/PointerBuffer; fluent [shim 3.1.6]
@@ -76,25 +62,13 @@ org/lwjgl/system/CallbackI$P shim-class=3.2.2 keep-abstract-interface-method=1
 org/lwjgl/system/CallbackI$S shim-class=3.2.2 keep-abstract-interface-method=1
 org/lwjgl/system/CallbackI$V shim-class=3.2.2 keep-abstract-interface-method=1
 org/lwjgl/system/CallbackI$Z shim-class=3.2.2 keep-abstract-interface-method=1
-org/lwjgl/system/CheckIntrinsics default=3 keep-constructor=1
-    checkFromIndexSize(III)I default: default
-    checkFromToIndex(III)I default: default
-    checkIndex(II)I default: default
-org/lwjgl/system/Checks default=14 guarded-static-init=1 keep-constructor=1 void=55
-    check(II)J default: default
+org/lwjgl/system/CheckIntrinsics keep-constructor=1 keep-pure-java-class=3
+org/lwjgl/system/Checks default=5 guarded-static-init=1 handler=9 keep-constructor=1 void=55
     check(II)V void [shim 3.1.6]
-    check(J)J default: default
     checkFunctions(Lorg/lwjgl/system/FunctionProvider;Lorg/lwjgl/PointerBuffer;[I[Ljava/lang/String;)Z default: default
     checkFunctions(Lorg/lwjgl/system/FunctionProvider;[J[I[Ljava/lang/String;)Z default: default
     checkFunctions(Lorg/lwjgl/system/FunctionProviderLocal;JLorg/lwjgl/PointerBuffer;[I[Ljava/lang/String;)Z default: default
     checkFunctions([J)Z default: default
-    lengthSafe([D)I default: default
-    lengthSafe([F)I default: default
-    lengthSafe([I)I default: default
-    lengthSafe([J)I default: default
-    lengthSafe([S)I default: default
-    remainingSafe(Ljava/nio/Buffer;)I default: default
-    remainingSafe(Lorg/lwjgl/system/CustomBuffer;)I default: default
     reportMissing(Ljava/lang/String;Ljava/lang/String;)Z default: default
 org/lwjgl/system/Configuration guarded-static-init=1 keep-constructor=1 keep-pure-java-class=8
     CUDA_API_PER_THREAD_DEFAULT_STREAM:Lorg/lwjgl/system/Configuration; [shim 3.3.3]

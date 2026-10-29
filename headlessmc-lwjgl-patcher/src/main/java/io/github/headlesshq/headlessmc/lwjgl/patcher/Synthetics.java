@@ -17,6 +17,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import static org.objectweb.asm.Opcodes.*;
 
@@ -39,6 +40,7 @@ public final class Synthetics {
     private static final String STRUCT_BUFFER = "org/lwjgl/system/StructBuffer";
     private static final String POINTER = "org/lwjgl/system/Pointer$Default";
     private static final String STRUCT_MEMORY = Behaviour.RUNTIME + "StructMemory";
+    private static final Set<String> ADDRESS_BUFFERS = Set.of("org/lwjgl/PointerBuffer", "org/lwjgl/CLongBuffer");
     public static final String WRAPPER = "hmc$wrap";
     private static final String STRUCT_CONSTRUCTOR = "(JLjava/nio/ByteBuffer;)V";
     private static final String BUFFER_CONSTRUCTOR = "(JLjava/nio/ByteBuffer;IIII)V";
@@ -205,8 +207,8 @@ public final class Synthetics {
     }
 
     /**
-     * {@code hmc$dummy(int capacity)} for buffers: struct buffers get new memory from {@code StructMemory}, other
-     * buffers a fake address.
+     * {@code hmc$dummy(int capacity)} for buffers: struct buffers and buffers of 64 bit addresses, like
+     * {@code PointerBuffer}, get new memory from {@code StructMemory}, other buffers a fake address.
      */
     private MethodNode bufferFactory(ClassNode node) {
         MethodNode method = new MethodNode(ACC_PUBLIC | ACC_STATIC | ACC_SYNTHETIC, Behaviour.DUMMY_FACTORY, "(I)L" + node.name + ";", null, null);
@@ -214,6 +216,13 @@ public final class Synthetics {
         if (struct != null) {
             method.instructions.add(new VarInsnNode(ILOAD, 0));
             method.instructions.add(new FieldInsnNode(GETSTATIC, struct, "SIZEOF", "I"));
+            method.instructions.add(new InsnNode(IMUL));
+            allocate(method);
+            method.instructions.add(new VarInsnNode(ILOAD, 0));
+            method.instructions.add(new InsnNode(SWAP));
+        } else if (ADDRESS_BUFFERS.contains(node.name)) {
+            method.instructions.add(new VarInsnNode(ILOAD, 0));
+            method.instructions.add(new LdcInsnNode(Long.BYTES));
             method.instructions.add(new InsnNode(IMUL));
             allocate(method);
             method.instructions.add(new VarInsnNode(ILOAD, 0));

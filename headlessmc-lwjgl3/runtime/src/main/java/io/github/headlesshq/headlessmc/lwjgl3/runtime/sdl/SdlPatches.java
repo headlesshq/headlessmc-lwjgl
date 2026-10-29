@@ -3,7 +3,10 @@ package io.github.headlesshq.headlessmc.lwjgl3.runtime.sdl;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Ids;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.StructMemory;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.WindowConfig;
+import io.github.headlesshq.headlessmc.lwjgl.runtime.opengl.GlInfo;
+import org.lwjgl.PointerBuffer;
 import org.lwjgl.sdl.SDL_DisplayMode;
 import org.lwjgl.sdl.SDL_Event;
 import org.lwjgl.sdl.SDL_Rect;
@@ -12,6 +15,8 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.sdl.SDLKeycode.*;
@@ -33,6 +38,9 @@ public final class SdlPatches {
     private static final long WAIT_MILLIS = 10L;
     private static final long START = System.nanoTime();
     private static final SDL_DisplayMode DISPLAY_MODE = displayMode();
+    private static final Map<Integer, Integer> GL_ATTRIBUTES = new ConcurrentHashMap<>();
+
+    private static volatile int swapInterval;
 
     private SdlPatches() {
         throw new AssertionError();
@@ -167,9 +175,90 @@ public final class SdlPatches {
         return DISPLAY_MODE;
     }
 
+    /**
+     * The desktop display mode is the only fullscreen display mode.
+     */
+    @Patch(owner = SDL_VIDEO)
+    public static PointerBuffer SDL_GetFullscreenDisplayModes(int displayID) {
+        PointerBuffer modes = PointerBuffer.create(StructMemory.allocate(Long.BYTES));
+        modes.put(0, DISPLAY_MODE.address());
+        return modes;
+    }
+
+    @Patch(owner = SDL_VIDEO)
+    public static boolean SDL_GetClosestFullscreenDisplayMode(int displayID, int w, int h, float refresh_rate,
+                                                              boolean include_high_density_modes,
+                                                              SDL_DisplayMode closest) {
+        closest.set(DISPLAY_MODE);
+        return true;
+    }
+
     @Patch(owner = SDL_VIDEO)
     public static SDL_DisplayMode SDL_GetDesktopDisplayMode(int displayID) {
         return DISPLAY_MODE;
+    }
+
+    @Patch(owner = SDL_VIDEO)
+    public static void SDL_GL_ResetAttributes() {
+        GL_ATTRIBUTES.clear();
+    }
+
+    @Patch(owner = SDL_VIDEO)
+    public static boolean SDL_GL_SetAttribute(int attr, int value) {
+        GL_ATTRIBUTES.put(attr, value);
+        return true;
+    }
+
+    /**
+     * The context has the configured OpenGL version, whatever was requested, 8 bits per color channel, a 24 bit
+     * depth buffer and an 8 bit stencil buffer, other attributes are what was set.
+     */
+    @Patch(owner = SDL_VIDEO)
+    public static boolean SDL_GL_GetAttribute(int attr, IntBuffer value) {
+        int result;
+        switch (attr) {
+            case SDL_GL_CONTEXT_MAJOR_VERSION:
+                result = GlInfo.majorVersion();
+                break;
+            case SDL_GL_CONTEXT_MINOR_VERSION:
+                result = GlInfo.minorVersion();
+                break;
+            case SDL_GL_RED_SIZE:
+            case SDL_GL_GREEN_SIZE:
+            case SDL_GL_BLUE_SIZE:
+            case SDL_GL_ALPHA_SIZE:
+            case SDL_GL_STENCIL_SIZE:
+                result = GL_ATTRIBUTES.getOrDefault(attr, 8);
+                break;
+            case SDL_GL_DEPTH_SIZE:
+                result = GL_ATTRIBUTES.getOrDefault(attr, 24);
+                break;
+            case SDL_GL_DOUBLEBUFFER:
+            case SDL_GL_ACCELERATED_VISUAL:
+                result = GL_ATTRIBUTES.getOrDefault(attr, 1);
+                break;
+            case SDL_GL_CONTEXT_PROFILE_MASK:
+                result = GL_ATTRIBUTES.getOrDefault(attr, SDL_GL_CONTEXT_PROFILE_CORE);
+                break;
+            default:
+                result = GL_ATTRIBUTES.getOrDefault(attr, 0);
+                break;
+        }
+
+        value.put(value.position(), result);
+        return true;
+    }
+
+    @Patch(owner = SDL_VIDEO)
+    public static boolean SDL_GL_SetSwapInterval(int interval) {
+        swapInterval = interval;
+        return true;
+    }
+
+    @Patch(owner = SDL_VIDEO)
+    public static boolean SDL_GL_GetSwapInterval(IntBuffer interval) {
+        interval.put(interval.position(), swapInterval);
+        return true;
     }
 
     @Patch(owner = SDL_EVENTS)

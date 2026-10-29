@@ -1,6 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl3;
 
 import org.junit.jupiter.api.Test;
+import org.lwjgl.PointerBuffer;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWImage;
 import org.lwjgl.glfw.GLFWVidMode;
@@ -60,6 +61,19 @@ class StructTest {
         long grown = MemoryUtil.nmemRealloc(address, 128);
         assertEquals(5, MemoryUtil.memGetInt(grown + 4));
         MemoryUtil.nmemFree(grown);
+    }
+
+    @Test
+    void pointerBuffersHoldAddresses() {
+        PointerBuffer pointers = PointerBuffer.allocateDirect(2);
+        pointers.put(0, 42L).put(1, 7L);
+        assertEquals(42L, pointers.get(0));
+        assertEquals(7L, pointers.get(1));
+        try (MemoryStack stack = MemoryStack.stackPush()) {
+            PointerBuffer onStack = stack.mallocPointer(1);
+            onStack.put(0, 9L);
+            assertEquals(9L, onStack.get(0));
+        }
     }
 
     @Test
