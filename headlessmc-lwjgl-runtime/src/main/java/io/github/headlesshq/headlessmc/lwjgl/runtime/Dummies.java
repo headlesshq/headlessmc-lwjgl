@@ -36,6 +36,10 @@ public final class Dummies {
     public static <T> T create(Class<T> type) {
         try {
             Method factory = type.getDeclaredMethod(FACTORY);
+            if (!Modifier.isPublic(type.getModifiers())) {
+                factory.setAccessible(true);
+            }
+
             return type.cast(factory.invoke(null));
         } catch (ReflectiveOperationException e) {
             throw new IllegalStateException(type.getName() + " has not been patched by HeadlessMc", e);

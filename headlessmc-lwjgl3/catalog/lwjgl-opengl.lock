@@ -1470,11 +1470,11 @@ org/lwjgl/opengl/GLXSGIXSwapBarrier default=3 keep-constructor=1 void=1
     glXQueryMaxSwapBarriersSGIX(JI[I)Z default: default
     nglXQueryMaxSwapBarriersSGIX(JIJ)I default: default
 org/lwjgl/opengl/GLXSGIXSwapGroup keep-constructor=1 void=1
-org/lwjgl/opengl/GLXStereoNotifyEventEXT guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1
-org/lwjgl/opengl/GLXStereoNotifyEventEXT$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct=1
+org/lwjgl/opengl/GLXStereoNotifyEventEXT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1
+org/lwjgl/opengl/GLXStereoNotifyEventEXT$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/opengl/GLXStereoNotifyEventEXT$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/opengl/GLXStereoNotifyEventEXT; struct [shim 3.1.6]
-org/lwjgl/opengl/GPU_DEVICE fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/opengl/GPU_DEVICE fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/opengl/GPU_DEVICE; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -1484,7 +1484,7 @@ org/lwjgl/opengl/GPU_DEVICE fluent=1 guarded-static-init=1 keep-constructor=2 ke
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/opengl/GPU_DEVICE; struct [shim 3.3.3]
     rcVirtualScreen(Ljava/util/function/Consumer;)Lorg/lwjgl/opengl/GPU_DEVICE; fluent [shim 3.2.2]
-org/lwjgl/opengl/GPU_DEVICE$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=13 struct=1
+org/lwjgl/opengl/GPU_DEVICE$Buffer fluent=2 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/opengl/GPU_DEVICE; struct [shim 3.1.6]
     rcVirtualScreen(Ljava/util/function/Consumer;)Lorg/lwjgl/opengl/GPU_DEVICE$Buffer; fluent [shim 3.2.2]

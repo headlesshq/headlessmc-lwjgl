@@ -90,8 +90,8 @@ org/lwjgl/glfw/GLFWAllocateCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/glfw/GLFWAllocateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
-org/lwjgl/glfw/GLFWAllocator guarded-static-init=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/glfw/GLFWAllocator$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/glfw/GLFWAllocator guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/glfw/GLFWAllocator$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
 org/lwjgl/glfw/GLFWCharCallback fluent=1 keep-callback=4 keep-constructor=2
 org/lwjgl/glfw/GLFWCharCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/glfw/GLFWCharCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=2
@@ -148,7 +148,7 @@ org/lwjgl/glfw/GLFWFramebufferSizeCallbackI keep-abstract-interface-method=1 kee
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/glfw/GLFWGamepadState guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/glfw/GLFWGamepadState guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/glfw/GLFWGamepadState; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -157,10 +157,10 @@ org/lwjgl/glfw/GLFWGamepadState guarded-static-init=1 keep-constructor=2 keep-st
     mallocStack(I)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGamepadState; struct [shim 3.3.3]
-org/lwjgl/glfw/GLFWGamepadState$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct=1
+org/lwjgl/glfw/GLFWGamepadState$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/glfw/GLFWGamepadState$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/glfw/GLFWGamepadState; struct [shim 3.1.6]
-org/lwjgl/glfw/GLFWGammaRamp guarded-static-init=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/glfw/GLFWGammaRamp guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/glfw/GLFWGammaRamp; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -170,14 +170,14 @@ org/lwjgl/glfw/GLFWGammaRamp guarded-static-init=1 keep-constructor=2 keep-struc
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWGammaRamp; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/glfw/GLFWGammaRamp$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct=1
+org/lwjgl/glfw/GLFWGammaRamp$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/glfw/GLFWGammaRamp$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/glfw/GLFWGammaRamp; struct [shim 3.1.6]
 org/lwjgl/glfw/GLFWIMEStatusCallback fluent=1 keep-callback=4 keep-constructor=2
 org/lwjgl/glfw/GLFWIMEStatusCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/glfw/GLFWIMEStatusCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/glfw/GLFWImage guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/glfw/GLFWImage guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/glfw/GLFWImage; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/glfw/GLFWImage$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWImage$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -187,7 +187,7 @@ org/lwjgl/glfw/GLFWImage guarded-static-init=1 keep-constructor=2 keep-struct=21
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWImage$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/glfw/GLFWImage; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/glfw/GLFWImage$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=12 struct=1
+org/lwjgl/glfw/GLFWImage$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/glfw/GLFWImage$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/glfw/GLFWImage; struct [shim 3.1.6]
 org/lwjgl/glfw/GLFWJoystickCallback fluent=1 keep-callback=4 keep-constructor=2
@@ -297,8 +297,8 @@ org/lwjgl/glfw/GLFWScrollCallbackI keep-abstract-interface-method=1 keep-interfa
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/glfw/GLFWVidMode guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1
-org/lwjgl/glfw/GLFWVidMode$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=12 struct=1
+org/lwjgl/glfw/GLFWVidMode guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1
+org/lwjgl/glfw/GLFWVidMode$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/glfw/GLFWVidMode$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/glfw/GLFWVidMode; struct [shim 3.1.6]
 org/lwjgl/glfw/GLFWVulkan default=6 guarded-static-init=1 id=3 keep-constructor=1 lwjgl-buffer-empty=1 void=3

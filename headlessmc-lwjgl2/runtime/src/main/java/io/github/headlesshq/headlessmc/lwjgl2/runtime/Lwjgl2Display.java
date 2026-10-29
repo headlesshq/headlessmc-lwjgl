@@ -39,6 +39,7 @@ public final class Lwjgl2Display {
     private static String title = "";
     private static DisplayMode mode = new DisplayMode(WindowConfig.WIDTH, WindowConfig.HEIGHT);
     private static ContextCapabilities capabilities;
+    private static Drawable drawable;
     private static boolean alCreated;
     private static long nextFrame;
 
@@ -118,6 +119,23 @@ public final class Lwjgl2Display {
     @Patch(owner = DISPLAY)
     public static void create(PixelFormatLWJGL format, Drawable shared, org.lwjgl.opengles.ContextAttribs attribs) {
         createDisplay();
+    }
+
+    /**
+     * A dummy {@code DrawableGL}, because applications cast the drawable to {@code DrawableLWJGL}, e.g. Forge creates a
+     * {@code SharedDrawable} for its splash screen.
+     */
+    @Patch(owner = DISPLAY)
+    public static synchronized Drawable getDrawable() {
+        if (drawable == null) {
+            try {
+                drawable = (Drawable) Dummies.create(Class.forName("org.lwjgl.opengl.DrawableGL"));
+            } catch (ClassNotFoundException e) {
+                throw new IllegalStateException(e);
+            }
+        }
+
+        return drawable;
     }
 
     @Patch(owner = DISPLAY)

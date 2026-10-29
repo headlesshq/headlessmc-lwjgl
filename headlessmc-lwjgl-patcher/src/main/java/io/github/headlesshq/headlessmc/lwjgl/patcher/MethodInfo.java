@@ -33,6 +33,10 @@ public record MethodInfo(ClassNode owner, MethodNode method) {
         return (method.access & Opcodes.ACC_ABSTRACT) != 0;
     }
 
+    public boolean isBridge() {
+        return (method.access & Opcodes.ACC_BRIDGE) != 0;
+    }
+
     public boolean isNative() {
         return (method.access & Opcodes.ACC_NATIVE) != 0;
     }

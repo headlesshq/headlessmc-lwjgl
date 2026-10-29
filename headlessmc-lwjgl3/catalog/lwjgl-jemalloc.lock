@@ -37,7 +37,7 @@ org/lwjgl/system/jemalloc/ExtentDestroyI default=1 keep-abstract-interface-metho
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentHooks guarded-static-init=1 keep-constructor=2 keep-struct=43 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/system/jemalloc/ExtentHooks guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=42 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     calloc(I)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     callocStack()Lorg/lwjgl/system/jemalloc/ExtentHooks; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
@@ -52,7 +52,7 @@ org/lwjgl/system/jemalloc/ExtentHooks guarded-static-init=1 keep-constructor=2 k
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jemalloc/ExtentHooks$Buffer; lwjgl-buffer [shim 3.1.6]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jemalloc/ExtentHooks; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/system/jemalloc/ExtentHooks$Buffer shim-class=3.1.6 keep-buffer-bookkeeping=1 keep-constructor=3 keep-struct=24
+org/lwjgl/system/jemalloc/ExtentHooks$Buffer shim-class=3.1.6 keep-bridge=3 keep-buffer-bookkeeping=1 keep-constructor=3 keep-struct=21
 org/lwjgl/system/jemalloc/ExtentMerge keep-callback=4 keep-constructor=2
 org/lwjgl/system/jemalloc/ExtentMerge$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/jemalloc/ExtentMergeI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1

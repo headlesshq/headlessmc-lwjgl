@@ -1034,16 +1034,16 @@ org/lwjgl/sdl/SDL_AppQuit_func keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_AppQuit_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AppQuit_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_AsyncIOOutcome guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_AsyncIOOutcome$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_AudioDeviceEvent guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_AudioDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/sdl/SDL_AsyncIOOutcome guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_AsyncIOOutcome$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_AudioDeviceEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_AudioDeviceEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
 org/lwjgl/sdl/SDL_AudioPostmixCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_AudioPostmixCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AudioPostmixCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_AudioSpec guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_AudioSpec$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/sdl/SDL_AudioSpec guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_AudioSpec$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
 org/lwjgl/sdl/SDL_AudioStreamCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_AudioStreamCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AudioStreamCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1052,10 +1052,10 @@ org/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback keep-callback=4 keep-construct
 org/lwjgl/sdl/SDL_AudioStreamDataCompleteCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AudioStreamDataCompleteCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_CameraDeviceEvent guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_CameraDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_CameraSpec guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_CameraSpec$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
+org/lwjgl/sdl/SDL_CameraDeviceEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_CameraDeviceEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_CameraSpec guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_CameraSpec$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
 org/lwjgl/sdl/SDL_CleanupPropertyCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_CleanupPropertyCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_CleanupPropertyCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1068,12 +1068,12 @@ org/lwjgl/sdl/SDL_ClipboardDataCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_ClipboardDataCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_ClipboardDataCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_ClipboardEvent guarded-static-init=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_ClipboardEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_Color guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Color$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_CommonEvent guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_CommonEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/sdl/SDL_ClipboardEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_ClipboardEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_Color guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Color$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_CommonEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_CommonEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
 org/lwjgl/sdl/SDL_CompareCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_CompareCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_CompareCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1082,22 +1082,22 @@ org/lwjgl/sdl/SDL_CompareCallback_r keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_CompareCallback_r$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_CompareCallback_rI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_CursorFrameInfo guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_CursorFrameInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_DateTime guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_DateTime$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
+org/lwjgl/sdl/SDL_CursorFrameInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_CursorFrameInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_DateTime guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=43 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_DateTime$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
 org/lwjgl/sdl/SDL_DialogFileCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_DialogFileCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_DialogFileCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_DialogFileFilter guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_DialogFileFilter$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_DisplayEvent guarded-static-init=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_DisplayEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_DisplayMode guarded-static-init=1 keep-constructor=2 keep-struct=42 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_DisplayMode$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/sdl/SDL_DropEvent guarded-static-init=1 keep-constructor=2 keep-struct=42 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_DropEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
+org/lwjgl/sdl/SDL_DialogFileFilter guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_DialogFileFilter$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_DisplayEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_DisplayEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_DisplayMode guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_DisplayMode$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/sdl/SDL_DropEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_DropEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
 org/lwjgl/sdl/SDL_EGLAttribArrayCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_EGLAttribArrayCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_EGLAttribArrayCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1114,124 +1114,124 @@ org/lwjgl/sdl/SDL_EnumeratePropertiesCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_EnumeratePropertiesCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_EnumeratePropertiesCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_Event guarded-static-init=1 keep-constructor=2 keep-struct=205 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Event$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=122
+org/lwjgl/sdl/SDL_Event guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=204 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Event$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=119
 org/lwjgl/sdl/SDL_EventFilter keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_EventFilter$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_EventFilterI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_FColor guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_FColor$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_FPoint guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_FPoint$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_FRect guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_FRect$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_Finger guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Finger$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUBlitInfo guarded-static-init=1 keep-constructor=2 keep-struct=46 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUBlitInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=23
-org/lwjgl/sdl/SDL_GPUBlitRegion guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUBlitRegion$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/sdl/SDL_GPUBufferBinding guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUBufferBinding$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_GPUBufferCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUBufferCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_GPUBufferLocation guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUBufferLocation$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_GPUBufferRegion guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUBufferRegion$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_GPUColorTargetBlendState guarded-static-init=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUColorTargetBlendState$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_GPUColorTargetDescription guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUColorTargetDescription$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=11
-org/lwjgl/sdl/SDL_GPUColorTargetInfo guarded-static-init=1 keep-constructor=2 keep-struct=58 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUColorTargetInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=29
-org/lwjgl/sdl/SDL_GPUComputePipelineCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=66 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUComputePipelineCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=34
-org/lwjgl/sdl/SDL_GPUDepthStencilState guarded-static-init=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUDepthStencilState$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_GPUDepthStencilTargetInfo guarded-static-init=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUDepthStencilTargetInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/sdl/SDL_GPUGraphicsPipelineCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUGraphicsPipelineCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=29
-org/lwjgl/sdl/SDL_GPUGraphicsPipelineTargetInfo guarded-static-init=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUGraphicsPipelineTargetInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUIndexedIndirectDrawCommand guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUIndexedIndirectDrawCommand$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_GPUIndirectDispatchCommand guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUIndirectDispatchCommand$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_GPUIndirectDrawCommand guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUIndirectDrawCommand$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUMultisampleState guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUMultisampleState$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPURasterizerState guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPURasterizerState$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/sdl/SDL_GPURenderStateCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPURenderStateCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/sdl/SDL_GPUSamplerCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=68 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUSamplerCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=34
-org/lwjgl/sdl/SDL_GPUShaderCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=50 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUShaderCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/sdl/SDL_GPUStencilOpState guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUStencilOpState$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUStorageBufferReadWriteBinding guarded-static-init=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUStorageBufferReadWriteBinding$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_GPUStorageTextureReadWriteBinding guarded-static-init=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUStorageTextureReadWriteBinding$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUTextureCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUTextureCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_GPUTextureLocation guarded-static-init=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUTextureLocation$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/sdl/SDL_GPUTextureRegion guarded-static-init=1 keep-constructor=2 keep-struct=45 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUTextureRegion$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_GPUTextureSamplerBinding guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUTextureSamplerBinding$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_GPUTextureTransferInfo guarded-static-init=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUTextureTransferInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUTransferBufferCreateInfo guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUTransferBufferCreateInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_GPUTransferBufferLocation guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUTransferBufferLocation$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_GPUVertexAttribute guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUVertexAttribute$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUVertexBufferDescription guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUVertexBufferDescription$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUVertexInputState guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUVertexInputState$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_GPUViewport guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUViewport$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/sdl/SDL_GPUVulkanOptions guarded-static-init=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GPUVulkanOptions$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/sdl/SDL_GUID guarded-static-init=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GUID$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_GamepadAxisEvent guarded-static-init=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GamepadAxisEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_GamepadBinding guarded-static-init=1 keep-constructor=2 keep-struct=55 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GamepadBinding$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=30
-org/lwjgl/sdl/SDL_GamepadButtonEvent guarded-static-init=1 keep-constructor=2 keep-struct=34 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GamepadButtonEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_GamepadDeviceEvent guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GamepadDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_GamepadSensorEvent guarded-static-init=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GamepadSensorEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/sdl/SDL_GamepadTouchpadEvent guarded-static-init=1 keep-constructor=2 keep-struct=42 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_GamepadTouchpadEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/sdl/SDL_HapticCondition guarded-static-init=1 keep-constructor=2 keep-struct=81 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_HapticCondition$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=43
-org/lwjgl/sdl/SDL_HapticConstant guarded-static-init=1 keep-constructor=2 keep-struct=53 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_HapticConstant$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=29
-org/lwjgl/sdl/SDL_HapticCustom guarded-static-init=1 keep-constructor=2 keep-struct=66 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_HapticCustom$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=35
-org/lwjgl/sdl/SDL_HapticDirection guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_HapticDirection$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_HapticEffect guarded-static-init=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_HapticEffect$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/sdl/SDL_HapticLeftRight guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_HapticLeftRight$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_HapticPeriodic guarded-static-init=1 keep-constructor=2 keep-struct=65 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_HapticPeriodic$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=35
-org/lwjgl/sdl/SDL_HapticRamp guarded-static-init=1 keep-constructor=2 keep-struct=57 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_HapticRamp$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=31
+org/lwjgl/sdl/SDL_FColor guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_FColor$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_FPoint guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_FPoint$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_FRect guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_FRect$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_Finger guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Finger$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUBlitInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=45 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUBlitInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=20
+org/lwjgl/sdl/SDL_GPUBlitRegion guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUBlitRegion$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/sdl/SDL_GPUBufferBinding guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUBufferBinding$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_GPUBufferCreateInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUBufferCreateInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_GPUBufferLocation guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUBufferLocation$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_GPUBufferRegion guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUBufferRegion$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_GPUColorTargetBlendState guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=47 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUColorTargetBlendState$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/sdl/SDL_GPUColorTargetDescription guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUColorTargetDescription$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=8
+org/lwjgl/sdl/SDL_GPUColorTargetInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=57 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUColorTargetInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=26
+org/lwjgl/sdl/SDL_GPUComputePipelineCreateInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=65 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUComputePipelineCreateInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=31
+org/lwjgl/sdl/SDL_GPUDepthStencilState guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=47 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUDepthStencilState$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/sdl/SDL_GPUDepthStencilTargetInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUDepthStencilTargetInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/sdl/SDL_GPUGraphicsPipelineCreateInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUGraphicsPipelineCreateInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=26
+org/lwjgl/sdl/SDL_GPUGraphicsPipelineTargetInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUGraphicsPipelineTargetInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUIndexedIndirectDrawCommand guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUIndexedIndirectDrawCommand$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_GPUIndirectDispatchCommand guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUIndirectDispatchCommand$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_GPUIndirectDrawCommand guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUIndirectDrawCommand$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUMultisampleState guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUMultisampleState$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPURasterizerState guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=43 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPURasterizerState$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/sdl/SDL_GPURenderStateCreateInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPURenderStateCreateInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/sdl/SDL_GPUSamplerCreateInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=67 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUSamplerCreateInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=31
+org/lwjgl/sdl/SDL_GPUShaderCreateInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUShaderCreateInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/sdl/SDL_GPUStencilOpState guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUStencilOpState$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUStorageBufferReadWriteBinding guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUStorageBufferReadWriteBinding$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_GPUStorageTextureReadWriteBinding guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUStorageTextureReadWriteBinding$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUTextureCreateInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=43 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUTextureCreateInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/sdl/SDL_GPUTextureLocation guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUTextureLocation$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/sdl/SDL_GPUTextureRegion guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUTextureRegion$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/sdl/SDL_GPUTextureSamplerBinding guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUTextureSamplerBinding$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_GPUTextureTransferInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUTextureTransferInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUTransferBufferCreateInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUTransferBufferCreateInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_GPUTransferBufferLocation guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUTransferBufferLocation$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_GPUVertexAttribute guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUVertexAttribute$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUVertexBufferDescription guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUVertexBufferDescription$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUVertexInputState guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUVertexInputState$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_GPUViewport guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUViewport$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/sdl/SDL_GPUVulkanOptions guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=35 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GPUVulkanOptions$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/sdl/SDL_GUID guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GUID$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_GamepadAxisEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GamepadAxisEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_GamepadBinding guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=54 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GamepadBinding$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=27
+org/lwjgl/sdl/SDL_GamepadButtonEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GamepadButtonEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_GamepadDeviceEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GamepadDeviceEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_GamepadSensorEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GamepadSensorEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/sdl/SDL_GamepadTouchpadEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_GamepadTouchpadEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/sdl/SDL_HapticCondition guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=80 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_HapticCondition$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=40
+org/lwjgl/sdl/SDL_HapticConstant guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=52 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_HapticConstant$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=26
+org/lwjgl/sdl/SDL_HapticCustom guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=65 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_HapticCustom$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=32
+org/lwjgl/sdl/SDL_HapticDirection guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_HapticDirection$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_HapticEffect guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_HapticEffect$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/sdl/SDL_HapticLeftRight guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_HapticLeftRight$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_HapticPeriodic guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=64 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_HapticPeriodic$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=32
+org/lwjgl/sdl/SDL_HapticRamp guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=56 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_HapticRamp$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=28
 org/lwjgl/sdl/SDL_HintCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_HintCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_HintCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1240,8 +1240,8 @@ org/lwjgl/sdl/SDL_HitTest keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_HitTest$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_HitTestI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_IOStreamInterface guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_IOStreamInterface$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
+org/lwjgl/sdl/SDL_IOStreamInterface guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_IOStreamInterface$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
 org/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_IOStreamInterfaceCloseCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1266,24 +1266,24 @@ org/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback keep-callback=4 keep-constructo
 org/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_IOStreamInterfaceWriteCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_JoyAxisEvent guarded-static-init=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_JoyAxisEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_JoyBallEvent guarded-static-init=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_JoyBallEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/sdl/SDL_JoyBatteryEvent guarded-static-init=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_JoyBatteryEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_JoyButtonEvent guarded-static-init=1 keep-constructor=2 keep-struct=34 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_JoyButtonEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_JoyDeviceEvent guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_JoyDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_JoyHatEvent guarded-static-init=1 keep-constructor=2 keep-struct=34 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_JoyHatEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_KeyboardDeviceEvent guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_KeyboardDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_KeyboardEvent guarded-static-init=1 keep-constructor=2 keep-struct=50 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_KeyboardEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/sdl/SDL_Locale guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Locale$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/sdl/SDL_JoyAxisEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_JoyAxisEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_JoyBallEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=39 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_JoyBallEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/sdl/SDL_JoyBatteryEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_JoyBatteryEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_JoyButtonEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_JoyButtonEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_JoyDeviceEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_JoyDeviceEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_JoyHatEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_JoyHatEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_KeyboardDeviceEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_KeyboardDeviceEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_KeyboardEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_KeyboardEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/sdl/SDL_Locale guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Locale$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
 org/lwjgl/sdl/SDL_LogOutputFunction keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_LogOutputFunction$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_LogOutputFunctionI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1292,60 +1292,60 @@ org/lwjgl/sdl/SDL_MainThreadCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_MainThreadCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_MainThreadCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_MessageBoxButtonData guarded-static-init=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_MessageBoxButtonData$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=13
-org/lwjgl/sdl/SDL_MessageBoxColor guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_MessageBoxColor$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_MessageBoxColorScheme guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_MessageBoxColorScheme$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_MessageBoxData guarded-static-init=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_MessageBoxData$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=21
-org/lwjgl/sdl/SDL_MouseButtonEvent guarded-static-init=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_MouseButtonEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_MouseDeviceEvent guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_MouseDeviceEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_MouseMotionEvent guarded-static-init=1 keep-constructor=2 keep-struct=46 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_MouseMotionEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
+org/lwjgl/sdl/SDL_MessageBoxButtonData guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_MessageBoxButtonData$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10
+org/lwjgl/sdl/SDL_MessageBoxColor guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_MessageBoxColor$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_MessageBoxColorScheme guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_MessageBoxColorScheme$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_MessageBoxData guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=39 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_MessageBoxData$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=18
+org/lwjgl/sdl/SDL_MouseButtonEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=47 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_MouseButtonEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/sdl/SDL_MouseDeviceEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_MouseDeviceEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_MouseMotionEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=45 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_MouseMotionEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
 org/lwjgl/sdl/SDL_MouseMotionTransformCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_MouseMotionTransformCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_MouseMotionTransformCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_MouseWheelEvent guarded-static-init=1 keep-constructor=2 keep-struct=54 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_MouseWheelEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=28
+org/lwjgl/sdl/SDL_MouseWheelEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=53 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_MouseWheelEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=25
 org/lwjgl/sdl/SDL_NSTimerCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_NSTimerCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_NSTimerCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_Palette guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Palette$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=8
-org/lwjgl/sdl/SDL_PathInfo guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_PathInfo$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/sdl/SDL_PenAxisEvent guarded-static-init=1 keep-constructor=2 keep-struct=46 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_PenAxisEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_PenButtonEvent guarded-static-init=1 keep-constructor=2 keep-struct=46 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_PenButtonEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_PenMotionEvent guarded-static-init=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_PenMotionEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/sdl/SDL_PenProximityEvent guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_PenProximityEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_PenTouchEvent guarded-static-init=1 keep-constructor=2 keep-struct=46 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_PenTouchEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/sdl/SDL_PinchFingerEvent guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_PinchFingerEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_PixelFormatDetails guarded-static-init=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1
-org/lwjgl/sdl/SDL_PixelFormatDetails$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=21
-org/lwjgl/sdl/SDL_Point guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Point$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_QuitEvent guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_QuitEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_Rect guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Rect$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/sdl/SDL_RenderEvent guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_RenderEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/sdl/SDL_SensorEvent guarded-static-init=1 keep-constructor=2 keep-struct=34 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_SensorEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/sdl/SDL_StorageInterface guarded-static-init=1 keep-constructor=2 keep-struct=56 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_StorageInterface$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=30
+org/lwjgl/sdl/SDL_Palette guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=11 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Palette$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=5
+org/lwjgl/sdl/SDL_PathInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_PathInfo$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/sdl/SDL_PenAxisEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=45 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_PenAxisEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/sdl/SDL_PenButtonEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=45 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_PenButtonEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/sdl/SDL_PenMotionEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_PenMotionEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/sdl/SDL_PenProximityEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_PenProximityEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_PenTouchEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=45 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_PenTouchEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/sdl/SDL_PinchFingerEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_PinchFingerEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_PixelFormatDetails guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1
+org/lwjgl/sdl/SDL_PixelFormatDetails$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=18
+org/lwjgl/sdl/SDL_Point guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Point$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_QuitEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_QuitEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_Rect guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Rect$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/sdl/SDL_RenderEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_RenderEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/sdl/SDL_SensorEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_SensorEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/sdl/SDL_StorageInterface guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=55 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_StorageInterface$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=27
 org/lwjgl/sdl/SDL_StorageInterfaceCloseCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_StorageInterfaceCloseCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceCloseCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1390,36 +1390,36 @@ org/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback keep-callback=4 keep-constru
 org/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_StorageInterfaceWriteFileCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_Surface guarded-static-init=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Surface$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
+org/lwjgl/sdl/SDL_Surface guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Surface$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
 org/lwjgl/sdl/SDL_TLSDestructorCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_TLSDestructorCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_TLSDestructorCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_TextEditingCandidatesEvent guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_TextEditingCandidatesEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/sdl/SDL_TextEditingEvent guarded-static-init=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_TextEditingEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=19
-org/lwjgl/sdl/SDL_TextInputEvent guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_TextInputEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=15
-org/lwjgl/sdl/SDL_Texture guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Texture$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/sdl/SDL_TextEditingCandidatesEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=43 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_TextEditingCandidatesEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/sdl/SDL_TextEditingEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=35 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_TextEditingEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=16
+org/lwjgl/sdl/SDL_TextInputEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_TextInputEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=12
+org/lwjgl/sdl/SDL_Texture guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Texture$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
 org/lwjgl/sdl/SDL_TimerCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_TimerCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_TimerCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_TouchFingerEvent guarded-static-init=1 keep-constructor=2 keep-struct=50 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_TouchFingerEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
+org/lwjgl/sdl/SDL_TouchFingerEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_TouchFingerEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
 org/lwjgl/sdl/SDL_TrayCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_TrayCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_TrayCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_UserEvent guarded-static-init=1 keep-constructor=2 keep-struct=34 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_UserEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/sdl/SDL_Vertex guarded-static-init=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_Vertex$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=15
-org/lwjgl/sdl/SDL_VirtualJoystickDesc guarded-static-init=1 keep-constructor=2 keep-struct=113 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_VirtualJoystickDesc$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=55
+org/lwjgl/sdl/SDL_UserEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_UserEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/sdl/SDL_Vertex guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_Vertex$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=12
+org/lwjgl/sdl/SDL_VirtualJoystickDesc guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=112 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_VirtualJoystickDesc$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=52
 org/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescCleanupCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1452,12 +1452,12 @@ org/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback keep-callback=4 keep-constru
 org/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_VirtualJoystickDescUpdateCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_VirtualJoystickSensorDesc guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_VirtualJoystickSensorDesc$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/sdl/SDL_VirtualJoystickTouchpadDesc guarded-static-init=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_VirtualJoystickTouchpadDesc$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=8
-org/lwjgl/sdl/SDL_WindowEvent guarded-static-init=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_WindowEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
+org/lwjgl/sdl/SDL_VirtualJoystickSensorDesc guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_VirtualJoystickSensorDesc$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/sdl/SDL_VirtualJoystickTouchpadDesc guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_VirtualJoystickTouchpadDesc$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=5
+org/lwjgl/sdl/SDL_WindowEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_WindowEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
 org/lwjgl/sdl/SDL_WindowsMessageHook keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_WindowsMessageHook$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_WindowsMessageHookI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -1474,8 +1474,8 @@ org/lwjgl/sdl/SDL_free_func keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_free_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_free_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/sdl/SDL_hid_device_info guarded-static-init=1 keep-constructor=2 keep-struct=77 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/sdl/SDL_hid_device_info$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=40
+org/lwjgl/sdl/SDL_hid_device_info guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=76 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/sdl/SDL_hid_device_info$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=37
 org/lwjgl/sdl/SDL_main_func keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_main_func$1 keep-callback=1 keep-constructor=1
 org/lwjgl/sdl/SDL_main_funcI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1

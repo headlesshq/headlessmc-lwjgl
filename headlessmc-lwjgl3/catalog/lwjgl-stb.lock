@@ -21,7 +21,7 @@ org/lwjgl/stb/STBIEOFCallbackI default=1 keep-abstract-interface-method=1 keep-i
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/stb/STBIIOCallbacks guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/stb/STBIIOCallbacks guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/stb/STBIIOCallbacks; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBIIOCallbacks$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBIIOCallbacks$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -31,7 +31,7 @@ org/lwjgl/stb/STBIIOCallbacks guarded-static-init=1 keep-constructor=2 keep-stru
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBIIOCallbacks$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBIIOCallbacks; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/stb/STBIIOCallbacks$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=12 struct=1
+org/lwjgl/stb/STBIIOCallbacks$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBIIOCallbacks$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBIIOCallbacks; struct [shim 3.1.6]
 org/lwjgl/stb/STBIRInputCallback keep-callback=4 keep-constructor=2
@@ -50,8 +50,8 @@ org/lwjgl/stb/STBIRSupportCallback keep-callback=4 keep-constructor=2
 org/lwjgl/stb/STBIRSupportCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIRSupportCallbackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/stb/STBIR_RESIZE guarded-static-init=1 keep-constructor=2 keep-struct=153 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/stb/STBIR_RESIZE$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=78
+org/lwjgl/stb/STBIR_RESIZE guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=152 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/stb/STBIR_RESIZE$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=75
 org/lwjgl/stb/STBIReadCallback keep-callback=5 keep-constructor=2
 org/lwjgl/stb/STBIReadCallback$1 keep-callback=1 keep-constructor=1
 org/lwjgl/stb/STBIReadCallbackI default=1 keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -251,7 +251,7 @@ org/lwjgl/stb/STBPerlin default=9 guarded-static-init=1 keep-constructor=1
     stb_perlin_ridge_noise3(FFFFFFIIII)F default: default [shim 3.2.1]
     stb_perlin_turbulence_noise3(FFFFFI)F default: default
     stb_perlin_turbulence_noise3(FFFFFIIII)F default: default [shim 3.2.1]
-org/lwjgl/stb/STBRPContext guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/stb/STBRPContext guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/stb/STBRPContext; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBRPContext$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBRPContext$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -260,10 +260,10 @@ org/lwjgl/stb/STBRPContext guarded-static-init=1 keep-constructor=2 keep-struct=
     mallocStack(I)Lorg/lwjgl/stb/STBRPContext$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBRPContext$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBRPContext; struct [shim 3.3.3]
-org/lwjgl/stb/STBRPContext$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=16 struct=1
+org/lwjgl/stb/STBRPContext$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBRPContext$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBRPContext; struct [shim 3.1.6]
-org/lwjgl/stb/STBRPNode guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=4
+org/lwjgl/stb/STBRPNode guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=11 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=4
     callocStack()Lorg/lwjgl/stb/STBRPNode; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBRPNode$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBRPNode$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -276,12 +276,12 @@ org/lwjgl/stb/STBRPNode guarded-static-init=1 keep-constructor=2 keep-struct=12 
     ny(J)S struct-member [shim 3.2.2]
     x()S struct-member [shim 3.2.2]
     y()S struct-member [shim 3.2.2]
-org/lwjgl/stb/STBRPNode$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=9 struct=1 struct-member=2
+org/lwjgl/stb/STBRPNode$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6 struct=1 struct-member=2
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBRPNode$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBRPNode; struct [shim 3.1.6]
     x()S struct-member [shim 3.2.2]
     y()S struct-member [shim 3.2.2]
-org/lwjgl/stb/STBRPRect fluent=5 guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=12
+org/lwjgl/stb/STBRPRect fluent=5 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=12
     callocStack()Lorg/lwjgl/stb/STBRPRect; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBRPRect$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBRPRect$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -307,7 +307,7 @@ org/lwjgl/stb/STBRPRect fluent=5 guarded-static-init=1 keep-constructor=2 keep-s
     x(S)Lorg/lwjgl/stb/STBRPRect; fluent [shim 3.2.2]
     y()S struct-member [shim 3.2.2]
     y(S)Lorg/lwjgl/stb/STBRPRect; fluent [shim 3.2.2]
-org/lwjgl/stb/STBRPRect$Buffer fluent=5 guarded-static-init=1 keep-constructor=3 keep-struct=18 struct=1 struct-member=4
+org/lwjgl/stb/STBRPRect$Buffer fluent=5 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15 struct=1 struct-member=4
     h()S struct-member [shim 3.2.2]
     h(S)Lorg/lwjgl/stb/STBRPRect$Buffer; fluent [shim 3.2.2]
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBRPRect$Buffer; fluent [shim 3.1.6]
@@ -321,7 +321,7 @@ org/lwjgl/stb/STBRPRect$Buffer fluent=5 guarded-static-init=1 keep-constructor=3
 org/lwjgl/stb/STBRectPack default=2 guarded-static-init=1 keep-constructor=1 void=6
     nstbrp_pack_rects(JJI)I default: default
     stbrp_pack_rects(Lorg/lwjgl/stb/STBRPContext;Lorg/lwjgl/stb/STBRPRect$Buffer;)I default: default
-org/lwjgl/stb/STBTTAlignedQuad guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/stb/STBTTAlignedQuad guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/stb/STBTTAlignedQuad; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBTTAlignedQuad$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTAlignedQuad$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -330,10 +330,10 @@ org/lwjgl/stb/STBTTAlignedQuad guarded-static-init=1 keep-constructor=2 keep-str
     mallocStack(I)Lorg/lwjgl/stb/STBTTAlignedQuad$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTAlignedQuad$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTAlignedQuad; struct [shim 3.3.3]
-org/lwjgl/stb/STBTTAlignedQuad$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct=1
+org/lwjgl/stb/STBTTAlignedQuad$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTAlignedQuad$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTAlignedQuad; struct [shim 3.1.6]
-org/lwjgl/stb/STBTTBakedChar guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/stb/STBTTBakedChar guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/stb/STBTTBakedChar; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBTTBakedChar$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTBakedChar$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -342,10 +342,10 @@ org/lwjgl/stb/STBTTBakedChar guarded-static-init=1 keep-constructor=2 keep-struc
     mallocStack(I)Lorg/lwjgl/stb/STBTTBakedChar$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTBakedChar$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTBakedChar; struct [shim 3.3.3]
-org/lwjgl/stb/STBTTBakedChar$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=13 struct=1
+org/lwjgl/stb/STBTTBakedChar$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTBakedChar$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTBakedChar; struct [shim 3.1.6]
-org/lwjgl/stb/STBTTBitmap guarded-static-init=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/stb/STBTTBitmap guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/stb/STBTTBitmap; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBTTBitmap$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTBitmap$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -355,10 +355,10 @@ org/lwjgl/stb/STBTTBitmap guarded-static-init=1 keep-constructor=2 keep-struct=2
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTBitmap$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTBitmap; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/stb/STBTTBitmap$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct=1
+org/lwjgl/stb/STBTTBitmap$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTBitmap$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTBitmap; struct [shim 3.1.6]
-org/lwjgl/stb/STBTTFontinfo guarded-static-init=1 keep-constructor=2 keep-struct=6 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/stb/STBTTFontinfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=5 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/stb/STBTTFontinfo; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBTTFontinfo$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTFontinfo$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -367,12 +367,12 @@ org/lwjgl/stb/STBTTFontinfo guarded-static-init=1 keep-constructor=2 keep-struct
     mallocStack(I)Lorg/lwjgl/stb/STBTTFontinfo$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTFontinfo$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTFontinfo; struct [shim 3.3.3]
-org/lwjgl/stb/STBTTFontinfo$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=6 struct=1
+org/lwjgl/stb/STBTTFontinfo$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=3 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTFontinfo$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTFontinfo; struct [shim 3.1.6]
-org/lwjgl/stb/STBTTKerningentry guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/stb/STBTTKerningentry$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9
-org/lwjgl/stb/STBTTPackContext guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/stb/STBTTKerningentry guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=11 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/stb/STBTTKerningentry$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6
+org/lwjgl/stb/STBTTPackContext guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/stb/STBTTPackContext; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBTTPackContext$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackContext$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -381,10 +381,10 @@ org/lwjgl/stb/STBTTPackContext guarded-static-init=1 keep-constructor=2 keep-str
     mallocStack(I)Lorg/lwjgl/stb/STBTTPackContext$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackContext$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackContext; struct [shim 3.3.3]
-org/lwjgl/stb/STBTTPackContext$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=17 struct=1
+org/lwjgl/stb/STBTTPackContext$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=14 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTPackContext$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTPackContext; struct [shim 3.1.6]
-org/lwjgl/stb/STBTTPackRange guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/stb/STBTTPackRange guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/stb/STBTTPackRange; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBTTPackRange$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackRange$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -394,10 +394,10 @@ org/lwjgl/stb/STBTTPackRange guarded-static-init=1 keep-constructor=2 keep-struc
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackRange$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackRange; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/stb/STBTTPackRange$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=20 struct=1
+org/lwjgl/stb/STBTTPackRange$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTPackRange$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTPackRange; struct [shim 3.1.6]
-org/lwjgl/stb/STBTTPackedchar guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/stb/STBTTPackedchar guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=43 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/stb/STBTTPackedchar; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBTTPackedchar$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackedchar$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -406,10 +406,10 @@ org/lwjgl/stb/STBTTPackedchar guarded-static-init=1 keep-constructor=2 keep-stru
     mallocStack(I)Lorg/lwjgl/stb/STBTTPackedchar$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackedchar$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTPackedchar; struct [shim 3.3.3]
-org/lwjgl/stb/STBTTPackedchar$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=24 struct=1
+org/lwjgl/stb/STBTTPackedchar$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTPackedchar$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTPackedchar; struct [shim 3.1.6]
-org/lwjgl/stb/STBTTVertex guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/stb/STBTTVertex guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/stb/STBTTVertex; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBTTVertex$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTVertex$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -418,7 +418,7 @@ org/lwjgl/stb/STBTTVertex guarded-static-init=1 keep-constructor=2 keep-struct=2
     mallocStack(I)Lorg/lwjgl/stb/STBTTVertex$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTVertex$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBTTVertex; struct [shim 3.3.3]
-org/lwjgl/stb/STBTTVertex$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=13 struct=1
+org/lwjgl/stb/STBTTVertex$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTVertex$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTVertex; struct [shim 3.1.6]
 org/lwjgl/stb/STBTruetype default=77 guarded-static-init=1 keep-constructor=1 lwjgl-buffer-empty=2 nio-buffer-empty=13 void=78
@@ -583,7 +583,7 @@ org/lwjgl/stb/STBVorbis default=66 guarded-static-init=1 keep-constructor=1 nio-
     stb_vorbis_seek_start(J)Z default: default
     stb_vorbis_stream_length_in_samples(J)I default: default
     stb_vorbis_stream_length_in_seconds(J)F default: default
-org/lwjgl/stb/STBVorbisAlloc guarded-static-init=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/stb/STBVorbisAlloc guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/stb/STBVorbisAlloc; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBVorbisAlloc$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBVorbisAlloc$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -593,12 +593,12 @@ org/lwjgl/stb/STBVorbisAlloc guarded-static-init=1 keep-constructor=2 keep-struc
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBVorbisAlloc$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBVorbisAlloc; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/stb/STBVorbisAlloc$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=9 struct=1
+org/lwjgl/stb/STBVorbisAlloc$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBVorbisAlloc$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBVorbisAlloc; struct [shim 3.1.6]
-org/lwjgl/stb/STBVorbisComment guarded-static-init=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/stb/STBVorbisComment$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/stb/STBVorbisInfo guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/stb/STBVorbisComment guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=13 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/stb/STBVorbisComment$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/stb/STBVorbisInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/stb/STBVorbisInfo; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/stb/STBVorbisInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBVorbisInfo$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -607,6 +607,6 @@ org/lwjgl/stb/STBVorbisInfo guarded-static-init=1 keep-constructor=2 keep-struct
     mallocStack(I)Lorg/lwjgl/stb/STBVorbisInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBVorbisInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/stb/STBVorbisInfo; struct [shim 3.3.3]
-org/lwjgl/stb/STBVorbisInfo$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=12 struct=1
+org/lwjgl/stb/STBVorbisInfo$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBVorbisInfo$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBVorbisInfo; struct [shim 3.1.6]

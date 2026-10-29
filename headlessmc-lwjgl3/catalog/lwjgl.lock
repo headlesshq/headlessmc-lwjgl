@@ -4,16 +4,14 @@
 # Regenerate with: ./gradlew updateCatalogLock
 org/lwjgl/BufferUtils default=1 keep-constructor=1 lwjgl-buffer=2 nio-buffer=7 void=8
     getAllocationSize(II)I default: default
-org/lwjgl/CLongBuffer default=6 fluent=10 identity=2 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=2 lwjgl-buffer-empty=1 void=4
-    compareTo(Ljava/lang/Object;)I default: default
+org/lwjgl/CLongBuffer default=5 fluent=8 identity=2 keep-bridge=3 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=2 lwjgl-buffer-empty=1 void=4
     compareTo(Lorg/lwjgl/CLongBuffer;)I default: default
     create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
     get()J default: default
     get(I)J default: default
     get(Ljava/nio/ByteBuffer;)J default: default
     get(Ljava/nio/ByteBuffer;I)J default: default
-org/lwjgl/PointerBuffer default=12 fluent=32 identity=2 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=2 lwjgl-buffer-empty=1 nio-buffer=12 void=4
-    compareTo(Ljava/lang/Object;)I default: default
+org/lwjgl/PointerBuffer default=11 fluent=30 identity=2 keep-bridge=3 keep-buffer-bookkeeping=1 keep-constructor=1 lwjgl-buffer=2 lwjgl-buffer-empty=1 nio-buffer=12 void=4
     compareTo(Lorg/lwjgl/PointerBuffer;)I default: default
     create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     get()J default: default
@@ -58,8 +56,7 @@ org/lwjgl/system/APIUtil default=17 guarded-static-init=1 handler=1 interface-pr
     apiUnknownToken(Ljava/lang/String;I)Ljava/lang/String; default: default
     lambda$apiFindLibrary$0(Ljava/lang/String;Ljava/nio/file/Path;Ljava/nio/file/attribute/BasicFileAttributes;)Z default: default
 org/lwjgl/system/APIUtil$1 guarded-static-init=1
-org/lwjgl/system/APIUtil$APIVersion default=2 identity=2 keep-constructor=2 keep-to-string=1
-    compareTo(Ljava/lang/Object;)I default: default
+org/lwjgl/system/APIUtil$APIVersion default=1 identity=2 keep-bridge=1 keep-constructor=2 keep-to-string=1
     compareTo(Lorg/lwjgl/system/APIUtil$APIVersion;)I default: default
 org/lwjgl/system/APIUtil$Encoder keep-abstract-interface-method=1
 org/lwjgl/system/Callback default=1 identity=2 keep-constructor=4 keep-pointer-address=1 keep-pure-java-method=4 keep-to-string=1
@@ -3012,7 +3009,7 @@ org/lwjgl/system/Struct$Member keep-constructor=2 keep-pure-java-class=3
 org/lwjgl/system/Struct$StructValidation keep-abstract-interface-method=1
 org/lwjgl/system/StructBuffer keep-buffer-bookkeeping=1 keep-constructor=2 keep-struct=14 struct=2
     newInstance(J)Lorg/lwjgl/system/Struct; struct [shim 3.1.6]
-org/lwjgl/system/StructBuffer$StructIterator keep-constructor=1 keep-struct=4
+org/lwjgl/system/StructBuffer$StructIterator keep-bridge=1 keep-constructor=1 keep-struct=3
 org/lwjgl/system/StructBuffer$StructSpliterator keep-constructor=1 keep-struct=6
 org/lwjgl/system/ThreadLocalUtil default=6 guarded-static-init=1 keep-constructor=1 lwjgl-buffer-empty=2 void=4
     areCapabilitiesDifferent(Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)Z default: default
@@ -3162,7 +3159,7 @@ org/lwjgl/system/jni/JNINativeInterface default=24 guarded-static-init=1 keep-co
     nRegisterNatives(Ljava/lang/Class;JI)I default: default
     nToReflectedField(Ljava/lang/Class;JZ)Ljava/lang/reflect/Field; default: default
     nToReflectedMethod(Ljava/lang/Class;JZ)Ljava/lang/reflect/Method; default: default
-org/lwjgl/system/jni/JNINativeMethod guarded-static-init=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/system/jni/JNINativeMethod guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/system/jni/JNINativeMethod; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/jni/JNINativeMethod$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jni/JNINativeMethod$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3172,7 +3169,7 @@ org/lwjgl/system/jni/JNINativeMethod guarded-static-init=1 keep-constructor=2 ke
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jni/JNINativeMethod$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/jni/JNINativeMethod; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/system/jni/JNINativeMethod$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct=1
+org/lwjgl/system/jni/JNINativeMethod$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/jni/JNINativeMethod$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/jni/JNINativeMethod; struct [shim 3.1.6]
 org/lwjgl/system/libc/LibCErrno default=2 guarded-static-init=1 keep-constructor=1
@@ -3275,15 +3272,15 @@ org/lwjgl/system/libc/LibCString default=64 guarded-static-init=1 keep-construct
     nstrlen(J)J default: default
     strerror(I)Ljava/lang/String; default: default
     strlen(Ljava/nio/ByteBuffer;)J default: default
-org/lwjgl/system/libffi/FFICIF guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=7 struct=5 struct-member=1
+org/lwjgl/system/libffi/FFICIF guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=7 struct=5 struct-member=1
     arg_types(I)Lorg/lwjgl/PointerBuffer; lwjgl-buffer [shim 3.3.3]
     narg_types(JI)Lorg/lwjgl/PointerBuffer; lwjgl-buffer [shim 3.3.3]
-org/lwjgl/system/libffi/FFICIF$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12 lwjgl-buffer=1
+org/lwjgl/system/libffi/FFICIF$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9 lwjgl-buffer=1
     arg_types(I)Lorg/lwjgl/PointerBuffer; lwjgl-buffer [shim 3.3.3]
-org/lwjgl/system/libffi/FFIClosure guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
-org/lwjgl/system/libffi/FFIClosure$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9
-org/lwjgl/system/libffi/FFIType guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/libffi/FFIType$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/system/libffi/FFIClosure guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=11 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
+org/lwjgl/system/libffi/FFIClosure$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6
+org/lwjgl/system/libffi/FFIType guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/libffi/FFIType$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
 org/lwjgl/system/libffi/LibFFI default=55 guarded-static-init=1 keep-constructor=1 struct=22 void=8
     FFI_DEFAULT_ABI()I default: default
     FFI_EFI64()I default: default
@@ -3340,8 +3337,8 @@ org/lwjgl/system/libffi/LibFFI default=55 guarded-static-init=1 keep-constructor
     nffi_type_ulong()J default: default
     nffi_type_ushort()J default: default
     nffi_type_void()J default: default
-org/lwjgl/system/linux/CMsghdr guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/CMsghdr$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
+org/lwjgl/system/linux/CMsghdr guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/CMsghdr$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
 org/lwjgl/system/linux/DynamicLinkLoader default=10 guarded-static-init=1 keep-constructor=1
     dlclose(J)I default: default
     dlerror()Ljava/lang/String; default: default
@@ -3353,10 +3350,10 @@ org/lwjgl/system/linux/DynamicLinkLoader default=10 guarded-static-init=1 keep-c
     ndlerror()J default: default
     ndlopen(JI)J default: default
     ndlsym(JJ)J default: default
-org/lwjgl/system/linux/EpollData guarded-static-init=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/EpollData$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/system/linux/EpollEvent guarded-static-init=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/EpollEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=11
+org/lwjgl/system/linux/EpollData guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/EpollData$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/system/linux/EpollEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/EpollEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=8
 org/lwjgl/system/linux/FCNTL default=29 guarded-static-init=1 keep-constructor=1
     creat(Ljava/lang/CharSequence;I)I default: default [shim 3.3.3]
     creat(Ljava/nio/ByteBuffer;I)I default: default [shim 3.3.3]
@@ -3387,14 +3384,14 @@ org/lwjgl/system/linux/FCNTL default=29 guarded-static-init=1 keep-constructor=1
     openat(ILjava/nio/ByteBuffer;II)I default: default [shim 3.3.3]
     openat(Ljava/nio/IntBuffer;ILjava/lang/CharSequence;II)I default: default
     openat(Ljava/nio/IntBuffer;ILjava/nio/ByteBuffer;II)I default: default
-org/lwjgl/system/linux/FOwnerEx guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/FOwnerEx$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/system/linux/Flock guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/Flock$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/IOVec guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/IOVec$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/system/linux/KernelTimespec guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/KernelTimespec$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/system/linux/FOwnerEx guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/FOwnerEx$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/system/linux/Flock guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/Flock$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/IOVec guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/IOVec$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/system/linux/KernelTimespec guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/KernelTimespec$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
 org/lwjgl/system/linux/LinuxLibrary default=3 keep-constructor=2 void=1
     getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
     getPath()Ljava/lang/String; default: default
@@ -3407,14 +3404,14 @@ org/lwjgl/system/linux/MMAN default=7 guarded-static-init=1 keep-constructor=1
     nmmap(JJJIIIJ)J default: default
     nmunmap(JJ)I default: default [shim 3.3.3]
     nmunmap(JJJ)I default: default
-org/lwjgl/system/linux/Msghdr guarded-static-init=1 keep-constructor=2 keep-struct=34 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/Msghdr$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=17
-org/lwjgl/system/linux/OpenHow guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/OpenHow$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/system/linux/Msghdr guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/Msghdr$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=14
+org/lwjgl/system/linux/OpenHow guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/OpenHow$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
 org/lwjgl/system/linux/PThread default=1 guarded-static-init=1 keep-constructor=1
     pthread_self()J default: default
-org/lwjgl/system/linux/Sockaddr guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/Sockaddr$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/system/linux/Sockaddr guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/Sockaddr$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
 org/lwjgl/system/linux/Socket default=3 guarded-static-init=1 keep-constructor=1
     nsocket(JIII)I default: default
     socket(III)I default: default [shim 3.3.3]
@@ -3430,10 +3427,10 @@ org/lwjgl/system/linux/Stat default=10 guarded-static-init=1 keep-constructor=1
     stat(Ljava/nio/ByteBuffer;J)I default: default [shim 3.3.3]
     stat(Ljava/nio/IntBuffer;Ljava/lang/CharSequence;J)I default: default
     stat(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;J)I default: default
-org/lwjgl/system/linux/Statx guarded-static-init=1 keep-constructor=2 keep-struct=102 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/Statx$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=50
-org/lwjgl/system/linux/StatxTimestamp guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/StatxTimestamp$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/system/linux/Statx guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=101 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/Statx$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=47
+org/lwjgl/system/linux/StatxTimestamp guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/StatxTimestamp$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
 org/lwjgl/system/linux/UIO default=28 guarded-static-init=1 keep-constructor=1
     npreadv(IJIJ)J default: default [shim 3.3.3]
     npreadv(JIJIJ)J default: default
@@ -3477,7 +3474,7 @@ org/lwjgl/system/linux/UNISTD default=13 guarded-static-init=1 keep-constructor=
     read(Ljava/nio/IntBuffer;ILjava/nio/ByteBuffer;)J default: default
     sysconf(I)J default: default [shim 3.3.3]
     sysconf(Ljava/nio/IntBuffer;I)J default: default
-org/lwjgl/system/linux/Visual guarded-static-init=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/Visual guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=39 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/Visual; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/Visual$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/Visual$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3486,7 +3483,7 @@ org/lwjgl/system/linux/Visual guarded-static-init=1 keep-constructor=2 keep-stru
     mallocStack(I)Lorg/lwjgl/system/linux/Visual$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/Visual$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/Visual; struct [shim 3.3.3]
-org/lwjgl/system/linux/Visual$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=22 struct=1
+org/lwjgl/system/linux/Visual$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/linux/Visual$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/linux/Visual; struct [shim 3.1.6]
 org/lwjgl/system/linux/X11 default=21 guarded-static-init=1 interface-proxy=2 keep-constructor=1 lwjgl-buffer-empty=1 void=1
@@ -3515,7 +3512,7 @@ org/lwjgl/system/linux/X11 default=21 guarded-static-init=1 interface-proxy=2 ke
     nXSendEvent(JJIJJ)I default: default
     nXTranslateCoordinates(JJJIIJJJ)I default: default
 org/lwjgl/system/linux/X11$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/system/linux/XAnyEvent guarded-static-init=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XAnyEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XAnyEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XAnyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XAnyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3524,8 +3521,8 @@ org/lwjgl/system/linux/XAnyEvent guarded-static-init=1 keep-constructor=2 keep-s
     mallocStack(I)Lorg/lwjgl/system/linux/XAnyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XAnyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XAnyEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XAnyEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/XButtonEvent guarded-static-init=1 keep-constructor=2 keep-struct=69 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XAnyEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/XButtonEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=68 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XButtonEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XButtonEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XButtonEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3534,8 +3531,8 @@ org/lwjgl/system/linux/XButtonEvent guarded-static-init=1 keep-constructor=2 kee
     mallocStack(I)Lorg/lwjgl/system/linux/XButtonEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XButtonEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XButtonEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XButtonEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=36
-org/lwjgl/system/linux/XCirculateEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XButtonEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=33
+org/lwjgl/system/linux/XCirculateEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XCirculateEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XCirculateEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCirculateEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3544,8 +3541,8 @@ org/lwjgl/system/linux/XCirculateEvent guarded-static-init=1 keep-constructor=2 
     mallocStack(I)Lorg/lwjgl/system/linux/XCirculateEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCirculateEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCirculateEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XCirculateEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XCirculateRequestEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XCirculateEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XCirculateRequestEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XCirculateRequestEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XCirculateRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCirculateRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3554,8 +3551,8 @@ org/lwjgl/system/linux/XCirculateRequestEvent guarded-static-init=1 keep-constru
     mallocStack(I)Lorg/lwjgl/system/linux/XCirculateRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCirculateRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCirculateRequestEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XCirculateRequestEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XClientMessageEvent guarded-static-init=1 keep-constructor=2 keep-struct=61 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XCirculateRequestEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XClientMessageEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=60 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XClientMessageEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XClientMessageEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XClientMessageEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3564,8 +3561,8 @@ org/lwjgl/system/linux/XClientMessageEvent guarded-static-init=1 keep-constructo
     mallocStack(I)Lorg/lwjgl/system/linux/XClientMessageEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XClientMessageEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XClientMessageEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XClientMessageEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=32
-org/lwjgl/system/linux/XColormapEvent guarded-static-init=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XClientMessageEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=29
+org/lwjgl/system/linux/XColormapEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XColormapEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XColormapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XColormapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3574,8 +3571,8 @@ org/lwjgl/system/linux/XColormapEvent guarded-static-init=1 keep-constructor=2 k
     mallocStack(I)Lorg/lwjgl/system/linux/XColormapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XColormapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XColormapEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XColormapEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/system/linux/XConfigureEvent guarded-static-init=1 keep-constructor=2 keep-struct=57 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XColormapEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/system/linux/XConfigureEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=56 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XConfigureEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XConfigureEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XConfigureEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3584,8 +3581,8 @@ org/lwjgl/system/linux/XConfigureEvent guarded-static-init=1 keep-constructor=2 
     mallocStack(I)Lorg/lwjgl/system/linux/XConfigureEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XConfigureEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XConfigureEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XConfigureEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=30
-org/lwjgl/system/linux/XConfigureRequestEvent guarded-static-init=1 keep-constructor=2 keep-struct=65 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XConfigureEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=27
+org/lwjgl/system/linux/XConfigureRequestEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=64 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XConfigureRequestEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XConfigureRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XConfigureRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3594,8 +3591,8 @@ org/lwjgl/system/linux/XConfigureRequestEvent guarded-static-init=1 keep-constru
     mallocStack(I)Lorg/lwjgl/system/linux/XConfigureRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XConfigureRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XConfigureRequestEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XConfigureRequestEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=34
-org/lwjgl/system/linux/XCreateWindowEvent guarded-static-init=1 keep-constructor=2 keep-struct=57 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XConfigureRequestEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=31
+org/lwjgl/system/linux/XCreateWindowEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=56 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XCreateWindowEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XCreateWindowEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCreateWindowEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3604,8 +3601,8 @@ org/lwjgl/system/linux/XCreateWindowEvent guarded-static-init=1 keep-constructor
     mallocStack(I)Lorg/lwjgl/system/linux/XCreateWindowEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCreateWindowEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCreateWindowEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XCreateWindowEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=30
-org/lwjgl/system/linux/XCrossingEvent guarded-static-init=1 keep-constructor=2 keep-struct=77 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XCreateWindowEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=27
+org/lwjgl/system/linux/XCrossingEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=76 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XCrossingEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XCrossingEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCrossingEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3614,8 +3611,8 @@ org/lwjgl/system/linux/XCrossingEvent guarded-static-init=1 keep-constructor=2 k
     mallocStack(I)Lorg/lwjgl/system/linux/XCrossingEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCrossingEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XCrossingEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XCrossingEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=40
-org/lwjgl/system/linux/XDestroyWindowEvent guarded-static-init=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XCrossingEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=37
+org/lwjgl/system/linux/XDestroyWindowEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XDestroyWindowEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XDestroyWindowEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XDestroyWindowEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3624,8 +3621,8 @@ org/lwjgl/system/linux/XDestroyWindowEvent guarded-static-init=1 keep-constructo
     mallocStack(I)Lorg/lwjgl/system/linux/XDestroyWindowEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XDestroyWindowEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XDestroyWindowEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XDestroyWindowEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/system/linux/XErrorEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XDestroyWindowEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/system/linux/XErrorEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XErrorEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XErrorEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XErrorEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3634,8 +3631,8 @@ org/lwjgl/system/linux/XErrorEvent guarded-static-init=1 keep-constructor=2 keep
     mallocStack(I)Lorg/lwjgl/system/linux/XErrorEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XErrorEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XErrorEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XErrorEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XEvent guarded-static-init=1 keep-constructor=2 keep-struct=74 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XErrorEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=73 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3644,8 +3641,8 @@ org/lwjgl/system/linux/XEvent guarded-static-init=1 keep-constructor=2 keep-stru
     mallocStack(I)Lorg/lwjgl/system/linux/XEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=40
-org/lwjgl/system/linux/XExposeEvent guarded-static-init=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=37
+org/lwjgl/system/linux/XExposeEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XExposeEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3654,8 +3651,8 @@ org/lwjgl/system/linux/XExposeEvent guarded-static-init=1 keep-constructor=2 kee
     mallocStack(I)Lorg/lwjgl/system/linux/XExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XExposeEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XExposeEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/system/linux/XFocusChangeEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XExposeEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/system/linux/XFocusChangeEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XFocusChangeEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XFocusChangeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XFocusChangeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3664,8 +3661,8 @@ org/lwjgl/system/linux/XFocusChangeEvent guarded-static-init=1 keep-constructor=
     mallocStack(I)Lorg/lwjgl/system/linux/XFocusChangeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XFocusChangeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XFocusChangeEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XFocusChangeEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XGenericEvent guarded-static-init=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XFocusChangeEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XGenericEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XGenericEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XGenericEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGenericEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3674,8 +3671,8 @@ org/lwjgl/system/linux/XGenericEvent guarded-static-init=1 keep-constructor=2 ke
     mallocStack(I)Lorg/lwjgl/system/linux/XGenericEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGenericEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGenericEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XGenericEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/system/linux/XGenericEventCookie guarded-static-init=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XGenericEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/system/linux/XGenericEventCookie guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XGenericEventCookie; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XGenericEventCookie$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGenericEventCookie$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3684,8 +3681,8 @@ org/lwjgl/system/linux/XGenericEventCookie guarded-static-init=1 keep-constructo
     mallocStack(I)Lorg/lwjgl/system/linux/XGenericEventCookie$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGenericEventCookie$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGenericEventCookie; struct [shim 3.3.3]
-org/lwjgl/system/linux/XGenericEventCookie$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/system/linux/XGraphicsExposeEvent guarded-static-init=1 keep-constructor=2 keep-struct=57 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XGenericEventCookie$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/system/linux/XGraphicsExposeEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=56 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XGraphicsExposeEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XGraphicsExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGraphicsExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3694,8 +3691,8 @@ org/lwjgl/system/linux/XGraphicsExposeEvent guarded-static-init=1 keep-construct
     mallocStack(I)Lorg/lwjgl/system/linux/XGraphicsExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGraphicsExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGraphicsExposeEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XGraphicsExposeEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=30
-org/lwjgl/system/linux/XGravityEvent guarded-static-init=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XGraphicsExposeEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=27
+org/lwjgl/system/linux/XGravityEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XGravityEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XGravityEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGravityEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3704,8 +3701,8 @@ org/lwjgl/system/linux/XGravityEvent guarded-static-init=1 keep-constructor=2 ke
     mallocStack(I)Lorg/lwjgl/system/linux/XGravityEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGravityEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XGravityEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XGravityEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/system/linux/XKeyEvent guarded-static-init=1 keep-constructor=2 keep-struct=69 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XGravityEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/system/linux/XKeyEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=68 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XKeyEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XKeyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XKeyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3714,8 +3711,8 @@ org/lwjgl/system/linux/XKeyEvent guarded-static-init=1 keep-constructor=2 keep-s
     mallocStack(I)Lorg/lwjgl/system/linux/XKeyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XKeyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XKeyEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XKeyEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=36
-org/lwjgl/system/linux/XKeymapEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XKeyEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=33
+org/lwjgl/system/linux/XKeymapEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XKeymapEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XKeymapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XKeymapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3724,8 +3721,8 @@ org/lwjgl/system/linux/XKeymapEvent guarded-static-init=1 keep-constructor=2 kee
     mallocStack(I)Lorg/lwjgl/system/linux/XKeymapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XKeymapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XKeymapEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XKeymapEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XMapEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XKeymapEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XMapEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XMapEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XMapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3734,8 +3731,8 @@ org/lwjgl/system/linux/XMapEvent guarded-static-init=1 keep-constructor=2 keep-s
     mallocStack(I)Lorg/lwjgl/system/linux/XMapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMapEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XMapEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XMapRequestEvent guarded-static-init=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XMapEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XMapRequestEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XMapRequestEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XMapRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMapRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3744,8 +3741,8 @@ org/lwjgl/system/linux/XMapRequestEvent guarded-static-init=1 keep-constructor=2
     mallocStack(I)Lorg/lwjgl/system/linux/XMapRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMapRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMapRequestEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XMapRequestEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/system/linux/XMappingEvent guarded-static-init=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XMapRequestEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/system/linux/XMappingEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XMappingEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XMappingEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMappingEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3754,8 +3751,8 @@ org/lwjgl/system/linux/XMappingEvent guarded-static-init=1 keep-constructor=2 ke
     mallocStack(I)Lorg/lwjgl/system/linux/XMappingEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMappingEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMappingEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XMappingEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/system/linux/XMotionEvent guarded-static-init=1 keep-constructor=2 keep-struct=69 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XMappingEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/system/linux/XMotionEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=68 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XMotionEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XMotionEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMotionEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3764,8 +3761,8 @@ org/lwjgl/system/linux/XMotionEvent guarded-static-init=1 keep-constructor=2 kee
     mallocStack(I)Lorg/lwjgl/system/linux/XMotionEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMotionEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XMotionEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XMotionEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=36
-org/lwjgl/system/linux/XNoExposeEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XMotionEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=33
+org/lwjgl/system/linux/XNoExposeEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XNoExposeEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XNoExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XNoExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3774,8 +3771,8 @@ org/lwjgl/system/linux/XNoExposeEvent guarded-static-init=1 keep-constructor=2 k
     mallocStack(I)Lorg/lwjgl/system/linux/XNoExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XNoExposeEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XNoExposeEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XNoExposeEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XPropertyEvent guarded-static-init=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XNoExposeEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XPropertyEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=40 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XPropertyEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XPropertyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XPropertyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3784,8 +3781,8 @@ org/lwjgl/system/linux/XPropertyEvent guarded-static-init=1 keep-constructor=2 k
     mallocStack(I)Lorg/lwjgl/system/linux/XPropertyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XPropertyEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XPropertyEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XPropertyEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/system/linux/XReparentEvent guarded-static-init=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XPropertyEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/system/linux/XReparentEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XReparentEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XReparentEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XReparentEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3794,8 +3791,8 @@ org/lwjgl/system/linux/XReparentEvent guarded-static-init=1 keep-constructor=2 k
     mallocStack(I)Lorg/lwjgl/system/linux/XReparentEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XReparentEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XReparentEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XReparentEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/system/linux/XResizeRequestEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XReparentEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/system/linux/XResizeRequestEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XResizeRequestEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XResizeRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XResizeRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3804,8 +3801,8 @@ org/lwjgl/system/linux/XResizeRequestEvent guarded-static-init=1 keep-constructo
     mallocStack(I)Lorg/lwjgl/system/linux/XResizeRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XResizeRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XResizeRequestEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XResizeRequestEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XSelectionClearEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XResizeRequestEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XSelectionClearEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XSelectionClearEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XSelectionClearEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionClearEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3814,8 +3811,8 @@ org/lwjgl/system/linux/XSelectionClearEvent guarded-static-init=1 keep-construct
     mallocStack(I)Lorg/lwjgl/system/linux/XSelectionClearEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionClearEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionClearEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XSelectionClearEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XSelectionEvent guarded-static-init=1 keep-constructor=2 keep-struct=45 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XSelectionClearEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XSelectionEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XSelectionEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XSelectionEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3824,8 +3821,8 @@ org/lwjgl/system/linux/XSelectionEvent guarded-static-init=1 keep-constructor=2 
     mallocStack(I)Lorg/lwjgl/system/linux/XSelectionEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XSelectionEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/system/linux/XSelectionRequestEvent guarded-static-init=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XSelectionEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/system/linux/XSelectionRequestEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XSelectionRequestEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XSelectionRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3834,8 +3831,8 @@ org/lwjgl/system/linux/XSelectionRequestEvent guarded-static-init=1 keep-constru
     mallocStack(I)Lorg/lwjgl/system/linux/XSelectionRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionRequestEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSelectionRequestEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XSelectionRequestEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/system/linux/XSetWindowAttributes guarded-static-init=1 keep-constructor=2 keep-struct=68 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XSelectionRequestEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/system/linux/XSetWindowAttributes guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=67 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XSetWindowAttributes; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XSetWindowAttributes$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSetWindowAttributes$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3844,12 +3841,12 @@ org/lwjgl/system/linux/XSetWindowAttributes guarded-static-init=1 keep-construct
     mallocStack(I)Lorg/lwjgl/system/linux/XSetWindowAttributes$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSetWindowAttributes$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XSetWindowAttributes; struct [shim 3.3.3]
-org/lwjgl/system/linux/XSetWindowAttributes$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=36 struct=1
+org/lwjgl/system/linux/XSetWindowAttributes$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=33 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/linux/XSetWindowAttributes$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/linux/XSetWindowAttributes; struct [shim 3.1.6]
-org/lwjgl/system/linux/XTimeCoord guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1
-org/lwjgl/system/linux/XTimeCoord$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9
-org/lwjgl/system/linux/XUnmapEvent guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XTimeCoord guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=11 keep-struct-sizeof=1
+org/lwjgl/system/linux/XTimeCoord$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6
+org/lwjgl/system/linux/XUnmapEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XUnmapEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XUnmapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XUnmapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3858,8 +3855,8 @@ org/lwjgl/system/linux/XUnmapEvent guarded-static-init=1 keep-constructor=2 keep
     mallocStack(I)Lorg/lwjgl/system/linux/XUnmapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XUnmapEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XUnmapEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XUnmapEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/XVisibilityEvent guarded-static-init=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/linux/XUnmapEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/XVisibilityEvent guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/linux/XVisibilityEvent; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XVisibilityEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XVisibilityEvent$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3868,8 +3865,8 @@ org/lwjgl/system/linux/XVisibilityEvent guarded-static-init=1 keep-constructor=2
     mallocStack(I)Lorg/lwjgl/system/linux/XVisibilityEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XVisibilityEvent$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XVisibilityEvent; struct [shim 3.3.3]
-org/lwjgl/system/linux/XVisibilityEvent$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/system/linux/XVisualInfo guarded-static-init=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/system/linux/XVisibilityEvent$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/system/linux/XVisualInfo guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/system/linux/XVisualInfo; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/linux/XVisualInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XVisualInfo$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -3879,46 +3876,46 @@ org/lwjgl/system/linux/XVisualInfo guarded-static-init=1 keep-constructor=2 keep
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XVisualInfo$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/linux/XVisualInfo; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/system/linux/XVisualInfo$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=26 struct=1
+org/lwjgl/system/linux/XVisualInfo$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/linux/XVisualInfo$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/linux/XVisualInfo; struct [shim 3.1.6]
-org/lwjgl/system/linux/liburing/IOCQRingOffsets fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=42 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=2
+org/lwjgl/system/linux/liburing/IOCQRingOffsets fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=2
     nresv2(J)J struct-member [shim 3.3.3]
     nresv2(JJ)V struct-member [shim 3.3.3]
     set(IIIIIII)Lorg/lwjgl/system/linux/liburing/IOCQRingOffsets; fluent [shim 3.3.3]
     RESV2:I [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOCQRingOffsets$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/system/linux/liburing/IOSQRingOffsets fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=42 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=2
+org/lwjgl/system/linux/liburing/IOCQRingOffsets$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/system/linux/liburing/IOSQRingOffsets fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=41 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=2
     nresv2(J)J struct-member [shim 3.3.3]
     nresv2(JJ)V struct-member [shim 3.3.3]
     set(IIIIIII)Lorg/lwjgl/system/linux/liburing/IOSQRingOffsets; fluent [shim 3.3.3]
     RESV2:I [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOSQRingOffsets$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/system/linux/liburing/IOTimespec guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOTimespec$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/system/linux/liburing/IOURing fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=45 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer=1 struct=5 struct-member=3
+org/lwjgl/system/linux/liburing/IOSQRingOffsets$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/system/linux/liburing/IOTimespec guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOTimespec$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/system/linux/liburing/IOURing fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer=1 struct=5 struct-member=3
     npad(J)Ljava/nio/IntBuffer; nio-buffer [shim 3.3.1]
     npad(JI)I struct-member [shim 3.3.1]
     npad(JII)V struct-member [shim 3.3.1]
     npad(JLjava/nio/IntBuffer;)V struct-member [shim 3.3.1]
     set(Lorg/lwjgl/system/linux/liburing/IOURingSQ;Lorg/lwjgl/system/linux/liburing/IOURingCQ;III)Lorg/lwjgl/system/linux/liburing/IOURing; fluent [shim 3.3.1]
-org/lwjgl/system/linux/liburing/IOURing$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=22
-org/lwjgl/system/linux/liburing/IOURingAttrPI guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingAttrPI$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/system/linux/liburing/IOURingBPF guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingBPF$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=13
-org/lwjgl/system/linux/liburing/IOURingBPFContext guarded-static-init=1 keep-constructor=2 keep-struct=51 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingBPFContext$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/system/linux/liburing/IOURingBPFFilter guarded-static-init=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingBPFFilter$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/liburing/IOURingBuf fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
+org/lwjgl/system/linux/liburing/IOURing$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=19
+org/lwjgl/system/linux/liburing/IOURingAttrPI guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingAttrPI$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/system/linux/liburing/IOURingBPF guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingBPF$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10
+org/lwjgl/system/linux/liburing/IOURingBPFContext guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=50 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingBPFContext$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/system/linux/liburing/IOURingBPFFilter guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=35 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingBPFFilter$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/liburing/IOURingBuf fluent=2 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
     resv()S struct-member [shim 3.3.3]
     resv(S)Lorg/lwjgl/system/linux/liburing/IOURingBuf; fluent [shim 3.3.3]
     set(JISS)Lorg/lwjgl/system/linux/liburing/IOURingBuf; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingBuf$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=12 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingBuf$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9 struct-member=1
     resv()S struct-member [shim 3.3.3]
     resv(S)Lorg/lwjgl/system/linux/liburing/IOURingBuf$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingBufReg fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer=1 nio-buffer-empty=1 struct=5 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingBufReg fluent=3 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer=1 nio-buffer-empty=1 struct=5 struct-member=4
     nresv(J)Ljava/nio/LongBuffer; nio-buffer [shim 3.3.3]
     nresv(JI)J struct-member [shim 3.3.3]
     nresv(JIJ)V struct-member [shim 3.3.3]
@@ -3928,79 +3925,79 @@ org/lwjgl/system/linux/liburing/IOURingBufReg fluent=3 guarded-static-init=1 kee
     resv(IJ)Lorg/lwjgl/system/linux/liburing/IOURingBufReg; fluent [shim 3.3.3]
     resv(Ljava/nio/LongBuffer;)Lorg/lwjgl/system/linux/liburing/IOURingBufReg; fluent [shim 3.3.3]
     set(JISSLjava/nio/LongBuffer;)Lorg/lwjgl/system/linux/liburing/IOURingBufReg; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingBufReg$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=16 nio-buffer-empty=1 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingBufReg$Buffer fluent=2 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13 nio-buffer-empty=1 struct-member=1
     resv()Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0) [shim 3.3.3]
     resv(I)J struct-member [shim 3.3.3]
     resv(IJ)Lorg/lwjgl/system/linux/liburing/IOURingBufReg$Buffer; fluent [shim 3.3.3]
     resv(Ljava/nio/LongBuffer;)Lorg/lwjgl/system/linux/liburing/IOURingBufReg$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingBufRing guarded-static-init=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingBufRing$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
-org/lwjgl/system/linux/liburing/IOURingBufStatus guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingBufStatus$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/system/linux/liburing/IOURingCQ fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=56 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingBufRing guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingBufRing$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
+org/lwjgl/system/linux/liburing/IOURingBufStatus guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingBufStatus$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/system/linux/liburing/IOURingCQ fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=55 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
     set(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/system/linux/liburing/IOURingCQE;Ljava/nio/ByteBuffer;)Lorg/lwjgl/system/linux/liburing/IOURingCQ; fluent [shim 3.3.1]
-org/lwjgl/system/linux/liburing/IOURingCQ$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=27
-org/lwjgl/system/linux/liburing/IOURingCQE fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingCQ$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=24
+org/lwjgl/system/linux/liburing/IOURingCQE fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
     set(JII)Lorg/lwjgl/system/linux/liburing/IOURingCQE; fluent [shim 3.3.1]
-org/lwjgl/system/linux/liburing/IOURingCQE$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/liburing/IOURingClockRegister guarded-static-init=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingClockRegister$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=8
-org/lwjgl/system/linux/liburing/IOURingCloneBuffers guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingCloneBuffers$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/liburing/IOURingFileIndexRange fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingCQE$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/liburing/IOURingClockRegister guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingClockRegister$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=5
+org/lwjgl/system/linux/liburing/IOURingCloneBuffers guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingCloneBuffers$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/liburing/IOURingFileIndexRange fluent=2 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
     resv()J struct-member [shim 3.3.3]
     resv(J)Lorg/lwjgl/system/linux/liburing/IOURingFileIndexRange; fluent [shim 3.3.3]
     set(IIJ)Lorg/lwjgl/system/linux/liburing/IOURingFileIndexRange; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingFileIndexRange$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=10 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingFileIndexRange$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7 struct-member=1
     resv()J struct-member [shim 3.3.3]
     resv(J)Lorg/lwjgl/system/linux/liburing/IOURingFileIndexRange$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingGeteventsArg fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=3
+org/lwjgl/system/linux/liburing/IOURingGeteventsArg fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=3
     npad(J)I struct-member [shim 3.3.3]
     npad(JI)V struct-member [shim 3.3.3]
     pad()I struct-member [shim 3.3.3]
     pad(I)Lorg/lwjgl/system/linux/liburing/IOURingGeteventsArg; fluent [shim 3.3.3]
     PAD:I [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingGeteventsArg$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingGeteventsArg$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct-member=1
     pad()I struct-member [shim 3.3.3]
     pad(I)Lorg/lwjgl/system/linux/liburing/IOURingGeteventsArg$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingMemRegionReg guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingMemRegionReg$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/system/linux/liburing/IOURingNAPI guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingNAPI$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/system/linux/liburing/IOURingParams fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct=50 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer-empty=1 struct=5 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingMemRegionReg guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingMemRegionReg$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/system/linux/liburing/IOURingNAPI guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingNAPI$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
+org/lwjgl/system/linux/liburing/IOURingParams fluent=3 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer-empty=1 struct=5 struct-member=1
     resv()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0) [shim 3.3.3]
     resv(I)I struct-member [shim 3.3.3]
     resv(II)Lorg/lwjgl/system/linux/liburing/IOURingParams; fluent [shim 3.3.3]
     resv(Ljava/nio/IntBuffer;)Lorg/lwjgl/system/linux/liburing/IOURingParams; fluent [shim 3.3.3]
     set(IIIIIIILjava/nio/IntBuffer;Lorg/lwjgl/system/linux/liburing/IOSQRingOffsets;Lorg/lwjgl/system/linux/liburing/IOCQRingOffsets;)Lorg/lwjgl/system/linux/liburing/IOURingParams; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingParams$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=26 nio-buffer-empty=1 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingParams$Buffer fluent=2 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23 nio-buffer-empty=1 struct-member=1
     resv()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0) [shim 3.3.3]
     resv(I)I struct-member [shim 3.3.3]
     resv(II)Lorg/lwjgl/system/linux/liburing/IOURingParams$Buffer; fluent [shim 3.3.3]
     resv(Ljava/nio/IntBuffer;)Lorg/lwjgl/system/linux/liburing/IOURingParams$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingProbe fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingProbe fluent=2 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
     resv()S struct-member [shim 3.3.3]
     resv(S)Lorg/lwjgl/system/linux/liburing/IOURingProbe; fluent [shim 3.3.3]
     set(BBSLorg/lwjgl/system/linux/liburing/IOURingProbeOp$Buffer;)Lorg/lwjgl/system/linux/liburing/IOURingProbe; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingProbe$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=16 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingProbe$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13 struct-member=1
     resv()S struct-member [shim 3.3.3]
     resv(S)Lorg/lwjgl/system/linux/liburing/IOURingProbe$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingProbeOp fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingProbeOp fluent=3 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=2
     resv()B struct-member [shim 3.3.3]
     resv(B)Lorg/lwjgl/system/linux/liburing/IOURingProbeOp; fluent [shim 3.3.3]
     resv2()I struct-member [shim 3.3.3]
     resv2(I)Lorg/lwjgl/system/linux/liburing/IOURingProbeOp; fluent [shim 3.3.3]
     set(BBSI)Lorg/lwjgl/system/linux/liburing/IOURingProbeOp; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingProbeOp$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=10 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingProbeOp$Buffer fluent=2 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7 struct-member=2
     resv()B struct-member [shim 3.3.3]
     resv(B)Lorg/lwjgl/system/linux/liburing/IOURingProbeOp$Buffer; fluent [shim 3.3.3]
     resv2()I struct-member [shim 3.3.3]
     resv2(I)Lorg/lwjgl/system/linux/liburing/IOURingProbeOp$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingQueryHdr guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingQueryHdr$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/liburing/IOURingQueryOpcode guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingQueryOpcode$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/system/linux/liburing/IOURingRSRCRegister fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=4
+org/lwjgl/system/linux/liburing/IOURingQueryHdr guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingQueryHdr$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/liburing/IOURingQueryOpcode guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingQueryOpcode$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/system/linux/liburing/IOURingRSRCRegister fluent=3 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=4
     nresv(J)I struct-member [shim 3.3.1]
     nresv(JI)V struct-member [shim 3.3.1]
     resv()I struct-member [shim 3.3.1]
@@ -4009,78 +4006,78 @@ org/lwjgl/system/linux/liburing/IOURingRSRCRegister fluent=3 guarded-static-init
     resv2(J)Lorg/lwjgl/system/linux/liburing/IOURingRSRCRegister; fluent [shim 3.3.3]
     set(IIJJJ)Lorg/lwjgl/system/linux/liburing/IOURingRSRCRegister; fluent [shim 3.3.3]
     RESV:I [shim 3.3.1]
-org/lwjgl/system/linux/liburing/IOURingRSRCRegister$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingRSRCRegister$Buffer fluent=2 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct-member=2
     resv()I struct-member [shim 3.3.1]
     resv(I)Lorg/lwjgl/system/linux/liburing/IOURingRSRCRegister$Buffer; fluent [shim 3.3.1]
     resv2()J struct-member [shim 3.3.3]
     resv2(J)Lorg/lwjgl/system/linux/liburing/IOURingRSRCRegister$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingRSRCUpdate fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingRSRCUpdate fluent=2 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=1
     resv()I struct-member [shim 3.3.3]
     resv(I)Lorg/lwjgl/system/linux/liburing/IOURingRSRCUpdate; fluent [shim 3.3.3]
     set(IIJ)Lorg/lwjgl/system/linux/liburing/IOURingRSRCUpdate; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingRSRCUpdate$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=10 struct-member=1
+org/lwjgl/system/linux/liburing/IOURingRSRCUpdate$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7 struct-member=1
     resv()I struct-member [shim 3.3.3]
     resv(I)Lorg/lwjgl/system/linux/liburing/IOURingRSRCUpdate$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingRSRCUpdate2 fluent=3 guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingRSRCUpdate2 fluent=3 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5 struct-member=2
     resv()I struct-member [shim 3.3.3]
     resv(I)Lorg/lwjgl/system/linux/liburing/IOURingRSRCUpdate2; fluent [shim 3.3.3]
     resv2()I struct-member [shim 3.3.3]
     resv2(I)Lorg/lwjgl/system/linux/liburing/IOURingRSRCUpdate2; fluent [shim 3.3.3]
     set(IIJJII)Lorg/lwjgl/system/linux/liburing/IOURingRSRCUpdate2; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingRSRCUpdate2$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct-member=2
+org/lwjgl/system/linux/liburing/IOURingRSRCUpdate2$Buffer fluent=2 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct-member=2
     resv()I struct-member [shim 3.3.3]
     resv(I)Lorg/lwjgl/system/linux/liburing/IOURingRSRCUpdate2$Buffer; fluent [shim 3.3.3]
     resv2()I struct-member [shim 3.3.3]
     resv2(I)Lorg/lwjgl/system/linux/liburing/IOURingRSRCUpdate2$Buffer; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingRecvmsgOut guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingRecvmsgOut$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/system/linux/liburing/IOURingRegWait guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingRegWait$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=17
-org/lwjgl/system/linux/liburing/IOURingRestriction guarded-static-init=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingRestriction$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=14
-org/lwjgl/system/linux/liburing/IOURingSQ fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct=70 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer=1 struct=5 struct-member=3
+org/lwjgl/system/linux/liburing/IOURingRecvmsgOut guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingRecvmsgOut$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/system/linux/liburing/IOURingRegWait guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingRegWait$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=14
+org/lwjgl/system/linux/liburing/IOURingRestriction guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingRestriction$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11
+org/lwjgl/system/linux/liburing/IOURingSQ fluent=2 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=69 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer=1 struct=5 struct-member=3
     npad(J)Ljava/nio/IntBuffer; nio-buffer [shim 3.3.3]
     npad(JI)I struct-member [shim 3.3.3]
     npad(JII)V struct-member [shim 3.3.3]
     npad(JLjava/nio/IntBuffer;)V struct-member [shim 3.3.3]
     set(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/system/linux/liburing/IOURingSQE;IILjava/nio/ByteBuffer;)Lorg/lwjgl/system/linux/liburing/IOURingSQ; fluent [shim 3.3.1]
     set(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Lorg/lwjgl/system/linux/liburing/IOURingSQE;IILjava/nio/ByteBuffer;II)Lorg/lwjgl/system/linux/liburing/IOURingSQ; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingSQ$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=35
-org/lwjgl/system/linux/liburing/IOURingSQE guarded-static-init=1 keep-constructor=2 keep-struct=231 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingSQE$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=118
-org/lwjgl/system/linux/liburing/IOURingSyncCancelReg fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=37 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer=1 struct=5 struct-member=3
+org/lwjgl/system/linux/liburing/IOURingSQ$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=32
+org/lwjgl/system/linux/liburing/IOURingSQE guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=230 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingSQE$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=115
+org/lwjgl/system/linux/liburing/IOURingSyncCancelReg fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=36 keep-struct-sizeof=1 lwjgl-buffer=5 nio-buffer=1 struct=5 struct-member=3
     npad(J)Ljava/nio/LongBuffer; nio-buffer [shim 3.3.3]
     npad(JI)J struct-member [shim 3.3.3]
     npad(JIJ)V struct-member [shim 3.3.3]
     npad(JLjava/nio/LongBuffer;)V struct-member [shim 3.3.3]
     set(JIILorg/lwjgl/system/linux/KernelTimespec;)Lorg/lwjgl/system/linux/liburing/IOURingSyncCancelReg; fluent [shim 3.3.3]
-org/lwjgl/system/linux/liburing/IOURingSyncCancelReg$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=17
-org/lwjgl/system/linux/liburing/IOURingTaskRestriction guarded-static-init=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingTaskRestriction$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/liburing/IOURingZCRXAreaReg guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingZCRXAreaReg$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/liburing/IOURingZCRXCQE guarded-static-init=1 keep-constructor=2 keep-struct=13 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingZCRXCQE$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=8
-org/lwjgl/system/linux/liburing/IOURingZCRXCtrl guarded-static-init=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingZCRXCtrl$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/linux/liburing/IOURingZCRXCtrlExport guarded-static-init=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingZCRXCtrlExport$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=8
-org/lwjgl/system/linux/liburing/IOURingZCRXCtrlFlushRQ guarded-static-init=1 keep-constructor=2 keep-struct=10 keep-struct-sizeof=1
-org/lwjgl/system/linux/liburing/IOURingZCRXCtrlFlushRQ$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=6
-org/lwjgl/system/linux/liburing/IOURingZCRXIfqReg guarded-static-init=1 keep-constructor=2 keep-struct=49 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingZCRXIfqReg$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=25
-org/lwjgl/system/linux/liburing/IOURingZCRXOffsets guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingZCRXOffsets$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/system/linux/liburing/IOURingZCRXRQ guarded-static-init=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingZCRXRQ$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/system/linux/liburing/IOURingZCRXRQE guarded-static-init=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOURingZCRXRQE$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/system/linux/liburing/IOURingSyncCancelReg$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=14
+org/lwjgl/system/linux/liburing/IOURingTaskRestriction guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingTaskRestriction$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/liburing/IOURingZCRXAreaReg guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXAreaReg$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/liburing/IOURingZCRXCQE guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXCQE$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrl guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrl$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrlExport guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrlExport$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrlFlushRQ guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=9 keep-struct-sizeof=1
+org/lwjgl/system/linux/liburing/IOURingZCRXCtrlFlushRQ$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=3
+org/lwjgl/system/linux/liburing/IOURingZCRXIfqReg guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXIfqReg$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=22
+org/lwjgl/system/linux/liburing/IOURingZCRXOffsets guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXOffsets$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/system/linux/liburing/IOURingZCRXRQ guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXRQ$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/system/linux/liburing/IOURingZCRXRQE guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=17 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOURingZCRXRQE$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
 org/lwjgl/system/linux/liburing/IOUringNotificationRegister shim-class=3.3.2 guarded-static-init=1 keep-constructor=1 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOUringNotificationRegister$Buffer shim-class=3.3.2 guarded-static-init=1 keep-constructor=3 keep-struct=14
+org/lwjgl/system/linux/liburing/IOUringNotificationRegister$Buffer shim-class=3.3.2 guarded-static-init=1 keep-bridge=2 keep-constructor=3 keep-struct=12
 org/lwjgl/system/linux/liburing/IOUringNotificationSlot shim-class=3.3.2 guarded-static-init=1 keep-constructor=1 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOUringNotificationSlot$Buffer shim-class=3.3.2 guarded-static-init=1 keep-constructor=3 keep-struct=10
-org/lwjgl/system/linux/liburing/IOUringRegionDesc guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/linux/liburing/IOUringRegionDesc$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
+org/lwjgl/system/linux/liburing/IOUringNotificationSlot$Buffer shim-class=3.3.2 guarded-static-init=1 keep-bridge=2 keep-constructor=3 keep-struct=8
+org/lwjgl/system/linux/liburing/IOUringRegionDesc guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/linux/liburing/IOUringRegionDesc$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
 org/lwjgl/system/linux/liburing/LibIOURing default=16 guarded-static-init=1 keep-constructor=1
     io_uring_enter(IIIIJ)I default: default [shim 3.3.3]
     io_uring_enter(Ljava/nio/IntBuffer;IIIIJ)I default: default
@@ -4338,7 +4335,7 @@ org/lwjgl/system/macosx/CGEventTapCallBack$1 keep-callback=1 keep-constructor=1
 org/lwjgl/system/macosx/CGEventTapCallBackI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
-org/lwjgl/system/macosx/CGEventTapInformation guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/macosx/CGEventTapInformation guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/macosx/CGEventTapInformation; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/macosx/CGEventTapInformation$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/CGEventTapInformation$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4347,8 +4344,8 @@ org/lwjgl/system/macosx/CGEventTapInformation guarded-static-init=1 keep-constru
     mallocStack(I)Lorg/lwjgl/system/macosx/CGEventTapInformation$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/CGEventTapInformation$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/CGEventTapInformation; struct [shim 3.3.3]
-org/lwjgl/system/macosx/CGEventTapInformation$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
-org/lwjgl/system/macosx/CGPoint guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/macosx/CGEventTapInformation$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
+org/lwjgl/system/macosx/CGPoint guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/macosx/CGPoint; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/macosx/CGPoint$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/CGPoint$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4357,7 +4354,7 @@ org/lwjgl/system/macosx/CGPoint guarded-static-init=1 keep-constructor=2 keep-st
     mallocStack(I)Lorg/lwjgl/system/macosx/CGPoint$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/CGPoint$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/CGPoint; struct [shim 3.3.3]
-org/lwjgl/system/macosx/CGPoint$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/system/macosx/CGPoint$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
 org/lwjgl/system/macosx/CoreFoundation default=20 guarded-static-init=1 keep-constructor=1 void=2
     CFBundleCreate(JJ)J default: default
     CFBundleGetBundleWithIdentifier(J)J default: default
@@ -4446,7 +4443,7 @@ org/lwjgl/system/macosx/MacOSXLibraryDL default=3 keep-constructor=2 void=1
     getFunctionAddress(Ljava/nio/ByteBuffer;)J default: default
     getPath()Ljava/lang/String; default: default
     loadLibrary(Ljava/lang/String;)J default: default
-org/lwjgl/system/macosx/ObjCMethodDescription guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/macosx/ObjCMethodDescription guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=11 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/macosx/ObjCMethodDescription; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/macosx/ObjCMethodDescription$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/ObjCMethodDescription$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4455,10 +4452,10 @@ org/lwjgl/system/macosx/ObjCMethodDescription guarded-static-init=1 keep-constru
     mallocStack(I)Lorg/lwjgl/system/macosx/ObjCMethodDescription$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/ObjCMethodDescription$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/ObjCMethodDescription; struct [shim 3.3.3]
-org/lwjgl/system/macosx/ObjCMethodDescription$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=9 struct=1
+org/lwjgl/system/macosx/ObjCMethodDescription$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/macosx/ObjCMethodDescription$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/macosx/ObjCMethodDescription; struct [shim 3.1.6]
-org/lwjgl/system/macosx/ObjCPropertyAttribute guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/system/macosx/ObjCPropertyAttribute guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/system/macosx/ObjCPropertyAttribute; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4468,7 +4465,7 @@ org/lwjgl/system/macosx/ObjCPropertyAttribute guarded-static-init=1 keep-constru
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/macosx/ObjCPropertyAttribute; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=12 struct=1
+org/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/macosx/ObjCPropertyAttribute$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/macosx/ObjCPropertyAttribute; struct [shim 3.1.6]
 org/lwjgl/system/macosx/ObjCRuntime default=140 guarded-static-init=1 interface-proxy=2 keep-constructor=1 lwjgl-buffer=7 lwjgl-buffer-empty=6 struct=1 void=34
@@ -4622,7 +4619,7 @@ org/lwjgl/system/macosx/ObjCRuntime default=140 guarded-static-init=1 interface-
     sel_registerName(Ljava/lang/CharSequence;)J default: default
     sel_registerName(Ljava/nio/ByteBuffer;)J default: default
 org/lwjgl/system/macosx/ObjCRuntime$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/system/windows/CRYPTPROTECT_PROMPTSTRUCT guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 struct=5
+org/lwjgl/system/windows/CRYPTPROTECT_PROMPTSTRUCT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 struct=5
 org/lwjgl/system/windows/Crypt32 default=26 guarded-static-init=1 interface-proxy=2 keep-constructor=1
     CryptProtectData(Ljava/nio/IntBuffer;Lorg/lwjgl/system/windows/DATA_BLOB;Ljava/lang/CharSequence;Lorg/lwjgl/system/windows/DATA_BLOB;JLorg/lwjgl/system/windows/CRYPTPROTECT_PROMPTSTRUCT;ILorg/lwjgl/system/windows/DATA_BLOB;)Z default: default
     CryptProtectData(Ljava/nio/IntBuffer;Lorg/lwjgl/system/windows/DATA_BLOB;Ljava/nio/ByteBuffer;Lorg/lwjgl/system/windows/DATA_BLOB;JLorg/lwjgl/system/windows/CRYPTPROTECT_PROMPTSTRUCT;ILorg/lwjgl/system/windows/DATA_BLOB;)Z default: default
@@ -4653,9 +4650,9 @@ org/lwjgl/system/windows/Crypt32 default=26 guarded-static-init=1 interface-prox
     nCryptUnprotectMemory(JJII)I default: default
     nCryptUnprotectMemory(JJIIJ)I default: default
 org/lwjgl/system/windows/Crypt32$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/system/windows/DATA_BLOB guarded-static-init=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/windows/DATA_BLOB$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9
-org/lwjgl/system/windows/DEVMODE fluent=1 guarded-static-init=1 keep-constructor=2 keep-struct=93 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/DATA_BLOB guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/windows/DATA_BLOB$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6
+org/lwjgl/system/windows/DEVMODE fluent=1 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=92 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/DEVMODE; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/DEVMODE$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/DEVMODE$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4665,11 +4662,11 @@ org/lwjgl/system/windows/DEVMODE fluent=1 guarded-static-init=1 keep-constructor
     mallocStack(I)Lorg/lwjgl/system/windows/DEVMODE$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/DEVMODE$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/DEVMODE; struct [shim 3.3.3]
-org/lwjgl/system/windows/DEVMODE$Buffer fluent=2 guarded-static-init=1 keep-constructor=3 keep-struct=49 struct=1
+org/lwjgl/system/windows/DEVMODE$Buffer fluent=2 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=46 struct=1
     dmPosition(Ljava/util/function/Consumer;)Lorg/lwjgl/system/windows/DEVMODE$Buffer; fluent [shim 3.2.2]
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/DEVMODE$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/DEVMODE; struct [shim 3.1.6]
-org/lwjgl/system/windows/DISPLAY_DEVICE guarded-static-init=1 keep-constructor=2 keep-struct=29 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/DISPLAY_DEVICE guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/DISPLAY_DEVICE; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/DISPLAY_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/DISPLAY_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4678,7 +4675,7 @@ org/lwjgl/system/windows/DISPLAY_DEVICE guarded-static-init=1 keep-constructor=2
     mallocStack(I)Lorg/lwjgl/system/windows/DISPLAY_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/DISPLAY_DEVICE$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/DISPLAY_DEVICE; struct [shim 3.3.3]
-org/lwjgl/system/windows/DISPLAY_DEVICE$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=17 struct=1
+org/lwjgl/system/windows/DISPLAY_DEVICE$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=14 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/DISPLAY_DEVICE$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/DISPLAY_DEVICE; struct [shim 3.1.6]
 org/lwjgl/system/windows/GDI32 default=27 guarded-static-init=1 interface-proxy=2 keep-constructor=1
@@ -4712,7 +4709,7 @@ org/lwjgl/system/windows/GDI32 default=27 guarded-static-init=1 interface-proxy=
     nSwapBuffers(JJ)I default: default
     nSwapBuffers(JJJ)I default: default
 org/lwjgl/system/windows/GDI32$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/system/windows/HARDWAREINPUT guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/HARDWAREINPUT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/HARDWAREINPUT; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/HARDWAREINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/HARDWAREINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4721,8 +4718,8 @@ org/lwjgl/system/windows/HARDWAREINPUT guarded-static-init=1 keep-constructor=2 
     mallocStack(I)Lorg/lwjgl/system/windows/HARDWAREINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/HARDWAREINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/HARDWAREINPUT; struct [shim 3.3.3]
-org/lwjgl/system/windows/HARDWAREINPUT$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/system/windows/INPUT guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/HARDWAREINPUT$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/system/windows/INPUT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/INPUT; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/INPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/INPUT$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4731,8 +4728,8 @@ org/lwjgl/system/windows/INPUT guarded-static-init=1 keep-constructor=2 keep-str
     mallocStack(I)Lorg/lwjgl/system/windows/INPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/INPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/INPUT; struct [shim 3.3.3]
-org/lwjgl/system/windows/INPUT$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=17
-org/lwjgl/system/windows/KEYBDINPUT guarded-static-init=1 keep-constructor=2 keep-struct=28 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/INPUT$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=14
+org/lwjgl/system/windows/KEYBDINPUT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=27 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/KEYBDINPUT; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/KEYBDINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/KEYBDINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4741,7 +4738,7 @@ org/lwjgl/system/windows/KEYBDINPUT guarded-static-init=1 keep-constructor=2 kee
     mallocStack(I)Lorg/lwjgl/system/windows/KEYBDINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/KEYBDINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/KEYBDINPUT; struct [shim 3.3.3]
-org/lwjgl/system/windows/KEYBDINPUT$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
+org/lwjgl/system/windows/KEYBDINPUT$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
 org/lwjgl/system/windows/Kernel32 default=8 guarded-static-init=1 interface-proxy=2 keep-constructor=1
     GetCurrentProcess()J default: default
     GetCurrentProcessId()I default: default
@@ -4754,9 +4751,9 @@ org/lwjgl/system/windows/Kernel32 default=8 guarded-static-init=1 interface-prox
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
 org/lwjgl/system/windows/Kernel32$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/system/windows/LARGE_INTEGER guarded-static-init=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/system/windows/LARGE_INTEGER$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/system/windows/MONITORINFOEX fluent=2 guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/LARGE_INTEGER guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=18 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/system/windows/LARGE_INTEGER$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/system/windows/MONITORINFOEX fluent=2 guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/MONITORINFOEX; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/MONITORINFOEX$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/MONITORINFOEX$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4767,12 +4764,12 @@ org/lwjgl/system/windows/MONITORINFOEX fluent=2 guarded-static-init=1 keep-const
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/MONITORINFOEX; struct [shim 3.3.3]
     rcMonitor(Ljava/util/function/Consumer;)Lorg/lwjgl/system/windows/MONITORINFOEX; fluent [shim 3.2.2]
     rcWork(Ljava/util/function/Consumer;)Lorg/lwjgl/system/windows/MONITORINFOEX; fluent [shim 3.2.2]
-org/lwjgl/system/windows/MONITORINFOEX$Buffer fluent=3 guarded-static-init=1 keep-constructor=3 keep-struct=13 struct=1
+org/lwjgl/system/windows/MONITORINFOEX$Buffer fluent=3 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/MONITORINFOEX$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/MONITORINFOEX; struct [shim 3.1.6]
     rcMonitor(Ljava/util/function/Consumer;)Lorg/lwjgl/system/windows/MONITORINFOEX$Buffer; fluent [shim 3.2.2]
     rcWork(Ljava/util/function/Consumer;)Lorg/lwjgl/system/windows/MONITORINFOEX$Buffer; fluent [shim 3.2.2]
-org/lwjgl/system/windows/MOUSEINPUT guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/MOUSEINPUT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/MOUSEINPUT; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/MOUSEINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/MOUSEINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4781,8 +4778,8 @@ org/lwjgl/system/windows/MOUSEINPUT guarded-static-init=1 keep-constructor=2 kee
     mallocStack(I)Lorg/lwjgl/system/windows/MOUSEINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/MOUSEINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/MOUSEINPUT; struct [shim 3.3.3]
-org/lwjgl/system/windows/MOUSEINPUT$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/system/windows/MSG guarded-static-init=1 keep-constructor=2 keep-struct=33 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/MOUSEINPUT$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/system/windows/MSG guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/MSG; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/MSG$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/MSG$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4791,10 +4788,10 @@ org/lwjgl/system/windows/MSG guarded-static-init=1 keep-constructor=2 keep-struc
     mallocStack(I)Lorg/lwjgl/system/windows/MSG$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/MSG$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/MSG; struct [shim 3.3.3]
-org/lwjgl/system/windows/MSG$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=19 struct=1
+org/lwjgl/system/windows/MSG$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=16 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/MSG$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/MSG; struct [shim 3.1.6]
-org/lwjgl/system/windows/PIXELFORMATDESCRIPTOR guarded-static-init=1 keep-constructor=2 keep-struct=112 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/PIXELFORMATDESCRIPTOR guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=111 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4802,10 +4799,10 @@ org/lwjgl/system/windows/PIXELFORMATDESCRIPTOR guarded-static-init=1 keep-constr
     mallocStack(I)Lorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR; struct [shim 3.3.3]
-org/lwjgl/system/windows/PIXELFORMATDESCRIPTOR$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=58 struct=1
+org/lwjgl/system/windows/PIXELFORMATDESCRIPTOR$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=55 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/PIXELFORMATDESCRIPTOR; struct [shim 3.1.6]
-org/lwjgl/system/windows/POINT guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/POINT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/POINT; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/POINT$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/POINT$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4814,10 +4811,10 @@ org/lwjgl/system/windows/POINT guarded-static-init=1 keep-constructor=2 keep-str
     mallocStack(I)Lorg/lwjgl/system/windows/POINT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/POINT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/POINT; struct [shim 3.3.3]
-org/lwjgl/system/windows/POINT$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=10 struct=1
+org/lwjgl/system/windows/POINT$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/POINT$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/POINT; struct [shim 3.1.6]
-org/lwjgl/system/windows/POINTL guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/POINTL guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/POINTL; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/POINTL$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/POINTL$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4826,10 +4823,10 @@ org/lwjgl/system/windows/POINTL guarded-static-init=1 keep-constructor=2 keep-st
     mallocStack(I)Lorg/lwjgl/system/windows/POINTL$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/POINTL$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/POINTL; struct [shim 3.3.3]
-org/lwjgl/system/windows/POINTL$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=10 struct=1
+org/lwjgl/system/windows/POINTL$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/POINTL$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/POINTL; struct [shim 3.1.6]
-org/lwjgl/system/windows/RECT guarded-static-init=1 keep-constructor=2 keep-struct=24 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/RECT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=23 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/RECT; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/RECT$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/RECT$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4838,10 +4835,10 @@ org/lwjgl/system/windows/RECT guarded-static-init=1 keep-constructor=2 keep-stru
     mallocStack(I)Lorg/lwjgl/system/windows/RECT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/RECT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/RECT; struct [shim 3.3.3]
-org/lwjgl/system/windows/RECT$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=14 struct=1
+org/lwjgl/system/windows/RECT$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=11 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/RECT$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/RECT; struct [shim 3.1.6]
-org/lwjgl/system/windows/SECURITY_ATTRIBUTES guarded-static-init=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/system/windows/SECURITY_ATTRIBUTES guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/system/windows/SECURITY_ATTRIBUTES; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/SECURITY_ATTRIBUTES$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/SECURITY_ATTRIBUTES$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4851,10 +4848,10 @@ org/lwjgl/system/windows/SECURITY_ATTRIBUTES guarded-static-init=1 keep-construc
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/SECURITY_ATTRIBUTES$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/SECURITY_ATTRIBUTES; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/system/windows/SECURITY_ATTRIBUTES$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=12 struct=1
+org/lwjgl/system/windows/SECURITY_ATTRIBUTES$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/SECURITY_ATTRIBUTES$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/SECURITY_ATTRIBUTES; struct [shim 3.1.6]
-org/lwjgl/system/windows/TOUCHINPUT guarded-static-init=1 keep-constructor=2 keep-struct=26 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/TOUCHINPUT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=25 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/TOUCHINPUT; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/TOUCHINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/TOUCHINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -4863,7 +4860,7 @@ org/lwjgl/system/windows/TOUCHINPUT guarded-static-init=1 keep-constructor=2 kee
     mallocStack(I)Lorg/lwjgl/system/windows/TOUCHINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/TOUCHINPUT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/TOUCHINPUT; struct [shim 3.3.3]
-org/lwjgl/system/windows/TOUCHINPUT$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=16 struct=1
+org/lwjgl/system/windows/TOUCHINPUT$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/TOUCHINPUT$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/TOUCHINPUT; struct [shim 3.1.6]
 org/lwjgl/system/windows/User32 default=202 guarded-static-init=1 interface-proxy=2 keep-constructor=1
@@ -5072,7 +5069,7 @@ org/lwjgl/system/windows/User32 default=202 guarded-static-init=1 interface-prox
     nWaitMessage(J)I default: default
     nWaitMessage(JJ)I default: default
 org/lwjgl/system/windows/User32$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/system/windows/WINDOWPLACEMENT guarded-static-init=1 keep-constructor=2 keep-struct=35 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/system/windows/WINDOWPLACEMENT guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=34 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/system/windows/WINDOWPLACEMENT; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/WINDOWPLACEMENT$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/WINDOWPLACEMENT$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -5081,10 +5078,10 @@ org/lwjgl/system/windows/WINDOWPLACEMENT guarded-static-init=1 keep-constructor=
     mallocStack(I)Lorg/lwjgl/system/windows/WINDOWPLACEMENT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/WINDOWPLACEMENT$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/WINDOWPLACEMENT; struct [shim 3.3.3]
-org/lwjgl/system/windows/WINDOWPLACEMENT$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=21 struct=1
+org/lwjgl/system/windows/WINDOWPLACEMENT$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=18 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/WINDOWPLACEMENT$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/WINDOWPLACEMENT; struct [shim 3.1.6]
-org/lwjgl/system/windows/WNDCLASSEX guarded-static-init=1 keep-constructor=2 keep-struct=61 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
+org/lwjgl/system/windows/WNDCLASSEX guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=60 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9 struct-member=1
     callocStack()Lorg/lwjgl/system/windows/WNDCLASSEX; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/system/windows/WNDCLASSEX$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/WNDCLASSEX$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -5094,7 +5091,7 @@ org/lwjgl/system/windows/WNDCLASSEX guarded-static-init=1 keep-constructor=2 kee
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/WNDCLASSEX$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/system/windows/WNDCLASSEX; struct [shim 3.3.3]
     validate(JI)V struct-member [shim 3.2.2]
-org/lwjgl/system/windows/WNDCLASSEX$Buffer fluent=1 guarded-static-init=1 keep-constructor=3 keep-struct=32 struct=1
+org/lwjgl/system/windows/WNDCLASSEX$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=29 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/system/windows/WNDCLASSEX$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/system/windows/WNDCLASSEX; struct [shim 3.1.6]
 org/lwjgl/system/windows/WinBase default=34 guarded-static-init=1 keep-constructor=1

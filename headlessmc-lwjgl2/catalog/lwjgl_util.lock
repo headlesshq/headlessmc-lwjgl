@@ -9,8 +9,7 @@ org/lwjgl/util/Display default=1 guarded-static-init=1 keep-constructor=1 object
     setDisplayMode([Lorg/lwjgl/opengl/DisplayMode;[Ljava/lang/String;)Lorg/lwjgl/opengl/DisplayMode; object: new DisplayMode
 org/lwjgl/util/Display$1FieldAccessor default=1 keep-constructor=1
     getInt(Lorg/lwjgl/opengl/DisplayMode;)I default: default
-org/lwjgl/util/Display$1Sorter default=2 keep-constructor=1
-    compare(Ljava/lang/Object;Ljava/lang/Object;)I default: default
+org/lwjgl/util/Display$1Sorter default=1 keep-bridge=1 keep-constructor=1
     compare(Lorg/lwjgl/opengl/DisplayMode;Lorg/lwjgl/opengl/DisplayMode;)I default: default
 org/lwjgl/util/Point keep-constructor=3 keep-pure-java-class=13
 org/lwjgl/util/ReadableColor keep-abstract-interface-method=14 keep-interface-static-init=1
@@ -254,18 +253,16 @@ org/lwjgl/util/mapped/CacheLineSize default=4 keep-constructor=1 nio-buffer=1 vo
     getCacheLineSize()I default: default
     memoryLoop(IILjava/nio/IntBuffer;I)J default: default
     waitForResults(ILjava/util/concurrent/ExecutorCompletionService;)J default: default
-org/lwjgl/util/mapped/CacheLineSize$1 default=2 keep-constructor=1
+org/lwjgl/util/mapped/CacheLineSize$1 default=1 keep-bridge=1 keep-constructor=1
     call()Ljava/lang/Long; default: default
-    call()Ljava/lang/Object; default: default
 org/lwjgl/util/mapped/CacheUtil default=1 guarded-static-init=1 keep-constructor=1 nio-buffer=7 object=1
     createPointerBuffer(I)Lorg/lwjgl/PointerBuffer; object: new PointerBuffer
     getCacheLineSize()I default: default
 org/lwjgl/util/mapped/MappedField keep-abstract-interface-method=2
 org/lwjgl/util/mapped/MappedForeach default=1 keep-constructor=1
     iterator()Ljava/util/Iterator; default: default
-org/lwjgl/util/mapped/MappedForeach$1 default=2 keep-constructor=1 object=1 void=1
+org/lwjgl/util/mapped/MappedForeach$1 default=1 keep-bridge=1 keep-constructor=1 object=1 void=1
     hasNext()Z default: default
-    next()Ljava/lang/Object; default: default
     next()Lorg/lwjgl/util/mapped/MappedObject; object: new MappedObject
 org/lwjgl/util/mapped/MappedHelper default=32 keep-constructor=1 nio-buffer=1 object=2 void=39
     aget(J)J default: default

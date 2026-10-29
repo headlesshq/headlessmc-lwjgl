@@ -16,6 +16,7 @@ import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 import org.lwjgl.opengl.GLContext;
 import org.lwjgl.opengl.PixelFormat;
+import org.lwjgl.opengl.SharedDrawable;
 
 import java.nio.IntBuffer;
 
@@ -25,6 +26,19 @@ import static org.junit.jupiter.api.Assertions.*;
  * The LWJGL 2 calls that Minecraft 1.8 to 1.12.2 makes during startup.
  */
 class StartupTest {
+    /**
+     * Forge's splash screen renders on another thread with a drawable that shares the context of the display.
+     */
+    @Test
+    void sharedDrawable() throws Exception {
+        Display.create();
+        SharedDrawable shared = new SharedDrawable(Display.getDrawable());
+        shared.makeCurrent();
+        shared.releaseContext();
+        Display.getDrawable().makeCurrent();
+        shared.destroy();
+    }
+
     @Test
     void display() throws Exception {
         assertEquals(LWJGLUtil.PLATFORM_LINUX, LWJGLUtil.getPlatform());

@@ -120,6 +120,7 @@ public final class Rules {
     public static List<Rule> create(HandlerIndex handlers, ClassPool pool, Synthetics factories) {
         return List.of(
             rule("handler", false, handlers::get),
+            rule("keep-bridge", false, m -> m.isBridge() && !m.isAbstract() ? new Behaviour.Keep() : null),
             rule("keep-constructor", false, m -> "<init>".equals(m.name()) ? new Behaviour.Keep() : null),
             rule("keep-abstract-interface-method", false, m -> m.isOwnerInterface() && m.isAbstract() ? new Behaviour.Keep() : null),
             rule("keep-enum", false, m -> m.isOwnerEnum() ? new Behaviour.Keep() : null),

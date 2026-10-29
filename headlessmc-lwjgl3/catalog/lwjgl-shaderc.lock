@@ -6,14 +6,14 @@ org/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc keep-callback=4 keep-constructo
 org/lwjgl/util/shaderc/GLSLFreeIncludeResultFunc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/GLSLFreeIncludeResultFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/util/shaderc/GLSLIncludeCallbacks guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/GLSLIncludeCallbacks$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
+org/lwjgl/util/shaderc/GLSLIncludeCallbacks guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/GLSLIncludeCallbacks$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
 org/lwjgl/util/shaderc/GLSLIncludeLocalFunc keep-callback=4 keep-constructor=2
 org/lwjgl/util/shaderc/GLSLIncludeLocalFunc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/GLSLIncludeLocalFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/util/shaderc/GLSLIncludeResult guarded-static-init=1 keep-constructor=2 keep-struct=22 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/GLSLIncludeResult$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=13
+org/lwjgl/util/shaderc/GLSLIncludeResult guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=21 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/GLSLIncludeResult$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10
 org/lwjgl/util/shaderc/GLSLIncludeSystemFunc keep-callback=4 keep-constructor=2
 org/lwjgl/util/shaderc/GLSLIncludeSystemFunc$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/GLSLIncludeSystemFuncI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -49,12 +49,12 @@ org/lwjgl/util/shaderc/GLSLang default=27 guarded-static-init=1 interface-proxy=
     nglslang_shader_parse(JJ)I default: default
     nglslang_shader_preprocess(JJ)I default: default
 org/lwjgl/util/shaderc/GLSLang$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/util/shaderc/GLSLangInput guarded-static-init=1 keep-constructor=2 keep-struct=71 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/GLSLangInput$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=38
-org/lwjgl/util/shaderc/GLSLangLimits guarded-static-init=1 keep-constructor=2 keep-struct=44 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/GLSLangLimits$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=24
-org/lwjgl/util/shaderc/GLSLangResource guarded-static-init=1 keep-constructor=2 keep-struct=421 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/GLSLangResource$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=213
+org/lwjgl/util/shaderc/GLSLangInput guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=70 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/GLSLangInput$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=35
+org/lwjgl/util/shaderc/GLSLangLimits guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=43 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/GLSLangLimits$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=21
+org/lwjgl/util/shaderc/GLSLangResource guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=420 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/GLSLangResource$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=210
 org/lwjgl/util/shaderc/GLSLangResourceLimits default=3 guarded-static-init=1 interface-proxy=2 keep-constructor=1 struct=2 void=2
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
@@ -62,10 +62,10 @@ org/lwjgl/util/shaderc/GLSLangResourceLimits default=3 guarded-static-init=1 int
     nglslang_default_resource()J default: default
     nglslang_resource()J default: default
 org/lwjgl/util/shaderc/GLSLangResourceLimits$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/util/shaderc/GLSLangSPVOptions guarded-static-init=1 keep-constructor=2 keep-struct=48 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/GLSLangSPVOptions$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=26
-org/lwjgl/util/shaderc/GLSLangVersion guarded-static-init=1 keep-constructor=2 keep-struct=16 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/GLSLangVersion$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=11
+org/lwjgl/util/shaderc/GLSLangSPVOptions guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=47 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/GLSLangSPVOptions$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=23
+org/lwjgl/util/shaderc/GLSLangVersion guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/GLSLangVersion$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=8
 org/lwjgl/util/shaderc/SPV default=37 guarded-static-init=1 interface-proxy=2 keep-constructor=1 struct=2 void=38
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
@@ -107,10 +107,10 @@ org/lwjgl/util/shaderc/SPV default=37 guarded-static-init=1 interface-proxy=2 ke
     spvValidateWithOptions(JJLorg/lwjgl/util/shaderc/SPVBinary;Lorg/lwjgl/PointerBuffer;)I default: default
     spvValidatorOptionsCreate()J default: default
 org/lwjgl/util/shaderc/SPV$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/util/shaderc/SPVBinary guarded-static-init=1 keep-constructor=2 keep-struct=10 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/SPVBinary$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=8
-org/lwjgl/util/shaderc/SPVDiagnostic guarded-static-init=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/SPVDiagnostic$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/util/shaderc/SPVBinary guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=9 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/SPVBinary$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=5
+org/lwjgl/util/shaderc/SPVDiagnostic guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=13 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/SPVDiagnostic$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
 org/lwjgl/util/shaderc/SPVMessageConsumer keep-callback=4 keep-constructor=2
 org/lwjgl/util/shaderc/SPVMessageConsumer$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/SPVMessageConsumerI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
@@ -129,24 +129,24 @@ org/lwjgl/util/shaderc/SPVOptimizer default=10 guarded-static-init=1 interface-p
     spvOptimizerRegisterPassesFromFlagsWhilePreservingTheInterface(JLorg/lwjgl/PointerBuffer;)Z default: default
     spvOptimizerRun(JLjava/nio/IntBuffer;Lorg/lwjgl/PointerBuffer;J)I default: default
 org/lwjgl/util/shaderc/SPVOptimizer$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/util/shaderc/SPVParsedHeader guarded-static-init=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1
-org/lwjgl/util/shaderc/SPVParsedHeader$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=10
+org/lwjgl/util/shaderc/SPVParsedHeader guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=14 keep-struct-sizeof=1
+org/lwjgl/util/shaderc/SPVParsedHeader$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
 org/lwjgl/util/shaderc/SPVParsedHeaderFn keep-callback=4 keep-constructor=2
 org/lwjgl/util/shaderc/SPVParsedHeaderFn$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/SPVParsedHeaderFnI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/util/shaderc/SPVParsedInstruction guarded-static-init=1 keep-constructor=2 keep-struct=39 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/SPVParsedInstruction$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=20
+org/lwjgl/util/shaderc/SPVParsedInstruction guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=38 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/SPVParsedInstruction$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=17
 org/lwjgl/util/shaderc/SPVParsedInstructionFn keep-callback=4 keep-constructor=2
 org/lwjgl/util/shaderc/SPVParsedInstructionFn$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/SPVParsedInstructionFnI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
-org/lwjgl/util/shaderc/SPVParsedOperand guarded-static-init=1 keep-constructor=2 keep-struct=32 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/SPVParsedOperand$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=18
-org/lwjgl/util/shaderc/SPVPosition guarded-static-init=1 keep-constructor=2 keep-struct=20 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/SPVPosition$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=12
-org/lwjgl/util/shaderc/SPVText guarded-static-init=1 keep-constructor=2 keep-struct=12 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
-org/lwjgl/util/shaderc/SPVText$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=9
+org/lwjgl/util/shaderc/SPVParsedOperand guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/SPVParsedOperand$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=15
+org/lwjgl/util/shaderc/SPVPosition guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=19 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/SPVPosition$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=9
+org/lwjgl/util/shaderc/SPVText guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=11 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
+org/lwjgl/util/shaderc/SPVText$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6
 org/lwjgl/util/shaderc/Shaderc default=25 guarded-static-init=1 interface-proxy=2 keep-constructor=1 nio-buffer=2 void=39
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
@@ -181,7 +181,7 @@ org/lwjgl/util/shaderc/ShadercIncludeResolve$1 keep-callback=1 keep-constructor=
 org/lwjgl/util/shaderc/ShadercIncludeResolveI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
-org/lwjgl/util/shaderc/ShadercIncludeResult guarded-static-init=1 keep-constructor=2 keep-struct=31 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
+org/lwjgl/util/shaderc/ShadercIncludeResult guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=30 keep-struct-sizeof=1 lwjgl-buffer=9 struct=9
     callocStack()Lorg/lwjgl/util/shaderc/ShadercIncludeResult; struct [shim 3.3.3]
     callocStack(I)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
     callocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
@@ -190,7 +190,7 @@ org/lwjgl/util/shaderc/ShadercIncludeResult guarded-static-init=1 keep-construct
     mallocStack(I)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(ILorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult$Buffer; lwjgl-buffer [shim 3.3.3]
     mallocStack(Lorg/lwjgl/system/MemoryStack;)Lorg/lwjgl/util/shaderc/ShadercIncludeResult; struct [shim 3.3.3]
-org/lwjgl/util/shaderc/ShadercIncludeResult$Buffer guarded-static-init=1 keep-constructor=3 keep-struct=16
+org/lwjgl/util/shaderc/ShadercIncludeResult$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=13
 org/lwjgl/util/shaderc/ShadercIncludeResultRelease keep-callback=4 keep-constructor=2
 org/lwjgl/util/shaderc/ShadercIncludeResultRelease$1 keep-callback=1 keep-constructor=1
 org/lwjgl/util/shaderc/ShadercIncludeResultReleaseI keep-abstract-interface-method=1 keep-interface-static-init=1 object=1 void=1
