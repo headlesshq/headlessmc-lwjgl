@@ -276,48 +276,18 @@ org/lwjgl/stb/STBImageResize default=63 guarded-static-init=1 keep-constructor=1
     STBIR_FLAG_ALPHA_PREMULTIPLIED:I [shim 3.3.3]
     STBIR_FLAG_ALPHA_USES_COLORSPACE:I [shim 3.3.3]
     STBIR_TYPE_UINT32:I [shim 3.3.3]
-org/lwjgl/stb/STBImageWrite default=39 guarded-static-init=1 keep-constructor=1 lwjgl-buffer-empty=1 nio-buffer-empty=3 void=2
-    nstbi_write_bmp(JIIIJ)I default: default
-    nstbi_write_bmp_to_func(JJIIIJ)I default: default
+org/lwjgl/stb/STBImageWrite default=4 guarded-static-init=1 keep-constructor=1 lwjgl-buffer-empty=1 nio-buffer-empty=3 stb-write-success=35 void=2
     nstbi_write_force_png_filter()J default: default
-    nstbi_write_hdr(JIIIJ)I default: default
-    nstbi_write_hdr(JIII[F)I default: default
-    nstbi_write_hdr_to_func(JJIIIJ)I default: default
-    nstbi_write_hdr_to_func(JJIII[F)I default: default
-    nstbi_write_jpg(JIIIJI)I default: default
-    nstbi_write_jpg(JIII[FI)I default: default [shim 3.1.6]
-    nstbi_write_jpg_to_func(JJIIIJI)I default: default
-    nstbi_write_png(JIIIJI)I default: default
+    nstbi_write_jpg(JIII[FI)I stb-write-success [shim 3.1.6]
     nstbi_write_png_compression_level()J default: default
-    nstbi_write_png_to_func(JJIIIJI)I default: default
-    nstbi_write_tga(JIIIJ)I default: default
-    nstbi_write_tga_to_func(JJIIIJ)I default: default
     nstbi_write_tga_with_rle()J default: default
     nstbi_zlib_compress()J default: default
-    stbi_write_bmp(Ljava/lang/CharSequence;IIILjava/nio/ByteBuffer;)Z default: default
-    stbi_write_bmp(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;)Z default: default
-    stbi_write_bmp_to_func(Lorg/lwjgl/stb/STBIWriteCallbackI;JIIILjava/nio/ByteBuffer;)Z default: default
     stbi_write_force_png_filter()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    stbi_write_hdr(Ljava/lang/CharSequence;IIILjava/nio/FloatBuffer;)Z default: default
-    stbi_write_hdr(Ljava/lang/CharSequence;III[F)Z default: default
-    stbi_write_hdr(Ljava/nio/ByteBuffer;IIILjava/nio/FloatBuffer;)Z default: default
-    stbi_write_hdr(Ljava/nio/ByteBuffer;III[F)Z default: default
-    stbi_write_hdr_to_func(Lorg/lwjgl/stb/STBIWriteCallbackI;JIIILjava/nio/FloatBuffer;)Z default: default
-    stbi_write_hdr_to_func(Lorg/lwjgl/stb/STBIWriteCallbackI;JIII[F)Z default: default
-    stbi_write_jpg(Ljava/lang/CharSequence;IIILjava/nio/ByteBuffer;I)Z default: default
-    stbi_write_jpg(Ljava/lang/CharSequence;IIILjava/nio/FloatBuffer;I)Z default: default [shim 3.1.6]
-    stbi_write_jpg(Ljava/lang/CharSequence;III[FI)Z default: default [shim 3.1.6]
-    stbi_write_jpg(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;I)Z default: default
-    stbi_write_jpg(Ljava/nio/ByteBuffer;IIILjava/nio/FloatBuffer;I)Z default: default [shim 3.1.6]
-    stbi_write_jpg(Ljava/nio/ByteBuffer;III[FI)Z default: default [shim 3.1.6]
-    stbi_write_jpg_to_func(Lorg/lwjgl/stb/STBIWriteCallbackI;JIIILjava/nio/ByteBuffer;I)I default: default
-    stbi_write_png(Ljava/lang/CharSequence;IIILjava/nio/ByteBuffer;I)Z default: default
-    stbi_write_png(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;I)Z default: default
+    stbi_write_jpg(Ljava/lang/CharSequence;IIILjava/nio/FloatBuffer;I)Z stb-write-success [shim 3.1.6]
+    stbi_write_jpg(Ljava/lang/CharSequence;III[FI)Z stb-write-success [shim 3.1.6]
+    stbi_write_jpg(Ljava/nio/ByteBuffer;IIILjava/nio/FloatBuffer;I)Z stb-write-success [shim 3.1.6]
+    stbi_write_jpg(Ljava/nio/ByteBuffer;III[FI)Z stb-write-success [shim 3.1.6]
     stbi_write_png_compression_level()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    stbi_write_png_to_func(Lorg/lwjgl/stb/STBIWriteCallbackI;JIIILjava/nio/ByteBuffer;I)Z default: default
-    stbi_write_tga(Ljava/lang/CharSequence;IIILjava/nio/ByteBuffer;)Z default: default
-    stbi_write_tga(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;)Z default: default
-    stbi_write_tga_to_func(Lorg/lwjgl/stb/STBIWriteCallbackI;JIIILjava/nio/ByteBuffer;)Z default: default
     stbi_write_tga_with_rle()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
     stbi_zlib_compress()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
 org/lwjgl/stb/STBPerlin default=9 guarded-static-init=1 keep-constructor=1

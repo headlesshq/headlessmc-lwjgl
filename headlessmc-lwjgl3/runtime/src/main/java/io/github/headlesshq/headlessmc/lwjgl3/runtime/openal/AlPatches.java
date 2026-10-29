@@ -9,8 +9,9 @@ import org.lwjgl.openal.ALCapabilities;
 import java.util.function.IntFunction;
 
 /**
- * Patches for {@code org.lwjgl.openal}: capabilities of the virtual audio device.
- * Only the core OpenAL 1.0/1.1 and ALC 1.0/1.1 features are reported as supported.
+ * Patches for {@code org.lwjgl.openal}: capabilities of the virtual audio device. Like OpenAL Soft, the device
+ * supports OpenAL 1.0/1.1, ALC 1.0/1.1 and every extension, e.g. Minecraft requires
+ * {@code AL_EXT_source_distance_model}.
  */
 public final class AlPatches {
     private static final String AL = "org/lwjgl/openal/AL";
@@ -22,7 +23,7 @@ public final class AlPatches {
 
     @Patch(owner = ALC)
     public static ALCCapabilities createCapabilities(long device) {
-        return Dummies.fillCapabilities(Dummies.create(ALCCapabilities.class), AlPatches::isCoreAlc);
+        return Dummies.fillCapabilities(Dummies.create(ALCCapabilities.class), field -> true);
     }
 
     @Patch(owner = ALC)
@@ -32,20 +33,12 @@ public final class AlPatches {
 
     @Patch(owner = AL)
     public static ALCapabilities createCapabilities(ALCCapabilities alcCapabilities) {
-        return Dummies.fillCapabilities(Dummies.create(ALCapabilities.class), AlPatches::isCoreAl);
+        return Dummies.fillCapabilities(Dummies.create(ALCapabilities.class), field -> true);
     }
 
     @Patch(owner = AL)
     public static ALCapabilities createCapabilities(ALCCapabilities alcCapabilities, IntFunction<PointerBuffer> bufferFactory) {
         return createCapabilities(alcCapabilities);
-    }
-
-    private static boolean isCoreAlc(String field) {
-        return "OpenALC10".equals(field) || "OpenALC11".equals(field);
-    }
-
-    private static boolean isCoreAl(String field) {
-        return "OpenAL10".equals(field) || "OpenAL11".equals(field);
     }
 
 }

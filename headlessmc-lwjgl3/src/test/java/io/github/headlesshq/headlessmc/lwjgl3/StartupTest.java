@@ -42,9 +42,12 @@ class StartupTest {
         }
 
         assertEquals(16, BufferUtils.createByteBuffer(16).capacity());
-        ByteBuffer large = MemoryUtil.memAlloc(10_000_000);
-        assertEquals(10_000_000, large.capacity());
-        assertTrue(DummyBuffers.sharedSize() >= 10_000_000);
+        ByteBuffer data = MemoryUtil.memAlloc(10_000_000);
+        data.put(0, (byte) 7);
+        assertEquals(7, MemoryUtil.memRealloc(data, 20_000).get(0), "buffers below 16 MiB keep their contents");
+        ByteBuffer large = MemoryUtil.memAlloc(20_000_000);
+        assertEquals(20_000_000, large.capacity());
+        assertTrue(DummyBuffers.sharedSize() >= 20_000_000, "buffers above 16 MiB share memory");
         MemoryUtil.memFree(large);
         assertNotEquals(0L, MemoryUtil.nmemAlloc(64));
     }

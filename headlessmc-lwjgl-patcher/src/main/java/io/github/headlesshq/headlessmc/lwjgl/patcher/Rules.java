@@ -96,6 +96,7 @@ public final class Rules {
     private static final Pattern ALLOCATION = Pattern.compile(
         "n?(mem(Alloc|Calloc|Realloc|AlignedAlloc)\\w*|memAddress\\w*|memGlobalRef\\w*|malloc|calloc|realloc|aligned_alloc|"
             + "je_\\w*(alloc)\\w*|rpmalloc\\w*|rpcalloc|rprealloc|rpaligned_\\w*|SDL_(malloc|calloc|realloc|aligned_alloc))");
+    private static final Pattern STB_WRITE = Pattern.compile("n?stbi_write_\\w+");
     private static final Pattern VALUES = Pattern.compile("bytes|shorts|ints|longs|floats|doubles");
     private static final List<String> SIZE_NAMES = List.of(
         "size", "capacity", "length", "count", "num", "elements", "bufSize", "nmemb", "n", "len"
@@ -136,6 +137,7 @@ public final class Rules {
                 && "()Ljava/lang/String;".equals(m.desc()) ? new Behaviour.Keep() : null),
             rule("success", false, Rules::success),
             rule("sdl-success", false, Rules::sdlSuccess),
+            rule("stb-write-success", false, Rules::stbWriteSuccess),
             rule("id", false, m -> isIdType(m.returnType()) && ID.matcher(m.name()).matches() ? new Behaviour.NextId() : null),
             rule("fake-address", false, m -> m.returnType().getSort() == Type.LONG && ALLOCATION.matcher(m.name()).matches()
                 ? new Behaviour.Constant(Behaviour.FAKE_ADDRESS) : null),
@@ -196,6 +198,18 @@ public final class Rules {
             ? sort == Type.BOOLEAN || sort == Type.INT
             : sort == Type.INT || sort == Type.LONG;
         return matches ? new Behaviour.Constant(value) : null;
+    }
+
+    /**
+     * STB image writers return {@code true} or {@code 1} on success, writing to a file or callback is skipped.
+     */
+    private static Behaviour stbWriteSuccess(MethodInfo method) {
+        if (!"org/lwjgl/stb/STBImageWrite".equals(method.owner().name) || !STB_WRITE.matcher(method.name()).matches()) {
+            return null;
+        }
+
+        int sort = method.returnType().getSort();
+        return sort == Type.BOOLEAN ? new Behaviour.Constant(true) : sort == Type.INT ? new Behaviour.Constant(1) : null;
     }
 
     private static Behaviour sdlSuccess(MethodInfo method) {
