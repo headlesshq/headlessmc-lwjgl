@@ -53,7 +53,7 @@ final class Target {
     static final String NATIVE_FUNCTION = "native:";
     private static final Pattern RAW_METHOD = Pattern.compile("n[a-z]+[A-Z0-9].*");
     private static final Set<String> ENUM_PARAMETER_NAMES = Set.of(
-        "attrib", "attribute", "hint", "pname", "param", "parameter", "target", "cap", "mode", "type", "format",
+        "attr", "attrib", "attribute", "hint", "pname", "param", "parameter", "target", "cap", "mode", "type", "format",
         "key", "button", "query", "token", "name");
     private static final int INT_SENTINEL = 0x7EADBEEF;
     private static final long LONG_SENTINEL = 0x7EADBEEF7EADBEEFL;

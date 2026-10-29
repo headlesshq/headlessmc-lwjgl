@@ -124,6 +124,10 @@ public final class SdlKeys {
      * @return the scancode that produces the keycode, {@code SDL_SCANCODE_UNKNOWN} if there is none.
      */
     public static int scancodeOfKey(int keycode) {
+        if (keycode == SDLK_UNKNOWN) {
+            return SDL_SCANCODE_UNKNOWN;
+        }
+
         for (int scancode = 1; scancode < KEYS.length; scancode++) {
             if (KEYS[scancode] == keycode) {
                 return scancode;

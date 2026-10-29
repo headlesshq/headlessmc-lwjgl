@@ -23,7 +23,7 @@ public final class Dummies {
      * patched allocation functions, because callers treat 0 as out of memory.
      */
     private static final String SHARED_LIBRARY = "org.lwjgl.system.SharedLibrary";
-    private static final Pattern ALLOCATION = Pattern.compile("malloc|calloc|realloc|aligned_alloc|alloc|allocate");
+    private static final Pattern FAKE_ADDRESS_METHODS = Pattern.compile("malloc|calloc|realloc|aligned_alloc|alloc|allocate|getFunctionAddress");
 
     private Dummies() {
         throw new AssertionError();
@@ -49,8 +49,8 @@ public final class Dummies {
 
     /**
      * Returns a proxy for an LWJGL interface, whose methods return {@code 0}, {@code false}, {@code ""} or
-     * {@code null}, allocation methods a fake nonzero address, and whose {@code equals}/{@code hashCode} are identity
-     * based.
+     * {@code null}, allocation methods and {@code getFunctionAddress} a fake nonzero address, the same as
+     * {@code SDL_GL_GetProcAddress}, and whose {@code equals}/{@code hashCode} are identity based.
      * One proxy is created per interface and reused.
      *
      * @param type the interface.
@@ -91,7 +91,7 @@ public final class Dummies {
                 case "toString":
                     return "HeadlessMc dummy " + type.getName();
                 default:
-                    if (method.getReturnType() == long.class && ALLOCATION.matcher(method.getName()).matches()) {
+                    if (method.getReturnType() == long.class && FAKE_ADDRESS_METHODS.matcher(method.getName()).matches()) {
                         return DummyBuffers.FAKE_ADDRESS;
                     }
 

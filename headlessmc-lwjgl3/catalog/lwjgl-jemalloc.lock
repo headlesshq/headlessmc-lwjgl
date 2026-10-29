@@ -74,11 +74,8 @@ org/lwjgl/system/jemalloc/ExtentSplitI default=1 keep-abstract-interface-method=
     getDescriptor()Lorg/lwjgl/system/Callback$Descriptor; object: new Callback$Descriptor
     CIF:Lorg/lwjgl/system/libffi/FFICIF; [shim 3.3.3]
     SIGNATURE:Ljava/lang/String; [shim 3.2.2]
-org/lwjgl/system/jemalloc/JEmalloc default=14 fake-address=13 guarded-static-init=1 interface-proxy=2 keep-constructor=1 lwjgl-buffer-empty=1 nio-buffer=7 void=43
+org/lwjgl/system/jemalloc/JEmalloc default=11 fake-address=13 guarded-static-init=1 interface-proxy=2 keep-constructor=1 keep-pure-computation=3 lwjgl-buffer-empty=1 nio-buffer=7 void=43
     MALLOCX_ALIGN(I)I default: default
-    MALLOCX_ARENA(I)I default: default
-    MALLOCX_LG_ALIGN(I)I default: default
-    MALLOCX_TCACHE(I)I default: default
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     je_mallctl(Ljava/lang/CharSequence;Ljava/nio/ByteBuffer;Lorg/lwjgl/PointerBuffer;Ljava/nio/ByteBuffer;)I default: default

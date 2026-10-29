@@ -2,6 +2,11 @@ package io.github.headlesshq.headlessmc.lwjgl.patcher;
 
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
+import org.objectweb.asm.tree.TypeInsnNode;
+import org.objectweb.asm.tree.MultiANewArrayInsnNode;
+import org.objectweb.asm.tree.MethodInsnNode;
+import org.objectweb.asm.tree.InvokeDynamicInsnNode;
+import org.objectweb.asm.tree.AbstractInsnNode;
 
 import java.util.List;
 import java.util.Map;
@@ -124,6 +129,7 @@ public final class Rules {
             rule("handler", false, handlers::get),
             rule("keep-bridge", false, m -> m.isBridge() && !m.isAbstract() ? new Behaviour.Keep() : null),
             rule("keep-constructor", false, m -> "<init>".equals(m.name()) ? new Behaviour.Keep() : null),
+            rule("keep-pure-computation", false, m -> isPureComputation(m) ? new Behaviour.Keep() : null),
             rule("keep-abstract-interface-method", false, m -> m.isOwnerInterface() && m.isAbstract() ? new Behaviour.Keep() : null),
             rule("keep-enum", false, m -> m.isOwnerEnum() ? new Behaviour.Keep() : null),
             rule("keep-pure-java-class", false, m -> isKeptClass(m.owner().name) ? new Behaviour.Keep() : null),
@@ -196,6 +202,37 @@ public final class Rules {
         }
 
         return !method.isStatic() || "create".equals(method.name());
+    }
+
+    /**
+     * Static methods that only compute a primitive from their arguments and constants, like the macros
+     * {@code SDL_VERSIONNUM}, {@code SDL_MS_TO_NS} or {@code VK_MAKE_API_VERSION}: no calls, allocations or writes.
+     */
+    private static boolean isPureComputation(MethodInfo method) {
+        Type returnType = method.returnType();
+        if (!method.isStatic() || method.isNative() || method.isAbstract() || "<clinit>".equals(method.name())
+            || returnType.getSort() == Type.VOID || returnType.getSort() == Type.OBJECT || returnType.getSort() == Type.ARRAY
+            || method.method().instructions.size() == 0) {
+            return false;
+        }
+
+        for (Type argument : method.argumentTypes()) {
+            if (argument.getSort() == Type.OBJECT || argument.getSort() == Type.ARRAY) {
+                return false;
+            }
+        }
+
+        for (AbstractInsnNode insn : method.method().instructions) {
+            int opcode = insn.getOpcode();
+            if (insn instanceof MethodInsnNode || insn instanceof InvokeDynamicInsnNode || insn instanceof TypeInsnNode
+                || insn instanceof MultiANewArrayInsnNode || opcode == Opcodes.NEWARRAY || opcode == Opcodes.ATHROW
+                || opcode == Opcodes.MONITORENTER || opcode == Opcodes.PUTSTATIC || opcode == Opcodes.PUTFIELD
+                || opcode == Opcodes.GETFIELD) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private static boolean isKeptClass(String name) {

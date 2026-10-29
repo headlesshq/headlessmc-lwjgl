@@ -52,6 +52,13 @@ public final class SdlWindows {
         return 0L;
     }
 
+    /**
+     * @return the open windows, in no particular order.
+     */
+    public static long[] windows() {
+        return WINDOW_IDS.keySet().stream().mapToLong(Long::longValue).toArray();
+    }
+
     public static long mainWindow() {
         return window(MAIN_WINDOW_ID);
     }

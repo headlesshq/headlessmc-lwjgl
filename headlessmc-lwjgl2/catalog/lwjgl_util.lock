@@ -76,12 +76,8 @@ org/lwjgl/util/glu/Registry default=2 keep-constructor=1
     gluCheckExtension(Ljava/lang/String;Ljava/lang/String;)Z default: default
     gluGetString(I)Ljava/lang/String; default: default
 org/lwjgl/util/glu/Sphere keep-constructor=1 void=1
-org/lwjgl/util/glu/Util default=6 guarded-static-init=1 keep-constructor=1 void=1
-    bytesPerPixel(II)I default: default
-    ceil(II)I default: default
-    compPerPix(I)I default: default
+org/lwjgl/util/glu/Util default=2 guarded-static-init=1 keep-constructor=1 keep-pure-computation=4 void=1
     glGetIntegerv(I)I default: default
-    nearestPower(I)I default: default
     normalize([F)[F default: default
 org/lwjgl/util/glu/tessellation/ActiveRegion keep-constructor=1
 org/lwjgl/util/glu/tessellation/CachedVertex keep-constructor=1
@@ -105,12 +101,11 @@ org/lwjgl/util/glu/tessellation/GLUtessellatorImpl default=2 guarded-static-init
     flushCache()Z default: default
     gluNewTess()Lorg/lwjgl/util/glu/GLUtessellator; interface-proxy: proxy GLUtessellator
 org/lwjgl/util/glu/tessellation/GLUvertex keep-constructor=1
-org/lwjgl/util/glu/tessellation/Geom default=12 guarded-static-init=1 keep-constructor=1 void=1
+org/lwjgl/util/glu/tessellation/Geom default=11 guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 void=1
     EdgeEval(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
     EdgeGoesLeft(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Z default: default
     EdgeGoesRight(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Z default: default
     EdgeSign(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
-    Interpolate(DDDD)D default: default
     TransEval(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
     TransLeq(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)Z default: default
     TransSign(Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;Lorg/lwjgl/util/glu/tessellation/GLUvertex;)D default: default
@@ -157,10 +152,9 @@ org/lwjgl/util/glu/tessellation/PriorityQSort default=7 guarded-static-init=1 ke
     pqIsEmpty()Z default: default
     pqMinimum()Ljava/lang/Object; default: default
 org/lwjgl/util/glu/tessellation/PriorityQSort$Stack keep-constructor=2
-org/lwjgl/util/glu/tessellation/Render default=5 guarded-static-init=1 keep-constructor=1 object=4 void=5
+org/lwjgl/util/glu/tessellation/Render default=4 guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 object=4 void=5
     AddToTrail(Lorg/lwjgl/util/glu/tessellation/GLUface;Lorg/lwjgl/util/glu/tessellation/GLUface;)Lorg/lwjgl/util/glu/tessellation/GLUface; object: new GLUface
     ComputeNormal(Lorg/lwjgl/util/glu/tessellation/GLUtessellatorImpl;[DZ)I default: default
-    IsEven(J)Z default: default
     Marked(Lorg/lwjgl/util/glu/tessellation/GLUface;)Z default: default
     MaximumFan(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/Render$FaceCount; object: new Render$FaceCount
     MaximumStrip(Lorg/lwjgl/util/glu/tessellation/GLUhalfEdge;)Lorg/lwjgl/util/glu/tessellation/Render$FaceCount; object: new Render$FaceCount
@@ -255,9 +249,8 @@ org/lwjgl/util/mapped/CacheLineSize default=4 keep-constructor=1 nio-buffer=1 vo
     waitForResults(ILjava/util/concurrent/ExecutorCompletionService;)J default: default
 org/lwjgl/util/mapped/CacheLineSize$1 default=1 keep-bridge=1 keep-constructor=1
     call()Ljava/lang/Long; default: default
-org/lwjgl/util/mapped/CacheUtil default=1 guarded-static-init=1 keep-constructor=1 nio-buffer=7 object=1
+org/lwjgl/util/mapped/CacheUtil guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 nio-buffer=7 object=1
     createPointerBuffer(I)Lorg/lwjgl/PointerBuffer; object: new PointerBuffer
-    getCacheLineSize()I default: default
 org/lwjgl/util/mapped/MappedField keep-abstract-interface-method=2
 org/lwjgl/util/mapped/MappedForeach default=1 keep-constructor=1
     iterator()Ljava/util/Iterator; default: default
@@ -350,8 +343,7 @@ org/lwjgl/util/mapped/MappedObjectTransformer$2 default=1 keep-constructor=1
 org/lwjgl/util/mapped/MappedObjectTransformer$3 keep-constructor=1 void=9
 org/lwjgl/util/mapped/MappedObjectTransformer$FieldInfo default=1 keep-constructor=1
     getAccessType()Ljava/lang/String; default: default
-org/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo default=1 keep-constructor=1
-    getPoT(I)I default: default
+org/lwjgl/util/mapped/MappedObjectTransformer$MappedSubtypeInfo keep-constructor=1 keep-pure-computation=1
 org/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter default=6 keep-constructor=1
     access$000(Lorg/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter;)Lorg/objectweb/asm/ClassVisitor; default: default
     access$100(Lorg/lwjgl/util/mapped/MappedObjectTransformer$TransformationAdapter;)Lorg/objectweb/asm/ClassVisitor; default: default
@@ -376,7 +368,7 @@ org/lwjgl/util/vector/Matrix default=1 fluent=9 keep-constructor=1
     determinant()F default: default
 org/lwjgl/util/vector/Matrix2f keep-constructor=2 keep-pure-java-class=24
 org/lwjgl/util/vector/Matrix3f keep-constructor=1 keep-pure-java-class=24
-org/lwjgl/util/vector/Matrix4f keep-constructor=2 keep-pure-java-class=37
+org/lwjgl/util/vector/Matrix4f keep-constructor=2 keep-pure-computation=1 keep-pure-java-class=36
 org/lwjgl/util/vector/Quaternion keep-constructor=3 keep-pure-java-class=34
 org/lwjgl/util/vector/ReadableVector keep-abstract-interface-method=3
 org/lwjgl/util/vector/ReadableVector2f keep-abstract-interface-method=2

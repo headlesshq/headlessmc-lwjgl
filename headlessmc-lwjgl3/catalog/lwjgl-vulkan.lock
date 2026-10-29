@@ -1332,16 +1332,7 @@ org/lwjgl/vulkan/VK$1 guarded-static-init=1
 org/lwjgl/vulkan/VK$GlobalCommands default=2 keep-constructor=1
     getFunctionAddress(Ljava/lang/String;)J default: default
     getFunctionAddress(Ljava/lang/String;Z)J default: default
-org/lwjgl/vulkan/VK10 default=157 guarded-static-init=1 keep-constructor=1 void=170
-    VK_API_VERSION_MAJOR(I)I default: default
-    VK_API_VERSION_MINOR(I)I default: default
-    VK_API_VERSION_PATCH(I)I default: default
-    VK_API_VERSION_VARIANT(I)I default: default
-    VK_MAKE_API_VERSION(IIII)I default: default
-    VK_MAKE_VERSION(III)I default: default
-    VK_VERSION_MAJOR(I)I default: default
-    VK_VERSION_MINOR(I)I default: default
-    VK_VERSION_PATCH(I)I default: default
+org/lwjgl/vulkan/VK10 default=148 guarded-static-init=1 keep-constructor=1 keep-pure-computation=9 void=170
     nvkAllocateCommandBuffers(Lorg/lwjgl/vulkan/VkDevice;JJ)I default: default
     nvkAllocateDescriptorSets(Lorg/lwjgl/vulkan/VkDevice;JJ)I default: default
     nvkAllocateMemory(Lorg/lwjgl/vulkan/VkDevice;JJJ)I default: default
@@ -11772,8 +11763,7 @@ org/lwjgl/vulkan/VkXlibSurfaceCreateInfoKHR guarded-static-init=1 keep-bridge=1 
 org/lwjgl/vulkan/VkXlibSurfaceCreateInfoKHR$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=14 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/vulkan/VkXlibSurfaceCreateInfoKHR$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/vulkan/VkXlibSurfaceCreateInfoKHR; struct [shim 3.1.6]
-org/lwjgl/vulkan/video/STDVulkanVideo default=1 keep-constructor=1
-    VK_MAKE_VIDEO_STD_VERSION(III)I default: default
+org/lwjgl/vulkan/video/STDVulkanVideo keep-constructor=1 keep-pure-computation=1
 org/lwjgl/vulkan/video/STDVulkanVideoCodecAV1 guarded-static-init=1 keep-constructor=1
 org/lwjgl/vulkan/video/STDVulkanVideoCodecH264 guarded-static-init=1 keep-constructor=1
     STD_VIDEO_DECODE_H264_MVC_REF_LIST_SIZE:I [shim 3.3.1]

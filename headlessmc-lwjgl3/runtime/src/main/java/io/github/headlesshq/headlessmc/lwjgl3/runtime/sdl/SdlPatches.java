@@ -54,19 +54,23 @@ public final class SdlPatches {
 
     @Patch(owner = SDL_INIT)
     public static boolean SDL_Init(int flags) {
+        SdlStatePatches.initialized(flags);
         Input.register();
         return true;
     }
 
     @Patch(owner = SDL_INIT)
     public static boolean SDL_InitSubSystem(int flags) {
+        SdlStatePatches.initialized(flags);
         Input.register();
         return true;
     }
 
     @Patch(owner = SDL_VIDEO)
     public static long SDL_CreateWindow(CharSequence title, int w, int h, long flags) {
-        return createWindow(w, h);
+        long window = createWindow(w, h);
+        SdlStatePatches.title(window, title);
+        return window;
     }
 
     @Patch(owner = SDL_VIDEO)
@@ -85,6 +89,7 @@ public final class SdlPatches {
     @Patch(owner = SDL_VIDEO)
     public static void SDL_DestroyWindow(long window) {
         SdlWindows.remove(window);
+        SdlStatePatches.forget(window);
     }
 
     @Patch(owner = SDL_VIDEO)

@@ -152,8 +152,7 @@ org/lwjgl/stb/STBImage default=53 guarded-static-init=1 handler=17 keep-construc
     stbi_zlib_decode_malloc_guesssize_headerflag(Ljava/nio/ByteBuffer;IZ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     stbi_zlib_decode_noheader_buffer(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I default: default
     stbi_zlib_decode_noheader_malloc(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/stb/STBImageResize default=63 guarded-static-init=1 keep-constructor=1 nio-buffer=4 nio-buffer-empty=4 void=12
-    calculateBufferSize(IIIII)I default: default
+org/lwjgl/stb/STBImageResize default=62 guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 nio-buffer=4 nio-buffer-empty=4 void=12
     nstbir_build_samplers(J)I default: default
     nstbir_build_samplers_with_splits(JI)I default: default
     nstbir_resize(JIIIJIIIIIII)J default: default
@@ -420,8 +419,7 @@ org/lwjgl/stb/STBTTVertex guarded-static-init=1 keep-bridge=1 keep-constructor=2
 org/lwjgl/stb/STBTTVertex$Buffer fluent=1 guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=10 struct=1
     newBufferInstance(JLjava/nio/ByteBuffer;IIII)Lorg/lwjgl/stb/STBTTVertex$Buffer; fluent [shim 3.1.6]
     newInstance(J)Lorg/lwjgl/stb/STBTTVertex; struct [shim 3.1.6]
-org/lwjgl/stb/STBTruetype default=66 guarded-static-init=1 handler=19 keep-constructor=1 lwjgl-buffer-empty=2 nio-buffer-empty=13 void=70
-    STBTT_POINT_SIZE(I)I default: default
+org/lwjgl/stb/STBTruetype default=65 guarded-static-init=1 handler=19 keep-constructor=1 keep-pure-computation=1 lwjgl-buffer-empty=2 nio-buffer-empty=13 void=70
     nstbtt_BakeFontBitmap(JIFJIIIIJ)I default: default
     nstbtt_CompareUTF8toUTF16_bigendian(JIJI)I default: default
     nstbtt_FindGlyphIndex(JI)I default: default

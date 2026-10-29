@@ -15,11 +15,9 @@ org/lwjgl/sdl/SDLAsyncIO default=9 id=1 keep-constructor=1 sdl-success=7 void=2
     nSDL_WaitAsyncIOResult(JJI)Z default: default
     nSDL_WriteAsyncIO(JJJJJJ)Z default: default
 org/lwjgl/sdl/SDLAsyncIO$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLAudio default=50 guarded-static-init=1 id=2 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 sdl-success=37 void=5
-    SDL_AUDIO_BITSIZE(I)I default: default
+org/lwjgl/sdl/SDLAudio default=48 guarded-static-init=1 id=2 keep-constructor=1 keep-pure-computation=5 nio-buffer=3 nio-buffer-empty=2 sdl-success=34 void=5
     SDL_AUDIO_BYTESIZE(I)I default: default
     SDL_AUDIO_FRAMESIZE(Lorg/lwjgl/sdl/SDL_AudioSpec;)I default: default
-    SDL_DEFINE_AUDIO_FORMAT(IIII)I default: default
     SDL_GetAudioDeviceGain(I)F default: default
     SDL_GetAudioDeviceName(I)Ljava/lang/String; default: default
     SDL_GetAudioDriver(I)Ljava/lang/String; default: default
@@ -140,8 +138,7 @@ org/lwjgl/sdl/SDLError default=4 keep-constructor=1 sdl-success=6
     nSDL_SetError(J)Z default: default
     nSDL_SetErrorV(JJ)Z default: default
 org/lwjgl/sdl/SDLError$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLEvents default=18 handler=4 keep-constructor=1 sdl-success=3 void=9
-    SDL_EventEnabled(I)Z default: default
+org/lwjgl/sdl/SDLEvents default=16 handler=8 keep-constructor=1 sdl-success=2 void=8
     SDL_GetEventDescription(Lorg/lwjgl/sdl/SDL_Event;)Ljava/lang/String; default: default
     SDL_GetEventDescription(Lorg/lwjgl/sdl/SDL_Event;I)Ljava/lang/String; default: default
     SDL_GetEventDescription(Lorg/lwjgl/sdl/SDL_Event;Ljava/nio/ByteBuffer;)I default: default
@@ -149,7 +146,6 @@ org/lwjgl/sdl/SDLEvents default=18 handler=4 keep-constructor=1 sdl-success=3 vo
     SDL_HasEvent(I)Z default: default
     SDL_HasEvents(II)Z default: default
     SDL_PeepEvents(Lorg/lwjgl/sdl/SDL_Event$Buffer;III)I default: default
-    SDL_RegisterEvents(I)I default: default
     nSDL_AddEventWatch(JJ)Z default: default
     nSDL_GetEventDescription(JJI)I default: default
     nSDL_GetEventFilter(JJ)Z default: default
@@ -360,8 +356,7 @@ org/lwjgl/sdl/SDLHaptic default=18 id=2 keep-constructor=1 nio-buffer-empty=1 sd
     nSDL_HapticEffectSupported(JJ)Z default: default
     nSDL_UpdateHapticEffect(JIJ)Z default: default
 org/lwjgl/sdl/SDLHaptic$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLHints default=8 keep-constructor=1 sdl-success=10 void=4
-    SDL_GetHint(Ljava/lang/CharSequence;)Ljava/lang/String; default: default
+org/lwjgl/sdl/SDLHints default=7 handler=6 keep-constructor=1 sdl-success=6 void=3
     SDL_GetHint(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
     nSDL_AddHintCallback(JJJ)Z default: default
     nSDL_GetHint(J)J default: default
@@ -418,11 +413,9 @@ org/lwjgl/sdl/SDLIOStream default=43 keep-constructor=1 nio-buffer-empty=3 sdl-s
     nSDL_SaveFile_IO(JJJZ)Z default: default
     nSDL_WriteIO(JJJ)J default: default
 org/lwjgl/sdl/SDLIOStream$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLInit default=8 handler=2 keep-constructor=1 sdl-success=5 void=2
+org/lwjgl/sdl/SDLInit default=6 handler=6 keep-constructor=1 sdl-success=5
     SDL_GetAppMetadataProperty(Ljava/lang/CharSequence;)Ljava/lang/String; default: default
     SDL_GetAppMetadataProperty(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
-    SDL_IsMainThread()Z default: default
-    SDL_WasInit(I)I default: default
     nSDL_GetAppMetadataProperty(J)J default: default
     nSDL_RunOnMainThread(JJZ)Z default: default
     nSDL_SetAppMetadata(JJJ)Z default: default
@@ -479,16 +472,9 @@ org/lwjgl/sdl/SDLJoystick$Functions guarded-static-init=1 keep-constructor=1
 org/lwjgl/sdl/SDLJoystick$SDL_GetJoystickGUID guarded-static-init=1 keep-constructor=1
 org/lwjgl/sdl/SDLJoystick$SDL_GetJoystickGUIDForID guarded-static-init=1 keep-constructor=1
 org/lwjgl/sdl/SDLJoystick$SDL_GetJoystickGUIDInfo guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLKeyboard default=21 handler=8 keep-constructor=1 nio-buffer-empty=1 sdl-success=5 void=2
-    SDL_GetKeyFromName(Ljava/lang/CharSequence;)I default: default
+org/lwjgl/sdl/SDLKeyboard default=15 handler=15 keep-constructor=1 sdl-success=5 void=2
     SDL_GetKeyFromName(Ljava/nio/ByteBuffer;)I default: default
-    SDL_GetKeyName(I)Ljava/lang/String; default: default
-    SDL_GetKeyboardNameForID(I)Ljava/lang/String; default: default
-    SDL_GetKeyboards()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    SDL_GetScancodeFromName(Ljava/lang/CharSequence;)I default: default
     SDL_GetScancodeFromName(Ljava/nio/ByteBuffer;)I default: default
-    SDL_GetScancodeName(I)Ljava/lang/String; default: default
-    SDL_HasKeyboard()Z default: default
     SDL_HasScreenKeyboardSupport()Z default: default
     SDL_ScreenKeyboardShown(J)Z default: default
     nSDL_GetKeyFromName(J)I default: default
@@ -503,8 +489,7 @@ org/lwjgl/sdl/SDLKeyboard default=21 handler=8 keep-constructor=1 nio-buffer-emp
     nSDL_SetScancodeName(IJ)Z default: default
     nSDL_SetTextInputArea(JJI)Z default: default
 org/lwjgl/sdl/SDLKeyboard$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLKeycode default=1 keep-constructor=1
-    SDL_SCANCODE_TO_KEYCODE(I)I default: default
+org/lwjgl/sdl/SDLKeycode keep-constructor=1 keep-pure-computation=1
 org/lwjgl/sdl/SDLLoadSO default=5 keep-constructor=1 void=1
     SDL_LoadFunction(JLjava/nio/ByteBuffer;)J default: default
     SDL_LoadObject(Ljava/lang/CharSequence;)J default: default
@@ -539,14 +524,7 @@ org/lwjgl/sdl/SDLMetal$Functions guarded-static-init=1 keep-constructor=1
 org/lwjgl/sdl/SDLMisc default=1 keep-constructor=1 sdl-success=2
     nSDL_OpenURL(J)Z default: default
 org/lwjgl/sdl/SDLMisc$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLMouse default=12 guarded-static-init=1 handler=7 id=7 keep-constructor=1 nio-buffer-empty=1 sdl-success=6 void=1
-    SDL_BUTTON_MASK(I)I default: default
-    SDL_CursorVisible()Z default: default
-    SDL_GetCursor()J default: default
-    SDL_GetDefaultCursor()J default: default
-    SDL_GetMice()Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    SDL_GetMouseNameForID(I)Ljava/lang/String; default: default
-    SDL_HasMouse()Z default: default
+org/lwjgl/sdl/SDLMouse default=6 guarded-static-init=1 handler=17 id=6 keep-constructor=1 keep-pure-computation=1 sdl-success=3 void=1
     nSDL_GetGlobalMouseState(JJ)I default: default
     nSDL_GetMice(J)J default: default
     nSDL_GetMouseNameForID(I)J default: default
@@ -557,26 +535,14 @@ org/lwjgl/sdl/SDLMouse$Functions guarded-static-init=1 keep-constructor=1
 org/lwjgl/sdl/SDLPen default=1 keep-constructor=1
     SDL_GetPenDeviceType(I)I default: default
 org/lwjgl/sdl/SDLPen$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLPixels default=25 guarded-static-init=1 id=1 keep-constructor=1 sdl-success=14 struct=2 void=6
+org/lwjgl/sdl/SDLPixels default=13 guarded-static-init=1 id=1 keep-constructor=1 keep-pure-computation=12 sdl-success=14 struct=2 void=6
     SDL_BITSPERPIXEL(I)I default: default
     SDL_BYTESPERPIXEL(I)I default: default
-    SDL_COLORSPACECHROMA(I)I default: default
-    SDL_COLORSPACEMATRIX(I)I default: default
-    SDL_COLORSPACEPRIMARIES(I)I default: default
-    SDL_COLORSPACERANGE(I)I default: default
-    SDL_COLORSPACETRANSFER(I)I default: default
-    SDL_COLORSPACETYPE(I)I default: default
-    SDL_DEFINE_COLORSPACE(IIIIII)I default: default
-    SDL_DEFINE_PIXELFORMAT(IIIII)I default: default
     SDL_DEFINE_PIXELFOURCC(BBBB)I default: default
     SDL_GetPixelFormatForMasks(IIIII)I default: default
     SDL_GetPixelFormatName(I)Ljava/lang/String; default: default
     SDL_MapRGB(Lorg/lwjgl/sdl/SDL_PixelFormatDetails;Lorg/lwjgl/sdl/SDL_Palette;BBB)I default: default
     SDL_MapRGBA(Lorg/lwjgl/sdl/SDL_PixelFormatDetails;Lorg/lwjgl/sdl/SDL_Palette;BBBB)I default: default
-    SDL_PIXELFLAG(I)I default: default
-    SDL_PIXELLAYOUT(I)I default: default
-    SDL_PIXELORDER(I)I default: default
-    SDL_PIXELTYPE(I)I default: default
     nSDL_GetMasksForPixelFormat(IJJJJJ)Z default: default
     nSDL_GetPixelFormatDetails(I)J default: default
     nSDL_GetPixelFormatName(I)J default: default
@@ -735,8 +701,7 @@ org/lwjgl/sdl/SDLSensor default=14 keep-constructor=1 nio-buffer-empty=1 sdl-suc
     nSDL_GetSensorNameForID(I)J default: default
     nSDL_GetSensors(J)J default: default
 org/lwjgl/sdl/SDLSensor$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLStdinc default=44 fake-address=4 id=1 keep-constructor=1 nio-buffer=6 sdl-success=5 void=17
-    SDL_FOURCC(BBBB)I default: default
+org/lwjgl/sdl/SDLStdinc default=43 fake-address=4 id=1 keep-constructor=1 keep-pure-computation=1 nio-buffer=6 sdl-success=5 void=17
     SDL_GetEnvironment()J default: default
     SDL_GetEnvironmentVariable(JLjava/lang/CharSequence;)Ljava/lang/String; default: default
     SDL_GetEnvironmentVariable(JLjava/nio/ByteBuffer;)Ljava/lang/String; default: default
@@ -895,15 +860,9 @@ org/lwjgl/sdl/SDLTime default=8 keep-constructor=1 sdl-success=4 void=2
     nSDL_GetDateTimeLocalePreferences(JJ)Z default: default
     nSDL_TimeToDateTime(JJZ)Z default: default
 org/lwjgl/sdl/SDLTime$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLTimer default=10 handler=4 keep-constructor=1 sdl-success=1 void=3
+org/lwjgl/sdl/SDLTimer default=4 handler=4 keep-constructor=1 keep-pure-computation=6 sdl-success=1 void=3
     SDL_AddTimer(ILorg/lwjgl/sdl/SDL_TimerCallbackI;J)I default: default
     SDL_AddTimerNS(JLorg/lwjgl/sdl/SDL_NSTimerCallbackI;J)I default: default
-    SDL_MS_TO_NS(J)J default: default
-    SDL_NS_TO_MS(J)J default: default
-    SDL_NS_TO_SECONDS(J)J default: default
-    SDL_NS_TO_US(J)J default: default
-    SDL_SECONDS_TO_NS(J)J default: default
-    SDL_US_TO_NS(J)J default: default
     nSDL_AddTimer(IJJ)I default: default
     nSDL_AddTimerNS(JJJ)I default: default
 org/lwjgl/sdl/SDLTimer$Functions guarded-static-init=1 keep-constructor=1
@@ -929,46 +888,26 @@ org/lwjgl/sdl/SDLTray default=12 id=5 keep-constructor=1 lwjgl-buffer=1 sdl-succ
     nSDL_GetTrayEntryLabel(J)J default: default
     nSDL_InsertTrayEntryAt(JIJI)J default: default
 org/lwjgl/sdl/SDLTray$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLVersion default=7 guarded-static-init=1 keep-constructor=1 sdl-success=1
+org/lwjgl/sdl/SDLVersion default=3 guarded-static-init=1 keep-constructor=1 keep-pure-computation=4 sdl-success=1
     SDL_GetRevision()Ljava/lang/String; default: default
     SDL_GetVersion()I default: default
-    SDL_VERSIONNUM(III)I default: default
-    SDL_VERSIONNUM_MAJOR(I)I default: default
-    SDL_VERSIONNUM_MICRO(I)I default: default
-    SDL_VERSIONNUM_MINOR(I)I default: default
     nSDL_GetRevision()J default: default
 org/lwjgl/sdl/SDLVersion$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLVideo default=70 guarded-static-init=1 handler=26 id=4 keep-constructor=1 lwjgl-buffer-empty=1 nio-buffer=1 sdl-success=58 struct=3 void=3
+org/lwjgl/sdl/SDLVideo default=55 guarded-static-init=1 handler=54 id=3 keep-constructor=1 keep-pure-computation=4 nio-buffer=1 sdl-success=43 struct=3 void=3
     SDL_EGL_GetCurrentConfig()J default: default
     SDL_EGL_GetCurrentDisplay()J default: default
     SDL_EGL_GetProcAddress(Ljava/lang/CharSequence;)J default: default
     SDL_EGL_GetProcAddress(Ljava/nio/ByteBuffer;)J default: default
     SDL_EGL_GetWindowSurface(J)J default: default
-    SDL_GL_GetCurrentContext()J default: default
-    SDL_GL_GetCurrentWindow()J default: default
-    SDL_GL_GetProcAddress(Ljava/lang/CharSequence;)J default: default
     SDL_GL_GetProcAddress(Ljava/nio/ByteBuffer;)J default: default
-    SDL_GetCurrentDisplayOrientation(I)I default: default
-    SDL_GetCurrentVideoDriver()Ljava/lang/String; default: default
     SDL_GetDisplayForPoint(Lorg/lwjgl/sdl/SDL_Point;)I default: default
     SDL_GetDisplayForRect(Lorg/lwjgl/sdl/SDL_Rect;)I default: default
     SDL_GetDisplayProperties(I)I default: default
     SDL_GetGrabbedWindow()J default: default
-    SDL_GetNaturalDisplayOrientation(I)I default: default
-    SDL_GetNumVideoDrivers()I default: default
-    SDL_GetSystemTheme()I default: default
-    SDL_GetVideoDriver(I)Ljava/lang/String; default: default
-    SDL_GetWindowOpacity(J)F default: default
     SDL_GetWindowParent(J)J default: default
-    SDL_GetWindowPixelFormat(J)I default: default
     SDL_GetWindowProgressState(J)I default: default
     SDL_GetWindowProgressValue(J)F default: default
     SDL_GetWindowProperties(J)I default: default
-    SDL_GetWindowTitle(J)Ljava/lang/String; default: default
-    SDL_GetWindows()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    SDL_ScreenSaverEnabled()Z default: default
-    SDL_WINDOWPOS_CENTERED_DISPLAY(I)I default: default
-    SDL_WINDOWPOS_UNDEFINED_DISPLAY(I)I default: default
     SDL_WindowHasSurface(J)Z default: default
     nSDL_EGL_GetProcAddress(J)J default: default
     nSDL_GL_ExtensionSupported(J)Z default: default

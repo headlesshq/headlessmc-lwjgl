@@ -294,7 +294,7 @@ org/lwjgl/util/freetype/FT_Var_Named_Style guarded-static-init=1 keep-bridge=1 k
 org/lwjgl/util/freetype/FT_Var_Named_Style$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=6
 org/lwjgl/util/freetype/FT_Vector guarded-static-init=1 keep-bridge=1 keep-constructor=2 keep-struct=15 keep-struct-sizeof=1 lwjgl-buffer=5 struct=5
 org/lwjgl/util/freetype/FT_Vector$Buffer guarded-static-init=1 keep-bridge=3 keep-constructor=3 keep-struct=7
-org/lwjgl/util/freetype/FreeType default=353 guarded-static-init=1 interface-proxy=2 keep-constructor=1 struct=1 void=71
+org/lwjgl/util/freetype/FreeType default=347 guarded-static-init=1 interface-proxy=2 keep-constructor=1 keep-pure-computation=6 struct=1 void=71
     FTC_CMapCache_Lookup(JJII)I default: default
     FTC_CMapCache_New(JLorg/lwjgl/PointerBuffer;)I default: default
     FTC_IMAGE_TYPE_COMPARE(Lorg/lwjgl/util/freetype/FTC_ImageType;Lorg/lwjgl/util/freetype/FTC_ImageType;)Z default: default
@@ -319,7 +319,6 @@ org/lwjgl/util/freetype/FreeType default=353 guarded-static-init=1 interface-pro
     FT_Bitmap_Copy(JLorg/lwjgl/util/freetype/FT_Bitmap;Lorg/lwjgl/util/freetype/FT_Bitmap;)I default: default
     FT_Bitmap_Done(JLorg/lwjgl/util/freetype/FT_Bitmap;)I default: default
     FT_Bitmap_Embolden(JLorg/lwjgl/util/freetype/FT_Bitmap;JJ)I default: default
-    FT_CURVE_TAG(I)I default: default
     FT_CeilFix(J)J default: default
     FT_ClassicKern_Validate(Lorg/lwjgl/util/freetype/FT_Face;ILorg/lwjgl/PointerBuffer;)I default: default
     FT_Cos(J)J default: default
@@ -329,7 +328,6 @@ org/lwjgl/util/freetype/FreeType default=353 guarded-static-init=1 interface-pro
     FT_Done_Library(J)I default: default
     FT_Done_MM_Var(JLorg/lwjgl/util/freetype/FT_MM_Var;)I default: default
     FT_Done_Size(Lorg/lwjgl/util/freetype/FT_Size;)I default: default
-    FT_ENC_TAG(IIII)I default: default
     FT_Error_String(I)Ljava/lang/String; default: default
     FT_Face_CheckTrueTypePatents(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
     FT_Face_GetCharVariantIndex(Lorg/lwjgl/util/freetype/FT_Face;JJ)I default: default
@@ -411,7 +409,6 @@ org/lwjgl/util/freetype/FreeType default=353 guarded-static-init=1 interface-pro
     FT_HAS_SVG(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
     FT_HAS_VERTICAL(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
     FT_Has_PS_Glyph_Names(Lorg/lwjgl/util/freetype/FT_Face;)I default: default
-    FT_IMAGE_TAG(IIII)I default: default
     FT_IS_CID_KEYED(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
     FT_IS_EMPTY(Lorg/lwjgl/util/freetype/FT_List;)Z default: default
     FT_IS_FIXED_WIDTH(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
@@ -421,8 +418,6 @@ org/lwjgl/util/freetype/FreeType default=353 guarded-static-init=1 interface-pro
     FT_IS_TRICKY(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
     FT_IS_VARIATION(Lorg/lwjgl/util/freetype/FT_Face;)Z default: default
     FT_Init_FreeType(Lorg/lwjgl/PointerBuffer;)I default: default
-    FT_LOAD_TARGET_(I)I default: default
-    FT_LOAD_TARGET_MODE(I)I default: default
     FT_Library_SetLcdFilter(JI)I default: default
     FT_Library_SetLcdFilterWeights(JLjava/nio/ByteBuffer;)I default: default
     FT_Library_SetLcdGeometry(JLorg/lwjgl/util/freetype/FT_Vector$Buffer;)I default: default
@@ -430,7 +425,6 @@ org/lwjgl/util/freetype/FreeType default=353 guarded-static-init=1 interface-pro
     FT_Load_Char(Lorg/lwjgl/util/freetype/FT_Face;JI)I default: default
     FT_Load_Glyph(Lorg/lwjgl/util/freetype/FT_Face;II)I default: default
     FT_Load_Sfnt_Table(Lorg/lwjgl/util/freetype/FT_Face;JJLjava/nio/ByteBuffer;Lorg/lwjgl/CLongBuffer;)I default: default
-    FT_MAKE_TAG(IIII)I default: default
     FT_Matrix_Invert(Lorg/lwjgl/util/freetype/FT_Matrix;)I default: default
     FT_MulDiv(JJJ)J default: default
     FT_MulFix(JJ)J default: default

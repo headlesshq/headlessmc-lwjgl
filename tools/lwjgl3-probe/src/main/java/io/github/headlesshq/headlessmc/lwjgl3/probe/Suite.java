@@ -126,7 +126,7 @@ abstract class Suite {
     abstract Set<String> denied();
 
     static List<Suite> all() {
-        return List.of(new GlSuite(), new AlSuite());
+        return List.of(new GlSuite(), new AlSuite(), new SdlSuite());
     }
 
     static Suite byName(String name) {

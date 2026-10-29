@@ -18,7 +18,7 @@ org/lwjgl/Version guarded-static-init=1 keep-constructor=1 keep-pure-java-class=
 org/lwjgl/Version$BuildType guarded-static-init=1 keep-constructor=1 keep-enum=2
 org/lwjgl/VersionImpl default=1 keep-constructor=1
     find()Ljava/lang/String; default: default
-org/lwjgl/system/APIUtil default=17 guarded-static-init=1 handler=1 interface-proxy=1 keep-constructor=1 nio-buffer=1 object=3 struct=8 void=16
+org/lwjgl/system/APIUtil default=16 guarded-static-init=1 handler=1 interface-proxy=1 keep-constructor=1 keep-pure-computation=1 nio-buffer=1 object=3 struct=8 void=16
     apiArray(Lorg/lwjgl/system/MemoryStack;Lorg/lwjgl/system/APIUtil$Encoder;[Ljava/lang/CharSequence;)J default: default
     apiArray(Lorg/lwjgl/system/MemoryStack;[J)J default: default
     apiArray(Lorg/lwjgl/system/MemoryStack;[Ljava/nio/ByteBuffer;)J default: default
@@ -30,7 +30,6 @@ org/lwjgl/system/APIUtil default=17 guarded-static-init=1 handler=1 interface-pr
     apiClassTokens(Ljava/util/function/BiPredicate;Ljava/util/Map;[Ljava/lang/Class;)Ljava/util/Map; default: default
     apiCreateLibrary(Ljava/lang/String;)Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     apiFindLibrary(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; default: default
-    apiGetBytes(II)J default: default
     apiGetFunctionAddress(Lorg/lwjgl/system/FunctionProvider;Ljava/lang/String;)J default: default
     apiGetFunctionAddressOptional(Lorg/lwjgl/system/SharedLibrary;Ljava/lang/String;)J default: default
     apiGetManifestValue(Ljava/lang/String;)Ljava/util/Optional; default: default [shim 3.2.2]
@@ -2459,7 +2458,7 @@ org/lwjgl/system/LibraryResource default=12 guarded-static-init=1 keep-construct
     load(Ljava/lang/String;Ljava/lang/String;)Ljava/nio/file/Path; default: default
     load(Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;)Ljava/nio/file/Path; default: default
     loadFromLibraryPath(Ljava/lang/String;Ljava/lang/String;Z)Ljava/nio/file/Path; default: default
-org/lwjgl/system/MathUtil default=4 keep-constructor=1 keep-pure-java-class=10
+org/lwjgl/system/MathUtil default=4 keep-constructor=1 keep-pure-computation=8 keep-pure-java-class=2
     mathDivideUnsigned(JJ)J default: default [shim 3.3.3]
     mathMultiplyHighS64(JJ)J default: default [shim 3.3.3]
     mathMultiplyHighU64(JJ)J default: default [shim 3.3.3]
@@ -2491,8 +2490,7 @@ org/lwjgl/system/MemoryBackend default=8 interface-proxy=1 keep-abstract-interfa
     getStringUTF8(JI)Ljava/lang/String; default: default
     putStringASCII(Ljava/lang/String;ZJI)I default: default
     putStringUTF16(Ljava/lang/String;ZJI)I default: default
-org/lwjgl/system/MemoryBackendUnsafeLegacy default=69 guarded-static-init=1 keep-constructor=1 keep-unsafe-lookup=1 nio-buffer=15 nio-buffer-empty=16 void=53
-    address(IIJ)J default: default
+org/lwjgl/system/MemoryBackendUnsafeLegacy default=68 guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 keep-unsafe-lookup=1 nio-buffer=15 nio-buffer-empty=16 void=53
     allocateUTF8(Ljava/lang/String;ZLorg/lwjgl/system/MemoryUtil$MemoryAllocator;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     allocateUTF8([BZLorg/lwjgl/system/MemoryUtil$MemoryAllocator;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     bitsToInt(J)I default: default
@@ -2925,7 +2923,7 @@ org/lwjgl/system/MemoryUtil$MemoryAllocationReport$Aggregate guarded-static-init
 org/lwjgl/system/MemoryUtil$MemoryAllocator keep-abstract-interface-method=12
 org/lwjgl/system/NativeResource keep-abstract-interface-method=1 void=1
 org/lwjgl/system/NativeType keep-abstract-interface-method=1
-org/lwjgl/system/Platform default=1 guarded-static-init=1 keep-constructor=2 keep-enum=13
+org/lwjgl/system/Platform default=1 guarded-static-init=1 keep-constructor=2 keep-enum=12 keep-pure-computation=1
     mapLibraryName(Ljava/lang/String;)Ljava/lang/String; default: default
 org/lwjgl/system/Platform$1 keep-constructor=1 keep-enum=1
 org/lwjgl/system/Platform$2 keep-constructor=1 keep-enum=1
@@ -2971,7 +2969,7 @@ org/lwjgl/system/StackWalkUtil default=7 keep-constructor=1
     stackWalkCheckPop(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object; default: default
     stackWalkGetMethod(Ljava/lang/Class;)Ljava/lang/Object; default: default
     stackWalkGetTrace()[Ljava/lang/Object; default: default
-org/lwjgl/system/Struct fluent=1 guarded-static-init=1 handler=3 keep-constructor=1 keep-struct=6 keep-struct-layout=20 struct-member=2
+org/lwjgl/system/Struct fluent=1 guarded-static-init=1 handler=3 keep-constructor=1 keep-pure-computation=2 keep-struct=6 keep-struct-layout=18 struct-member=2
     __malloc(II)J struct-member [shim 3.1.6]
     wrap(Ljava/lang/Class;J)Lorg/lwjgl/system/Struct; handler [shim 3.3.2]
     wrap(Ljava/lang/Class;JLjava/nio/ByteBuffer;)Lorg/lwjgl/system/Struct; handler [shim 3.3.2]
@@ -4069,11 +4067,10 @@ org/lwjgl/system/linux/liburing/LibIOURing default=16 guarded-static-init=1 keep
     nio_uring_register(JIIJI)I default: default
     nio_uring_setup(IJ)I default: default [shim 3.3.3]
     nio_uring_setup(JIJ)I default: default
-org/lwjgl/system/linux/liburing/LibURing default=211 guarded-static-init=1 keep-constructor=1 struct=8 void=272
+org/lwjgl/system/linux/liburing/LibURing default=210 guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 struct=8 void=272
     __io_uring_sqring_wait(Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
     io_uring_buf_ring_available(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURingBufRing;S)I default: default
     io_uring_buf_ring_head(Lorg/lwjgl/system/linux/liburing/IOURing;ILjava/nio/ShortBuffer;)I default: default
-    io_uring_buf_ring_mask(I)I default: default
     io_uring_check_version(II)Z default: default
     io_uring_clone_buffers(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURing;)I default: default
     io_uring_clone_buffers_offset(Lorg/lwjgl/system/linux/liburing/IOURing;Lorg/lwjgl/system/linux/liburing/IOURing;IIII)I default: default

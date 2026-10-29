@@ -20,7 +20,7 @@ org/lwjgl/J2SESysImplementation default=2 keep-constructor=1 void=1
     getClipboard()Ljava/lang/String; default: default
     getTime()J default: default
 org/lwjgl/LWJGLException keep-constructor=4
-org/lwjgl/LWJGLUtil guarded-static-init=1 keep-constructor=1 keep-pure-java-class=17
+org/lwjgl/LWJGLUtil guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 keep-pure-java-class=16
 org/lwjgl/LWJGLUtil$1 keep-bridge=1 keep-constructor=1 keep-pure-java-class=1
 org/lwjgl/LWJGLUtil$2 keep-bridge=1 keep-constructor=1 keep-pure-java-class=1
 org/lwjgl/LWJGLUtil$3 keep-bridge=1 keep-constructor=1 keep-pure-java-class=1
@@ -146,10 +146,8 @@ org/lwjgl/NondirectBufferWrapper$CachedBuffers shim-class=2.9.0 keep-constructor
     access$700(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
     access$800(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
     access$900(Lorg/lwjgl/NondirectBufferWrapper$CachedBuffers;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
-org/lwjgl/PointerBuffer default=2 guarded-static-init=1 keep-address-buffer=37 keep-constructor=2 object=1 void=4
+org/lwjgl/PointerBuffer guarded-static-init=1 keep-address-buffer=37 keep-constructor=2 keep-pure-computation=2 object=1 void=4
     allocateDirect(I)Lorg/lwjgl/PointerBuffer; object: new PointerBuffer
-    getPointerSize()I default: default
-    is64Bit()Z default: default
 org/lwjgl/PointerBuffer$PointerBufferR default=1 fluent=7 keep-constructor=1
     isReadOnly()Z default: default
 org/lwjgl/PointerWrapper keep-abstract-interface-method=1
@@ -192,7 +190,7 @@ org/lwjgl/input/ControllerEvent default=11 interface-proxy=1 keep-constructor=2 
     isPovY()Z default: default
     isXAxis()Z default: default
     isYAxis()Z default: default
-org/lwjgl/input/Controllers default=14 guarded-static-init=1 interface-proxy=2 keep-constructor=1 void=6
+org/lwjgl/input/Controllers default=13 guarded-static-init=1 interface-proxy=2 keep-constructor=1 keep-pure-computation=1 void=6
     getController(I)Lorg/lwjgl/input/Controller; interface-proxy: proxy Controller
     getControllerCount()I default: default
     getEventButtonState()Z default: default
@@ -201,7 +199,6 @@ org/lwjgl/input/Controllers default=14 guarded-static-init=1 interface-proxy=2 k
     getEventSource()Lorg/lwjgl/input/Controller; interface-proxy: proxy Controller
     getEventXAxisValue()F default: default
     getEventYAxisValue()F default: default
-    isCreated()Z default: default
     isEventAxis()Z default: default
     isEventButton()Z default: default
     isEventPovX()Z default: default
@@ -243,7 +240,7 @@ org/lwjgl/input/JInputController default=25 keep-constructor=1 void=9
     getZAxisDeadZone()F default: default
     getZAxisValue()F default: default
     isButtonPressed(I)Z default: default
-org/lwjgl/input/Keyboard default=1 guarded-static-init=1 handler=14 keep-constructor=1 keep-pure-java-method=3 void=4
+org/lwjgl/input/Keyboard default=1 guarded-static-init=1 handler=14 keep-constructor=1 keep-pure-computation=1 keep-pure-java-method=2 void=4
     readNext(Lorg/lwjgl/input/Keyboard$KeyEvent;)Z default: default
 org/lwjgl/input/Keyboard$KeyEvent default=10 keep-constructor=2 void=2
     access$200(Lorg/lwjgl/input/Keyboard$KeyEvent;)Z default: default
@@ -256,11 +253,10 @@ org/lwjgl/input/Keyboard$KeyEvent default=10 keep-constructor=2 void=2
     access$502(Lorg/lwjgl/input/Keyboard$KeyEvent;I)I default: default
     access$600(Lorg/lwjgl/input/Keyboard$KeyEvent;)J default: default
     access$602(Lorg/lwjgl/input/Keyboard$KeyEvent;J)J default: default
-org/lwjgl/input/Mouse default=2 guarded-static-init=1 handler=27 interface-proxy=1 keep-constructor=1 object=2 void=6
+org/lwjgl/input/Mouse default=1 guarded-static-init=1 handler=27 interface-proxy=1 keep-constructor=1 keep-pure-computation=1 object=2 void=6
     getImplementation()Lorg/lwjgl/opengl/InputImplementation; interface-proxy: proxy InputImplementation
     getNativeCursor()Lorg/lwjgl/input/Cursor; object: new Cursor
     getPrivilegedBoolean(Ljava/lang/String;)Z default: default
-    isClipMouseCoordinatesToWindow()Z default: default
     setNativeCursor(Lorg/lwjgl/input/Cursor;)Lorg/lwjgl/input/Cursor; object: new Cursor
 org/lwjgl/input/Mouse$1 default=1 keep-bridge=1 keep-constructor=1
     run()Ljava/lang/Boolean; default: default
@@ -368,7 +364,7 @@ org/lwjgl/openal/Util keep-constructor=1 void=4
 org/lwjgl/opencl/AMDDeviceAttributeQuery keep-constructor=1
 org/lwjgl/opencl/AMDDeviceMemoryFlags keep-constructor=1
 org/lwjgl/opencl/AMDOfflineDevices keep-constructor=1
-org/lwjgl/opencl/APIUtil default=15 guarded-static-init=1 keep-constructor=1 nio-buffer=2 nio-buffer-empty=8 object=5 void=5
+org/lwjgl/opencl/APIUtil default=14 guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 nio-buffer=2 nio-buffer-empty=8 object=5 void=5
     encode(Ljava/nio/ByteBuffer;Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     getArray(I)[C default: default
     getBuffer(Ljava/lang/CharSequence;)J default: default
@@ -396,7 +392,6 @@ org/lwjgl/opencl/APIUtil default=15 guarded-static-init=1 keep-constructor=1 nio
     getSize(Lorg/lwjgl/PointerBuffer;)I default: default
     getString(Ljava/nio/ByteBuffer;)Ljava/lang/String; default: default
     getTotalLength([Ljava/lang/CharSequence;)I default: default
-    isDevicesParam(I)Z default: default
 org/lwjgl/opencl/APIUtil$1 default=1 keep-bridge=1 keep-constructor=1
     initialValue()[C default: default
 org/lwjgl/opencl/APIUtil$10 keep-bridge=1 keep-constructor=1 void=1
@@ -427,11 +422,10 @@ org/lwjgl/opencl/APPLEGLSharing default=2 keep-constructor=1
 org/lwjgl/opencl/APPLESetMemObjectDestructor default=2 keep-constructor=1
     clSetMemObjectDestructorAPPLE(Lorg/lwjgl/opencl/CLMem;Lorg/lwjgl/opencl/CLMemObjectDestructorCallback;)I default: default
     nclSetMemObjectDestructorAPPLE(JJJJ)I default: default
-org/lwjgl/opencl/CL default=4 guarded-static-init=1 keep-constructor=1 nio-buffer-empty=1 void=6
+org/lwjgl/opencl/CL default=3 guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 nio-buffer-empty=1 void=6
     getFunctionAddress(Ljava/lang/String;)J default: default
     getFunctionAddress([Ljava/lang/String;)J default: default
     getHostBuffer(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    isCreated()Z default: default
     ngetFunctionAddress(J)J default: default
 org/lwjgl/opencl/CL10 default=152 keep-constructor=1 nio-buffer=1 nio-buffer-empty=3 object=32
     clBuildProgram(Lorg/lwjgl/opencl/CLProgram;Lorg/lwjgl/PointerBuffer;Ljava/lang/CharSequence;Lorg/lwjgl/opencl/CLBuildProgramCallback;)I default: default
@@ -716,24 +710,9 @@ org/lwjgl/opencl/CL12GL default=1 keep-constructor=1 object=1
     clCreateFromGLTexture(Lorg/lwjgl/opencl/CLContext;JIIILjava/nio/IntBuffer;)Lorg/lwjgl/opencl/CLMem; object: new CLMem
     nclCreateFromGLTexture(JJIIIJJ)J default: default
 org/lwjgl/opencl/CLBuildProgramCallback keep-constructor=1
-org/lwjgl/opencl/CLCapabilities default=15 guarded-static-init=1 keep-constructor=1 object=2
+org/lwjgl/opencl/CLCapabilities guarded-static-init=1 keep-constructor=1 keep-pure-computation=15 object=2
     getDeviceCapabilities(Lorg/lwjgl/opencl/CLDevice;)Lorg/lwjgl/opencl/CLDeviceCapabilities; object: new CLDeviceCapabilities
     getPlatformCapabilities(Lorg/lwjgl/opencl/CLPlatform;)Lorg/lwjgl/opencl/CLPlatformCapabilities; object: new CLPlatformCapabilities
-    isAPPLE_ContextLoggingFunctionsSupported()Z default: default
-    isAPPLE_SetMemObjectDestructorSupported()Z default: default
-    isAPPLE_gl_sharingSupported()Z default: default
-    isCL10GLSupported()Z default: default
-    isCL10Supported()Z default: default
-    isCL11Supported()Z default: default
-    isCL12GLSupported()Z default: default
-    isCL12Supported()Z default: default
-    isEXT_device_fissionSupported()Z default: default
-    isEXT_migrate_memobjectSupported()Z default: default
-    isKHR_gl_eventSupported()Z default: default
-    isKHR_gl_sharingSupported()Z default: default
-    isKHR_icdSupported()Z default: default
-    isKHR_subgroupsSupported()Z default: default
-    isKHR_terminate_contextSupported()Z default: default
 org/lwjgl/opencl/CLChecks default=7 keep-constructor=1
     calculateBufferRectSize(Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;JJ)I default: default
     calculateImage2DSize(Ljava/nio/ByteBuffer;JJJ)I default: default
@@ -899,13 +878,12 @@ org/lwjgl/opencl/EXTMigrateMemobject default=3 keep-constructor=1
     clEnqueueMigrateMemObjectEXT(Lorg/lwjgl/opencl/CLCommandQueue;Lorg/lwjgl/PointerBuffer;JLorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
     clEnqueueMigrateMemObjectEXT(Lorg/lwjgl/opencl/CLCommandQueue;Lorg/lwjgl/opencl/CLMem;JLorg/lwjgl/PointerBuffer;Lorg/lwjgl/PointerBuffer;)I default: default
     nclEnqueueMigrateMemObjectEXT(JIJJIJJJ)I default: default
-org/lwjgl/opencl/FastLongMap default=10 keep-bridge=1 keep-constructor=3 object=1 void=2
+org/lwjgl/opencl/FastLongMap default=9 keep-bridge=1 keep-constructor=3 keep-pure-computation=1 object=1 void=2
     access$000(Lorg/lwjgl/opencl/FastLongMap;)[Lorg/lwjgl/opencl/FastLongMap$Entry; default: default
     containsKey(J)Z default: default
     containsValue(Ljava/lang/Object;)Z default: default
     get(J)Ljava/lang/Object; default: default
     index(J)I default: default
-    index(JI)I default: default
     isEmpty()Z default: default
     iterator()Lorg/lwjgl/opencl/FastLongMap$EntryIterator; object: new FastLongMap$EntryIterator
     put(JLjava/lang/Object;)Ljava/lang/Object; default: default
@@ -1444,16 +1422,14 @@ org/lwjgl/opengl/AWTSurfaceLock default=3 keep-constructor=1 nio-buffer-empty=3 
     privilegedLockAndInitHandle(Ljava/awt/Canvas;)Z default: default
 org/lwjgl/opengl/AWTSurfaceLock$1 default=1 keep-bridge=1 keep-constructor=1
     run()Ljava/lang/Boolean; default: default
-org/lwjgl/opengl/AWTUtil default=10 keep-constructor=1 void=1
+org/lwjgl/opengl/AWTUtil default=8 keep-constructor=1 keep-pure-computation=2 void=1
     createCursor(IIIIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/awt/Cursor; default: default
     createRobot(Ljava/awt/Component;)Ljava/awt/Robot; default: default
-    getButtonCount()I default: default
     getCursorPosition(Ljava/awt/Component;)Ljava/awt/Point; default: default
     getMaxCursorSize()I default: default
     getMinCursorSize()I default: default
     getNativeCursorCapabilities()I default: default
     getPointerLocation(Ljava/awt/Component;)Ljava/awt/Point; default: default
-    hasWheel()Z default: default
     transformY(Ljava/awt/Component;I)I default: default
 org/lwjgl/opengl/AWTUtil$1 default=1 keep-bridge=1 keep-constructor=1
     run()Ljava/awt/Robot; default: default
@@ -1883,13 +1859,12 @@ org/lwjgl/opengl/EXTVertexShader default=12 id=4 keep-constructor=1 nio-buffer-e
 org/lwjgl/opengl/EXTVertexWeighting keep-constructor=1 void=6
 org/lwjgl/opengl/EventQueue default=1 keep-constructor=1 void=2
     putEvent(Ljava/nio/ByteBuffer;)Z default: default
-org/lwjgl/opengl/FastIntMap default=10 keep-bridge=1 keep-constructor=3 object=1 void=2
+org/lwjgl/opengl/FastIntMap default=9 keep-bridge=1 keep-constructor=3 keep-pure-computation=1 object=1 void=2
     access$000(Lorg/lwjgl/opengl/FastIntMap;)[Lorg/lwjgl/opengl/FastIntMap$Entry; default: default
     containsKey(I)Z default: default
     containsValue(Ljava/lang/Object;)Z default: default
     get(I)Ljava/lang/Object; default: default
     index(I)I default: default
-    index(II)I default: default
     isEmpty()Z default: default
     iterator()Lorg/lwjgl/opengl/FastIntMap$EntryIterator; object: new FastIntMap$EntryIterator
     put(ILjava/lang/Object;)Ljava/lang/Object; default: default
@@ -2144,10 +2119,9 @@ org/lwjgl/opengl/GL45 default=22 id=9 keep-constructor=1 nio-buffer=2 nio-buffer
     nglMapNamedBuffer(IIJLjava/nio/ByteBuffer;J)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglMapNamedBufferRange(IJJILjava/nio/ByteBuffer;J)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nglUnmapNamedBuffer(IJ)Z default: default
-org/lwjgl/opengl/GLChecks default=16 keep-constructor=1 void=10
+org/lwjgl/opengl/GLChecks default=15 keep-constructor=1 keep-pure-computation=1 void=10
     calculateBytesPerCharCode(I)I default: default
     calculateBytesPerPathName(I)I default: default
-    calculateBytesPerPixel(II)I default: default
     calculateImageStorage(IIIII)I default: default
     calculateImageStorage(Ljava/nio/Buffer;IIIII)I default: default
     calculateMetricsSize(II)I default: default
@@ -2221,7 +2195,7 @@ org/lwjgl/opengl/LinuxContextImplementation default=4 keep-constructor=1 nio-buf
     isCurrent(Ljava/nio/ByteBuffer;)Z default: default
     nCreate(Ljava/nio/ByteBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     nIsCurrent(Ljava/nio/ByteBuffer;)Z default: default
-org/lwjgl/opengl/LinuxDisplay default=77 guarded-static-init=1 keep-constructor=1 nio-buffer-empty=5 object=5 void=68
+org/lwjgl/opengl/LinuxDisplay default=74 guarded-static-init=1 keep-constructor=1 keep-pure-computation=3 nio-buffer-empty=5 object=5 void=68
     access$002(Lorg/lwjgl/opengl/LinuxDisplay;Z)Z default: default
     access$102(Lorg/lwjgl/opengl/LinuxDisplay;Z)Z default: default
     callErrorHandler(JJJ)I default: default
@@ -2254,7 +2228,6 @@ org/lwjgl/opengl/LinuxDisplay default=77 guarded-static-init=1 keep-constructor=
     getRootWindow(JI)J default: default
     getVersion()Ljava/lang/String; default: default
     getWidth()I default: default
-    getWindow()J default: default
     getWindowMode(Z)I default: default
     getX()I default: default
     getY()I default: default
@@ -2268,9 +2241,7 @@ org/lwjgl/opengl/LinuxDisplay default=77 guarded-static-init=1 keep-constructor=
     isBufferLost(Lorg/lwjgl/opengl/PeerInfo;)Z default: default
     isCloseRequested()Z default: default
     isDirty()Z default: default
-    isFullscreen()Z default: default
     isInsideWindow()Z default: default
-    isLegacyFullscreen()Z default: default
     isNetWMFullscreenSupported()Z default: default
     isParentWindowActive(J)Z default: default
     isVisible()Z default: default
@@ -2381,7 +2352,7 @@ org/lwjgl/opengl/LinuxEvent default=45 keep-constructor=1 nio-buffer-empty=1 voi
     nGetKeyType(Ljava/nio/ByteBuffer;)I default: default
     nGetType(Ljava/nio/ByteBuffer;)I default: default
     nGetWindow(Ljava/nio/ByteBuffer;)J default: default
-org/lwjgl/opengl/LinuxKeyboard default=21 keep-constructor=1 nio-buffer-empty=1 void=13
+org/lwjgl/opengl/LinuxKeyboard default=19 keep-constructor=1 keep-pure-computation=2 nio-buffer-empty=1 void=13
     allocateComposeStatus()Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     createIC(JJ)J default: default
     filterEvent(Lorg/lwjgl/opengl/LinuxEvent;)Z default: default
@@ -2390,8 +2361,6 @@ org/lwjgl/opengl/LinuxKeyboard default=21 keep-constructor=1 nio-buffer-empty=1 
     getKeycode(JI)I default: default
     getMaxKeyPerMod(J)I default: default
     getModifierMapping(J)J default: default
-    isKeypadKeysym(J)Z default: default
-    isNoSymbolOrVendorSpecific(J)Z default: default
     keycodeToKeySym(JI)J default: default
     lookupKeysym(JI)J default: default
     lookupModifierMap(JI)I default: default
@@ -2404,8 +2373,7 @@ org/lwjgl/opengl/LinuxKeyboard default=21 keep-constructor=1 nio-buffer-empty=1 
     openIM(J)J default: default
     toUpper(J)J default: default
     utf8LookupString(JJLjava/nio/ByteBuffer;II)I default: default
-org/lwjgl/opengl/LinuxKeycodes default=1 keep-constructor=1
-    mapKeySymToLWJGLKeyCode(J)I default: default
+org/lwjgl/opengl/LinuxKeycodes keep-constructor=1 keep-pure-computation=1
 org/lwjgl/opengl/LinuxMouse default=7 keep-constructor=1 void=18
     filterEvent(ZZLorg/lwjgl/opengl/LinuxEvent;)Z default: default
     getButtonCount()I default: default
@@ -2787,7 +2755,7 @@ org/lwjgl/opengl/WindowsDisplay$3 keep-constructor=1 void=1
 org/lwjgl/opengl/WindowsDisplay$Rect keep-constructor=2 keep-to-string=1 void=4
 org/lwjgl/opengl/WindowsDisplayPeerInfo keep-constructor=1 void=5
 org/lwjgl/opengl/WindowsFileVersion keep-constructor=1 keep-to-string=1
-org/lwjgl/opengl/WindowsKeyboard default=11 keep-constructor=1 void=7
+org/lwjgl/opengl/WindowsKeyboard default=9 keep-constructor=1 keep-pure-computation=2 void=7
     GetAsyncKeyState(I)S default: default
     GetKeyState(I)S default: default
     GetKeyboardState(Ljava/nio/ByteBuffer;)I default: default
@@ -2795,12 +2763,9 @@ org/lwjgl/opengl/WindowsKeyboard default=11 keep-constructor=1 void=7
     ToAscii(IILjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;I)I default: default
     ToUnicode(IILjava/nio/ByteBuffer;Ljava/nio/CharBuffer;II)I default: default
     isKeyDown(I)Z default: default
-    isKeyPressed(I)Z default: default
     isKeyPressedAsync(I)Z default: default
     isWindowsNT()Z default: default
-    translateExtended(IIZ)I default: default
-org/lwjgl/opengl/WindowsKeycodes default=1 keep-constructor=1
-    mapVirtualKeyToLWJGLCode(I)I default: default
+org/lwjgl/opengl/WindowsKeycodes keep-constructor=1 keep-pure-computation=1
 org/lwjgl/opengl/WindowsMouse default=5 keep-constructor=1 void=10
     createBlankCursor()Ljava/lang/Object; default: default
     getBlankCursor()Ljava/lang/Object; default: default
