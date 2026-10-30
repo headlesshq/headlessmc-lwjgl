@@ -1,6 +1,7 @@
 package io.github.headlesshq.headlessmc.lwjgl.patcher;
 
 import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.commons.ClassRemapper;
 import org.objectweb.asm.commons.Remapper;
 import org.objectweb.asm.tree.ClassNode;
@@ -315,7 +316,7 @@ public final class Patcher {
             result.add(API_MODULE);
         }
 
-        Remapper collector = new Remapper() {
+        Remapper collector = new Remapper(Opcodes.ASM9) {
             @Override
             public String map(String internalName) {
                 int index = internalName.lastIndexOf('/');

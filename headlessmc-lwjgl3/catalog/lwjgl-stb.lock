@@ -152,73 +152,41 @@ org/lwjgl/stb/STBImage default=53 guarded-static-init=1 handler=17 keep-construc
     stbi_zlib_decode_malloc_guesssize_headerflag(Ljava/nio/ByteBuffer;IZ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     stbi_zlib_decode_noheader_buffer(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)I default: default
     stbi_zlib_decode_noheader_malloc(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-org/lwjgl/stb/STBImageResize default=62 guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 nio-buffer=4 nio-buffer-empty=4 void=12
-    nstbir_build_samplers(J)I default: default
-    nstbir_build_samplers_with_splits(JI)I default: default
-    nstbir_resize(JIIIJIIIIIII)J default: default
-    nstbir_resize(JIIIJIIIIIIIIIIIIJ)I default: default [shim 3.3.3]
-    nstbir_resize_extended(J)I default: default
-    nstbir_resize_extended_split(JII)I default: default
-    nstbir_resize_float(JIIIJIIII)I default: default [shim 3.3.3]
-    nstbir_resize_float([FIII[FIIII)I default: default [shim 3.3.3]
-    nstbir_resize_float_generic(JIIIJIIIIIIIIIJ)I default: default [shim 3.3.3]
-    nstbir_resize_float_generic([FIII[FIIIIIIIIIJ)I default: default [shim 3.3.3]
-    nstbir_resize_float_linear(JIIIJIIII)J default: default
-    nstbir_resize_region(JIIIJIIIIIIIIIIIIJFFFF)I default: default [shim 3.3.3]
-    nstbir_resize_subpixel(JIIIJIIIIIIIIIIIIJFFFF)I default: default [shim 3.3.3]
-    nstbir_resize_uint16_generic(JIIIJIIIIIIIIIJ)I default: default [shim 3.3.3]
-    nstbir_resize_uint16_generic([SIII[SIIIIIIIIIJ)I default: default [shim 3.3.3]
-    nstbir_resize_uint8(JIIIJIIII)I default: default [shim 3.3.3]
-    nstbir_resize_uint8_generic(JIIIJIIIIIIIIIJ)I default: default [shim 3.3.3]
-    nstbir_resize_uint8_linear(JIIIJIIII)J default: default
-    nstbir_resize_uint8_srgb(JIIIJIIII)J default: default
-    nstbir_resize_uint8_srgb(JIIIJIIIIII)I default: default [shim 3.3.3]
-    nstbir_resize_uint8_srgb_edgemode(JIIIJIIIIIII)I default: default [shim 3.3.3]
-    nstbir_set_edgemodes(JII)I default: default
-    nstbir_set_filter_callbacks(JJJJJ)I default: default
-    nstbir_set_filters(JII)I default: default
-    nstbir_set_input_subrect(JDDDD)I default: default
-    nstbir_set_non_pm_alpha_speed_over_quality(JI)I default: default
-    nstbir_set_output_pixel_subrect(JIIII)I default: default
-    nstbir_set_pixel_layouts(JII)I default: default
-    nstbir_set_pixel_subrect(JIIII)I default: default
-    stbir_build_samplers(Lorg/lwjgl/stb/STBIR_RESIZE;)I default: default
-    stbir_build_samplers_with_splits(Lorg/lwjgl/stb/STBIR_RESIZE;I)I default: default
-    stbir_resize(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIII)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stbir_resize(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIII)Z default: default [shim 3.3.3]
-    stbir_resize(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIJ)Z default: default [shim 3.2.2]
-    stbir_resize_extended(Lorg/lwjgl/stb/STBIR_RESIZE;)I default: default
-    stbir_resize_extended_split(Lorg/lwjgl/stb/STBIR_RESIZE;II)I default: default
-    stbir_resize_float(Ljava/nio/FloatBuffer;IIILjava/nio/FloatBuffer;IIII)Z default: default [shim 3.3.3]
-    stbir_resize_float([FIII[FIIII)Z default: default [shim 3.3.3]
-    stbir_resize_float_generic(Ljava/nio/FloatBuffer;IIILjava/nio/FloatBuffer;IIIIIIIII)Z default: default [shim 3.3.3]
-    stbir_resize_float_generic(Ljava/nio/FloatBuffer;IIILjava/nio/FloatBuffer;IIIIIIIIIJ)Z default: default [shim 3.2.2]
-    stbir_resize_float_generic([FIII[FIIIIIIIII)Z default: default [shim 3.3.3]
-    stbir_resize_float_generic([FIII[FIIIIIIIIIJ)Z default: default [shim 3.2.2]
-    stbir_resize_float_linear(Ljava/nio/FloatBuffer;IIILjava/nio/FloatBuffer;IIII)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    stbir_resize_region(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIFFFF)Z default: default [shim 3.3.3]
-    stbir_resize_region(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIJFFFF)Z default: default [shim 3.2.2]
-    stbir_resize_subpixel(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIFFFF)Z default: default [shim 3.3.3]
-    stbir_resize_subpixel(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIJFFFF)Z default: default [shim 3.2.2]
-    stbir_resize_uint16_generic(Ljava/nio/ShortBuffer;IIILjava/nio/ShortBuffer;IIIIIIIII)Z default: default [shim 3.3.3]
-    stbir_resize_uint16_generic(Ljava/nio/ShortBuffer;IIILjava/nio/ShortBuffer;IIIIIIIIIJ)Z default: default [shim 3.2.2]
-    stbir_resize_uint16_generic([SIII[SIIIIIIIII)Z default: default [shim 3.3.3]
-    stbir_resize_uint16_generic([SIII[SIIIIIIIIIJ)Z default: default [shim 3.2.2]
-    stbir_resize_uint8(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIII)Z default: default [shim 3.3.3]
-    stbir_resize_uint8_generic(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIII)Z default: default [shim 3.3.3]
-    stbir_resize_uint8_generic(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIJ)Z default: default [shim 3.2.2]
-    stbir_resize_uint8_linear(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIII)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stbir_resize_uint8_srgb(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIII)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stbir_resize_uint8_srgb(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIII)Z default: default [shim 3.3.3]
-    stbir_resize_uint8_srgb_edgemode(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIII)Z default: default [shim 3.3.3]
-    stbir_set_edgemodes(Lorg/lwjgl/stb/STBIR_RESIZE;II)I default: default
-    stbir_set_filter_callbacks(Lorg/lwjgl/stb/STBIR_RESIZE;Lorg/lwjgl/stb/STBIRKernelCallbackI;Lorg/lwjgl/stb/STBIRSupportCallbackI;Lorg/lwjgl/stb/STBIRKernelCallbackI;Lorg/lwjgl/stb/STBIRSupportCallbackI;)I default: default
-    stbir_set_filters(Lorg/lwjgl/stb/STBIR_RESIZE;II)I default: default
-    stbir_set_input_subrect(Lorg/lwjgl/stb/STBIR_RESIZE;DDDD)I default: default
-    stbir_set_non_pm_alpha_speed_over_quality(Lorg/lwjgl/stb/STBIR_RESIZE;Z)I default: default
-    stbir_set_output_pixel_subrect(Lorg/lwjgl/stb/STBIR_RESIZE;IIII)I default: default
-    stbir_set_pixel_layouts(Lorg/lwjgl/stb/STBIR_RESIZE;II)I default: default
-    stbir_set_pixel_subrect(Lorg/lwjgl/stb/STBIR_RESIZE;IIII)I default: default
+org/lwjgl/stb/STBImageResize guarded-static-init=1 keep-constructor=1 keep-pure-computation=1 stb-resize-success=70 void=12
+    nstbir_resize(JIIIJIIIIIIIIIIIIJ)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_float(JIIIJIIII)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_float([FIII[FIIII)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_float_generic(JIIIJIIIIIIIIIJ)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_float_generic([FIII[FIIIIIIIIIJ)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_region(JIIIJIIIIIIIIIIIIJFFFF)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_subpixel(JIIIJIIIIIIIIIIIIJFFFF)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_uint16_generic(JIIIJIIIIIIIIIJ)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_uint16_generic([SIII[SIIIIIIIIIJ)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_uint8(JIIIJIIII)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_uint8_generic(JIIIJIIIIIIIIIJ)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_uint8_srgb(JIIIJIIIIII)I stb-resize-success [shim 3.3.3]
+    nstbir_resize_uint8_srgb_edgemode(JIIIJIIIIIII)I stb-resize-success [shim 3.3.3]
+    stbir_resize(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIJ)Z stb-resize-success [shim 3.2.2]
+    stbir_resize_float(Ljava/nio/FloatBuffer;IIILjava/nio/FloatBuffer;IIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_float([FIII[FIIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_float_generic(Ljava/nio/FloatBuffer;IIILjava/nio/FloatBuffer;IIIIIIIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_float_generic(Ljava/nio/FloatBuffer;IIILjava/nio/FloatBuffer;IIIIIIIIIJ)Z stb-resize-success [shim 3.2.2]
+    stbir_resize_float_generic([FIII[FIIIIIIIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_float_generic([FIII[FIIIIIIIIIJ)Z stb-resize-success [shim 3.2.2]
+    stbir_resize_region(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIFFFF)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_region(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIJFFFF)Z stb-resize-success [shim 3.2.2]
+    stbir_resize_subpixel(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIFFFF)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_subpixel(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIIIIJFFFF)Z stb-resize-success [shim 3.2.2]
+    stbir_resize_uint16_generic(Ljava/nio/ShortBuffer;IIILjava/nio/ShortBuffer;IIIIIIIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_uint16_generic(Ljava/nio/ShortBuffer;IIILjava/nio/ShortBuffer;IIIIIIIIIJ)Z stb-resize-success [shim 3.2.2]
+    stbir_resize_uint16_generic([SIII[SIIIIIIIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_uint16_generic([SIII[SIIIIIIIIIJ)Z stb-resize-success [shim 3.2.2]
+    stbir_resize_uint8(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_uint8_generic(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_uint8_generic(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIIIIIJ)Z stb-resize-success [shim 3.2.2]
+    stbir_resize_uint8_srgb(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIII)Z stb-resize-success [shim 3.3.3]
+    stbir_resize_uint8_srgb_edgemode(Ljava/nio/ByteBuffer;IIILjava/nio/ByteBuffer;IIIIIII)Z stb-resize-success [shim 3.3.3]
     STBIR_ALPHA_CHANNEL_NONE:I [shim 3.3.3]
     STBIR_COLORSPACE_LINEAR:I [shim 3.3.3]
     STBIR_COLORSPACE_SRGB:I [shim 3.3.3]

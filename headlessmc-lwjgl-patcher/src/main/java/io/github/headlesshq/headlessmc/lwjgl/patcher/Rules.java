@@ -47,6 +47,7 @@ public final class Rules {
         "org/lwjgl/system/Struct$Layout",
         "org/lwjgl/LWJGLUtil",
         "org/lwjgl/opengl/DisplayMode",
+        "org/lwjgl/opengl/Util",
         "org/lwjgl/opengl/PixelFormat",
         "org/lwjgl/opengl/ContextAttribs",
         "org/lwjgl/util/Color",
@@ -60,7 +61,9 @@ public final class Rules {
         "org/lwjgl/system/Configuration$",
         "org/lwjgl/LWJGLUtil$",
         "org/lwjgl/input/OpenGLPackageAccess",
-        "org/lwjgl/util/vector/"
+        "org/lwjgl/util/vector/",
+        // LWJGL 2's GLU is implemented in Java on top of GL11, e.g. gluUnProject, which Minecraft 1.8 uses for the camera
+        "org/lwjgl/util/glu/"
     );
 
     /**
@@ -119,6 +122,8 @@ public final class Rules {
     private static final Pattern ALLOCATION = Pattern.compile(
         "n?(mem(Alloc|Calloc|Realloc|AlignedAlloc)\\w*|memAddress\\w*|memGlobalRef\\w*|malloc|calloc|realloc|aligned_alloc|"
             + "je_\\w*(alloc)\\w*|rpmalloc\\w*|rpcalloc|rprealloc|rpaligned_\\w*|SDL_(malloc|calloc|realloc|aligned_alloc))");
+    private static final String STB_IMAGE_RESIZE = "org/lwjgl/stb/STBImageResize";
+    private static final Pattern STB_RESIZE = Pattern.compile("n?stbir_(resize|set|build)\\w*");
     private static final Pattern STB_WRITE = Pattern.compile("n?stbi_write_\\w+");
     private static final Pattern IS_OBJECT = Pattern.compile(
         "(gl|al)Is(?!Enabled|PointIn|VertexAttribEnabled|NamedString|Direct|ExtensionPresent)[A-Z]\\w*");
@@ -171,6 +176,7 @@ public final class Rules {
             rule("success", false, Rules::success),
             rule("sdl-success", false, Rules::sdlSuccess),
             rule("stb-write-success", false, Rules::stbWriteSuccess),
+            rule("stb-resize-success", false, Rules::stbResizeSuccess),
             rule("is-object", false, Rules::isObject),
             rule("id", false, m -> isIdType(m.returnType()) && ID.matcher(m.name()).matches() ? new Behaviour.NextId() : null),
             rule("fake-address", false, m -> m.returnType().getSort() == Type.LONG && ALLOCATION.matcher(m.name()).matches()
@@ -360,6 +366,42 @@ public final class Rules {
         return null;
     }
 
+    /**
+     * The functions of stb_image_resize succeed: the 3.3 API and the setters return 1 or {@code true}, the 3.4 API
+     * returns the output, the second pointer or buffer argument. Minecraft resizes images with
+     * {@code nstbir_resize_uint8} and {@code nstbir_resize_uint8_linear}, a failure would be reported as an error.
+     */
+    private static Behaviour stbResizeSuccess(MethodInfo method) {
+        if (!STB_IMAGE_RESIZE.equals(method.owner().name) || !STB_RESIZE.matcher(method.name()).matches()) {
+            return null;
+        }
+
+        Type returnType = method.returnType();
+        switch (returnType.getSort()) {
+            case Type.INT:
+                return new Behaviour.Constant(1);
+            case Type.BOOLEAN:
+                return new Behaviour.Constant(true);
+            case Type.LONG:
+            case Type.OBJECT:
+                Type[] arguments = method.argumentTypes();
+                boolean first = true;
+                for (int i = 0; i < arguments.length; i++) {
+                    if (arguments[i].equals(returnType)) {
+                        if (!first) {
+                            return new Behaviour.Parameter(i);
+                        }
+
+                        first = false;
+                    }
+                }
+
+                return null;
+            default:
+                return null;
+        }
+    }
+
     private static Behaviour success(MethodInfo method) {
         Object value = SUCCESS.get(method.name());
         if (value == null) {
@@ -436,7 +478,10 @@ public final class Rules {
 
     private static Behaviour valuesBuffer(MethodInfo method) {
         String factory = nioFactory(method.returnType());
-        if (factory == null || !VALUES.matcher(method.name()).matches() || !method.name().equals(factory)) {
+        // stack.ints(1, 2) or its static shortcut MemoryStack.stackInts(1, 2)
+        String stackShortcut = factory == null ? null : "stack" + Character.toUpperCase(factory.charAt(0)) + factory.substring(1);
+        if (factory == null || !VALUES.matcher(factory).matches()
+            || !method.name().equals(factory) && !(method.isStatic() && method.name().equals(stackShortcut))) {
             return null;
         }
 

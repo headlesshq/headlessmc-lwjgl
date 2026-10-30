@@ -209,6 +209,32 @@ public final class StructMemory {
         return new String(bytes, charset);
     }
 
+    /**
+     * @param address the address of a UTF-16 string in native byte order, terminated by a 0 char.
+     * @return the string, empty if the address is not registered memory.
+     */
+    public static String utf16(long address) {
+        Map.Entry<Long, Region> entry = REGIONS.floorEntry(address);
+        ByteBuffer memory = entry == null ? null : entry.getValue().get();
+        if (memory == null || address >= entry.getKey() + entry.getValue().size) {
+            return "";
+        }
+
+        int start = (int) (address - entry.getKey());
+        int end = start;
+        ByteBuffer chars = memory.duplicate().order(ByteOrder.nativeOrder());
+        while (end + 1 < memory.capacity() && chars.getChar(end) != 0) {
+            end += 2;
+        }
+
+        StringBuilder string = new StringBuilder((end - start) / 2);
+        for (int i = start; i < end; i += 2) {
+            string.append(chars.getChar(i));
+        }
+
+        return string.toString();
+    }
+
     public static byte getByte(long address) {
         ByteBuffer memory = find(address, 1);
         byte value = memory == null ? 0 : invoke(() -> (byte) GET_BYTE.invokeExact(address));

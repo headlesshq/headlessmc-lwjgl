@@ -116,8 +116,7 @@ org/lwjgl/openal/ALCapabilities default=13 keep-constructor=1 lwjgl-buffer-empty
     getAddressBuffer()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     AL_EXT_static_buffer:Z [shim 3.3.2]
     OpenAL_SOFT_bformat_ex:Z [shim 3.3.1]
-org/lwjgl/openal/ALUtil default=1 keep-constructor=1
-    getStringList(JI)Ljava/util/List; default: default
+org/lwjgl/openal/ALUtil handler=1 keep-constructor=1
 org/lwjgl/openal/EXT32BitFormats keep-constructor=1
 org/lwjgl/openal/EXTAlaw keep-constructor=1
 org/lwjgl/openal/EXTBFormat keep-constructor=1

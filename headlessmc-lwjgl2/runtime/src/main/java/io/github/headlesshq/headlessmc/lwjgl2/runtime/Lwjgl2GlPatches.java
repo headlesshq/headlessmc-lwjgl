@@ -33,6 +33,7 @@ public final class Lwjgl2GlPatches {
     private static final String GL14 = "org/lwjgl/opengl/GL14";
     private static final String GL15 = "org/lwjgl/opengl/GL15";
     private static final String GL20 = "org/lwjgl/opengl/GL20";
+    private static final String ARB_SHADER_OBJECTS = "org/lwjgl/opengl/ARBShaderObjects";
     private static final String GL30 = "org/lwjgl/opengl/GL30";
     private static final String GL32 = "org/lwjgl/opengl/GL32";
     private static final String GL33 = "org/lwjgl/opengl/GL33";
@@ -320,6 +321,21 @@ public final class Lwjgl2GlPatches {
     @Patch(owner = GL20)
     public static void glGetShader(int shader, int pname, IntBuffer params) {
         params.put(params.position(), GlObjects.shaderValue(shader, pname));
+    }
+
+    /**
+     * Shader objects and program objects share their names, the status tokens of {@code ARB_shader_objects} have the
+     * values of the GL 2.0 ones, e.g. {@code GL_OBJECT_COMPILE_STATUS_ARB} is {@code GL_COMPILE_STATUS}.
+     */
+    @Patch(owner = ARB_SHADER_OBJECTS)
+    public static int glGetObjectParameteriARB(int obj, int pname) {
+        int shaderValue = GlObjects.shaderValue(obj, pname);
+        return shaderValue != 0 ? shaderValue : GlObjects.programValue(obj, pname);
+    }
+
+    @Patch(owner = ARB_SHADER_OBJECTS)
+    public static void glGetObjectParameterARB(int obj, int pname, IntBuffer params) {
+        params.put(params.position(), glGetObjectParameteriARB(obj, pname));
     }
 
     @Patch(owner = GL20)

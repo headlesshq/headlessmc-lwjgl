@@ -7,6 +7,8 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Patches that keep the state of sources, buffers and the listener in {@link AlState} and answer the queries for
@@ -15,6 +17,7 @@ import java.nio.ShortBuffer;
 public final class AlStatePatches {
     private static final String AL10 = "org/lwjgl/openal/AL10";
     private static final String ALC10 = "org/lwjgl/openal/ALC10";
+    private static final String AL_UTIL = "org/lwjgl/openal/ALUtil";
 
     private AlStatePatches() {
         throw new AssertionError();
@@ -355,6 +358,16 @@ public final class AlStatePatches {
     @Patch(owner = ALC10)
     public static String alcGetString(long deviceHandle, int token) {
         return AlState.alcGetString(token);
+    }
+
+    /**
+     * The device lists, like {@code ALC_ALL_DEVICES_SPECIFIER}, contain the one device, which Minecraft lists as its
+     * audio devices.
+     */
+    @Patch(owner = AL_UTIL)
+    public static List<String> getStringList(long deviceHandle, int token) {
+        String value = AlState.alcGetString(token);
+        return value == null ? null : Collections.singletonList(value);
     }
 
     @Patch(owner = ALC10)
