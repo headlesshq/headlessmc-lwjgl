@@ -85,6 +85,14 @@ jobs:
       - name: Patch and stage the jars for HeadlessMc
         run: ./gradlew headlessMcDirectory --stacktrace
 
+      # fails fast if a Minecraft version uses an LWJGL module or classifier that HeadlessMc would not replace
+      - name: Check that every LWJGL library of the versions is patched
+        env:
+          MATRIX: ${{ needs.matrix.outputs.matrix }}
+        run: |
+          versions=$(python3 -I -c 'import json, os; print(" ".join(sorted({e["mc"] for e in json.loads(os.environ["MATRIX"])["include"]})))')
+          python3 -I .github/scripts/check_lwjgl_coverage.py build/headlessmc $versions
+
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: patched-lwjgl
@@ -181,6 +189,15 @@ jobs:
           if grep -q "Backend library: LWJGL version" run/logs/latest.log && ! grep -q "Backend library: LWJGL version $version" run/logs/latest.log; then
             echo "::error::Minecraft did not run with the patched LWJGL $version"
             grep "Backend library" run/logs/latest.log
+            exit 1
+          fi
+
+      # also after a failed run, to name the cause: an LWJGL jar HeadlessMc kept unpatched
+      - name: Check that HeadlessMc patched every LWJGL jar
+        if: always()
+        run: |
+          if grep -h "No patched LWJGL for" HeadlessMC/logs/*.log 2>/dev/null; then
+            echo "::error::HeadlessMc kept LWJGL jars unpatched, add the modules to the patched LWJGL"
             exit 1
           fi
 
