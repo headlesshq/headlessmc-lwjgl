@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/headlesshq/headlessmc-lwjgl/compare/0.1.0...0.1.1) (2026-10-30)
+
+
+### Bug Fixes
+
+* **modules:** make the patched LWJGL work on module layers ([#2](https://github.com/headlesshq/headlessmc-lwjgl/issues/2)) ([5b8dd30](https://github.com/headlesshq/headlessmc-lwjgl/commit/5b8dd305a08115d035c81b2439469b9678ec7047))
+
 ## 0.1.0 (2026-10-29)
 
 
