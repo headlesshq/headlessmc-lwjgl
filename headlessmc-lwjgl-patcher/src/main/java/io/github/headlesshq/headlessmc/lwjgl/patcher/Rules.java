@@ -25,6 +25,14 @@ public final class Rules {
     private static final String STRUCT_BUFFER = "org/lwjgl/system/StructBuffer";
     private static final String CALLBACK_INTERFACE = "org/lwjgl/system/CallbackI";
     private static final String CALLBACK = "org/lwjgl/system/Callback";
+    private static final String POINTER = "org/lwjgl/system/Pointer";
+    private static final String MEMORY_UTIL = "org/lwjgl/system/MemoryUtil";
+    /**
+     * Native callback setters, which return the previous function pointer, like {@code nglfwSetKeyCallback(JJ)J} or
+     * {@code nglfwSetErrorCallback(J)J}.
+     */
+    private static final Pattern CALLBACK_SETTER = Pattern.compile("n\\w+Set\\w*Callback");
+    private static final Set<String> CALLBACK_SETTER_DESCRIPTORS = Set.of("(J)J", "(JJ)J");
     private static final Set<String> ADDRESS_BUFFERS = Set.of("org/lwjgl/PointerBuffer", "org/lwjgl/CLongBuffer");
 
     /**
@@ -132,6 +140,8 @@ public final class Rules {
     public static List<Rule> create(HandlerIndex handlers, ClassPool pool, Synthetics factories) {
         return List.of(
             rule("handler", false, handlers::get),
+            rule("callback-slot", false, m -> isCallbackSetter(m) ? new Behaviour.CallbackSlot() : null),
+            rule("keep-callback-setter", false, m -> isCallbackSetterWrapper(m, pool) ? new Behaviour.Keep() : null),
             rule("keep-bridge", false, m -> m.isBridge() && !m.isAbstract() ? new Behaviour.Keep() : null),
             rule("keep-constructor", false, m -> "<init>".equals(m.name()) ? new Behaviour.Keep() : null),
             rule("keep-pure-computation", false, m -> isPureComputation(m) ? new Behaviour.Keep() : null),
@@ -148,11 +158,13 @@ public final class Rules {
             rule("keep-pointer-address", false, m -> !m.isStatic() && "address".equals(m.name()) && "()J".equals(m.desc())
                 && ("org/lwjgl/system/Pointer$Default".equals(m.owner().name) || "org/lwjgl/system/Callback".equals(m.owner().name))
                 ? new Behaviour.Keep() : null),
+            rule("keep-pointer-address-of", false, m -> isPointerAddressOf(m, pool) ? new Behaviour.Keep() : null),
             rule("keep-callback", false, m -> isCallbackCode(m, pool) ? new Behaviour.Keep() : null),
             rule("keep-address-buffer", false, m -> isAddressBufferCode(m) ? new Behaviour.Keep() : null),
             rule("keep-struct-sizeof", false, m -> !m.isStatic() && "sizeof".equals(m.name()) && "()I".equals(m.desc())
                 && pool.isAssignable(m.owner().name, STRUCT) ? new Behaviour.Keep() : null),
             rule("keep-struct", false, m -> isStructCode(m, pool) ? new Behaviour.Keep() : null),
+            rule("keep-pointer-equality", false, m -> isPointerEquality(m, pool) ? new Behaviour.Keep() : null),
             rule("identity", false, Rules::identity),
             rule("keep-to-string", false, m -> !m.isStatic() && "toString".equals(m.name())
                 && "()Ljava/lang/String;".equals(m.desc()) ? new Behaviour.Keep() : null),
@@ -195,6 +207,57 @@ public final class Rules {
         }
 
         return "invoke".equals(method.name()) && !method.isAbstract();
+    }
+
+    /**
+     * {@code MemoryUtil.memAddressSafe(Pointer)}, {@code memAddress(CustomBuffer)} and the like only call
+     * {@code address} of the pointer, which is real: the address of a callback, struct or custom buffer. Without them,
+     * wrappers like {@code glfwSetKeyCallback} would pass a fake address instead of the one of the callback.
+     */
+    private static boolean isPointerAddressOf(MethodInfo method, ClassPool pool) {
+        Type[] arguments = method.argumentTypes();
+        if (!MEMORY_UTIL.equals(method.owner().name) || !method.isStatic() || !method.name().startsWith("memAddress")
+            || arguments.length == 0 || arguments[0].getSort() != Type.OBJECT
+            || !pool.isAssignable(arguments[0].getInternalName(), POINTER) || method.method().instructions.size() == 0) {
+            return false;
+        }
+
+        for (AbstractInsnNode insn : method.method().instructions) {
+            if (insn instanceof MethodInsnNode call && !"address".equals(call.name)
+                || insn instanceof InvokeDynamicInsnNode || insn instanceof TypeInsnNode) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static boolean isCallbackSetter(MethodInfo method) {
+        return method.isStatic() && !method.isAbstract() && CALLBACK_SETTER.matcher(method.name()).matches()
+            && CALLBACK_SETTER_DESCRIPTORS.contains(method.desc());
+    }
+
+    /**
+     * The wrappers of the {@link #isCallbackSetter native callback setters}, like
+     * {@code glfwSetKeyCallback(window, cbfun)}, which pass the address of the callback to the setter and wrap the
+     * previous address with {@code Callback.get}. They are kept, so that they return the previous callback object itself,
+     * like the application set it: Minecraft's {@code GLFWErrorScope} checks that by its address.
+     */
+    private static boolean isCallbackSetterWrapper(MethodInfo method, ClassPool pool) {
+        if (!method.isStatic() || method.isNative() || method.returnType().getSort() != Type.OBJECT
+            || !pool.isAssignable(method.returnType().getInternalName(), CALLBACK)) {
+            return false;
+        }
+
+        for (AbstractInsnNode insn : method.method().instructions) {
+            if (insn instanceof MethodInsnNode call && call.owner.equals(method.owner().name)
+                && call.name.equals("n" + method.name()) && CALLBACK_SETTER.matcher(call.name).matches()
+                && CALLBACK_SETTER_DESCRIPTORS.contains(call.desc)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -269,6 +332,16 @@ public final class Rules {
         }
 
         return false;
+    }
+
+    /**
+     * {@code equals} and {@code hashCode} of pointers, like {@code Callback} and {@code Pointer.Default}, compare the
+     * address, which is real, so that a callback returned by a setter equals the one that was set.
+     */
+    private static boolean isPointerEquality(MethodInfo method, ClassPool pool) {
+        boolean equality = "equals".equals(method.name()) && "(Ljava/lang/Object;)Z".equals(method.desc())
+            || "hashCode".equals(method.name()) && "()I".equals(method.desc());
+        return equality && !method.isStatic() && !method.isAbstract() && pool.isAssignable(method.owner().name, POINTER);
     }
 
     private static Behaviour identity(MethodInfo method) {

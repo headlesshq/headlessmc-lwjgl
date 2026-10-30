@@ -1,31 +1,11 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.glfw;
 
+import io.github.headlesshq.headlessmc.lwjgl.runtime.CallbackSlots;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Ids;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
-import org.lwjgl.glfw.GLFWCharCallback;
-import org.lwjgl.glfw.GLFWCharCallbackI;
-import org.lwjgl.glfw.GLFWCharModsCallback;
-import org.lwjgl.glfw.GLFWCharModsCallbackI;
-import org.lwjgl.glfw.GLFWCursorEnterCallback;
-import org.lwjgl.glfw.GLFWCursorEnterCallbackI;
-import org.lwjgl.glfw.GLFWCursorPosCallback;
-import org.lwjgl.glfw.GLFWCursorPosCallbackI;
-import org.lwjgl.glfw.GLFWFramebufferSizeCallback;
-import org.lwjgl.glfw.GLFWFramebufferSizeCallbackI;
-import org.lwjgl.glfw.GLFWKeyCallback;
-import org.lwjgl.glfw.GLFWKeyCallbackI;
-import org.lwjgl.glfw.GLFWMouseButtonCallback;
-import org.lwjgl.glfw.GLFWMouseButtonCallbackI;
-import org.lwjgl.glfw.GLFWScrollCallback;
-import org.lwjgl.glfw.GLFWScrollCallbackI;
-import org.lwjgl.glfw.GLFWWindowCloseCallback;
-import org.lwjgl.glfw.GLFWWindowCloseCallbackI;
-import org.lwjgl.glfw.GLFWWindowFocusCallback;
-import org.lwjgl.glfw.GLFWWindowFocusCallbackI;
-import org.lwjgl.glfw.GLFWWindowSizeCallback;
-import org.lwjgl.glfw.GLFWWindowSizeCallbackI;
+import org.lwjgl.system.Callback;
 
 import java.nio.ByteBuffer;
 import java.nio.DoubleBuffer;
@@ -36,11 +16,12 @@ import java.util.Map;
 import static org.lwjgl.glfw.GLFW.*;
 
 /**
- * Patches for {@code org.lwjgl.glfw.GLFW}: windows, callbacks, event dispatching and the polling input state.
- * Setting a callback returns the previous one, wrapped in an LWJGL callback object like GLFW does.
+ * Patches for {@code org.lwjgl.glfw.GLFW}: windows, event dispatching and the polling input state.
+ * The callback setters are implemented by the patcher, see {@code CallbackSlots}.
  */
 public final class GlfwInputPatches {
     private static final String GLFW = "org/lwjgl/glfw/GLFW";
+    private static final String CALLBACKS = "org/lwjgl/glfw/Callbacks";
     private static final long WAIT_MILLIS = 10L;
     private static final int[] CONTEXT_VERSION = contextVersion();
 
@@ -79,6 +60,17 @@ public final class GlfwInputPatches {
     @Patch(owner = GLFW)
     public static void glfwDestroyWindow(long window) {
         GlfwWindows.remove(window);
+    }
+
+    /**
+     * Frees the callbacks of a window and removes them, like {@code Callbacks.glfwFreeCallbacks}, which calls the native
+     * setters through their function pointers.
+     */
+    @Patch(owner = CALLBACKS)
+    public static void glfwFreeCallbacks(long window) {
+        for (long function : CallbackSlots.clear(window)) {
+            Callback.free(function);
+        }
     }
 
     @Patch(owner = GLFW)
@@ -312,94 +304,6 @@ public final class GlfwInputPatches {
         if (yscale != null) {
             yscale[0] = 1.0f;
         }
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWKeyCallback glfwSetKeyCallback(long window, GLFWKeyCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWKeyCallbackI previous = state.key;
-        state.key = callback;
-        return previous == null ? null : GLFWKeyCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWCharCallback glfwSetCharCallback(long window, GLFWCharCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWCharCallbackI previous = state.character;
-        state.character = callback;
-        return previous == null ? null : GLFWCharCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWCharModsCallback glfwSetCharModsCallback(long window, GLFWCharModsCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWCharModsCallbackI previous = state.charMods;
-        state.charMods = callback;
-        return previous == null ? null : GLFWCharModsCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWMouseButtonCallback glfwSetMouseButtonCallback(long window, GLFWMouseButtonCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWMouseButtonCallbackI previous = state.mouseButton;
-        state.mouseButton = callback;
-        return previous == null ? null : GLFWMouseButtonCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWCursorPosCallback glfwSetCursorPosCallback(long window, GLFWCursorPosCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWCursorPosCallbackI previous = state.cursorPos;
-        state.cursorPos = callback;
-        return previous == null ? null : GLFWCursorPosCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWCursorEnterCallback glfwSetCursorEnterCallback(long window, GLFWCursorEnterCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWCursorEnterCallbackI previous = state.cursorEnter;
-        state.cursorEnter = callback;
-        return previous == null ? null : GLFWCursorEnterCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWScrollCallback glfwSetScrollCallback(long window, GLFWScrollCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWScrollCallbackI previous = state.scroll;
-        state.scroll = callback;
-        return previous == null ? null : GLFWScrollCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWWindowSizeCallback glfwSetWindowSizeCallback(long window, GLFWWindowSizeCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWWindowSizeCallbackI previous = state.windowSize;
-        state.windowSize = callback;
-        return previous == null ? null : GLFWWindowSizeCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWFramebufferSizeCallback glfwSetFramebufferSizeCallback(long window, GLFWFramebufferSizeCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWFramebufferSizeCallbackI previous = state.framebufferSize;
-        state.framebufferSize = callback;
-        return previous == null ? null : GLFWFramebufferSizeCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWWindowFocusCallback glfwSetWindowFocusCallback(long window, GLFWWindowFocusCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWWindowFocusCallbackI previous = state.focus;
-        state.focus = callback;
-        return previous == null ? null : GLFWWindowFocusCallback.create(previous);
-    }
-
-    @Patch(owner = GLFW)
-    public static GLFWWindowCloseCallback glfwSetWindowCloseCallback(long window, GLFWWindowCloseCallbackI callback) {
-        GlfwWindow state = GlfwWindows.get(window);
-        GLFWWindowCloseCallbackI previous = state.close;
-        state.close = callback;
-        return previous == null ? null : GLFWWindowCloseCallback.create(previous);
     }
 
 }

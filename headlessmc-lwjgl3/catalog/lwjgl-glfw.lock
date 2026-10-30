@@ -2,11 +2,11 @@
 # Every method of every class is patched by the first matching rule, counted per class.
 # Methods resolved by rules that only guess are listed individually and have to be reviewed.
 # Regenerate with: ./gradlew updateCatalogLock
-org/lwjgl/glfw/Callbacks keep-constructor=1 void=1
+org/lwjgl/glfw/Callbacks handler=1 keep-constructor=1
 org/lwjgl/glfw/EventLoop default=2 keep-constructor=1 void=1
     isJavaStartedOnFirstThread()Z default: default
     isMainThread()Z default: default
-org/lwjgl/glfw/GLFW default=58 guarded-static-init=1 handler=80 id=4 interface-proxy=2 keep-constructor=1 nio-buffer-empty=1 object=12 struct=1 void=52
+org/lwjgl/glfw/GLFW callback-slot=23 default=35 guarded-static-init=1 handler=69 id=4 interface-proxy=2 keep-callback-setter=23 keep-constructor=1 nio-buffer-empty=1 struct=1 void=52
     access$000()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     getLibrary()Lorg/lwjgl/system/SharedLibrary; interface-proxy: proxy SharedLibrary
     glfwExtensionSupported(Ljava/lang/CharSequence;)Z default: default
@@ -22,18 +22,6 @@ org/lwjgl/glfw/GLFW default=58 guarded-static-init=1 handler=80 id=4 interface-p
     glfwJoystickIsGamepad(I)Z default: default
     glfwJoystickPresent(I)Z default: default
     glfwPlatformSupported(I)Z default: default
-    glfwSetDropCallback(JLorg/lwjgl/glfw/GLFWDropCallbackI;)Lorg/lwjgl/glfw/GLFWDropCallback; object: new GLFWDropCallback
-    glfwSetErrorCallback(Lorg/lwjgl/glfw/GLFWErrorCallbackI;)Lorg/lwjgl/glfw/GLFWErrorCallback; object: new GLFWErrorCallback
-    glfwSetIMEStatusCallback(JLorg/lwjgl/glfw/GLFWIMEStatusCallbackI;)Lorg/lwjgl/glfw/GLFWIMEStatusCallback; object: new GLFWIMEStatusCallback
-    glfwSetJoystickCallback(Lorg/lwjgl/glfw/GLFWJoystickCallbackI;)Lorg/lwjgl/glfw/GLFWJoystickCallback; object: new GLFWJoystickCallback
-    glfwSetMonitorCallback(Lorg/lwjgl/glfw/GLFWMonitorCallbackI;)Lorg/lwjgl/glfw/GLFWMonitorCallback; object: new GLFWMonitorCallback
-    glfwSetPreeditCallback(JLorg/lwjgl/glfw/GLFWPreeditCallbackI;)Lorg/lwjgl/glfw/GLFWPreeditCallback; object: new GLFWPreeditCallback
-    glfwSetPreeditCandidateCallback(JLorg/lwjgl/glfw/GLFWPreeditCandidateCallbackI;)Lorg/lwjgl/glfw/GLFWPreeditCandidateCallback; object: new GLFWPreeditCandidateCallback
-    glfwSetWindowContentScaleCallback(JLorg/lwjgl/glfw/GLFWWindowContentScaleCallbackI;)Lorg/lwjgl/glfw/GLFWWindowContentScaleCallback; object: new GLFWWindowContentScaleCallback
-    glfwSetWindowIconifyCallback(JLorg/lwjgl/glfw/GLFWWindowIconifyCallbackI;)Lorg/lwjgl/glfw/GLFWWindowIconifyCallback; object: new GLFWWindowIconifyCallback
-    glfwSetWindowMaximizeCallback(JLorg/lwjgl/glfw/GLFWWindowMaximizeCallbackI;)Lorg/lwjgl/glfw/GLFWWindowMaximizeCallback; object: new GLFWWindowMaximizeCallback
-    glfwSetWindowPosCallback(JLorg/lwjgl/glfw/GLFWWindowPosCallbackI;)Lorg/lwjgl/glfw/GLFWWindowPosCallback; object: new GLFWWindowPosCallback
-    glfwSetWindowRefreshCallback(JLorg/lwjgl/glfw/GLFWWindowRefreshCallbackI;)Lorg/lwjgl/glfw/GLFWWindowRefreshCallback; object: new GLFWWindowRefreshCallback
     glfwUpdateGamepadMappings(Ljava/lang/CharSequence;)Z default: default [shim 3.2.1]
     glfwUpdateGamepadMappings(Ljava/nio/ByteBuffer;)Z default: default
     nglfwExtensionSupported(J)I default: default
@@ -56,29 +44,6 @@ org/lwjgl/glfw/GLFW default=58 guarded-static-init=1 handler=80 id=4 interface-p
     nglfwGetVideoMode(J)J default: default
     nglfwGetVideoModes(JJ)J default: default
     nglfwGetWindowTitle(J)J default: default
-    nglfwSetCharCallback(JJ)J default: default
-    nglfwSetCharModsCallback(JJ)J default: default
-    nglfwSetCursorEnterCallback(JJ)J default: default
-    nglfwSetCursorPosCallback(JJ)J default: default
-    nglfwSetDropCallback(JJ)J default: default
-    nglfwSetErrorCallback(J)J default: default
-    nglfwSetFramebufferSizeCallback(JJ)J default: default
-    nglfwSetIMEStatusCallback(JJ)J default: default
-    nglfwSetJoystickCallback(J)J default: default
-    nglfwSetKeyCallback(JJ)J default: default
-    nglfwSetMonitorCallback(J)J default: default
-    nglfwSetMouseButtonCallback(JJ)J default: default
-    nglfwSetPreeditCallback(JJ)J default: default
-    nglfwSetPreeditCandidateCallback(JJ)J default: default
-    nglfwSetScrollCallback(JJ)J default: default
-    nglfwSetWindowCloseCallback(JJ)J default: default
-    nglfwSetWindowContentScaleCallback(JJ)J default: default
-    nglfwSetWindowFocusCallback(JJ)J default: default
-    nglfwSetWindowIconifyCallback(JJ)J default: default
-    nglfwSetWindowMaximizeCallback(JJ)J default: default
-    nglfwSetWindowPosCallback(JJ)J default: default
-    nglfwSetWindowRefreshCallback(JJ)J default: default
-    nglfwSetWindowSizeCallback(JJ)J default: default
     nglfwUpdateGamepadMappings(J)I default: default
 org/lwjgl/glfw/GLFW$Functions guarded-static-init=1 keep-constructor=1
 org/lwjgl/glfw/GLFWAllocateCallback keep-callback=4 keep-constructor=2
