@@ -1843,7 +1843,7 @@ org/lwjgl/opengl/FastIntMap$Entry default=2 keep-constructor=1
 org/lwjgl/opengl/FastIntMap$EntryIterator default=1 keep-bridge=1 keep-constructor=1 object=1 void=2
     hasNext()Z default: default
     next()Lorg/lwjgl/opengl/FastIntMap$Entry; object: new FastIntMap$Entry
-org/lwjgl/opengl/GL11 default=17 handler=46 id=3 is-object=2 keep-constructor=1 nio-buffer-empty=2 void=499
+org/lwjgl/opengl/GL11 default=15 handler=54 id=3 is-object=2 keep-constructor=1 nio-buffer-empty=2 void=493
     glAreTexturesResident(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Z default: default
     glGetError()I default: default
     glGetPointer(IJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -1852,8 +1852,6 @@ org/lwjgl/opengl/GL11 default=17 handler=46 id=3 is-object=2 keep-constructor=1 
     glGetTexGend(II)D default: default
     glGetTexGenf(II)F default: default
     glGetTexGeni(II)I default: default
-    glGetTexParameterf(II)F default: default
-    glGetTexParameteri(II)I default: default
     glRenderMode(I)I default: default
     nglAreTexturesResident(IJJJ)Z default: default
     nglGetError(J)I default: default

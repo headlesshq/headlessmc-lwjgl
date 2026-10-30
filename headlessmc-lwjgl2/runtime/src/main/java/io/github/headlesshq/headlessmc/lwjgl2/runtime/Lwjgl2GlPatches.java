@@ -445,4 +445,63 @@ public final class Lwjgl2GlPatches {
         GlObjects.textureImage(target, level, internalformat, width, 1);
     }
 
+    /**
+     * Texture parameters are recorded and read back like with LWJGL 3, Minecraft 1.7 to 1.12 read their filters.
+     */
+    @Patch(owner = GL11)
+    public static void glTexParameteri(int target, int pname, int param) {
+        GlObjects.textureParameter(target, pname, param);
+    }
+
+    @Patch(owner = GL11)
+    public static void glTexParameterf(int target, int pname, float param) {
+        GlObjects.textureParameter(target, pname, param);
+    }
+
+    @Patch(owner = GL11)
+    public static void glTexParameter(int target, int pname, IntBuffer params) {
+        double[] values = new double[params.remaining()];
+        for (int i = 0; i < values.length; i++) {
+            values[i] = params.get(params.position() + i);
+        }
+
+        GlObjects.textureParameter(target, pname, values);
+    }
+
+    @Patch(owner = GL11)
+    public static void glTexParameter(int target, int pname, FloatBuffer params) {
+        double[] values = new double[params.remaining()];
+        for (int i = 0; i < values.length; i++) {
+            values[i] = params.get(params.position() + i);
+        }
+
+        GlObjects.textureParameter(target, pname, values);
+    }
+
+    @Patch(owner = GL11)
+    public static int glGetTexParameteri(int target, int pname) {
+        return (int) Math.round(GlObjects.textureParameter(target, pname)[0]);
+    }
+
+    @Patch(owner = GL11)
+    public static float glGetTexParameterf(int target, int pname) {
+        return (float) GlObjects.textureParameter(target, pname)[0];
+    }
+
+    @Patch(owner = GL11)
+    public static void glGetTexParameter(int target, int pname, IntBuffer params) {
+        double[] values = GlObjects.textureParameter(target, pname);
+        for (int i = 0; i < values.length && i < params.remaining(); i++) {
+            params.put(params.position() + i, (int) Math.round(values[i]));
+        }
+    }
+
+    @Patch(owner = GL11)
+    public static void glGetTexParameter(int target, int pname, FloatBuffer params) {
+        double[] values = GlObjects.textureParameter(target, pname);
+        for (int i = 0; i < values.length && i < params.remaining(); i++) {
+            params.put(params.position() + i, (float) values[i]);
+        }
+    }
+
 }

@@ -1,5 +1,6 @@
 package io.github.headlesshq.headlessmc.lwjgl3.runtime.sdl;
 
+import io.github.headlesshq.headlessmc.lwjgl.runtime.Config;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Ids;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Input;
 import io.github.headlesshq.headlessmc.lwjgl.runtime.Patch;
@@ -34,6 +35,12 @@ public final class SdlPatches {
     private static final String SDL_KEYBOARD = "org/lwjgl/sdl/SDLKeyboard";
     private static final String SDL_MOUSE = "org/lwjgl/sdl/SDLMouse";
     private static final String SDL_TIMER = "org/lwjgl/sdl/SDLTimer";
+    private static final String SDL_VULKAN = "org/lwjgl/sdl/SDLVulkan";
+    /**
+     * The event types with a window, which have its id at the same offset: window, keyboard, text and mouse events.
+     */
+    private static final int FIRST_WINDOW_EVENT = 0x202;
+    private static final int LAST_WINDOW_EVENT = 0x4FF;
     private static final int DISPLAY = 1;
     private static final long WAIT_MILLIS = 10L;
     private static final long START = System.nanoTime();
@@ -100,6 +107,40 @@ public final class SdlPatches {
     @Patch(owner = SDL_VIDEO)
     public static long SDL_GetWindowFromID(int id) {
         return SdlWindows.window(id);
+    }
+
+    /**
+     * The window of window, keyboard, text and mouse events, which Minecraft 26.3 dispatches events by, otherwise
+     * {@code 0}, like SDL.
+     */
+    @Patch(owner = SDL_EVENTS)
+    public static long SDL_GetWindowFromEvent(SDL_Event event) {
+        int type = event.type();
+        return type < FIRST_WINDOW_EVENT || type > LAST_WINDOW_EVENT ? 0L : SdlWindows.window(event.window().windowID());
+    }
+
+    @Patch(owner = SDL_EVENTS)
+    public static long nSDL_GetWindowFromEvent(long event) {
+        return SDL_GetWindowFromEvent(SDL_Event.create(event));
+    }
+
+    /**
+     * Like {@code VK.create}, there is no Vulkan loader unless {@code hmc.lwjgl3.vulkan=true}, so that Minecraft 26.3
+     * stays on OpenGL.
+     */
+    @Patch(owner = SDL_VULKAN)
+    public static boolean SDL_Vulkan_LoadLibrary(CharSequence path) {
+        return Config.getBoolean("vulkan", false);
+    }
+
+    @Patch(owner = SDL_VULKAN)
+    public static boolean SDL_Vulkan_LoadLibrary(ByteBuffer path) {
+        return Config.getBoolean("vulkan", false);
+    }
+
+    @Patch(owner = SDL_VULKAN)
+    public static boolean nSDL_Vulkan_LoadLibrary(long path) {
+        return Config.getBoolean("vulkan", false);
     }
 
     @Patch(owner = SDL_VIDEO)
