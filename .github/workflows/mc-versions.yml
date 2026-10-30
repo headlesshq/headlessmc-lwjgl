@@ -108,12 +108,8 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@3f5f9adaf7d9fecd50b5935e54106014257a94e6 # v6
 
-      # the launcher only needs a lock file to build, the runs use the jars of this commit
-      - name: Lock the headlessmc-lwjgl release
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: ./gradlew :headlessmc-patcher:headlessmc-patcher-lwjgl-patched:updatePatchedLwjgl --stacktrace
-
+      # the committed lock file of the launcher is not updated: hmc.lwjgl.patched-directory makes the runs use the jars
+      # of this commit instead of the locked release, which does not have to exist
       - name: Build uber jar
         run: ./gradlew :headlessmc-application:quarkusBuild -Dquarkus.package.jar.type=uber-jar --stacktrace
 
