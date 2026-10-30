@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/headlesshq/headlessmc-lwjgl/compare/0.1.1...0.1.2) (2026-10-30)
+
+
+### Bug Fixes
+
+* implement the guessed LWJGL methods that Minecraft relies on ([#4](https://github.com/headlesshq/headlessmc-lwjgl/issues/4)) ([697cf57](https://github.com/headlesshq/headlessmc-lwjgl/commit/697cf577d6cf2c2d09829f760e581a80ffea7da1))
+
 ## [0.1.1](https://github.com/headlesshq/headlessmc-lwjgl/compare/0.1.0...0.1.1) (2026-10-30)
 
 
