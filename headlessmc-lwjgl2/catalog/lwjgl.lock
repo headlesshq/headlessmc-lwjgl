@@ -1227,7 +1227,7 @@ org/lwjgl/opengl/ARBSeparateShaderObjects default=2 id=6 is-object=1 keep-constr
 org/lwjgl/opengl/ARBShaderAtomicCounters default=1 keep-constructor=1 void=1
     glGetActiveAtomicCounterBuffer(III)I default: default
 org/lwjgl/opengl/ARBShaderImageLoadStore keep-constructor=1 void=2
-org/lwjgl/opengl/ARBShaderObjects default=13 id=4 keep-constructor=1 void=73
+org/lwjgl/opengl/ARBShaderObjects default=12 handler=2 id=4 keep-constructor=1 void=72
     glGetActiveUniformARB(III)Ljava/lang/String; default: default
     glGetActiveUniformARB(IIILjava/nio/IntBuffer;)Ljava/lang/String; default: default
     glGetActiveUniformSizeARB(II)I default: default
@@ -1235,7 +1235,6 @@ org/lwjgl/opengl/ARBShaderObjects default=13 id=4 keep-constructor=1 void=73
     glGetHandleARB(I)I default: default
     glGetInfoLogARB(II)Ljava/lang/String; default: default
     glGetObjectParameterfARB(II)F default: default
-    glGetObjectParameteriARB(II)I default: default
     glGetShaderSourceARB(II)Ljava/lang/String; default: default
     glGetUniformLocationARB(ILjava/lang/CharSequence;)I default: default
     glGetUniformLocationARB(ILjava/nio/ByteBuffer;)I default: default
@@ -1844,7 +1843,7 @@ org/lwjgl/opengl/FastIntMap$Entry default=2 keep-constructor=1
 org/lwjgl/opengl/FastIntMap$EntryIterator default=1 keep-bridge=1 keep-constructor=1 object=1 void=2
     hasNext()Z default: default
     next()Lorg/lwjgl/opengl/FastIntMap$Entry; object: new FastIntMap$Entry
-org/lwjgl/opengl/GL11 default=17 handler=46 id=3 is-object=2 keep-constructor=1 nio-buffer-empty=2 void=499
+org/lwjgl/opengl/GL11 default=15 handler=54 id=3 is-object=2 keep-constructor=1 nio-buffer-empty=2 void=493
     glAreTexturesResident(Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)Z default: default
     glGetError()I default: default
     glGetPointer(IJ)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
@@ -1853,8 +1852,6 @@ org/lwjgl/opengl/GL11 default=17 handler=46 id=3 is-object=2 keep-constructor=1 
     glGetTexGend(II)D default: default
     glGetTexGenf(II)F default: default
     glGetTexGeni(II)I default: default
-    glGetTexParameterf(II)F default: default
-    glGetTexParameteri(II)I default: default
     glRenderMode(I)I default: default
     nglAreTexturesResident(IJJJ)Z default: default
     nglGetError(J)I default: default
@@ -2618,8 +2615,7 @@ org/lwjgl/opengl/Sync default=1 guarded-static-init=1 keep-constructor=1 void=2
 org/lwjgl/opengl/Sync$1 keep-constructor=1 void=1
 org/lwjgl/opengl/Sync$RunningAvg default=1 keep-constructor=1 void=3
     avg()J default: default
-org/lwjgl/opengl/Util default=1 keep-constructor=1 void=1
-    translateGLErrorString(I)Ljava/lang/String; default: default
+org/lwjgl/opengl/Util keep-constructor=1 keep-pure-java-class=2
 org/lwjgl/opengl/WindowsAWTGLCanvasPeerInfo keep-constructor=1 void=3
 org/lwjgl/opengl/WindowsCanvasImplementation default=1 guarded-static-init=1 keep-constructor=1 object=1
     createPeerInfo(Ljava/awt/Canvas;Lorg/lwjgl/opengl/PixelFormat;Lorg/lwjgl/opengl/ContextAttribs;)Lorg/lwjgl/opengl/PeerInfo; object: new PeerInfo

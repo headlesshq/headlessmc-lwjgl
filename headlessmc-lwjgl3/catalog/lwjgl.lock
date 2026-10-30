@@ -2664,25 +2664,9 @@ org/lwjgl/system/MemoryManage$StdlibAllocator default=6 fake-address=4 keep-cons
     getFree()J default: default
     getMalloc()J default: default
     getRealloc()J default: default
-org/lwjgl/system/MemoryStack default=25 fake-address=3 fluent=2 guarded-static-init=1 keep-constructor=2 lwjgl-buffer=12 lwjgl-buffer-empty=32 nio-buffer=28 nio-buffer-empty=53 object=7 values-buffer=30 void=5
+org/lwjgl/system/MemoryStack default=25 fake-address=3 fluent=2 guarded-static-init=1 handler=50 keep-constructor=2 lwjgl-buffer=12 lwjgl-buffer-empty=6 nio-buffer=26 nio-buffer-empty=1 object=7 values-buffer=60 void=5
     <init>(I)V keep-constructor [shim 3.1.6]
-    ASCII(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    ASCII(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    ASCIISafe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    ASCIISafe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    UTF16(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    UTF16(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    UTF16Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    UTF16Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    UTF8(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    UTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    UTF8Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    UTF8Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     allocateUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    clongs(JJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
-    clongs(JJJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
-    clongs(JJJJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
-    clongs([J)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
     create()Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
     create(I)Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
     create(Ljava/nio/ByteBuffer;)Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
@@ -2712,77 +2696,15 @@ org/lwjgl/system/MemoryStack default=25 fake-address=3 fluent=2 guarded-static-i
     nstackCalloc(III)J default: default
     nstackMalloc(I)J default: default
     nstackMalloc(II)J default: default
-    pointers(JJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pointers(JJJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pointers(JJJJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     pointers(Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     pointers(Ljava/nio/Buffer;Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     pointers(Ljava/nio/Buffer;Ljava/nio/Buffer;Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     pointers(Ljava/nio/Buffer;Ljava/nio/Buffer;Ljava/nio/Buffer;Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pointers(Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pointers([J)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     pointers([Ljava/nio/Buffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    pointers([Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     pointersOfElements(Lorg/lwjgl/system/CustomBuffer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackASCII(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackASCII(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackASCIISafe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackASCIISafe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackBytes(B)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackBytes(BB)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackBytes(BBB)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackBytes(BBBB)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackBytes([B)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackCLongs(JJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
-    stackCLongs(JJJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
-    stackCLongs(JJJJ)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
-    stackCLongs([J)Lorg/lwjgl/CLongBuffer; lwjgl-buffer-empty: buffer CLongBuffer(0)
-    stackDoubles(D)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
-    stackDoubles(DD)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
-    stackDoubles(DDD)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
-    stackDoubles(DDDD)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
-    stackDoubles([D)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
-    stackFloats(F)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    stackFloats(FF)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    stackFloats(FFF)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    stackFloats(FFFF)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    stackFloats([F)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
     stackGet()Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
-    stackInts(II)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    stackInts(III)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    stackInts(IIII)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    stackInts([I)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    stackLongs(JJ)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
-    stackLongs(JJJ)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
-    stackLongs(JJJJ)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
-    stackLongs([J)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
-    stackPointers(JJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackPointers(JJJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackPointers(JJJJ)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackPointers(Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackPointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackPointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackPointers(Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackPointers([J)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
-    stackPointers([Lorg/lwjgl/system/Pointer;)Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     stackPop()Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
     stackPush()Lorg/lwjgl/system/MemoryStack; object: new MemoryStack
-    stackShorts(S)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    stackShorts(SS)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    stackShorts(SSS)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    stackShorts(SSSS)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    stackShorts([S)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
-    stackUTF16(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackUTF16(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackUTF16Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackUTF16Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackUTF8(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackUTF8Safe(Ljava/lang/CharSequence;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    stackUTF8Safe(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
 org/lwjgl/system/MemoryStack$1 default=6 fake-address=4 keep-constructor=1 void=2
     getAlignedAlloc()J default: default
     getAlignedFree()J default: default
@@ -2791,7 +2713,7 @@ org/lwjgl/system/MemoryStack$1 default=6 fake-address=4 keep-constructor=1 void=
     getMalloc()J default: default
     getRealloc()J default: default
 org/lwjgl/system/MemoryStack$DebugMemoryStack fluent=2 keep-constructor=1 void=3
-org/lwjgl/system/MemoryUtil default=78 fake-address=39 guarded-static-init=1 handler=112 interface-proxy=4 keep-constructor=1 keep-pointer-address-of=3 lwjgl-buffer=12 nio-buffer=27 nio-buffer-empty=27 void=157
+org/lwjgl/system/MemoryUtil default=70 fake-address=39 guarded-static-init=1 handler=142 interface-proxy=4 keep-constructor=1 keep-pointer-address-of=3 lwjgl-buffer=12 nio-buffer=27 nio-buffer-empty=5 void=157
     allocateUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     createBackend()Lorg/lwjgl/system/MemoryBackend; interface-proxy: proxy MemoryBackend
     encodeUTF8Safe(Ljava/lang/CharSequence;ZJI)I default: default
@@ -2803,8 +2725,6 @@ org/lwjgl/system/MemoryUtil default=78 fake-address=39 guarded-static-init=1 han
     getPageSize()I default: default
     lambda$static$0()[B default: default
     lambda$static$1()[C default: default
-    memASCII(JI)Ljava/lang/String; default: default
-    memASCIISafe(JI)Ljava/lang/String; default: default
     memAddress0(Lorg/lwjgl/system/CustomBuffer;)J fake-address [shim 3.1.6]
     memAddress0Safe(Ljava/nio/Buffer;)J fake-address [shim 3.1.6]
     memAddress0Safe(Lorg/lwjgl/system/CustomBuffer;)J fake-address [shim 3.1.6]
@@ -2817,27 +2737,12 @@ org/lwjgl/system/MemoryUtil default=78 fake-address=39 guarded-static-init=1 han
     memAddressSafe(Ljava/nio/ShortBuffer;I)J fake-address [shim 3.1.6]
     memAddressSafe(Lorg/lwjgl/system/CustomBuffer;I)J fake-address [shim 3.1.6]
     memBackend()Lorg/lwjgl/system/MemoryBackend; interface-proxy: proxy MemoryBackend
-    memByteBuffer(Ljava/nio/CharBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memByteBuffer(Ljava/nio/DoubleBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memByteBuffer(Ljava/nio/FloatBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memByteBuffer(Ljava/nio/IntBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memByteBuffer(Ljava/nio/LongBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memByteBuffer(Ljava/nio/ShortBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memByteBuffer(Lorg/lwjgl/system/CustomBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memByteBuffer(Lorg/lwjgl/system/Struct;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     memByteBufferNT1(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     memByteBufferNT1Safe(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     memByteBufferNT2(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     memByteBufferNT2Safe(JI)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     memDeleteGlobalRef(J)V void [shim 3.2.2]
     memDeleteWeakGlobalRef(J)V void [shim 3.2.2]
-    memDuplicate(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memDuplicate(Ljava/nio/CharBuffer;)Ljava/nio/CharBuffer; nio-buffer-empty: buffer chars(0)
-    memDuplicate(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
-    memDuplicate(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    memDuplicate(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    memDuplicate(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
-    memDuplicate(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
     memFree(Lorg/lwjgl/PointerBuffer;)V void [shim 3.2.2]
     memGet(Ljava/nio/ByteBuffer;J)B default: default
     memGet(Ljava/nio/CharBuffer;J)C default: default
@@ -2890,20 +2795,7 @@ org/lwjgl/system/MemoryUtil default=78 fake-address=39 guarded-static-init=1 han
     memLengthNT2([BZ)I default: default
     memNewGlobalRef(Ljava/lang/Object;)J default: default [shim 3.2.2]
     memNewWeakGlobalRef(Ljava/lang/Object;)J default: default [shim 3.2.2]
-    memSlice(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    memSlice(Ljava/nio/CharBuffer;)Ljava/nio/CharBuffer; nio-buffer-empty: buffer chars(0)
-    memSlice(Ljava/nio/DoubleBuffer;)Ljava/nio/DoubleBuffer; nio-buffer-empty: buffer doubles(0)
-    memSlice(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer; nio-buffer-empty: buffer floats(0)
-    memSlice(Ljava/nio/IntBuffer;)Ljava/nio/IntBuffer; nio-buffer-empty: buffer ints(0)
-    memSlice(Ljava/nio/LongBuffer;)Ljava/nio/LongBuffer; nio-buffer-empty: buffer longs(0)
-    memSlice(Ljava/nio/ShortBuffer;)Ljava/nio/ShortBuffer; nio-buffer-empty: buffer shorts(0)
     memSlice(Lorg/lwjgl/PointerBuffer;II)Lorg/lwjgl/PointerBuffer; lwjgl-buffer [shim 3.1.6]
-    memUTF16(J)Ljava/lang/String; default: default
-    memUTF16(JI)Ljava/lang/String; default: default
-    memUTF16Safe(J)Ljava/lang/String; default: default
-    memUTF16Safe(JI)Ljava/lang/String; default: default
-    memUTF8(JI)Ljava/lang/String; default: default
-    memUTF8Safe(JI)Ljava/lang/String; default: default
     ngetCacheLineSize()I default: default
     ngetPageSize()I default: default
     putStringUTF8(Ljava/lang/CharSequence;ZLjava/nio/ByteBuffer;)I default: default

@@ -116,6 +116,14 @@ public final class GlObjects {
         return BUFFER_SIZES.getOrDefault(GlState.boundBuffer(target), 0L);
     }
 
+    /**
+     * @param buffer a buffer name.
+     * @return the size of the data store of the buffer.
+     */
+    public static long namedBufferSize(int buffer) {
+        return BUFFER_SIZES.getOrDefault(buffer, 0L);
+    }
+
     public static int bufferValue(int target, int pname) {
         switch (pname) {
             case GL_BUFFER_SIZE:

@@ -150,6 +150,15 @@ jobs:
           java-version: ${{ matrix.java }}
           distribution: temurin
 
+      # the behaviour catalogs and the allowlists of the LWJGL usage check
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          path: headlessmc-lwjgl
+          sparse-checkout: |
+            .github/scripts
+            headlessmc-lwjgl2/catalog
+            headlessmc-lwjgl3/catalog
+
       # with download-hmc: false the action expects headlessmc.jar in the working directory
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
         with:
@@ -176,7 +185,8 @@ jobs:
           xvfb: false
           cache-mc: github
           download-hmc: false
-          headlessmc-command: --retries 2 --jvm -Djava.awt.headless=true
+          # the patched LWJGL is the opt-in patcher lwjgl-pre of HeadlessMc, which replaces the lwjgl patcher
+          headlessmc-command: --patchers lwjgl-pre --retries 2 --jvm -Djava.awt.headless=true
 
       # Minecraft 1.13+ logs the LWJGL version, every version before uses LWJGL 2, which has no such line
       - name: Check that the patched LWJGL of this commit was used
@@ -191,6 +201,19 @@ jobs:
             grep "Backend library" run/logs/latest.log
             exit 1
           fi
+
+      # every LWJGL method that Minecraft, its mod loader or the mods call must have a reviewed behaviour, not a guess of
+      # the behaviour catalog, see headlessmc-lwjgl*/catalog/usage.allow; also after a failed run, to name the cause
+      - name: Check that the LWJGL methods Minecraft calls are not guessed
+        if: always()
+        run: |
+          flavour=lwjgl3
+          if grep -qh "with lwjgl2/" HeadlessMC/logs/*.log 2>/dev/null; then
+            flavour=lwjgl2
+          fi
+          catalog=headlessmc-lwjgl/headlessmc-$flavour/catalog
+          python3 -I headlessmc-lwjgl/.github/scripts/lwjgl_usage.py --locks "$catalog" --patched "patched-lwjgl/$flavour" \
+            --allow "$catalog/usage.allow" ~/.minecraft/versions ~/.minecraft/libraries run/mods
 
       # also after a failed run, to name the cause: an LWJGL jar HeadlessMc kept unpatched
       - name: Check that HeadlessMc patched every LWJGL jar

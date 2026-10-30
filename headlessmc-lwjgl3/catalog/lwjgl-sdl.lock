@@ -138,18 +138,16 @@ org/lwjgl/sdl/SDLError default=4 keep-constructor=1 sdl-success=6
     nSDL_SetError(J)Z default: default
     nSDL_SetErrorV(JJ)Z default: default
 org/lwjgl/sdl/SDLError$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLEvents default=16 handler=8 keep-constructor=1 sdl-success=2 void=8
+org/lwjgl/sdl/SDLEvents default=14 handler=10 keep-constructor=1 sdl-success=2 void=8
     SDL_GetEventDescription(Lorg/lwjgl/sdl/SDL_Event;)Ljava/lang/String; default: default
     SDL_GetEventDescription(Lorg/lwjgl/sdl/SDL_Event;I)Ljava/lang/String; default: default
     SDL_GetEventDescription(Lorg/lwjgl/sdl/SDL_Event;Ljava/nio/ByteBuffer;)I default: default
-    SDL_GetWindowFromEvent(Lorg/lwjgl/sdl/SDL_Event;)J default: default
     SDL_HasEvent(I)Z default: default
     SDL_HasEvents(II)Z default: default
     SDL_PeepEvents(Lorg/lwjgl/sdl/SDL_Event$Buffer;III)I default: default
     nSDL_AddEventWatch(JJ)Z default: default
     nSDL_GetEventDescription(JJI)I default: default
     nSDL_GetEventFilter(JJ)Z default: default
-    nSDL_GetWindowFromEvent(J)J default: default
     nSDL_PeepEvents(JIIII)I default: default
     nSDL_PollEvent(J)Z default: default
     nSDL_PushEvent(J)Z default: default
@@ -950,12 +948,11 @@ org/lwjgl/sdl/SDLVideo default=55 guarded-static-init=1 handler=54 id=3 keep-con
     nSDL_SetWindowTitle(JJ)Z default: default
     nSDL_UpdateWindowSurfaceRects(JJI)Z default: default
 org/lwjgl/sdl/SDLVideo$Functions guarded-static-init=1 keep-constructor=1
-org/lwjgl/sdl/SDLVulkan default=4 keep-constructor=1 lwjgl-buffer-empty=1 sdl-success=4 void=3
+org/lwjgl/sdl/SDLVulkan default=3 handler=3 keep-constructor=1 lwjgl-buffer-empty=1 sdl-success=2 void=3
     SDL_Vulkan_GetInstanceExtensions()Lorg/lwjgl/PointerBuffer; lwjgl-buffer-empty: buffer PointerBuffer(0)
     SDL_Vulkan_GetVkGetInstanceProcAddr()J default: default
     nSDL_Vulkan_CreateSurface(JJJJ)Z default: default
     nSDL_Vulkan_GetInstanceExtensions(J)J default: default
-    nSDL_Vulkan_LoadLibrary(J)Z default: default
 org/lwjgl/sdl/SDLVulkan$Functions guarded-static-init=1 keep-constructor=1
 org/lwjgl/sdl/SDL_AppEvent_func keep-callback=4 keep-constructor=2
 org/lwjgl/sdl/SDL_AppEvent_func$1 keep-callback=1 keep-constructor=1

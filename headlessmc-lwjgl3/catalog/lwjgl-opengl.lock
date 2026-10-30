@@ -78,7 +78,7 @@ org/lwjgl/opengl/ARBDebugOutput default=3 guarded-static-init=1 keep-constructor
 org/lwjgl/opengl/ARBDepthBufferFloat keep-constructor=1
 org/lwjgl/opengl/ARBDepthClamp keep-constructor=1
 org/lwjgl/opengl/ARBDepthTexture keep-constructor=1
-org/lwjgl/opengl/ARBDirectStateAccess default=20 guarded-static-init=1 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=2 void=279
+org/lwjgl/opengl/ARBDirectStateAccess default=18 guarded-static-init=1 handler=3 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=1 void=279
     glGetNamedBufferParameteri(II)I default: default
     glGetNamedBufferParameteri64(II)J default: default
     glGetNamedBufferPointer(II)J default: default
@@ -99,8 +99,6 @@ org/lwjgl/opengl/ARBDirectStateAccess default=20 guarded-static-init=1 id=9 keep
     glGetVertexArrayi(II)I default: default
     glMapNamedBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     glMapNamedBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    nglMapNamedBuffer(II)J default: default
-    nglMapNamedBufferRange(IJJI)J default: default
 org/lwjgl/opengl/ARBDrawBuffers guarded-static-init=1 keep-constructor=1 void=3
 org/lwjgl/opengl/ARBDrawBuffersBlend guarded-static-init=1 keep-constructor=1 void=4
 org/lwjgl/opengl/ARBDrawElementsBaseVertex guarded-static-init=1 keep-constructor=1 void=21
@@ -151,8 +149,7 @@ org/lwjgl/opengl/ARBInternalformatQuery2 default=1 guarded-static-init=1 keep-co
     glGetInternalformati64(III)J default: default
 org/lwjgl/opengl/ARBInvalidateSubdata guarded-static-init=1 keep-constructor=1 void=12
 org/lwjgl/opengl/ARBMapBufferAlignment keep-constructor=1
-org/lwjgl/opengl/ARBMapBufferRange default=1 guarded-static-init=1 keep-constructor=1 nio-buffer=2 void=1
-    nglMapBufferRange(IJJI)J default: default
+org/lwjgl/opengl/ARBMapBufferRange guarded-static-init=1 handler=1 keep-constructor=1 nio-buffer=2 void=1
 org/lwjgl/opengl/ARBMatrixPalette guarded-static-init=1 keep-constructor=1 void=15
 org/lwjgl/opengl/ARBMultiBind guarded-static-init=1 keep-constructor=1 void=18
 org/lwjgl/opengl/ARBMultiDrawIndirect guarded-static-init=1 keep-constructor=1 void=10
@@ -311,12 +308,11 @@ org/lwjgl/opengl/ARBVertexArrayObject guarded-static-init=1 id=1 is-object=1 kee
 org/lwjgl/opengl/ARBVertexAttrib64Bit guarded-static-init=1 keep-constructor=1 void=24
 org/lwjgl/opengl/ARBVertexAttribBinding guarded-static-init=1 keep-constructor=1 void=12
 org/lwjgl/opengl/ARBVertexBlend guarded-static-init=1 keep-constructor=1 void=32
-org/lwjgl/opengl/ARBVertexBufferObject default=3 guarded-static-init=1 id=1 is-object=1 keep-constructor=1 nio-buffer=1 nio-buffer-empty=2 success=1 void=44
+org/lwjgl/opengl/ARBVertexBufferObject default=2 guarded-static-init=1 handler=2 id=1 is-object=1 keep-constructor=1 nio-buffer=1 nio-buffer-empty=2 void=44
     glGetBufferParameteriARB(II)I default: default
     glGetBufferPointerARB(II)J default: default
     glMapBufferARB(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     glMapBufferARB(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    nglMapBufferARB(II)J default: default
 org/lwjgl/opengl/ARBVertexProgram default=3 guarded-static-init=1 id=1 is-object=1 keep-constructor=1 void=142
     glGetProgramiARB(II)I default: default
     glGetVertexAttribPointerARB(II)J default: default
@@ -431,7 +427,7 @@ org/lwjgl/opengl/EXTDebugLabel default=1 guarded-static-init=1 keep-constructor=
     glGetObjectLabelEXT(III)Ljava/lang/String; default: default
 org/lwjgl/opengl/EXTDebugMarker guarded-static-init=1 keep-constructor=1 void=7
 org/lwjgl/opengl/EXTDepthBoundsTest guarded-static-init=1 keep-constructor=1 void=1
-org/lwjgl/opengl/EXTDirectStateAccess default=37 guarded-static-init=1 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=2 void=589
+org/lwjgl/opengl/EXTDirectStateAccess default=35 guarded-static-init=1 handler=3 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=1 void=589
     glGetBooleanIndexedEXT(II)Z default: default
     glGetDoubleIndexedEXT(II)D default: default
     glGetDoubleiEXT(II)D default: default
@@ -469,8 +465,6 @@ org/lwjgl/opengl/EXTDirectStateAccess default=37 guarded-static-init=1 keep-cons
     glIsEnabledIndexedEXT(II)Z default: default
     glMapNamedBufferEXT(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     glMapNamedBufferEXT(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    nglMapNamedBufferEXT(II)J default: default
-    nglMapNamedBufferRangeEXT(IJJI)J default: default
 org/lwjgl/opengl/EXTDrawBuffers2 default=3 guarded-static-init=1 keep-constructor=1 void=8
     glGetBooleanIndexedEXT(II)Z default: default
     glGetIntegerIndexedEXT(II)I default: default
@@ -611,18 +605,16 @@ org/lwjgl/opengl/GL13 guarded-static-init=1 handler=1 keep-constructor=1 void=99
 org/lwjgl/opengl/GL13C guarded-static-init=1 handler=1 keep-constructor=1 void=22
 org/lwjgl/opengl/GL14 guarded-static-init=1 handler=2 keep-constructor=1 void=96
 org/lwjgl/opengl/GL14C guarded-static-init=1 handler=2 keep-constructor=1 void=15
-org/lwjgl/opengl/GL15 default=5 guarded-static-init=1 handler=18 id=2 is-object=2 keep-constructor=1 nio-buffer=1 success=1 void=55
+org/lwjgl/opengl/GL15 default=4 guarded-static-init=1 handler=20 id=2 is-object=2 keep-constructor=1 nio-buffer=1 void=55
     glGetBufferPointer(II)J default: default
     glGetQueryObjecti(II)I default: default
     glGetQueryObjectui(II)I default: default
     glGetQueryi(II)I default: default
-    nglMapBuffer(II)J default: default
-org/lwjgl/opengl/GL15C default=5 guarded-static-init=1 handler=18 id=2 is-object=2 keep-constructor=1 nio-buffer=1 success=1 void=55
+org/lwjgl/opengl/GL15C default=4 guarded-static-init=1 handler=20 id=2 is-object=2 keep-constructor=1 nio-buffer=1 void=55
     glGetBufferPointer(II)J default: default
     glGetQueryObjecti(II)I default: default
     glGetQueryObjectui(II)I default: default
     glGetQueryi(II)I default: default
-    nglMapBuffer(II)J default: default
 org/lwjgl/opengl/GL20 default=20 guarded-static-init=1 handler=12 id=1 is-object=2 keep-constructor=1 void=183
     glGetActiveAttrib(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
     glGetActiveAttrib(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String; default: default
@@ -667,7 +659,7 @@ org/lwjgl/opengl/GL20C default=20 guarded-static-init=1 handler=12 id=1 is-objec
     nglGetUniformLocation(IJ)I default: default
 org/lwjgl/opengl/GL21 guarded-static-init=1 keep-constructor=1 void=18
 org/lwjgl/opengl/GL21C guarded-static-init=1 keep-constructor=1 void=18
-org/lwjgl/opengl/GL30 default=13 guarded-static-init=1 handler=22 id=3 is-object=3 keep-constructor=1 nio-buffer=2 success=1 void=144
+org/lwjgl/opengl/GL30 default=12 guarded-static-init=1 handler=23 id=3 is-object=3 keep-constructor=1 nio-buffer=2 success=1 void=144
     glGetFragDataLocation(ILjava/lang/CharSequence;)I default: default
     glGetFragDataLocation(ILjava/nio/ByteBuffer;)I default: default
     glGetTexParameterIi(II)I default: default
@@ -680,8 +672,7 @@ org/lwjgl/opengl/GL30 default=13 guarded-static-init=1 handler=22 id=3 is-object
     glIsEnabledi(II)Z default: default
     nglGetFragDataLocation(IJ)I default: default
     nglGetStringi(II)J default: default
-    nglMapBufferRange(IJJI)J default: default
-org/lwjgl/opengl/GL30C default=13 guarded-static-init=1 handler=22 id=3 is-object=3 keep-constructor=1 nio-buffer=2 success=1 void=144
+org/lwjgl/opengl/GL30C default=12 guarded-static-init=1 handler=23 id=3 is-object=3 keep-constructor=1 nio-buffer=2 success=1 void=144
     glGetFragDataLocation(ILjava/lang/CharSequence;)I default: default
     glGetFragDataLocation(ILjava/nio/ByteBuffer;)I default: default
     glGetTexParameterIi(II)I default: default
@@ -694,7 +685,6 @@ org/lwjgl/opengl/GL30C default=13 guarded-static-init=1 handler=22 id=3 is-objec
     glIsEnabledi(II)Z default: default
     nglGetFragDataLocation(IJ)I default: default
     nglGetStringi(II)J default: default
-    nglMapBufferRange(IJJI)J default: default
 org/lwjgl/opengl/GL31 default=10 guarded-static-init=1 keep-constructor=1 void=27
     glGetActiveUniformBlockName(II)Ljava/lang/String; default: default
     glGetActiveUniformBlockName(III)Ljava/lang/String; default: default
@@ -845,7 +835,7 @@ org/lwjgl/opengl/GL43C default=21 guarded-static-init=1 keep-constructor=1 void=
     nglGetProgramResourceLocationIndex(IIJ)I default: default
 org/lwjgl/opengl/GL44 guarded-static-init=1 keep-constructor=1 void=49
 org/lwjgl/opengl/GL44C guarded-static-init=1 keep-constructor=1 void=49
-org/lwjgl/opengl/GL45 default=30 guarded-static-init=1 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=2 void=385
+org/lwjgl/opengl/GL45 default=28 guarded-static-init=1 handler=3 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=1 void=385
     glGetGraphicsResetStatus()I default: default
     glGetNamedBufferParameteri(II)I default: default
     glGetNamedBufferParameteri64(II)J default: default
@@ -880,9 +870,7 @@ org/lwjgl/opengl/GL45 default=30 guarded-static-init=1 id=9 keep-constructor=1 n
     glGetnUniformuiv(II[F)V void [shim 3.2.2]
     glMapNamedBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     glMapNamedBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    nglMapNamedBuffer(II)J default: default
-    nglMapNamedBufferRange(IJJI)J default: default
-org/lwjgl/opengl/GL45C default=27 guarded-static-init=1 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=2 void=343
+org/lwjgl/opengl/GL45C default=25 guarded-static-init=1 handler=3 id=9 keep-constructor=1 nio-buffer=3 nio-buffer-empty=2 success=1 void=343
     glGetGraphicsResetStatus()I default: default
     glGetNamedBufferParameteri(II)I default: default
     glGetNamedBufferParameteri64(II)J default: default
@@ -914,8 +902,6 @@ org/lwjgl/opengl/GL45C default=27 guarded-static-init=1 id=9 keep-constructor=1 
     glGetnUniformuiv(II[F)V void [shim 3.2.2]
     glMapNamedBuffer(II)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     glMapNamedBuffer(IILjava/nio/ByteBuffer;)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
-    nglMapNamedBuffer(II)J default: default
-    nglMapNamedBufferRange(IJJI)J default: default
 org/lwjgl/opengl/GL46 guarded-static-init=1 keep-constructor=1 void=16
 org/lwjgl/opengl/GL46C guarded-static-init=1 keep-constructor=1 void=16
 org/lwjgl/opengl/GLCapabilities default=257 keep-constructor=1 lwjgl-buffer-empty=1 void=1

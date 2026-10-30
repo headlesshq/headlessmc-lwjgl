@@ -138,6 +138,27 @@ public sealed interface Behaviour {
     }
 
     /**
+     * Returns a parameter, e.g. the output pointer of {@code stbir_resize_uint8_linear}.
+     *
+     * @param parameter the index of the parameter, not counting {@code this}.
+     */
+    record Parameter(int parameter) implements Behaviour {
+        @Override
+        public String describe() {
+            return "arg" + parameter;
+        }
+
+        @Override
+        public InsnList emit(MethodInfo method) {
+            InsnList il = new InsnList();
+            Type type = method.argumentTypes()[parameter];
+            il.add(new VarInsnNode(type.getOpcode(ILOAD), method.slot(parameter)));
+            il.add(new InsnNode(method.returnType().getOpcode(IRETURN)));
+            return il;
+        }
+    }
+
+    /**
      * Returns {@code this}, for fluent instance methods.
      */
     record ReturnThis() implements Behaviour {

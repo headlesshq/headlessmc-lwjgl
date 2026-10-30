@@ -33,6 +33,7 @@ public final class Lwjgl2GlPatches {
     private static final String GL14 = "org/lwjgl/opengl/GL14";
     private static final String GL15 = "org/lwjgl/opengl/GL15";
     private static final String GL20 = "org/lwjgl/opengl/GL20";
+    private static final String ARB_SHADER_OBJECTS = "org/lwjgl/opengl/ARBShaderObjects";
     private static final String GL30 = "org/lwjgl/opengl/GL30";
     private static final String GL32 = "org/lwjgl/opengl/GL32";
     private static final String GL33 = "org/lwjgl/opengl/GL33";
@@ -322,6 +323,21 @@ public final class Lwjgl2GlPatches {
         params.put(params.position(), GlObjects.shaderValue(shader, pname));
     }
 
+    /**
+     * Shader objects and program objects share their names, the status tokens of {@code ARB_shader_objects} have the
+     * values of the GL 2.0 ones, e.g. {@code GL_OBJECT_COMPILE_STATUS_ARB} is {@code GL_COMPILE_STATUS}.
+     */
+    @Patch(owner = ARB_SHADER_OBJECTS)
+    public static int glGetObjectParameteriARB(int obj, int pname) {
+        int shaderValue = GlObjects.shaderValue(obj, pname);
+        return shaderValue != 0 ? shaderValue : GlObjects.programValue(obj, pname);
+    }
+
+    @Patch(owner = ARB_SHADER_OBJECTS)
+    public static void glGetObjectParameterARB(int obj, int pname, IntBuffer params) {
+        params.put(params.position(), glGetObjectParameteriARB(obj, pname));
+    }
+
     @Patch(owner = GL20)
     public static int glGetProgrami(int program, int pname) {
         return GlObjects.programValue(program, pname);
@@ -427,6 +443,65 @@ public final class Lwjgl2GlPatches {
     public static void glTexImage1D(int target, int level, int internalformat, int width, int border, int format,
                                     int type, long pixels) {
         GlObjects.textureImage(target, level, internalformat, width, 1);
+    }
+
+    /**
+     * Texture parameters are recorded and read back like with LWJGL 3, Minecraft 1.7 to 1.12 read their filters.
+     */
+    @Patch(owner = GL11)
+    public static void glTexParameteri(int target, int pname, int param) {
+        GlObjects.textureParameter(target, pname, param);
+    }
+
+    @Patch(owner = GL11)
+    public static void glTexParameterf(int target, int pname, float param) {
+        GlObjects.textureParameter(target, pname, param);
+    }
+
+    @Patch(owner = GL11)
+    public static void glTexParameter(int target, int pname, IntBuffer params) {
+        double[] values = new double[params.remaining()];
+        for (int i = 0; i < values.length; i++) {
+            values[i] = params.get(params.position() + i);
+        }
+
+        GlObjects.textureParameter(target, pname, values);
+    }
+
+    @Patch(owner = GL11)
+    public static void glTexParameter(int target, int pname, FloatBuffer params) {
+        double[] values = new double[params.remaining()];
+        for (int i = 0; i < values.length; i++) {
+            values[i] = params.get(params.position() + i);
+        }
+
+        GlObjects.textureParameter(target, pname, values);
+    }
+
+    @Patch(owner = GL11)
+    public static int glGetTexParameteri(int target, int pname) {
+        return (int) Math.round(GlObjects.textureParameter(target, pname)[0]);
+    }
+
+    @Patch(owner = GL11)
+    public static float glGetTexParameterf(int target, int pname) {
+        return (float) GlObjects.textureParameter(target, pname)[0];
+    }
+
+    @Patch(owner = GL11)
+    public static void glGetTexParameter(int target, int pname, IntBuffer params) {
+        double[] values = GlObjects.textureParameter(target, pname);
+        for (int i = 0; i < values.length && i < params.remaining(); i++) {
+            params.put(params.position() + i, (int) Math.round(values[i]));
+        }
+    }
+
+    @Patch(owner = GL11)
+    public static void glGetTexParameter(int target, int pname, FloatBuffer params) {
+        double[] values = GlObjects.textureParameter(target, pname);
+        for (int i = 0; i < values.length && i < params.remaining(); i++) {
+            params.put(params.position() + i, (float) values[i]);
+        }
     }
 
 }
