@@ -185,7 +185,8 @@ jobs:
           xvfb: false
           cache-mc: github
           download-hmc: false
-          headlessmc-command: --retries 2 --jvm -Djava.awt.headless=true
+          # the patched LWJGL is the opt-in patcher lwjgl-pre of HeadlessMc, which replaces the lwjgl patcher
+          headlessmc-command: --patchers lwjgl-pre --retries 2 --jvm -Djava.awt.headless=true
 
       # Minecraft 1.13+ logs the LWJGL version, every version before uses LWJGL 2, which has no such line
       - name: Check that the patched LWJGL of this commit was used

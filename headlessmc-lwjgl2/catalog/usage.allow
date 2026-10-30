@@ -3,6 +3,7 @@
 # called: give it a reviewed behaviour, a rule or a handler, or add it here with the reason.
 
 # Error queries: 0 is no error, there are no errors
+org/lwjgl/openal/AL10.alGetError()I
 org/lwjgl/opengl/GL11.glGetError()I
 
 # Shader introspection: compilation and linking succeed with empty info logs, every uniform, attribute and block resolves to 0

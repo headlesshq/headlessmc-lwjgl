@@ -6,22 +6,18 @@
 org/lwjgl/glfw/GLFWVulkan.glfwGetPhysicalDevicePresentationSupport(Lorg/lwjgl/vulkan/VkInstance;Lorg/lwjgl/vulkan/VkPhysicalDevice;I)Z
 org/lwjgl/glfw/GLFWVulkan.glfwGetRequiredInstanceExtensions()Lorg/lwjgl/PointerBuffer;
 org/lwjgl/glfw/GLFWVulkan.glfwVulkanSupported()Z
+org/lwjgl/sdl/SDLVulkan.SDL_Vulkan_GetInstanceExtensions()Lorg/lwjgl/PointerBuffer;
+org/lwjgl/sdl/SDLVulkan.SDL_Vulkan_GetVkGetInstanceProcAddr()J
 org/lwjgl/util/shaderc/Shaderc.shaderc_compile_into_spv(JLjava/nio/ByteBuffer;ILjava/nio/ByteBuffer;Ljava/nio/ByteBuffer;J)J
 org/lwjgl/util/shaderc/Shaderc.shaderc_compile_options_initialize()J
 org/lwjgl/util/shaderc/Shaderc.shaderc_compiler_initialize()J
 org/lwjgl/util/shaderc/Shaderc.shaderc_result_get_compilation_status(J)I
 org/lwjgl/util/shaderc/Shaderc.shaderc_result_get_error_message(J)Ljava/lang/String;
-org/lwjgl/util/spvc/Spvc.spvc_compiler_create_shader_resources(JLorg/lwjgl/PointerBuffer;)I
-org/lwjgl/util/spvc/Spvc.spvc_compiler_get_binary_offset_for_decoration(JIILjava/nio/IntBuffer;)Z
-org/lwjgl/util/spvc/Spvc.spvc_compiler_get_type_handle(JI)J
-org/lwjgl/util/spvc/Spvc.spvc_context_create(Lorg/lwjgl/PointerBuffer;)I
-org/lwjgl/util/spvc/Spvc.spvc_context_create_compiler(JIJILorg/lwjgl/PointerBuffer;)I
-org/lwjgl/util/spvc/Spvc.spvc_context_parse_spirv(JLjava/nio/IntBuffer;JLorg/lwjgl/PointerBuffer;)I
-org/lwjgl/util/spvc/Spvc.spvc_type_get_image_dimension(J)I
 org/lwjgl/util/vma/Vma.vmaCreateAllocator(Lorg/lwjgl/util/vma/VmaAllocatorCreateInfo;Lorg/lwjgl/PointerBuffer;)I
 org/lwjgl/util/vma/Vma.vmaCreateBuffer(JLorg/lwjgl/vulkan/VkBufferCreateInfo;Lorg/lwjgl/util/vma/VmaAllocationCreateInfo;Ljava/nio/LongBuffer;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/util/vma/VmaAllocationInfo;)I
 org/lwjgl/util/vma/Vma.vmaCreateImage(JLorg/lwjgl/vulkan/VkImageCreateInfo;Lorg/lwjgl/util/vma/VmaAllocationCreateInfo;Ljava/nio/LongBuffer;Lorg/lwjgl/PointerBuffer;Lorg/lwjgl/util/vma/VmaAllocationInfo;)I
 org/lwjgl/util/vma/Vma.vmaMapMemory(JJLorg/lwjgl/PointerBuffer;)I
+org/lwjgl/vulkan/EXTCalibratedTimestamps.vkGetCalibratedTimestampsEXT(Lorg/lwjgl/vulkan/VkDevice;Lorg/lwjgl/vulkan/VkCalibratedTimestampInfoKHR$Buffer;Ljava/nio/LongBuffer;Ljava/nio/LongBuffer;)I
 org/lwjgl/vulkan/EXTDebugUtils.vkCreateDebugUtilsMessengerEXT(Lorg/lwjgl/vulkan/VkInstance;Lorg/lwjgl/vulkan/VkDebugUtilsMessengerCreateInfoEXT;Lorg/lwjgl/vulkan/VkAllocationCallbacks;Ljava/nio/LongBuffer;)I
 org/lwjgl/vulkan/EXTDebugUtils.vkSetDebugUtilsObjectNameEXT(Lorg/lwjgl/vulkan/VkDevice;Lorg/lwjgl/vulkan/VkDebugUtilsObjectNameInfoEXT;)I
 org/lwjgl/vulkan/KHRSurface.vkGetPhysicalDeviceSurfaceCapabilitiesKHR(Lorg/lwjgl/vulkan/VkPhysicalDevice;JLorg/lwjgl/vulkan/VkSurfaceCapabilitiesKHR;)I
@@ -58,10 +54,34 @@ org/lwjgl/vulkan/VK12.vkWaitSemaphores(Lorg/lwjgl/vulkan/VkDevice;Lorg/lwjgl/vul
 org/lwjgl/vulkan/VkDevice.getPhysicalDevice()Lorg/lwjgl/vulkan/VkPhysicalDevice;
 org/lwjgl/vulkan/VkPhysicalDevice.getInstance()Lorg/lwjgl/vulkan/VkInstance;
 
+# SPIR-V reflection and cross-compilation by Minecraft 26.3's OpenGL backend succeed without output: shaders reach the emulated OpenGL empty, which accepts them, like the transformer based lwjgl patcher of HeadlessMc
+org/lwjgl/util/spvc/Spvc.spvc_compiler_compile(JLorg/lwjgl/PointerBuffer;)I
+org/lwjgl/util/spvc/Spvc.spvc_compiler_create_compiler_options(JLorg/lwjgl/PointerBuffer;)I
+org/lwjgl/util/spvc/Spvc.spvc_compiler_create_shader_resources(JLorg/lwjgl/PointerBuffer;)I
+org/lwjgl/util/spvc/Spvc.spvc_compiler_get_binary_offset_for_decoration(JIILjava/nio/IntBuffer;)Z
+org/lwjgl/util/spvc/Spvc.spvc_compiler_get_declared_struct_size(JJLorg/lwjgl/PointerBuffer;)I
+org/lwjgl/util/spvc/Spvc.spvc_compiler_get_decoration(JII)I
+org/lwjgl/util/spvc/Spvc.spvc_compiler_get_name(JI)Ljava/lang/String;
+org/lwjgl/util/spvc/Spvc.spvc_compiler_get_type_handle(JI)J
+org/lwjgl/util/spvc/Spvc.spvc_compiler_install_compiler_options(JJ)I
+org/lwjgl/util/spvc/Spvc.spvc_compiler_options_set_bool(JIZ)I
+org/lwjgl/util/spvc/Spvc.spvc_compiler_options_set_uint(JII)I
+org/lwjgl/util/spvc/Spvc.spvc_compiler_set_entry_point(JLjava/lang/CharSequence;I)I
+org/lwjgl/util/spvc/Spvc.spvc_context_create(Lorg/lwjgl/PointerBuffer;)I
+org/lwjgl/util/spvc/Spvc.spvc_context_create_compiler(JIJILorg/lwjgl/PointerBuffer;)I
+org/lwjgl/util/spvc/Spvc.spvc_context_parse_spirv(JLjava/nio/IntBuffer;JLorg/lwjgl/PointerBuffer;)I
+org/lwjgl/util/spvc/Spvc.spvc_type_get_array_dimension(JI)I
+org/lwjgl/util/spvc/Spvc.spvc_type_get_basetype(J)I
+org/lwjgl/util/spvc/Spvc.spvc_type_get_image_dimension(J)I
+org/lwjgl/util/spvc/Spvc.spvc_type_get_num_array_dimensions(J)I
+org/lwjgl/util/spvc/Spvc.spvc_type_get_vector_size(J)I
+
 # Native library handles are dummies, Minecraft only logs their paths
 org/lwjgl/glfw/GLFW.getLibrary()Lorg/lwjgl/system/SharedLibrary;
 org/lwjgl/openal/ALC.getFunctionProvider()Lorg/lwjgl/system/FunctionProviderLocal;
 org/lwjgl/opengl/GL.getFunctionProvider()Lorg/lwjgl/system/FunctionProvider;
+org/lwjgl/sdl/SDL.getLibrary()Lorg/lwjgl/system/SharedLibrary;
+org/lwjgl/system/FunctionProvider.getFunctionAddress(Ljava/lang/CharSequence;)J
 org/lwjgl/util/freetype/FreeType.getLibrary()Lorg/lwjgl/system/SharedLibrary;
 org/lwjgl/util/shaderc/Shaderc.getLibrary()Lorg/lwjgl/system/SharedLibrary;
 org/lwjgl/util/spvc/Spvc.getLibrary()Lorg/lwjgl/system/SharedLibrary;
@@ -72,9 +92,11 @@ org/lwjgl/openal/AL10.alGetError()I
 org/lwjgl/openal/ALC10.alcGetError(J)I
 org/lwjgl/opengl/GL11.glGetError()I
 org/lwjgl/opengl/GL11C.glGetError()I
+org/lwjgl/sdl/SDLError.SDL_GetError()Ljava/lang/String;
 org/lwjgl/stb/STBVorbis.stb_vorbis_get_error(J)I
 
 # Shader introspection: compilation and linking succeed with empty info logs, every uniform, attribute and block resolves to 0
+org/lwjgl/opengl/GL20.glGetActiveUniform(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String;
 org/lwjgl/opengl/GL20.glGetAttribLocation(ILjava/lang/CharSequence;)I
 org/lwjgl/opengl/GL20.glGetProgramInfoLog(II)Ljava/lang/String;
 org/lwjgl/opengl/GL20.glGetShaderInfoLog(II)Ljava/lang/String;
@@ -87,21 +109,26 @@ org/lwjgl/opengl/GL20C.glGetUniformLocation(ILjava/lang/CharSequence;)I
 org/lwjgl/opengl/GL31.glGetActiveUniformBlockName(II)Ljava/lang/String;
 org/lwjgl/opengl/GL31.glGetUniformBlockIndex(ILjava/lang/CharSequence;)I
 org/lwjgl/opengl/GL31C.glGetActiveUniformBlockName(II)Ljava/lang/String;
+org/lwjgl/opengl/GL31C.glGetActiveUniformName(II)Ljava/lang/String;
 org/lwjgl/opengl/GL31C.glGetUniformBlockIndex(ILjava/lang/CharSequence;)I
 
-# Queries without a GPU: timer and occlusion queries count 0, framebuffer attachments report no parameters
+# Queries without a GPU: timer and occlusion queries count 0, framebuffer attachments and vertex attributes report no parameters
 org/lwjgl/opengl/ARBTimerQuery.glGetQueryObjecti64(II)J
 org/lwjgl/opengl/EXTFramebufferObject.glGetFramebufferAttachmentParameteriEXT(III)I
 org/lwjgl/opengl/GL15C.glGetQueryObjecti(II)I
+org/lwjgl/opengl/GL20C.glGetVertexAttribi(II)I
 org/lwjgl/opengl/GL33C.glGetQueryObjectui64(II)J
 
-# Unsupported optional features: no platform specific window handles, platforms and system events, no clipboard
+# Unsupported optional features: no platform specific window handles, platforms, macOS runtime and system events, no clipboard
 org/lwjgl/glfw/GLFW.glfwGetClipboardString(J)Ljava/lang/String;
 org/lwjgl/glfw/GLFW.glfwGetWindowMonitor(J)J
 org/lwjgl/glfw/GLFW.glfwPlatformSupported(I)Z
 org/lwjgl/glfw/GLFWNativeCocoa.glfwGetCocoaWindow(J)J
 org/lwjgl/openal/SOFTSystemEvents.alcEventControlSOFT([IZ)Z
 org/lwjgl/openal/SOFTSystemEvents.alcEventIsSupportedSOFT(II)I
+org/lwjgl/sdl/SDLClipboard.SDL_GetClipboardText()Ljava/lang/String;
+org/lwjgl/sdl/SDLPlatform.SDL_GetPlatform()Ljava/lang/String;
+org/lwjgl/system/macosx/ObjCRuntime.sel_getUid(Ljava/lang/CharSequence;)J
 
 # Dialogs and URLs: there is no user, every dialog is cancelled and no browser opens
 org/lwjgl/util/tinyfd/TinyFileDialogs.tinyfd_getGlobalChar(Ljava/lang/CharSequence;)Ljava/lang/String;
@@ -120,6 +147,7 @@ org/lwjgl/system/MemoryUtil.getAllocator(Z)Lorg/lwjgl/system/MemoryUtil$MemoryAl
 org/lwjgl/util/freetype/FreeType.FT_Done_Face(Lorg/lwjgl/util/freetype/FT_Face;)I
 org/lwjgl/util/freetype/FreeType.FT_Done_Library(J)I
 org/lwjgl/util/freetype/FreeType.FT_Error_String(I)Ljava/lang/String;
+org/lwjgl/util/freetype/FreeType.FT_Get_Char_Index(Lorg/lwjgl/util/freetype/FT_Face;J)I
 org/lwjgl/util/freetype/FreeType.FT_Get_First_Char(Lorg/lwjgl/util/freetype/FT_Face;Ljava/nio/IntBuffer;)J
 org/lwjgl/util/freetype/FreeType.FT_Get_Font_Format(Lorg/lwjgl/util/freetype/FT_Face;)Ljava/lang/String;
 org/lwjgl/util/freetype/FreeType.FT_Get_Next_Char(Lorg/lwjgl/util/freetype/FT_Face;JLjava/nio/IntBuffer;)J
