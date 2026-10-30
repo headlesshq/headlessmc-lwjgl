@@ -46,3 +46,24 @@ subprojects {
         }
     }
 }
+
+/**
+ * Stages the patched jars in the layout of HeadlessMc's hmc.lwjgl.patched-directory, so that HeadlessMc launches
+ * Minecraft with this build instead of the locked release.
+ */
+tasks.register('headlessMcDirectory', Sync) {
+    group = 'build'
+    description = 'Stages the patched jars for -Dhmc.lwjgl.patched-directory=build/headlessmc.'
+    into layout.buildDirectory.dir('headlessmc')
+    from(project(':headlessmc-lwjgl3').tasks.named('patchLwjgl')) {
+        include '*.jar'
+        into 'lwjgl3'
+    }
+    from(project(':headlessmc-lwjgl2').tasks.named('patchLwjgl')) {
+        include '*.jar'
+        into 'lwjgl2'
+    }
+    from(project(':headlessmc-lwjgl-api').tasks.named('jar')) {
+        rename { 'headlessmc-lwjgl-api.jar' }
+    }
+}

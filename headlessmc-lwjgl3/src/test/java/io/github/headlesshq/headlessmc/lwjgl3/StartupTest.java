@@ -196,6 +196,12 @@ class StartupTest {
     void sdl() {
         assertTrue(SDLInit.SDL_Init(SDLInit.SDL_INIT_VIDEO));
         assertNotEquals(0L, SDLVideo.SDL_CreateWindow("HeadlessMc", 854, 480, 0L));
+        // uses the OpenGL runtime embedded into another module, which fails if the SDL module does not read it
+        try (MemoryStack stack = MemoryStack.stackPush()) {
+            IntBuffer major = stack.mallocInt(1);
+            assertTrue(SDLVideo.SDL_GL_GetAttribute(SDLVideo.SDL_GL_CONTEXT_MAJOR_VERSION, major));
+            assertTrue(major.get(0) > 0);
+        }
     }
 
     @Test

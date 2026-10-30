@@ -29,6 +29,8 @@ def compileModuleInfo = tasks.named('compileJava9Java', JavaCompile) {
 tasks.named('jar', Jar) {
     manifest {
         attributes 'Multi-Release': true
+        // the module name when the module descriptor is stripped or ignored, e.g. by HeadlessMc for Forge 1.12.2
+        attributes 'Automatic-Module-Name': 'io.github.headlesshq.headlessmc.lwjgl.api'
         attributes 'Implementation-Title': project.name
         attributes 'Implementation-Version': project.version
         attributes 'Implementation-Vendor': 'HeadlessHQ'

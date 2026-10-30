@@ -180,6 +180,35 @@ public sealed interface Behaviour {
     }
 
     /**
+     * Stores a function pointer in {@code CallbackSlots} and returns the previous one, for native callback setters like
+     * {@code nglfwSetKeyCallback(window, cbfun)}: the first parameter of a setter with two is the scope, e.g. the
+     * window, the last one the new function pointer.
+     */
+    record CallbackSlot() implements Behaviour {
+        @Override
+        public String describe() {
+            return "callback-slot";
+        }
+
+        @Override
+        public InsnList emit(MethodInfo method) {
+            InsnList il = new InsnList();
+            int function = method.argumentTypes().length - 1;
+            il.add(new LdcInsnNode(method.name()));
+            if (function == 0) {
+                il.add(new InsnNode(LCONST_0));
+            } else {
+                il.add(new VarInsnNode(LLOAD, method.slot(0)));
+            }
+
+            il.add(new VarInsnNode(LLOAD, method.slot(function)));
+            il.add(new MethodInsnNode(INVOKESTATIC, RUNTIME + "CallbackSlots", "swap", "(Ljava/lang/String;JJ)J", false));
+            il.add(new InsnNode(LRETURN));
+            return il;
+        }
+    }
+
+    /**
      * Delegates to a static runtime method annotated with {@code @Patch}.
      */
     record Handler(String owner, String name, String desc) implements Behaviour {

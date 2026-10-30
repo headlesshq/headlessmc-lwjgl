@@ -44,7 +44,7 @@ org/lwjgl/system/APIUtil$1 guarded-static-init=1
 org/lwjgl/system/APIUtil$APIVersion default=1 identity=2 keep-bridge=1 keep-constructor=2 keep-to-string=1
     compareTo(Lorg/lwjgl/system/APIUtil$APIVersion;)I default: default
 org/lwjgl/system/APIUtil$Encoder keep-abstract-interface-method=1
-org/lwjgl/system/Callback default=1 identity=2 keep-constructor=4 keep-pointer-address=1 keep-pure-java-method=4 keep-to-string=1
+org/lwjgl/system/Callback default=1 keep-constructor=4 keep-pointer-address=1 keep-pointer-equality=2 keep-pure-java-method=4 keep-to-string=1
     <init>(Ljava/lang/String;)V keep-constructor [shim 3.2.2]
     <init>(Lorg/lwjgl/system/libffi/FFICIF;)V keep-constructor [shim 3.3.3]
     __stdcall(Ljava/lang/String;)Ljava/lang/String; default: default [shim 3.2.2]
@@ -2791,7 +2791,7 @@ org/lwjgl/system/MemoryStack$1 default=6 fake-address=4 keep-constructor=1 void=
     getMalloc()J default: default
     getRealloc()J default: default
 org/lwjgl/system/MemoryStack$DebugMemoryStack fluent=2 keep-constructor=1 void=3
-org/lwjgl/system/MemoryUtil default=78 fake-address=42 guarded-static-init=1 handler=112 interface-proxy=4 keep-constructor=1 lwjgl-buffer=12 nio-buffer=27 nio-buffer-empty=27 void=157
+org/lwjgl/system/MemoryUtil default=78 fake-address=39 guarded-static-init=1 handler=112 interface-proxy=4 keep-constructor=1 keep-pointer-address-of=3 lwjgl-buffer=12 nio-buffer=27 nio-buffer-empty=27 void=157
     allocateUTF8(Ljava/lang/CharSequence;Z)Ljava/nio/ByteBuffer; nio-buffer-empty: buffer bytes(0)
     createBackend()Lorg/lwjgl/system/MemoryBackend; interface-proxy: proxy MemoryBackend
     encodeUTF8Safe(Ljava/lang/CharSequence;ZJI)I default: default
@@ -2931,7 +2931,7 @@ org/lwjgl/system/Platform$3 keep-constructor=1 keep-enum=1
 org/lwjgl/system/Platform$4 keep-constructor=1 keep-enum=1
 org/lwjgl/system/Platform$Architecture guarded-static-init=1 keep-constructor=1 keep-enum=4
 org/lwjgl/system/Pointer keep-abstract-interface-method=1 keep-interface-static-init=1
-org/lwjgl/system/Pointer$Default handler=3 identity=2 keep-constructor=1 keep-pointer-address=1 keep-to-string=1
+org/lwjgl/system/Pointer$Default handler=3 keep-constructor=1 keep-pointer-address=1 keep-pointer-equality=2 keep-to-string=1
     wrap(Ljava/lang/Class;JI)Lorg/lwjgl/system/CustomBuffer; handler [shim 3.3.2]
     wrap(Ljava/lang/Class;JILjava/nio/ByteBuffer;)Lorg/lwjgl/system/CustomBuffer; handler [shim 3.3.2]
     wrap(Ljava/lang/Class;Lorg/lwjgl/system/CustomBuffer;)Lorg/lwjgl/system/CustomBuffer; handler [shim 3.3.2]

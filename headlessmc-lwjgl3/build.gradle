@@ -35,3 +35,37 @@ tasks.named('check') {
     dependsOn testModulePath
 }
 
+
+def strippedApiJar = tasks.register('strippedApiJar', Jar) {
+    description = 'The API jar without module descriptors, as HeadlessMc puts it on the classpath.'
+    dependsOn ':headlessmc-lwjgl-api:jar'
+    def apiJar = project(':headlessmc-lwjgl-api').tasks.named('jar').flatMap { it.archiveFile }
+    from(apiJar.map { zipTree(it) }) {
+        exclude '**/module-info.class'
+        exclude 'META-INF/MANIFEST.MF'
+    }
+    manifest {
+        from(apiJar.map { zipTree(it).matching { include 'META-INF/MANIFEST.MF' }.singleFile })
+    }
+    archiveFileName = 'headlessmc-lwjgl-api.jar'
+    destinationDirectory = layout.buildDirectory.dir('stripped-api')
+}
+
+def testModuleLayer = tasks.register('testModuleLayer', JavaExec) {
+    group = 'verification'
+    description = 'Like testModulePath, with the API jar as an automatic module, like Forge and NeoForge load it.'
+    dependsOn patchLwjgl, strippedApiJar
+    def apiJar = project(':headlessmc-lwjgl-api').tasks.named('jar').flatMap { it.archiveFile }
+    classpath = sourceSets.test.runtimeClasspath.filter {
+        !it.absolutePath.startsWith(patchedDirectory.get().asFile.absolutePath) && it != apiJar.get().asFile
+    }
+    mainClass = 'io.github.headlesshq.headlessmc.lwjgl3.ModulePathCheck'
+    jvmArgumentProviders.add({
+        ['--module-path', patchedDirectory.get().asFile.absolutePath + File.pathSeparator + strippedApiJar.get().archiveFile.get().asFile.absolutePath,
+         '--add-modules', 'ALL-MODULE-PATH']
+    } as CommandLineArgumentProvider)
+}
+
+tasks.named('check') {
+    dependsOn testModuleLayer
+}
