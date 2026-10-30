@@ -1,0 +1,18 @@
+# LWJGL methods that Minecraft or its mod loaders call and the behaviour catalog only implements by a guess,
+# reviewed as correct for a headless client. .github/scripts/lwjgl_usage.py fails for every other guessed method that is
+# called: give it a reviewed behaviour, a rule or a handler, or add it here with the reason.
+
+# Error queries: 0 is no error, there are no errors
+org/lwjgl/opengl/GL11.glGetError()I
+
+# Shader introspection: compilation and linking succeed with empty info logs, every uniform, attribute and block resolves to 0
+org/lwjgl/opengl/ARBShaderObjects.glGetInfoLogARB(II)Ljava/lang/String;
+org/lwjgl/opengl/ARBShaderObjects.glGetUniformLocationARB(ILjava/lang/CharSequence;)I
+org/lwjgl/opengl/ARBVertexShader.glGetAttribLocationARB(ILjava/lang/CharSequence;)I
+org/lwjgl/opengl/GL20.glGetAttribLocation(ILjava/lang/CharSequence;)I
+org/lwjgl/opengl/GL20.glGetProgramInfoLog(II)Ljava/lang/String;
+org/lwjgl/opengl/GL20.glGetShaderInfoLog(II)Ljava/lang/String;
+org/lwjgl/opengl/GL20.glGetUniformLocation(ILjava/lang/CharSequence;)I
+
+# Dialogs and URLs: there is no user, every dialog is cancelled and no browser opens
+org/lwjgl/Sys.openURL(Ljava/lang/String;)Z
