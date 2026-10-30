@@ -52,3 +52,6 @@ HeadlessMc
 _site
 
 *.exec
+
+# Python
+__pycache__/
