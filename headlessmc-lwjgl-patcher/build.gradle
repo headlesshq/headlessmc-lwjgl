@@ -3,6 +3,7 @@ description = 'Build time patcher that turns LWJGL jars into headless jars.'
 dependencies {
     implementation libs.asm
     implementation libs.asm.tree
+    implementation libs.asm.commons
 }
 
 tasks.named('compileJava', JavaCompile) {

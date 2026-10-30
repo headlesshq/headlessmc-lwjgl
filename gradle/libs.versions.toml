@@ -9,6 +9,7 @@ lwjgl2 = "2.9.4-nightly-20150209"
 jinput = { group = "net.java.jinput", name = "jinput", version = "2.0.5" }
 asm = { group = "org.ow2.asm", name = "asm", version.ref = "asm" }
 asm-tree = { group = "org.ow2.asm", name = "asm-tree", version.ref = "asm" }
+asm-commons = { group = "org.ow2.asm", name = "asm-commons", version.ref = "asm" }
 
 japicmp = { group = "com.github.siom79.japicmp", name = "japicmp", version.ref = "japicmp" }
 

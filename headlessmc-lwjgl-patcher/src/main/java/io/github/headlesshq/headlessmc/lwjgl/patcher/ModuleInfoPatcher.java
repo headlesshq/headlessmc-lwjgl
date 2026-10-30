@@ -55,11 +55,21 @@ public final class ModuleInfoPatcher {
     }
 
     /**
+     * @param bytes a {@code module-info.class}.
+     * @return the name of the module.
+     */
+    public static String name(byte[] bytes) {
+        ClassNode node = new ClassNode();
+        new ClassReader(bytes).accept(node, 0);
+        return node.module.name;
+    }
+
+    /**
      * @param bytes the original {@code module-info.class}.
      * @param exportedPackages the internal names of the packages that have to be exported, e.g. the runtime packages
      *                         embedded into the module.
      * @param existingPackages the internal names of all packages in the patched jar.
-     * @param staticRequires the modules to add as {@code requires static}, e.g. the input API.
+     * @param staticRequires the modules to add as {@code requires static}, e.g. the input API, unless already required.
      * @return the patched, open {@code module-info.class}.
      */
     public static byte[] patch(byte[] bytes, Collection<String> exportedPackages, Set<String> existingPackages,

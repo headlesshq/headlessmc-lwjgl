@@ -1,6 +1,8 @@
 package io.github.headlesshq.headlessmc.lwjgl.patcher;
 
 import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.commons.ClassRemapper;
+import org.objectweb.asm.commons.Remapper;
 import org.objectweb.asm.tree.ClassNode;
 
 import java.io.ByteArrayInputStream;
@@ -11,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -86,8 +89,9 @@ public final class Patcher {
         }
 
         Files.createDirectories(options.output());
+        Map<String, String> packageOwners = packageOwners();
         for (Module module : modules.values()) {
-            write(module);
+            write(module, packageOwners);
             System.out.println(module.name + ": " + catalog.summary(module.name));
         }
 
@@ -280,7 +284,61 @@ public final class Patcher {
         }
     }
 
-    private void write(Module module) throws IOException {
+    /**
+     * @return the name of the module containing each package of a modular jar, keyed by internal package name.
+     */
+    private Map<String, String> packageOwners() {
+        Map<String, String> result = new HashMap<>();
+        for (Module module : modules.values()) {
+            String moduleInfo = ModuleInfoPatcher.select(module.moduleInfos);
+            if (moduleInfo != null) {
+                String name = ModuleInfoPatcher.name(module.moduleInfos.get(moduleInfo));
+                for (String pkg : packages(module)) {
+                    result.put(pkg, name);
+                }
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * The runtime embedded into one module can use the runtime embedded into another, e.g. the SDL patches use the
+     * OpenGL state of the common runtime embedded into {@code lwjgl-opengl}. The original descriptor does not require
+     * that module, so every module referenced by a patched class is required, statically, to keep it optional.
+     *
+     * @return the modules the classes of the module reference, the input API for the core module.
+     */
+    private static Set<String> requires(Module module, Map<String, String> packageOwners) {
+        Set<String> result = new TreeSet<>();
+        if ("lwjgl".equals(module.name)) {
+            result.add(API_MODULE);
+        }
+
+        Remapper collector = new Remapper() {
+            @Override
+            public String map(String internalName) {
+                int index = internalName.lastIndexOf('/');
+                String owner = index < 0 ? null : packageOwners.get(internalName.substring(0, index));
+                if (owner != null) {
+                    result.add(owner);
+                }
+
+                return internalName;
+            }
+        };
+
+        for (Map.Entry<String, byte[]> entry : module.output.entrySet()) {
+            if (entry.getKey().endsWith(".class")) {
+                // the remapper only visits the code of methods its delegate visits
+                new ClassReader(entry.getValue()).accept(new ClassRemapper(new ClassNode(), collector), 0);
+            }
+        }
+
+        return result;
+    }
+
+    private void write(Module module, Map<String, String> packageOwners) throws IOException {
         Attributes attributes = module.manifest.getMainAttributes();
         attributes.putIfAbsent(Attributes.Name.MANIFEST_VERSION, "1.0");
         attributes.remove(Attributes.Name.SEALED);
@@ -295,8 +353,10 @@ public final class Patcher {
             if (moduleInfo != null) {
                 Set<String> exported = new TreeSet<>(module.runtimePackages);
                 exported.addAll(module.compatPackages);
-                List<String> requires = "lwjgl".equals(module.name) ? List.of(API_MODULE) : List.of();
-                byte[] patched = ModuleInfoPatcher.patch(module.moduleInfos.get(moduleInfo), exported, packages(module), requires);
+                byte[] bytes = module.moduleInfos.get(moduleInfo);
+                Set<String> requires = requires(module, packageOwners);
+                requires.remove(ModuleInfoPatcher.name(bytes));
+                byte[] patched = ModuleInfoPatcher.patch(bytes, exported, packages(module), requires);
                 put(out, directories, moduleInfo, patched);
             }
 
