@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/headlesshq/headlessmc-lwjgl/compare/0.1.2...0.2.0) (2026-11-03)
+
+
+### Features
+
+* **agent:** add a Java agent that patches LWJGL without HeadlessMc ([#6](https://github.com/headlesshq/headlessmc-lwjgl/issues/6)) ([77502a1](https://github.com/headlesshq/headlessmc-lwjgl/commit/77502a198a4d681becc28206c017cfa9688f4e49))
+
 ## [0.1.2](https://github.com/headlesshq/headlessmc-lwjgl/compare/0.1.1...0.1.2) (2026-10-30)
 
 
