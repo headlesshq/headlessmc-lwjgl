@@ -1,0 +1,120 @@
+description = 'A Java agent that makes the LWJGL 2 or 3 of an application headless, without HeadlessMc.'
+
+evaluationDependsOn(':headlessmc-lwjgl3')
+evaluationDependsOn(':headlessmc-lwjgl2')
+
+def lwjgl3 = project(':headlessmc-lwjgl3')
+def lwjgl2 = project(':headlessmc-lwjgl2')
+
+sourceSets {
+    // runs with the original LWJGL 3 jars and the agent, see the agentCheck tasks
+    check3
+    // runs with the original LWJGL 2 jars and the agent
+    check2
+    // builds a module layer from the classpath like the BootstrapLauncher of Forge and NeoForge
+    layerCheck
+}
+
+configurations {
+    // the original jars the checks run with, the agent has to replace them
+    lwjgl3Original { transitive = false; canBeConsumed = false }
+    lwjgl3Old { transitive = false; canBeConsumed = false }
+    lwjgl2Original { transitive = false; canBeConsumed = false }
+    check3CompileOnly.extendsFrom lwjgl3Original
+    check2CompileOnly.extendsFrom lwjgl2Original
+}
+
+dependencies {
+    lwjgl3Original libs.bundles.lwjgl
+    // the LWJGL of Minecraft 1.20.2 to 1.21.x, without the modules it did not have yet
+    ['lwjgl', 'lwjgl-glfw', 'lwjgl-opengl', 'lwjgl-openal', 'lwjgl-stb', 'lwjgl-jemalloc', 'lwjgl-tinyfd'].each {
+        lwjgl3Old "org.lwjgl:${it}:3.3.3"
+    }
+    lwjgl2Original libs.bundles.lwjgl2
+    check3CompileOnly project(':headlessmc-lwjgl-api')
+}
+
+tasks.named('compileJava', JavaCompile) {
+    options.release = 8
+}
+
+[compileCheck3Java: 8, compileCheck2Java: 8, compileLayerCheckJava: 17].each { name, release ->
+    tasks.named(name, JavaCompile) {
+        options.release = release
+    }
+}
+
+tasks.named('jar', Jar) {
+    // the bundled jars are compressed already
+    entryCompression = ZipEntryCompression.STORED
+    manifest {
+        attributes 'Premain-Class': 'io.github.headlesshq.headlessmc.lwjgl.agent.Agent'
+        attributes 'Automatic-Module-Name': 'io.github.headlesshq.headlessmc.lwjgl.agent'
+        attributes 'Implementation-Title': project.name
+        attributes 'Implementation-Version': project.version
+        attributes 'Implementation-Vendor': 'HeadlessHQ'
+    }
+    into('headlessmc-lwjgl/lwjgl3') {
+        from(lwjgl3.tasks.named('patchLwjgl')) { include '*.jar' }
+    }
+    into('headlessmc-lwjgl/lwjgl2') {
+        from(lwjgl2.tasks.named('patchLwjgl')) { include '*.jar' }
+    }
+    into('headlessmc-lwjgl') {
+        from(lwjgl3.tasks.named('strippedApiJar'))
+    }
+}
+
+def agentJar = tasks.named('jar', Jar).flatMap { it.archiveFile }
+
+def registerCheck = { String name, String description, int javaVersion, FileCollection runtime, SourceSet sourceSet,
+                      String mainClass, List<String> agentArguments = [] ->
+    def check = tasks.register(name, JavaExec) {
+        group = 'verification'
+        it.description = description
+        dependsOn tasks.named('jar')
+        classpath = sourceSet.output + runtime
+        it.mainClass = mainClass
+        javaLauncher = javaToolchains.launcherFor {
+            languageVersion = JavaLanguageVersion.of(javaVersion)
+        }
+        // every check gets its own directory, the agent has to extract the jars
+        def extracted = layout.buildDirectory.dir("agent-checks/${name}")
+        jvmArgumentProviders.add({
+            [
+                '-javaagent:' + agentJar.get().asFile.absolutePath + (agentArguments ? '=' + agentArguments.join(',') : ''),
+                '-Dhmc.lwjgl.agent.directory=' + extracted.get().asFile.absolutePath,
+                // the original jars must not find natives, only the patched jars work without them
+                '-Dorg.lwjgl.librarypath=' + layout.buildDirectory.dir('no-natives').get().asFile.absolutePath,
+            ]
+        } as CommandLineArgumentProvider)
+        doFirst {
+            project.delete(extracted)
+        }
+    }
+
+    tasks.named('check') {
+        dependsOn check
+    }
+}
+
+[8, 21].each { javaVersion ->
+    registerCheck("agentCheckLwjgl3Java${javaVersion}", "Runs LWJGL 3.4.3 calls with the original jars and the agent on Java ${javaVersion}.",
+        javaVersion, configurations.lwjgl3Original, sourceSets.check3, 'io.github.headlesshq.headlessmc.lwjgl.agent.check.Lwjgl3Check')
+    registerCheck("agentCheckLwjgl3OldJava${javaVersion}", "Runs LWJGL 3 calls with the original LWJGL 3.3.3 jars and the agent on Java ${javaVersion}.",
+        javaVersion, configurations.lwjgl3Old, sourceSets.check3, 'io.github.headlesshq.headlessmc.lwjgl.agent.check.Lwjgl3Check')
+}
+
+registerCheck('agentCheckLwjgl2', 'Runs LWJGL 2 calls with the original jars and the agent on Java 8.',
+    8, configurations.lwjgl2Original, sourceSets.check2, 'io.github.headlesshq.headlessmc.lwjgl.agent.check2.Lwjgl2Check')
+
+registerCheck('agentCheckModuleLayer', 'Loads LWJGL 3 in a module layer built from the classpath the agent rewrote.',
+    21, configurations.lwjgl3Old, sourceSets.layerCheck, 'io.github.headlesshq.headlessmc.lwjgl.agent.layer.ModuleLayerCheck')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
