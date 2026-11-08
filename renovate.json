@@ -1,6 +1,9 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
+  "nix": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "description": "One PR per LWJGL release, CI fails until the behaviour catalog lock files are reviewed and updated.",
@@ -11,6 +14,15 @@
       "description": "JUnit 6 requires Java 17, but the runtime tests also run on Java 8.",
       "matchPackageNames": ["org.junit:**", "org.junit.jupiter:**", "org.junit.platform:**"],
       "allowedVersions": "<6"
+    },
+    {
+      "description": "The flake only provides the dev shell, so its inputs are updated together once a month. The nix manager is in beta and disabled by default.",
+      "matchManagers": ["nix"],
+      "groupName": "nix flake inputs",
+      "schedule": ["on the first day of the month"],
+      "automerge": false,
+      "semanticCommitType": "build",
+      "semanticCommitScope": "deps"
     }
   ]
 }
